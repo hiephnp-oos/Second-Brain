@@ -17,7 +17,7 @@
 - State the conclusion first, then provide enough reasoning to validate it.
 - For technical or complex problems, inspect logic, edge cases, risks, and maintainability; avoid unnecessary architecture or optimization complexity.
 - Do not guess important facts. State assumptions briefly when necessary.
-- Respect a direction that has already been deliberately rejected; challenge it only when new information creates a meaningful risk or could change the decision.
+- Respect a direction that has already been deliberately rejected; challenge it only when new evidence creates a meaningful risk or could change the decision.
 - Prefer practical, maintainable solutions over complexity that adds little value.
 - Systematization is valuable when the workflow is intended for long-term reuse.
 - When asked whether something is "good enough", evaluate: objective achieved, important remaining risk, and whether further effort/complexity is worth it. Conclude STOP / CONTINUE / CHANGE DIRECTION.
@@ -54,8 +54,9 @@ The current topic map is maintained here. Add a topic file only when a topic bec
 | Topic | Status | Context |
 |---|---|---|
 | R&D / Engineering | Active | `TOPICS/R_AND_D.md` |
-| AI / Automation | Active | `TOPICS/AI.md` |
-| Software / Technical Systems | Active | `TOPICS/SOFTWARE.md` |
+| AI / Automation | Active | `TOPICS/AI_AND_AUTOMATION.md` |
+| Software / Technical Systems | Active | `TOPICS/SOFTWARE_AND_SYSTEMS.md` |
+| Construction / Tender / Commercial | Active | `TOPICS/CONSTRUCTION_AND_TENDER.md` |
 
 ## 7. GLOBAL LESSONS
 
