@@ -6,7 +6,11 @@ R&D, engineering, innovation research, technology scouting, competitor technolog
 
 ## Current Context
 
-The user works across practical R&D and innovation activities. Work may involve identifying technologies, understanding structure/mechanism, comparing competitors, checking supplier capabilities, reviewing patents, and deciding whether an opportunity is genuinely useful for the target product or organization.
+The user works across practical R&D and innovation activities, including technology scouting, supplier/OEM/ODM research, competitor benchmarking, patent review, mechanism/structure analysis, and evaluation of whether a technology is genuinely useful or differentiated.
+
+A recurring R&D workstream is innovation research for LIXIL. In this context, LIXIL includes American Standard, INAX, and GROHE. Supplier/OEM/ODM technology evidence is collected and evaluated across multiple source files.
+
+The user has also worked on R&D knowledge/data systems and R&D knowledge-sharing workflows.
 
 ## Working Principles
 
@@ -14,20 +18,30 @@ The user works across practical R&D and innovation activities. Work may involve 
 - When evaluating a technology candidate, consider evidence, mechanism/structure, competitor adoption, supplier availability, patent landscape, and practical applicability.
 - Prefer concrete evidence over marketing claims.
 - Keep candidate evaluation traceable to its source/reference.
+- When screening a large candidate list, prioritize clear structure/mechanism, competitor evidence, patent/source evidence, and a credible route to implementation.
+- Do not treat a supplier's technology description alone as proof of novelty or innovation value.
 
 ## Active Projects / References
 
-Project-specific details should be added here when they become persistent. Detailed implementation information should remain in the relevant project repository or source document.
+### LIXIL R&D / Innovation Research
+
+Technology scouting and evaluation involving LIXIL brands and supplier/OEM/ODM technologies.
+
+### R&D Knowledge Sharing
+
+The user has been developing proposals to increase useful technical sharing within the team. Existing sharing occurs but is relatively limited, so the objective is to increase useful topics without creating excessive workload.
 
 ## Decisions
 
-No additional persistent decisions recorded yet.
+- Detailed candidate data should remain in the relevant research/source artifacts rather than being copied into this memory file.
+- Candidate evaluation should preserve source evidence and distinguish competitor evidence from supplier claims.
 
 ## Lessons
 
 - Do not treat a supplier's technology description alone as proof of novelty or innovation value.
 - Avoid duplicating detailed project research in the global AI memory.
+- When discussing an innovation workflow, account for workload and the team's existing sharing activities rather than assuming a blank slate.
 
 ## Next
 
-Maintain this file as persistent R&D context is established through future work.
+Continue enriching this file only with persistent R&D context that changes how future AI work should be performed.
