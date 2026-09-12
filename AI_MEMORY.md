@@ -77,12 +77,13 @@ The current topic map is maintained here. Add a topic file only when a topic bec
 
 1. Read `AI_MEMORY.md` first.
 2. Identify the topic relevant to the current task.
-3. Read the corresponding `TOPICS/*.md` file.
+3. Read the corresponding `TOPICS/*.md` file before making topic-specific assumptions.
 4. Follow explicit decisions and lessons unless new evidence justifies revisiting them.
 5. Do not infer facts that are not recorded.
 6. Do not repeat approaches documented as rejected.
 7. Update memory only when new information is genuinely persistent and useful for future work.
 8. Keep temporary task details in the current conversation rather than promoting them into persistent memory.
+9. When the user asks about current work status, use the relevant topic file(s) and distinguish completed, in-progress, blocked, and next items.
 
 ## 10. MEMORY MAINTENANCE
 
@@ -97,7 +98,7 @@ Avoid storing:
 
 ## 11. PERIODIC REVIEW
 
-A periodic review can use this memory to answer:
+A periodic review can use this memory and the active topic files to answer:
 
 - What topics are currently active?
 - What has been completed?
