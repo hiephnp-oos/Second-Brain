@@ -6,7 +6,9 @@
 
 ## 1. PURPOSE
 
-This repository is the user's provider-independent AI working context. Its purpose is to let a new AI understand how to work with the user, what broad areas are active, and where topic-specific context lives.
+This repository is the user's provider-independent AI working context. Its purpose is to let a new AI understand how to work with the user, what broad areas are active, and where topic-specific context lives, so the AI can continue relevant work without requiring the user to re-explain established context.
+
+GitHub is the persistence layer and source of truth. The system is deliberately minimal: one master memory file plus topic files. It is not a personal knowledge-management platform or knowledge graph.
 
 Do not interpret this repository as a complete record of the user's life, work, or conversations. It is a curated memory layer.
 
@@ -76,7 +78,9 @@ A topic should be added only when recurring work creates enough durable context 
 - GitHub is the persistence layer and source of truth for this AI working context.
 - The system is provider-independent so another AI can read it and continue working.
 - The preferred structure is one master memory file plus topic files under `TOPICS/`.
-- Periodic review is a derived report. It should not silently modify authoritative memory.
+- Memory maintenance uses ADD / UPDATE / REMOVE / NO_CHANGE and is defined in `WORKFLOW.md`.
+- Periodic review is a quality check and derived report; it should not silently modify authoritative memory.
+- No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
 
 ## 9. HOW A NEW AI SHOULD ONBOARD
 
@@ -90,6 +94,7 @@ Follow this sequence:
 6. Do not assume that the listed active topics are exhaustive.
 7. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
 8. When unsure whether information is durable, keep it in the current conversation rather than promoting it to memory.
+9. When maintaining memory, follow `WORKFLOW.md`.
 
 ## 10. MEMORY MAINTENANCE
 
@@ -111,6 +116,8 @@ Avoid storing:
 - confidential information that should not be shared across AI systems;
 - large copies of source code or documents already stored elsewhere.
 
+For the exact update lifecycle and validation rules, use `WORKFLOW.md`.
+
 ## 11. PERIODIC REVIEW
 
 A periodic review may use this repository to produce a work-status report covering:
@@ -126,7 +133,7 @@ The review is a **derived view**, not authoritative memory. It must not infer pr
 
 ## 12. FRESHNESS
 
-Last reviewed: 2026-09-12
+Last reviewed: 2026-09-14
 
 `Active` means the topic is a recognized ongoing area of work. It does not mean every item inside that topic is currently being worked on.
 
