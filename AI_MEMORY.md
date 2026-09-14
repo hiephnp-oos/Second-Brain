@@ -4,10 +4,6 @@
 >
 > **Read this file first.** It is a routing and working-context document, not a conversation archive.
 
-## 1. PURPOSE
-
-This repository is the user's provider-independent AI working context. Its purpose is to let a new AI understand how to work with the user, what broad areas are active, and where topic-specific context lives, so the AI can continue relevant work without requiring the user to re-explain established context.
-
 GitHub is the persistence layer and source of truth. The system is deliberately minimal: one master memory file plus topic files. It is not a personal knowledge-management platform or knowledge graph.
 
 Do not interpret this repository as a complete record of the user's life, work, or conversations. It is a curated memory layer.
@@ -60,6 +56,7 @@ These are the currently recognized work areas, not an exhaustive list of everyth
 | R&D / Innovation | Active | `TOPICS/R_AND_D.md` |
 | AI / Automation | Active | `TOPICS/AI_AND_AUTOMATION.md` |
 | Software / Technical Systems | Active | `TOPICS/SOFTWARE_AND_SYSTEMS.md` |
+| Nuvio Stream Configuration | Active | `TOPICS/NUVIO_STREAM_CONFIG.md` |
 | Construction / Tender / Commercial | Active | `TOPICS/CONSTRUCTION_AND_TENDER.md` |
 
 A topic should be added only when recurring work creates enough durable context to justify a dedicated file.
@@ -135,7 +132,7 @@ The review is a **derived view**, not authoritative memory. It must not infer pr
 
 Last reviewed: 2026-09-14
 
-`Active` means the topic is a recognized ongoing area of work. It does not mean every item inside that topic is currently being worked on.
+`Active` means the topic is a recognized ongoing area of work. It does not mean every item inside it is currently being worked on.
 
 When freshness matters, inspect Git history or the referenced project/source rather than assuming that the text is current.
 
