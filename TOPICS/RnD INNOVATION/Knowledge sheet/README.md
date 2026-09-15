@@ -8,12 +8,22 @@ Core principle:
 
 `Material → Knowledge Pool → TEAM / AI Search-Connect-Analyze → Idea → Evaluate → Deep Analyze`
 
-The Knowledge Sheet is not a fifth data table. It is the collection of linked sheets in this workstream.
+The Knowledge Sheet is the collection of linked sheets in this workstream.
 
 ## Current build
 
 Release: **v1**  
 Status: **Baseline / usable for Claw Idea**
+
+The authoritative v1 dataset is the five CSV files committed in this folder:
+
+- `market_signal_v1.csv`
+- `competitor_tech_v1.csv`
+- `supplier_tech_v1.csv`
+- `tech_radar_v1.csv`
+- `source_v1.csv`
+
+The five CSV files are the data source of truth for this v1 release. Do not reconstruct or rewrite their contents from README/changelog/context. Future releases should replace or add CSV snapshots from the authoritative export process.
 
 Current entities:
 
@@ -22,8 +32,6 @@ Current entities:
 - `Supplier_Tech`: 48 records
 - `Tech_Radar`: 65 records
 - `Source`: 351 records
-
-The current Excel release is exported into CSV snapshots in this folder as `*_v1.csv`.
 
 ## Architecture
 
@@ -62,11 +70,17 @@ Source references are maintained through `Source IDs`.
 
 Do not require reverse relation fields in `Supplier_Tech` or `Competitor_Tech`.
 
-The authoritative technology traversal is through `Tech_Radar`. For example:
+The authoritative technology traversal is through `Tech_Radar`.
 
-`MS-001 → TR-001 / TR-033 / TR-034 → ST-020 / ST-034 and CT-001 → SRC-*`
+## Data integrity / release rule
 
-This is enough for AI to move from user problem to technology, supplier capability, competitor precedent, and evidence without duplicating relation metadata.
+The v1 CSV snapshots are authoritative artifacts. When syncing the Knowledge Sheet:
+
+1. Treat the supplied/exported CSV files as source of truth.
+2. Preserve their contents and IDs; do not semantically rewrite, normalize, merge, translate, or reconstruct records unless explicitly requested.
+3. Keep canonical filenames and the `_v1` suffix for this release.
+4. Update documentation separately from the CSV data.
+5. Use later versions (`_v2`, `_v3`, ...) for substantive dataset changes rather than silently mutating release meaning.
 
 ## Sheet definitions
 
@@ -140,8 +154,6 @@ For each signal, identify:
 
 `User / Context → Pain Point → Existing Solution → Remaining Gap → Required Function`
 
-Keep `Market Pull Class` to distinguish active signals from watch/baseline items.
-
 ### Step 3 — Structure competitor technology
 
 Capture what the competitor actually does, how it works, what user capability it creates, what limits it has, and which market signals it addresses.
@@ -190,6 +202,8 @@ Before release, check:
 6. Empty relation fields are allowed when no verified relationship exists.
 7. Evidence remains traceable.
 
+For v1 specifically, these checks describe the release process; the CSV files themselves remain the authoritative release artifacts.
+
 ## Claw Idea usage
 
 The Knowledge Pool is an input to Claw Idea, not the final idea list.
@@ -197,12 +211,6 @@ The Knowledge Pool is an input to Claw Idea, not the final idea list.
 A typical query should allow AI to traverse:
 
 `User Problem → Relevant Tech Radar → Supplier Capability → Competitor Precedent → Evidence → Remaining Gap`
-
-Example:
-
-`MS-001` asks how to maintain useful shower spray performance under low / fluctuating pressure.
-
-AI can traverse to technologies such as pressure-compensating emitters, pressure-responsive nozzles, fixed fluidic spray shaping, or spray-zone routing; then inspect linked supplier capabilities, competitor precedent, and sources before generating combinations.
 
 The goal is not to deep-analyze every record. Use the Knowledge Pool to generate and connect ideas first, then evaluate promising ideas using user value, technical feasibility, novelty, business potential, and evidence.
 
@@ -242,7 +250,7 @@ TOPICS/
         └── source_v1.csv
 ```
 
-The folder is the durable workstream location. The parent `TOPICS/RnD INNOVATION/RnD INNOVATION.md` remains the routing layer; detailed knowledge belongs here or in the authoritative source documents.
+No export ZIP is retained in the repository; the five CSV files are the durable data artifacts for v1.
 
 ## Maintenance workflow
 
@@ -251,11 +259,9 @@ When new material arrives:
 1. Add or update the relevant knowledge records.
 2. Preserve evidence in `Source`.
 3. Link only verified relations.
-4. Re-run relation and ID validation.
+4. Re-run relation and ID validation when preparing a new release.
 5. Release the updated CSV set as the next version.
 6. Record the change in `changelog.md`.
-
-Source master should be finalized after the other sheets are finalized, because later sheets may introduce additional evidence.
 
 ## Current decision
 
