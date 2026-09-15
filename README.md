@@ -36,13 +36,12 @@ The operating principle is:
 
 `Conversation / Source → Knowledge → Routing → Continuation`
 
-Phase 2, Phase 3, and Phase 4 are active in parallel and are validated through real usage.
+Phase 2, Phase 3, and Phase 4 run in parallel and are defined in `WORKFLOW.md`. They are validated through real usage.
 
 ## Repository structure
 
 ```text
 AI_MEMORY.md
-PHASES_2-4.md
 WORKFLOW.md
 TOPICS/
 ├── LIXIL AI GENERAL/
@@ -58,11 +57,18 @@ TOPICS/
 └── RnD INNOVATION/
     ├── RnD INNOVATION.md
     ├── Knowledge sheet/
-    │   └── README.md
+    │   ├── README.md
+    │   ├── changelog.md
+    │   ├── Market_Signal_v2.csv
+    │   ├── Competitor_Tech_v2.csv
+    │   ├── Supplier_tech_v2.csv
+    │   ├── Tech_radar_v2.csv
+    │   └── Sources_v2.csv
     ├── Bi-weekly review/
     │   └── README.md
     ├── ADTD Prompting/
-    │   └── README.md
+    │   ├── README.md
+    │   └── AI Prompting.csv
     └── Existing Ideas/
         └── README.md
 ```
@@ -88,7 +94,7 @@ Promote information only when it is durable and useful beyond the current task. 
 
 Prefer updating existing knowledge over creating duplicate knowledge. Surface contradictions before writing when they could affect future behavior.
 
-Use `WORKFLOW.md` and `PHASES_2-4.md` for the maintenance, retrieval/routing, and Handoff rules.
+Use `WORKFLOW.md` for the maintenance, retrieval/routing, and Handoff rules.
 
 ## Scope boundary
 
