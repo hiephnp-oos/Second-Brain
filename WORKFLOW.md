@@ -11,10 +11,11 @@ The workflow exists to maintain the business goal: a new AI should be able to re
 For a new task:
 
 1. Read `AI_MEMORY.md`.
-2. Identify the relevant topic file(s).
-3. Read only the relevant topic file(s).
-4. Follow authoritative project/source references when detailed facts are needed.
-5. Use the current conversation together with memory. Explicit current user information takes precedence over older memory.
+2. Identify the relevant topic folder(s).
+3. Read only the relevant topic entry-point file(s).
+4. If needed, read only the relevant child workstream folder/file(s).
+5. Follow authoritative project/source references when detailed facts are needed.
+6. Use the current conversation together with memory. Explicit current user information takes precedence over older memory.
 
 ## 2. Decide whether something becomes memory
 
@@ -56,13 +57,25 @@ The information is temporary, already known, unsupported, or not useful for futu
 Use:
 
 - `AI_MEMORY.md` for durable user-level or cross-topic context.
-- `TOPICS/<topic>.md` for durable topic-specific context.
+- `TOPICS/<topic>/` for durable topic-specific context.
+- A topic entry-point file for routing/summary context.
+- Child workstream folders/files for detailed recurring work within a topic.
 
 Prefer updating an existing entry over creating a duplicate.
 
 Do not copy detailed project knowledge into this repository when an authoritative project repository or document already exists. Store enough context to route an AI to that source.
 
-If a new topic becomes recurring and needs durable context, create a topic file and add it to the active-topics table in `AI_MEMORY.md`.
+If a new topic becomes recurring and needs durable context:
+
+1. Create a topic folder under `TOPICS/`.
+2. Add a concise entry-point file for that topic.
+3. Add the topic to the active-topics table in `AI_MEMORY.md`.
+
+If a topic needs a new recurring workstream:
+
+1. Create a child folder under the topic folder.
+2. Add the relevant working files/artifacts there.
+3. Register the child folder in the topic entry-point file when discovery depends on it.
 
 ## 5. Validate before writing
 
@@ -73,7 +86,7 @@ Before committing an ADD, UPDATE, or REMOVE, check:
 - Does it duplicate existing memory?
 - Does it contradict existing memory?
 - Is it temporary task state instead?
-- Is the scope correct: global memory or topic memory?
+- Is the scope correct: global memory, topic summary, or child workstream?
 - Would a future AI interpret it correctly without the original conversation?
 
 When information conflicts with older memory, prefer the newer explicit user decision or stronger evidence. Do not silently preserve both as if both were current.
@@ -115,7 +128,7 @@ Periodically inspect the memory for:
 - contradictions;
 - incorrect topic placement;
 - obsolete decisions;
-- topics that are no longer useful.
+- topics/workstreams that are no longer useful.
 
 A review is a quality check. It should not silently invent or rewrite project status.
 
