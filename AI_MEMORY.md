@@ -4,7 +4,7 @@
 >
 > **Read this file first.** It is a routing and working-context document, not a conversation archive.
 
-GitHub is the persistence layer and source of truth. The system is deliberately minimal: one master memory file plus topic files. It is not a personal knowledge-management platform or knowledge graph.
+GitHub is the persistence layer and source of truth. The system is deliberately minimal: one master memory file plus topic folders. It is not a personal knowledge-management platform or knowledge graph.
 
 Do not interpret this repository as a complete record of the user's life, work, or conversations. It is a curated memory layer.
 
@@ -41,7 +41,7 @@ Do not interpret this repository as a complete record of the user's life, work, 
 Memory has two levels:
 
 - `AI_MEMORY.md`: durable user-level and cross-topic context.
-- `TOPICS/*.md`: durable context for a specific work/topic area.
+- `TOPICS/`: durable topic folders. Each topic folder contains a routing/summary file and/or workstream folders/files as appropriate.
 
 Git history provides historical versions. Do not create additional archive folders unless real scale requires them.
 
@@ -51,15 +51,17 @@ A conversation is not automatically memory. Promote information only when it is 
 
 These are the currently recognized work areas, not an exhaustive list of everything the user does.
 
-| Topic | Status | Context |
+| Topic | Status | Entry point |
 |---|---|---|
-| R&D / Innovation | Active | `TOPICS/R_AND_D.md` |
-| AI / Automation | Active | `TOPICS/AI_AND_AUTOMATION.md` |
-| Software / Technical Systems | Active | `TOPICS/SOFTWARE_AND_SYSTEMS.md` |
-| Nuvio Stream Configuration | Active | `TOPICS/NUVIO_STREAM_CONFIG.md` |
-| Construction / Tender / Commercial | Active | `TOPICS/CONSTRUCTION_AND_TENDER.md` |
+| LIXIL AI General | Active | `TOPICS/LIXIL AI GENERAL/AI_AND_AUTOMATION.md` |
+| Construction | Active | `TOPICS/CONSTRUCTION/CONSTRUCTION_AND_TENDER.md` |
+| Nuvio Setup | Active | `TOPICS/NUVIO SETUP/NUVIO_STREAM_CONFIG.md` |
+| Systems | Active | `TOPICS/SYSTEMS/SOFTWARE_AND_SYSTEMS.md` |
+| R&D Innovation | Active | `TOPICS/RnD INNOVATION/RnD INNOVATION.md` |
 
-A topic should be added only when recurring work creates enough durable context to justify a dedicated file.
+R&D Innovation is intentionally organized as a parent topic folder with dedicated workstream subfolders. New recurring R&D workstreams may be added there without changing the overall memory architecture.
+
+A topic should be added only when recurring work creates enough durable context to justify a dedicated folder.
 
 ## 7. GLOBAL LESSONS
 
@@ -74,7 +76,7 @@ A topic should be added only when recurring work creates enough durable context 
 
 - GitHub is the persistence layer and source of truth for this AI working context.
 - The system is provider-independent so another AI can read it and continue working.
-- The preferred structure is one master memory file plus topic files under `TOPICS/`.
+- The preferred structure is one master memory file plus topic folders. Most topic folders contain a concise entry-point summary; R&D Innovation also contains dedicated recurring workstream folders.
 - Memory maintenance uses ADD / UPDATE / REMOVE / NO_CHANGE and is defined in `WORKFLOW.md`.
 - Periodic review is a quality check and derived report; it should not silently modify authoritative memory.
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
@@ -84,14 +86,15 @@ A topic should be added only when recurring work creates enough durable context 
 Follow this sequence:
 
 1. Read `AI_MEMORY.md` first.
-2. Identify which topic(s) are relevant to the current request.
-3. Read only the relevant `TOPICS/*.md` file(s).
-4. If a topic file references an external project/repository/document, use that source for detailed facts rather than inventing or copying them into memory.
-5. Use current conversation context together with this memory. New explicit user information takes precedence over older memory.
-6. Do not assume that the listed active topics are exhaustive.
-7. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
-8. When unsure whether information is durable, keep it in the current conversation rather than promoting it to memory.
-9. When maintaining memory, follow `WORKFLOW.md`.
+2. Identify which topic folder(s) are relevant to the current request.
+3. Read the relevant topic entry-point file(s).
+4. If the topic contains child workstream folders, read only the relevant folder/file(s).
+5. If a topic file references an external project/repository/document, use that source for detailed facts rather than inventing or copying them into memory.
+6. Use current conversation context together with this memory. New explicit user information takes precedence over older memory.
+7. Do not assume that the listed active topics are exhaustive.
+8. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
+9. When unsure whether information is durable, keep it in the current conversation rather than promoting it to memory.
+10. When maintaining memory, follow `WORKFLOW.md`.
 
 ## 10. MEMORY MAINTENANCE
 
@@ -126,11 +129,11 @@ A periodic review may use this repository to produce a work-status report coveri
 - neglected/stale areas;
 - logical next steps supported by the available context.
 
-The review is a **derived view**, not authoritative memory. It must not infer project status from the existence of a topic file or from a topic being marked `Active`.
+The review is a **derived view**, not authoritative memory. It must not infer project status from the existence of a topic folder or from a topic being marked `Active`.
 
 ## 12. FRESHNESS
 
-Last reviewed: 2026-09-14
+Last reviewed: 2026-09-15
 
 `Active` means the topic is a recognized ongoing area of work. It does not mean every item inside it is currently being worked on.
 
@@ -138,4 +141,4 @@ When freshness matters, inspect Git history or the referenced project/source rat
 
 ## 13. REFERENCES
 
-Detailed project information belongs in its authoritative project repository, document, or source. Topic files should contain enough context to route an AI to those sources without duplicating their contents.
+Detailed project information belongs in its authoritative project repository, document, or source. Topic folders should contain enough context to route an AI to those sources without duplicating their contents.
