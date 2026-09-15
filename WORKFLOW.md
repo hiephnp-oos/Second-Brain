@@ -6,6 +6,14 @@ Keep GitHub knowledge useful, current, and small enough for an AI to read and co
 
 The workflow exists to maintain the business goal: a new AI should be able to read the repository and continue a relevant topic without the user re-explaining established context.
 
+The operating loop is:
+
+`Conversation / Source → Knowledge → Routing → Continuation`
+
+Phase 2 (Memory Quality), Phase 3 (Retrieval / Routing), and Phase 4 (Handoff) run in parallel and are validated through real work.
+
+See `PHASES_2-4.md` for the detailed operating model.
+
 ## 1. Read before work
 
 For a new task:
@@ -32,6 +40,15 @@ Keep temporary task state in the conversation.
 
 Do not store secrets, credentials, tokens, passwords, or unnecessary copies of source material.
 
+Before writing, distinguish:
+
+- confirmed fact;
+- explicit user decision;
+- supported inference;
+- assumption / unknown.
+
+Only durable knowledge that belongs in the memory layer should be promoted.
+
 ## 3. Classify the change
 
 Every proposed memory change should be classified as one of:
@@ -51,6 +68,8 @@ Existing knowledge is no longer valid or should no longer be retained.
 ### NO_CHANGE
 
 The information is temporary, already known, unsupported, or not useful for future work.
+
+Prefer `UPDATE` over `ADD` when the new information refines existing knowledge.
 
 ## 4. Update the smallest correct scope
 
@@ -77,9 +96,9 @@ If a topic needs a new recurring workstream:
 2. Add the relevant working files/artifacts there.
 3. Register the child folder in the topic entry-point file when discovery depends on it.
 
-## 5. Validate before writing
+## 5. Memory quality check before writing
 
-Before committing an ADD, UPDATE, or REMOVE, check:
+For every ADD / UPDATE / REMOVE, check:
 
 - Is the information actually durable?
 - Is it supported by evidence or explicit user context?
@@ -88,10 +107,65 @@ Before committing an ADD, UPDATE, or REMOVE, check:
 - Is it temporary task state instead?
 - Is the scope correct: global memory, topic summary, or child workstream?
 - Would a future AI interpret it correctly without the original conversation?
+- Does the change improve future work enough to justify storing it?
 
-When information conflicts with older memory, prefer the newer explicit user decision or stronger evidence. Do not silently preserve both as if both were current.
+When information conflicts with older memory, prefer the newer explicit user decision or stronger evidence. Do not silently preserve two statements as if both are current. Git history remains the historical record.
 
-## 6. Write memory for another AI
+Possible contradiction or uncertainty should be surfaced before writing when it could materially change future behavior.
+
+## 6. Retrieval / routing
+
+Use the smallest useful context path:
+
+`AI_MEMORY.md → Topic → Workstream → Relevant artifact → Authoritative source`
+
+Rules:
+
+1. Start from `AI_MEMORY.md`.
+2. Route to the smallest relevant topic.
+3. If child workstreams exist, route to the relevant workstream before reading broader material.
+4. Read only files needed for the current task.
+5. Follow explicit IDs and references when they exist.
+6. Semantic reasoning may discover candidate connections that are not explicitly linked.
+7. Candidate/inferred connections must be labeled as such and verified before becoming durable relationships.
+8. Do not treat the existence of a file, folder, or ID as proof that the information is current.
+9. When freshness matters, inspect Git history or the authoritative source.
+
+For R&D Knowledge Sheet work, the normal explicit traversal is:
+
+`MS → TR → ST / CT → SRC`
+
+Semantic discovery may suggest a new candidate connection, but it must not silently alter the authoritative relationship fields.
+
+## 7. Handoff
+
+When a conversation needs to be continued by another AI or another conversation, produce a compact Handoff rather than a transcript.
+
+A Handoff should contain only:
+
+1. Current objective / question.
+2. Established context needed for continuation.
+3. Decisions made.
+4. Important findings / evidence.
+5. Open issues / uncertainty.
+6. Immediate next step.
+7. Proposed durable-memory changes: `ADD / UPDATE / REMOVE / NO_CHANGE`.
+
+The receiving AI should:
+
+1. Read `AI_MEMORY.md`.
+2. Route to the relevant topic/workstream.
+3. Read the Handoff/current task state.
+4. Give current explicit user information highest priority.
+5. Continue from the stated next step.
+
+A Handoff is not automatically stored in GitHub. Store only the durable knowledge or decision that belongs in persistent memory.
+
+A reusable Handoff prompt is maintained in:
+
+`TOPICS/SYSTEMS/Handoff_Template.md`
+
+## 8. Write memory for another AI
 
 Memory should describe the working context clearly enough for another AI to act on it.
 
@@ -110,7 +184,7 @@ Avoid:
 - unnecessary implementation detail;
 - duplicated information across files.
 
-## 7. Commit discipline
+## 9. Commit discipline
 
 When a memory change is made:
 
@@ -119,7 +193,22 @@ When a memory change is made:
 3. Keep the repository in a readable, consistent state.
 4. Git history provides the historical record; do not create manual archive copies.
 
-## 8. Review
+## 10. Phase 1 validation / failure modes
+
+Real work is the test environment for Phases 2–4.
+
+When a recurring failure is observed, capture it only when it is actionable for improving the workflow. Examples:
+
+- wrong topic/workstream selected;
+- useful context existed but was not retrieved;
+- duplicate memory was created instead of updating existing knowledge;
+- contradiction was missed;
+- Handoff lost a decision or unresolved issue;
+- retrieval required reading too much irrelevant context.
+
+Do not create a permanent failure log for isolated events. Add a structured record only when repeated patterns justify it.
+
+## 11. Review
 
 Periodically inspect the memory for:
 
@@ -128,10 +217,11 @@ Periodically inspect the memory for:
 - contradictions;
 - incorrect topic placement;
 - obsolete decisions;
-- topics/workstreams that are no longer useful.
+- topics/workstreams that are no longer useful;
+- recurring retrieval or Handoff failures.
 
 A review is a quality check. It should not silently invent or rewrite project status.
 
-## 9. Scope guard
+## 12. Scope guard
 
-Do not introduce a knowledge graph, Obsidian layer, vector database, RAG system, automatic ingestion of every conversation, complex ontology, or other infrastructure unless real usage demonstrates that the GitHub + Markdown workflow cannot meet the continuity goal.
+Do not introduce a knowledge graph, Obsidian layer, vector database, RAG system, automatic ingestion of every conversation, complex ontology, or other infrastructure unless repeated real usage demonstrates that the GitHub + Markdown workflow cannot meet the continuity goal.
