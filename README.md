@@ -15,7 +15,9 @@ GitHub knowledge
       ↓
 AI_MEMORY.md
       ↓
-Relevant TOPICS/*.md
+Relevant TOPICS/<topic>/ entry point
+      ↓
+Relevant child workstream folder/file(s), when needed
       ↓
 AI continues the work
       ↓
@@ -25,7 +27,7 @@ New durable knowledge?
   │      │
   │   ADD / UPDATE / REMOVE
   │      │
-  │   update the correct topic
+  │   update the correct topic scope
   │      │
   └──────┴──→ GitHub remains the source of truth
 ```
@@ -35,21 +37,38 @@ New durable knowledge?
 ```text
 AI_MEMORY.md
 TOPICS/
-├── AI_AND_AUTOMATION.md
-├── CONSTRUCTION_AND_TENDER.md
-├── R_AND_D.md
-└── SOFTWARE_AND_SYSTEMS.md
+├── LIXIL AI GENERAL/
+│   └── AI_AND_AUTOMATION.md
+├── CONSTRUCTION/
+│   └── CONSTRUCTION_AND_TENDER.md
+├── NUVIO SETUP/
+│   └── NUVIO_STREAM_CONFIG.md
+├── SYSTEMS/
+│   └── SOFTWARE_AND_SYSTEMS.md
+└── RnD INNOVATION/
+    ├── RnD INNOVATION.md
+    ├── Knowledge sheet/
+    │   └── README.md
+    ├── Bi-weekly review/
+    │   └── README.md
+    ├── ADTD Prompting/
+    │   └── README.md
+    └── Existing Ideas/
+        └── README.md
 WORKFLOW.md
 ```
+
+The R&D Innovation parent folder is intentionally extensible. New recurring R&D workstreams can be added as new child folders and then registered in `RnD INNOVATION.md`.
 
 ## Onboarding a new AI
 
 1. Read `AI_MEMORY.md`.
-2. Identify the relevant topic(s).
-3. Read only those topic files.
-4. Follow referenced authoritative project/source repositories for detailed facts.
-5. Combine repository knowledge with the current conversation; current explicit user information takes precedence.
-6. Continue the work from the established context.
+2. Identify the relevant topic folder(s).
+3. Read the topic entry-point file(s).
+4. If needed, read only the relevant child workstream folder/file(s).
+5. Follow referenced authoritative project/source repositories for detailed facts.
+6. Combine repository knowledge with the current conversation; current explicit user information takes precedence.
+7. Continue the work from the established context.
 
 ## Memory maintenance
 
