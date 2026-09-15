@@ -1,5 +1,18 @@
 # Changelog
 
+## v2 — 2026-09-15
+
+Updated and locked the Knowledge Sheet dataset for the next Claw Idea stage.
+
+- Replaced the v1 active CSV set with the authoritative v2 snapshots: `Market_Signal_v2.csv`, `Competitor_Tech_v2.csv`, `Supplier_tech_v2.csv`, `Tech_radar_v2.csv`, and `Sources_v2.csv`.
+- v2 dataset size: 22 Market Signals, 46 Competitor Tech, 58 Supplier Tech, 70 Tech Radar, 354 Sources.
+- Preserved canonical IDs and stable relationship references; do not renumber existing IDs to remove gaps.
+- Updated Competitor_Tech with the expanded competitor technology set and TOTO technology block.
+- Updated Supplier_Tech with additional supplier/OEM/ODM technology records.
+- Updated Tech_Radar with additional technology clusters and refreshed Supplier / Competitor / Market / Source relations.
+- Supplier_Tech v2 uses `Source ID` as the primary evidence/traceability field; the separate `Key Constraints` field used in v1 documentation is not part of the v2 schema. Constraints and validation requirements are checked from the linked source during evaluation/deep analysis.
+- Updated the Knowledge Sheet documentation to describe v2 as the current authoritative baseline and next input for Claw Idea generation.
+
 ## v1 — 2026-09-15
 
 Initial released Knowledge Sheet baseline.
@@ -16,4 +29,4 @@ Initial released Knowledge Sheet baseline.
 
 ## Release handling rule
 
-Future dataset releases should use the authoritative exported CSV files directly. Preserve CSV contents and IDs; do not rewrite, normalize, merge, translate, or reconstruct records unless explicitly requested. Use the next release suffix (`_v2`, `_v3`, ...) for substantive dataset changes and record the change here.
+Future dataset releases should use the authoritative exported CSV files directly. Preserve CSV contents and IDs; do not rewrite, normalize, merge, translate, or reconstruct records unless explicitly requested. Use the next release suffix (`_v3`, ...) for substantive dataset changes and record the change here.
