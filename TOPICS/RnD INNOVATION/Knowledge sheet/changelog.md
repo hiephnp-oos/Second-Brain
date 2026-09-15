@@ -9,4 +9,5 @@ Initial released Knowledge Sheet baseline.
 - Established `Tech_Radar` as the technology relation hub.
 - Confirmed that reverse `Competitor_Tech → Tech_Radar` and `Supplier_Tech → Tech_Radar` relations are not required.
 - Validated current relation IDs and removed broken competitor references from the Tech Radar dataset before release.
-- Released the five CSV snapshots from the approved Excel Knowledge Sheet as v1.
+- Released all five CSV snapshots from the approved Excel Knowledge Sheet as v1.
+- v1 dataset size: 22 Market Signals, 22 Competitor Tech, 48 Supplier Tech, 65 Tech Radar, 351 Sources.
