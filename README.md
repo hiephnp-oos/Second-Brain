@@ -29,13 +29,21 @@ New durable knowledge?
   │      │
   │   update the correct topic scope
   │      │
-  └──────┴──→ GitHub remains the source of truth
+  └──────┴────→ GitHub remains the source of truth
 ```
+
+The operating principle is:
+
+`Conversation / Source → Knowledge → Routing → Continuation`
+
+Phase 2, Phase 3, and Phase 4 are active in parallel and are validated through real usage.
 
 ## Repository structure
 
 ```text
 AI_MEMORY.md
+PHASES_2-4.md
+WORKFLOW.md
 TOPICS/
 ├── LIXIL AI GENERAL/
 │   └── AI_AND_AUTOMATION.md
@@ -44,7 +52,9 @@ TOPICS/
 ├── NUVIO SETUP/
 │   └── NUVIO_STREAM_CONFIG.md
 ├── SYSTEMS/
-│   └── SOFTWARE_AND_SYSTEMS.md
+│   ├── SOFTWARE_AND_SYSTEMS.md
+│   ├── Handoff_Template.md
+│   └── Retrieval_Test.md
 └── RnD INNOVATION/
     ├── RnD INNOVATION.md
     ├── Knowledge sheet/
@@ -55,7 +65,6 @@ TOPICS/
     │   └── README.md
     └── Existing Ideas/
         └── README.md
-WORKFLOW.md
 ```
 
 The R&D Innovation parent folder is intentionally extensible. New recurring R&D workstreams can be added as new child folders and then registered in `RnD INNOVATION.md`.
@@ -68,7 +77,8 @@ The R&D Innovation parent folder is intentionally extensible. New recurring R&D 
 4. If needed, read only the relevant child workstream folder/file(s).
 5. Follow referenced authoritative project/source repositories for detailed facts.
 6. Combine repository knowledge with the current conversation; current explicit user information takes precedence.
-7. Continue the work from the established context.
+7. If a Handoff exists, use it as temporary continuation state after routing to the relevant topic/workstream.
+8. Continue the work from the established context.
 
 ## Memory maintenance
 
@@ -76,10 +86,12 @@ A conversation is not automatically memory.
 
 Promote information only when it is durable and useful beyond the current task. Before updating memory, decide whether the information should be **ADD**, **UPDATE**, **REMOVE**, or **NO_CHANGE**.
 
-Use `WORKFLOW.md` for the maintenance rules.
+Prefer updating existing knowledge over creating duplicate knowledge. Surface contradictions before writing when they could affect future behavior.
+
+Use `WORKFLOW.md` and `PHASES_2-4.md` for the maintenance, retrieval/routing, and Handoff rules.
 
 ## Scope boundary
 
-Keep the system deliberately small. Do not add Obsidian, a knowledge graph, vector database, RAG layer, automatic ingestion of all conversations, or other infrastructure unless real usage demonstrates that the simpler GitHub-based workflow is insufficient.
+Keep the system deliberately small. Do not add Obsidian, a knowledge graph, vector database, RAG layer, automatic ingestion of all conversations, or other infrastructure unless repeated real usage demonstrates that the simpler GitHub-based workflow is insufficient.
 
 Git history already provides historical versions. Detailed project knowledge should stay in its authoritative project repository instead of being copied into this memory layer.
