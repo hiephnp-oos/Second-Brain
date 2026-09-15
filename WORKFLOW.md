@@ -12,8 +12,6 @@ The operating loop is:
 
 Phase 2 (Memory Quality), Phase 3 (Retrieval / Routing), and Phase 4 (Handoff) run in parallel and are validated through real work.
 
-See `PHASES_2-4.md` for the detailed operating model.
-
 ## 1. Read before work
 
 For a new task:
@@ -225,3 +223,13 @@ A review is a quality check. It should not silently invent or rewrite project st
 ## 12. Scope guard
 
 Do not introduce a knowledge graph, Obsidian layer, vector database, RAG system, automatic ingestion of every conversation, complex ontology, or other infrastructure unless repeated real usage demonstrates that the GitHub + Markdown workflow cannot meet the continuity goal.
+
+## 13. Phase operating model
+
+The three phases are operational rules within this workflow:
+
+- Phase 2 — Memory Quality: distill durable knowledge, compare against existing memory, prefer UPDATE, detect duplication/contradiction, then write the smallest correct change.
+- Phase 3 — Retrieval / Routing: route through the smallest useful context path; use explicit IDs/references first and treat semantic matches as candidate connections until verified.
+- Phase 4 — Handoff: transfer task state as a compact continuation artifact; Handoff is temporary state, not persistent memory.
+
+These phases are validated through real usage rather than by adding new infrastructure. Detailed reusable Handoff instructions are in `TOPICS/SYSTEMS/Handoff_Template.md`; retrieval testing is in `TOPICS/SYSTEMS/Retrieval_Test.md`.
