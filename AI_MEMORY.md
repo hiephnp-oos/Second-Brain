@@ -53,7 +53,7 @@ These are the currently recognized work areas, not an exhaustive list of everyth
 
 | Topic | Status | Entry point |
 |---|---|---|
-| LIXIL AI General | Active | `TOPICS/LIXIL AI GENERAL/AI_AND_AUTOMATION.md` |
+| AI General | Active | `TOPICS/AI GENERAL/AI_AND_AUTOMATION.md` |
 | Construction | Active | `TOPICS/CONSTRUCTION/CONSTRUCTION_AND_TENDER.md` |
 | Nuvio Setup | Active | `TOPICS/NUVIO SETUP/NUVIO_STREAM_CONFIG.md` |
 | Systems | Active | `TOPICS/SYSTEMS/SOFTWARE_AND_SYSTEMS.md` |
@@ -144,7 +144,7 @@ The review is a **derived view**, not authoritative memory. It must not infer pr
 
 ## 12. FRESHNESS
 
-Last reviewed: 2026-09-15
+Last reviewed: 2026-09-16
 
 `Active` means the topic is a recognized ongoing area of work. It does not mean every item inside it is currently being worked on.
 
