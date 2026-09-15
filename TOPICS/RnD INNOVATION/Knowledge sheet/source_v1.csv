@@ -1,0 +1,359 @@
+Source ID,Source Title,Type,URL,Evidence / Why Relevant
+SRC-001,Shower recirculation quality-gating evidence,Technical document,Uploaded source material,Evidence for quality-gated shower recirculation architecture.
+SRC-002,Shower recirculation water quality evidence,Technical document,Uploaded source material,Evidence for water quality control in recirculating shower systems.
+SRC-003,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-004,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-005,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-006,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-007,Fixed droplet / momentum shaping evidence,Technical / patent evidence,Uploaded source material,Evidence for shower spray geometry and fixed fluidic shaping.
+SRC-008,Durable anti-scale finish evidence,Technical source,Uploaded source material,Evidence for anti-scale surface treatment.
+SRC-009,Surface finish durability evidence,Technical source,Uploaded source material,Evidence for bathroom finish durability.
+SRC-010,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-011,Shower recirculation control evidence,Technical source,Uploaded source material,Evidence for sensor-based recirculation control.
+SRC-012,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-013,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-014,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-015,Startup heat buffer / heat exchange evidence,Technical source,Uploaded source material,Evidence for startup thermal buffering and water-saving concepts.
+SRC-016,Fluidic oscillation shower evidence,Technical / patent evidence,Uploaded source material,Evidence for passive hydraulic oscillation.
+SRC-017,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-018,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-019,Anti-scale coating evidence,Technical source,Uploaded source material,Evidence for anti-scale coating and bathroom surface durability.
+SRC-020,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-021,Pressure-compensating emitter evidence,Technical source,Uploaded source material,Evidence for pressure compensation and self-flushing emitter concepts.
+SRC-022,Self-flushing emitter evidence,Technical source,Uploaded source material,Evidence for pressure-responsive self-cleaning emitter behavior.
+SRC-023,Tesla valve / fluidic diode evidence,Technical source,Uploaded source material,Evidence for passive one-way fluidic resistance.
+SRC-024,Vortex valve evidence,Technical source,Uploaded source material,Evidence for vortex-based passive fluid control.
+SRC-025,Manual filter backwashing evidence,Technical source,Uploaded source material,Evidence for reverse-flow filter cleaning.
+SRC-026,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-027,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-028,Flow energy harvesting evidence,Technical source,Uploaded source material,Evidence for water-flow-driven energy harvesting.
+SRC-029,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-030,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-031,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-032,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-033,Variable spray-zone routing evidence,Technical / patent source,Uploaded source material,Evidence for selectable shower spray zones.
+SRC-034,Reverse-flow filtration evidence,Technical source,Uploaded source material,Evidence for transient backwash concepts.
+SRC-035,Directional wettability evidence,Technical source,Uploaded source material,Evidence for directional liquid transport by wettability.
+SRC-036,Capillary surface evidence,Technical source,Uploaded source material,Evidence for passive water transport by capillary effects.
+SRC-037,PCM thermal buffer evidence,Technical source,Uploaded source material,Evidence for phase-change thermal storage.
+SRC-038,Thermal buffer / startup exchange evidence,Technical source,Uploaded source material,Evidence for compact startup heat exchange concepts.
+SRC-039,Passive SMA valve evidence,Technical source,Uploaded source material,Evidence for temperature-triggered SMA actuation.
+SRC-040,SMA thermal actuation evidence,Technical source,Uploaded source material,Evidence for passive thermal valve concepts.
+SRC-041,Bistable compliant mechanism evidence,Technical / academic source,Uploaded source material,Evidence for bistable compliant valves.
+SRC-042,Compliant valve mechanism evidence,Technical / academic source,Uploaded source material,Evidence for bistable elastic switching.
+SRC-043,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-044,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-045,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-046,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-047,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-048,Pilot-operated diaphragm valve evidence,Technical source,Uploaded source material,Evidence for pilot-operated diaphragm valves.
+SRC-049,Spray-zone routing patent/product evidence,Patent / product source,Uploaded source material,Evidence for variable spray-zone routing.
+SRC-050,Shower filtration cartridge evidence,Technical / product source,Uploaded source material,Evidence for point-of-use shower filtration.
+SRC-051,Hydrocyclone / swirl separator evidence,Technical source,Uploaded source material,Evidence for compact swirl pre-separation.
+SRC-052,Thermostatic bypass evidence,Technical / patent source,Uploaded source material,Evidence for temperature-triggered diversion.
+SRC-053,Anti-scald fail-safe evidence,Technical / patent source,Uploaded source material,Evidence for thermostatic fail-safe mechanisms.
+SRC-054,Adjustable shower arm evidence,Product / patent source,Uploaded source material,Evidence for adjustable shower positioning.
+SRC-055,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-056,Discrete shower height mechanism evidence,Patent / product source,Uploaded source material,Evidence for height adjustment mechanisms.
+SRC-057,Compact water booster evidence,Product / technical source,Uploaded source material,Evidence for system-level shower boosting.
+SRC-058,Dry-break coupling evidence,Technical source,Uploaded source material,Evidence for double-shutoff service couplings.
+SRC-059,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-060,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-061,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-062,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-063,Blind-mate fluid coupling evidence,Technical source,Uploaded source material,Evidence for self-centering fluid couplings.
+SRC-064,Self-centering coupling evidence,Technical source,Uploaded source material,Evidence for blind-mate coupling architectures.
+SRC-065,Dual-resistance spray network evidence,Technical source,Uploaded source material,Evidence for passive spray distribution by hydraulic resistance.
+SRC-066,Passive hydraulic oscillation evidence,Technical source,Uploaded source material,Evidence for water-driven oscillating spray mechanisms.
+SRC-067,Venturi aeration evidence,Technical source,Uploaded source material,Evidence for air entrainment by Venturi effect.
+SRC-068,Spray distribution / trajectory control evidence,Technical / patent source,Uploaded source material,Evidence for spray trajectory and zone routing.
+SRC-069,Point-of-use shower filter evidence,Product / technical source,Uploaded source material,Evidence for shower filter cartridges.
+SRC-070,Shower filter cartridge maintenance evidence,Technical source,Uploaded source material,Evidence for cartridge pressure loss and maintenance.
+SRC-071,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-072,Manual reverse-flow backwash evidence,Technical source,Uploaded source material,Evidence for filter backwashing.
+SRC-073,Local heat storage evidence,Technical source,Uploaded source material,Evidence for startup heat buffering.
+SRC-074,Startup water-saving heat exchange evidence,Technical source,Uploaded source material,Evidence for reducing cold-water discharge.
+SRC-075,Thermal startup buffer evidence,Technical source,Uploaded source material,Evidence for startup heating concepts.
+SRC-076,Child-resistant dual-action control evidence,Human factors / patent source,Uploaded source material,Evidence for two-action safety controls.
+SRC-077,Thermostatic sequential mixing evidence,Patent / technical source,Uploaded source material,Evidence for cold-first / hot-second sequencing.
+SRC-078,Sequential thermal diversion evidence,Patent / technical source,Uploaded source material,Evidence for temperature-triggered flow sequencing.
+SRC-079,Positionable body spray evidence,Product / patent source,Uploaded source material,Evidence for positionable body-spray outlets.
+SRC-080,Rotatable body spray evidence,Product / patent source,Uploaded source material,Evidence for rotatable fluid outlets.
+SRC-081,Adjustable spray outlet evidence,Product / patent source,Uploaded source material,Evidence for adjustable shower spray direction.
+SRC-082,Body spray mechanism evidence,Product / patent source,Uploaded source material,Evidence for positionable fluid outlets.
+SRC-083,Bathroom positioning mechanism evidence,Product / patent source,Uploaded source material,Evidence for adjustable shower hardware.
+SRC-084,Low-force height adjustment evidence,Technical / product source,Uploaded source material,Evidence for easy shower height adjustment.
+SRC-085,Stable shower adjustment evidence,Product source,Uploaded source material,Evidence for low-wobble shower supports.
+SRC-086,Multi-user shower adjustment evidence,User / product evidence,Uploaded source material,Evidence for family-oriented shower positioning.
+SRC-087,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-088,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-089,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-090,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-091,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-092,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-093,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-094,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-095,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-096,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-097,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-098,Shower acoustic optimization evidence,Technical / patent source,Uploaded source material,Evidence for shower spray acoustic behavior.
+SRC-099,Noise control shower evidence,Technical / patent source,Uploaded source material,Evidence for reducing shower spray noise.
+SRC-100,Acoustic spray design evidence,Technical / patent source,Uploaded source material,Evidence for acoustic optimization of spray.
+SRC-101,Spray trajectory control evidence,Patent / product source,Uploaded source material,Evidence for fluidic jet steering.
+SRC-102,Fluidic trajectory evidence,Patent / technical source,Uploaded source material,Evidence for spray trajectory shaping.
+SRC-103,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-104,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-105,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-106,Self-healing clearcoat evidence,Technical source,Uploaded source material,Evidence for self-healing polymer coatings.
+SRC-107,In-mold coating evidence,Process source,Uploaded source material,Evidence for in-mold clearcoat processes.
+SRC-108,Self-healing surface evidence,Technical source,Uploaded source material,Evidence for self-healing surfaces.
+SRC-109,Sanitaryware surface coating evidence,Technical source,Uploaded source material,Evidence for coating durability in sanitaryware.
+SRC-110,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-111,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-112,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-113,Bottle-free wash evidence,Product source,Uploaded source material,Evidence for shower additive / soap infusion.
+SRC-114,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-115,Assisted bathing additive evidence,Product / technical source,Uploaded source material,Evidence for accessible bathing functions.
+SRC-116,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-117,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-118,Water-use feedback evidence,Product / technical source,Uploaded source material,Evidence for water-use feedback interfaces.
+SRC-119,Water consumption feedback evidence,Product / technical source,Uploaded source material,Evidence for usage feedback and nudges.
+SRC-120,Shower water metering evidence,Technical source,Uploaded source material,Evidence for local water-use measurement.
+SRC-121,Waste-water heat recovery evidence,Technical source,Uploaded source material,Evidence for shower heat recovery.
+SRC-122,Shower drain heat exchanger evidence,Technical source,Uploaded source material,Evidence for drain-water heat exchange.
+SRC-123,Domestic shower heat recovery evidence,Technical source,Uploaded source material,Evidence for water and energy savings by heat recovery.
+SRC-124,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-125,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-126,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-127,Adjustable shower arm patent evidence,Patent source,Uploaded source material,Evidence for adjustable shower arm architecture.
+SRC-128,Sliding shower rail evidence,Product / patent source,Uploaded source material,Evidence for sliding shower rail mechanisms.
+SRC-129,Telescopic shower positioning evidence,Patent / product source,Uploaded source material,Evidence for telescopic shower adjustment.
+SRC-130,Counterbalanced shower arm evidence,Patent / product source,Uploaded source material,Evidence for counterbalanced positioning.
+SRC-131,Friction-lock shower adjustment evidence,Patent / product source,Uploaded source material,Evidence for friction-lock adjustment.
+SRC-132,Height-adjustable shower hardware evidence,Product source,Uploaded source material,Evidence for height-adjustable shower supports.
+SRC-133,Shower positioning mechanism evidence,Patent source,Uploaded source material,Evidence for shower positioning.
+SRC-134,Two-action child-resistant control evidence,Human factors source,Uploaded source material,Evidence for dual-action controls.
+SRC-135,Child-safety shower control evidence,Human factors source,Uploaded source material,Evidence for child-resistant shower controls.
+SRC-136,Push-turn interlock evidence,Human factors / patent source,Uploaded source material,Evidence for two-action interlocks.
+SRC-137,Squeeze-turn interlock evidence,Human factors / patent source,Uploaded source material,Evidence for coordinated safety actions.
+SRC-138,Multi-axis control safety evidence,Human factors source,Uploaded source material,Evidence for multi-axis safety controls.
+SRC-139,Child-resistant control mechanism evidence,Patent source,Uploaded source material,Evidence for control interlocks.
+SRC-140,Packaging safety interlock transfer evidence,Transfer technology source,Uploaded source material,Evidence for human-factor transfer into shower controls.
+SRC-141,Human-factor interlock evidence,Technical source,Uploaded source material,Evidence for coordinated control actions.
+SRC-142,Child safety mechanism evidence,Patent source,Uploaded source material,Evidence for dual-action safety mechanisms.
+SRC-143,Control lockout evidence,Patent source,Uploaded source material,Evidence for control lockouts.
+SRC-144,Rotational safety interlock evidence,Patent source,Uploaded source material,Evidence for rotation-limited controls.
+SRC-145,Push-and-turn safety evidence,Patent source,Uploaded source material,Evidence for push-and-turn interlock designs.
+SRC-146,Child-safe product control evidence,Human factors source,Uploaded source material,Evidence for child-safe controls.
+SRC-147,Shower safety control transfer evidence,Transfer source,Uploaded source material,Evidence for applying human-factor controls to shower.
+SRC-148,Two-step actuation evidence,Technical source,Uploaded source material,Evidence for two-step controls.
+SRC-149,Human factors safety evidence,Technical source,Uploaded source material,Evidence for dual-action controls.
+SRC-150,Fluidic jet steering patent evidence,Patent source,Uploaded source material,Evidence for fluidic spray trajectory control.
+SRC-151,Spray trajectory control evidence,Patent / technical source,Uploaded source material,Evidence for directional spray architecture.
+SRC-152,Selective nozzle routing evidence,Patent source,Uploaded source material,Evidence for selective spray outlet routing.
+SRC-153,Variable spray pattern evidence,Product / patent source,Uploaded source material,Evidence for variable spray trajectories.
+SRC-154,Droplet momentum shaping evidence,Technical source,Uploaded source material,Evidence for droplet and momentum shaping.
+SRC-155,Thermal retention spray geometry evidence,Technical source,Uploaded source material,Evidence for reducing spray heat loss and shaping droplets.
+SRC-156,Water-air-soap foam evidence,Product / technical source,Uploaded source material,Evidence for foam generation and personal care.
+SRC-157,Soap infusion shower evidence,Product source,Uploaded source material,Evidence for additive infusion in shower water.
+SRC-158,Bubble shower evidence,Product source,Uploaded source material,Evidence for water-air foam generation.
+SRC-159,Wellness foam shower evidence,Product source,Uploaded source material,Evidence for assisted bathing / wellness foam.
+SRC-160,Personal care shower additive evidence,Product source,Uploaded source material,Evidence for personal-care additives.
+SRC-161,Bottle-free personal care evidence,Product source,Uploaded source material,Evidence for hands-free wash concepts.
+SRC-162,Foam dispensing shower evidence,Product / technical source,Uploaded source material,Evidence for controlled foam dispensing.
+SRC-163,Shower additive mixing evidence,Technical source,Uploaded source material,Evidence for mixing additives into water.
+SRC-164,Personal wash infusion evidence,Product source,Uploaded source material,Evidence for water-based personal wash infusion.
+SRC-165,Wellness shower treatment evidence,Product source,Uploaded source material,Evidence for wellness treatment architectures.
+SRC-166,Assisted bathing foam evidence,Product / technical source,Uploaded source material,Evidence for care-oriented shower functions.
+SRC-167,Hands-free wash evidence,Product source,Uploaded source material,Evidence for hands-free washing.
+SRC-168,Soap-air-water mixing evidence,Technical source,Uploaded source material,Evidence for foam generation.
+SRC-169,Controlled additive dosing evidence,Technical source,Uploaded source material,Evidence for dosing and mixing shower additives.
+SRC-170,Shower personal-care delivery evidence,Product source,Uploaded source material,Evidence for integrated personal care.
+SRC-171,Wellness water treatment evidence,Product source,Uploaded source material,Evidence for wellness functions.
+SRC-172,Assisted wash technology evidence,Product / technical source,Uploaded source material,Evidence for accessibility / care functions.
+SRC-173,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-174,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-175,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-176,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-177,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-178,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-179,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-180,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-181,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-182,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-183,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-184,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-185,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-186,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-187,Flow energy harvesting shower meter evidence,Product / technical source,Uploaded source material,Evidence for hydro-powered metering.
+SRC-188,Hydro-powered shower display evidence,Product source,Uploaded source material,Evidence for flow-driven electronics.
+SRC-189,Hydraulic power generation evidence,Technical source,Uploaded source material,Evidence for water-driven energy harvesting.
+SRC-190,Water consumption meter evidence,Product source,Uploaded source material,Evidence for usage feedback.
+SRC-191,Flow measurement interface evidence,Product source,Uploaded source material,Evidence for shower flow measurement.
+SRC-192,Water-use indicator evidence,Product source,Uploaded source material,Evidence for local feedback.
+SRC-193,Behavioral water feedback evidence,Technical source,Uploaded source material,Evidence for sustainability nudges.
+SRC-194,Shower flow metering evidence,Technical source,Uploaded source material,Evidence for local flow measurement.
+SRC-195,Water-use nudge evidence,Research / product source,Uploaded source material,Evidence for feedback-based behavior change.
+SRC-196,Shower filtration cartridge evidence,Product source,Uploaded source material,Evidence for point-of-use filtration.
+SRC-197,Filter media shower evidence,Technical source,Uploaded source material,Evidence for shower filter media.
+SRC-198,Shower filter pressure-loss evidence,Technical source,Uploaded source material,Evidence for pressure impact of filtration.
+SRC-199,Shower filtration maintenance evidence,Technical source,Uploaded source material,Evidence for cartridge service intervals.
+SRC-200,Water treatment shower evidence,Product source,Uploaded source material,Evidence for water treatment at point of use.
+SRC-201,Shower filter product evidence,Product source,Uploaded source material,Evidence for direct shower filtration precedent.
+SRC-202,Point-of-use filter architecture evidence,Technical source,Uploaded source material,Evidence for in-line shower filtering.
+SRC-203,Shower filtration cartridge replacement evidence,Product source,Uploaded source material,Evidence for replaceable cartridges.
+SRC-204,Shower filter size / pressure evidence,Technical source,Uploaded source material,Evidence for size and pressure constraints.
+SRC-205,Thermostatic routing patent evidence,Patent source,Uploaded source material,Evidence for thermostatic bypass.
+SRC-206,Temperature-triggered diversion evidence,Patent source,Uploaded source material,Evidence for temperature-based routing.
+SRC-207,Cold-water diversion evidence,Technical source,Uploaded source material,Evidence for startup cold-water diversion.
+SRC-208,Hot-water startup routing evidence,Technical source,Uploaded source material,Evidence for thermal startup control.
+SRC-209,Thermostatic valve architecture evidence,Technical source,Uploaded source material,Evidence for thermostatic routing.
+SRC-210,Temperature-controlled bypass evidence,Technical source,Uploaded source material,Evidence for temperature-triggered bypass.
+SRC-211,Automatic water diversion evidence,Product / patent source,Uploaded source material,Evidence for automatic diversion.
+SRC-212,Startup water-saving valve evidence,Technical source,Uploaded source material,Evidence for reducing startup water waste.
+SRC-213,DHW temperature routing evidence,Technical source,Uploaded source material,Evidence for domestic hot-water routing.
+SRC-214,Thermal bypass valve evidence,Technical source,Uploaded source material,Evidence for thermal bypass concepts.
+SRC-215,Sequential thermostatic routing evidence,Patent source,Uploaded source material,Evidence for temperature sequencing.
+SRC-216,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-217,Fixed spray geometry evidence,Technical source,Uploaded source material,Evidence for fixed fluidic droplet shaping.
+SRC-218,Droplet shaping evidence,Technical source,Uploaded source material,Evidence for droplet and momentum control.
+SRC-219,Pressure-responsive nozzle evidence,Patent / product source,Uploaded source material,Evidence for variable-aperture shower nozzles.
+SRC-220,FleXPower / pressure-adaptive nozzle evidence,Product / patent source,Uploaded source material,Evidence for pressure-responsive spray nozzle architecture.
+SRC-221,Variable aperture spray evidence,Patent source,Uploaded source material,Evidence for elastomeric variable aperture nozzles.
+SRC-222,Fluidic droplet shaping evidence,Technical source,Uploaded source material,Evidence for fixed fluidic spray shaping.
+SRC-223,Pressure-responsive shower nozzle evidence,Patent / technical source,Uploaded source material,Evidence for pressure-adaptive spray.
+SRC-224,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-225,Positionable body spray product evidence,Product source,Uploaded source material,Evidence for body-spray positioning.
+SRC-226,Rotating body spray evidence,Product / patent source,Uploaded source material,Evidence for rotatable outlets.
+SRC-227,Oscillating shower outlet evidence,Patent source,Uploaded source material,Evidence for positionable oscillating spray.
+SRC-228,Compact body-spray mechanism evidence,Technical source,Uploaded source material,Evidence for compact body spray.
+SRC-229,Eco boost control evidence,Patent source,Uploaded source material,Evidence for momentary eco/boost flow control.
+SRC-230,Two-level flow control evidence,Patent source,Uploaded source material,Evidence for dual-resistance flow control.
+SRC-231,Self-returning boost control evidence,Patent source,Uploaded source material,Evidence for automatic return from boost.
+SRC-232,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-233,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-234,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-235,Passive shower oscillation evidence,Product / patent source,Uploaded source material,Evidence for passive oscillating massage spray.
+SRC-236,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-237,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-238,Spray trajectory patent evidence,Patent source,Uploaded source material,Evidence for fluidic jet steering.
+SRC-239,Selective spray control evidence,Patent source,Uploaded source material,Evidence for spray mode trajectory control.
+SRC-240,Magnetic coupling evidence,Technical source,Uploaded source material,Evidence for magnetic coupling through sealed barrier.
+SRC-241,Magnetic drive barrier evidence,Technical source,Uploaded source material,Evidence for wet/dry magnetic actuation.
+SRC-242,Rolling diaphragm evidence,Technical source,Uploaded source material,Evidence for rolling diaphragm seals.
+SRC-243,Dynamic pressure actuator evidence,Technical source,Uploaded source material,Evidence for low-friction diaphragm actuation.
+SRC-244,SLIPS surface evidence,Research source,Uploaded source material,Evidence for liquid-infused slippery surfaces.
+SRC-245,Liquid-infused surface evidence,Research source,Uploaded source material,Evidence for fouling-resistant slippery surfaces.
+SRC-246,LCE actuation evidence,Research source,Uploaded source material,Evidence for low-temperature liquid crystal elastomers.
+SRC-247,Smart elastomer thermal actuation evidence,Research source,Uploaded source material,Evidence for thermally driven elastomer actuation.
+SRC-248,Electropermanent magnet valve evidence,Research / prototype source,Uploaded source material,Evidence for latching valves.
+SRC-249,Low-power magnetic latching evidence,Research source,Uploaded source material,Evidence for bistable magnetic valves.
+SRC-250,Triboelectric flow sensor evidence,Research source,Uploaded source material,Evidence for solid-liquid triboelectric sensing.
+SRC-251,Self-powered flow sensing evidence,Research source,Uploaded source material,Evidence for water-flow sensing without turbines.
+SRC-252,Magnetorheological flow valve evidence,Research source,Uploaded source material,Evidence for smart-fluid flow valves.
+SRC-253,Smart fluid valve evidence,Research source,Uploaded source material,Evidence for magnetically controlled flow resistance.
+SRC-254,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-255,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-256,Coanda fluidic switching evidence,Research source,Uploaded source material,Evidence for load-sensitive Coanda switching.
+SRC-257,Water Coanda prototype evidence,Research source,Uploaded source material,Evidence for water-compatible fluidic switching.
+SRC-258,Jamming variable stiffness evidence,Research source,Uploaded source material,Evidence for vacuum jamming / shape locking.
+SRC-259,Jamming mechanism transfer evidence,Research source,Uploaded source material,Evidence for variable stiffness transfer.
+SRC-260,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-261,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-262,Self-healing elastomer seal evidence,Research source,Uploaded source material,Evidence for water-compatible self-healing elastomers.
+SRC-263,Underwater self-healing seal evidence,Research source,Uploaded source material,Evidence for self-healing in wet environments.
+SRC-264,Hydraulic self-healing material evidence,Technical / patent source,Uploaded source material,Evidence for self-healing sealing materials.
+SRC-265,Piezo ultrasonic cleaning evidence,Technical source,Uploaded source material,Evidence for ultrasonic fouling removal.
+SRC-266,Ultrasonic scale removal evidence,Technical source,Uploaded source material,Evidence for piezo cleaning.
+SRC-267,Acoustic cavitation cleaning evidence,Technical source,Uploaded source material,Evidence for cavitation-based cleaning.
+SRC-268,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-269,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-270,Jamming shower support evidence,Patent / transfer source,Uploaded source material,Evidence for jamming-based adjustable shower supports.
+SRC-271,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-272,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-273,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-274,Ultrasonic water-system cleaning evidence,Technical source,Uploaded source material,Evidence for integrated ultrasonic cleaning.
+SRC-275,Piezo fouling removal evidence,Technical source,Uploaded source material,Evidence for ultrasonic fouling release.
+SRC-276,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-277,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-278,Low-pressure shower pain-point evidence,Market signal source,Uploaded source material,Evidence for low/variable pressure shower user need.
+SRC-279,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-280,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-281,Market and product evidence for shower comfort,Market / product research,Uploaded source material,Evidence supporting shower comfort, spray and wellness market signals.
+SRC-282,Smart / premium shower technology landscape,Market / technical source,Uploaded source material,Evidence across connected, premium, water-saving and shower technologies.
+SRC-283,Shower filtration market evidence,Market / product source,Uploaded source material,Evidence for shower filtration products and constraints.
+SRC-284,Shower wellness and water-treatment evidence,Market / product source,Uploaded source material,Evidence for wellness, foam, ozone and related shower concepts.
+SRC-285,Concealed digital shower evidence,Product / technical source,Uploaded source material,Evidence for concealed digital shower architecture.
+SRC-286,Magnetic docking and Hall-sensor evidence,Product / technical source,Uploaded source material,Evidence for magnetic docking and handle sensing.
+SRC-287,Smart bathroom technology evidence,Market / technical source,Uploaded source material,Evidence for digital, connected and hygiene technologies.
+SRC-288,Priority flow divider evidence,Technical source,Uploaded source material,Evidence for pressure-compensated priority flow division.
+SRC-289,Pressure-compensated flow divider evidence,Technical source,Uploaded source material,Evidence for priority branch flow control.
+SRC-290,Mobile hydraulics priority divider evidence,Technical source,Uploaded source material,Evidence for load-sensitive flow division.
+SRC-291,Hydraulic priority valve evidence,Technical source,Uploaded source material,Evidence for passive priority flow architecture.
+SRC-292,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-293,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-294,Electropermanent magnet shower-valve evidence,Prototype / technical source,Uploaded source material,Evidence for electropermanent latching valves.
+SRC-295,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-296,Dynamic fouling-release elastomer evidence,Research source,Uploaded source material,Evidence for surface-strain fouling release.
+SRC-297,Elastomer antifouling evidence,Research source,Uploaded source material,Evidence for antifouling via dynamic elastomer strain.
+SRC-298,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-299,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-300,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-301,Eddy-current rotary damping evidence,Technical source,Uploaded source material,Evidence for passive eddy-current rotary damping.
+SRC-302,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-303,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-304,Anti-biofilm microtopography evidence,Research source,Uploaded source material,Evidence for ordered anti-biofilm surfaces.
+SRC-305,Biomimetic anti-biofilm surface evidence,Research source,Uploaded source material,Evidence for microtopographic fouling reduction.
+SRC-306,Riblet drag reduction evidence,Research source,Uploaded source material,Evidence for riblet surfaces reducing flow drag.
+SRC-307,Drinking-water riblet evidence,Research source,Uploaded source material,Evidence for riblet application to water pipelines.
+SRC-308,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-309,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-310,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-311,Anti-biofilm and fouling surface evidence,Research source,Uploaded source material,Evidence for ordered surface textures and fouling release.
+SRC-312,Dynamic elastomer fouling evidence,Research source,Uploaded source material,Evidence for fouling reduction by surface strain.
+SRC-313,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-314,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-315,NiTi braid reinforcement evidence,Technical source,Uploaded source material,Evidence for superelastic NiTi braid reinforcement.
+SRC-316,Flexible tubing anti-kink evidence,Technical source,Uploaded source material,Evidence for flexible tubing reinforcement.
+SRC-317,Variable-area filter evidence,Patent / technical source,Uploaded source material,Evidence for pressure-deploying filter area.
+SRC-318,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-319,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-320,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-321,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-322,Structural color nanotopography evidence,Research source,Uploaded source material,Evidence for injection-molded structural color.
+SRC-323,Optical polymer surface replication evidence,Research / process source,Uploaded source material,Evidence for structural-color nanotopography.
+SRC-324,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-325,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-326,Microcellular foam injection evidence,Process / technical source,Uploaded source material,Evidence for microcellular polymer molding.
+SRC-327,Lightweight molded polymer evidence,Process / technical source,Uploaded source material,Evidence for lightweight injection-molded structures.
+SRC-328,Bistable compliant valve additional evidence,Technical source,Uploaded source material,Additional evidence supporting bistable compliant mechanisms.
+SRC-329,Compliant mechanism transfer evidence,Technical source,Uploaded source material,Additional evidence for compliant valve transfer.
+SRC-330,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-331,Placeholder source record,Reference,Uploaded source material,Retained source master record.
+SRC-332,Delta H2Okinetic official/product evidence,Competitor source,https://www.deltafaucet.com,Evidence for H2Okinetic spray technology and related Delta shower products.
+SRC-333,hansgrohe PowderRain official/product evidence,Competitor source,https://www.hansgrohe.com,Evidence for PowderRain fine-droplet spray.
+SRC-334,hansgrohe Select official/product evidence,Competitor source,https://www.hansgrohe.com,Evidence for mechanical spray selection.
+SRC-335,hansgrohe QuickClean official/product evidence,Competitor source,https://www.hansgrohe.com,Evidence for flexible easy-clean nozzles.
+SRC-336,hansgrohe AirPower official/product evidence,Competitor source,https://www.hansgrohe.com,Evidence for air-water entrainment.
+SRC-337,hansgrohe EcoSmart official/product evidence,Competitor source,https://www.hansgrohe.com,Evidence for water-saving flow regulation.
+SRC-338,Delta TempAssure official/product evidence,Competitor source,https://www.deltafaucet.com,Evidence for thermostatic temperature control.
+SRC-339,Delta Touch-Clean official/product evidence,Competitor source,https://www.deltafaucet.com,Evidence for easy-clean spray face.
+SRC-340,Delta MultiChoice Universal Valve official evidence,Competitor source,https://www.deltafaucet.com,Evidence for universal valve architecture.
+SRC-341,Delta Temp2O official/product evidence,Competitor source,https://www.deltafaucet.com,Evidence for hydro-powered temperature display.
+SRC-342,Delta MagnaTite official/product evidence,Competitor source,https://www.deltafaucet.com,Evidence for magnetic docking.
+SRC-343,Delta ProClean official/product evidence,Competitor source,https://www.deltafaucet.com,Evidence for ProClean shower spray architecture.
+SRC-344,KOHLER Anthem DTV+ official/product evidence,Competitor source,https://www.kohler.com,Evidence for digital shower control and multisensory systems.
+SRC-345,KOHLER Katalyst official/product evidence,Competitor source,https://www.kohler.com,Evidence for air-induction shower spray.
+SRC-346,KOHLER Real Rain official/product evidence,Competitor source,https://www.kohler.com,Evidence for rain-like shower architecture.
+SRC-347,KOHLER Anthem EvoCycle official/product evidence,Competitor source,https://www.kohler.com,Evidence for shower-water recirculation.
+SRC-348,Moen U by Moen Smart Shower official/product evidence,Competitor source,https://www.moen.com,Evidence for connected digital shower controls.
+SRC-349,Moen Magnetix official/product evidence,Competitor source,https://www.moen.com,Evidence for magnetic hand-shower docking.
+SRC-350,Runner supplier product proposals / visit materials,Supplier document,Uploaded supplier source,Hygieia filtration, spray, sensing, modular waterway and faucet technology evidence from Runner materials.
+SRC-351,Runner 2026 product proposal,Supplier document,Uploaded supplier source,Additional Runner technology evidence including spray and faucet platforms.
+SRC-352,Lota supplier technology materials,Supplier document,Uploaded supplier source,Integrated filtration, magnetic docking, pressure sensor nozzle and shower spray technology evidence.
+SRC-353,Sedal supplier technology materials,Supplier document,Uploaded supplier source,Cartridge, water-saving, cold-start, durability and thermostatic technology evidence.
+SRC-354,Hent cartridge supplier materials,Supplier document,Uploaded supplier source,Push-button, thermostatic and faucet waterway cartridge evidence.
+SRC-355,Solex supplier technology materials,Supplier document,Uploaded supplier source,Thermostatic, shut-off, leak protection, water-hammer, pressure-adaptive spray and shower positioning evidence.
+SRC-356,Seagull supplier technology materials,Supplier document,Uploaded supplier source,Ozone, flow-synchronized lighting, auto shutoff and smart shower control evidence.
+SRC-357,Jandao Group supplier materials from Waternym source,Supplier document,Uploaded supplier source,Anti-clogging, reverse-flush, multi-pressure and personal-care spray panel evidence.
+SRC-358,Yizhan supplier technology materials,Supplier document,Uploaded supplier source,Push-button diverter, hot-cold control and water-saving cartridge evidence.
