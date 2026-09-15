@@ -71,6 +71,9 @@ A topic should be added only when recurring work creates enough durable context 
 - Do not use conversation dumps as a substitute for distilled working context.
 - Do not duplicate detailed project knowledge when the authoritative source already exists elsewhere.
 - Do not treat one active project as representative of the user's complete work.
+- Prefer maintaining existing knowledge over creating duplicate new knowledge when a new finding refines, corrects, or supersedes something already stored.
+- Surface possible contradictions and obsolete assumptions before writing durable memory.
+- Use semantic connections for discovery, but do not silently convert inferred connections into authoritative relationships.
 
 ## 8. GLOBAL DECISIONS
 
@@ -78,6 +81,8 @@ A topic should be added only when recurring work creates enough durable context 
 - The system is provider-independent so another AI can read it and continue working.
 - The preferred structure is one master memory file plus topic folders. Most topic folders contain a concise entry-point summary; R&D Innovation also contains dedicated recurring workstream folders.
 - Memory maintenance uses ADD / UPDATE / REMOVE / NO_CHANGE and is defined in `WORKFLOW.md`.
+- Phase 2, Phase 3, and Phase 4 are now active operating tracks and are validated through real work in Phase 1 usage.
+- `PHASES_2-4.md` is the operational model for Memory Quality, Retrieval/Routing, and Handoff.
 - Periodic review is a quality check and derived report; it should not silently modify authoritative memory.
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
 
@@ -94,7 +99,7 @@ Follow this sequence:
 7. Do not assume that the listed active topics are exhaustive.
 8. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
 9. When unsure whether information is durable, keep it in the current conversation rather than promoting it to memory.
-10. When maintaining memory, follow `WORKFLOW.md`.
+10. When maintaining memory, follow `WORKFLOW.md` and `PHASES_2-4.md`.
 
 ## 10. MEMORY MAINTENANCE
 
@@ -108,6 +113,11 @@ Before promoting information into memory, ask:
 - Does it duplicate existing memory?
 - Does it conflict with existing memory?
 - Is it actually temporary task state?
+- Does it belong at global, topic, or child-workstream scope?
+
+When existing knowledge is present, prefer `UPDATE` over `ADD` when the new information refines, corrects, or supersedes it.
+
+When a possible contradiction is found, do not silently preserve two statements as if both are current. Resolve using the latest explicit user decision or stronger evidence; Git history remains the historical record.
 
 Avoid storing:
 - transient conversation details;
@@ -116,7 +126,7 @@ Avoid storing:
 - confidential information that should not be shared across AI systems;
 - large copies of source code or documents already stored elsewhere.
 
-For the exact update lifecycle and validation rules, use `WORKFLOW.md`.
+For the exact update lifecycle, routing rules, and Handoff model, use `WORKFLOW.md` and `PHASES_2-4.md`.
 
 ## 11. PERIODIC REVIEW
 
@@ -127,7 +137,8 @@ A periodic review may use this repository to produce a work-status report coveri
 - work in progress;
 - unresolved or blocked items;
 - neglected/stale areas;
-- logical next steps supported by the available context.
+- logical next steps supported by the available context;
+- recurring memory/retrieval/handoff failure modes observed during real use.
 
 The review is a **derived view**, not authoritative memory. It must not infer project status from the existence of a topic folder or from a topic being marked `Active`.
 
