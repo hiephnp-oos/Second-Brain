@@ -44,7 +44,7 @@ Phase 2, Phase 3, and Phase 4 run in parallel and are defined in `WORKFLOW.md`. 
 AI_MEMORY.md
 WORKFLOW.md
 TOPICS/
-├── LIXIL AI GENERAL/
+├── AI GENERAL/
 │   └── AI_AND_AUTOMATION.md
 ├── CONSTRUCTION/
 │   └── CONSTRUCTION_AND_TENDER.md
