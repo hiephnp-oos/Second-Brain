@@ -132,6 +132,12 @@ Fields:
 - CSV headers and column counts must be consistent for every row.
 - Evidence remains traceable through `Source ID`.
 
+## Executable validation
+
+Repository validation also runs from `scripts/validate_second_brain.py` through `.github/workflows/validate.yml`. The validator checks CSV structure and base ID format/uniqueness automatically.
+
+For Knowledge Sheet changes, workstream-specific validation remains authoritative: relationship IDs, source references, and semantic correctness must be checked against the actual five CSV datasets. Passing the generic repository validator does not prove semantic correctness.
+
 ## Claw Idea usage
 
 The Knowledge Pool is an input to Claw Idea, not the final idea list.
