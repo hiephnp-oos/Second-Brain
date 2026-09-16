@@ -62,7 +62,7 @@ These are the currently recognized work areas, not an exhaustive list of everyth
 
 R&D Innovation is intentionally organized as a parent topic folder with dedicated workstream subfolders. New recurring R&D workstreams may be added there without changing the overall memory architecture.
 
-R&D Database is a migrated project source folder. Its project files are stored directly inside `TOPICS/RnD DATABASE/`; it is not a routing link to the old repository.
+R&D Database is a migrated project source folder. Its project files are stored directly inside `TOPICS/RnD DATABASE/`; it is not a routing link to the old repository. The current project architecture is explicitly separated into `1_Frontend_UI`, `2_Library_Core`, and `3_Backend_Scanner`.
 
 A topic should be added only when recurring work creates enough durable context to justify a dedicated folder.
 
@@ -87,6 +87,7 @@ A topic should be added only when recurring work creates enough durable context 
 - `PHASES_2-4.md` is the operational model for Memory Quality, Retrieval/Routing, and Handoff.
 - Periodic review is a quality check and derived report; it should not silently modify authoritative memory.
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
+- R&D Database V4 is maintained inside Second-Brain as a complete project source, organized into Bound Script frontend, standalone Library Core (`LibDNF`), and standalone Backend Scanner. The topic README is the architecture/deployment entry point; the code files are the detailed project source.
 
 ## 9. HOW A NEW AI SHOULD ONBOARD
 
@@ -96,12 +97,12 @@ Follow this sequence:
 2. Identify which topic folder(s) are relevant to the current request.
 3. Read the relevant topic entry-point file(s).
 4. If the topic contains child workstream folders, read only the relevant folder/file(s).
-5. If a topic file references an external project/repository/document, use that source for detailed facts rather than inventing or copying them into memory. For `RnD DATABASE`, the migrated project files inside the topic folder are the detailed source.
+5. If a topic file references an external project/repository/document, only use that source when needed for detailed facts. For `RnD DATABASE`, use the migrated project files inside the topic folder as the detailed source; do not redirect to the old repository as the primary source.
 6. Use current conversation context together with this memory. New explicit user information takes precedence over older memory.
 7. Do not assume that the listed active topics are exhaustive.
 8. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
 9. When unsure whether information is durable, keep it in the current conversation rather than promoting it to memory.
-10. When maintaining memory, follow `WORKFLOW.md` and `PHASES_2-4.md`.
+10. When maintaining memory, follow `WORKFLOW.md` and the applicable phase guidance that actually exists in the repository.
 
 ## 10. MEMORY MAINTENANCE
 
@@ -128,7 +129,7 @@ Avoid storing:
 - confidential information that should not be shared across AI systems;
 - large copies of source code or documents already stored elsewhere.
 
-For the exact update lifecycle, routing rules, and Handoff model, use `WORKFLOW.md` and `PHASES_2-4.md`.
+For the exact update lifecycle, routing rules, and Handoff model, use `WORKFLOW.md` and the phase guidance that is actually present in the repository.
 
 ## 11. PERIODIC REVIEW
 
@@ -154,4 +155,4 @@ When freshness matters, inspect Git history or the referenced project/source rat
 
 ## 13. REFERENCES
 
-Detailed project information belongs in its authoritative project repository, document, or source. Topic folders should contain enough context to route an AI to those sources without duplicating their contents.
+Detailed information normally belongs in its authoritative project repository, document, or source. For projects explicitly migrated into Second-Brain, the migrated files inside the corresponding topic folder become the detailed project source. `RnD DATABASE` is currently such an internal project source.
