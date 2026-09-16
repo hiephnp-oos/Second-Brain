@@ -1,0 +1,45 @@
+name: Migrate RnD Database
+
+on:
+  push:
+    paths:
+      - '.github/workflows/migrate-rnd-database.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Second-Brain
+        run: git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git second-brain
+
+      - name: Copy DNF R&D Database
+        working-directory: second-brain
+        run: |
+          git clone --depth 1 https://github.com/hiephnp-oos/DNF-R-D-database.git /tmp/dnf-rd
+          mkdir -p "TOPICS/RnD DATABASE"
+          cp /tmp/dnf-rd/* "TOPICS/RnD DATABASE/"
+          rm -rf /tmp/dnf-rd/.git
+          # Do not duplicate the exposed Google Chat webhook credential into Second-Brain.
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('TOPICS/RnD DATABASE/Config.gs')
+          s = p.read_text(encoding='utf-8')
+          import re
+          s = re.sub(r'(MAINTENANCE_WEBHOOK\s*:\s*)"[^"]*"', r'\1""', s)
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Commit migrated project
+        working-directory: second-brain
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "TOPICS/RnD DATABASE"
+          git rm -f .github/workflows/migrate-rnd-database.yml
+          git commit -m "Migrate full RnD Database project" || exit 0
+          git push origin HEAD:main
