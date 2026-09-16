@@ -10,25 +10,36 @@ This is **not** a conversation archive, a personal knowledge-management platform
 
 ## How it works
 
-```text
-USER / CONVERSATION
-        ↓
-   AI_MEMORY.md
-        ↓
-   TOPIC README
-        ↓
- WORKSTREAM README
-        ↓
- RELEVANT ARTIFACT
-        ↓
- AI CONTINUES WORK
-        ↓
- Durable knowledge / repository change?
-        ↓
- TARGET STATE → CHANGE → RECONCILE → VALIDATE → VERIFY
-        ↓
- GitHub remains source of truth
+The system has two simple loops: **read the right context → do the work**, then **write back only what is durable → verify the repository**.
+
+```mermaid
+flowchart TD
+    A([USER / CURRENT CONVERSATION]) --> B[AI_MEMORY.md<br/>Global context + topic registry]
+    B --> C[TOPIC README<br/>Route to the correct topic]
+    C --> D{Relevant workstream?}
+    D -- Yes --> E[WORKSTREAM README]
+    D -- No --> F[RELEVANT ARTIFACT]
+    E --> F
+    F --> G[AI CONTINUES THE WORK]
+    G --> H{Durable knowledge<br/>or repository change?}
+    H -- No --> I([END<br/>Keep in conversation])
+    H -- Yes --> J[TARGET STATE<br/>What must exist / change / be removed?]
+    J --> K[CHANGE<br/>ADD / UPDATE / REMOVE / create / replace / move / delete]
+    K --> L[RECONCILE<br/>Sync READMEs, registry, references, workflow]
+    L --> M[VALIDATE<br/>Rules, schema, IDs, references]
+    M --> N[VERIFY<br/>Positive + Negative checks]
+    N --> O{Target state achieved?}
+    O -- No --> J
+    O -- Yes --> P([GITHUB<br/>SOURCE OF TRUTH])
 ```
+
+### The flow in one line
+
+`Conversation → AI_MEMORY → Topic README → Workstream → Artifact → Work → Target State → Change → Reconcile → Validate → Verify → GitHub`
+
+The key rule is:
+
+**The final repository state defines completion — not the fact that an AI tool action succeeded.**
 
 Operating principle:
 
