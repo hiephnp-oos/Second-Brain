@@ -36,22 +36,33 @@ Known areas of interest include stream filtering, display/format decisions, HDR/
 - When testing stream-related changes, keep the comparison conditions controlled enough to identify which layer caused an improvement or regression.
 - Do not store API keys, passwords, tokens, private URLs, or other secrets in this topic file.
 
-## References
+## Active Projects / References
 
+- `AIOStreams_Backup_Index.md` — inventory and integrity hashes for the current Primary and Secondary AIOStreams JSON backups.
+- Primary AIOStreams instance: `https://aiostreamsfortheweebsstable.midnightignite.me/`
+- Secondary AIOStreams instance: `https://aio.atbphosting.com/stremio/`
 - Nuvio documentation: `https://nuvio.tv/docs`
-- Project-local Nuvio documentation is available as a source file, but it is not currently a complete transcription of the rendered documentation; consult the authoritative site when current details matter.
 - AIOStreams setup documentation: `https://docs.aiostreams.viren070.me/configuration/setup/`
+- Project-local Nuvio documentation is available as a source file, but it is not currently a complete transcription of the rendered documentation; consult the authoritative site when current details matter.
 
 ## Decisions
 
 - Treat Nuvio as the playback/client layer in the project's overall architecture.
 - Keep Nuvio stream configuration as a separate durable topic because it requires recurring tuning and troubleshooting independent of catalog organization.
-- Detailed configuration snapshots and one-off experiments should remain in the current task/project artifacts rather than being copied wholesale into memory.
+- Keep detailed AIOStreams configuration snapshots as artifacts/backups rather than copying their contents into the topic README.
+- Keep AIOStreams UUIDs and passwords outside GitHub; do not store credentials in the repository.
+- Use Git history as the version history for configuration artifacts; do not create manual archive copies unless a separate backup policy requires them.
+
+## Lessons
+
+- AIOStreams configuration backups should be identifiable by role (Primary/Secondary) and integrity hash so the correct snapshot can be recovered without duplicating configuration into memory.
+- Nuvio, AIOStreams, and TorBox should be diagnosed as separate layers; a playback issue is not automatically an AIOStreams ranking/filter issue.
+- Configuration backup metadata belongs in the Nuvio topic, while secrets remain outside the repository.
 
 ## Routing
 
-Use this topic for Nuvio-specific work. Keep Nuvio, AIOStreams, and TorBox responsibilities separated when diagnosing or changing the system. Use this README as the durable topic context and route to relevant project artifacts when detailed configuration is required.
+Use this topic for Nuvio-specific work. Keep Nuvio, AIOStreams, and TorBox responsibilities separated when diagnosing or changing the system. Use this README as the durable topic context, then route to `AIOStreams_Backup_Index.md` for backup identity/integrity information and to the relevant configuration artifact/source when detailed settings are required.
 
 ## Next
 
-Add durable configuration decisions, validated troubleshooting findings, and stable stream-selection principles here as they are established through repeated project work.
+Maintain the backup inventory when a new Primary/Secondary configuration snapshot becomes the known-good baseline. Record durable configuration decisions, validated troubleshooting findings, and stable stream-selection principles here as they are established through repeated project work.
