@@ -14,6 +14,56 @@ The operating lifecycle is:
 
 Canonical repository invariants are defined in `REPOSITORY_CONTRACT.md`.
 
+## 0. GitHub control layer
+
+Second-Brain uses five GitHub-native controls. These are execution/verification/presentation layers; they do not replace the Markdown source of truth.
+
+### GitHub Actions
+
+`.github/workflows/validate.yml` runs `scripts/validate_second_brain.py` on `main` pushes and pull requests targeting `main`.
+
+The validator covers machine-checkable repository invariants such as required files, topic README structure, active-topic routing, forbidden artifacts, local references, supported CSV contracts, and presence of the required GitHub control components.
+
+A validation PASS means the machine-checkable checks passed at that point. It does not replace final contextual verification.
+
+### GitHub Rulesets
+
+Rulesets are the enforcement layer for `main`. Where repository settings permit, require the validation status before accepting changes and prevent unsafe bypasses. Do not create a required check that is not actually published by the workflow.
+
+### GitHub Pages
+
+`docs/index.md` and `.github/workflows/pages.yml` provide the foundation for a visual knowledge portal.
+
+Pages is presentation/navigation only. Repository files remain the source of truth. Do not maintain duplicated authoritative knowledge in `docs/` merely for the website.
+
+### Issue Forms
+
+`.github/ISSUE_TEMPLATE/change_request.yml` is the standardized request format for changes that benefit from explicit traceable requirements.
+
+Use it when the request is multi-step, affects repository architecture, requires cleanup/negative-state checks, or needs acceptance criteria that should remain visible beyond a chat turn.
+
+Do not force an Issue Form onto ordinary low-risk changes when direct conversation is sufficient.
+
+### Task Lists
+
+Use Markdown/GitHub task lists for multi-step execution and completion tracking.
+
+A task list answers: "Have all required steps for this change been completed?"
+
+It does not redefine canonical requirements. `WORKFLOW.md` and `REPOSITORY_CONTRACT.md` remain authoritative, and GitHub Actions should enforce machine-verifiable requirements.
+
+Recommended checklist for meaningful repository mutations:
+
+- [ ] Inspect current repository state
+- [ ] Define target state
+- [ ] Identify creates / updates / replacements / moves / deletes
+- [ ] Synchronize dependent references and canonical documents
+- [ ] Remove obsolete / duplicate / temporary artifacts
+- [ ] Run automated validation
+- [ ] Perform positive verification
+- [ ] Perform negative verification
+- [ ] Report final state
+
 ## 1. Read before work
 
 For a new task:
@@ -233,6 +283,7 @@ Use:
 - Workstream README for recurring sub-area routing/context.
 - Child artifacts for detailed work, data, prompts, configurations, and project source.
 - Authoritative external repositories/documents for detailed source unless the project has explicitly been migrated into Second-Brain.
+- `docs/` only for presentation/navigation artifacts that do not become authoritative duplicates.
 
 If a new topic becomes recurring:
 
@@ -262,6 +313,7 @@ Canonical roles:
 - `TOPICS/<topic>/README.md` — topic entry point.
 - Workstream README — recurring sub-area routing/context.
 - Root `README.md` — human-oriented repository overview/navigation; not a second topic registry.
+- `docs/` — presentation layer only.
 
 For a structural or memory-maintenance change, check the affected layers:
 
@@ -276,6 +328,9 @@ For a structural or memory-maintenance change, check the affected layers:
 | Global memory change | `AI_MEMORY.md` + affected topic/workstream context |
 | Topic knowledge change | Topic/workstream/artifact; update `AI_MEMORY.md` only when global/cross-topic |
 | Artifact replacement | New artifact + references + delete old artifact + verify absence |
+| Pages presentation change | `docs/` and Pages workflow only unless source-of-truth content changes |
+| Issue Form change | `.github/ISSUE_TEMPLATE/` + `WORKFLOW.md`/contract when behavior changes |
+| Validation rule change | `scripts/validate_second_brain.py` + workflow/contract docs |
 | Handoff only | Current conversation/Handoff; no durable write unless justified |
 
 Minimum final check:
@@ -334,6 +389,8 @@ Run applicable automated and artifact-specific validation. Examples:
 - ID/reference integrity check;
 - configuration schema/integrity check;
 - migration inventory check.
+
+GitHub Actions should execute the machine-checkable repository validator automatically.
 
 ### Phase H — VERIFY
 
@@ -474,50 +531,14 @@ When an AI starts drifting or has recently made a partial update, the user may e
 
 Real work is the test environment. Treat repeated failures as workflow defects that should improve generic controls.
 
-Known failure classes include:
+Known failure modes should be converted into generic checks when machine-verifiable. Do not create a one-off rule for a one-off symptom when the failure can be prevented by a broader invariant.
 
-- wrong topic/workstream selected;
-- useful context existed but was not retrieved;
-- duplicate memory created instead of updating existing knowledge;
-- contradiction missed;
-- Handoff lost a decision or unresolved issue;
-- dependent repository layer left stale;
-- topic/workstream README drifted from the actual structure;
-- replacement artifact created while old artifact remained;
-- temporary/placeholder artifacts leaked into final state;
-- completion reported without verification;
-- artifact schema/reference/ID integrity failed;
-- migrated source inventory diverged from expected source.
+When a validator produces a false positive, fix the validator logic rather than weakening the repository invariant unless the invariant itself is wrong.
 
-When a new failure is discovered:
+## 21. Visual / Mermaid layer
 
-1. Identify the failed invariant/control.
-2. Check whether current rules already cover it.
-3. If they do, improve enforcement/validation rather than adding duplicate prose.
-4. If they do not, add one generic rule or executable check.
-5. Re-test the control against the repository.
+Use Mermaid when workflow, process, architecture, sequence, lifecycle, state, relationship, or hierarchy becomes materially clearer as a diagram.
 
-Do not create a permanent failure log for isolated mistakes.
+Visuals are presentation only. They must reflect the current source of truth and must not become a duplicate canonical model.
 
-## 21. Review
-
-Periodically inspect:
-
-- stale information;
-- duplicate information;
-- contradictions;
-- incorrect topic placement;
-- obsolete decisions;
-- unused workstreams;
-- repeated retrieval/Handoff/consistency failures;
-- structural drift between canonical documents and actual repository state;
-- repeated GitHub execution problems that suggest missing automation or validation;
-- public/security exposure that should not be present.
-
-A review is a quality check. It must not invent or silently rewrite project status.
-
-## 22. Scope guard
-
-Do not introduce a knowledge graph, Obsidian layer, vector database, RAG system, automatic ingestion of every conversation, complex ontology, or other infrastructure unless repeated real usage demonstrates that the GitHub + Markdown model cannot meet the continuity goal.
-
-Prefer generic controls, executable validation, and simple repository conventions first.
+For system-level changes, update the relevant source-of-truth documentation first, then update Mermaid/Pages presentation when it materially improves navigation or understanding.
