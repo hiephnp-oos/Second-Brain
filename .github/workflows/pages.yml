@@ -1,4 +1,4 @@
-name: Deploy Second-Brain Pages
+name: Build Second-Brain Pages
 
 on:
   push:
@@ -7,31 +7,22 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: pages-build
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
       - name: Prepare static site
         run: |
           mkdir -p _site
+          cp docs/index.md _site/index.md
           cat > _site/index.html <<'HTML'
           <!doctype html>
           <html lang="en">
@@ -47,7 +38,7 @@ jobs:
           </head>
           <body>
             <h1>Second-Brain Knowledge Portal</h1>
-            <p>Presentation and navigation layer for the Second-Brain repository. GitHub repository files remain the source of truth.</p>
+            <p>Presentation and navigation layer for the Second-Brain repository. Repository files remain the source of truth.</p>
             <h2>System</h2>
             <ul>
               <li><a href="https://github.com/hiephnp-oos/Second-Brain/blob/main/AI_MEMORY.md">AI Memory</a></li>
@@ -65,7 +56,3 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
