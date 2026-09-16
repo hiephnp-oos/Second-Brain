@@ -87,8 +87,7 @@ A topic should be added only when recurring work creates enough durable context 
 - `WORKFLOW.md` is the authority for memory maintenance rules, topic README structure, consistency checks, retrieval/routing, and Handoff.
 - When topics are added, renamed, moved, merged, or removed, `AI_MEMORY.md` and the root `README.md` must be updated together with the affected topic README and references.
 - Memory maintenance uses ADD / UPDATE / REMOVE / NO_CHANGE and is defined in `WORKFLOW.md`.
-- Phase 2, Phase 3, and Phase 4 are now active operating tracks and are validated through real work in Phase 1 usage.
-- `PHASES_2-4.md` is the operational model for Memory Quality, Retrieval/Routing, and Handoff.
+- Memory quality, retrieval/routing, and Handoff are operating rules within `WORKFLOW.md`; there is no separate required phase document.
 - Periodic review is a quality check and derived report; it should not silently modify authoritative memory.
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
 - R&D Database V4 is maintained inside Second-Brain as a complete project source, organized into Bound Script frontend, standalone Library Core (`LibDNF`), and standalone Backend Scanner. The topic README is the architecture/deployment entry point; the code files are the detailed project source.
@@ -106,7 +105,7 @@ Follow this sequence:
 7. Do not assume that the listed active topics are exhaustive.
 8. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
 9. When unsure whether information is durable, keep it in the current conversation rather than promoting it to memory.
-10. When maintaining memory, follow `WORKFLOW.md` and the applicable phase guidance that actually exists in the repository.
+10. When maintaining memory, follow `WORKFLOW.md` and the rules that actually exist in the repository.
 11. When changing repository structure or topic definitions, run the `WORKFLOW.md` consistency checklist before considering the task complete.
 
 ## 10. MEMORY MAINTENANCE
@@ -134,7 +133,7 @@ Avoid storing:
 - confidential information that should not be shared across AI systems;
 - large copies of source code or documents already stored elsewhere.
 
-For the exact update lifecycle, routing rules, consistency checklist, and Handoff model, use `WORKFLOW.md` and the phase guidance that is actually present in the repository.
+For the exact update lifecycle, routing rules, consistency checklist, and Handoff model, use `WORKFLOW.md`.
 
 ## 11. PERIODIC REVIEW
 
