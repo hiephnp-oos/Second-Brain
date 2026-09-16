@@ -60,19 +60,16 @@ Repository maintenance principle:
 | `TOPICS/SYSTEMS/Second_Brain_Operations.md` | Compact operational execution guide |
 | `scripts/validate_second_brain.py` | Executable repository validation |
 | `.github/workflows/validate.yml` | Automatic validation on `main` pushes and pull requests |
-| `.github/workflows/pages.yml` | GitHub Pages deployment foundation |
 | `.github/ISSUE_TEMPLATE/change_request.yml` | Structured change-request form |
-| `docs/index.md` | GitHub Pages presentation/navigation entry point |
 
 ## GitHub platform controls
 
-Second-Brain uses five complementary GitHub-native controls:
+Second-Brain uses four complementary GitHub-native controls:
 
 1. **GitHub Actions** — automated repository validation.
-2. **GitHub Rulesets** — enforcement of repository governance and validation.
-3. **GitHub Pages** — visual knowledge portal and future navigation layer; it is presentation only.
-4. **Issue Forms** — standardized change-request input when structured requirements are useful.
-5. **Task Lists** — explicit execution/completion checklists for multi-step work.
+2. **Issue Forms** — standardized change-request input when structured requirements are useful.
+3. **Task Lists** — explicit execution/completion checklists for multi-step work.
+4. **Mermaid** — visual presentation of workflows, architecture, relationships, and process where it improves understanding.
 
 These controls do not replace the Markdown source of truth. Canonical rules remain in `WORKFLOW.md` and `REPOSITORY_CONTRACT.md`.
 
@@ -89,9 +86,8 @@ TOPICS/
     ├── README.md             ← topic entry point
     └── <workstream/files>    ← detailed recurring work when needed
 .github/
-├── workflows/                ← automated validation + Pages deployment
+├── workflows/                ← automated validation
 └── ISSUE_TEMPLATE/           ← structured change requests
-docs/                         ← Pages presentation layer only
 scripts/                      ← validation tooling
 ```
 
@@ -145,15 +141,13 @@ For repository mutations, follow:
 
 ## Reliability model
 
-The system uses seven complementary controls:
+The system uses five complementary controls:
 
 1. **Canonical rules** — `WORKFLOW.md`.
 2. **Repository invariants** — `REPOSITORY_CONTRACT.md`.
 3. **User reinforcement prompts** — `TOPICS/SYSTEMS/User_Prompts.md`.
 4. **Executable validation** — `scripts/validate_second_brain.py` + GitHub Actions.
-5. **Repository enforcement** — GitHub Rulesets.
-6. **Structured requests** — Issue Forms + Task Lists when useful.
-7. **Presentation layer** — GitHub Pages, without duplicating source-of-truth content.
+5. **Structured execution** — Issue Forms + Task Lists when useful.
 
 A tool action succeeding is not completion evidence. The final repository state is.
 
