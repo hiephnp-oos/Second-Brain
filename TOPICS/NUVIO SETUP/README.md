@@ -47,19 +47,10 @@ Known areas of interest include stream filtering, display/format decisions, HDR/
 
 ## AIOStreams Configuration Backups
 
-### Primary
+The two JSON files in this folder are the actual configuration snapshots. Their role is confirmed by the `addonName` inside each file.
 
-- Backup file: `aiostreams-config-PRIMARY-2026-09-15.json`
-- Source snapshot: `aiostreams-config-2026-09-15.21-28-14.json`
-- Instance: `https://aiostreamsfortheweebsstable.midnightignite.me/`
-- SHA-256: `89e7ca3fd03e12c5d4d802119e4073c7218562e985fe8fea6cd6f04b9ca905c5`
-
-### Secondary
-
-- Backup file: `aiostreams-config-SECONDARY-2026-09-15.json`
-- Source snapshot: `aiostreams-config-2026-09-15.21-28-43.json`
-- Instance: `https://aio.atbphosting.com/stremio/`
-- SHA-256: `3de4085eae22b55c46de0aed857d0228ec3e73b5144d804d14f2e2a3f4772f19`
+- **Primary:** `aiostreams-config-2026-09-15.21-28-14.json` — SHA-256 `89e7ca3fd03e12c5d4d802119e4073c7218562e985fe8fea6cd6f04b9ca905c5`
+- **Secondary:** `aiostreams-config-2026-09-15.21-28-43.json` — SHA-256 `3de4085eae22b55c46de0aed857d0228ec3e73b5144d804d14f2e2a3f4772f19`
 
 Credentials are intentionally not stored in GitHub.
 
