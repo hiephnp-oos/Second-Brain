@@ -2,41 +2,55 @@
 
 ## Purpose / Scope
 
-Durable routing and evaluation rules for discovering companies that are entering, expanding, building facilities, or increasing hiring activity in the user's target geography and may create relevant career opportunities.
+Recurring discovery of companies whose entry, expansion, new facilities, investment, or hiring activity may create relevant career opportunities. The target output is an actionable company-signal table, not a company database.
 
 ## Current Context
 
-The radar focuses primarily on Da Nang, Quang Nam, and nearby Central Vietnam industrial/manufacturing ecosystems. Signals may include new facilities, investment, production expansion, engineering organization growth, hiring waves, supplier ecosystem changes, and other evidence that a relevant opportunity may emerge.
+Geography priority: Da Nang → Quang Nam → Hue → Quang Tri. Companies farther from Da Nang require stronger compensation/conditions or a clearly stronger opportunity rationale.
 
-The workstream is a signal-detection layer. It should not become a permanent company database unless demonstrated scale later requires one.
+Target role priority for company signals follows the Career Profile: Quality / SQE / Project Quality → Project Manager → Assistant / Assistant Project Manager → R&D / Engineering.
+
+Trading and manufacturing companies are both valid targets.
+
+Use `../CAREER_PROFILE.md` as the single career baseline.
 
 ## Active Artifacts / References
 
-- `../CAREER_PROFILE.md` — canonical role, geography, capability, and constraint baseline.
-- External research/search outputs may contain current company evidence and individual opportunity details.
-- Durable company-selection or monitoring rules belong here; transient search results remain external until promoted.
+- `../CAREER_PROFILE.md` — canonical profile, role priorities, geography, compensation and exclusions.
+- `../IMPLEMENTATION_PLAN.md` — Career Orchestrator business workflow and output contract.
+- External research/search outputs may contain current company evidence and individual vacancy details.
 
 ## Working Rules
 
-- Prefer evidence of actual company activity over speculative opportunity assumptions.
-- Distinguish company signal strength from job availability; an expansion signal does not prove a suitable vacancy exists.
-- Prioritize companies whose activity is geographically compatible with the career profile.
-- Use multiple credible signals when possible: official announcements, facility/investment evidence, hiring activity, credible business reporting, or current job postings.
-- Surface uncertainty explicitly when the company, facility, role, timing, or hiring implication is not confirmed.
-- Reuse durable exclusions and explicit user decisions from the career profile instead of rediscovering them independently in every search cycle.
+- Exclude or deprioritize Premo Vietnam, LIXIL Vietnam, GGEC, and UAC according to the explicit Career Profile decisions.
+- Search for concrete signals: new factory/facility, investment, production expansion, engineering/quality organization growth, hiring waves, supplier ecosystem expansion, or market entry.
+- Prefer multiple credible signals where practical: official company announcements, investment/facility evidence, current job postings, and credible business reporting.
+- Distinguish signal strength from confirmed job availability; an expansion signal does not prove a vacancy exists.
+- Distinguish confirmed facts from inference and clearly label uncertainty.
+- Assess potential against the user's target roles, geography, compensation direction, and transferable capabilities.
+- Do not infer salary or a future vacancy without evidence.
+- Deduplicate repeated company signals and update the latest verified state.
+
+## Target Output Table
+
+Use the established compact table format:
+
+`Priority | Company | Location | Signal | Signal Strength | Evidence / Source | Relevant Role Potential | Salary / Market Signal | Fit to Career Profile | Risk / Uncertainty | Recommended Action | Direct Link | Verified`
+
+## Cadence
+
+Intended recurring radar cadence: every 3 days. Focus on new signals and meaningful changes since the previous cycle.
 
 ## Decisions / Status
 
-- This workstream operates in parallel with Job Search and Remote / AI.
-- It is intended to identify emerging opportunity sources, not to duplicate the job-tracking database.
-- Company radar data may later feed a searchable career database if real usage shows that repeated signal history and cross-company querying are valuable enough to justify migration.
+- Operates in parallel with Job Search and Remote / AI.
+- Company Radar is a leading-indicator layer; it should not duplicate the job tracker.
+- A future database may include company-signal history only when demonstrated query/history needs justify it.
 
 ## Routing
 
-Use this workstream for company entry/expansion signals, new factories/facilities, regional hiring waves, and identifying companies worth monitoring for future career opportunities.
-
-For specific open roles and matching, route to `../JOB_SEARCH/README.md`. For remote/contract/AI-enabled opportunities, route to `../REMOTE_AI/README.md`.
+Use this workstream for company entry, expansion, new facilities, investment, regional hiring waves, and companies worth monitoring. Route confirmed vacancies to `../JOB_SEARCH/README.md`; route remote/AI opportunities to `../REMOTE_AI/README.md`.
 
 ## Next
 
-Run recurring company-radar searches and promote only durable monitoring criteria, exclusions, or company-level decisions into this topic.
+Implement recurring company-signal discovery and produce the standard table with evidence and explicit uncertainty.
