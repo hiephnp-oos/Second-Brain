@@ -96,6 +96,9 @@ A topic should be added only when recurring work creates enough durable context 
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
 - R&D Database V4 is maintained inside Second-Brain as a complete project source, organized into Bound Script frontend, standalone Library Core (`LibDNF`), and standalone Backend Scanner. The topic README is the architecture/deployment entry point; the code files are the detailed project source.
 - Repository integrity is checked automatically by `scripts/validate_second_brain.py` through `.github/workflows/validate.yml`.
+- Five GitHub-native controls are part of the operating model: GitHub Actions for automated validation, GitHub Rulesets for enforcement, GitHub Pages for presentation/navigation, Issue Forms for structured change requests, and Task Lists for execution/completion tracking.
+- GitHub Pages is a presentation layer only. `docs/` must not become a second authoritative knowledge store.
+- Issue Forms and Task Lists are optional execution aids for changes that benefit from traceability; they do not replace `WORKFLOW.md` or `REPOSITORY_CONTRACT.md`.
 
 ## 9. HOW A NEW AI SHOULD ONBOARD
 
@@ -112,6 +115,7 @@ Follow this sequence:
 9. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
 10. When unsure whether information is durable, keep it in the current conversation rather than promoting it to memory.
 11. Before reporting completion of repository work, verify the actual final GitHub state and perform applicable positive and negative checks.
+12. For structured/high-risk changes, use the Issue Form and Task List controls when they materially improve traceability.
 
 ## 10. MEMORY MAINTENANCE
 
