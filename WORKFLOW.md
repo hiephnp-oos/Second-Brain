@@ -8,7 +8,9 @@ The business goal is simple: a new AI should be able to read the repository and 
 
 The operating loop is:
 
-`Conversation / Source → Knowledge → Routing → Continuation`
+`Read → Plan → Change → Reconcile → Verify → Report`
+
+The key principle is **repository state, not tool actions, is the definition of completion**. Creating or updating a file is only an implementation step. A task is complete only when the final repository state satisfies the requested outcome and all affected references/rules remain consistent.
 
 ## 1. Read before work
 
@@ -19,9 +21,29 @@ For a new task:
 3. Read `TOPICS/<topic>/README.md`.
 4. If needed, read only the relevant child workstream/project source.
 5. Follow authoritative project/source references when detailed facts are needed.
-6. Use the current conversation together with memory. Explicit current user information takes precedence over older memory.
+6. Inspect the current repository state before deciding what must be created, updated, moved, or deleted.
+7. Use the current conversation together with memory. Explicit current user information takes precedence over older memory.
 
-## 2. Standard topic structure
+## 2. Plan the repository change before writing
+
+Before mutating GitHub, determine the intended final state.
+
+At minimum, identify:
+
+- files/folders that must exist;
+- files/folders that must be updated;
+- files/folders that must be removed because they are obsolete, temporary, duplicate, placeholder, or superseded;
+- references that must change;
+- workflow/template/registry documents that may be affected;
+- whether the change is local to one topic or changes repository architecture.
+
+For replacement operations, explicitly model:
+
+`old state → target state`
+
+Do not treat “new file created” as equivalent to “old file replaced”.
+
+## 3. Standard topic structure
 
 Every topic under `TOPICS/` must follow this structure:
 
@@ -49,7 +71,7 @@ Rules:
 - Child folders/files contain detailed recurring work, project source, data, prompts, or artifacts; they do not replace the topic README.
 - A project/source README may contain additional technical sections, but it must still use the same core topic sections when it is also the topic entry point.
 
-## 3. Topic README template
+## 4. Topic README template
 
 Use this template when creating or restructuring a topic. Preserve useful existing content; do not rewrite merely for wording.
 
@@ -94,7 +116,7 @@ Use this template when creating or restructuring a topic. Preserve useful existi
 
 The template is a structure, not a requirement to fill every section with large amounts of text. Keep each topic README concise and durable.
 
-## 4. Decide whether something becomes memory
+## 5. Decide whether something becomes memory
 
 Do not turn every conversation detail into memory.
 
@@ -116,7 +138,7 @@ Before writing, distinguish:
 - supported inference;
 - assumption / unknown.
 
-## 5. Classify the change
+## 6. Classify the change
 
 Every proposed memory change should be classified as one of:
 
@@ -138,7 +160,7 @@ The information is temporary, already known, unsupported, or not useful for futu
 
 Prefer `UPDATE` over `ADD` when the new information refines existing knowledge.
 
-## 6. Update the smallest correct scope
+## 7. Update the smallest correct scope
 
 Use:
 
@@ -159,7 +181,7 @@ If a topic is renamed, moved, merged, split, or removed, update the canonical re
 
 For `RnD DATABASE`, the project was explicitly migrated into Second-Brain, so its detailed project files intentionally live under `TOPICS/RnD DATABASE/`.
 
-## 7. Repository consistency rule — mandatory
+## 8. Repository consistency rule — mandatory
 
 A memory change is **not complete** when only the obvious file was updated.
 
@@ -188,16 +210,82 @@ Minimum final check:
 1. Does every topic folder have `README.md`?
 2. Does `AI_MEMORY.md` list every active topic and point to the correct README?
 3. Does every topic README follow the standard core template?
-4. Do renamed/deleted files still appear in references?
-5. If the rule/template changed, is `WORKFLOW.md` aligned with the actual structure?
-6. If repository architecture/navigation changed, is root `README.md` aligned?
-7. Are there unnecessary duplicate registries or summary files that can drift?
+4. Do renamed/deleted/superseded files no longer appear in active references?
+5. Are temporary files, placeholder files, duplicates, and obsolete artifacts removed when the requested end-state requires their removal?
+6. If the rule/template changed, is `WORKFLOW.md` aligned with the actual structure?
+7. If repository architecture/navigation changed, is root `README.md` aligned?
+8. Are there unnecessary duplicate registries or summary files that can drift?
+9. Can the requested final state be demonstrated from the repository as it exists now, without relying on what the AI intended to do?
 
 If any applicable answer is `No`, the change is incomplete.
 
-This rule exists specifically to prevent the failure mode where an AI updates one layer and forgets the dependent registry, navigation page, or workflow rule.
+## 9. Mandatory change lifecycle
 
-## 8. Memory quality check before writing
+Every GitHub mutation that changes repository content must follow this lifecycle:
+
+### Phase A — Inspect
+
+Read the authoritative current files and inspect the relevant directory/state.
+
+### Phase B — Plan
+
+Write down the target state internally, including deletions/replacements and dependent references.
+
+### Phase C — Mutate
+
+Apply the required creates, updates, and deletes.
+
+For replacement or cleanup tasks, deletion is a first-class operation, not an optional cleanup step.
+
+### Phase D — Reconcile
+
+After mutation, reconcile the repository against the target state:
+
+- update references to new paths/names;
+- remove references to deleted/superseded artifacts;
+- synchronize README/index/registry/workflow files when applicable;
+- remove temporary files and placeholders that were only part of the working process;
+- ensure the folder contains only the artifacts that belong in the requested final state.
+
+### Phase E — Verify
+
+Re-read the affected files and inspect the final repository state.
+
+Verify both:
+
+1. **Positive checks** — required files/content exist and are correct.
+2. **Negative checks** — obsolete, duplicate, placeholder, temporary, or superseded items are absent.
+
+A task involving replacement, cleanup, rename, migration, or restructuring must include negative checks explicitly.
+
+### Phase F — Report
+
+Report completion only after verification passes.
+
+The final report should describe the resulting state, not merely the actions attempted. For example:
+
+- what now exists;
+- what was removed;
+- what references were synchronized;
+- any limitation that prevented exact completion.
+
+Never claim a file was deleted, renamed, migrated, or synchronized solely because a delete/update/create action was attempted. Verify the resulting repository state first.
+
+## 10. GitHub connector operating constraints
+
+When working through the GitHub connector, treat the connector as an execution interface, not as the source of truth for completion.
+
+Important:
+
+- `create_file` creates a new file; it does not replace or remove another file.
+- `update_file` updates an existing file only.
+- `delete_file` is required to remove an obsolete file.
+- The connector does not provide a generic rename/move primitive; perform the equivalent state transition explicitly and then verify it.
+- Do not assume that creating a new canonical artifact automatically invalidates the old one.
+- Do not leave `.tmp`, placeholder, `DELETE_ME`, staging, or duplicate artifacts unless they are explicitly part of the target design.
+- When multiple operations are required, verify after the full logical change rather than after each individual tool action and then stopping early.
+
+## 11. Memory quality check before writing
 
 For every ADD / UPDATE / REMOVE, check:
 
@@ -212,7 +300,7 @@ For every ADD / UPDATE / REMOVE, check:
 
 When information conflicts with older memory, prefer the newer explicit user decision or stronger evidence. Do not silently preserve two statements as if both are current. Git history remains the historical record.
 
-## 9. Retrieval / routing
+## 12. Retrieval / routing
 
 Use the smallest useful context path:
 
@@ -233,7 +321,7 @@ Rules:
 9. Do not treat the existence of a file, folder, or ID as proof that the information is current.
 10. When freshness matters, inspect Git history or the authoritative source.
 
-## 10. Handoff
+## 13. Handoff
 
 When a conversation needs to be continued by another AI or another conversation, produce a compact Handoff rather than a transcript.
 
@@ -259,7 +347,7 @@ A Handoff is not automatically stored in GitHub. Store only durable knowledge or
 
 A reusable Handoff prompt is maintained in `TOPICS/SYSTEMS/Handoff_Template.md`.
 
-## 11. Write memory for another AI
+## 14. Write memory for another AI
 
 Memory should describe the working context clearly enough for another AI to act on it.
 
@@ -278,7 +366,7 @@ Avoid:
 - unnecessary implementation detail;
 - duplicated information across files.
 
-## 12. Commit discipline
+## 15. Commit discipline
 
 When a memory or structure change is made:
 
@@ -290,11 +378,11 @@ When a memory or structure change is made:
 
 Prefer completing a logically related consistency update in one change rather than leaving the repository temporarily inconsistent.
 
-## 13. Validation / recurring failure modes
+## 16. Validation / recurring failure modes
 
-Real work is the test environment.
+Real work is the test environment, but repeated failures should strengthen the generic process rather than produce one-off patches.
 
-When a recurring failure is observed, capture it only when it is actionable for improving the workflow. Examples:
+The following failure modes are treated as workflow defects:
 
 - wrong topic/workstream selected;
 - useful context existed but was not retrieved;
@@ -303,15 +391,20 @@ When a recurring failure is observed, capture it only when it is actionable for 
 - Handoff lost a decision or unresolved issue;
 - one repository layer was updated while a dependent layer was left stale;
 - topic README/template drifted from the workflow;
-- root navigation became stale after an architecture change.
+- root navigation became stale after an architecture change;
+- a new/replacement artifact was created but the old artifact remained;
+- temporary or placeholder files leaked into the final repository state;
+- completion was reported without verifying the resulting repository state.
 
-The current failure is explicitly recognized as a **consistency/drift failure**: an AI may correctly modify the topic files but forget to update the root navigation or workflow rules. The prevention mechanism is now:
+The prevention model is:
 
-`Canonical registry + Standard topic README + Mandatory consistency checklist + Final verification`
+`Inspect → Plan target state → Mutate → Reconcile → Positive + Negative verification → Report`
+
+When a new recurring failure is discovered, first determine whether an existing generic rule can already prevent it. Add a new rule only when the current workflow genuinely lacks the control.
 
 Do not create a permanent failure log for isolated events. Add a structured record only when repeated patterns justify it.
 
-## 14. Review
+## 17. Review
 
 Periodically inspect the memory for:
 
@@ -322,10 +415,11 @@ Periodically inspect the memory for:
 - obsolete decisions;
 - topics/workstreams that are no longer useful;
 - recurring retrieval or Handoff failures;
-- structural drift between the canonical registry, workflow rules, and topic READMEs.
+- structural drift between the canonical registry, workflow rules, and topic READMEs;
+- repeated GitHub execution errors that indicate a missing generic control.
 
 A review is a quality check. It should not silently invent or rewrite project status.
 
-## 15. Scope guard
+## 18. Scope guard
 
 Do not introduce a knowledge graph, Obsidian layer, vector database, RAG system, automatic ingestion of every conversation, complex ontology, or other infrastructure unless repeated real usage demonstrates that the GitHub + Markdown workflow cannot meet the continuity goal.
