@@ -59,10 +59,13 @@ These are the currently recognized work areas, not an exhaustive list of everyth
 | Systems | Active | `TOPICS/SYSTEMS/README.md` |
 | R&D Innovation | Active | `TOPICS/RnD INNOVATION/README.md` |
 | R&D Database | Active | `TOPICS/RnD DATABASE/README.md` |
+| Career | Active | `TOPICS/CAREER/README.md` |
 
 R&D Innovation is intentionally organized as a parent topic folder with dedicated workstream subfolders. New recurring R&D workstreams may be added there without changing the overall memory architecture.
 
 R&D Database is a migrated project source folder. Its project files are stored directly inside `TOPICS/RnD DATABASE/`; it is not a routing link to the old repository. The current project architecture is explicitly separated into `1_Frontend_UI`, `2_Library_Core`, and `3_Backend_Scanner`.
+
+Career is organized as a parent topic with shared career-profile context and three parallel workstreams: `JOB_SEARCH`, `COMPANY_RADAR`, and `REMOTE_AI`. It is intentionally not a job database at the current stage. High-volume job records remain in external working tools until real usage demonstrates that a searchable database is justified.
 
 A topic should be added only when recurring work creates enough durable context to justify a dedicated folder.
 
