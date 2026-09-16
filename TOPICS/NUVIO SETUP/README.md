@@ -10,7 +10,7 @@ Entry point and durable topic context for recurring work involving Nuvio stream 
 - HDR/SDR compatibility and subtitle handling.
 - Troubleshooting, validated configuration changes, and stream-selection behavior.
 
-## Architecture Context
+## Current Context
 
 For this project, use the following role boundaries:
 
@@ -20,8 +20,6 @@ For this project, use the following role boundaries:
 - **TorBox** = debrid delivery / cached torrent streaming.
 
 Nuvio stream configuration should therefore be evaluated primarily from the playback and stream-selection perspective, while keeping AIOStreams filtering/ranking and TorBox delivery as separate layers.
-
-## Working Context
 
 The user iteratively builds Nuvio stream configuration rather than treating the default configuration as final. Configuration changes should be evaluated against actual playback experience, stream availability, compatibility, and interaction with AIOStreams/TorBox.
 
