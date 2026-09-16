@@ -59,11 +59,16 @@ def extract_active_topics(errors: list[str]) -> set[str]:
     for line in read_text(path).splitlines():
         match = re.match(r"\|\s*([^|]+?)\s*\|\s*Active\s*\|\s*`(TOPICS/[^`]+/README\.md)`\s*\|", line)
         if match:
-            topic = match.group(1).strip()
-            active.add(topic)
-            readme = ROOT / match.group(2)
+            entry_name = match.group(1).strip()
+            readme_rel = match.group(2)
+            readme = ROOT / readme_rel
             if not readme.exists():
-                fail(f"Active topic points to missing README: {topic} -> {match.group(2)}", errors)
+                fail(f"Active topic points to missing README: {entry_name} -> {readme_rel}", errors)
+                continue
+            # The entry-point path is authoritative for the actual topic folder.
+            # The display name in the Topic column may differ in case or wording.
+            topic = Path(readme_rel).parts[-2]
+            active.add(topic)
     return active
 
 
@@ -105,10 +110,8 @@ def validate_local_references(errors: list[str]) -> None:
                 continue
             if candidate.startswith(("TOPICS/", ".github/", "scripts/")):
                 target = ROOT / candidate
-                # Ignore URLs accidentally enclosed in backticks.
-                if candidate.startswith("TOPICS/") or candidate.startswith(".github/") or candidate.startswith("scripts/"):
-                    if not target.exists():
-                        fail(f"Broken local reference in {path.relative_to(ROOT)}: {candidate}", errors)
+                if not target.exists():
+                    fail(f"Broken local reference in {path.relative_to(ROOT)}: {candidate}", errors)
 
 
 def validate_csv_shape(errors: list[str]) -> None:
@@ -187,7 +190,6 @@ def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
                 fail(f"Duplicate ID {value} in {path.relative_to(ROOT)}", errors)
             master_ids[prefix].add(value)
 
-    # Validate known relationship columns when present.
     relation_specs = {
         "Competitor_Tech_v2.csv": [("Related Market Signal IDs", "MS")],
         "Supplier_tech_v2.csv": [],
