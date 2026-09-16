@@ -1,18 +1,46 @@
 # Construction
 
-Entry point for recurring work involving construction, tendering, quotations, commercial matters, scope clarification, execution planning, and related communication.
+Entry point and durable topic context for recurring work involving construction, tendering, quotations, commercial matters, scope clarification, execution planning, handover, and related professional communication.
 
 ## Scope
 
-- Tendering and quotation.
-- BOQ, pricing, quantity, and scope clarification.
-- Commercial negotiation and contractor/client communication.
-- Execution, handover, and site-related matters.
+Construction and contractor work, tendering, quotations, pricing, cost explanations, commercial negotiation, execution planning, handover, scope/drawing clarification, and related professional communication.
 
-## Read next
+## Current Context
 
-- `CONSTRUCTION_AND_TENDER.md` — durable context, working principles, decisions, and lessons.
+The user handles practical contractor/tender-related work that may require preparing or revising quotations, explaining unit prices and resource consumption, responding to clients/partners, clarifying scope and drawings, coordinating handover, and communicating final commercial positions.
+
+Recent work includes refining tender/quotation explanations, final-price communication, clarification of scope and drawings, and handover timing between contractors.
+
+## Working Principles
+
+- Keep technical and commercial explanations concrete and defensible.
+- When explaining pricing, distinguish material, labor, equipment, quantity, productivity, and scope assumptions where relevant.
+- Avoid wording that unnecessarily weakens the user's commercial position.
+- For negotiation emails, communicate the intended position clearly while keeping the wording professional and tactful.
+- When scope or drawings are incomplete, identify the missing information before accepting responsibility for potential additional work.
+- For a final quotation, communicate that the price is final without sounding unnecessarily confrontational.
+- When asking for drawings or technical information, explain that the purpose is to verify quantities/levels/scope and avoid later additional cost or scope disputes.
+
+## Active Projects / References
+
+No named long-term project is recorded here yet. Current work is centered on tender/quotation communication and execution/scope clarification.
+
+## Decisions
+
+- Technical and commercial positions should be stated clearly while preserving professional negotiation tone.
+- Missing drawings or scope information should be clarified before committing to work that could create additional cost.
+
+## Lessons
+
+- Clarify drawings, quantities, scope, and site conditions when they materially affect price or execution responsibility.
+- Do not assume that a material being supplied by the client eliminates labor, equipment, handling, spreading, compaction, or other execution costs.
+- A final-price message should close the negotiation while remaining tactful.
 
 ## Routing
 
-Use this topic when the task concerns construction/tender/commercial work. Read the detailed source only as needed; keep one-off project details in the current task unless they become durable context.
+Use this topic when the task concerns construction, tendering, commercial work, scope clarification, or execution/handover. Read this README as the durable topic context and keep one-off project details in the current task unless they become durable context.
+
+## Next
+
+Maintain this README as persistent construction/tender context is established through future work.
