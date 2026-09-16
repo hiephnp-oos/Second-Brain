@@ -38,23 +38,18 @@ Operating principle:
 
 ## Repository structure
 
-The structure is intentionally small and has three layers:
+The structure is intentionally small:
 
 ```text
-AI_MEMORY.md                 ← global memory + topic registry
-WORKFLOW.md                  ← rules, templates, consistency checks
+AI_MEMORY.md                 ← global memory + canonical topic registry
+WORKFLOW.md                  ← rules + standard templates + consistency checks
 TOPICS/
-├── AI GENERAL/README.md
-├── CONSTRUCTION/README.md
-├── NUVIO SETUP/README.md
-├── SYSTEMS/README.md
-├── RnD INNOVATION/README.md
-└── RnD DATABASE/README.md
+└── <topic>/
+    ├── README.md            ← mandatory topic entry point
+    └── <workstream/files>   ← detailed recurring work when needed
 ```
 
-Topic-specific child folders and project files live below each topic README as needed. The topic README is always the entry point and durable routing/summary layer.
-
-`AI_MEMORY.md` is the global topic registry. This root README is the repository navigation/overview page. When topics are added, renamed, moved, or removed, both must be updated in the same change.
+The active topic list is maintained only in `AI_MEMORY.md`. The root README intentionally does not duplicate the topic list, so adding or renaming a topic does not create another registry that can drift out of sync.
 
 ## Standard topic README
 
@@ -78,7 +73,7 @@ Topic-specific sections may be inserted when necessary, but the core sections sh
 ## Onboarding a new AI
 
 1. Read `AI_MEMORY.md`.
-2. Identify the relevant topic folder(s).
+2. Identify the relevant topic folder(s) from the active-topic registry.
 3. Read the relevant `TOPICS/<topic>/README.md`.
 4. If needed, read only the relevant child workstream/project source.
 5. Follow authoritative references when detailed facts are required.
@@ -94,7 +89,7 @@ Promote information only when it is durable and useful beyond the current task. 
 
 Update the smallest correct scope. Do not create duplicate memory when existing content can be refined.
 
-For any structural or memory change, follow the consistency checklist in `WORKFLOW.md` before considering the change complete.
+For any structural or memory change, follow the mandatory consistency checklist in `WORKFLOW.md` before considering the change complete.
 
 ## Scope boundary
 
