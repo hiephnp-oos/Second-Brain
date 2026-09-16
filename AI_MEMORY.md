@@ -58,8 +58,11 @@ These are the currently recognized work areas, not an exhaustive list of everyth
 | Nuvio Setup | Active | `TOPICS/NUVIO SETUP/NUVIO_STREAM_CONFIG.md` |
 | Systems | Active | `TOPICS/SYSTEMS/SOFTWARE_AND_SYSTEMS.md` |
 | R&D Innovation | Active | `TOPICS/RnD INNOVATION/RnD INNOVATION.md` |
+| R&D Database | Active | `TOPICS/RnD DATABASE/README.md` |
 
 R&D Innovation is intentionally organized as a parent topic folder with dedicated workstream subfolders. New recurring R&D workstreams may be added there without changing the overall memory architecture.
+
+R&D Database is a migrated project source folder. Its project files are stored directly inside `TOPICS/RnD DATABASE/`; it is not a routing link to the old repository.
 
 A topic should be added only when recurring work creates enough durable context to justify a dedicated folder.
 
@@ -70,7 +73,6 @@ A topic should be added only when recurring work creates enough durable context 
 - Prefer a small, stable structure and split it only when real scale requires it.
 - Do not use conversation dumps as a substitute for distilled working context.
 - Do not duplicate detailed project knowledge when the authoritative source already exists elsewhere.
-- Do not treat one active project as representative of the user's complete work.
 - Prefer maintaining existing knowledge over creating duplicate new knowledge when a new finding refines, corrects, or supersedes something already stored.
 - Surface possible contradictions and obsolete assumptions before writing durable memory.
 - Use semantic connections for discovery, but do not silently convert inferred connections into authoritative relationships.
@@ -94,7 +96,7 @@ Follow this sequence:
 2. Identify which topic folder(s) are relevant to the current request.
 3. Read the relevant topic entry-point file(s).
 4. If the topic contains child workstream folders, read only the relevant folder/file(s).
-5. If a topic file references an external project/repository/document, use that source for detailed facts rather than inventing or copying them into memory.
+5. If a topic file references an external project/repository/document, use that source for detailed facts rather than inventing or copying them into memory. For `RnD DATABASE`, the migrated project files inside the topic folder are the detailed source.
 6. Use current conversation context together with this memory. New explicit user information takes precedence over older memory.
 7. Do not assume that the listed active topics are exhaustive.
 8. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
