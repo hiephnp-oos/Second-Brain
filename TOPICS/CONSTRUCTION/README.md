@@ -24,7 +24,8 @@ Recent work includes refining tender/quotation explanations, final-price communi
 
 ## Active Projects / References
 
-No named long-term project is recorded here yet. Current work is centered on tender/quotation communication and execution/scope clarification.
+- `WORKSPACE.md` — lightweight recurring workstream routing/context when construction work needs a deeper stable path.
+- Named project details remain in the active task or authoritative project documents until they become durable recurring context.
 
 ## Decisions
 
@@ -39,8 +40,14 @@ No named long-term project is recorded here yet. Current work is centered on ten
 
 ## Routing
 
-Use this topic when the task concerns construction, tendering, commercial work, scope clarification, or execution/handover. Read this README as the durable topic context and keep one-off project details in the current task unless they become durable context.
+Use this topic when the task concerns construction, tendering, commercial work, scope clarification, or execution/handover.
+
+For recurring construction work that needs a stable sub-route:
+
+`README.md → WORKSPACE.md → relevant project/task source`
+
+Keep one-off project details in the current task unless they become durable context.
 
 ## Next
 
-Maintain this README as persistent construction/tender context is established through future work.
+Maintain this README as persistent construction/tender context is established through future work. Add deeper workstream artifacts only when they provide real reuse value.
