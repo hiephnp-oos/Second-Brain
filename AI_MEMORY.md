@@ -76,12 +76,16 @@ A topic should be added only when recurring work creates enough durable context 
 - Prefer maintaining existing knowledge over creating duplicate new knowledge when a new finding refines, corrects, or supersedes something already stored.
 - Surface possible contradictions and obsolete assumptions before writing durable memory.
 - Use semantic connections for discovery, but do not silently convert inferred connections into authoritative relationships.
+- A structural change is incomplete until all dependent registry, navigation, and workflow references are synchronized in the same change.
 
 ## 8. GLOBAL DECISIONS
 
 - GitHub is the persistence layer and source of truth for this AI working context.
 - The system is provider-independent so another AI can read it and continue working.
 - The preferred structure is one master memory file plus topic folders, with one `README.md` entry point per topic.
+- All topic READMEs use the standard core template defined in `WORKFLOW.md`.
+- `WORKFLOW.md` is the authority for memory maintenance rules, topic README structure, consistency checks, retrieval/routing, and Handoff.
+- When topics are added, renamed, moved, merged, or removed, `AI_MEMORY.md` and the root `README.md` must be updated together with the affected topic README and references.
 - Memory maintenance uses ADD / UPDATE / REMOVE / NO_CHANGE and is defined in `WORKFLOW.md`.
 - Phase 2, Phase 3, and Phase 4 are now active operating tracks and are validated through real work in Phase 1 usage.
 - `PHASES_2-4.md` is the operational model for Memory Quality, Retrieval/Routing, and Handoff.
@@ -103,6 +107,7 @@ Follow this sequence:
 8. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
 9. When unsure whether information is durable, keep it in the current conversation rather than promoting it to memory.
 10. When maintaining memory, follow `WORKFLOW.md` and the applicable phase guidance that actually exists in the repository.
+11. When changing repository structure or topic definitions, run the `WORKFLOW.md` consistency checklist before considering the task complete.
 
 ## 10. MEMORY MAINTENANCE
 
@@ -129,7 +134,7 @@ Avoid storing:
 - confidential information that should not be shared across AI systems;
 - large copies of source code or documents already stored elsewhere.
 
-For the exact update lifecycle, routing rules, and Handoff model, use `WORKFLOW.md` and the phase guidance that is actually present in the repository.
+For the exact update lifecycle, routing rules, consistency checklist, and Handoff model, use `WORKFLOW.md` and the phase guidance that is actually present in the repository.
 
 ## 11. PERIODIC REVIEW
 
@@ -141,7 +146,7 @@ A periodic review may use this repository to produce a work-status report coveri
 - unresolved or blocked items;
 - neglected/stale areas;
 - logical next steps supported by the available context;
-- recurring memory/retrieval/handoff failure modes observed during real use.
+- recurring memory/retrieval/handoff/consistency failure modes observed during real use.
 
 The review is a **derived view**, not authoritative memory. It must not infer project status from the existence of a topic folder or from a topic being marked `Active`.
 
