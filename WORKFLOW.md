@@ -2,15 +2,13 @@
 
 ## Objective
 
-Keep GitHub knowledge useful, current, and small enough for an AI to read and continue work.
+Keep GitHub knowledge useful, current, consistent, and small enough for an AI to read and continue work.
 
-The workflow exists to maintain the business goal: a new AI should be able to read the repository and continue a relevant topic without the user re-explaining established context.
+The business goal is simple: a new AI should be able to read the repository and continue a relevant topic without the user re-explaining established context.
 
 The operating loop is:
 
 `Conversation / Source → Knowledge → Routing → Continuation`
-
-Phase 2 (Memory Quality), Phase 3 (Retrieval / Routing), and Phase 4 (Handoff) run in parallel and are validated through real work.
 
 ## 1. Read before work
 
@@ -18,12 +16,85 @@ For a new task:
 
 1. Read `AI_MEMORY.md`.
 2. Identify the relevant topic folder(s).
-3. Read only the relevant topic entry-point file(s).
-4. If needed, read only the relevant child workstream folder/file(s).
+3. Read `TOPICS/<topic>/README.md`.
+4. If needed, read only the relevant child workstream/project source.
 5. Follow authoritative project/source references when detailed facts are needed.
 6. Use the current conversation together with memory. Explicit current user information takes precedence over older memory.
 
-## 2. Decide whether something becomes memory
+## 2. Standard topic structure
+
+Every topic under `TOPICS/` must follow this structure:
+
+```text
+TOPICS/<topic>/
+└── README.md                 ← mandatory topic entry point
+    ├── Scope
+    ├── Current Context
+    ├── Working Principles
+    ├── Active Projects / References
+    ├── Decisions
+    ├── Lessons
+    ├── Routing
+    └── Next
+```
+
+The eight core sections are the standard template for all topic READMEs.
+
+Rules:
+
+- `README.md` is mandatory and is the single primary entry point for the topic.
+- Keep the eight core sections recognizable and in this order.
+- Topic-specific sections may be inserted between the core sections when they materially improve routing or understanding.
+- Do not create a second topic-level README or a parallel topic summary file containing the same role.
+- Child folders/files contain detailed recurring work, project source, data, prompts, or artifacts; they do not replace the topic README.
+- A project/source README may contain additional technical sections, but it must still use the same core topic sections when it is also the topic entry point.
+
+## 3. Topic README template
+
+Use this template when creating or restructuring a topic. Preserve useful existing content; do not rewrite merely for wording.
+
+```markdown
+# <Topic Name>
+
+<Entry-point purpose: one concise sentence describing what belongs here.>
+
+## Scope
+
+<What recurring work belongs in this topic.>
+
+## Current Context
+
+<Durable context another AI needs to understand the topic.>
+
+## Working Principles
+
+- <Stable working rule>
+- <Stable working rule>
+
+## Active Projects / References
+
+<Relevant projects, repositories, documents, or child workstreams.>
+
+## Decisions
+
+- <Durable decision>
+
+## Lessons
+
+- <Reusable lesson>
+
+## Routing
+
+<When to use this topic and where to look next.>
+
+## Next
+
+<What should be maintained or done when future work establishes new durable context.>
+```
+
+The template is a structure, not a requirement to fill every section with large amounts of text. Keep each topic README concise and durable.
+
+## 4. Decide whether something becomes memory
 
 Do not turn every conversation detail into memory.
 
@@ -34,7 +105,7 @@ Promote information only when it is:
 - supported by the conversation or an authoritative source;
 - not already represented adequately elsewhere.
 
-Keep temporary task state in the conversation.
+Keep temporary task state in the conversation or Handoff.
 
 Do not store secrets, credentials, tokens, passwords, or unnecessary copies of source material.
 
@@ -45,9 +116,7 @@ Before writing, distinguish:
 - supported inference;
 - assumption / unknown.
 
-Only durable knowledge that belongs in the memory layer should be promoted.
-
-## 3. Classify the change
+## 5. Classify the change
 
 Every proposed memory change should be classified as one of:
 
@@ -69,34 +138,58 @@ The information is temporary, already known, unsupported, or not useful for futu
 
 Prefer `UPDATE` over `ADD` when the new information refines existing knowledge.
 
-## 4. Update the smallest correct scope
+## 6. Update the smallest correct scope
 
 Use:
 
 - `AI_MEMORY.md` for durable user-level or cross-topic context.
-- `TOPICS/<topic>/` for durable topic-specific context.
-- A topic entry-point file for routing/summary context.
-- Child workstream folders/files for detailed recurring work within a topic.
+- `TOPICS/<topic>/README.md` for durable topic context and routing.
+- Child workstream folders/files for detailed recurring work.
+- Authoritative project/source repositories for detailed project knowledge unless that project has explicitly been migrated into Second-Brain.
 
-Prefer updating an existing entry over creating a duplicate.
+If a new topic becomes recurring:
 
-Do not copy detailed project knowledge into the memory layer when an authoritative project repository or document already exists.
-
-Exception: when a project is explicitly migrated into Second-Brain as an internal project source, the migrated project files are intentionally stored under its topic folder and become the detailed source for that topic. `RnD DATABASE` is currently such a project. Its architecture and deployment model are documented in `TOPICS/RnD DATABASE/README.md`.
-
-If a new topic becomes recurring and needs durable context:
-
-1. Create a topic folder under `TOPICS/`.
-2. Add a concise entry-point file for that topic.
+1. Create `TOPICS/<topic>/`.
+2. Create `TOPICS/<topic>/README.md` using the standard template.
 3. Add the topic to the active-topics table in `AI_MEMORY.md`.
+4. Update the repository structure in the root `README.md`.
+5. If the change introduces or changes a workflow rule, update `WORKFLOW.md` in the same change.
 
-If a topic needs a new recurring workstream:
+If a topic is renamed, moved, merged, split, or removed, update every affected registry/reference in the same change.
 
-1. Create a child folder under the topic folder.
-2. Add the relevant working files/artifacts there.
-3. Register the child folder in the topic entry-point file when discovery depends on it.
+For `RnD DATABASE`, the project was explicitly migrated into Second-Brain, so its detailed project files intentionally live under `TOPICS/RnD DATABASE/`.
 
-## 5. Memory quality check before writing
+## 7. Repository consistency rule — mandatory
+
+A memory change is **not complete** when only the obvious file was updated.
+
+Before finishing any structural or memory-maintenance change, check the affected layers:
+
+| Change | Required update/check |
+|---|---|
+| New topic | Topic `README.md` + `AI_MEMORY.md` + root `README.md` |
+| Rename/move topic | Topic path + `AI_MEMORY.md` + root `README.md` + affected references |
+| Remove topic | Remove topic + `AI_MEMORY.md` + root `README.md` + affected references |
+| New child workstream | Child folder/files + topic `README.md` |
+| Topic structure/template rule changes | `WORKFLOW.md` + all affected topic READMEs + root `README.md` if navigation is affected |
+| Global memory change | `AI_MEMORY.md` + relevant topic README when topic routing/context is affected |
+| Topic knowledge change | Relevant topic `README.md` or child artifact; update `AI_MEMORY.md` only if cross-topic/global |
+| Handoff only | Handoff/current conversation; do not update durable memory unless a durable change is identified |
+
+Minimum final check:
+
+1. Does every topic folder have `README.md`?
+2. Does `AI_MEMORY.md` list every active topic and point to the correct README?
+3. Does root `README.md` show the same active topic structure?
+4. Do renamed/deleted files still appear in references?
+5. If the rule/template changed, is `WORKFLOW.md` aligned with the actual structure?
+6. Do topic READMEs follow the standard core template?
+
+If any answer is `No`, the change is incomplete.
+
+This rule exists specifically to prevent the failure mode where an AI updates one layer and forgets the dependent registry, navigation page, or workflow rule.
+
+## 8. Memory quality check before writing
 
 For every ADD / UPDATE / REMOVE, check:
 
@@ -111,35 +204,28 @@ For every ADD / UPDATE / REMOVE, check:
 
 When information conflicts with older memory, prefer the newer explicit user decision or stronger evidence. Do not silently preserve two statements as if both are current. Git history remains the historical record.
 
-Possible contradiction or uncertainty should be surfaced before writing when it could materially change future behavior.
-
-## 6. Retrieval / routing
+## 9. Retrieval / routing
 
 Use the smallest useful context path:
 
-`AI_MEMORY.md → Topic → Workstream → Relevant artifact → Authoritative source`
+`AI_MEMORY.md → Topic README → Workstream → Relevant artifact → Authoritative source`
 
-For internally migrated projects, the final `Authoritative source` step may terminate inside the topic folder rather than an external repository. This is the current model for `RnD DATABASE`.
+For internally migrated projects, the final source step may terminate inside the topic folder. This is the current model for `RnD DATABASE`.
 
 Rules:
 
 1. Start from `AI_MEMORY.md`.
 2. Route to the smallest relevant topic.
-3. If child workstreams exist, route to the relevant workstream before reading broader material.
-4. Read only files needed for the current task.
-5. Follow explicit IDs and references when they exist.
-6. Semantic reasoning may discover candidate connections that are not explicitly linked.
-7. Candidate/inferred connections must be labeled as such and verified before becoming durable relationships.
-8. Do not treat the existence of a file, folder, or ID as proof that the information is current.
-9. When freshness matters, inspect Git history or the authoritative source.
+3. Read the topic README before deeper files.
+4. If child workstreams exist, route to the relevant workstream before reading broader material.
+5. Read only files needed for the current task.
+6. Follow explicit IDs and references when they exist.
+7. Semantic reasoning may discover candidate connections that are not explicitly linked.
+8. Candidate/inferred connections must be labeled as such and verified before becoming durable relationships.
+9. Do not treat the existence of a file, folder, or ID as proof that the information is current.
+10. When freshness matters, inspect Git history or the authoritative source.
 
-For R&D Knowledge Sheet work, the normal explicit traversal is:
-
-`MS → TR → ST / CT → SRC`
-
-Semantic discovery may suggest a new candidate connection, but it must not silently alter the authoritative relationship fields.
-
-## 7. Handoff
+## 10. Handoff
 
 When a conversation needs to be continued by another AI or another conversation, produce a compact Handoff rather than a transcript.
 
@@ -161,13 +247,11 @@ The receiving AI should:
 4. Give current explicit user information highest priority.
 5. Continue from the stated next step.
 
-A Handoff is not automatically stored in GitHub. Store only the durable knowledge or decision that belongs in persistent memory.
+A Handoff is not automatically stored in GitHub. Store only durable knowledge or decisions that belong in persistent memory.
 
-A reusable Handoff prompt is maintained in:
+A reusable Handoff prompt is maintained in `TOPICS/SYSTEMS/Handoff_Template.md`.
 
-`TOPICS/SYSTEMS/Handoff_Template.md`
-
-## 8. Write memory for another AI
+## 11. Write memory for another AI
 
 Memory should describe the working context clearly enough for another AI to act on it.
 
@@ -186,18 +270,21 @@ Avoid:
 - unnecessary implementation detail;
 - duplicated information across files.
 
-## 9. Commit discipline
+## 12. Commit discipline
 
-When a memory change is made:
+When a memory or structure change is made:
 
-1. Update only the required file(s).
-2. Use a clear commit message.
-3. Keep the repository in a readable, consistent state.
-4. Git history provides the historical record; do not create manual archive copies.
+1. Update all files required by the consistency rule.
+2. Use a clear commit message describing the change.
+3. Verify the final repository structure and references.
+4. Keep the repository readable and internally consistent.
+5. Git history provides the historical record; do not create manual archive copies.
 
-## 10. Phase 1 validation / failure modes
+Prefer completing a logically related consistency update in one change rather than leaving the repository temporarily inconsistent.
 
-Real work is the test environment for Phases 2–4.
+## 13. Validation / recurring failure modes
+
+Real work is the test environment.
 
 When a recurring failure is observed, capture it only when it is actionable for improving the workflow. Examples:
 
@@ -206,11 +293,15 @@ When a recurring failure is observed, capture it only when it is actionable for 
 - duplicate memory was created instead of updating existing knowledge;
 - contradiction was missed;
 - Handoff lost a decision or unresolved issue;
-- retrieval required reading too much irrelevant context.
+- one repository layer was updated while a dependent layer was left stale;
+- topic README/template drifted from the workflow;
+- root navigation or `AI_MEMORY.md` registry became stale.
+
+The current failure is explicitly recognized as a **consistency/drift failure**: an AI may correctly modify the topic files but forget to update root navigation and workflow rules. The prevention mechanism is the mandatory consistency rule and final checklist above.
 
 Do not create a permanent failure log for isolated events. Add a structured record only when repeated patterns justify it.
 
-## 11. Review
+## 14. Review
 
 Periodically inspect the memory for:
 
@@ -220,20 +311,11 @@ Periodically inspect the memory for:
 - incorrect topic placement;
 - obsolete decisions;
 - topics/workstreams that are no longer useful;
-- recurring retrieval or Handoff failures.
+- recurring retrieval or Handoff failures;
+- structural drift between `AI_MEMORY.md`, root `README.md`, `WORKFLOW.md`, and topic READMEs.
 
 A review is a quality check. It should not silently invent or rewrite project status.
 
-## 12. Scope guard
+## 15. Scope guard
 
 Do not introduce a knowledge graph, Obsidian layer, vector database, RAG system, automatic ingestion of every conversation, complex ontology, or other infrastructure unless repeated real usage demonstrates that the GitHub + Markdown workflow cannot meet the continuity goal.
-
-## 13. Phase operating model
-
-The three phases are operational rules within this workflow:
-
-- Phase 2 — Memory Quality: distill durable knowledge, compare against existing memory, prefer UPDATE, detect duplication/contradiction, then write the smallest correct change.
-- Phase 3 — Retrieval / Routing: route through the smallest useful context path; use explicit IDs/references first and treat semantic matches as candidate connections until verified.
-- Phase 4 — Handoff: transfer task state as a compact continuation artifact; Handoff is temporary state, not persistent memory.
-
-These phases are validated through real usage rather than by adding new infrastructure. Detailed reusable Handoff instructions are in `TOPICS/SYSTEMS/Handoff_Template.md`; retrieval testing is in `TOPICS/SYSTEMS/Retrieval_Test.md`.
