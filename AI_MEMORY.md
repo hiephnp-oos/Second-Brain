@@ -79,6 +79,7 @@ A topic should be added only when recurring work creates enough durable context 
 - A structural change is incomplete until all dependent registry, navigation, and workflow references are synchronized in the same change.
 - Repository completion is defined by final state, not by successful AI/connector actions.
 - Generic controls and executable validation are preferred over one-off rule patches when repeated failures are discovered.
+- Optional GitHub features should be added only when they solve a demonstrated workflow problem; avoid infrastructure that can generate false failure signals.
 
 ## 8. GLOBAL DECISIONS
 
@@ -96,8 +97,8 @@ A topic should be added only when recurring work creates enough durable context 
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
 - R&D Database V4 is maintained inside Second-Brain as a complete project source, organized into Bound Script frontend, standalone Library Core (`LibDNF`), and standalone Backend Scanner. The topic README is the architecture/deployment entry point; the code files are the detailed project source.
 - Repository integrity is checked automatically by `scripts/validate_second_brain.py` through `.github/workflows/validate.yml`.
-- Five GitHub-native controls are part of the operating model: GitHub Actions for automated validation, GitHub Rulesets for enforcement, GitHub Pages for presentation/navigation, Issue Forms for structured change requests, and Task Lists for execution/completion tracking.
-- GitHub Pages is a presentation layer only. `docs/` must not become a second authoritative knowledge store.
+- Four GitHub-native controls are part of the operating model: GitHub Actions for automated validation, Issue Forms for structured change requests, Task Lists for execution/completion tracking, and Mermaid for visualizing workflows/architecture where useful.
+- GitHub Pages and GitHub Rulesets were evaluated but are not part of the current operating model. Do not create or require them unless a future decision explicitly reintroduces them.
 - Issue Forms and Task Lists are optional execution aids for changes that benefit from traceability; they do not replace `WORKFLOW.md` or `REPOSITORY_CONTRACT.md`.
 
 ## 9. HOW A NEW AI SHOULD ONBOARD
