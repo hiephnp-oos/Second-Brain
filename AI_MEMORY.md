@@ -77,6 +77,8 @@ A topic should be added only when recurring work creates enough durable context 
 - Surface possible contradictions and obsolete assumptions before writing durable memory.
 - Use semantic connections for discovery, but do not silently convert inferred connections into authoritative relationships.
 - A structural change is incomplete until all dependent registry, navigation, and workflow references are synchronized in the same change.
+- Repository completion is defined by final state, not by successful AI/connector actions.
+- Generic controls and executable validation are preferred over one-off rule patches when repeated failures are discovered.
 
 ## 8. GLOBAL DECISIONS
 
@@ -85,12 +87,15 @@ A topic should be added only when recurring work creates enough durable context 
 - The preferred structure is one master memory file plus topic folders, with one `README.md` entry point per topic.
 - All topic READMEs use the standard core template defined in `WORKFLOW.md`.
 - `WORKFLOW.md` is the authority for memory maintenance rules, topic README structure, consistency checks, retrieval/routing, and Handoff.
-- When topics are added, renamed, moved, merged, or removed, `AI_MEMORY.md` and the root `README.md` must be updated together with the affected topic README and references.
+- `REPOSITORY_CONTRACT.md` defines repository invariants, source-of-truth hierarchy, and completion state.
+- `TOPICS/SYSTEMS/User_Prompts.md` provides reusable user-side reinforcement prompts; it does not replace the canonical workflow rules.
+- When topics are added, renamed, moved, merged, or removed, `AI_MEMORY.md` and all affected navigation/references must be updated together according to `WORKFLOW.md`.
 - Memory maintenance uses ADD / UPDATE / REMOVE / NO_CHANGE and is defined in `WORKFLOW.md`.
-- Memory quality, retrieval/routing, and Handoff are operating rules within `WORKFLOW.md`; there is no separate required phase document.
+- Memory quality, retrieval/routing, Handoff, and repository mutation lifecycle are operating rules within `WORKFLOW.md`; there is no separate required phase document.
 - Periodic review is a quality check and derived report; it should not silently modify authoritative memory.
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
 - R&D Database V4 is maintained inside Second-Brain as a complete project source, organized into Bound Script frontend, standalone Library Core (`LibDNF`), and standalone Backend Scanner. The topic README is the architecture/deployment entry point; the code files are the detailed project source.
+- Repository integrity is checked automatically by `scripts/validate_second_brain.py` through `.github/workflows/validate.yml`.
 
 ## 9. HOW A NEW AI SHOULD ONBOARD
 
@@ -98,15 +103,15 @@ Follow this sequence:
 
 1. Read `AI_MEMORY.md` first.
 2. Identify which topic folder(s) are relevant to the current request.
-3. Read the relevant topic `README.md`.
+3. Read the relevant `TOPICS/<topic>/README.md`.
 4. If the topic contains child workstream folders, read only the relevant folder/file(s).
-5. If a topic README or artifact references an external project/repository/document, only use that source when needed for detailed facts. For `RnD DATABASE`, use the migrated project files inside the topic folder as the detailed source; do not redirect to the old repository as the primary source.
-6. Use current conversation context together with this memory. New explicit user information takes precedence over older memory.
-7. Do not assume that the listed active topics are exhaustive.
-8. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
-9. When unsure whether information is durable, keep it in the current conversation rather than promoting it to memory.
-10. When maintaining memory, follow `WORKFLOW.md` and the rules that actually exist in the repository.
-11. When changing repository structure or topic definitions, run the `WORKFLOW.md` consistency checklist before considering the task complete.
+5. For repository maintenance, also read `WORKFLOW.md` and `REPOSITORY_CONTRACT.md` before mutating content.
+6. If a topic README or artifact references an external project/repository/document, only use that source when needed for detailed facts. For `RnD DATABASE`, use the migrated project files inside the topic folder as the detailed source; do not redirect to the old repository as the primary source.
+7. Use current conversation context together with this memory. New explicit user information takes precedence over older memory.
+8. Do not assume that the listed active topics are exhaustive.
+9. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
+10. When unsure whether information is durable, keep it in the current conversation rather than promoting it to memory.
+11. Before reporting completion of repository work, verify the actual final GitHub state and perform applicable positive and negative checks.
 
 ## 10. MEMORY MAINTENANCE
 
@@ -122,7 +127,7 @@ Before promoting information into memory, ask:
 - Is it actually temporary task state?
 - Does it belong at global, topic, or child-workstream scope?
 
-When existing knowledge is present, prefer `UPDATE` over `ADD` when the new information refines, corrects, or supersedes it.
+When existing knowledge is present, prefer UPDATE over ADD when the new information refines, corrects, or supersedes it.
 
 When a possible contradiction is found, do not silently preserve two statements as if both are current. Resolve using the latest explicit user decision or stronger evidence; Git history remains the historical record.
 
@@ -133,7 +138,7 @@ Avoid storing:
 - confidential information that should not be shared across AI systems;
 - large copies of source code or documents already stored elsewhere.
 
-For the exact update lifecycle, routing rules, consistency checklist, and Handoff model, use `WORKFLOW.md`.
+For exact update lifecycle, routing rules, consistency checklist, and Handoff model, use `WORKFLOW.md`. For repository invariants and source-of-truth priority, use `REPOSITORY_CONTRACT.md`.
 
 ## 11. PERIODIC REVIEW
 
@@ -145,9 +150,9 @@ A periodic review may use this repository to produce a work-status report coveri
 - unresolved or blocked items;
 - neglected/stale areas;
 - logical next steps supported by the available context;
-- recurring memory/retrieval/handoff/consistency failure modes observed during real use.
+- recurring memory/retrieval/handoff/consistency/validation failure modes observed during real use.
 
-The review is a **derived view**, not authoritative memory. It must not infer project status from the existence of a topic folder or from a topic being marked `Active`.
+The review is a derived view, not authoritative memory. It must not infer project status from the existence of a topic folder or from a topic being marked Active.
 
 ## 12. FRESHNESS
 
