@@ -1,0 +1,77 @@
+name: Second-Brain Change Request
+description: Structured request for changing Second-Brain content, structure, or workflow.
+title: "[SB] "
+labels:
+  - second-brain
+body:
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: Change type
+      options:
+        - Topic update
+        - Topic creation
+        - Topic rename or move
+        - Artifact update
+        - Artifact replacement
+        - Cleanup / deletion
+        - Workflow / contract improvement
+        - Validation / automation improvement
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Target
+      description: Topic, workstream, file, or repository area affected.
+      placeholder: TOPICS/SYSTEMS
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What should be different in the final repository state?
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source / evidence
+      description: Relevant source, existing artifact, or user decision supporting the change.
+    validations:
+      required: false
+  - type: checkboxes
+    id: dependencies
+    attributes:
+      label: Dependent layers to check
+      options:
+        - label: Topic README
+        - label: Workstream README
+        - label: AI_MEMORY.md
+        - label: Root README.md
+        - label: WORKFLOW.md
+        - label: REPOSITORY_CONTRACT.md
+        - label: Local references
+        - label: Obsolete / duplicate artifacts
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Define the required positive and negative final-state checks.
+      placeholder: "Required state exists; superseded artifact is absent; references are synchronized; validator passes."
+    validations:
+      required: true
+  - type: checkboxes
+    id: execution
+    attributes:
+      label: Completion checklist
+      options:
+        - label: Repository state inspected before mutation
+        - label: Target state defined
+        - label: Required creates / updates / moves / deletes completed
+        - label: Dependent references synchronized
+        - label: Automated validation passes
+        - label: Final positive verification completed
+        - label: Final negative verification completed
