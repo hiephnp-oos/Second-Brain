@@ -1,0 +1,195 @@
+name: Migrate RnD Database V4 architecture
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/migrate-rnd-v4-architecture.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Second-Brain
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone latest DNF R&D Database
+        run: git clone --depth 1 https://github.com/hiephnp-oos/DNF-R-D-database.git /tmp/dnf-rnd
+
+      - name: Rebuild RnD DATABASE with 3-layer architecture
+        shell: bash
+        run: |
+          set -euo pipefail
+          target='TOPICS/RnD DATABASE'
+          rm -rf "$target"
+          mkdir -p "$target/1_Frontend_UI" "$target/2_Library_Core" "$target/3_Backend_Scanner"
+
+          cp -a /tmp/dnf-rnd/1_Frontend_UI/. "$target/1_Frontend_UI/"
+          cp -a /tmp/dnf-rnd/2_Library_Core/. "$target/2_Library_Core/"
+          cp -a /tmp/dnf-rnd/3_Backend_Scanner/. "$target/3_Backend_Scanner/"
+
+          # Never commit the Google Chat webhook credential from the source repo.
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('TOPICS/RnD DATABASE/2_Library_Core/Config.gs')
+          s = p.read_text(encoding='utf-8')
+          import re
+          s = re.sub(r'(MAINTENANCE_WEBHOOK:\s*)"[^"]*"', r'\1""', s)
+          p.write_text(s, encoding='utf-8')
+          PY
+
+          cat > "$target/README.md" <<'EOF'
+          # DNF R&D Database V4
+
+          Hệ thống quản lý dữ liệu R&D trên Google Sheets + Google Apps Script, gồm BOM, Material, Cost, Drawing, Search, Compare, Sparepart, Audit và Maintenance.
+
+          ## Kiến trúc
+
+          Phiên bản V4 hiện tại sử dụng kiến trúc 3 lớp, tách rõ giao diện, nghiệp vụ dùng chung và backend Scanner:
+
+          ```text
+          DNF R&D Database
+          │
+          ├── 1_Frontend_UI
+          │   └── Bound Script gắn với Spreadsheet người dùng
+          │       ├── Menu / Navigation
+          │       ├── HTML UI
+          │       ├── Wrappers.gs
+          │       ├── SheetManager.gs
+          │       └── ExportCode.gs
+          │
+          ├── 2_Library_Core
+          │   └── Standalone Apps Script Library: LibDNF
+          │       ├── Library_Entry.gs     → Public API / Gateway
+          │       ├── Config.gs            → Single Source of Truth
+          │       ├── BOM Engine
+          │       ├── Search / Compare
+          │       ├── Import
+          │       ├── Drawing / Sparepart
+          │       ├── Cost
+          │       ├── System Health / Audit
+          │       ├── Logging / Export
+          │       └── Backup / Utilities
+          │
+          └── 3_Backend_Scanner
+              └── Standalone Apps Script gắn với Spreadsheet Scanner
+                  ├── Scanner.gs
+                  ├── Rename.gs
+                  ├── Config.gs
+                  └── Menu.gs
+          ```
+
+          ## Bound Script ↔ Library
+
+          Frontend không chứa business logic chính. UI gọi các hàm bridge trong `Wrappers.gs`; Wrappers gọi public API của `LibDNF`; Library xử lý logic và dữ liệu.
+
+          ```text
+          User / Google Sheets UI
+                    ↓
+              Frontend Bound Script
+                    ↓
+                Wrappers.gs
+                    ↓
+              LibDNF Public API
+                    ↓
+             Library Core Modules
+                    ↓
+             Google Sheets / Drive
+          ```
+
+          `Library_Entry.gs` là lớp API công khai của Library. Các module nội bộ không nên được Frontend gọi trực tiếp nếu đã có public API tương ứng.
+
+          ## Các module chính
+
+          | Khu vực | Module | Vai trò |
+          |---|---|---|
+          | Frontend | `Menu.gs` | Custom menu và điều hướng |
+          | Frontend | `Wrappers.gs` | Bridge từ Bound Script → Library |
+          | Frontend | HTML files | Giao diện người dùng |
+          | Library | `Library_Entry.gs` | Public API / API Gateway |
+          | Library | `Config.gs` | Cấu hình dùng chung |
+          | Library | `Import.gs` | Nhập dữ liệu SAP |
+          | Library | `A.BOM.gs` | Tạo dữ liệu BOM chuẩn |
+          | Library | `SearchBOM.gs` | Tìm kiếm và dựng cây BOM |
+          | Library | `CompareBOM.gs` | So sánh BOM |
+          | Library | `GlobalSearch.gs` | Tìm kiếm toàn hệ thống |
+          | Library | `SearchBOMcost.gs` | Xử lý tìm kiếm/định dạng Cost |
+          | Library | `Export_Sparepart.gs` | Xuất Sparepart |
+          | Library | `Drawing_FolderScan.gs` | Đồng bộ Drawing |
+          | Library | `SystemHealth.gs` | Kiểm tra sức khỏe hệ thống |
+          | Library | `Audit_Protection.gs` | Audit và bảo vệ Sheet |
+          | Library | `SystemLogs.gs` | Theo dõi hoạt động hệ thống |
+          | Library | `Export_And_Log.gs` | Export và logging |
+          | Library | `SimpleBackup.gs` | Backup nhanh |
+          | Backend | `Scanner.gs` | Quét Drive / Drawing |
+          | Backend | `Rename.gs` | Đổi tên file theo rule |
+
+          ## Deployment model
+
+          Có 3 Apps Script project độc lập:
+
+          1. **Frontend Bound Script** — gắn với Spreadsheet chính của người dùng.
+          2. **LibDNF Standalone Library** — chứa business logic dùng chung và được Frontend khai báo như Library.
+          3. **Backend Scanner** — gắn với Spreadsheet Scanner, chuyên quét và xử lý file trên Drive.
+
+          Frontend và Library có thể phát triển/phiên bản hóa độc lập; Backend Scanner được triển khai riêng.
+
+          ## Quy tắc cấu hình
+
+          - `2_Library_Core/Config.gs` là cấu hình trung tâm của Library.
+          - `1_Frontend_UI/appsscript.json` khai báo dependency tới `LibDNF`.
+          - `3_Backend_Scanner/Config.gs` chỉ quản lý cấu hình riêng của Scanner.
+          - Không hard-code credential/secret vào repository.
+          - Webhook credential đã được loại khỏi bản lưu trong Second Brain; giá trị runtime phải được cấu hình an toàn bên ngoài source control.
+
+          ## Nguyên tắc bảo trì
+
+          - Sửa business logic → ưu tiên `2_Library_Core`.
+          - Sửa menu/UI/HTML → `1_Frontend_UI`.
+          - Sửa quét hoặc rename Drawing → `3_Backend_Scanner`.
+          - Nếu thay đổi public API của Library, phải kiểm tra lại `Wrappers.gs` và các caller của Frontend.
+          - Không đưa business logic trở lại Frontend chỉ để xử lý một lỗi cục bộ.
+
+          ## Source of Truth trong Second Brain
+
+          Toàn bộ source của phiên bản hiện tại được lưu trực tiếp tại:
+
+          `TOPICS/RnD DATABASE/`
+
+          Đây là bản nội bộ phục vụ tra cứu, phân tích và quản lý version trong Second Brain; không phải chỉ là một link tới repository bên ngoài.
+
+          ## Phiên bản
+
+          - Source migration: DNF-R-D-database, latest `main` tại thời điểm migration.
+          - Architecture: `1_Frontend_UI / 2_Library_Core / 3_Backend_Scanner`.
+          - Migration date: 16/09/2026.
+          EOF
+
+          cat > "$target/MIGRATION_MANIFEST.md" <<EOF
+          # RnD Database Migration Manifest
+
+          Status: COMPLETE
+          Date: 2026-09-16
+          Source: https://github.com/hiephnp-oos/DNF-R-D-database
+          Target: Second-Brain/TOPICS/RnD DATABASE/
+          Architecture: 1_Frontend_UI / 2_Library_Core / 3_Backend_Scanner
+
+          The source project was migrated as a complete 3-layer structure. The source README was replaced by the Second-Brain architecture README at the database root.
+
+          Security handling: the Google Chat webhook value in `2_Library_Core/Config.gs` was intentionally blanked before commit. Runtime credentials must be supplied outside source control.
+          EOF
+
+      - name: Commit migration and remove temporary workflow
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git rm -f .github/workflows/migrate-rnd-v4-architecture.yml
+          git commit -m 'Migrate RnD Database V4 to 3-layer architecture'
+          git push
