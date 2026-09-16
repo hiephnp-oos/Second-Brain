@@ -1,0 +1,26 @@
+{
+  "timeZone": "Asia/Bangkok",
+  "dependencies": {
+    "enabledAdvancedServices": [
+      {"userSymbol": "Drive", "serviceId": "drive", "version": "v2"},
+      {"userSymbol": "Sheets", "serviceId": "sheets", "version": "v4"},
+      {"userSymbol": "Chat", "serviceId": "chat", "version": "v1"}
+    ],
+    "libraries": [
+      {"userSymbol": "BetterLog", "libraryId": "1DSyxam1ceq72bMHsE6aOVeOl94X78WCwiYPytKi7chlg4x5GqiNXSw0l", "version": "27"},
+      {"userSymbol": "LibDNF", "version": "0", "libraryId": "1991K35QY7Wu0DNaecmqFpZNg8LRDkPuVQgsYZP9Ysr0T1CTI8O8xzpdG", "developmentMode": true}
+    ]
+  },
+  "webapp": {"access": "DOMAIN", "executeAs": "USER_ACCESSING"},
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/script.external_request",
+    "https://www.googleapis.com/auth/script.container.ui",
+    "https://www.googleapis.com/auth/userinfo.email",
+    "https://www.googleapis.com/auth/script.scriptapp"
+  ],
+  "runtimeVersion": "V8"
+}
