@@ -80,7 +80,9 @@ Use:
 
 Prefer updating an existing entry over creating a duplicate.
 
-Do not copy detailed project knowledge into this repository when an authoritative project repository or document already exists. Store enough context to route an AI to that source.
+Do not copy detailed project knowledge into the memory layer when an authoritative project repository or document already exists.
+
+Exception: when a project is explicitly migrated into Second-Brain as an internal project source, the migrated project files are intentionally stored under its topic folder and become the detailed source for that topic. `RnD DATABASE` is currently such a project. Its architecture and deployment model are documented in `TOPICS/RnD DATABASE/README.md`.
 
 If a new topic becomes recurring and needs durable context:
 
@@ -116,6 +118,8 @@ Possible contradiction or uncertainty should be surfaced before writing when it 
 Use the smallest useful context path:
 
 `AI_MEMORY.md → Topic → Workstream → Relevant artifact → Authoritative source`
+
+For internally migrated projects, the final `Authoritative source` step may terminate inside the topic folder rather than an external repository. This is the current model for `RnD DATABASE`.
 
 Rules:
 
