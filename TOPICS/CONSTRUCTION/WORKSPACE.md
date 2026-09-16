@@ -25,7 +25,7 @@ Workstream scaffold created to provide a stable routing point without forcing a 
 
 ## Routing
 
-`TOPICS/CONSTRUCTION/README.md → WORKSPACE.md → relevant project/task source`
+`TOPICS/CONSTRUCTION/README.md` → `WORKSPACE.md` → relevant project/task source
 
 ## Next
 
