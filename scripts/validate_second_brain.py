@@ -18,6 +18,14 @@ CORE_TOPIC_SECTIONS = [
     "Next",
 ]
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder", "staging"]
+REQUIRED_GITHUB_COMPONENTS = [
+    ".github/workflows/validate.yml",
+    ".github/workflows/pages.yml",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/ISSUE_TEMPLATE/change_request.yml",
+    "scripts/validate_second_brain.py",
+    "docs/index.md",
+]
 
 
 def fail(msg: str, errors: list[str]) -> None:
@@ -32,9 +40,9 @@ def validate_root(errors: list[str]) -> None:
     for name in ["AI_MEMORY.md", "WORKFLOW.md", "REPOSITORY_CONTRACT.md", "README.md"]:
         if not (ROOT / name).exists():
             fail(f"Missing required root file: {name}", errors)
-    for name in [".github/workflows/validate.yml", "scripts/validate_second_brain.py"]:
+    for name in REQUIRED_GITHUB_COMPONENTS:
         if not (ROOT / name).exists():
-            fail(f"Missing validation component: {name}", errors)
+            fail(f"Missing required GitHub component: {name}", errors)
 
 
 def validate_topic_readme(path: Path, errors: list[str]) -> None:
@@ -65,8 +73,6 @@ def extract_active_topics(errors: list[str]) -> set[str]:
             if not readme.exists():
                 fail(f"Active topic points to missing README: {entry_name} -> {readme_rel}", errors)
                 continue
-            # The entry-point path is authoritative for the actual topic folder.
-            # The display name in the Topic column may differ in case or wording.
             topic = Path(readme_rel).parts[-2]
             active.add(topic)
     return active
@@ -100,18 +106,15 @@ def validate_forbidden_files(errors: list[str]) -> None:
 
 def validate_local_references(errors: list[str]) -> None:
     md_files = list(ROOT.rglob("*.md"))
-    # Validate explicit backticked repository-relative paths only. This avoids
-    # false positives from prose examples and conceptual paths.
-    pattern = re.compile(r"`((?:TOPICS|\.github|scripts)/[^`]+)`")
+    pattern = re.compile(r"`((?:TOPICS|\.github|scripts|docs)/[^`]+)`")
     for path in md_files:
         for raw in pattern.findall(read_text(path)):
             candidate = raw.rstrip(".,;:")
             if "<" in candidate or ">" in candidate:
                 continue
-            if candidate.startswith(("TOPICS/", ".github/", "scripts/")):
-                target = ROOT / candidate
-                if not target.exists():
-                    fail(f"Broken local reference in {path.relative_to(ROOT)}: {candidate}", errors)
+            target = ROOT / candidate
+            if not target.exists():
+                fail(f"Broken local reference in {path.relative_to(ROOT)}: {candidate}", errors)
 
 
 def validate_csv_shape(errors: list[str]) -> None:
@@ -224,16 +227,42 @@ def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
 def validate_high_level_controls(errors: list[str]) -> None:
     contract = ROOT / "REPOSITORY_CONTRACT.md"
     workflow = ROOT / "WORKFLOW.md"
+    readme = ROOT / "README.md"
     if contract.exists():
         text = read_text(contract)
-        for required_phrase in ["Core invariants", "Source-of-truth hierarchy", "Change contract", "Negative-state contract"]:
+        for required_phrase in [
+            "Core invariants",
+            "Source-of-truth hierarchy",
+            "Change contract",
+            "Negative-state contract",
+            "GitHub Actions",
+            "GitHub Rulesets",
+            "GitHub Pages",
+            "Issue Forms",
+            "Task Lists",
+        ]:
             if required_phrase not in text:
                 fail(f"REPOSITORY_CONTRACT.md missing control section/phrase: {required_phrase}", errors)
     if workflow.exists():
         text = read_text(workflow)
-        for required_phrase in ["TARGET STATE", "VALIDATE", "VERIFY", "Risk-based execution", "User prompt reinforcement layer"]:
+        for required_phrase in [
+            "TARGET STATE",
+            "VALIDATE",
+            "VERIFY",
+            "Risk-based execution",
+            "User prompt reinforcement layer",
+            "GitHub Actions",
+            "Issue Form",
+            "Task List",
+            "GitHub Pages",
+        ]:
             if required_phrase not in text:
                 fail(f"WORKFLOW.md missing control section/phrase: {required_phrase}", errors)
+    if readme.exists():
+        text = read_text(readme)
+        for required_phrase in ["GitHub Actions", "GitHub Rulesets", "GitHub Pages", "Issue Forms", "Task Lists"]:
+            if required_phrase not in text:
+                fail(f"README.md missing platform capability: {required_phrase}", errors)
 
 
 def main() -> int:
