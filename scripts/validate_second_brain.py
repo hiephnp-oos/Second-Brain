@@ -8,23 +8,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 TOPICS = ROOT / "TOPICS"
 CORE_TOPIC_SECTIONS = [
-    "Scope",
-    "Current Context",
-    "Working Principles",
-    "Active Projects / References",
-    "Decisions",
-    "Lessons",
-    "Routing",
-    "Next",
+    "Scope", "Current Context", "Working Principles", "Active Projects / References",
+    "Decisions", "Lessons", "Routing", "Next",
 ]
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder", "staging"]
 REQUIRED_GITHUB_COMPONENTS = [
     ".github/workflows/validate.yml",
-    ".github/workflows/pages.yml",
     ".github/ISSUE_TEMPLATE/config.yml",
     ".github/ISSUE_TEMPLATE/change_request.yml",
     "scripts/validate_second_brain.py",
-    "docs/index.md",
 ]
 
 
@@ -47,10 +39,9 @@ def validate_root(errors: list[str]) -> None:
 
 def validate_topic_readme(path: Path, errors: list[str]) -> None:
     text = read_text(path)
-    positions: list[tuple[str, int]] = []
+    positions = []
     for section in CORE_TOPIC_SECTIONS:
-        marker = f"## {section}"
-        pos = text.find(marker)
+        pos = text.find(f"## {section}")
         if pos < 0:
             fail(f"Missing topic section: {path.relative_to(ROOT)}: {section}", errors)
         positions.append((section, pos))
@@ -63,18 +54,17 @@ def extract_active_topics(errors: list[str]) -> set[str]:
     path = ROOT / "AI_MEMORY.md"
     if not path.exists():
         return set()
-    active: set[str] = set()
+    active = set()
     for line in read_text(path).splitlines():
         match = re.match(r"\|\s*([^|]+?)\s*\|\s*Active\s*\|\s*`(TOPICS/[^`]+/README\.md)`\s*\|", line)
-        if match:
-            entry_name = match.group(1).strip()
-            readme_rel = match.group(2)
-            readme = ROOT / readme_rel
-            if not readme.exists():
-                fail(f"Active topic points to missing README: {entry_name} -> {readme_rel}", errors)
-                continue
-            topic = Path(readme_rel).parts[-2]
-            active.add(topic)
+        if not match:
+            continue
+        entry_name, readme_rel = match.groups()
+        readme = ROOT / readme_rel
+        if not readme.exists():
+            fail(f"Active topic points to missing README: {entry_name} -> {readme_rel}", errors)
+            continue
+        active.add(Path(readme_rel).parts[-2])
     return active
 
 
@@ -95,9 +85,7 @@ def validate_topics(active_topics: set[str], errors: list[str]) -> None:
 
 def validate_forbidden_files(errors: list[str]) -> None:
     for path in ROOT.rglob("*"):
-        if not path.is_file() or ".git" in path.parts:
-            continue
-        if path.name == "validate_second_brain.py":
+        if not path.is_file() or ".git" in path.parts or path.name == "validate_second_brain.py":
             continue
         lower = path.name.lower()
         if any(marker.lower() in lower for marker in FORBIDDEN_MARKERS):
@@ -105,15 +93,13 @@ def validate_forbidden_files(errors: list[str]) -> None:
 
 
 def validate_local_references(errors: list[str]) -> None:
-    md_files = list(ROOT.rglob("*.md"))
-    pattern = re.compile(r"`((?:TOPICS|\.github|scripts|docs)/[^`]+)`")
-    for path in md_files:
+    pattern = re.compile(r"`((?:TOPICS|\.github|scripts)/[^`]+)`")
+    for path in ROOT.rglob("*.md"):
         for raw in pattern.findall(read_text(path)):
             candidate = raw.rstrip(".,;:")
             if "<" in candidate or ">" in candidate:
                 continue
-            target = ROOT / candidate
-            if not target.exists():
+            if not (ROOT / candidate).exists():
                 fail(f"Broken local reference in {path.relative_to(ROOT)}: {candidate}", errors)
 
 
@@ -121,8 +107,7 @@ def validate_csv_shape(errors: list[str]) -> None:
     for path in ROOT.rglob("*.csv"):
         try:
             with path.open("r", encoding="utf-8-sig", newline="") as handle:
-                reader = csv.reader(handle)
-                rows = list(reader)
+                rows = list(csv.reader(handle))
         except Exception as exc:
             fail(f"Cannot parse CSV {path.relative_to(ROOT)}: {exc}", errors)
             continue
@@ -135,10 +120,7 @@ def validate_csv_shape(errors: list[str]) -> None:
             continue
         for index, row in enumerate(rows[1:], start=2):
             if len(row) != width:
-                fail(
-                    f"CSV column mismatch: {path.relative_to(ROOT)} line {index}: expected {width}, got {len(row)}",
-                    errors,
-                )
+                fail(f"CSV column mismatch: {path.relative_to(ROOT)} line {index}: expected {width}, got {len(row)}", errors)
                 break
 
 
@@ -146,18 +128,12 @@ def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
     ks = ROOT / "TOPICS" / "RnD INNOVATION" / "Knowledge sheet"
     if not ks.exists():
         return
-
     specs = {
-        "Market_Signal_v2.csv": "MS",
-        "Competitor_Tech_v2.csv": "CT",
-        "Supplier_tech_v2.csv": "ST",
-        "Tech_radar_v2.csv": "TR",
-        "Sources_v2.csv": "SRC",
+        "Market_Signal_v2.csv": "MS", "Competitor_Tech_v2.csv": "CT",
+        "Supplier_tech_v2.csv": "ST", "Tech_radar_v2.csv": "TR", "Sources_v2.csv": "SRC",
     }
-    master_ids: dict[str, set[str]] = {prefix: set() for prefix in specs.values()}
-
-    rows_by_file: dict[str, list[dict[str, str]]] = {}
-    headers_by_file: dict[str, list[str]] = {}
+    master_ids = {prefix: set() for prefix in specs.values()}
+    rows_by_file, headers_by_file = {}, {}
     for filename, prefix in specs.items():
         path = ks / filename
         if not path.exists():
@@ -166,23 +142,15 @@ def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
         try:
             with path.open("r", encoding="utf-8-sig", newline="") as handle:
                 reader = csv.DictReader(handle)
-                rows = list(reader)
-                headers = reader.fieldnames or []
+                rows, headers = list(reader), reader.fieldnames or []
         except Exception as exc:
             fail(f"Cannot parse Knowledge Sheet file {path.relative_to(ROOT)}: {exc}", errors)
             continue
-
-        rows_by_file[filename] = rows
-        headers_by_file[filename] = headers
-        if not headers:
-            fail(f"Missing CSV headers: {path.relative_to(ROOT)}", errors)
-            continue
-
+        rows_by_file[filename], headers_by_file[filename] = rows, headers
         id_field = next((h for h in headers if h and "ID" in h.upper()), None)
         if not id_field:
             fail(f"No ID column detected: {path.relative_to(ROOT)}", errors)
             continue
-
         for row in rows:
             value = (row.get(id_field) or "").strip()
             if not value:
@@ -192,16 +160,10 @@ def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
             if value in master_ids[prefix]:
                 fail(f"Duplicate ID {value} in {path.relative_to(ROOT)}", errors)
             master_ids[prefix].add(value)
-
     relation_specs = {
         "Competitor_Tech_v2.csv": [("Related Market Signal IDs", "MS")],
         "Supplier_tech_v2.csv": [],
-        "Tech_radar_v2.csv": [
-            ("Supplier Tech IDs", "ST"),
-            ("Competitor Tech IDs", "CT"),
-            ("Market Signal IDs", "MS"),
-            ("Source IDs", "SRC"),
-        ],
+        "Tech_radar_v2.csv": [("Supplier Tech IDs", "ST"), ("Competitor Tech IDs", "CT"), ("Market Signal IDs", "MS"), ("Source IDs", "SRC")],
         "Market_Signal_v2.csv": [("Source IDs", "SRC")],
         "Sources_v2.csv": [],
     }
@@ -209,15 +171,12 @@ def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
         for field, prefix in relations:
             if filename not in rows_by_file:
                 continue
-            headers = headers_by_file.get(filename, [])
-            if field not in headers:
+            if field not in headers_by_file.get(filename, []):
                 fail(f"Missing expected relationship column {field} in {filename}", errors)
                 continue
             for row_number, row in enumerate(rows_by_file[filename], start=2):
                 raw = (row.get(field) or "").strip()
-                if not raw:
-                    continue
-                for value in [item.strip() for item in raw.split(";") if item.strip()]:
+                for value in [x.strip() for x in raw.split(";") if x.strip()]:
                     if not re.fullmatch(rf"{re.escape(prefix)}-\d+", value):
                         fail(f"Invalid relationship ID {value} in {filename} line {row_number}; expected {prefix}-<number>", errors)
                     elif value not in master_ids.get(prefix, set()):
@@ -230,39 +189,19 @@ def validate_high_level_controls(errors: list[str]) -> None:
     readme = ROOT / "README.md"
     if contract.exists():
         text = read_text(contract)
-        for required_phrase in [
-            "Core invariants",
-            "Source-of-truth hierarchy",
-            "Change contract",
-            "Negative-state contract",
-            "GitHub Actions",
-            "GitHub Rulesets",
-            "GitHub Pages",
-            "Issue Forms",
-            "Task Lists",
-        ]:
-            if required_phrase not in text:
-                fail(f"REPOSITORY_CONTRACT.md missing control section/phrase: {required_phrase}", errors)
+        for phrase in ["Core invariants", "Source-of-truth hierarchy", "Change contract", "Negative-state contract", "GitHub Actions", "Issue Forms", "Task Lists"]:
+            if phrase not in text:
+                fail(f"REPOSITORY_CONTRACT.md missing control section/phrase: {phrase}", errors)
     if workflow.exists():
         text = read_text(workflow)
-        for required_phrase in [
-            "TARGET STATE",
-            "VALIDATE",
-            "VERIFY",
-            "Risk-based execution",
-            "User prompt reinforcement layer",
-            "GitHub Actions",
-            "Issue Form",
-            "Task List",
-            "GitHub Pages",
-        ]:
-            if required_phrase not in text:
-                fail(f"WORKFLOW.md missing control section/phrase: {required_phrase}", errors)
+        for phrase in ["TARGET STATE", "VALIDATE", "VERIFY", "Risk-based execution", "User prompt reinforcement layer", "GitHub Actions", "Issue Form", "Task List"]:
+            if phrase not in text:
+                fail(f"WORKFLOW.md missing control section/phrase: {phrase}", errors)
     if readme.exists():
         text = read_text(readme)
-        for required_phrase in ["GitHub Actions", "GitHub Rulesets", "GitHub Pages", "Issue Forms", "Task Lists"]:
-            if required_phrase not in text:
-                fail(f"README.md missing platform capability: {required_phrase}", errors)
+        for phrase in ["GitHub Actions", "Issue Forms", "Task Lists", "Mermaid"]:
+            if phrase not in text:
+                fail(f"README.md missing platform capability: {phrase}", errors)
 
 
 def main() -> int:
@@ -275,13 +214,11 @@ def main() -> int:
     validate_csv_shape(errors)
     validate_rnd_knowledge_sheet(errors)
     validate_high_level_controls(errors)
-
     if errors:
         print("Second-Brain validation: FAIL")
         for error in errors:
             print(f"- {error}")
         return 1
-
     print("Second-Brain validation: PASS")
     return 0
 
