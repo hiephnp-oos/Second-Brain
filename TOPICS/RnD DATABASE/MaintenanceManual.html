@@ -1,0 +1,50 @@
+<!--
+/**
+ * ======================================================================================
+ * FILE: MaintenanceManual.html
+ * MODULE: Frontend / Documentation
+ * * DESCRIPTION:
+ * - Giao diện hộp thoại (Dialog) hiển thị Hướng dẫn duy trì của hệ thống DNF R&D Database.
+ * - Nhúng trực tiếp tài liệu Google Docs thông qua thẻ iframe. Sử dụng tham số /preview 
+ * để tối ưu hóa không gian hiển thị, tự động ẩn các thanh công cụ chỉnh sửa không cần thiết.
+ * * DEPENDENCIES:
+ * - Nguồn dữ liệu: Google Docs (Document ID: 18fzqq9FqAbMkMHSKMxZUNyPsrv95J64FUBZiikMZmfM).
+ * - App Script UI Container (HtmlService).
+ * * TRIGGERS / USAGE:
+ * - Kích hoạt thủ công thông qua Custom Menu (Ví dụ: System -> HD Duy Trì).
+ * * AUTHOR: SheetScript Architect / Hoàng Nguyên Phước Hiệp
+ * LAST UPDATED: 28/05/2026 | VERSION: V1.1.0
+ * * CHANGELOG:
+ * - V1.1.0 - 28/05/26: [CLEANUP] Standardize file header per GAS anti AI slope rules.
+ * - V1.0.0 - 29/04/26: Khởi tạo file MaintenanceManual với chuẩn Standardized Documentation Header V3 (HTML-safe).
+ * ======================================================================================
+ */
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      /* Reset lề và kích thước để iframe tràn viền Popup */
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        background-color: #f8f9fa;
+      }
+      /* Cấu hình iframe hiển thị mượt mà */
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sử dụng đuôi /preview để ẩn thanh công cụ chỉnh sửa của Google Docs -->
+    <iframe src="https://docs.google.com/document/d/1egj2dxIBE0n3Pn4vV0-D2ntXrxc00Yay8IHT3CiNLCY/preview"></iframe>
+  </body>
+</html>
+
+//design by Hiep

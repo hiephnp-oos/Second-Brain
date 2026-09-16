@@ -1,0 +1,319 @@
+<!--
+/**
+ * ======================================================================================
+ * FILE: Sidebar.html
+ * MODULE: Frontend / Search UI
+ * * DESCRIPTION:
+ * - Giao diện thanh bên (Sidebar) phục vụ tính năng tìm kiếm toàn cục (Fuzzy Search).
+ * - Cung cấp khả năng gợi ý từ khóa (autocomplete) khi nhập liệu và hiển thị chi tiết:
+ * Thông tin cơ bản, cấu trúc BOM đa tầng (Mẹ/Con), giá tiêu chuẩn và liên kết bản vẽ.
+ * - Tương tác bất đồng bộ (Async) với backend thông qua google.script.run để tải 
+ * song song các luồng dữ liệu nặng mà không gây treo giao diện.
+ * * DEPENDENCIES:
+ * - Global Search.gs (Backend API xử lý truy vấn và Turbo Cache).
+ * * TRIGGERS / USAGE:
+ * - Kích hoạt thủ công thông qua Custom Menu.
+ * * AUTHOR: SheetScript Architect / Hoàng Nguyên Phước Hiệp
+ * LAST UPDATED: 28/05/2026 | VERSION: V3.1.0
+ * * CHANGELOG:
+ * - V3.1.0 - 28/05/26: [CLEANUP] Remove emojis from UI, replace validation alerts with inline error messages, add withFailureHandler to all google.script.run calls, adjust min font-size per GAS rules.
+ * - V3.0.0 - 08/04/26: Cập nhật chuẩn Standardized Documentation Header V3 (HTML-safe).
+ * ======================================================================================
+ */
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 15px; color: #333; background-color: #f9f9f9; }
+      
+      .search-container { position: relative; margin-bottom: 20px; }
+      
+      input { 
+        width: 100%; 
+        padding: 12px 50px 12px 12px; 
+        border: 1px solid #ddd; 
+        border-radius: 20px; 
+        box-sizing: border-box; 
+        font-size: 13px; 
+        transition: all 0.3s;
+      }
+      input:focus { outline: none; border-color: #4285F4; box-shadow: 0 0 5px rgba(66,133,244,0.3); }
+      input:disabled { background-color: #f0f0f0; color: #aaa; cursor: wait; }
+
+      .action-icon {
+        position: absolute; right: 5px; top: 50%; transform: translateY(-50%);
+        width: 32px; height: 32px;
+        line-height: 34px;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer; font-size: 14px;
+        font-weight: bold;
+        transition: all 0.2s;
+        z-index: 2;
+        user-select: none;
+      }
+
+      #searchBtn { background-color: #f1f3f4; color: #5f6368; display: block; }
+      #searchBtn:hover { background-color: #4285F4; color: white; }
+      #searchBtn:active { transform: translateY(-50%) scale(0.95); }
+
+      #cancelBtn { background-color: #fce8e6; display: none; }
+      #cancelBtn:hover { background-color: #fad2cf; }
+
+      #suggestions { 
+        position: absolute; top: 110%; left: 10px; right: 10px; 
+        background: white; border: 1px solid #ddd; border-radius: 8px;
+        z-index: 100; max-height: 200px; overflow-y: auto; 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none;
+      }
+      .suggestion-item { padding: 10px 15px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 13px; }
+      .suggestion-item:hover { background-color: #f1f8ff; color: #4285F4; }
+      
+      #loading { display: none; text-align: center; color: #666; font-style: italic; margin-top: 10px; font-size: 13px; }
+      #errorMessage { display: none; text-align: center; color: #d32f2f; margin-top: 10px; font-size: 13px; font-weight: 500; }
+      #resultArea { display: none; animation: fadeIn 0.3s; }
+      
+      .card { background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-left: 4px solid #ddd; }
+      .card h4 { margin: 0 0 10px 0; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: #888; }
+      .card.info { border-left-color: #4285F4; }
+      .card.bom { border-left-color: #EA4335; }
+
+      .data-row { display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #eee; padding-bottom: 4px; }
+      .data-row:last-child { border-bottom: none; }
+      .label { font-weight: 600; color: #555; font-size: 13px; width: 35%; }
+      .value { width: 65%; text-align: right; font-size: 13px; word-break: break-word; }
+      
+      .tag { 
+        display: inline-block; background: #eee; padding: 3px 8px; 
+        border-radius: 4px; font-size: 13px; margin: 3px; 
+        cursor: pointer; border: 1px solid transparent; transition: all 0.2s;
+      }
+      .tag:hover { background: #e2ebf5; color: #4285F4; border-color: #4285F4; }
+      
+      .drawing-link { color: #4285F4; text-decoration: none; font-weight: bold; }
+      .drawing-link:hover { text-decoration: underline; }
+
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+  </head>
+  <body>
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Go ma & nhan Enter..." autocomplete="off">
+      <div id="searchBtn" class="action-icon" onclick="triggerSearch()" title="Tim kiem">Go</div>
+      <div id="cancelBtn" class="action-icon" onclick="cancelSearch()" title="Huy tim kiem">X</div>
+      <div id="suggestions"></div>
+      <div id="errorMessage"></div>
+    </div>
+
+    <div id="loading">Dang tai du lieu...</div>
+
+    <div id="resultArea">
+      <div class="card info">
+        <h4>Thong tin san pham</h4>
+        <div id="infoContent"></div>
+      </div>
+
+      <div class="card bom">
+        <h4 id="bomTitle">Cau truc BOM</h4>
+        <div id="bomContent">
+            <div style="text-align: center; color: #999; padding: 10px; font-size: 13px;">Dang quet cau truc...</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      const cancelBtn = document.getElementById('cancelBtn');
+      const suggestionsBox = document.getElementById('suggestions');
+      const resultArea = document.getElementById('resultArea');
+      const loading = document.getElementById('loading');
+      const errorMsg = document.getElementById('errorMessage');
+      
+      let isCancelled = false;
+
+      function showError(msg) {
+        errorMsg.innerText = msg;
+        errorMsg.style.display = 'block';
+      }
+
+      function hideError() {
+        errorMsg.style.display = 'none';
+        errorMsg.innerText = '';
+      }
+
+      function handleError(error) {
+        setSearchingState(false);
+        showError("Loi he thong: " + error.message);
+      }
+
+      function setSearchingState(isSearching) {
+        if (isSearching) {
+            hideError();
+            searchInput.disabled = true;
+            searchBtn.style.display = 'none';
+            cancelBtn.style.display = 'block';
+            loading.style.display = 'block';
+            suggestionsBox.style.display = 'none';
+            resultArea.style.display = 'none'; 
+        } else {
+            searchInput.disabled = false;
+            searchBtn.style.display = 'block';
+            cancelBtn.style.display = 'none';
+            loading.style.display = 'none';
+            searchInput.focus();
+        }
+      }
+
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          triggerSearch();
+        }
+      });
+
+      function triggerSearch() {
+          const query = searchInput.value.trim();
+          if (!query) return;
+          isCancelled = false;
+          setSearchingState(true);
+          google.script.run
+            .withSuccessHandler(handleSearchResult)
+            .withFailureHandler(handleError)
+            .getProductSuggestions(query);
+      }
+
+      function cancelSearch() {
+        isCancelled = true;
+        setSearchingState(false);
+      }
+
+      function handleSearchResult(list) {
+         if (isCancelled) return;
+         const query = searchInput.value.trim();
+         const exactMatch = list.find(item => item.toLowerCase() === query.toLowerCase());
+
+         if (exactMatch) {
+            loadProductDetails(exactMatch);
+         } else if (list.length > 0) {
+            setSearchingState(false);
+            showSuggestions(list);
+         } else {
+            setSearchingState(false);
+            showError("Khong tim thay ma nao phu hop.");
+         }
+      }
+
+      /**
+       * LUỒNG TẢI DỮ LIỆU CHÍNH (PARALLEL)
+       */
+      function loadProductDetails(code) {
+        if (isCancelled) return;
+        setSearchingState(true);
+
+        // BƯỚC 1: Lấy thông tin cơ bản trước
+        google.script.run
+          .withSuccessHandler(function(info) {
+             if (isCancelled) return;
+             if (info) {
+               // Hiển thị ngay thẻ thông tin sản phẩm (màu xanh dương)
+               renderBasicInfo(info);
+               setSearchingState(false);
+               resultArea.style.display = 'block';
+               
+               // BƯỚC 2: Gọi song song các hàm dữ liệu nặng
+               // Truyền cả sapCode để check ZFIN và keyForBOM để tra cứu bảng BOM
+               google.script.run
+                 .withSuccessHandler(renderBOM)
+                 .withFailureHandler(handleError)
+                 .getBOMRelations(info.sapCode, info.keyForBOM);
+                 
+               google.script.run
+                 .withSuccessHandler(renderExtras)
+                 .withFailureHandler(handleError)
+                 .getExtraDetails(info.keyForBOM);
+             } else {
+               setSearchingState(false);
+               showError("Loi: Khong tim thay thong tin trong Master Data.");
+             }
+          })
+          .withFailureHandler(handleError)
+          .getBasicInfo(code);
+      }
+
+      function showSuggestions(list) {
+        suggestionsBox.innerHTML = '';
+        list.forEach(code => {
+          const div = document.createElement('div');
+          div.className = 'suggestion-item';
+          div.textContent = code;
+          div.onclick = () => {
+             searchInput.value = code;
+             suggestionsBox.style.display = 'none';
+             loadProductDetails(code);
+          };
+          suggestionsBox.appendChild(div);
+        });
+        suggestionsBox.style.display = 'block';
+      }
+
+      // --- RENDER DỮ LIỆU ---
+
+      function renderBasicInfo(info) {
+        document.getElementById('infoContent').innerHTML = `
+          <div class="data-row"><span class="label">SAP Code:</span> <span class="value"><strong>${info.sapCode}</strong></span></div>
+          <div class="data-row"><span class="label">Old Code:</span> <span class="value">${info.oldCode}</span></div>
+          <div class="data-row"><span class="label">Desc (EN):</span> <span class="value">${info.descEN}</span></div>
+          <div class="data-row"><span class="label">Desc (VI):</span> <span class="value">${info.descVI}</span></div>
+          <div class="data-row"><span class="label">STD cost:</span> <span class="value" id="costVal">Loading...</span></div>
+          <div class="data-row"><span class="label">Drawing:</span> <span class="value" id="drawVal">Loading...</span></div>
+        `;
+        // Reset thẻ BOM về trạng thái chờ
+        document.getElementById('bomTitle').textContent = "Cau truc BOM";
+        document.getElementById('bomContent').innerHTML = '<div style="text-align: center; color: #999; padding: 10px; font-size: 13px;">Dang quet cau truc...</div>';
+      }
+
+      function renderExtras(data) {
+        if (isCancelled) return;
+        const costDisp = (data.cost !== "N/A" && data.cost !== undefined) 
+          ? `<span style="color: #0d8a2e; font-weight:bold;">${Number(data.cost).toLocaleString()}</span>` 
+          : "N/A";
+        const drawDisp = data.drawing 
+          ? `<a href="${data.drawing}" target="_blank" class="drawing-link">Mo ban ve &#8599;</a>` 
+          : "Khong co";
+          
+        document.getElementById('costVal').innerHTML = costDisp;
+        document.getElementById('drawVal').innerHTML = drawDisp;
+      }
+
+      function renderBOM(data) {
+        if (isCancelled) return;
+        const bomTitle = document.getElementById('bomTitle');
+        const bomDiv = document.getElementById('bomContent');
+        
+        // Cập nhật tiêu đề dựa trên isZFIN
+        bomTitle.textContent = data.isZFIN ? "Danh sach linh kien (A.BOM)" : "Thuoc ma thanh pham (A.BOM)";
+        const list = data.isZFIN ? data.children : data.parents;
+        
+        if (list && list.length > 0) {
+           bomDiv.innerHTML = `<div style="line-height: 1.6;">${list.map(code => 
+             `<span class="tag" onclick="searchInput.value='${code}'; loadProductDetails('${code}')">${code}</span>`
+           ).join('')}</div>`;
+        } else {
+           bomDiv.innerHTML = `<div style="color:#999; font-size:13px; padding: 10px;">${data.isZFIN ? "Khong co linh kien con" : "Chua duoc dung trong thanh pham nao"}</div>`;
+        }
+      }
+
+      document.addEventListener('click', function(e) {
+        if (e.target !== searchInput && e.target !== suggestionsBox) {
+          suggestionsBox.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>
+
+//design by Hiep

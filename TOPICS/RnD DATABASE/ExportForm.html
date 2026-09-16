@@ -1,0 +1,181 @@
+<!--
+/**
+ * ======================================================================================
+ * FILE: ExportForm.html
+ * MODULE: Frontend / Export UI
+ * * DESCRIPTION:
+ * - Giao diện hộp thoại (Dialog) cho tính năng Export dữ liệu.
+ * - Thu thập tham số đầu vào từ người dùng (chọn sheet, filter, định dạng) và 
+ * truyền dữ liệu xuống backend thông qua API google.script.run.
+ * * DEPENDENCIES:
+ * - Export.gs (Backend logic xử lý trích xuất)
+ * * TRIGGERS / USAGE:
+ * - Kích hoạt thủ công (Menu: Export)
+ * * AUTHOR: SheetScript Architect / Hoàng Nguyên Phước Hiệp
+ * LAST UPDATED: 28/05/2026 | VERSION: V3.1.0
+ * * CHANGELOG:
+ * - V3.1.0 - 28/05/26: [CLEANUP] Adjust font sizes to 14px, remove emojis, replace innerHTML with show/hide container, implement inline validation per GAS rules.
+ * - V3.0.0 - 08/04/26: Cập nhật chuẩn Standardized Documentation Header V3 (HTML-safe).
+ * ======================================================================================
+ */
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body { font-family: Arial, sans-serif; font-size: 14px; padding: 15px; text-align: center; }
+      .options { display: flex; justify-content: center; gap: 30px; margin: 15px 0 25px; flex-wrap: wrap; }
+      .option label { display: flex; align-items: center; gap: 8px; }
+      button { background: #1967d2; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+      button:disabled { background-color: #b0c4de; cursor: not-allowed; }
+      .progress { width: 100%; background: #eee; border-radius: 4px; margin-top: 20px; height: 10px; display: none; }
+      .progress-bar { width: 0%; height: 10px; background: #34a853; border-radius: 4px; transition: width 0.3s ease; }
+      a { display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #1967d2; color: white; text-decoration: none; border-radius: 4px; font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <!-- Container bọc form để dễ dàng ẩn/hiện mà không phá DOM -->
+    <div id="exportFormContainer">
+      <? if (exportType === "bom") { ?>
+        <h3>Select BOM export format</h3>
+        <div class="options">
+          <div class="option"><label><input type="checkbox" id="pdf"> PDF</label></div>
+          <div class="option"><label><input type="checkbox" id="sheet"> Sheet</label></div>
+        </div>
+        <button id="btnExport" onclick="runExport()">Export BOM</button>
+        
+        <div id="statusText" style="margin-top:10px; font-size:13px; color:#666; display:none;">Initializing...</div>
+        
+        <div class="progress" id="progressBox">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      <? } else if (exportType === "sparepart") { ?>
+        <h3>Sparepart export completed!</h3>
+        <p><a href="<?= fileUrl ?>" target="_blank">Open Sparepart File</a></p>
+        <p style="margin-top:12px;color:#666;font-style:italic;">Processing time: <?= elapsed ?></p>
+      <? } else if (exportType === "bomcost") { ?>
+        <h3>BOM Cost export completed!</h3>
+        <p><a href="<?= fileUrl ?>" target="_blank">Open BOM Cost File</a></p>
+        <p style="margin-top:12px;color:#666;font-style:italic;">Processing time: <?= elapsed ?></p>
+      <? } ?>
+    </div>
+
+    <!-- Container chứa kết quả trả về -->
+    <div id="resultContainer" style="display:none;"></div>
+
+    <script>
+      let exportInProgress = false;
+      let progressInterval;
+      let currentPercent = 0;
+
+      function runExport() {
+        if (exportInProgress) return;
+
+        const pdfCheck = document.getElementById('pdf');
+        const sheetCheck = document.getElementById('sheet');
+        const statusEl = document.getElementById('statusText');
+        
+        const options = {
+          exportPDF: pdfCheck ? pdfCheck.checked : false,
+          exportSheet: sheetCheck ? sheetCheck.checked : false
+        };
+
+        // Validate inline thay vì dùng alert
+        if (!options.exportPDF && !options.exportSheet) {
+          statusEl.innerText = "Please select at least one format (PDF or Sheet).";
+          statusEl.style.color = "red";
+          statusEl.style.display = "block";
+          return;
+        }
+
+        // Khóa giao diện
+        const btn = document.getElementById('btnExport');
+        btn.disabled = true;
+        btn.textContent = "Exporting...";
+        exportInProgress = true;
+
+        // Hiển thị thanh progress & reset status text
+        statusEl.innerText = "Initializing...";
+        statusEl.style.color = "#666";
+        statusEl.style.display = "block";
+        document.getElementById('progressBox').style.display = "block";
+        
+        // Bắt đầu chạy hiệu ứng loading giả (Tăng tốc độ cảm nhận)
+        startSimulatedProgress();
+
+        // Gọi Server
+        google.script.run
+          .withSuccessHandler(showLinks)
+          .withFailureHandler(errorHandler)
+          .runSelectedExport(options);
+      }
+
+      // Hieu ung thanh chay gia lap
+      function startSimulatedProgress() {
+        currentPercent = 5;
+        updateProgress(currentPercent);
+        const statusEl = document.getElementById('statusText');
+        
+        // Cứ 800ms tăng thêm 1 chút, tối đa đến 95%
+        progressInterval = setInterval(() => {
+          if (currentPercent < 90) {
+            // Tăng ngẫu nhiên từ 1-5% để nhìn tự nhiên hơn
+            currentPercent += Math.floor(Math.random() * 5) + 1; 
+            updateProgress(currentPercent);
+            
+            // Thay đổi text cho sinh động
+            if(currentPercent > 20 && currentPercent < 50) statusEl.innerText = "Processing data...";
+            if(currentPercent >= 50 && currentPercent < 80) statusEl.innerText = "Generating files...";
+            if(currentPercent >= 80) statusEl.innerText = "Finalizing...";
+          }
+        }, 800);
+      }
+
+      function stopSimulatedProgress() {
+        clearInterval(progressInterval);
+      }
+
+      function updateProgress(percent) {
+        document.getElementById('progressBar').style.width = percent + "%";
+      }
+
+      function showLinks(result) {
+        stopSimulatedProgress();
+        updateProgress(100); // Nhảy vọt lên 100% khi xong
+        
+        // Delay nhẹ 300ms để người dùng kịp nhìn thấy 100% trước khi render lại
+        setTimeout(() => {
+            // Ẩn form cũ thay vì ghi đè document.body.innerHTML
+            document.getElementById('exportFormContainer').style.display = 'none';
+            
+            let html = '<h3>Export completed!</h3>';
+            if (result.pdfUrl) html += `<p><a href="${result.pdfUrl}" target="_blank">Open exported PDF</a></p>`;
+            if (result.sheetUrl) html += `<p><a href="${result.sheetUrl}" target="_blank">Open exported Sheet</a></p>`;
+            if (result.elapsed) html += `<p style="margin-top:12px;color:#666;font-style:italic;">Processing time: ${result.elapsed}</p>`;
+            
+            const resDiv = document.getElementById('resultContainer');
+            resDiv.innerHTML = html;
+            resDiv.style.display = 'block';
+        }, 300);
+      }
+
+      function errorHandler(error) {
+        stopSimulatedProgress();
+        updateProgress(0);
+        
+        const btn = document.getElementById('btnExport');
+        btn.disabled = false;
+        btn.textContent = "Export BOM";
+        
+        // Hiển thị lỗi inline thay vì dùng alert
+        const statusEl = document.getElementById('statusText');
+        statusEl.innerText = "Export error: " + error.message;
+        statusEl.style.color = "red";
+        statusEl.style.display = "block";
+        
+        exportInProgress = false;
+      }
+    </script>
+  </body>
+</html>

@@ -21,65 +21,112 @@
 
 function auditAllProtections() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
+  
+  // 1. Lấy danh sách ADMINS từ Config
   if (typeof CONFIG === 'undefined' || !CONFIG.ADMINS || CONFIG.ADMINS.length === 0) {
     SpreadsheetApp.getUi().alert("Loi: Khong tim thay danh sach CONFIG.ADMINS. Vui long kiem tra file Config.gs");
     return;
   }
   const admins = CONFIG.ADMINS;
+
   ss.toast("Dang quet va tu dong phuc hoi quyen bao mat...", "Security Audit", -1);
+  
   const sheets = ss.getSheets();
   const outputData = [];
   let countSynced = 0;
+
+  // 2. Vòng lặp Quét kết hợp Auto-Healing
   sheets.forEach(sheet => {
+    // [TỐI ƯU 1] Kéo các hàm gọi thông tin Sheet ra ngoài vòng lặp Protection.
+    // Chỉ gọi 1 lần cho mỗi Sheet thay vì gọi N lần cho N ổ khóa.
     const sheetName = sheet.getName();
     const sheetId = sheet.getSheetId();
     const sheetLink = `=HYPERLINK("#gid=${sheetId}", "${sheetName}")`;
+
     const sheetProtections = sheet.getProtections(SpreadsheetApp.ProtectionType.SHEET);
     const rangeProtections = sheet.getProtections(SpreadsheetApp.ProtectionType.RANGE);
     const protections = sheetProtections.concat(rangeProtections);
+    
     protections.forEach(p => {
+      
+      // --- AUTO-HEALING LOGIC ---
       const currentEditors = p.getEditors().map(user => user.getEmail());
       const adminsToAdd = admins.filter(admin => !currentEditors.includes(admin));
       const editorsToRemove = currentEditors.filter(email => !admins.includes(email));
+      
       let needsSync = false;
-      if (adminsToAdd.length > 0 || editorsToRemove.length > 0 || p.canDomainEdit()) needsSync = true;
+      if (adminsToAdd.length > 0 || editorsToRemove.length > 0 || p.canDomainEdit()) {
+        needsSync = true;
+      }
+
       let finalEditorsText = "";
+
       if (needsSync) {
         if (adminsToAdd.length > 0) p.addEditors(adminsToAdd);
-        editorsToRemove.forEach(email => { try { p.removeEditor(email); } catch(e) {} });
+        editorsToRemove.forEach(email => {
+          try { p.removeEditor(email); } catch(e) {} // Bỏ qua lỗi nếu email đó là Owner
+        });
         if (p.canDomainEdit()) p.setDomainEdit(false);
         countSynced++;
+        
+        // Chỉ gọi lại getEditors() để lấy mảng mới NẾU ổ khóa vừa bị chỉnh sửa
         finalEditorsText = p.getEditors().map(user => user.getEmail()).join(",\n") || "Only Owner";
       } else {
+        // [TỐI ƯU 2] Nếu ổ khóa an toàn, tái sử dụng luôn mảng currentEditors đã lấy ở trên.
+        // Tiết kiệm được 1 lời gọi API đắt đỏ cho mỗi ổ khóa hợp lệ.
         finalEditorsText = currentEditors.join(",\n") || "Only Owner";
       }
+      // --------------------------
+
+      // 3. Lấy thông tin để in báo cáo
       let type = p.getProtectionType() === SpreadsheetApp.ProtectionType.SHEET ? "Sheet Level" : "Range Level";
-      let rangeInfo = type === "Sheet Level" ? (p.getUnprotectedRanges().map(r => r.getA1Notation()).join(", ") || "All Locked") : p.getRange().getA1Notation();
+      let rangeInfo = type === "Sheet Level" 
+        ? (p.getUnprotectedRanges().map(r => r.getA1Notation()).join(", ") || "All Locked")
+        : p.getRange().getA1Notation();
+      
       outputData.push([sheetLink, rangeInfo, finalEditorsText]);
     });
   });
+
+  // 4. Ghi kết quả ra Sheet Maintenance
   const reportSheetName = "Maintenance";
   let reportSheet = ss.getSheetByName(reportSheetName);
+  
   if (!reportSheet) {
     SpreadsheetApp.getUi().alert("Loi: Vui long chay 'Run Health Check' truoc de tao layout Maintenance.");
     return;
   }
+
   const maxRow = Math.max(reportSheet.getLastRow(), 4);
+  // [MỚI] Định dạng text ép cho cột 29, 30 (AC, AD) do Zone Security đã dời về cuối
   reportSheet.getRange(4, 29, maxRow, 2).setNumberFormat("@");
+
   if (outputData.length > 0) {
     const currentDataRows = maxRow - 3;
     const diff = currentDataRows - outputData.length;
+    
     if (diff > 0) {
       const emptyRow = ["", "", ""];
-      for (let i = 0; i < diff; i++) outputData.push(emptyRow);
+      for (let i = 0; i < diff; i++) {
+        outputData.push(emptyRow);
+      }
     }
-    reportSheet.getRange(4, 28, outputData.length, 3).setValues(outputData).setWrapStrategy(SpreadsheetApp.WrapStrategy.WRAP);
+
+    // [MỚI] Ghi kết quả bắt đầu từ cột 28 (AB)
+    reportSheet.getRange(4, 28, outputData.length, 3).setValues(outputData)
+               .setWrapStrategy(SpreadsheetApp.WrapStrategy.WRAP);
   } else if (maxRow >= 4) {
     reportSheet.getRange(4, 28, maxRow - 3, 3).clearContent();
   }
+
   SpreadsheetApp.flush();
-  if (countSynced > 0) ss.toast(`Phat hien va sua loi phan quyen tai ${countSynced} o khoa. Danh sach Admin da duoc dong bo 100%.`, "Audit Complete", 8);
-  else ss.toast("He thong bao mat an toan. Khong phat hien sai lech.", "Audit Complete", 5);
+
+  // 5. Thông báo kết quả
+  if (countSynced > 0) {
+    ss.toast(`Phat hien va sua loi phan quyen tai ${countSynced} o khoa. Danh sach Admin da duoc dong bo 100%.`, "Audit Complete", 8);
+  } else {
+    ss.toast("He thong bao mat an toan. Khong phat hien sai lech.", "Audit Complete", 5);
+  }
 }
 
 //design by Hiep
