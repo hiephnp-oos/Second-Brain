@@ -82,19 +82,9 @@ Second-Brain uses GitHub's native capabilities as execution and verification lay
 
 `/.github/workflows/validate.yml` runs the executable repository validator on pushes to `main` and pull requests targeting `main`.
 
-The validator checks structural invariants, topic README requirements, forbidden artifacts, local references, supported data contracts, and the presence of required platform controls.
+The validator checks structural invariants, topic README requirements, forbidden artifacts, local references, supported data contracts, and required repository controls.
 
 A validation PASS is evidence that defined machine-checkable invariants hold at that moment. It is not a substitute for human/contextual verification.
-
-### GitHub Rulesets
-
-Rulesets are the enforcement layer for `main`. Repository governance should prevent validated changes from being bypassed through direct or unsafe mutation where practical.
-
-Rulesets must remain aligned with the validation workflow. Do not introduce a required status check that the workflow does not actually publish.
-
-### GitHub Pages
-
-GitHub Pages under `docs/` is a presentation/navigation layer only. Repository Markdown remains the source of truth. Pages may add visual navigation, architecture maps, and future knowledge views without creating duplicate authoritative content.
 
 ### Issue Forms
 
