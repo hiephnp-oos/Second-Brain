@@ -12,6 +12,16 @@ CORE_TOPIC_SECTIONS = [
     "Decisions", "Lessons", "Routing", "Next",
 ]
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder", "staging"]
+FORBIDDEN_PATHS = [
+    Path("docs"),
+    Path(".github/workflows/pages.yml"),
+]
+CANONICAL_DOCS = [
+    Path("README.md"),
+    Path("WORKFLOW.md"),
+    Path("REPOSITORY_CONTRACT.md"),
+]
+REMOVED_PLATFORM_CONTROLS = ["GitHub Pages", "GitHub Rulesets"]
 REQUIRED_GITHUB_COMPONENTS = [
     ".github/workflows/validate.yml",
     ".github/ISSUE_TEMPLATE/config.yml",
@@ -84,12 +94,31 @@ def validate_topics(active_topics: set[str], errors: list[str]) -> None:
 
 
 def validate_forbidden_files(errors: list[str]) -> None:
+    for forbidden in FORBIDDEN_PATHS:
+        path = ROOT / forbidden
+        if path.exists():
+            fail(f"Forbidden legacy platform path found: {forbidden}", errors)
     for path in ROOT.rglob("*"):
         if not path.is_file() or ".git" in path.parts or path.name == "validate_second_brain.py":
             continue
         lower = path.name.lower()
         if any(marker.lower() in lower for marker in FORBIDDEN_MARKERS):
             fail(f"Forbidden artifact marker found: {path.relative_to(ROOT)}", errors)
+
+
+def validate_removed_platform_controls(errors: list[str]) -> None:
+    for relative in CANONICAL_DOCS:
+        path = ROOT / relative
+        if not path.exists():
+            continue
+        text = read_text(path)
+        for control in REMOVED_PLATFORM_CONTROLS:
+            if control in text:
+                fail(
+                    f"Removed platform control still referenced in canonical operational document: "
+                    f"{relative} -> {control}",
+                    errors,
+                )
 
 
 def validate_local_references(errors: list[str]) -> None:
@@ -210,6 +239,7 @@ def main() -> int:
     active = extract_active_topics(errors)
     validate_topics(active, errors)
     validate_forbidden_files(errors)
+    validate_removed_platform_controls(errors)
     validate_local_references(errors)
     validate_csv_shape(errors)
     validate_rnd_knowledge_sheet(errors)
