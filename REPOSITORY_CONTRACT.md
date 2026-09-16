@@ -74,6 +74,48 @@ For changes involving replacement, rename, cleanup, migration, or restructuring,
 
 This negative-state contract is specifically intended to prevent partial updates such as creating a new file while leaving the old file or placeholder behind.
 
+## GitHub platform controls
+
+Second-Brain uses GitHub's native capabilities as execution and verification layers without creating a second source of truth:
+
+### GitHub Actions
+
+`/.github/workflows/validate.yml` runs the executable repository validator on pushes to `main` and pull requests targeting `main`.
+
+The validator checks structural invariants, topic README requirements, forbidden artifacts, local references, supported data contracts, and the presence of required platform controls.
+
+A validation PASS is evidence that defined machine-checkable invariants hold at that moment. It is not a substitute for human/contextual verification.
+
+### GitHub Rulesets
+
+Rulesets are the enforcement layer for `main`. Repository governance should prevent validated changes from being bypassed through direct or unsafe mutation where practical.
+
+Rulesets must remain aligned with the validation workflow. Do not introduce a required status check that the workflow does not actually publish.
+
+### GitHub Pages
+
+GitHub Pages under `docs/` is a presentation/navigation layer only. Repository Markdown remains the source of truth. Pages may add visual navigation, architecture maps, and future knowledge views without creating duplicate authoritative content.
+
+### Issue Forms
+
+`.github/ISSUE_TEMPLATE/change_request.yml` is the standardized change-request input for structured Second-Brain work. It captures target, objective, evidence, affected dependent layers, acceptance criteria, and completion checks.
+
+Issue Forms do not replace direct conversation for ordinary low-risk work. They are available when a change benefits from explicit traceable requirements.
+
+### Task Lists
+
+Task lists/checklists are execution controls used to make completion criteria explicit. They track work; they do not define repository invariants. Canonical requirements remain in `WORKFLOW.md` and this contract, while automated checks enforce machine-verifiable requirements.
+
+## Completion contract
+
+A repository mutation is complete only when:
+
+1. the target state is achieved;
+2. obsolete/superseded state is absent where required;
+3. affected references and canonical documents are synchronized;
+4. automated validation passes when applicable;
+5. final repository state has been verified.
+
 ## Scope and simplicity
 
 Keep the system intentionally small. Add infrastructure only when repeated real usage demonstrates a limitation of the current GitHub + Markdown model. Prefer generic controls over one-off patches.
