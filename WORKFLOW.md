@@ -15,7 +15,7 @@ The operating loop is:
 For a new task:
 
 1. Read `AI_MEMORY.md`.
-2. Identify the relevant topic folder(s).
+2. Identify the relevant topic folder(s) from the active-topic registry.
 3. Read `TOPICS/<topic>/README.md`.
 4. If needed, read only the relevant child workstream/project source.
 5. Follow authoritative project/source references when detailed facts are needed.
@@ -142,7 +142,7 @@ Prefer `UPDATE` over `ADD` when the new information refines existing knowledge.
 
 Use:
 
-- `AI_MEMORY.md` for durable user-level or cross-topic context.
+- `AI_MEMORY.md` for durable user-level or cross-topic context and the canonical active-topic registry.
 - `TOPICS/<topic>/README.md` for durable topic context and routing.
 - Child workstream folders/files for detailed recurring work.
 - Authoritative project/source repositories for detailed project knowledge unless that project has explicitly been migrated into Second-Brain.
@@ -152,10 +152,10 @@ If a new topic becomes recurring:
 1. Create `TOPICS/<topic>/`.
 2. Create `TOPICS/<topic>/README.md` using the standard template.
 3. Add the topic to the active-topics table in `AI_MEMORY.md`.
-4. Update the repository structure in the root `README.md`.
+4. If the repository architecture itself changed, update the root `README.md`.
 5. If the change introduces or changes a workflow rule, update `WORKFLOW.md` in the same change.
 
-If a topic is renamed, moved, merged, split, or removed, update every affected registry/reference in the same change.
+If a topic is renamed, moved, merged, split, or removed, update the canonical registry and all affected references in the same change.
 
 For `RnD DATABASE`, the project was explicitly migrated into Second-Brain, so its detailed project files intentionally live under `TOPICS/RnD DATABASE/`.
 
@@ -163,15 +163,22 @@ For `RnD DATABASE`, the project was explicitly migrated into Second-Brain, so it
 
 A memory change is **not complete** when only the obvious file was updated.
 
+The key design rule is: **one authoritative registry, minimum duplication**.
+
+- `AI_MEMORY.md` is the canonical registry of active topics.
+- `TOPICS/<topic>/README.md` is the canonical entry point for that topic.
+- `WORKFLOW.md` is the authority for process and template rules.
+- Root `README.md` is repository overview/navigation, not a second topic registry.
+
 Before finishing any structural or memory-maintenance change, check the affected layers:
 
 | Change | Required update/check |
 |---|---|
-| New topic | Topic `README.md` + `AI_MEMORY.md` + root `README.md` |
-| Rename/move topic | Topic path + `AI_MEMORY.md` + root `README.md` + affected references |
-| Remove topic | Remove topic + `AI_MEMORY.md` + root `README.md` + affected references |
+| New topic | Topic `README.md` + `AI_MEMORY.md` |
+| Rename/move topic | Topic path + `AI_MEMORY.md` + affected references; root `README.md` only if repository architecture/navigation text changes |
+| Remove topic | Remove topic + `AI_MEMORY.md` + affected references; root `README.md` only if repository architecture/navigation text changes |
 | New child workstream | Child folder/files + topic `README.md` |
-| Topic structure/template rule changes | `WORKFLOW.md` + all affected topic READMEs + root `README.md` if navigation is affected |
+| Topic structure/template rule changes | `WORKFLOW.md` + all affected topic READMEs + root `README.md` if its documented architecture/template description changes |
 | Global memory change | `AI_MEMORY.md` + relevant topic README when topic routing/context is affected |
 | Topic knowledge change | Relevant topic `README.md` or child artifact; update `AI_MEMORY.md` only if cross-topic/global |
 | Handoff only | Handoff/current conversation; do not update durable memory unless a durable change is identified |
@@ -180,12 +187,13 @@ Minimum final check:
 
 1. Does every topic folder have `README.md`?
 2. Does `AI_MEMORY.md` list every active topic and point to the correct README?
-3. Does root `README.md` show the same active topic structure?
+3. Does every topic README follow the standard core template?
 4. Do renamed/deleted files still appear in references?
 5. If the rule/template changed, is `WORKFLOW.md` aligned with the actual structure?
-6. Do topic READMEs follow the standard core template?
+6. If repository architecture/navigation changed, is root `README.md` aligned?
+7. Are there unnecessary duplicate registries or summary files that can drift?
 
-If any answer is `No`, the change is incomplete.
+If any applicable answer is `No`, the change is incomplete.
 
 This rule exists specifically to prevent the failure mode where an AI updates one layer and forgets the dependent registry, navigation page, or workflow rule.
 
@@ -295,9 +303,11 @@ When a recurring failure is observed, capture it only when it is actionable for 
 - Handoff lost a decision or unresolved issue;
 - one repository layer was updated while a dependent layer was left stale;
 - topic README/template drifted from the workflow;
-- root navigation or `AI_MEMORY.md` registry became stale.
+- root navigation became stale after an architecture change.
 
-The current failure is explicitly recognized as a **consistency/drift failure**: an AI may correctly modify the topic files but forget to update root navigation and workflow rules. The prevention mechanism is the mandatory consistency rule and final checklist above.
+The current failure is explicitly recognized as a **consistency/drift failure**: an AI may correctly modify the topic files but forget to update the root navigation or workflow rules. The prevention mechanism is now:
+
+`Canonical registry + Standard topic README + Mandatory consistency checklist + Final verification`
 
 Do not create a permanent failure log for isolated events. Add a structured record only when repeated patterns justify it.
 
@@ -312,7 +322,7 @@ Periodically inspect the memory for:
 - obsolete decisions;
 - topics/workstreams that are no longer useful;
 - recurring retrieval or Handoff failures;
-- structural drift between `AI_MEMORY.md`, root `README.md`, `WORKFLOW.md`, and topic READMEs.
+- structural drift between the canonical registry, workflow rules, and topic READMEs.
 
 A review is a quality check. It should not silently invent or rewrite project status.
 
