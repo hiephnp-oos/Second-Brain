@@ -60,20 +60,38 @@ Repository maintenance principle:
 | `TOPICS/SYSTEMS/Second_Brain_Operations.md` | Compact operational execution guide |
 | `scripts/validate_second_brain.py` | Executable repository validation |
 | `.github/workflows/validate.yml` | Automatic validation on `main` pushes and pull requests |
+| `.github/workflows/pages.yml` | GitHub Pages deployment foundation |
+| `.github/ISSUE_TEMPLATE/change_request.yml` | Structured change-request form |
+| `docs/index.md` | GitHub Pages presentation/navigation entry point |
+
+## GitHub platform controls
+
+Second-Brain uses five complementary GitHub-native controls:
+
+1. **GitHub Actions** — automated repository validation.
+2. **GitHub Rulesets** — enforcement of repository governance and validation.
+3. **GitHub Pages** — visual knowledge portal and future navigation layer; it is presentation only.
+4. **Issue Forms** — standardized change-request input when structured requirements are useful.
+5. **Task Lists** — explicit execution/completion checklists for multi-step work.
+
+These controls do not replace the Markdown source of truth. Canonical rules remain in `WORKFLOW.md` and `REPOSITORY_CONTRACT.md`.
 
 ## Repository structure
 
-The structure is intentionally small:
+The structure remains intentionally small:
 
 ```text
-AI_MEMORY.md                 ← global memory + canonical topic registry
-WORKFLOW.md                  ← workflow + templates + lifecycle
-REPOSITORY_CONTRACT.md       ← invariants + completion contract
+AI_MEMORY.md                  ← global memory + canonical topic registry
+WORKFLOW.md                   ← workflow + templates + lifecycle
+REPOSITORY_CONTRACT.md        ← invariants + completion contract
 TOPICS/
 └── <topic>/
-    ├── README.md            ← topic entry point
-    └── <workstream/files>   ← detailed recurring work when needed
-.github/workflows/            ← automated validation
+    ├── README.md             ← topic entry point
+    └── <workstream/files>    ← detailed recurring work when needed
+.github/
+├── workflows/                ← automated validation + Pages deployment
+└── ISSUE_TEMPLATE/           ← structured change requests
+docs/                         ← Pages presentation layer only
 scripts/                      ← validation tooling
 ```
 
@@ -111,6 +129,7 @@ Recurring non-trivial child areas may use a workstream README, but not every fol
 7. Combine repository knowledge with current conversation context; current explicit user information takes precedence.
 8. Use Handoff only as temporary continuation state.
 9. Before reporting a repository change as complete, verify the actual final GitHub state.
+10. When a change is multi-step, use the Issue Form/Task List controls when they provide useful traceability.
 
 ## Memory maintenance
 
@@ -126,12 +145,15 @@ For repository mutations, follow:
 
 ## Reliability model
 
-The system uses four complementary controls:
+The system uses seven complementary controls:
 
 1. **Canonical rules** — `WORKFLOW.md`.
 2. **Repository invariants** — `REPOSITORY_CONTRACT.md`.
 3. **User reinforcement prompts** — `TOPICS/SYSTEMS/User_Prompts.md`.
 4. **Executable validation** — `scripts/validate_second_brain.py` + GitHub Actions.
+5. **Repository enforcement** — GitHub Rulesets.
+6. **Structured requests** — Issue Forms + Task Lists when useful.
+7. **Presentation layer** — GitHub Pages, without duplicating source-of-truth content.
 
 A tool action succeeding is not completion evidence. The final repository state is.
 
