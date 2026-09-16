@@ -41,7 +41,7 @@ Do not interpret this repository as a complete record of the user's life, work, 
 Memory has two levels:
 
 - `AI_MEMORY.md`: durable user-level and cross-topic context.
-- `TOPICS/`: durable topic folders. Each topic folder contains a routing/summary file and/or workstream folders/files as appropriate.
+- `TOPICS/`: durable topic folders. Each topic folder uses `README.md` as its entry point; child workstream folders/files hold detailed recurring work as appropriate.
 
 Git history provides historical versions. Do not create additional archive folders unless real scale requires them.
 
@@ -53,11 +53,11 @@ These are the currently recognized work areas, not an exhaustive list of everyth
 
 | Topic | Status | Entry point |
 |---|---|---|
-| AI General | Active | `TOPICS/AI GENERAL/AI_AND_AUTOMATION.md` |
-| Construction | Active | `TOPICS/CONSTRUCTION/CONSTRUCTION_AND_TENDER.md` |
-| Nuvio Setup | Active | `TOPICS/NUVIO SETUP/NUVIO_STREAM_CONFIG.md` |
-| Systems | Active | `TOPICS/SYSTEMS/SOFTWARE_AND_SYSTEMS.md` |
-| R&D Innovation | Active | `TOPICS/RnD INNOVATION/RnD INNOVATION.md` |
+| AI General | Active | `TOPICS/AI GENERAL/README.md` |
+| Construction | Active | `TOPICS/CONSTRUCTION/README.md` |
+| Nuvio Setup | Active | `TOPICS/NUVIO SETUP/README.md` |
+| Systems | Active | `TOPICS/SYSTEMS/README.md` |
+| R&D Innovation | Active | `TOPICS/RnD INNOVATION/README.md` |
 | R&D Database | Active | `TOPICS/RnD DATABASE/README.md` |
 
 R&D Innovation is intentionally organized as a parent topic folder with dedicated workstream subfolders. New recurring R&D workstreams may be added there without changing the overall memory architecture.
@@ -81,7 +81,7 @@ A topic should be added only when recurring work creates enough durable context 
 
 - GitHub is the persistence layer and source of truth for this AI working context.
 - The system is provider-independent so another AI can read it and continue working.
-- The preferred structure is one master memory file plus topic folders. Most topic folders contain a concise entry-point summary; R&D Innovation also contains dedicated recurring workstream folders.
+- The preferred structure is one master memory file plus topic folders, with one `README.md` entry point per topic.
 - Memory maintenance uses ADD / UPDATE / REMOVE / NO_CHANGE and is defined in `WORKFLOW.md`.
 - Phase 2, Phase 3, and Phase 4 are now active operating tracks and are validated through real work in Phase 1 usage.
 - `PHASES_2-4.md` is the operational model for Memory Quality, Retrieval/Routing, and Handoff.
@@ -95,9 +95,9 @@ Follow this sequence:
 
 1. Read `AI_MEMORY.md` first.
 2. Identify which topic folder(s) are relevant to the current request.
-3. Read the relevant topic entry-point file(s).
+3. Read the relevant topic `README.md`.
 4. If the topic contains child workstream folders, read only the relevant folder/file(s).
-5. If a topic file references an external project/repository/document, only use that source when needed for detailed facts. For `RnD DATABASE`, use the migrated project files inside the topic folder as the detailed source; do not redirect to the old repository as the primary source.
+5. If a topic README or artifact references an external project/repository/document, only use that source when needed for detailed facts. For `RnD DATABASE`, use the migrated project files inside the topic folder as the detailed source; do not redirect to the old repository as the primary source.
 6. Use current conversation context together with this memory. New explicit user information takes precedence over older memory.
 7. Do not assume that the listed active topics are exhaustive.
 8. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
