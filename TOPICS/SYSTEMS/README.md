@@ -1,22 +1,69 @@
 # Systems
 
-Entry point for recurring work involving software, technical systems, repositories, scripting, architecture, debugging, configuration, and integrations.
+Entry point and durable topic context for recurring work involving software, technical systems, repositories, scripting, architecture, debugging, configuration, integrations, and Second-Brain system support.
 
 ## Scope
 
-- Software development and scripting.
-- GitHub repositories and technical workflows.
-- System architecture and integrations.
-- Debugging and configuration.
-- Technical implementation and maintainability.
-- Second-Brain retrieval, handoff, and memory workflow support.
+Software development, GitHub repositories, scripting, system architecture, debugging, configuration, integrations, technical implementation, maintainability, and Second-Brain retrieval/handoff workflow support.
 
-## Read next
+## Current Context
 
-- `SOFTWARE_AND_SYSTEMS.md` — durable software/system context.
-- `Handoff_Template.md` — reusable handoff format.
-- `Retrieval_Test.md` — retrieval/routing validation.
+The user works on practical software and technical systems alongside engineering work. This includes designing and reviewing code, understanding existing repositories, improving workflows, integrating services, and troubleshooting implementation issues.
+
+One known project is the DNF R&D Database, a Google Sheets + Apps Script based R&D data management system involving BOM, Material, Cost, Drawing, SAP integration, search, automation, auditing, and maintenance. It is an important project but only one part of the user's broader work. The project now has its own `TOPICS/RnD DATABASE/` topic and should be routed there for detailed work.
+
+The user also works on configuration-heavy software/services, where templates, ranking logic, metadata, proxy behavior, and integrations may need iterative tuning.
+
+## Working Principles
+
+- Understand the existing architecture before changing it.
+- Prefer minimal, maintainable changes that solve the actual problem.
+- Preserve existing behavior unless a change is intentional.
+- When debugging, identify the actual cause rather than masking symptoms.
+- Consider edge cases, performance, maintainability, and integration boundaries when they materially affect the solution.
+- Keep sensitive configuration out of public source or persistent AI memory.
+- For configuration changes, explain what each setting changes and whether it affects performance or behavior.
+
+## Active Projects / References
+
+### DNF R&D Database
+
+Repository: `hiephnp-oos/DNF-R-D-database`
+
+The project includes BOM, Material, Cost, Drawing, SAP integration, search, automation, auditing, and maintenance workflows. Detailed project source is now migrated into `TOPICS/RnD DATABASE/` in Second-Brain.
+
+### Second Brain
+
+Repository: `hiephnp-oos/Second-Brain`
+
+This repository is the persistent AI working-context layer, not a conventional software project.
+
+## Decisions
+
+- Software project details should remain in their own repositories or their explicitly migrated topic source; this README stores only persistent context needed by an AI working with the user.
+- Avoid treating DNF R&D Database as the user's only or primary software activity.
+- A topic-specific project should be routed to its dedicated topic instead of duplicating detailed project context here.
+
+## Lessons
+
+- Do not treat one software project as representative of the user's entire work.
+- Avoid unnecessary refactoring when a targeted change is sufficient.
+- When changing configuration, preserve a known-good baseline so changes can be evaluated independently.
+
+## Second-Brain System Artifacts
+
+### Handoff Template
+
+`Handoff_Template.md` is the reusable format for transferring temporary conversation state between AI systems or conversations. A Handoff is not persistent memory and should propose, rather than silently apply, ADD / UPDATE / REMOVE / NO_CHANGE memory changes.
+
+### Retrieval Test
+
+`Retrieval_Test.md` is the lightweight validation procedure for Phase 3 Retrieval / Routing. It tests whether an AI can find the smallest useful context path without reading the whole repository. Recurring retrieval failures should inform workflow improvements; isolated mistakes do not require permanent logging.
 
 ## Routing
 
-Use this topic for general software/system work. For a specific project with its own topic, route to that topic instead of duplicating project detail here.
+Use this topic for general software/system work. For a specific project with its own topic, route to that topic instead of duplicating project detail here. For Second-Brain continuity work, use `Handoff_Template.md`, `Retrieval_Test.md`, and the root `AI_MEMORY.md` / `WORKFLOW.md` as appropriate.
+
+## Next
+
+Maintain this README as persistent technical working context is established through future software/system work.
