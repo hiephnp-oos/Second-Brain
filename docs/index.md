@@ -27,7 +27,6 @@ flowchart TD
     H --> I[Validate]
     I --> J[Verify]
     J --> K[Repository Source of Truth]
-
     K --> L[GitHub Pages]
     L --> M[Human Navigation / Visual Portal]
 ```
