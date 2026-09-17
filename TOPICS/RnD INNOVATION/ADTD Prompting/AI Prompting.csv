@@ -3,14 +3,1521 @@
 2,DNF R&D Innovation Agent,"Phân tích, kết nối và tạo insight / opportunity / R&D idea, đồng thời có thể mở rộng tìm kiếm bên ngoài Knowledge Sheet bằng web search khi cần. Phù hợp cho các nhiệm vụ cần suy luận, sáng tạo, đánh giá hoặc nghiên cứu bổ sung.",,,,
 ,,,,,,
 No.,Group,Mục đích sử dụng,Công cụ,Prompt templete,Input [Context],Output prompt to AI
-10,Knowledge Connection / Claw,"Tìm solution từ các ngành khác có thể transfer vào bathroom/shower/faucet.","DNF R&D Innovation Agent\nChuyển giao công nghệ từ bên ngoài + tìm kiếm web","Purpose:\n Tìm technology, mechanism hoặc solution từ các ngành khác có thể chuyển giao để giải quyết một problem R&D.\n\n Input:\n [INPUT]\n\n Task:\n - Dùng Web Search để tìm cách các ngành khác đang giải quyết problem tương tự.\n - Xác định technology/mechanism có khả năng transfer.\n - Phân tích cách adaptation vào context hiện tại.\n - Nếu Knowledge Sheet được cung cấp, đối chiếu để xác định baseline/internal relationship.\n - Đề xuất opportunity/idea nếu có.\n\n Output:\n - Industry: Ngành bên ngoài có liên quan.\n - Problem: Vấn đề tương tự.\n - Existing solution: Giải pháp đang được sử dụng.\n - Technology / mechanism: Công nghệ hoặc mechanism có thể transfer.\n - External evidence: Source/sản phẩm/công nghệ tham chiếu.\n - KS relationship: Liên hệ với Knowledge Sheet nếu có.\n - Adaptation: Cách có thể áp dụng vào context hiện tại.\n - Idea / opportunity: Hướng R&D có thể khai thác.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; có thể chạy độc lập bằng external research.\n - Nếu Knowledge Sheet được cung cấp, phân biệt rõ Knowledge Sheet evidence, external evidence, transferred technology, inference và new idea.\n - External evidence không được trình bày như Knowledge Sheet evidence.\n - Không kết luận novelty nếu không có evidence phù hợp.\n - Trả lời bằng tiếng Việt.",[PROBLEM]: vấn đề người dùng muốn tìm cách giải quyết từ ngành khác,"Purpose:\n Tìm technology, mechanism hoặc solution từ các ngành khác có thể chuyển giao để giải quyết một problem R&D.\n\n Input:\n [PROBLEM]: vấn đề người dùng muốn tìm cách giải quyết từ ngành khác\n\n Task:\n - Dùng Web Search để tìm cách các ngành khác đang giải quyết problem tương tự.\n - Xác định technology/mechanism có khả năng transfer.\n - Phân tích cách adaptation vào context hiện tại.\n - Nếu Knowledge Sheet được cung cấp, đối chiếu để xác định baseline/internal relationship.\n - Đề xuất opportunity/idea nếu có.\n\n Output:\n - Industry: Ngành bên ngoài có liên quan.\n - Problem: Vấn đề tương tự.\n - Existing solution: Giải pháp đang được sử dụng.\n - Technology / mechanism: Công nghệ hoặc mechanism có thể transfer.\n - External evidence: Source/sản phẩm/công nghệ tham chiếu.\n - KS relationship: Liên hệ với Knowledge Sheet nếu có.\n - Adaptation: Cách có thể áp dụng vào context hiện tại.\n - Idea / opportunity: Hướng R&D có thể khai thác.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; có thể chạy độc lập bằng external research.\n - Nếu Knowledge Sheet được cung cấp, phân biệt rõ Knowledge Sheet evidence, external evidence, transferred technology, inference và new idea.\n - External evidence không được trình bày như Knowledge Sheet evidence.\n - Không kết luận novelty nếu không có evidence phù hợp.\n - Trả lời bằng tiếng Việt."
-11,Knowledge Connection / Claw,"Tạo đa dạng idea từ cùng một problem, tránh Claw chỉ tập trung vào một technology family.","DNF R&D Innovation Agent\nTạo đa dạng ý tưởng + nghiên cứu bên ngoài","Purpose:\n Từ cùng một problem, tạo ra các hướng idea đa dạng thay vì chỉ tạo các biến thể nhỏ của cùng một solution.\n\n Input:\n [INPUT]\n\n Task:\n - Xác định problem.\n - Tạo các hướng tiếp cận khác nhau về technology, mechanism, domain, user interaction, application hoặc business model.\n - Nếu Knowledge Sheet được cung cấp, sử dụng để xác định baseline technology/solution.\n - Có thể dùng Web Search để tìm precedent/technology bên ngoài khi hữu ích.\n\n Output:\n - Problem: User problem.\n - Idea: Các ý tưởng khác nhau.\n - Technology / mechanism: Công nghệ hoặc mechanism của từng idea.\n - Direction: Hướng tiếp cận tạo nên sự khác biệt.\n - Related Knowledge: Knowledge Sheet ID liên quan khi có.\n - Source: Source ID hoặc external evidence khi phù hợp.\n - Differentiation: Điểm khác biệt chính giữa các idea.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này.\n - Web Search được phép khi cần external precedent/technology; nếu sử dụng, phân biệt web evidence với KS evidence và inference.\n - Ưu tiên diversity của hướng giải quyết, không tạo các minor variations.\n - Trả lời bằng tiếng Việt.",[PROBLEM]: vấn đề người dùng muốn tạo thêm các hướng ý tưởng khác nhau,"Purpose:\n Từ cùng một problem, tạo ra các hướng idea đa dạng thay vì chỉ tạo các biến thể nhỏ của cùng một solution.\n\n Input:\n [PROBLEM]: vấn đề người dùng muốn tạo thêm các hướng ý tưởng khác nhau\n\n Task:\n - Xác định problem.\n - Tạo các hướng tiếp cận khác nhau về technology, mechanism, domain, user interaction, application hoặc business model.\n - Nếu Knowledge Sheet được cung cấp, sử dụng để xác định baseline technology/solution.\n - Có thể dùng Web Search để tìm precedent/technology bên ngoài khi hữu ích.\n\n Output:\n - Problem: User problem.\n - Idea: Các ý tưởng khác nhau.\n - Technology / mechanism: Công nghệ hoặc mechanism của từng idea.\n - Direction: Hướng tiếp cận tạo nên sự khác biệt.\n - Related Knowledge: Knowledge Sheet ID liên quan khi có.\n - Source: Source ID hoặc external evidence khi phù hợp.\n - Differentiation: Điểm khác biệt chính giữa các idea.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này.\n - Web Search được phép khi cần external precedent/technology; nếu sử dụng, phân biệt web evidence với KS evidence và inference.\n - Ưu tiên diversity của hướng giải quyết, không tạo các minor variations.\n - Trả lời bằng tiếng Việt."
-12,Knowledge Connection / Claw,Kết nối recent trends / emerging technology với Market Pull hiện tại để tìm opportunity mới.,"DNF R&D Innovation Agent\nCông nghệ mới nổi/gần đây + tìm kiếm web","Purpose:\n Kết hợp Market Pull với recent trends hoặc emerging technology để tìm opportunity và idea R&D.\n\n Input:\n [INPUT]\n\n Task:\n - Tìm external recent trends, emerging technologies, new products hoặc recent developments bằng Web Search.\n - Xác định Market Pull phù hợp từ [INPUT].\n - Nếu Knowledge Sheet được cung cấp, đối chiếu Market Signal, Tech Radar, Competitor Tech hoặc Supplier Tech liên quan.\n - Kết nối external trend/technology với Market Pull.\n - Xác định opportunity và đề xuất idea.\n\n Output:\n - Trend / Technology: Xu hướng hoặc công nghệ mới.\n - Evidence: Evidence hỗ trợ.\n - Market Signal: Nhu cầu/vấn đề liên quan.\n - Mechanism: Cách technology có thể tạo value.\n - Opportunity: Cơ hội R&D.\n - Competitor / Supplier precedent: Sản phẩm, competitor hoặc supplier đang ứng dụng nếu có.\n - Gap: Khoảng trống.\n - Related Knowledge: Knowledge Sheet ID nếu có.\n - External evidence: Source/web evidence.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; Web Search là nguồn chính cho phần recent/emerging.\n - Nếu Knowledge Sheet được cung cấp, phân biệt rõ Knowledge Sheet, external research và inference.\n - Recent/emerging không đồng nghĩa với novel.\n - Không kết luận global novelty.\n - Trả lời bằng tiếng Việt.",[TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm xu hướng và cơ hội mới,"Purpose:\n Kết hợp Market Pull với recent trends hoặc emerging technology để tìm opportunity và idea R&D.\n\n Input:\n [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm xu hướng và cơ hội mới\n\n Task:\n - Tìm external recent trends, emerging technologies, new products hoặc recent developments bằng Web Search.\n - Xác định Market Pull phù hợp từ [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm xu hướng và cơ hội mới.\n - Nếu Knowledge Sheet được cung cấp, đối chiếu Market Signal, Tech Radar, Competitor Tech hoặc Supplier Tech liên quan.\n - Kết nối external trend/technology với Market Pull.\n - Xác định opportunity và đề xuất idea.\n\n Output:\n - Trend / Technology: Xu hướng hoặc công nghệ mới.\n - Evidence: Evidence hỗ trợ.\n - Market Signal: Nhu cầu/vấn đề liên quan.\n - Mechanism: Cách technology có thể tạo value.\n - Opportunity: Cơ hội R&D.\n - Competitor / Supplier precedent: Sản phẩm, competitor hoặc supplier đang ứng dụng nếu có.\n - Gap: Khoảng trống.\n - Related Knowledge: Knowledge Sheet ID nếu có.\n - External evidence: Source/web evidence.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; Web Search là nguồn chính cho phần recent/emerging.\n - Nếu Knowledge Sheet được cung cấp, phân biệt rõ Knowledge Sheet, external research và inference.\n - Recent/emerging không đồng nghĩa với novel.\n - Không kết luận global novelty.\n - Trả lời bằng tiếng Việt."
-14,Idea Verification,"Kiểm tra similarity bên ngoài Knowledge Sheet với competitor, supplier, product, technology và precedent.","DNF R&D Innovation Agent\nTìm kiếm đối thủ/sản phẩm/công nghệ bên ngoài","Purpose:\n Kiểm tra một idea có sản phẩm, technology, mechanism, application hoặc precedent tương tự bên ngoài hay chưa.\n\n Input:\n [INPUT]\n\n Task:\n - Dùng Web Search để tìm external products, technologies, mechanisms, applications, competitors, suppliers hoặc precedents.\n - Nếu Knowledge Sheet được cung cấp, dùng như internal baseline để đối chiếu.\n - So sánh idea với external evidence và, khi có, internal evidence.\n - Phân loại mức độ similarity và difference.\n\n Output:\n - Idea: Ý tưởng cần kiểm tra.\n - KS similarity: Knowledge Sheet tương tự nếu có.\n - External similarity: External evidence tương tự.\n - External precedent: Sản phẩm/technology/application liên quan.\n - Source: Nguồn evidence.\n - Similarity: Điểm giống.\n - Difference: Điểm khác.\n - Classification: Phân loại mức độ tương đồng.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; external Web Search vẫn có thể thực hiện độc lập.\n - Nếu có Knowledge Sheet, phân biệt rõ KS evidence, web evidence và inference.\n - Không tìm thấy precedent không có nghĩa là global novelty.\n - Không tạo relationship mới trong Knowledge Sheet chỉ từ external similarity.\n - Trả lời bằng tiếng Việt.",[IDEA]: ý tưởng muốn kiểm tra các giải pháp tương tự bên ngoài,"Purpose:\n Kiểm tra một idea có sản phẩm, technology, mechanism, application hoặc precedent tương tự bên ngoài hay chưa.\n\n Input:\n [IDEA]: ý tưởng muốn kiểm tra các giải pháp tương tự bên ngoài\n\n Task:\n - Dùng Web Search để tìm external products, technologies, mechanisms, applications, competitors, suppliers hoặc precedents.\n - Nếu Knowledge Sheet được cung cấp, dùng như internal baseline để đối chiếu.\n - So sánh idea với external evidence và, khi có, internal evidence.\n - Phân loại mức độ similarity và difference.\n\n Output:\n - Idea: Ý tưởng cần kiểm tra.\n - KS similarity: Knowledge Sheet tương tự nếu có.\n - External similarity: External evidence tương tự.\n - External precedent: Sản phẩm/technology/application liên quan.\n - Source: Nguồn evidence.\n - Similarity: Điểm giống.\n - Difference: Điểm khác.\n - Classification: Phân loại mức độ tương đồng.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; external Web Search vẫn có thể thực hiện độc lập.\n - Nếu có Knowledge Sheet, phân biệt rõ KS evidence, web evidence và inference.\n - Không tìm thấy precedent không có nghĩa là global novelty.\n - Không tạo relationship mới trong Knowledge Sheet chỉ từ external similarity.\n - Trả lời bằng tiếng Việt."
-21,Outside-In Problem Discovery,Tìm user problem / unmet need mới mà Knowledge Sheet chưa có,"DNF R&D Innovation Agent\ntìm ngoài file","Purpose:\n Tìm consumer problem, unmet need hoặc emerging need từ bên ngoài Knowledge Sheet để mở rộng Market Pull.\n\n Input:\n [INPUT]\n\n Task:\n - Dùng Web Search để tìm problem/need từ consumer, market, review, trend hoặc các nguồn bên ngoài.\n - Xác định target user và context của problem.\n - Tìm existing solution nếu có.\n - Nếu Knowledge Sheet được cung cấp, đối chiếu để xem problem này đã được biết đến ở đâu.\n - Xác định opportunity có thể khai thác.\n\n Output:\n - Problem / Need: Vấn đề hoặc nhu cầu.\n - Target user: Nhóm user liên quan.\n - Existing solution: Giải pháp hiện có.\n - Evidence: External evidence hỗ trợ.\n - Opportunity: Cơ hội R&D.\n - KS relationship: Liên hệ với Knowledge Sheet nếu có.\n - Related Knowledge: Knowledge Sheet ID khi có.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; external discovery có thể thực hiện độc lập.\n - Nếu có Knowledge Sheet, phân biệt rõ external discovery, Knowledge Sheet evidence và inference.\n - Một problem không xuất hiện trong KS không có nghĩa là problem mới.\n - Không tạo relationship trong KS như một existing fact chỉ từ external evidence.\n - Trả lời bằng tiếng Việt.",[TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm nhu cầu mới bên ngoài Bảng Kiến thức,"Purpose:\n Tìm consumer problem, unmet need hoặc emerging need từ bên ngoài Knowledge Sheet để mở rộng Market Pull.\n\n Input:\n [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm nhu cầu mới bên ngoài Bảng Kiến thức\n\n Task:\n - Dùng Web Search để tìm problem/need từ consumer, market, review, trend hoặc các nguồn bên ngoài.\n - Xác định target user và context của problem.\n - Tìm existing solution nếu có.\n - Nếu Knowledge Sheet được cung cấp, đối chiếu để xem problem này đã được biết đến ở đâu.\n - Xác định opportunity có thể khai thác.\n\n Output:\n - Problem / Need: Vấn đề hoặc nhu cầu.\n - Target user: Nhóm user liên quan.\n - Existing solution: Giải pháp hiện có.\n - Evidence: External evidence hỗ trợ.\n - Opportunity: Cơ hội R&D.\n - KS relationship: Liên hệ với Knowledge Sheet nếu có.\n - Related Knowledge: Knowledge Sheet ID khi có.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; external discovery có thể thực hiện độc lập.\n - Nếu có Knowledge Sheet, phân biệt rõ external discovery, Knowledge Sheet evidence và inference.\n - Một problem không xuất hiện trong KS không có nghĩa là problem mới.\n - Không tạo relationship trong KS như một existing fact chỉ từ external evidence.\n - Trả lời bằng tiếng Việt."
-22,Outside-In Technology Discovery,Tìm technology mới từ các ngành khác chưa có trong Knowledge Sheet,"DNF R&D Innovation Agent\ntìm ngoài file","Purpose:\n Tìm emerging technology, mechanism, material, component hoặc engineering approach từ bên ngoài Knowledge Sheet để mở rộng Tech Push.\n\n Input:\n [INPUT]\n\n Task:\n - Dùng Web Search để tìm technology/mechanism/material/component/engineering approach phù hợp với [INPUT].\n - Giải thích principle hoặc cách technology hoạt động ở mức đủ để hiểu.\n - Tìm current application hoặc product precedent.\n - Nếu Knowledge Sheet được cung cấp, đối chiếu để xác định baseline và relationship hiện có.\n - Xác định potential application hoặc adaptation vào context R&D.\n\n Output:\n - Technology: Công nghệ/mechanism/material/component.\n - Principle: Nguyên lý hoặc cách hoạt động.\n - Current application: Ứng dụng hiện tại.\n - Evidence: Source/evidence.\n - Potential application / adaptation: Tiềm năng ứng dụng hoặc adaptation.\n - KS relationship: Liên hệ với Knowledge Sheet nếu có.\n - Related Knowledge: Knowledge Sheet ID khi có.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; external research có thể chạy độc lập.\n - Phân biệt existing technology, external evidence, Knowledge Sheet evidence và inference.\n - Không kết luận novelty nếu chưa có evidence.\n - Không tạo Knowledge Sheet record hoặc relationship mới như existing fact.\n - Trả lời bằng tiếng Việt.",[TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm công nghệ mới bên ngoài Bảng Kiến thức,"Purpose:\n Tìm emerging technology, mechanism, material, component hoặc engineering approach từ bên ngoài Knowledge Sheet để mở rộng Tech Push.\n\n Input:\n [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm công nghệ mới bên ngoài Bảng Kiến thức\n\n Task:\n - Dùng Web Search để tìm technology/mechanism/material/component/engineering approach phù hợp với [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm công nghệ mới bên ngoài Bảng Kiến thức.\n - Giải thích principle hoặc cách technology hoạt động ở mức đủ để hiểu.\n - Tìm current application hoặc product precedent.\n - Nếu Knowledge Sheet được cung cấp, đối chiếu để xác định baseline và relationship hiện có.\n - Xác định potential application hoặc adaptation vào context R&D.\n\n Output:\n - Technology: Công nghệ/mechanism/material/component.\n - Principle: Nguyên lý hoặc cách hoạt động.\n - Current application: Ứng dụng hiện tại.\n - Evidence: Source/evidence.\n - Potential application / adaptation: Tiềm năng ứng dụng hoặc adaptation.\n - KS relationship: Liên hệ với Knowledge Sheet nếu có.\n - Related Knowledge: Knowledge Sheet ID khi có.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; external research có thể chạy độc lập.\n - Phân biệt existing technology, external evidence, Knowledge Sheet evidence và inference.\n - Không kết luận novelty nếu chưa có evidence.\n - Không tạo Knowledge Sheet record hoặc relationship mới như existing fact.\n - Trả lời bằng tiếng Việt."
-23,Cross-Industry Analogy,"Tìm cách ngành khác giải quyết một problem tương tự, sau đó transfer sang bathroom","DNF R&D Innovation Agent\ntìm ngoài file","Purpose:\n Tìm analogy từ các ngành khác để phát hiện technology/mechanism có thể transfer vào problem R&D hiện tại.\n\n Input:\n [INPUT]\n\n Task:\n - Dùng Web Search để tìm các ngành khác có problem tương tự.\n - Xác định existing solution, technology hoặc mechanism đang được sử dụng.\n - Phân tích transfer potential.\n - Xác định adaptation cần thiết cho context hiện tại.\n - Nếu Knowledge Sheet được cung cấp, đối chiếu để xác định internal baseline.\n - Đề xuất idea opportunity nếu phù hợp.\n\n Output:\n - Industry: Ngành được tham khảo.\n - Problem: Problem tương tự.\n - Existing solution: Giải pháp hiện có.\n - Technology / mechanism: Technology/mechanism có thể transfer.\n - External source: Evidence/source.\n - Transfer potential: Khả năng chuyển giao.\n - Adaptation: Cách áp dụng vào context hiện tại.\n - KS relationship: Knowledge Sheet ID nếu có.\n - Idea / opportunity: Cơ hội R&D.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này.\n - Phân biệt transfer của technology và new idea; phân biệt external evidence, Knowledge Sheet evidence và inference.\n - Không kết luận novelty nếu không có evidence.\n - Không trình bày proposed transfer relationship như existing Knowledge Sheet relationship.\n - Trả lời bằng tiếng Việt.",[PROBLEM]: vấn đề người dùng muốn tìm cách giải quyết từ các ngành khác,"Purpose:\n Tìm analogy từ các ngành khác để phát hiện technology/mechanism có thể transfer vào problem R&D hiện tại.\n\n Input:\n [PROBLEM]: vấn đề người dùng muốn tìm cách giải quyết từ các ngành khác\n\n Task:\n - Dùng Web Search để tìm các ngành khác có problem tương tự.\n - Xác định existing solution, technology hoặc mechanism đang được sử dụng.\n - Phân tích transfer potential.\n - Xác định adaptation cần thiết cho context hiện tại.\n - Nếu Knowledge Sheet được cung cấp, đối chiếu để xác định internal baseline.\n - Đề xuất idea opportunity nếu phù hợp.\n\n Output:\n - Industry: Ngành được tham khảo.\n - Problem: Problem tương tự.\n - Existing solution: Giải pháp hiện có.\n - Technology / mechanism: Technology/mechanism có thể transfer.\n - External source: Evidence/source.\n - Transfer potential: Khả năng chuyển giao.\n - Adaptation: Cách áp dụng vào context hiện tại.\n - KS relationship: Knowledge Sheet ID nếu có.\n - Idea / opportunity: Cơ hội R&D.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này.\n - Phân biệt transfer của technology và new idea; phân biệt external evidence, Knowledge Sheet evidence và inference.\n - Không kết luận novelty nếu không có evidence.\n - Không trình bày proposed transfer relationship như existing Knowledge Sheet relationship.\n - Trả lời bằng tiếng Việt."
-24,White-Space Idea Generation,"Tìm khoảng trống giữa consumer need × existing solutions × technology, kể cả ngoài Knowledge Sheet","DNF R&D Innovation Agent\ntìm ngoài file","Purpose:\n Tìm white-space opportunity bằng cách kết hợp consumer needs, existing solutions, competitor, emerging technology và knowledge hiện có.\n\n Input:\n [INPUT]\n\n Task:\n - Dùng Web Search để tìm consumer needs, existing products, competitor solutions, emerging technologies hoặc cross-industry solutions liên quan.\n - Nếu Knowledge Sheet được cung cấp, đối chiếu để xác định baseline knowledge.\n - Xác định những khoảng trống đáng chú ý giữa user need và existing solutions.\n - Từ các khoảng trống đó, tạo 5–10 idea R&D.\n\n Output:\n - User problem: Vấn đề/nghu cầu.\n - Solution: Hướng giải quyết.\n - Technology / mechanism: Công nghệ/mechanism hỗ trợ.\n - External evidence: Evidence liên quan.\n - Differentiation: Điểm khác biệt so với existing solutions.\n - Related Knowledge: Knowledge Sheet ID nếu có.\n - Idea: 5–10 idea R&D.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; external research có thể chạy độc lập.\n - Phân biệt rõ external evidence, KS evidence và inference nếu Knowledge Sheet được cung cấp.\n - Ưu tiên user value, technology có khả năng thực hiện và meaningful gap.\n - Không kết luận global novelty.\n - Trả lời bằng tiếng Việt.",[TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm khoảng trống và tạo ý tưởng mới,"Purpose:\n Tìm white-space opportunity bằng cách kết hợp consumer needs, existing solutions, competitor, emerging technology và knowledge hiện có.\n\n Input:\n [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm khoảng trống và tạo ý tưởng mới\n\n Task:\n - Dùng Web Search để tìm consumer needs, existing products, competitor solutions, emerging technologies hoặc cross-industry solutions liên quan.\n - Nếu Knowledge Sheet được cung cấp, đối chiếu để xác định baseline knowledge.\n - Xác định những khoảng trống đáng chú ý giữa user need và existing solutions.\n - Từ các khoảng trống đó, tạo 5–10 idea R&D.\n\n Output:\n - User problem: Vấn đề/nghu cầu.\n - Solution: Hướng giải quyết.\n - Technology / mechanism: Công nghệ/mechanism hỗ trợ.\n - External evidence: Evidence liên quan.\n - Differentiation: Điểm khác biệt so với existing solutions.\n - Related Knowledge: Knowledge Sheet ID nếu có.\n - Idea: 5–10 idea R&D.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; external research có thể chạy độc lập.\n - Phân biệt rõ external evidence, KS evidence và inference nếu Knowledge Sheet được cung cấp.\n - Ưu tiên user value, technology có khả năng thực hiện và meaningful gap.\n - Không kết luận global novelty.\n - Trả lời bằng tiếng Việt."
-25,Trend-to-Idea Discovery,Từ trend xã hội/công nghệ mới → xác định opportunity → tạo idea,"DNF R&D Innovation Agent\ntìm ngoài file","Purpose:\n Chuyển một trend thành user need, opportunity và idea R&D có khả năng khai thác.\n\n Input:\n [INPUT]\n\n Task:\n - Dùng Web Search để tìm emerging consumer, lifestyle, demographic, technology, regulatory hoặc business trends liên quan.\n - Xác định evidence và mức độ hiện tại của trend.\n - Chuyển trend thành user need/problem.\n - Xác định opportunity và technology/application có thể hỗ trợ.\n - Nếu Knowledge Sheet được cung cấp, đối chiếu để bổ sung baseline/internal context.\n - Đề xuất idea R&D.\n\n Output:\n - Trend: Xu hướng.\n - Evidence: Evidence hỗ trợ trend.\n - User need: Nhu cầu/problem phát sinh.\n - Opportunity: Cơ hội.\n - Technology / application: Technology hoặc application liên quan.\n - Related Knowledge: Knowledge Sheet ID nếu có.\n - Idea: Ý tưởng R&D.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này.\n - Phân biệt current evidence, future assumption và inference; phân biệt external evidence với Knowledge Sheet evidence nếu có.\n - Emerging/recent không đồng nghĩa với novelty.\n - Không xem absence trong KS là evidence của novelty.\n - Trả lời bằng tiếng Việt.",[TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm xu hướng mới và chuyển thành ý tưởng,"Purpose:\n Chuyển một trend thành user need, opportunity và idea R&D có khả năng khai thác.\n\n Input:\n [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm xu hướng mới và chuyển thành ý tưởng\n\n Task:\n - Dùng Web Search để tìm emerging consumer, lifestyle, demographic, technology, regulatory hoặc business trends liên quan.\n - Xác định evidence và mức độ hiện tại của trend.\n - Chuyển trend thành user need/problem.\n - Xác định opportunity và technology/application có thể hỗ trợ.\n - Nếu Knowledge Sheet được cung cấp, đối chiếu để bổ sung baseline/internal context.\n - Đề xuất idea R&D.\n\n Output:\n - Trend: Xu hướng.\n - Evidence: Evidence hỗ trợ trend.\n - User need: Nhu cầu/problem phát sinh.\n - Opportunity: Cơ hội.\n - Technology / application: Technology hoặc application liên quan.\n - Related Knowledge: Knowledge Sheet ID nếu có.\n - Idea: Ý tưởng R&D.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này.\n - Phân biệt current evidence, future assumption và inference; phân biệt external evidence với Knowledge Sheet evidence nếu có.\n - Emerging/recent không đồng nghĩa với novelty.\n - Không xem absence trong KS là evidence của novelty.\n - Trả lời bằng tiếng Việt."
-26,Source → Idea Discovery,"Từ source/material được cung cấp, tìm những insight, technology, mechanism hoặc opportunity có thể phát triển thành R&D idea.","DNF R&D Innovation Agent\nĐọc hiểu source → tìm opportunity → tạo idea","Purpose:\n Đọc một source/material và tìm những technology, mechanism, material, capability hoặc insight có thể khai thác thành opportunity/idea R&D.\n\n Input:\n [INPUT]\n\n Task:\n - Đọc và hiểu source/material được cung cấp.\n - Xác định technology, mechanism, material, capability, application hoặc insight đáng chú ý.\n - Phân tích những opportunity có thể suy ra từ source.\n - Nếu Knowledge Sheet được cung cấp, có thể dùng để bổ sung context hoặc đối chiếu; không phải dependency bắt buộc.\n - Đề xuất 5–10 idea R&D dựa trên những thông tin đó.\n\n Output:\n - Source insight: Insight chính từ source.\n - Technology / mechanism / material / capability: Những yếu tố có thể khai thác.\n - Application: Ứng dụng hiện tại hoặc được đề cập.\n - Opportunity: Cơ hội có thể suy ra.\n - Idea: 5–10 idea R&D.\n - Source evidence / reference: Evidence hoặc reference tương ứng.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; source/material được cung cấp là nguồn đầu vào chính.\n - Ưu tiên idea được suy ra từ source nhưng không chỉ lặp lại nội dung source.\n - Phân biệt rõ source information, Knowledge Sheet context nếu có và AI inference.\n - Không trình bày inference như source fact.\n - Đây là idea discovery, không thực hiện evaluation hoặc deep analysis.\n - Trả lời bằng tiếng Việt.",[SOURCE / MATERIAL]: source hoặc tài liệu người dùng cung cấp,"Purpose:\n Đọc một source/material và tìm những technology, mechanism, material, capability hoặc insight có thể khai thác thành opportunity/idea R&D.\n\n Input:\n [SOURCE / MATERIAL]: source hoặc tài liệu người dùng cung cấp\n\n Task:\n - Đọc và hiểu source/material được cung cấp.\n - Xác định technology, mechanism, material, capability, application hoặc insight đáng chú ý.\n - Phân tích những opportunity có thể suy ra từ source.\n - Nếu Knowledge Sheet được cung cấp, có thể dùng để bổ sung context hoặc đối chiếu; không phải dependency bắt buộc.\n - Đề xuất 5–10 idea R&D dựa trên những thông tin đó.\n\n Output:\n - Source insight: Insight chính từ source.\n - Technology / mechanism / material / capability: Những yếu tố có thể khai thác.\n - Application: Ứng dụng hiện tại hoặc được đề cập.\n - Opportunity: Cơ hội có thể suy ra.\n - Idea: 5–10 idea R&D.\n - Source evidence / reference: Evidence hoặc reference tương ứng.\n\n Final Rule:\n - Knowledge Sheet là optional cho prompt này; source/material được cung cấp là nguồn đầu vào chính.\n - Ưu tiên idea được suy ra từ source nhưng không chỉ lặp lại nội dung source.\n - Phân biệt rõ source information, Knowledge Sheet context nếu có và AI inference.\n - Không trình bày inference như source fact.\n - Đây là idea discovery, không thực hiện evaluation hoặc deep analysis.\n - Trả lời bằng tiếng Việt."
-27,Knowledge Connection / Claw,"Tự tìm các connection giữa các knowledge item trong Knowledge Sheet mà người dùng chưa chỉ định, sau đó kết hợp chúng để tạo R&D ideas.","DNF R&D Innovation Agent\nTự khám phá connection → combine knowledge → tạo idea","Purpose:\n Tự động phát hiện những connection có ý nghĩa giữa các knowledge item trong Knowledge Sheet mà người dùng chưa chỉ định trực tiếp, sau đó chuyển chúng thành idea R&D.\n\n Input:\n [INPUT]\n\n Task:\n - Sử dụng Knowledge Sheet để tìm các Market Signal, Technology, Competitor Tech, Supplier Tech và các knowledge item liên quan.\n - Chủ động tìm những connection chưa được chỉ định trực tiếp trong [INPUT].\n - Khám phá các combination có tính bổ trợ hoặc có khả năng tạo opportunity.\n - Từ những connection có ý nghĩa, đề xuất 5–10 idea R&D.\n\n Output:\n - Idea: Ý tưởng R&D.\n - Knowledge: Các Knowledge Sheet ID liên quan.\n - Source: Source ID liên quan.\n - Discovered connection: Connection được phát hiện.\n - Why interesting: Vì sao connection này đáng chú ý.\n - Concept: Khái niệm idea được hình thành từ connection.\n - Relationship status: Relationship đã tồn tại hay connection do AI đề xuất.\n\n Final Rule:\n - Không trình bày proposed connection như một existing fact.\n - Phân biệt rõ relationship đã có trong Knowledge Sheet và relationship do AI đề xuất.\n - Nếu connection được suy ra từ nhiều record nhưng chưa được ghi nhận trực tiếp, phải đánh dấu là proposed connection/inference.\n - Không tạo hoặc thay đổi Knowledge Sheet relationship chỉ vì AI phát hiện một connection.\n - Đây là idea discovery, không thực hiện evaluation hoặc deep analysis.\n - Trả lời bằng tiếng Việt.",[KNOWLEDGE SHEET]: Knowledge Sheet hoặc relevant Knowledge Sheet context được cung cấp,"Purpose:\n Tự động phát hiện những connection có ý nghĩa giữa các knowledge item trong Knowledge Sheet mà người dùng chưa chỉ định trực tiếp, sau đó chuyển chúng thành idea R&D.\n\n Input:\n [KNOWLEDGE SHEET]: Knowledge Sheet hoặc relevant Knowledge Sheet context được cung cấp\n\n Task:\n - Sử dụng Knowledge Sheet để tìm các Market Signal, Technology, Competitor Tech, Supplier Tech và các knowledge item liên quan.\n - Chủ động tìm những connection chưa được chỉ định trực tiếp trong [KNOWLEDGE SHEET]: Knowledge Sheet hoặc relevant Knowledge Sheet context được cung cấp.\n - Khám phá các combination có tính bổ trợ hoặc có khả năng tạo opportunity.\n - Từ những connection có ý nghĩa, đề xuất 5–10 idea R&D.\n\n Output:\n - Idea: Ý tưởng R&D.\n - Knowledge: Các Knowledge Sheet ID liên quan.\n - Source: Source ID liên quan.\n - Discovered connection: Connection được phát hiện.\n - Why interesting: Vì sao connection này đáng chú ý.\n - Concept: Khái niệm idea được hình thành từ connection.\n - Relationship status: Relationship đã tồn tại hay connection do AI đề xuất.\n\n Final Rule:\n - Không trình bày proposed connection như một existing fact.\n - Phân biệt rõ relationship đã có trong Knowledge Sheet và relationship do AI đề xuất.\n - Nếu connection được suy ra từ nhiều record nhưng chưa được ghi nhận trực tiếp, phải đánh dấu là proposed connection/inference.\n - Không tạo hoặc thay đổi Knowledge Sheet relationship chỉ vì AI phát hiện một connection.\n - Đây là idea discovery, không thực hiện evaluation hoặc deep analysis.\n - Trả lời bằng tiếng Việt."
+1,Knowledge Sheet Search,"Từ một user problem, tìm các technology trong Knowledge Sheet có thể giải quyết vấn đề đó.","NotebookLLM
+Tìm công nghệ từ vấn đề trong dữ liệu có sẵn","Purpose:
+ Từ một user problem, tìm các technology trong Knowledge Sheet có khả năng giải quyết hoặc hỗ trợ giải quyết vấn đề đó.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Phân tích cách vấn đề liên quan đến nhu cầu, chức năng hoặc technical challenge.
+ - Tìm các technology liên quan trong Knowledge Sheet.
+ - Xác định Technology ID tương ứng.
+ - Giải thích tại sao từng technology phù hợp với vấn đề.
+ - Xác định tiềm năng ứng dụng hoặc cơ hội có thể khai thác từ technology đó.
+
+ Output:
+ - Problem: Phân tích cách vấn đề liên quan.
+ - Technology: Các công nghệ liên quan & Technology ID.
+ - Why the technology is relevant: Tại sao công nghệ này phù hợp.
+ - Application / opportunity: Tiềm năng ứng dụng/cơ hội.
+
+ Final Rule:
+ - Chỉ sử dụng thông tin có trong Knowledge Sheet.
+ - Không tự tạo hoặc suy đoán Knowledge Sheet record không tồn tại.
+ - Nếu không tìm thấy technology phù hợp, nêu rõ không tìm thấy.
+ - Trả lời bằng tiếng Việt, giữ nguyên các technical/common English terms khi phù hợp.",[PROBLEM]: vấn đề người dùng muốn tìm công nghệ để giải quyết,"Purpose:
+ Từ một user problem, tìm các technology trong Knowledge Sheet có khả năng giải quyết hoặc hỗ trợ giải quyết vấn đề đó.
+
+ Input:
+ [PROBLEM]: vấn đề người dùng muốn tìm công nghệ để giải quyết
+
+ Task:
+ - Phân tích cách vấn đề liên quan đến nhu cầu, chức năng hoặc technical challenge.
+ - Tìm các technology liên quan trong Knowledge Sheet.
+ - Xác định Technology ID tương ứng.
+ - Giải thích tại sao từng technology phù hợp với vấn đề.
+ - Xác định tiềm năng ứng dụng hoặc cơ hội có thể khai thác từ technology đó.
+
+ Output:
+ - Problem: Phân tích cách vấn đề liên quan.
+ - Technology: Các công nghệ liên quan & Technology ID.
+ - Why the technology is relevant: Tại sao công nghệ này phù hợp.
+ - Application / opportunity: Tiềm năng ứng dụng/cơ hội.
+
+ Final Rule:
+ - Chỉ sử dụng thông tin có trong Knowledge Sheet.
+ - Không tự tạo hoặc suy đoán Knowledge Sheet record không tồn tại.
+ - Nếu không tìm thấy technology phù hợp, nêu rõ không tìm thấy.
+ - Trả lời bằng tiếng Việt, giữ nguyên các technical/common English terms khi phù hợp."
+2,Knowledge Sheet Search,"Từ một competitor, map các technology họ đang sử dụng và tìm technology/application gap.","NotebookLLM
+Lập bản đồ công nghệ của đối thủ trong Knowledge Sheet","Purpose:
+ Từ một competitor hoặc sản phẩm của competitor, tìm các technology liên quan trong Knowledge Sheet và xác định khoảng trống có thể khai thác.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Xác định competitor/product được đề cập.
+ - Tìm các Competitor Tech và technology liên quan trong Knowledge Sheet.
+ - Xác định Technology ID và Competitor Tech ID.
+ - Phân tích technology đang được sử dụng và phạm vi ứng dụng đã biết.
+ - Xác định gap hoặc cơ hội có thể khai thác từ những thông tin hiện có.
+
+ Output:
+ - Competitor / Product: Đối tượng được phân tích.
+ - Technology: Các công nghệ liên quan & Technology ID.
+ - Existing application: Công nghệ đang được ứng dụng như thế nào.
+ - Gap / opportunity: Khoảng trống hoặc cơ hội có thể khai thác.
+ - Related Knowledge: Các Knowledge Sheet ID liên quan khi phù hợp.
+
+ Final Rule:
+ - Chỉ sử dụng thông tin có trong Knowledge Sheet.
+ - Không tự tạo hoặc suy đoán record không tồn tại.
+ - Nếu chưa đủ dữ liệu để xác định gap, nêu rõ.
+ - Phân biệt rõ existing relationship, inference và proposed opportunity; không trình bày inference hoặc proposed connection như một existing Knowledge Sheet fact.
+ - Trả lời bằng tiếng Việt.",[COMPETITOR]: đối thủ muốn phân tích,"Purpose:
+ Từ một competitor hoặc sản phẩm của competitor, tìm các technology liên quan trong Knowledge Sheet và xác định khoảng trống có thể khai thác.
+
+ Input:
+ [COMPETITOR]: đối thủ muốn phân tích
+
+ Task:
+ - Xác định competitor/product được đề cập.
+ - Tìm các Competitor Tech và technology liên quan trong Knowledge Sheet.
+ - Xác định Technology ID và Competitor Tech ID.
+ - Phân tích technology đang được sử dụng và phạm vi ứng dụng đã biết.
+ - Xác định gap hoặc cơ hội có thể khai thác từ những thông tin hiện có.
+
+ Output:
+ - Competitor / Product: Đối tượng được phân tích.
+ - Technology: Các công nghệ liên quan & Technology ID.
+ - Existing application: Công nghệ đang được ứng dụng như thế nào.
+ - Gap / opportunity: Khoảng trống hoặc cơ hội có thể khai thác.
+ - Related Knowledge: Các Knowledge Sheet ID liên quan khi phù hợp.
+
+ Final Rule:
+ - Chỉ sử dụng thông tin có trong Knowledge Sheet.
+ - Không tự tạo hoặc suy đoán record không tồn tại.
+ - Nếu chưa đủ dữ liệu để xác định gap, nêu rõ.
+ - Phân biệt rõ existing relationship, inference và proposed opportunity; không trình bày inference hoặc proposed connection như một existing Knowledge Sheet fact.
+ - Trả lời bằng tiếng Việt."
+3,Knowledge Sheet Search,"Từ một technology, tìm application tiềm năng cho shower, faucet, bathroom và R&D innovation.","DNF R&D Innovation Agent
+Tìm ứng dụng tiềm năng → có suy luận/đề xuất ý tưởng","Purpose:
+ Từ một technology, tìm các Market Signal, Competitor Tech, Supplier Tech và ứng dụng liên quan trong Knowledge Sheet để tìm hướng ứng dụng hoặc cơ hội R&D.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Xác định technology và Technology ID nếu có.
+ - Tìm các Market Signal, Competitor Tech, Supplier Tech và application liên quan.
+ - Phân tích technology đang được sử dụng ở đâu hoặc cho vấn đề nào.
+ - Xác định potential application, gap hoặc opportunity có thể khai thác.
+
+ Output:
+ - Technology: Công nghệ & Technology ID.
+ - Market Signal: Nhu cầu/vấn đề thị trường liên quan.
+ - Existing application: Ứng dụng hiện có.
+ - Potential application / opportunity: Tiềm năng ứng dụng/cơ hội.
+ - Related Knowledge: Các Knowledge Sheet ID liên quan khi phù hợp.
+
+ Final Rule:
+ - Ưu tiên Knowledge Sheet làm nguồn chính.
+ - Không tự tạo hoặc suy đoán record không tồn tại.
+ - Phân biệt rõ existing relationship với inference/proposed connection.
+ - Nếu một application hoặc relationship chỉ được suy ra từ các record hiện có, phải ghi rõ là inference, không trình bày như fact trong Knowledge Sheet.
+ - Trả lời bằng tiếng Việt.",[TECHNOLOGY / TECH ID]: công nghệ muốn tìm ứng dụng,"Purpose:
+ Từ một technology, tìm các Market Signal, Competitor Tech, Supplier Tech và ứng dụng liên quan trong Knowledge Sheet để tìm hướng ứng dụng hoặc cơ hội R&D.
+
+ Input:
+ [TECHNOLOGY / TECH ID]: công nghệ muốn tìm ứng dụng
+
+ Task:
+ - Xác định technology và Technology ID nếu có.
+ - Tìm các Market Signal, Competitor Tech, Supplier Tech và application liên quan.
+ - Phân tích technology đang được sử dụng ở đâu hoặc cho vấn đề nào.
+ - Xác định potential application, gap hoặc opportunity có thể khai thác.
+
+ Output:
+ - Technology: Công nghệ & Technology ID.
+ - Market Signal: Nhu cầu/vấn đề thị trường liên quan.
+ - Existing application: Ứng dụng hiện có.
+ - Potential application / opportunity: Tiềm năng ứng dụng/cơ hội.
+ - Related Knowledge: Các Knowledge Sheet ID liên quan khi phù hợp.
+
+ Final Rule:
+ - Ưu tiên Knowledge Sheet làm nguồn chính.
+ - Không tự tạo hoặc suy đoán record không tồn tại.
+ - Phân biệt rõ existing relationship với inference/proposed connection.
+ - Nếu một application hoặc relationship chỉ được suy ra từ các record hiện có, phải ghi rõ là inference, không trình bày như fact trong Knowledge Sheet.
+ - Trả lời bằng tiếng Việt."
+4,Knowledge Sheet Search,Xác định knowledge gap còn thiếu để biết cần research gì tiếp theo.,"NotebookLLM
+Truy vấn khoảng trống tri thức trong Knowledge Sheet","Purpose:
+ Xác định Knowledge Gap liên quan đến một topic, problem hoặc technology trong Knowledge Sheet.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Xác định thông tin cần có để hiểu topic/problem/technology.
+ - Tìm những thông tin tương ứng đã có trong Knowledge Sheet.
+ - Xác định thông tin còn thiếu hoặc chưa đủ.
+ - Phân loại loại gap và giải thích tại sao gap đó quan trọng.
+
+ Output:
+ - Topic / Problem: Đối tượng cần tìm hiểu.
+ - Existing Knowledge: Những gì Knowledge Sheet đã có.
+ - Missing Knowledge: Những thông tin còn thiếu.
+ - Knowledge Gap: Khoảng trống chính.
+ - Related Knowledge: Các ID liên quan khi phù hợp.
+ - Why it matters: Vì sao khoảng trống này đáng quan tâm.
+
+ Final Rule:
+ - Chỉ sử dụng Knowledge Sheet.
+ - Không dùng Web Search.
+ - Không tự tạo hoặc suy đoán record không tồn tại.
+ - Phân biệt “not found” (không tìm thấy knowledge phù hợp trong phạm vi Knowledge Sheet được kiểm tra) và “not linked” (knowledge/record tồn tại nhưng chưa có relationship trực tiếp).
+ - Không coi “not linked” là bằng chứng rằng knowledge chưa tồn tại.
+ - Trả lời bằng tiếng Việt.",[TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm thông tin còn thiếu,"Purpose:
+ Xác định Knowledge Gap liên quan đến một topic, problem hoặc technology trong Knowledge Sheet.
+
+ Input:
+ [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm thông tin còn thiếu
+
+ Task:
+ - Xác định thông tin cần có để hiểu topic/problem/technology.
+ - Tìm những thông tin tương ứng đã có trong Knowledge Sheet.
+ - Xác định thông tin còn thiếu hoặc chưa đủ.
+ - Phân loại loại gap và giải thích tại sao gap đó quan trọng.
+
+ Output:
+ - Topic / Problem: Đối tượng cần tìm hiểu.
+ - Existing Knowledge: Những gì Knowledge Sheet đã có.
+ - Missing Knowledge: Những thông tin còn thiếu.
+ - Knowledge Gap: Khoảng trống chính.
+ - Related Knowledge: Các ID liên quan khi phù hợp.
+ - Why it matters: Vì sao khoảng trống này đáng quan tâm.
+
+ Final Rule:
+ - Chỉ sử dụng Knowledge Sheet.
+ - Không dùng Web Search.
+ - Không tự tạo hoặc suy đoán record không tồn tại.
+ - Phân biệt “not found” (không tìm thấy knowledge phù hợp trong phạm vi Knowledge Sheet được kiểm tra) và “not linked” (knowledge/record tồn tại nhưng chưa có relationship trực tiếp).
+ - Không coi “not linked” là bằng chứng rằng knowledge chưa tồn tại.
+ - Trả lời bằng tiếng Việt."
+5,Knowledge Sheet Search,Phân rã problem thành các sub-problem để mở rộng không gian tìm kiếm technology và solution.,"DNF R&D Innovation Agent
+Phân rã vấn đề + tìm cơ hội","Purpose:
+ Phân rã một problem thành các sub-problem và tìm technology hoặc knowledge liên quan trong Knowledge Sheet.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Phân tích và chia problem thành các sub-problem có ý nghĩa.
+ - Với từng sub-problem, tìm Market Signal, Technology, Competitor Tech, Supplier Tech hoặc Source liên quan trong Knowledge Sheet.
+ - Xác định các connection có thể khai thác giữa problem và technology.
+
+ Output:
+ - Problem: Vấn đề ban đầu.
+ - Problem decomposition: Các sub-problem chính.
+ - Relevant Knowledge: Knowledge Sheet liên quan đến từng sub-problem.
+ - Technology: Công nghệ & Technology ID có khả năng giải quyết.
+ - Opportunity: Cơ hội có thể khai thác từ các connection đó.
+
+ Final Rule:
+ - Ưu tiên Knowledge Sheet làm nguồn chính.
+ - Không tự tạo hoặc suy đoán record không tồn tại.
+ - Phân biệt rõ evidence/relationship đã có trong Knowledge Sheet với inference do AI tạo ra.
+ - Proposed connection hoặc opportunity không được trình bày như existing relationship.
+ - Trả lời bằng tiếng Việt.",[PROBLEM]: vấn đề người dùng muốn phân rã,"Purpose:
+ Phân rã một problem thành các sub-problem và tìm technology hoặc knowledge liên quan trong Knowledge Sheet.
+
+ Input:
+ [PROBLEM]: vấn đề người dùng muốn phân rã
+
+ Task:
+ - Phân tích và chia problem thành các sub-problem có ý nghĩa.
+ - Với từng sub-problem, tìm Market Signal, Technology, Competitor Tech, Supplier Tech hoặc Source liên quan trong Knowledge Sheet.
+ - Xác định các connection có thể khai thác giữa problem và technology.
+
+ Output:
+ - Problem: Vấn đề ban đầu.
+ - Problem decomposition: Các sub-problem chính.
+ - Relevant Knowledge: Knowledge Sheet liên quan đến từng sub-problem.
+ - Technology: Công nghệ & Technology ID có khả năng giải quyết.
+ - Opportunity: Cơ hội có thể khai thác từ các connection đó.
+
+ Final Rule:
+ - Ưu tiên Knowledge Sheet làm nguồn chính.
+ - Không tự tạo hoặc suy đoán record không tồn tại.
+ - Phân biệt rõ evidence/relationship đã có trong Knowledge Sheet với inference do AI tạo ra.
+ - Proposed connection hoặc opportunity không được trình bày như existing relationship.
+ - Trả lời bằng tiếng Việt."
+6,Knowledge Sheet Search,Tìm root cause phía sau user problem thay vì chỉ xử lý symptom.,"DNF R&D Innovation Agent
+Phân tích nguyên nhân gốc + giả thuyết","Purpose:
+ Phân tích root cause của một problem và tìm technology/knowledge trong Knowledge Sheet có thể liên quan đến nguyên nhân đó.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Phân tích problem và xác định các root cause có khả năng liên quan.
+ - Tìm Market Signal, Technology, Competitor Tech, Supplier Tech hoặc Source hỗ trợ việc hiểu root cause.
+ - Xác định technology hoặc hướng kỹ thuật có thể tác động vào root cause.
+ - Chỉ ra opportunity nếu có.
+
+ Output:
+ - Problem: Vấn đề cần phân tích.
+ - Root cause: Các nguyên nhân có khả năng liên quan.
+ - Supporting Knowledge: Evidence/knowledge hỗ trợ.
+ - Technology: Công nghệ & Technology ID liên quan.
+ - Opportunity: Cơ hội có thể khai thác.
+
+ Final Rule:
+ - Phân biệt rõ evidence có trong Knowledge Sheet và inference từ phân tích.
+ - Không tự tạo hoặc suy đoán Knowledge Sheet record.
+ - Không trình bày root cause được suy luận như một confirmed fact nếu Knowledge Sheet không hỗ trợ trực tiếp.
+ - Trả lời bằng tiếng Việt.",[PROBLEM]: vấn đề người dùng muốn tìm nguyên nhân gốc,"Purpose:
+ Phân tích root cause của một problem và tìm technology/knowledge trong Knowledge Sheet có thể liên quan đến nguyên nhân đó.
+
+ Input:
+ [PROBLEM]: vấn đề người dùng muốn tìm nguyên nhân gốc
+
+ Task:
+ - Phân tích problem và xác định các root cause có khả năng liên quan.
+ - Tìm Market Signal, Technology, Competitor Tech, Supplier Tech hoặc Source hỗ trợ việc hiểu root cause.
+ - Xác định technology hoặc hướng kỹ thuật có thể tác động vào root cause.
+ - Chỉ ra opportunity nếu có.
+
+ Output:
+ - Problem: Vấn đề cần phân tích.
+ - Root cause: Các nguyên nhân có khả năng liên quan.
+ - Supporting Knowledge: Evidence/knowledge hỗ trợ.
+ - Technology: Công nghệ & Technology ID liên quan.
+ - Opportunity: Cơ hội có thể khai thác.
+
+ Final Rule:
+ - Phân biệt rõ evidence có trong Knowledge Sheet và inference từ phân tích.
+ - Không tự tạo hoặc suy đoán Knowledge Sheet record.
+ - Không trình bày root cause được suy luận như một confirmed fact nếu Knowledge Sheet không hỗ trợ trực tiếp.
+ - Trả lời bằng tiếng Việt."
+7,Knowledge Connection / Claw,Kết nối Problem → Technology → Competitor → Supplier → Gap để tìm opportunity.,"DNF R&D Innovation Agent
+Claw kết nối nhiều loại tri thức","Purpose:
+ Kết nối Problem → Technology → Competitor → Supplier → Gap trong Knowledge Sheet để tìm opportunity/idea R&D.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Xác định user problem và Market Signal liên quan.
+ - Tìm technology/mechanism phù hợp.
+ - Tìm Competitor Tech và Supplier Tech liên quan.
+ - Xác định gap hoặc khoảng trống giữa nhu cầu, technology, competitor và supplier capability.
+ - Kết nối các thông tin trên thành opportunity/idea.
+
+ Output:
+ - Problem: Vấn đề/nghu cầu.
+ - Technology: Công nghệ/mechanism & Technology ID.
+ - Competitor: Competitor Tech & ID.
+ - Supplier: Supplier Tech & ID.
+ - Gap: Khoảng trống được phát hiện.
+ - Idea / opportunity: Ý tưởng hoặc cơ hội R&D.
+ - Why interesting: Vì sao connection này đáng khai thác.
+ - Source: Source ID liên quan khi phù hợp.
+
+ Final Rule:
+ - Knowledge Sheet là nền tảng evidence chính.
+ - Có thể dùng Web Search khi cần kiểm tra external precedent/application.
+ - Nếu dùng Web Search, phải phân biệt rõ Knowledge Sheet evidence, web evidence và inference.
+ - Không kết luận global novelty.
+ - “New” chỉ được hiểu là combination/application chưa được thể hiện trực tiếp trong Knowledge Sheet.
+ - Existing relationship và proposed connection phải được phân biệt rõ.
+ - Không tạo relationship chỉ vì hai knowledge item có vẻ tương tự.
+ - Trả lời bằng tiếng Việt.",[PROBLEM]: vấn đề người dùng muốn tìm cơ hội,"Purpose:
+ Kết nối Problem → Technology → Competitor → Supplier → Gap trong Knowledge Sheet để tìm opportunity/idea R&D.
+
+ Input:
+ [PROBLEM]: vấn đề người dùng muốn tìm cơ hội
+
+ Task:
+ - Xác định user problem và Market Signal liên quan.
+ - Tìm technology/mechanism phù hợp.
+ - Tìm Competitor Tech và Supplier Tech liên quan.
+ - Xác định gap hoặc khoảng trống giữa nhu cầu, technology, competitor và supplier capability.
+ - Kết nối các thông tin trên thành opportunity/idea.
+
+ Output:
+ - Problem: Vấn đề/nghu cầu.
+ - Technology: Công nghệ/mechanism & Technology ID.
+ - Competitor: Competitor Tech & ID.
+ - Supplier: Supplier Tech & ID.
+ - Gap: Khoảng trống được phát hiện.
+ - Idea / opportunity: Ý tưởng hoặc cơ hội R&D.
+ - Why interesting: Vì sao connection này đáng khai thác.
+ - Source: Source ID liên quan khi phù hợp.
+
+ Final Rule:
+ - Knowledge Sheet là nền tảng evidence chính.
+ - Có thể dùng Web Search khi cần kiểm tra external precedent/application.
+ - Nếu dùng Web Search, phải phân biệt rõ Knowledge Sheet evidence, web evidence và inference.
+ - Không kết luận global novelty.
+ - “New” chỉ được hiểu là combination/application chưa được thể hiện trực tiếp trong Knowledge Sheet.
+ - Existing relationship và proposed connection phải được phân biệt rõ.
+ - Không tạo relationship chỉ vì hai knowledge item có vẻ tương tự.
+ - Trả lời bằng tiếng Việt."
+8,Knowledge Connection / Claw,Kết nối Market Pull × Tech Push để tìm opportunity.,"DNF R&D Innovation Agent
+Nhu cầu thị trường × Công nghệ → cơ hội","Purpose:
+ Kết hợp Market Pull và Tech Push trong Knowledge Sheet để tìm opportunity và idea R&D.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Tìm Market Signal phù hợp với [INPUT].
+ - Tìm Technology/Tech Radar/Supplier Tech có khả năng đáp ứng Market Signal.
+ - Khám phá các combination giữa Market Pull và Tech Push.
+ - Xác định gap, potential application và opportunity.
+ - Từ các connection phù hợp, đề xuất idea R&D.
+
+ Output:
+ - Market Pull: Nhu cầu/vấn đề thị trường.
+ - Tech Push: Công nghệ & Technology ID.
+ - Connection: Mối liên hệ giữa nhu cầu và công nghệ.
+ - Gap: Khoảng trống/cơ hội.
+ - Idea / opportunity: Ý tưởng hoặc hướng R&D.
+ - Related Knowledge: Các Knowledge Sheet ID liên quan.
+ - Source: Source ID khi phù hợp.
+
+ Final Rule:
+ - Knowledge Sheet là nền tảng evidence.
+ - Có thể dùng Web Search khi cần kiểm tra external precedent/application.
+ - Nếu dùng Web Search, phải phân biệt rõ KS evidence, web evidence và inference.
+ - Phân biệt existing relationship với proposed connection.
+ - Không kết luận global novelty.
+ - “New” chỉ được hiểu là combination/application chưa được thể hiện trực tiếp trong Knowledge Sheet.
+ - Không xem việc thiếu relationship là bằng chứng novelty.
+ - Trả lời bằng tiếng Việt.",[MARKET SIGNAL / TECH RADAR]: nhu cầu thị trường và công nghệ muốn kết nối,"Purpose:
+ Kết hợp Market Pull và Tech Push trong Knowledge Sheet để tìm opportunity và idea R&D.
+
+ Input:
+ [MARKET SIGNAL / TECH RADAR]: nhu cầu thị trường và công nghệ muốn kết nối
+
+ Task:
+ - Tìm Market Signal phù hợp với [MARKET SIGNAL / TECH RADAR]: nhu cầu thị trường và công nghệ muốn kết nối.
+ - Tìm Technology/Tech Radar/Supplier Tech có khả năng đáp ứng Market Signal.
+ - Khám phá các combination giữa Market Pull và Tech Push.
+ - Xác định gap, potential application và opportunity.
+ - Từ các connection phù hợp, đề xuất idea R&D.
+
+ Output:
+ - Market Pull: Nhu cầu/vấn đề thị trường.
+ - Tech Push: Công nghệ & Technology ID.
+ - Connection: Mối liên hệ giữa nhu cầu và công nghệ.
+ - Gap: Khoảng trống/cơ hội.
+ - Idea / opportunity: Ý tưởng hoặc hướng R&D.
+ - Related Knowledge: Các Knowledge Sheet ID liên quan.
+ - Source: Source ID khi phù hợp.
+
+ Final Rule:
+ - Knowledge Sheet là nền tảng evidence.
+ - Có thể dùng Web Search khi cần kiểm tra external precedent/application.
+ - Nếu dùng Web Search, phải phân biệt rõ KS evidence, web evidence và inference.
+ - Phân biệt existing relationship với proposed connection.
+ - Không kết luận global novelty.
+ - “New” chỉ được hiểu là combination/application chưa được thể hiện trực tiếp trong Knowledge Sheet.
+ - Không xem việc thiếu relationship là bằng chứng novelty.
+ - Trả lời bằng tiếng Việt."
+9,Knowledge Connection / Claw,Dùng Knowledge Sheet để Claw tạo idea mới từ các knowledge chưa được kết nối trực tiếp.,"DNF R&D Innovation Agent
+Tạo ý tưởng mới từ sự kết hợp","Purpose:
+ Tìm các knowledge item trong Knowledge Sheet chưa được kết nối trực tiếp nhưng có thể tạo ra combination có ý nghĩa và chuyển chúng thành idea R&D.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Tìm các Market Signal, Tech Radar, Supplier Tech, Competitor Tech hoặc knowledge item liên quan.
+ - Chủ động phát hiện những connection chưa được nêu trực tiếp trong Knowledge Sheet.
+ - Kết hợp các knowledge item có tính bổ trợ hoặc tạo ra khả năng mới.
+ - Từ các connection đó, đề xuất idea R&D.
+
+ Output:
+ - Problem: User problem hoặc nhu cầu liên quan.
+ - Technology: Công nghệ/mechanism & Technology ID.
+ - Competitor: Competitor Tech & ID khi phù hợp.
+ - Supplier: Supplier Tech & ID khi phù hợp.
+ - Connection: Mối liên hệ được phát hiện.
+ - Gap: Khoảng trống/cơ hội.
+ - Idea / opportunity: Ý tưởng hoặc cơ hội R&D.
+ - Why interesting: Vì sao connection đáng khai thác.
+ - Source: Source ID liên quan.
+
+ Final Rule:
+ - Knowledge Sheet là nguồn chính.
+ - Có thể dùng Web Search để kiểm tra precedent/application khi cần.
+ - Nếu dùng Web Search, phải phân biệt KS evidence, web evidence và inference.
+ - Phân biệt rõ relationship đã tồn tại trong Knowledge Sheet và connection do AI đề xuất.
+ - Không trình bày proposed connection như một existing fact.
+ - “New” chỉ được hiểu là combination/application chưa được thể hiện trực tiếp trong Knowledge Sheet.
+ - Không xem việc chưa có relationship là bằng chứng novelty.
+ - Trả lời bằng tiếng Việt.",[MARKET SIGNAL / TECHNOLOGY / SUPPLIER]: thông tin muốn kết hợp để tạo ý tưởng mới,"Purpose:
+ Tìm các knowledge item trong Knowledge Sheet chưa được kết nối trực tiếp nhưng có thể tạo ra combination có ý nghĩa và chuyển chúng thành idea R&D.
+
+ Input:
+ [MARKET SIGNAL / TECHNOLOGY / SUPPLIER]: thông tin muốn kết hợp để tạo ý tưởng mới
+
+ Task:
+ - Tìm các Market Signal, Tech Radar, Supplier Tech, Competitor Tech hoặc knowledge item liên quan.
+ - Chủ động phát hiện những connection chưa được nêu trực tiếp trong Knowledge Sheet.
+ - Kết hợp các knowledge item có tính bổ trợ hoặc tạo ra khả năng mới.
+ - Từ các connection đó, đề xuất idea R&D.
+
+ Output:
+ - Problem: User problem hoặc nhu cầu liên quan.
+ - Technology: Công nghệ/mechanism & Technology ID.
+ - Competitor: Competitor Tech & ID khi phù hợp.
+ - Supplier: Supplier Tech & ID khi phù hợp.
+ - Connection: Mối liên hệ được phát hiện.
+ - Gap: Khoảng trống/cơ hội.
+ - Idea / opportunity: Ý tưởng hoặc cơ hội R&D.
+ - Why interesting: Vì sao connection đáng khai thác.
+ - Source: Source ID liên quan.
+
+ Final Rule:
+ - Knowledge Sheet là nguồn chính.
+ - Có thể dùng Web Search để kiểm tra precedent/application khi cần.
+ - Nếu dùng Web Search, phải phân biệt KS evidence, web evidence và inference.
+ - Phân biệt rõ relationship đã tồn tại trong Knowledge Sheet và connection do AI đề xuất.
+ - Không trình bày proposed connection như một existing fact.
+ - “New” chỉ được hiểu là combination/application chưa được thể hiện trực tiếp trong Knowledge Sheet.
+ - Không xem việc chưa có relationship là bằng chứng novelty.
+ - Trả lời bằng tiếng Việt."
+10,Knowledge Connection / Claw,Tìm solution từ các ngành khác có thể transfer vào bathroom/shower/faucet.,"DNF R&D Innovation Agent
+Chuyển giao công nghệ từ bên ngoài + tìm kiếm web","Purpose:
+ Tìm technology, mechanism hoặc solution từ các ngành khác có thể chuyển giao để giải quyết một problem R&D.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Từ Knowledge Sheet, xác định problem, existing technology, competitor precedent, supplier capability và gap liên quan.
+ - Dùng Web Search để tìm cách các ngành khác đang giải quyết problem tương tự.
+ - Xác định technology/mechanism có khả năng transfer.
+ - Phân tích cách adaptation vào context hiện tại.
+ - Đề xuất opportunity/idea nếu có.
+
+ Output:
+ - Industry: Ngành bên ngoài có liên quan.
+ - Problem: Vấn đề tương tự.
+ - Existing solution: Giải pháp đang được sử dụng.
+ - Technology / mechanism: Công nghệ hoặc mechanism có thể transfer.
+ - External evidence: Source/sản phẩm/công nghệ tham chiếu.
+ - KS relationship: Liên hệ với Knowledge Sheet.
+ - Adaptation: Cách có thể áp dụng vào context hiện tại.
+ - Idea / opportunity: Hướng R&D có thể khai thác.
+
+ Final Rule:
+ - Knowledge Sheet phải được kiểm tra trước khi mở rộng external research.
+ - Phân biệt rõ existing technology, transferred technology, inference và new idea.
+ - External evidence không được trình bày như Knowledge Sheet evidence.
+ - Không kết luận novelty nếu không có evidence phù hợp.
+ - Không tạo Knowledge Sheet relationship mới như một existing fact.
+ - Trả lời bằng tiếng Việt.",[PROBLEM]: vấn đề người dùng muốn tìm cách giải quyết từ ngành khác,"Purpose:
+ Tìm technology, mechanism hoặc solution từ các ngành khác có thể chuyển giao để giải quyết một problem R&D.
+
+ Input:
+ [PROBLEM]: vấn đề người dùng muốn tìm cách giải quyết từ ngành khác
+
+ Task:
+ - Từ Knowledge Sheet, xác định problem, existing technology, competitor precedent, supplier capability và gap liên quan.
+ - Dùng Web Search để tìm cách các ngành khác đang giải quyết problem tương tự.
+ - Xác định technology/mechanism có khả năng transfer.
+ - Phân tích cách adaptation vào context hiện tại.
+ - Đề xuất opportunity/idea nếu có.
+
+ Output:
+ - Industry: Ngành bên ngoài có liên quan.
+ - Problem: Vấn đề tương tự.
+ - Existing solution: Giải pháp đang được sử dụng.
+ - Technology / mechanism: Công nghệ hoặc mechanism có thể transfer.
+ - External evidence: Source/sản phẩm/công nghệ tham chiếu.
+ - KS relationship: Liên hệ với Knowledge Sheet.
+ - Adaptation: Cách có thể áp dụng vào context hiện tại.
+ - Idea / opportunity: Hướng R&D có thể khai thác.
+
+ Final Rule:
+ - Knowledge Sheet phải được kiểm tra trước khi mở rộng external research.
+ - Phân biệt rõ existing technology, transferred technology, inference và new idea.
+ - External evidence không được trình bày như Knowledge Sheet evidence.
+ - Không kết luận novelty nếu không có evidence phù hợp.
+ - Không tạo Knowledge Sheet relationship mới như một existing fact.
+ - Trả lời bằng tiếng Việt."
+11,Knowledge Connection / Claw,"Tạo đa dạng idea từ cùng một problem, tránh Claw chỉ tập trung vào một technology family.","DNF R&D Innovation Agent
+Tạo đa dạng ý tưởng + nghiên cứu bên ngoài","Purpose:
+ Từ cùng một problem, tạo ra các hướng idea đa dạng thay vì chỉ tạo các biến thể nhỏ của cùng một solution.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Xác định problem và các technology/solution hiện có trong Knowledge Sheet.
+ - Tạo các hướng tiếp cận khác nhau về technology, mechanism, domain, user interaction, application hoặc business model.
+ - Ưu tiên những hướng thực sự khác nhau về cách giải quyết problem.
+ - Có thể dùng Web Search để tìm precedent/technology bên ngoài khi hữu ích.
+
+ Output:
+ - Problem: User problem.
+ - Idea: Các ý tưởng khác nhau.
+ - Technology / mechanism: Công nghệ hoặc mechanism của từng idea.
+ - Direction: Hướng tiếp cận tạo nên sự khác biệt.
+ - Related Knowledge: Knowledge Sheet ID liên quan.
+ - Source: Source ID hoặc external evidence khi phù hợp.
+ - Differentiation: Điểm khác biệt chính giữa các idea.
+
+ Final Rule:
+ - Ưu tiên diversity của hướng giải quyết, không tạo các minor variations.
+ - Knowledge Sheet phải được sử dụng để xác định baseline knowledge.
+ - Web Search được phép khi cần external precedent/technology; nếu sử dụng, phải phân biệt web evidence với KS evidence và inference.
+ - Trả lời bằng tiếng Việt.",[PROBLEM]: vấn đề người dùng muốn tạo thêm các hướng ý tưởng khác nhau,"Purpose:
+ Từ cùng một problem, tạo ra các hướng idea đa dạng thay vì chỉ tạo các biến thể nhỏ của cùng một solution.
+
+ Input:
+ [PROBLEM]: vấn đề người dùng muốn tạo thêm các hướng ý tưởng khác nhau
+
+ Task:
+ - Xác định problem và các technology/solution hiện có trong Knowledge Sheet.
+ - Tạo các hướng tiếp cận khác nhau về technology, mechanism, domain, user interaction, application hoặc business model.
+ - Ưu tiên những hướng thực sự khác nhau về cách giải quyết problem.
+ - Có thể dùng Web Search để tìm precedent/technology bên ngoài khi hữu ích.
+
+ Output:
+ - Problem: User problem.
+ - Idea: Các ý tưởng khác nhau.
+ - Technology / mechanism: Công nghệ hoặc mechanism của từng idea.
+ - Direction: Hướng tiếp cận tạo nên sự khác biệt.
+ - Related Knowledge: Knowledge Sheet ID liên quan.
+ - Source: Source ID hoặc external evidence khi phù hợp.
+ - Differentiation: Điểm khác biệt chính giữa các idea.
+
+ Final Rule:
+ - Ưu tiên diversity của hướng giải quyết, không tạo các minor variations.
+ - Knowledge Sheet phải được sử dụng để xác định baseline knowledge.
+ - Web Search được phép khi cần external precedent/technology; nếu sử dụng, phải phân biệt web evidence với KS evidence và inference.
+ - Trả lời bằng tiếng Việt."
+12,Knowledge Connection / Claw,Kết nối recent trends / emerging technology với Market Pull hiện tại để tìm opportunity mới.,"DNF R&D Innovation Agent
+Công nghệ mới nổi/gần đây + tìm kiếm web","Purpose:
+ Kết hợp Market Signal trong Knowledge Sheet với recent trends hoặc emerging technology để tìm opportunity và idea R&D.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Tìm Market Signal, Tech Radar, Competitor Tech hoặc Supplier Tech liên quan trong Knowledge Sheet.
+ - Dùng Web Search để tìm recent trends, emerging technologies, new products hoặc recent developments.
+ - Kết nối external trend/technology với Market Pull hiện có.
+ - Xác định opportunity và đề xuất idea.
+
+ Output:
+ - Trend / Technology: Xu hướng hoặc công nghệ mới.
+ - Evidence: Evidence hỗ trợ.
+ - Market Signal: Nhu cầu/vấn đề liên quan.
+ - Mechanism: Cách technology có thể tạo value.
+ - Opportunity: Cơ hội R&D.
+ - Competitor / Supplier precedent: Sản phẩm, competitor hoặc supplier đang ứng dụng nếu có.
+ - Gap: Khoảng trống.
+ - Related Knowledge: Knowledge Sheet ID.
+ - External evidence: Source/web evidence.
+
+ Final Rule:
+ - Knowledge Sheet phải được kiểm tra trước khi mở rộng bằng Web Search.
+ - Phân biệt rõ thông tin từ Knowledge Sheet, external research và inference.
+ - Recent/emerging không đồng nghĩa với novel.
+ - Không kết luận global novelty.
+ - Không xem missing relationship hoặc absence trong KS là bằng chứng novelty.
+ - Trả lời bằng tiếng Việt.",[TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm xu hướng và cơ hội mới,"Purpose:
+ Kết hợp Market Signal trong Knowledge Sheet với recent trends hoặc emerging technology để tìm opportunity và idea R&D.
+
+ Input:
+ [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm xu hướng và cơ hội mới
+
+ Task:
+ - Tìm Market Signal, Tech Radar, Competitor Tech hoặc Supplier Tech liên quan trong Knowledge Sheet.
+ - Dùng Web Search để tìm recent trends, emerging technologies, new products hoặc recent developments.
+ - Kết nối external trend/technology với Market Pull hiện có.
+ - Xác định opportunity và đề xuất idea.
+
+ Output:
+ - Trend / Technology: Xu hướng hoặc công nghệ mới.
+ - Evidence: Evidence hỗ trợ.
+ - Market Signal: Nhu cầu/vấn đề liên quan.
+ - Mechanism: Cách technology có thể tạo value.
+ - Opportunity: Cơ hội R&D.
+ - Competitor / Supplier precedent: Sản phẩm, competitor hoặc supplier đang ứng dụng nếu có.
+ - Gap: Khoảng trống.
+ - Related Knowledge: Knowledge Sheet ID.
+ - External evidence: Source/web evidence.
+
+ Final Rule:
+ - Knowledge Sheet phải được kiểm tra trước khi mở rộng bằng Web Search.
+ - Phân biệt rõ thông tin từ Knowledge Sheet, external research và inference.
+ - Recent/emerging không đồng nghĩa với novel.
+ - Không kết luận global novelty.
+ - Không xem missing relationship hoặc absence trong KS là bằng chứng novelty.
+ - Trả lời bằng tiếng Việt."
+13,Idea Verification,Kiểm tra một idea mới xem đã được Knowledge Sheet cover chưa.,"DNF R&D Innovation Agent
+Xác minh → tìm kiếm đối chiếu bên ngoài khi cần","Purpose:
+ Kiểm tra một idea có đã được thể hiện hoặc có knowledge tương tự trong Knowledge Sheet hay chưa.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Phân tích idea thành các yếu tố chính: problem, technology, mechanism, application.
+ - Tìm technology, Competitor Tech, Supplier Tech, Market Signal và connection tương tự trong Knowledge Sheet.
+ - So sánh idea với các knowledge item tìm được.
+ - Phân loại mức độ tương đồng.
+
+ Output:
+ - Idea: Ý tưởng cần kiểm tra.
+ - Matching Knowledge: Knowledge Sheet records tương đồng.
+ - Similarity: Điểm giống nhau chính.
+ - Difference: Điểm khác biệt chính.
+ - Classification: Phân loại thành:
+  - Already covered
+  - Similar but differentiated
+  - New combination of existing knowledge
+  - Not sufficiently supported
+ - Related Knowledge: Knowledge Sheet ID & Source ID liên quan.
+
+ Final Rule:
+ - Không tìm thấy trong Knowledge Sheet không có nghĩa là global novelty.
+ - Phân biệt “not found” với “not linked”.
+ - Không kết luận novelty nếu không có evidence.
+ - Phân biệt existing relationship với similarity/inference hoặc proposed connection.
+ - Trả lời bằng tiếng Việt.",[IDEA]: ý tưởng muốn kiểm tra đã có trong Bảng Kiến thức chưa,"Purpose:
+ Kiểm tra một idea có đã được thể hiện hoặc có knowledge tương tự trong Knowledge Sheet hay chưa.
+
+ Input:
+ [IDEA]: ý tưởng muốn kiểm tra đã có trong Bảng Kiến thức chưa
+
+ Task:
+ - Phân tích idea thành các yếu tố chính: problem, technology, mechanism, application.
+ - Tìm technology, Competitor Tech, Supplier Tech, Market Signal và connection tương tự trong Knowledge Sheet.
+ - So sánh idea với các knowledge item tìm được.
+ - Phân loại mức độ tương đồng.
+
+ Output:
+ - Idea: Ý tưởng cần kiểm tra.
+ - Matching Knowledge: Knowledge Sheet records tương đồng.
+ - Similarity: Điểm giống nhau chính.
+ - Difference: Điểm khác biệt chính.
+ - Classification: Phân loại thành:
+  - Already covered
+  - Similar but differentiated
+  - New combination of existing knowledge
+  - Not sufficiently supported
+ - Related Knowledge: Knowledge Sheet ID & Source ID liên quan.
+
+ Final Rule:
+ - Không tìm thấy trong Knowledge Sheet không có nghĩa là global novelty.
+ - Phân biệt “not found” với “not linked”.
+ - Không kết luận novelty nếu không có evidence.
+ - Phân biệt existing relationship với similarity/inference hoặc proposed connection.
+ - Trả lời bằng tiếng Việt."
+14,Idea Verification,"Kiểm tra similarity bên ngoài Knowledge Sheet với competitor, supplier, product, technology và precedent.","DNF R&D Innovation Agent
+Tìm kiếm đối thủ/sản phẩm/công nghệ bên ngoài","Purpose:
+ Kiểm tra một idea có sản phẩm, technology, mechanism, application hoặc precedent tương tự bên ngoài Knowledge Sheet hay chưa.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Kiểm tra trước trong Knowledge Sheet các technology, mechanism, competitor, supplier và application tương tự.
+ - Dùng Web Search để tìm external products, technologies, mechanisms, applications, competitors, suppliers hoặc precedents.
+ - So sánh idea với cả internal và external evidence.
+ - Phân loại mức độ similarity và difference.
+
+ Output:
+ - Idea: Ý tưởng cần kiểm tra.
+ - KS similarity: Knowledge Sheet tương tự.
+ - External similarity: External evidence tương tự.
+ - External precedent: Sản phẩm/technology/application liên quan.
+ - Source: Nguồn evidence.
+ - Similarity: Điểm giống.
+ - Difference: Điểm khác.
+ - Classification: Phân loại mức độ tương đồng.
+
+ Final Rule:
+ - Knowledge Sheet phải được kiểm tra trước Web Search.
+ - Phân biệt rõ KS evidence, web evidence và inference.
+ - Phân biệt existing/implemented solution, similar solution with meaningful difference và new combination/application.
+ - Không tìm thấy precedent không có nghĩa là global novelty.
+ - Không tạo relationship mới trong Knowledge Sheet chỉ từ external similarity.
+ - Trả lời bằng tiếng Việt.",[IDEA]: ý tưởng muốn kiểm tra các giải pháp tương tự bên ngoài,"Purpose:
+ Kiểm tra một idea có sản phẩm, technology, mechanism, application hoặc precedent tương tự bên ngoài Knowledge Sheet hay chưa.
+
+ Input:
+ [IDEA]: ý tưởng muốn kiểm tra các giải pháp tương tự bên ngoài
+
+ Task:
+ - Kiểm tra trước trong Knowledge Sheet các technology, mechanism, competitor, supplier và application tương tự.
+ - Dùng Web Search để tìm external products, technologies, mechanisms, applications, competitors, suppliers hoặc precedents.
+ - So sánh idea với cả internal và external evidence.
+ - Phân loại mức độ similarity và difference.
+
+ Output:
+ - Idea: Ý tưởng cần kiểm tra.
+ - KS similarity: Knowledge Sheet tương tự.
+ - External similarity: External evidence tương tự.
+ - External precedent: Sản phẩm/technology/application liên quan.
+ - Source: Nguồn evidence.
+ - Similarity: Điểm giống.
+ - Difference: Điểm khác.
+ - Classification: Phân loại mức độ tương đồng.
+
+ Final Rule:
+ - Knowledge Sheet phải được kiểm tra trước Web Search.
+ - Phân biệt rõ KS evidence, web evidence và inference.
+ - Phân biệt existing/implemented solution, similar solution with meaningful difference và new combination/application.
+ - Không tìm thấy precedent không có nghĩa là global novelty.
+ - Không tạo relationship mới trong Knowledge Sheet chỉ từ external similarity.
+ - Trả lời bằng tiếng Việt."
+15,Idea Verification,Kiểm tra evidence strength của idea và xác định evidence/research còn thiếu.,"DNF R&D Innovation Agent
+Khoảng trống bằng chứng + nghiên cứu bên ngoài","Purpose:
+ Đánh giá độ mạnh của evidence hỗ trợ một idea và xác định các evidence gap còn tồn tại.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Kiểm tra evidence cho problem/user need.
+ - Kiểm tra evidence cho technology/mechanism.
+ - Kiểm tra evidence về competitor precedent và supplier capability.
+ - Kiểm tra evidence về technical feasibility và application.
+ - Đánh giá độ mạnh và độ liên quan của từng evidence.
+ - Phân biệt KS evidence, web evidence, assumption và hypothesis.
+ - Xác định evidence gap.
+
+ Output:
+ - Idea: Ý tưởng cần đánh giá.
+ - Evidence area: Khía cạnh cần evidence.
+ - Supporting evidence: Evidence hiện có.
+ - Knowledge / Source ID: ID liên quan.
+ - Evidence strength: Strong / Partial / Weak-indirect / No evidence.
+ - Evidence gap: Khoảng trống evidence.
+ - Confidence: Mức độ tin cậy.
+
+ Final Rule:
+ - Không tự tạo evidence hoặc source.
+ - Không tạo research plan hoặc “research tối thiểu cần thực hiện”.
+ - Phân biệt evidence trực tiếp với inference; inference không được nâng thành evidence.
+ - Nếu evidence đến từ Web Search, ghi rõ là web evidence.
+ - Trả lời bằng tiếng Việt.",[IDEA]: ý tưởng muốn kiểm tra mức độ đầy đủ của bằng chứng,"Purpose:
+ Đánh giá độ mạnh của evidence hỗ trợ một idea và xác định các evidence gap còn tồn tại.
+
+ Input:
+ [IDEA]: ý tưởng muốn kiểm tra mức độ đầy đủ của bằng chứng
+
+ Task:
+ - Kiểm tra evidence cho problem/user need.
+ - Kiểm tra evidence cho technology/mechanism.
+ - Kiểm tra evidence về competitor precedent và supplier capability.
+ - Kiểm tra evidence về technical feasibility và application.
+ - Đánh giá độ mạnh và độ liên quan của từng evidence.
+ - Phân biệt KS evidence, web evidence, assumption và hypothesis.
+ - Xác định evidence gap.
+
+ Output:
+ - Idea: Ý tưởng cần đánh giá.
+ - Evidence area: Khía cạnh cần evidence.
+ - Supporting evidence: Evidence hiện có.
+ - Knowledge / Source ID: ID liên quan.
+ - Evidence strength: Strong / Partial / Weak-indirect / No evidence.
+ - Evidence gap: Khoảng trống evidence.
+ - Confidence: Mức độ tin cậy.
+
+ Final Rule:
+ - Không tự tạo evidence hoặc source.
+ - Không tạo research plan hoặc “research tối thiểu cần thực hiện”.
+ - Phân biệt evidence trực tiếp với inference; inference không được nâng thành evidence.
+ - Nếu evidence đến từ Web Search, ghi rõ là web evidence.
+ - Trả lời bằng tiếng Việt."
+16,Idea Development,"Cải thiện idea bằng technology, mechanism, application, competitor và supplier knowledge.","DNF R&D Innovation Agent
+Cải thiện ý tưởng + nghiên cứu web khi phù hợp","Purpose:
+ Cải thiện một idea bằng cách thay đổi, kết hợp hoặc điều chỉnh technology, mechanism, application hoặc user interaction.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Xác định problem và solution hiện tại của idea.
+ - Tìm knowledge, technology, competitor hoặc supplier liên quan trong Knowledge Sheet.
+ - Xác định điểm có thể cải thiện.
+ - Đề xuất improved idea bằng cách thay đổi, combine hoặc điều chỉnh technology/mechanism/application/user interaction.
+ - Giải thích user value và technical implication của thay đổi.
+
+ Output:
+ - Original idea: Ý tưởng ban đầu.
+ - Improved idea: Ý tưởng sau cải thiện.
+ - Change: Những gì được thay đổi.
+ - User value: Giá trị tạo thêm cho user.
+ - Technical implication: Tác động kỹ thuật.
+ - Related Knowledge: Knowledge Sheet ID & Source ID.
+ - Assumption: Các giả định.
+ - Risk: Rủi ro chính.
+
+ Final Rule:
+ - Không thêm complexity nếu không tạo thêm value hoặc differentiation rõ ràng.
+ - Phân biệt evidence và assumption.
+ - Phân biệt existing Knowledge Sheet relationship với proposed connection/inference.
+ - Không tạo Knowledge Sheet record mới như một fact.
+ - Trả lời bằng tiếng Việt.",[IDEA]: ý tưởng muốn cải thiện hoặc phát triển thêm,"Purpose:
+ Cải thiện một idea bằng cách thay đổi, kết hợp hoặc điều chỉnh technology, mechanism, application hoặc user interaction.
+
+ Input:
+ [IDEA]: ý tưởng muốn cải thiện hoặc phát triển thêm
+
+ Task:
+ - Xác định problem và solution hiện tại của idea.
+ - Tìm knowledge, technology, competitor hoặc supplier liên quan trong Knowledge Sheet.
+ - Xác định điểm có thể cải thiện.
+ - Đề xuất improved idea bằng cách thay đổi, combine hoặc điều chỉnh technology/mechanism/application/user interaction.
+ - Giải thích user value và technical implication của thay đổi.
+
+ Output:
+ - Original idea: Ý tưởng ban đầu.
+ - Improved idea: Ý tưởng sau cải thiện.
+ - Change: Những gì được thay đổi.
+ - User value: Giá trị tạo thêm cho user.
+ - Technical implication: Tác động kỹ thuật.
+ - Related Knowledge: Knowledge Sheet ID & Source ID.
+ - Assumption: Các giả định.
+ - Risk: Rủi ro chính.
+
+ Final Rule:
+ - Không thêm complexity nếu không tạo thêm value hoặc differentiation rõ ràng.
+ - Phân biệt evidence và assumption.
+ - Phân biệt existing Knowledge Sheet relationship với proposed connection/inference.
+ - Không tạo Knowledge Sheet record mới như một fact.
+ - Trả lời bằng tiếng Việt."
+17,Idea Development,"Đánh giá và rank idea theo User Value, Technical Feasibility, Novelty/Differentiation, Business Potential và Evidence.","DNF R&D Innovation Agent
+Đánh giá + kiểm tra tính mới/thị trường/công nghệ","Purpose:
+ Đánh giá và so sánh các idea R&D dựa trên user value, technical feasibility, novelty/differentiation, business potential và evidence.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Đánh giá từng idea theo các tiêu chí phù hợp.
+ - Sử dụng Knowledge Sheet và evidence hiện có làm cơ sở.
+ - Dùng Web Search khi cần bổ sung external evidence.
+ - Chỉ ra điểm mạnh, uncertainty và risk của từng idea.
+ - Nếu cần ranking, thực hiện ranking dựa trên evidence và tiêu chí đã xác định.
+
+ Output:
+ - Idea: Ý tưởng.
+ - Criteria: Các tiêu chí đánh giá.
+ - Evidence / reasoning: Cơ sở evidence và lập luận.
+ - Related Knowledge: Knowledge Sheet ID.
+ - External evidence: Web evidence khi có.
+ - Uncertainty / risk: Những điểm chưa chắc chắn hoặc rủi ro.
+
+ Final Rule:
+ - Knowledge Sheet phải được kiểm tra trước khi dùng Web Search.
+ - Nếu dùng Web Search, phân biệt KS evidence, web evidence và judgment/inference.
+ - Không coi idea có ít knowledge trong KS là automatically high novelty.
+ - Phân biệt evidence và judgment.
+ - Không xem absence hoặc missing relationship là evidence của novelty.
+ - Trả lời bằng tiếng Việt.",[IDEA]: ý tưởng muốn đánh giá và xếp hạng,"Purpose:
+ Đánh giá và so sánh các idea R&D dựa trên user value, technical feasibility, novelty/differentiation, business potential và evidence.
+
+ Input:
+ [IDEA]: ý tưởng muốn đánh giá và xếp hạng
+
+ Task:
+ - Đánh giá từng idea theo các tiêu chí phù hợp.
+ - Sử dụng Knowledge Sheet và evidence hiện có làm cơ sở.
+ - Dùng Web Search khi cần bổ sung external evidence.
+ - Chỉ ra điểm mạnh, uncertainty và risk của từng idea.
+ - Nếu cần ranking, thực hiện ranking dựa trên evidence và tiêu chí đã xác định.
+
+ Output:
+ - Idea: Ý tưởng.
+ - Criteria: Các tiêu chí đánh giá.
+ - Evidence / reasoning: Cơ sở evidence và lập luận.
+ - Related Knowledge: Knowledge Sheet ID.
+ - External evidence: Web evidence khi có.
+ - Uncertainty / risk: Những điểm chưa chắc chắn hoặc rủi ro.
+
+ Final Rule:
+ - Knowledge Sheet phải được kiểm tra trước khi dùng Web Search.
+ - Nếu dùng Web Search, phân biệt KS evidence, web evidence và judgment/inference.
+ - Không coi idea có ít knowledge trong KS là automatically high novelty.
+ - Phân biệt evidence và judgment.
+ - Không xem absence hoặc missing relationship là evidence của novelty.
+ - Trả lời bằng tiếng Việt."
+18,Idea Development,Chuyển idea đã chọn thành POC plan để kiểm chứng technical hypothesis.,"DNF R&D Innovation Agent
+Phát triển POC + bổ sung thông tin bên ngoài","Purpose:
+ Xây dựng POC plan đơn giản nhất nhưng đủ để kiểm tra hypothesis kỹ thuật của một idea đã được chọn.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Xác định POC objective và hypothesis.
+ - Xác định technology/components cần kiểm tra.
+ - Xây dựng test setup, test conditions và KPI.
+ - Xác định pass/fail criteria.
+ - Xác định technical risks và expected output.
+ - Sử dụng Supplier Tech/Tech Radar khi phù hợp.
+
+ Output:
+ - POC objective: Mục tiêu POC.
+ - Hypothesis: Giả thuyết cần kiểm tra.
+ - Technology / components: Công nghệ và thành phần cần dùng.
+ - Test setup / conditions: Cách setup và điều kiện test.
+ - KPI / pass-fail: Tiêu chí đánh giá.
+ - Risks: Rủi ro kỹ thuật.
+ - Expected output: Kết quả cần đạt được.
+
+ Final Rule:
+ - Chỉ dùng Web Search khi cần tìm equipment, material hoặc benchmark còn thiếu.
+ - Khi dùng Web Search, phân biệt confirmed information, external evidence và assumption.
+ - Không tự tạo Knowledge Sheet record hoặc relationship.
+ - Thiết kế POC đơn giản nhất nhưng đủ để kiểm tra hypothesis.
+ - Trả lời bằng tiếng Việt.",[IDEA]: ý tưởng muốn xây dựng kế hoạch thử nghiệm,"Purpose:
+ Xây dựng POC plan đơn giản nhất nhưng đủ để kiểm tra hypothesis kỹ thuật của một idea đã được chọn.
+
+ Input:
+ [IDEA]: ý tưởng muốn xây dựng kế hoạch thử nghiệm
+
+ Task:
+ - Xác định POC objective và hypothesis.
+ - Xác định technology/components cần kiểm tra.
+ - Xây dựng test setup, test conditions và KPI.
+ - Xác định pass/fail criteria.
+ - Xác định technical risks và expected output.
+ - Sử dụng Supplier Tech/Tech Radar khi phù hợp.
+
+ Output:
+ - POC objective: Mục tiêu POC.
+ - Hypothesis: Giả thuyết cần kiểm tra.
+ - Technology / components: Công nghệ và thành phần cần dùng.
+ - Test setup / conditions: Cách setup và điều kiện test.
+ - KPI / pass-fail: Tiêu chí đánh giá.
+ - Risks: Rủi ro kỹ thuật.
+ - Expected output: Kết quả cần đạt được.
+
+ Final Rule:
+ - Chỉ dùng Web Search khi cần tìm equipment, material hoặc benchmark còn thiếu.
+ - Khi dùng Web Search, phân biệt confirmed information, external evidence và assumption.
+ - Không tự tạo Knowledge Sheet record hoặc relationship.
+ - Thiết kế POC đơn giản nhất nhưng đủ để kiểm tra hypothesis.
+ - Trả lời bằng tiếng Việt."
+19,Idea Development,"Xây dựng action plan sau khi chọn idea, tập trung vào giảm uncertainty và Go/No-Go.","DNF R&D Innovation Agent
+Lập kế hoạch hành động/quyết định","Purpose:
+ Xây dựng action plan sau khi một idea đã được chọn để giảm uncertainty và hỗ trợ các quyết định R&D tiếp theo.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Xác định những gì đã biết và chưa biết.
+ - Xác định các uncertainty có khả năng thay đổi quyết định.
+ - Đề xuất action như research, testing, supplier check, competitor check hoặc feasibility check.
+ - Xác định purpose và expected output của từng action.
+ - Liên kết action với decision mà nó giúp đưa ra.
+
+ Output:
+ - Current knowledge: Những gì đã biết.
+ - Uncertainty: Những điểm chưa chắc chắn.
+ - Action: Việc cần thực hiện.
+ - Purpose: Mục đích của action.
+ - Expected output: Kết quả mong đợi.
+ - Related Knowledge: Knowledge Sheet/Source ID khi phù hợp.
+ - Decision enabled: Quyết định mà action hỗ trợ.
+ - Go / No-Go implication: Nếu có, action ảnh hưởng thế nào đến quyết định.
+
+ Final Rule:
+ - Ưu tiên action giúp giảm uncertainty hoặc thay đổi decision.
+ - Tránh các action chỉ tạo thêm information nhưng không hỗ trợ decision.
+ - Có thể dùng Web Search có mục tiêu khi cần; nếu dùng, phân biệt web evidence với KS evidence và assumption.
+ - Không tự tạo Knowledge Sheet record hoặc relationship.
+ - Trả lời bằng tiếng Việt.",[IDEA]: ý tưởng đã được lựa chọn để lập kế hoạch hành động,"Purpose:
+ Xây dựng action plan sau khi một idea đã được chọn để giảm uncertainty và hỗ trợ các quyết định R&D tiếp theo.
+
+ Input:
+ [IDEA]: ý tưởng đã được lựa chọn để lập kế hoạch hành động
+
+ Task:
+ - Xác định những gì đã biết và chưa biết.
+ - Xác định các uncertainty có khả năng thay đổi quyết định.
+ - Đề xuất action như research, testing, supplier check, competitor check hoặc feasibility check.
+ - Xác định purpose và expected output của từng action.
+ - Liên kết action với decision mà nó giúp đưa ra.
+
+ Output:
+ - Current knowledge: Những gì đã biết.
+ - Uncertainty: Những điểm chưa chắc chắn.
+ - Action: Việc cần thực hiện.
+ - Purpose: Mục đích của action.
+ - Expected output: Kết quả mong đợi.
+ - Related Knowledge: Knowledge Sheet/Source ID khi phù hợp.
+ - Decision enabled: Quyết định mà action hỗ trợ.
+ - Go / No-Go implication: Nếu có, action ảnh hưởng thế nào đến quyết định.
+
+ Final Rule:
+ - Ưu tiên action giúp giảm uncertainty hoặc thay đổi decision.
+ - Tránh các action chỉ tạo thêm information nhưng không hỗ trợ decision.
+ - Có thể dùng Web Search có mục tiêu khi cần; nếu dùng, phân biệt web evidence với KS evidence và assumption.
+ - Không tự tạo Knowledge Sheet record hoặc relationship.
+ - Trả lời bằng tiếng Việt."
+20,One-Pager Development,"Từ một R&D idea, tự động xây dựng nội dung ngắn gọn cho 5 phần chính của One-Pager dựa trên Knowledge Sheet + web research. Nếu vẫn thiếu thông tin quan trọng thì hỏi người dùng trước khi điền.","DNF R&D Innovation Agent
+One-Pager + nghiên cứu web","Purpose:
+ Tạo một One-Pager ngắn gọn để trình bày một idea R&D ở cấp management.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Sử dụng Knowledge Sheet làm foundation.
+ - Dùng Web Search khi cần competitor/product/technology precedent hoặc market evidence.
+ - Tổng hợp idea thành một One-Pager rõ ràng, evidence-based.
+
+ Output:
+ 1. Insight / Problem: Insight và vấn đề cần giải quyết.
+ 2. Proposed Solution / Technology: Giải pháp đề xuất và technology/mechanism.
+ 3. Competitive Landscape: Sản phẩm, competitor hoặc precedent liên quan.
+ 4. Benefits / Justification: User value, technical/business rationale và evidence hỗ trợ.
+ 5. Unknowns / High Risk: Các điểm chưa biết và rủi ro chính.
+ - Related Knowledge / Source IDs: ID liên quan khi phù hợp.
+
+ Final Rule:
+ - Viết bằng tiếng Anh, ngắn gọn và rõ ràng ở mức management-level R&D.
+ - Ưu tiên evidence.
+ - Phân biệt evidence và assumption.
+ - Nếu dùng Web Search, phân biệt web evidence với Knowledge Sheet evidence.
+ - Không tự tạo thông tin hoặc Knowledge Sheet relationship.
+ - Không dùng các claim như “new”, “first”, “no competitor” nếu không có evidence.
+ - Nếu thiếu thông tin thiết yếu, dừng và nêu rõ thông tin cần bổ sung.",[IDEA]: ý tưởng muốn xây dựng Bản tóm tắt một trang,"Purpose:
+ Tạo một One-Pager ngắn gọn để trình bày một idea R&D ở cấp management.
+
+ Input:
+ [IDEA]: ý tưởng muốn xây dựng Bản tóm tắt một trang
+
+ Task:
+ - Sử dụng Knowledge Sheet làm foundation.
+ - Dùng Web Search khi cần competitor/product/technology precedent hoặc market evidence.
+ - Tổng hợp idea thành một One-Pager rõ ràng, evidence-based.
+
+ Output:
+ 1. Insight / Problem: Insight và vấn đề cần giải quyết.
+ 2. Proposed Solution / Technology: Giải pháp đề xuất và technology/mechanism.
+ 3. Competitive Landscape: Sản phẩm, competitor hoặc precedent liên quan.
+ 4. Benefits / Justification: User value, technical/business rationale và evidence hỗ trợ.
+ 5. Unknowns / High Risk: Các điểm chưa biết và rủi ro chính.
+ - Related Knowledge / Source IDs: ID liên quan khi phù hợp.
+
+ Final Rule:
+ - Viết bằng tiếng Anh, ngắn gọn và rõ ràng ở mức management-level R&D.
+ - Ưu tiên evidence.
+ - Phân biệt evidence và assumption.
+ - Nếu dùng Web Search, phân biệt web evidence với Knowledge Sheet evidence.
+ - Không tự tạo thông tin hoặc Knowledge Sheet relationship.
+ - Không dùng các claim như “new”, “first”, “no competitor” nếu không có evidence.
+ - Nếu thiếu thông tin thiết yếu, dừng và nêu rõ thông tin cần bổ sung."
+21,Outside-In Problem Discovery,Tìm user problem / unmet need mới mà Knowledge Sheet chưa có,"DNF R&D Innovation Agent
+tìm ngoài file","Purpose:
+ Tìm consumer problem, unmet need hoặc emerging need từ bên ngoài Knowledge Sheet để mở rộng Market Pull.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Dùng Web Search để tìm problem/need từ consumer, market, review, trend hoặc các nguồn bên ngoài.
+ - Xác định target user và context của problem.
+ - Tìm existing solution nếu có.
+ - Đối chiếu với Knowledge Sheet để xem problem này đã được biết đến ở đâu.
+ - Xác định opportunity có thể khai thác.
+
+ Output:
+ - Problem / Need: Vấn đề hoặc nhu cầu.
+ - Target user: Nhóm user liên quan.
+ - Existing solution: Giải pháp hiện có.
+ - Evidence: External evidence hỗ trợ.
+ - Opportunity: Cơ hội R&D.
+ - KS relationship: Liên hệ với Knowledge Sheet.
+ - Related Knowledge: Knowledge Sheet ID khi có.
+
+ Final Rule:
+ - Đây là external discovery, nhưng Knowledge Sheet vẫn phải được đối chiếu để xác định baseline và relationship hiện có.
+ - Phân biệt rõ external discovery, Knowledge Sheet evidence và inference.
+ - Một problem không xuất hiện trong KS không có nghĩa là problem mới.
+ - Không tạo relationship trong KS như một existing fact chỉ từ external evidence.
+ - Trả lời bằng tiếng Việt.",[TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm nhu cầu mới bên ngoài Bảng Kiến thức,"Purpose:
+ Tìm consumer problem, unmet need hoặc emerging need từ bên ngoài Knowledge Sheet để mở rộng Market Pull.
+
+ Input:
+ [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm nhu cầu mới bên ngoài Bảng Kiến thức
+
+ Task:
+ - Dùng Web Search để tìm problem/need từ consumer, market, review, trend hoặc các nguồn bên ngoài.
+ - Xác định target user và context của problem.
+ - Tìm existing solution nếu có.
+ - Đối chiếu với Knowledge Sheet để xem problem này đã được biết đến ở đâu.
+ - Xác định opportunity có thể khai thác.
+
+ Output:
+ - Problem / Need: Vấn đề hoặc nhu cầu.
+ - Target user: Nhóm user liên quan.
+ - Existing solution: Giải pháp hiện có.
+ - Evidence: External evidence hỗ trợ.
+ - Opportunity: Cơ hội R&D.
+ - KS relationship: Liên hệ với Knowledge Sheet.
+ - Related Knowledge: Knowledge Sheet ID khi có.
+
+ Final Rule:
+ - Đây là external discovery, nhưng Knowledge Sheet vẫn phải được đối chiếu để xác định baseline và relationship hiện có.
+ - Phân biệt rõ external discovery, Knowledge Sheet evidence và inference.
+ - Một problem không xuất hiện trong KS không có nghĩa là problem mới.
+ - Không tạo relationship trong KS như một existing fact chỉ từ external evidence.
+ - Trả lời bằng tiếng Việt."
+22,Outside-In Technology Discovery,Tìm technology mới từ các ngành khác chưa có trong Knowledge Sheet,"DNF R&D Innovation Agent
+tìm ngoài file","Purpose:
+ Tìm emerging technology, mechanism, material, component hoặc engineering approach từ bên ngoài Knowledge Sheet để mở rộng Tech Push.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Dùng Web Search để tìm technology/mechanism/material/component/engineering approach phù hợp với [INPUT].
+ - Giải thích principle hoặc cách technology hoạt động ở mức đủ để hiểu.
+ - Tìm current application hoặc product precedent.
+ - Đối chiếu với Knowledge Sheet.
+ - Xác định potential application hoặc adaptation vào context R&D.
+
+ Output:
+ - Technology: Công nghệ/mechanism/material/component.
+ - Principle: Nguyên lý hoặc cách hoạt động.
+ - Current application: Ứng dụng hiện tại.
+ - Evidence: Source/evidence.
+ - Potential application / adaptation: Tiềm năng ứng dụng hoặc adaptation.
+ - KS relationship: Liên hệ với Knowledge Sheet.
+ - Related Knowledge: Knowledge Sheet ID khi có.
+
+ Final Rule:
+ - Phân biệt existing technology và potential new application.
+ - Phân biệt external evidence, Knowledge Sheet evidence và inference.
+ - Không kết luận novelty nếu chưa có evidence.
+ - Không tạo Knowledge Sheet record hoặc relationship mới như existing fact.
+ - Trả lời bằng tiếng Việt.",[TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm công nghệ mới bên ngoài Bảng Kiến thức,"Purpose:
+ Tìm emerging technology, mechanism, material, component hoặc engineering approach từ bên ngoài Knowledge Sheet để mở rộng Tech Push.
+
+ Input:
+ [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm công nghệ mới bên ngoài Bảng Kiến thức
+
+ Task:
+ - Dùng Web Search để tìm technology/mechanism/material/component/engineering approach phù hợp với [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm công nghệ mới bên ngoài Bảng Kiến thức.
+ - Giải thích principle hoặc cách technology hoạt động ở mức đủ để hiểu.
+ - Tìm current application hoặc product precedent.
+ - Đối chiếu với Knowledge Sheet.
+ - Xác định potential application hoặc adaptation vào context R&D.
+
+ Output:
+ - Technology: Công nghệ/mechanism/material/component.
+ - Principle: Nguyên lý hoặc cách hoạt động.
+ - Current application: Ứng dụng hiện tại.
+ - Evidence: Source/evidence.
+ - Potential application / adaptation: Tiềm năng ứng dụng hoặc adaptation.
+ - KS relationship: Liên hệ với Knowledge Sheet.
+ - Related Knowledge: Knowledge Sheet ID khi có.
+
+ Final Rule:
+ - Phân biệt existing technology và potential new application.
+ - Phân biệt external evidence, Knowledge Sheet evidence và inference.
+ - Không kết luận novelty nếu chưa có evidence.
+ - Không tạo Knowledge Sheet record hoặc relationship mới như existing fact.
+ - Trả lời bằng tiếng Việt."
+23,Cross-Industry Analogy,"Tìm cách ngành khác giải quyết một problem tương tự, sau đó transfer sang bathroom","DNF R&D Innovation Agent
+tìm ngoài file","Purpose:
+ Tìm analogy từ các ngành khác để phát hiện technology/mechanism có thể transfer vào problem R&D hiện tại.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Dùng Web Search để tìm các ngành khác có problem tương tự.
+ - Xác định existing solution, technology hoặc mechanism đang được sử dụng.
+ - Phân tích transfer potential.
+ - Xác định adaptation cần thiết cho context hiện tại.
+ - Đối chiếu với Knowledge Sheet và đề xuất idea opportunity nếu phù hợp.
+
+ Output:
+ - Industry: Ngành được tham khảo.
+ - Problem: Problem tương tự.
+ - Existing solution: Giải pháp hiện có.
+ - Technology / mechanism: Technology/mechanism có thể transfer.
+ - External source: Evidence/source.
+ - Transfer potential: Khả năng chuyển giao.
+ - Adaptation: Cách áp dụng vào context hiện tại.
+ - KS relationship: Knowledge Sheet ID.
+ - Idea / opportunity: Cơ hội R&D.
+
+ Final Rule:
+ - Phân biệt transfer của technology và new idea.
+ - Phân biệt external evidence, Knowledge Sheet evidence và inference.
+ - Không kết luận novelty nếu không có evidence.
+ - Không trình bày proposed transfer relationship như existing Knowledge Sheet relationship.
+ - Trả lời bằng tiếng Việt.",[PROBLEM]: vấn đề người dùng muốn tìm cách giải quyết từ các ngành khác,"Purpose:
+ Tìm analogy từ các ngành khác để phát hiện technology/mechanism có thể transfer vào problem R&D hiện tại.
+
+ Input:
+ [PROBLEM]: vấn đề người dùng muốn tìm cách giải quyết từ các ngành khác
+
+ Task:
+ - Dùng Web Search để tìm các ngành khác có problem tương tự.
+ - Xác định existing solution, technology hoặc mechanism đang được sử dụng.
+ - Phân tích transfer potential.
+ - Xác định adaptation cần thiết cho context hiện tại.
+ - Đối chiếu với Knowledge Sheet và đề xuất idea opportunity nếu phù hợp.
+
+ Output:
+ - Industry: Ngành được tham khảo.
+ - Problem: Problem tương tự.
+ - Existing solution: Giải pháp hiện có.
+ - Technology / mechanism: Technology/mechanism có thể transfer.
+ - External source: Evidence/source.
+ - Transfer potential: Khả năng chuyển giao.
+ - Adaptation: Cách áp dụng vào context hiện tại.
+ - KS relationship: Knowledge Sheet ID.
+ - Idea / opportunity: Cơ hội R&D.
+
+ Final Rule:
+ - Phân biệt transfer của technology và new idea.
+ - Phân biệt external evidence, Knowledge Sheet evidence và inference.
+ - Không kết luận novelty nếu không có evidence.
+ - Không trình bày proposed transfer relationship như existing Knowledge Sheet relationship.
+ - Trả lời bằng tiếng Việt."
+24,White-Space Idea Generation,"Tìm khoảng trống giữa consumer need × existing solutions × technology, kể cả ngoài Knowledge Sheet","DNF R&D Innovation Agent
+tìm ngoài file","Purpose:
+ Tìm white-space opportunity bằng cách kết hợp consumer needs, existing solutions, competitor, emerging technology và knowledge hiện có.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Dùng Web Search để tìm consumer needs, existing products, competitor solutions, emerging technologies hoặc cross-industry solutions liên quan.
+ - Đối chiếu với Knowledge Sheet.
+ - Xác định những khoảng trống đáng chú ý giữa user need và existing solutions.
+ - Từ các khoảng trống đó, tạo 5–10 idea R&D.
+
+ Output:
+ - User problem: Vấn đề/nghu cầu.
+ - Solution: Hướng giải quyết.
+ - Technology / mechanism: Công nghệ/mechanism hỗ trợ.
+ - External evidence: Evidence liên quan.
+ - Differentiation: Điểm khác biệt so với existing solutions.
+ - Related Knowledge: Knowledge Sheet ID.
+ - Idea: 5–10 idea R&D.
+
+ Final Rule:
+ - Knowledge Sheet phải được đối chiếu để xác định baseline knowledge.
+ - Phân biệt rõ external evidence, KS evidence và inference.
+ - Ưu tiên user value, technology có khả năng thực hiện và meaningful gap.
+ - Không kết luận global novelty.
+ - Không xem absence trong KS hoặc missing relationship là evidence của novelty.
+ - Trả lời bằng tiếng Việt.",[TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm khoảng trống và tạo ý tưởng mới,"Purpose:
+ Tìm white-space opportunity bằng cách kết hợp consumer needs, existing solutions, competitor, emerging technology và knowledge hiện có.
+
+ Input:
+ [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm khoảng trống và tạo ý tưởng mới
+
+ Task:
+ - Dùng Web Search để tìm consumer needs, existing products, competitor solutions, emerging technologies hoặc cross-industry solutions liên quan.
+ - Đối chiếu với Knowledge Sheet.
+ - Xác định những khoảng trống đáng chú ý giữa user need và existing solutions.
+ - Từ các khoảng trống đó, tạo 5–10 idea R&D.
+
+ Output:
+ - User problem: Vấn đề/nghu cầu.
+ - Solution: Hướng giải quyết.
+ - Technology / mechanism: Công nghệ/mechanism hỗ trợ.
+ - External evidence: Evidence liên quan.
+ - Differentiation: Điểm khác biệt so với existing solutions.
+ - Related Knowledge: Knowledge Sheet ID.
+ - Idea: 5–10 idea R&D.
+
+ Final Rule:
+ - Knowledge Sheet phải được đối chiếu để xác định baseline knowledge.
+ - Phân biệt rõ external evidence, KS evidence và inference.
+ - Ưu tiên user value, technology có khả năng thực hiện và meaningful gap.
+ - Không kết luận global novelty.
+ - Không xem absence trong KS hoặc missing relationship là evidence của novelty.
+ - Trả lời bằng tiếng Việt."
+25,Trend-to-Idea Discovery,Từ trend xã hội/công nghệ mới → xác định opportunity → tạo idea,"DNF R&D Innovation Agent
+tìm ngoài file","Purpose:
+ Chuyển một trend thành user need, opportunity và idea R&D có khả năng khai thác.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Dùng Web Search để tìm emerging consumer, lifestyle, demographic, technology, regulatory hoặc business trends liên quan.
+ - Xác định evidence và mức độ hiện tại của trend.
+ - Chuyển trend thành user need/problem.
+ - Xác định opportunity và technology/application có thể hỗ trợ.
+ - Đối chiếu với Knowledge Sheet.
+ - Đề xuất idea R&D.
+
+ Output:
+ - Trend: Xu hướng.
+ - Evidence: Evidence hỗ trợ trend.
+ - User need: Nhu cầu/problem phát sinh.
+ - Opportunity: Cơ hội.
+ - Technology / application: Technology hoặc application liên quan.
+ - Related Knowledge: Knowledge Sheet ID.
+ - Idea: Ý tưởng R&D.
+
+ Final Rule:
+ - Phân biệt current evidence, future assumption và inference.
+ - Phân biệt external evidence với Knowledge Sheet evidence.
+ - Emerging/recent không đồng nghĩa với novelty.
+ - Không xem absence trong KS là evidence của novelty.
+ - Trả lời bằng tiếng Việt.",[TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm xu hướng mới và chuyển thành ý tưởng,"Purpose:
+ Chuyển một trend thành user need, opportunity và idea R&D có khả năng khai thác.
+
+ Input:
+ [TOPIC / PROBLEM]: chủ đề hoặc vấn đề muốn tìm xu hướng mới và chuyển thành ý tưởng
+
+ Task:
+ - Dùng Web Search để tìm emerging consumer, lifestyle, demographic, technology, regulatory hoặc business trends liên quan.
+ - Xác định evidence và mức độ hiện tại của trend.
+ - Chuyển trend thành user need/problem.
+ - Xác định opportunity và technology/application có thể hỗ trợ.
+ - Đối chiếu với Knowledge Sheet.
+ - Đề xuất idea R&D.
+
+ Output:
+ - Trend: Xu hướng.
+ - Evidence: Evidence hỗ trợ trend.
+ - User need: Nhu cầu/problem phát sinh.
+ - Opportunity: Cơ hội.
+ - Technology / application: Technology hoặc application liên quan.
+ - Related Knowledge: Knowledge Sheet ID.
+ - Idea: Ý tưởng R&D.
+
+ Final Rule:
+ - Phân biệt current evidence, future assumption và inference.
+ - Phân biệt external evidence với Knowledge Sheet evidence.
+ - Emerging/recent không đồng nghĩa với novelty.
+ - Không xem absence trong KS là evidence của novelty.
+ - Trả lời bằng tiếng Việt."
+26,Source → Idea Discovery,"Từ source/material được cung cấp, tìm những insight, technology, mechanism hoặc opportunity có thể phát triển thành R&D idea.","DNF R&D Innovation Agent
+Đọc hiểu source → tìm opportunity → tạo idea","Purpose:
+ Đọc một source/material và tìm những technology, mechanism, material, capability hoặc insight có thể khai thác thành opportunity/idea R&D.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Đọc và hiểu source/material được cung cấp.
+ - Xác định technology, mechanism, material, capability, application hoặc insight đáng chú ý.
+ - Phân tích những opportunity có thể suy ra từ source.
+ - Đề xuất 5–10 idea R&D dựa trên những thông tin đó.
+
+ Output:
+ - Source insight: Insight chính từ source.
+ - Technology / mechanism / material / capability: Những yếu tố có thể khai thác.
+ - Application: Ứng dụng hiện tại hoặc được đề cập.
+ - Opportunity: Cơ hội có thể suy ra.
+ - Idea: 5–10 idea R&D.
+ - Source evidence / reference: Evidence hoặc reference tương ứng.
+
+ Final Rule:
+ - Ưu tiên idea được suy ra từ source nhưng không chỉ lặp lại nội dung source.
+ - Phân biệt rõ source information và AI inference.
+ - Không trình bày inference như source fact.
+ - Đây là idea discovery, không thực hiện evaluation hoặc deep analysis.
+ - Trả lời bằng tiếng Việt.",[SOURCE / MATERIAL]: source hoặc tài liệu người dùng cung cấp,"Purpose:
+ Đọc một source/material và tìm những technology, mechanism, material, capability hoặc insight có thể khai thác thành opportunity/idea R&D.
+
+ Input:
+ [SOURCE / MATERIAL]: source hoặc tài liệu người dùng cung cấp
+
+ Task:
+ - Đọc và hiểu source/material được cung cấp.
+ - Xác định technology, mechanism, material, capability, application hoặc insight đáng chú ý.
+ - Phân tích những opportunity có thể suy ra từ source.
+ - Đề xuất 5–10 idea R&D dựa trên những thông tin đó.
+
+ Output:
+ - Source insight: Insight chính từ source.
+ - Technology / mechanism / material / capability: Những yếu tố có thể khai thác.
+ - Application: Ứng dụng hiện tại hoặc được đề cập.
+ - Opportunity: Cơ hội có thể suy ra.
+ - Idea: 5–10 idea R&D.
+ - Source evidence / reference: Evidence hoặc reference tương ứng.
+
+ Final Rule:
+ - Ưu tiên idea được suy ra từ source nhưng không chỉ lặp lại nội dung source.
+ - Phân biệt rõ source information và AI inference.
+ - Không trình bày inference như source fact.
+ - Đây là idea discovery, không thực hiện evaluation hoặc deep analysis.
+ - Trả lời bằng tiếng Việt."
+27,Knowledge Connection / Claw,"Tự tìm các connection giữa các knowledge item trong Knowledge Sheet mà người dùng chưa chỉ định, sau đó kết hợp chúng để tạo R&D ideas.","DNF R&D Innovation Agent
+Tự khám phá connection → combine knowledge → tạo idea","Purpose:
+ Tự động phát hiện những connection có ý nghĩa giữa các knowledge item trong Knowledge Sheet mà người dùng chưa chỉ định trực tiếp, sau đó chuyển chúng thành idea R&D.
+
+ Input:
+ [INPUT]
+
+ Task:
+ - Sử dụng Knowledge Sheet để tìm các Market Signal, Technology, Competitor Tech, Supplier Tech và các knowledge item liên quan.
+ - Chủ động tìm những connection chưa được chỉ định trực tiếp trong [INPUT].
+ - Khám phá các combination có tính bổ trợ hoặc có khả năng tạo opportunity.
+ - Từ những connection có ý nghĩa, đề xuất 5–10 idea R&D.
+
+ Output:
+ - Idea: Ý tưởng R&D.
+ - Knowledge: Các Knowledge Sheet ID liên quan.
+ - Source: Source ID liên quan.
+ - Discovered connection: Connection được phát hiện.
+ - Why interesting: Vì sao connection này đáng chú ý.
+ - Concept: Khái niệm idea được hình thành từ connection.
+ - Relationship status: Relationship đã tồn tại hay connection do AI đề xuất.
+
+ Final Rule:
+ - Không trình bày proposed connection như một existing fact.
+ - Phân biệt rõ relationship đã có trong Knowledge Sheet và relationship do AI đề xuất.
+ - Nếu connection được suy ra từ nhiều record nhưng chưa được ghi nhận trực tiếp, phải đánh dấu là proposed connection/inference.
+ - Không tạo hoặc thay đổi Knowledge Sheet relationship chỉ vì AI phát hiện một connection.
+ - Đây là idea discovery, không thực hiện evaluation hoặc deep analysis.
+ - Trả lời bằng tiếng Việt.",[KNOWLEDGE SHEET]: Knowledge Sheet hoặc relevant Knowledge Sheet context được cung cấp,"Purpose:
+ Tự động phát hiện những connection có ý nghĩa giữa các knowledge item trong Knowledge Sheet mà người dùng chưa chỉ định trực tiếp, sau đó chuyển chúng thành idea R&D.
+
+ Input:
+ [KNOWLEDGE SHEET]: Knowledge Sheet hoặc relevant Knowledge Sheet context được cung cấp
+
+ Task:
+ - Sử dụng Knowledge Sheet để tìm các Market Signal, Technology, Competitor Tech, Supplier Tech và các knowledge item liên quan.
+ - Chủ động tìm những connection chưa được chỉ định trực tiếp trong [KNOWLEDGE SHEET]: Knowledge Sheet hoặc relevant Knowledge Sheet context được cung cấp.
+ - Khám phá các combination có tính bổ trợ hoặc có khả năng tạo opportunity.
+ - Từ những connection có ý nghĩa, đề xuất 5–10 idea R&D.
+
+ Output:
+ - Idea: Ý tưởng R&D.
+ - Knowledge: Các Knowledge Sheet ID liên quan.
+ - Source: Source ID liên quan.
+ - Discovered connection: Connection được phát hiện.
+ - Why interesting: Vì sao connection này đáng chú ý.
+ - Concept: Khái niệm idea được hình thành từ connection.
+ - Relationship status: Relationship đã tồn tại hay connection do AI đề xuất.
+
+ Final Rule:
+ - Không trình bày proposed connection như một existing fact.
+ - Phân biệt rõ relationship đã có trong Knowledge Sheet và relationship do AI đề xuất.
+ - Nếu connection được suy ra từ nhiều record nhưng chưa được ghi nhận trực tiếp, phải đánh dấu là proposed connection/inference.
+ - Không tạo hoặc thay đổi Knowledge Sheet relationship chỉ vì AI phát hiện một connection.
+ - Đây là idea discovery, không thực hiện evaluation hoặc deep analysis.
+ - Trả lời bằng tiếng Việt."
