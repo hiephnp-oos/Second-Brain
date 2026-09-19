@@ -97,9 +97,9 @@ A validation PASS is evidence that defined machine-checkable invariants hold at 
 
 ### AI Semantic Review
 
-`.github/workflows/ai-semantic-review.yml` is an optional PR review layer that uses OpenAI to inspect proposed changes against Second-Brain operating rules. It is advisory and must not replace deterministic repository validation or final-state verification.
+AI Semantic Review is an advisory PR review performed by ChatGPT through the GitHub repository connection. It may inspect the PR diff together with the relevant repository source-of-truth files and report semantic findings. It does not mutate repository content and does not replace deterministic validation or final-state verification.
 
-The workflow must use `pull_request` rather than `pull_request_target`. `OPENAI_API_KEY` is a repository secret and must never be stored in the repository. If the secret is unavailable, the AI review may be skipped; this is not a repository-integrity failure.
+No OpenAI API key is required for this review model. ChatGPT subscription access and OpenAI API access are separate products and billing systems.
 
 ### Issue Forms
 

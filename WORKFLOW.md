@@ -26,11 +26,11 @@ A validation PASS is evidence that machine-checkable invariants hold at that mom
 
 ### AI Semantic Review
 
-`.github/workflows/ai-semantic-review.yml` provides an optional PR-level semantic review using OpenAI through the `dlidstrom/genai-code-review` action. It reviews proposed changes against the Second-Brain operating principles and reports observations in the PR; it does not mutate repository content and does not replace `scripts/validate_second_brain.py`.
+AI Semantic Review is an advisory PR review performed by ChatGPT through the GitHub repository connection. It reads the PR diff plus the relevant Second-Brain source-of-truth files and checks target-state completeness, synchronization, cleanup, contract alignment, and semantic gaps.
 
-The workflow uses `pull_request`, not `pull_request_target`, and requires the repository secret `OPENAI_API_KEY`. If the secret is not configured or is unavailable to a fork PR, the AI review step is skipped rather than treated as a repository validation failure. This avoids turning an optional AI service dependency into a false-negative repository integrity signal.
+This is intentionally not a GitHub Actions AI call. A ChatGPT Go subscription does not provide an OpenAI API key or convert ChatGPT subscription usage into API usage; ChatGPT and the API platform have separate billing systems. Deterministic validation therefore remains automated in GitHub Actions, while semantic review is invoked through ChatGPT when a PR requires it.
 
-Treat AI review as advisory unless a future workflow explicitly defines machine-enforceable acceptance criteria. Deterministic validation and final verification remain authoritative.
+Recommended trigger: any PR that changes `AI_MEMORY.md`, `WORKFLOW.md`, `REPOSITORY_CONTRACT.md`, topic READMEs, routing/navigation, validator logic, or other multi-file structural changes.
 
 ### Issue Forms
 
@@ -54,7 +54,7 @@ Recommended checklist for meaningful repository mutations:
 - [ ] Publish the logical change as one atomic commit when the change spans multiple files
 - [ ] Remove obsolete / duplicate / temporary artifacts
 - [ ] Run automated validation
-- [ ] Review AI Semantic Review findings when the PR workflow is enabled
+- [ ] Run AI Semantic Review through ChatGPT when the PR scope requires semantic review
 - [ ] Perform positive verification
 - [ ] Perform negative verification
 - [ ] Report final state
@@ -274,7 +274,7 @@ When multiple file operations form one logical change, publish them as one atomi
 
 Run applicable automated and artifact-specific validation, including repository contract checks, topic/README structure, local references, CSV schema, IDs, and workstream-specific integrity.
 
-GitHub Actions should execute the machine-checkable repository validator automatically. AI Semantic Review is a secondary semantic signal for PRs and must not be used as a substitute for deterministic validation.
+GitHub Actions should execute the machine-checkable repository validator automatically. AI Semantic Review is a secondary semantic signal performed through ChatGPT and must not be used as a substitute for deterministic validation.
 
 ### VERIFY
 
