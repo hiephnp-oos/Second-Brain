@@ -1,0 +1,294 @@
+# CHANGELOG — GPTs Builder Evolution (v3.6 → v7.0)
+
+Mục đích: ghi lại tiến trình phát triển Builder, các failure đã phát hiện,
+và lý do của các thay đổi kiến trúc. Dùng log này để tránh lặp lại các
+thiết kế đã chứng minh là không hiệu quả.
+
+---
+
+# v7.0 — Model-Adaptive System Instruction Builder
+
+## Mục tiêu
+
+Thiết kế System Instruction cho:
+
+- Custom GPTs
+- Gemini Gems
+
+Builder tập trung vào design-time generation và không thay thế Auditor.
+
+Mục tiêu mới là:
+
+**Minimum Sufficient Instruction**
+
+thay vì:
+
+**Minimum Token Instruction**
+
+---
+
+## 1. Output Architecture
+
+v6.0 tạo:
+
+- System Prompt
+- Instruction Prompt
+- Starter Prompts
+
+v7.0 loại bỏ architecture này.
+
+### Default
+
+Một artifact duy nhất:
+
+System Instruction
+
+### Optional Split
+
+Khi user yêu cầu hoặc target platform materially benefits:
+
+- Instructions
+- Knowledge
+
+Split architecture đặc biệt phù hợp khi technical/reference content lớn
+và việc đưa toàn bộ vào instruction layer có thể làm giảm instruction
+adherence.
+
+---
+
+## 2. Instructions vs Knowledge
+
+v7.0 thiết lập boundary rõ:
+
+### Instructions
+
+Chứa behavior cần model áp dụng:
+
+- role
+- objective
+- scope
+- workflow
+- decision rules
+- constraints
+- guardrails
+- output behavior
+- failure handling
+- critical behavioral rules
+
+### Knowledge
+
+Chứa reference material:
+
+- technical facts
+- domain knowledge
+- documentation
+- API references
+- detailed patterns
+- supporting examples
+
+Knowledge không phải authority layer cao hơn Instructions.
+
+Critical behavioral rules không được chuyển sang Knowledge chỉ để giảm token.
+
+---
+
+## 3. Instruction Load Optimization
+
+v6.0 có Prompt Compression Check.
+
+v7.0 thay bằng:
+
+**Instruction Load Optimization**
+
+Thứ tự tối ưu:
+
+1. Remove duplication
+2. Consolidate related rules
+3. Remove low-value prose
+4. Simplify wording
+5. Separate reference material when useful
+6. Recheck behavioral coverage
+
+Không tối ưu đến mức làm mất:
+
+- required behavior
+- constraints
+- decision logic
+- failure handling
+- output requirements
+
+Nguyên tắc:
+
+**Optimize token efficiency, not minimum token count.**
+
+---
+
+## 4. Over-Compression Protection
+
+Một failure mode mới được xác định:
+
+> Prompt quá ngắn nhưng thiếu behavioral specification.
+
+Do đó Builder phải kiểm tra:
+
+- under-specification
+- vague shorthand
+- missing decision rules
+- missing constraints
+- missing failure behavior
+- loss of important requirements
+
+Prompt ngắn không được coi là tốt nếu reliability giảm.
+
+---
+
+## 5. Requirement Discovery
+
+v6.0 sử dụng pipeline discovery tương đối cứng.
+
+v7.0 bỏ fixed questionnaire.
+
+Builder chỉ hỏi những thông tin còn thiếu khi chúng có thể materially
+thay đổi:
+
+- objective
+- scope
+- behavior
+- permissions
+- data handling
+- destructive actions
+- external integrations
+- architecture
+
+Nếu requirements đủ rõ → proceed.
+
+Không hỏi chỉ để hoàn thành checklist.
+
+---
+
+## 6. Architecture Decision
+
+v6.0 sử dụng architecture levels và Architecture Freeze.
+
+v7.0 bỏ architecture level model cứng.
+
+Builder chọn architecture dựa trên:
+
+- task complexity
+- workflow complexity
+- governance needs
+- platform
+- instruction load
+- reference-material volume
+- user requirements
+
+Không tạo architecture phức tạp nếu task không cần.
+
+Không coi architecture là immutable sau một design proposal.
+
+---
+
+## 7. Platform Adaptation
+
+Builder v7.0 được thiết kế cho cả GPTs và Gemini.
+
+Không giả định hai platform có behavior hoặc capability giống nhau.
+
+Platform-specific behavior chỉ được đưa vào khi có lý do thực tế.
+
+Không claim capability chỉ dựa trên tên model hoặc product.
+
+---
+
+## 8. Design-Time Boundary
+
+Builder không:
+
+- formal audit
+- governance certification
+- runtime simulation
+- auto-patch
+- claim production-safe
+- claim verified behavior
+
+Builder chỉ thiết kế artifact và thực hiện lightweight internal consistency
+check.
+
+Formal verification thuộc Auditor.
+
+---
+
+## 9. Internal Consistency Check
+
+Regression Guard của v6.0 được giữ lại ở dạng nhẹ hơn.
+
+Trước khi finalize:
+
+- objective preserved
+- scope preserved
+- requirements covered
+- no contradiction
+- no unnecessary capability
+- workflow coherent
+- constraints actionable
+- output behavior clear
+- failure behavior adequate
+- Instructions / Knowledge boundary correct
+- no over-compression
+
+Đây là design check, không phải audit.
+
+---
+
+## 10. Lessons from v6.0
+
+Các thiết kế cần tránh trong v7.0:
+
+- fixed architecture levels
+- mandatory multi-stage design gates
+- mandatory architecture confirmation
+- mandatory starter prompts
+- separate System Prompt + Instruction Prompt
+- deterministic claims
+- compression for token count alone
+- forcing every prompt into the same schema
+- excessive meta-prompting
+- Builder overlapping with Auditor
+
+---
+
+# v7.0 Final Architecture
+
+User Requirement
+↓
+Requirement Analysis
+↓
+Platform Analysis
+↓
+Artifact Decision
+↓
+System Instruction
+   OR
+Instructions + Knowledge
+↓
+Internal Consistency Check
+↓
+Output
+
+Formal Audit được thực hiện bởi Auditor.
+
+---
+
+# Summary
+
+| Version | Main focus |
+|---|---|
+| v3.6 | Meta-prompt builder + discovery |
+| v4.4 | Deterministic prompt designer |
+| v5.0 | Builder / Auditor separation |
+| v6.0 | Architecture-first builder |
+| v7.0 | Model-adaptive, behavior-first instruction builder |
+
+Core principle:
+
+**Build the minimum sufficient instruction, not the shortest instruction.**

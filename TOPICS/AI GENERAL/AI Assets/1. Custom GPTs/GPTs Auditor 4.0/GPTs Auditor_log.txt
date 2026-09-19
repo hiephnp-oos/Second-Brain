@@ -1,0 +1,444 @@
+# CHANGELOG — GPTs Auditor Evolution (v1.0 → v4.0)
+
+Mục đích: ghi lại tiến trình phát triển Auditor, các failure đã phát hiện,
+và lý do thay đổi. Dùng log này để tránh quay lại các audit patterns đã
+chứng minh là quá cứng hoặc không phản ánh đúng model behavior.
+
+---
+
+# v1.0 — Initial Governance Auditor
+
+## Mục tiêu
+
+Audit system prompt ở mức governance cơ bản.
+
+Trọng tâm:
+
+- scope
+- overreach
+- prompt anti-pattern
+- stop logic
+- controlled patch
+
+Audit hoạt động chủ yếu như checklist reviewer.
+
+---
+
+# v2.1 — Structural Prompt Auditor
+
+## Mục tiêu
+
+Bổ sung:
+
+- structural analysis
+- segment classification
+- instruction conflict detection
+- prompt drift detection
+
+Phát hiện:
+
+- policy vs example conflict
+- instruction ambiguity
+- format conflict
+- implicit capability expansion
+- Role Drift
+- Capability Drift
+- Governance Drift
+- Instruction Drift
+- Constraint Dilution
+
+Hạn chế:
+
+- coverage chưa đầy đủ
+- có thể cần nhiều audit rounds.
+
+---
+
+# v3.0 — Enterprise Audit Pipeline
+
+## Mục tiêu
+
+Chuẩn hóa audit thành pipeline:
+
+INPUT VALIDATION
+→ STRUCTURAL ANALYSIS
+→ DRIFT DETECTION
+→ GOVERNANCE AUDIT
+→ RISK SCAN
+→ RISK PRIORITIZATION
+→ PATCH STRATEGY
+
+Bổ sung ecosystem risk detection:
+
+- SuperPrompt / God Prompt
+- Persona stacking
+- Narrative inflation
+- implicit execution
+- auto-build assumption
+- jailbreak-style instruction
+
+Patch sử dụng:
+
+ONE CONSOLIDATED PATCH
+
+---
+
+# v3.1 — Full Coverage One-Pass Auditor
+
+## Mục tiêu
+
+Giải quyết vấn đề audit nhiều vòng và giảm nguy cơ bỏ sót layer.
+
+Bổ sung:
+
+- Audit Activation Gate
+- Coverage Matrix
+- One-Pass Audit
+- Coverage Verification
+- Completion State
+
+Audit phải review toàn bộ các governance layers được định nghĩa.
+
+---
+
+# v4.0 — Reliability & Model-Adaptive Auditor
+
+## Mục tiêu
+
+Mở rộng audit từ governance-centric sang:
+
+**Prompt Reliability + Governance + Instruction Architecture**
+
+Auditor không chỉ hỏi:
+
+"Prompt có đủ rule governance không?"
+
+mà phải hỏi:
+
+"Prompt có đủ rõ và đủ specification để reliably thực hiện objective không?"
+
+---
+
+## 1. Single / Split Architecture
+
+Auditor hỗ trợ:
+
+### Single
+
+Một System Instruction.
+
+### Split
+
+- Instructions
+- Knowledge
+
+Split architecture không phải anti-pattern.
+
+Auditor phải đánh giá relationship giữa:
+
+Instructions
+→ behavioral authority
+
+Knowledge
+→ reference material
+
+Platform
+→ actual capability
+
+---
+
+## 2. Instruction Load
+
+Bổ sung dimension:
+
+**Instruction Load**
+
+Kiểm tra:
+
+- unnecessary verbosity
+- duplicated rules
+- narrative inflation
+- excessive meta-instructions
+- unnecessary architecture
+- reference material occupying instruction space
+
+Length tự nó không phải defect.
+
+---
+
+## 3. Over-Compression
+
+v3.1 tập trung mạnh vào risk của missing governance layers.
+
+v4.0 bổ sung failure mode ngược lại:
+
+**Over-Compression / Under-Specification**
+
+Phát hiện:
+
+- important behavior bị nén quá mức
+- distinct rules bị merge thành vague wording
+- missing decision criteria
+- missing constraints
+- missing failure handling
+- workflow bị giảm thành generic instruction
+
+Một prompt ngắn có thể là một prompt kém.
+
+---
+
+## 4. Behavioral Coverage
+
+Không còn yêu cầu mọi prompt phải có cùng một set sections.
+
+Auditor đánh giá:
+
+- objective
+- scope
+- task behavior
+- decision logic
+- workflow
+- input handling
+- output requirements
+- constraints
+- knowledge usage
+- tool usage
+- failure handling
+- governance
+
+Chỉ các dimensions relevant mới cần được đánh giá.
+
+**Content is audited, not headings.**
+
+---
+
+## 5. Instructions / Knowledge Placement
+
+Đối với split architecture:
+
+### Instructions
+
+Phải chứa behavior cần được áp dụng thường xuyên.
+
+### Knowledge
+
+Chứa reference material.
+
+Auditor phát hiện:
+
+- critical behavior nằm trong Knowledge
+- Knowledge chứa conflicting behavioral instructions
+- duplicate rules
+- Instructions và Knowledge mâu thuẫn
+- giả định Knowledge luôn được retrieved
+- reference material không cần thiết nằm trong Instructions
+
+---
+
+## 6. Model / Platform Limitation
+
+v3.x có xu hướng đánh giá prompt defect.
+
+v4.0 phải phân biệt:
+
+### Prompt defect
+
+Instruction gây ra hoặc góp phần gây ra behavior problem.
+
+### Model limitation
+
+Underlying model không reliably thực hiện behavior dù instruction hợp lý.
+
+### Platform limitation
+
+Capability bị giới hạn bởi GPT/Gem/platform.
+
+### Missing capability
+
+Task yêu cầu tool/API/file/execution/access không được cung cấp.
+
+Không quy model/platform limitation thành prompt defect nếu evidence không
+hỗ trợ.
+
+---
+
+## 7. Input Integrity Revision
+
+v3.0/v3.1 coi một số pattern như runtime instruction hoặc nested prompt
+là Input Integrity concern.
+
+v4.0 điều chỉnh:
+
+Không STOP chỉ vì:
+
+- runtime instructions
+- conditional instructions
+- multiple sections
+- modular structure
+- Instructions + Knowledge
+- nested structural sections
+
+Chỉ STOP khi input:
+
+- bị truncated nghiêm trọng
+- artifact boundary không xác định được
+- thiếu nội dung khiến audit không còn meaningful
+
+---
+
+## 8. Drift Detection
+
+Giữ lại capability của v2.1/v3.x.
+
+Chỉ claim drift khi có baseline.
+
+Có thể phát hiện:
+
+- Objective Drift
+- Role Drift
+- Capability Drift
+- Scope Drift
+- Instruction Drift
+- Constraint Dilution
+- Policy Weakening
+- Governance Drift
+
+Không có baseline → không claim historical drift.
+
+---
+
+## 9. Coverage Principle Revision
+
+v3.1 sử dụng:
+
+Full Coverage One-Pass
+
+v4.0 giữ nguyên mục tiêu review toàn bộ relevant dimensions nhưng sửa
+claim:
+
+**Coverage complete ≠ defect detection complete**
+
+Auditor phải:
+
+- review all relevant dimensions
+- report all meaningful findings identified during the audit
+
+Không claim rằng một pass có thể guarantee detection of every possible defect.
+
+---
+
+## 10. Finding Standard
+
+Mỗi meaningful finding nên có:
+
+- Severity
+- Category
+- Location
+- Finding
+- Impact
+- Evidence
+- Recommendation
+
+Severity:
+
+- Critical
+- High
+- Medium
+- Low
+- Informational
+
+Không tạo finding chỉ vì một prompt-engineering best practice không được
+sử dụng.
+
+---
+
+## 11. Patch Governance
+
+Giữ nguyên:
+
+**Consent-gated patch**
+
+Không tự động patch.
+
+Khi user approve:
+
+Audit
+↓
+Consolidated Patch
+↓
+Human Review
+↓
+Updated Artifact
+
+Patch phải:
+
+- preserve objective
+- preserve scope
+- preserve intended capability
+- avoid unnecessary rewrite
+- avoid capability expansion
+
+---
+
+## 12. Re-Audit
+
+v3.1 không chủ động đề xuất audit round tiếp theo.
+
+v4.0 giữ nguyên.
+
+Sau patch:
+
+- không tự động re-audit
+- chỉ re-audit khi user yêu cầu
+- nếu có baseline, có thể compare revised state với baseline
+
+---
+
+# v4.0 Final Audit Pipeline
+
+INPUT VALIDATION
+↓
+ARTIFACT / PLATFORM IDENTIFICATION
+↓
+STRUCTURAL ANALYSIS
+↓
+OBJECTIVE & SCOPE
+↓
+BEHAVIORAL COVERAGE
+↓
+INSTRUCTION LOAD
+↓
+INSTRUCTION / KNOWLEDGE PLACEMENT
+↓
+WORKFLOW & DECISION LOGIC
+↓
+GOVERNANCE & SAFETY
+↓
+MODEL / PLATFORM LIMITATION
+↓
+DRIFT DETECTION (if baseline exists)
+↓
+RISK PRIORITIZATION
+↓
+AUDIT REPORT
+↓
+[Explicit User Approval]
+↓
+CONSOLIDATED PATCH
+
+---
+
+# Summary
+
+| Version | Main focus |
+|---|---|
+| v1.0 | Governance checklist |
+| v2.1 | Structural analysis + drift |
+| v3.0 | Enterprise audit pipeline |
+| v3.1 | Full-layer one-pass coverage |
+| v4.0 | Reliability + model/platform-aware audit |
+
+Core principle:
+
+**Do not optimize prompts for length. Audit them for sufficient,
+reliable and appropriately placed behavior.**
