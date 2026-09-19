@@ -14,7 +14,7 @@ This file defines the repository invariants that must remain true regardless of 
 ### Topic
 
 - Every active topic has exactly one topic-level entry point: `TOPICS/<topic>/README.md`.
-- The topic README contains the nine core sections defined by `WORKFLOW.md`, including a lifecycle `State` plus `Summary`, `Direction`, and `Last reviewed`.
+- The topic README contains the nine core sections defined by `WORKFLOW.md`, including a lifecycle `State` plus `Summary`, `Direction`, and `Last reviewed`. `Active Workstreams` is accepted as the `Active Projects / References` core slot when the topic is organized primarily around workstreams.
 - A topic README describes current routing/context, not a duplicate of all child artifacts.
 - Topic lifecycle state is one of `Building`, `Active`, `Maintenance`, `Frozen`, `Paused`, or `Archived`.
 
@@ -89,7 +89,7 @@ Second-Brain uses GitHub's native capabilities as execution and verification lay
 
 ### GitHub Actions
 
-`/.github/workflows/validate.yml` runs the executable repository validator on pushes to `main` and pull requests targeting `main`.
+`/.github/workflows/validate.yml` runs the executable repository validator on pushes to `main` and pull requests targeting `main`. Direct GitHub web uploads are therefore supported for valid low-risk single-file changes; the resulting commit is validated after publication.
 
 The validator checks structural invariants, topic README/status requirements, forbidden artifacts, local references, supported data contracts, and required repository controls.
 

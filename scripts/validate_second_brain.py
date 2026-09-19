@@ -8,9 +8,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 TOPICS = ROOT / "TOPICS"
 CORE_TOPIC_SECTIONS = [
-    "Scope", "Current Context", "Status", "Working Principles", "Active Projects / References",
-    "Decisions", "Lessons", "Routing", "Next",
+    "Scope", "Current Context", "Status", "Working Principles",
+    "Active Projects / References", "Decisions", "Lessons", "Routing", "Next",
 ]
+TOPIC_SECTION_ALIASES = {
+    "Active Projects / References": {"Active Projects / References", "Active Workstreams"},
+}
 TOPIC_STATUS_VALUES = {"Building", "Active", "Maintenance", "Frozen", "Paused", "Archived"}
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder", "staging"]
 FORBIDDEN_PATHS = [
@@ -52,9 +55,14 @@ def validate_topic_readme(path: Path, errors: list[str]) -> None:
     text = read_text(path)
     positions = []
     for section in CORE_TOPIC_SECTIONS:
-        pos = text.find(f"## {section}")
-        if pos < 0:
+        aliases = TOPIC_SECTION_ALIASES.get(section, {section})
+        matches = [(text.find(f"## {alias}"), alias) for alias in aliases]
+        matches = [(pos, alias) for pos, alias in matches if pos >= 0]
+        if not matches:
             fail(f"Missing topic section: {path.relative_to(ROOT)}: {section}", errors)
+            positions.append((section, -1))
+            continue
+        pos, _ = min(matches, key=lambda item: item[0])
         positions.append((section, pos))
     if all(pos >= 0 for _, pos in positions):
         if any(positions[i][1] >= positions[i + 1][1] for i in range(len(positions) - 1)):
