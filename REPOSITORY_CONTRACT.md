@@ -95,6 +95,12 @@ The validator checks structural invariants, topic README/status requirements, fo
 
 A validation PASS is evidence that defined machine-checkable invariants hold at that moment. It is not a substitute for human/contextual verification.
 
+### AI Semantic Review
+
+`.github/workflows/ai-semantic-review.yml` is an optional PR review layer that uses OpenAI to inspect proposed changes against Second-Brain operating rules. It is advisory and must not replace deterministic repository validation or final-state verification.
+
+The workflow must use `pull_request` rather than `pull_request_target`. `OPENAI_API_KEY` is a repository secret and must never be stored in the repository. If the secret is unavailable, the AI review may be skipped; this is not a repository-integrity failure.
+
 ### Issue Forms
 
 `.github/ISSUE_TEMPLATE/change_request.yml` is the standardized change-request input for structured Second-Brain work. It captures target, objective, evidence, affected dependent layers, acceptance criteria, and completion checks.
