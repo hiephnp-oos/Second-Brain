@@ -8,7 +8,7 @@ The repository is the source of truth for completion. AI/connector actions are i
 
 The operating lifecycle is:
 
-`READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → CHANGE → RECONCILE → VALIDATE → VERIFY → REPORT`
+`READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT`
 
 Canonical repository invariants are defined in `REPOSITORY_CONTRACT.md`.
 
@@ -20,7 +20,7 @@ Second-Brain uses a small set of GitHub-native controls. They support execution 
 
 `.github/workflows/validate.yml` runs `scripts/validate_second_brain.py` on `main` pushes and pull requests targeting `main`.
 
-The validator checks required files, topic README structure, active-topic routing, forbidden artifacts, local references, supported CSV contracts, and required repository controls.
+The validator checks required files, topic README structure and status, topic registry routing, forbidden artifacts, local references, supported CSV contracts, and required repository controls.
 
 A validation PASS is evidence that machine-checkable invariants hold at that moment. It does not replace final contextual verification.
 
@@ -42,6 +42,8 @@ Recommended checklist for meaningful repository mutations:
 - [ ] Define target state
 - [ ] Identify creates / updates / replacements / moves / deletes
 - [ ] Synchronize dependent references and canonical documents
+- [ ] Run target-state preflight validation
+- [ ] Publish the logical change as one atomic commit when the change spans multiple files
 - [ ] Remove obsolete / duplicate / temporary artifacts
 - [ ] Run automated validation
 - [ ] Perform positive verification
@@ -84,6 +86,7 @@ TOPICS/<topic>/
 └── README.md
     ├── Scope
     ├── Current Context
+    ├── Status
     ├── Working Principles
     ├── Active Projects / References
     ├── Decisions
@@ -92,7 +95,7 @@ TOPICS/<topic>/
     └── Next
 ```
 
-The eight core sections are mandatory and must remain recognizable and in this order. Topic-specific sections may be added when they materially improve routing or understanding.
+The nine core sections are mandatory and must remain recognizable and in this order. `Status` is the compact lifecycle/routing state for the topic; its summary and direction explain what the topic is currently doing. Topic-specific sections may be added when they materially improve routing or understanding.
 
 A topic README is the single primary entry point and should describe routing/context rather than duplicate all child artifacts.
 
@@ -166,7 +169,7 @@ Do not treat `new file created` as equivalent to `old file replaced`.
 
 Use:
 
-- `AI_MEMORY.md` for durable global/cross-topic context and the canonical active-topic registry.
+- `AI_MEMORY.md` for durable global/cross-topic context and the canonical topic registry.
 - `TOPICS/<topic>/README.md` for durable topic context and routing.
 - Workstream README for recurring sub-area routing/context.
 - Child artifacts for detailed work, data, prompts, configurations, and project source.
@@ -250,6 +253,14 @@ Apply all required creates, updates, moves/deletes, and reference changes. Delet
 
 Synchronize README, registry, references, workflow, and other dependent layers. Remove temporary/placeholder artifacts that were only part of the working process.
 
+### PRE-FLIGHT
+
+Run the repository validator against the complete intended target state before publishing it. Do not publish a known-invalid intermediate state to `main`.
+
+### ATOMIC CHANGE
+
+When multiple file operations form one logical change, publish them as one atomic commit whenever practical. Build the complete target tree first, then create one commit from that tree. If the available interface cannot publish atomically, use a temporary branch/worktree and merge only the validated final state; do not expose known-incomplete intermediate states on `main`.
+
 ### VALIDATE
 
 Run applicable automated and artifact-specific validation, including repository contract checks, topic/README structure, local references, CSV schema, IDs, and workstream-specific integrity.
@@ -278,8 +289,9 @@ Treat the GitHub connector as an execution interface, not as completion truth.
 - The connector has no generic rename/move primitive; implement the equivalent state transition explicitly.
 - Do not assume a new canonical artifact invalidates an old artifact.
 - Do not leave `.tmp`, `.temp`, placeholder, `DELETE_ME`, staging, or accidental duplicate artifacts unless explicitly part of the target design.
-- When multiple file operations form one logical change, prefer one coherent commit when practical.
-- After multi-step mutation, verify the complete final state rather than stopping after an individual successful action.
+- When multiple file operations form one logical change, use one coherent atomic commit whenever practical. The preferred GitHub Git-database sequence is: create/update blobs → create one tree from the current base tree → create one commit → update the branch reference.
+- Do not use repeated individual file commits on `main` for one logical multi-file change when an atomic commit mechanism is available.
+- After mutation, verify the complete final state rather than stopping after an individual successful action.
 
 ## 12. Risk-based execution
 

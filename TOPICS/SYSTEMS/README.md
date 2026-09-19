@@ -14,6 +14,13 @@ One known project is the DNF R&D Database, a Google Sheets + Apps Script based R
 
 The user also works on configuration-heavy software/services, where templates, ranking logic, metadata, proxy behavior, and integrations may need iterative tuning.
 
+## Status
+
+- State: Active
+- Summary: Second-Brain operations, GitHub workflow, validation, retrieval, handoff, and technical system maintenance are actively being improved.
+- Direction: Harden the operating model so repository changes are atomic, validated, synchronized, and easier for any AI to execute correctly.
+- Last reviewed: 2026-09-19
+
 ## Working Principles
 
 - Understand the existing architecture before changing it.

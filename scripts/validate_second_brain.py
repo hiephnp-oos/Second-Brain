@@ -8,9 +8,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 TOPICS = ROOT / "TOPICS"
 CORE_TOPIC_SECTIONS = [
-    "Scope", "Current Context", "Working Principles", "Active Projects / References",
+    "Scope", "Current Context", "Status", "Working Principles", "Active Projects / References",
     "Decisions", "Lessons", "Routing", "Next",
 ]
+TOPIC_STATUS_VALUES = {"Building", "Active", "Maintenance", "Frozen", "Paused", "Archived"}
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder", "staging"]
 FORBIDDEN_PATHS = [
     Path("docs"),
@@ -58,27 +59,44 @@ def validate_topic_readme(path: Path, errors: list[str]) -> None:
     if all(pos >= 0 for _, pos in positions):
         if any(positions[i][1] >= positions[i + 1][1] for i in range(len(positions) - 1)):
             fail(f"Topic README core sections out of order: {path.relative_to(ROOT)}", errors)
+    status_match = re.search(r"## Status\s*\n\s*- State:\s*([^\n]+)\n\s*- Summary:\s*([^\n]+)\n\s*- Direction:\s*([^\n]+)\n\s*- Last reviewed:\s*(\d{4}-\d{2}-\d{2})", text)
+    if not status_match:
+        fail(f"Topic README has invalid/missing Status block: {path.relative_to(ROOT)}", errors)
+    elif status_match.group(1).strip() not in TOPIC_STATUS_VALUES:
+        fail(f"Invalid topic state in {path.relative_to(ROOT)}: {status_match.group(1).strip()}", errors)
 
 
-def extract_active_topics(errors: list[str]) -> set[str]:
+def extract_topic_registry(errors: list[str]) -> tuple[set[str], dict[str, str]]:
     path = ROOT / "AI_MEMORY.md"
     if not path.exists():
-        return set()
-    active = set()
+        return set(), {}
+    registered = set()
+    states: dict[str, str] = {}
     for line in read_text(path).splitlines():
-        match = re.match(r"\|\s*([^|]+?)\s*\|\s*Active\s*\|\s*`(TOPICS/[^`]+/README\.md)`\s*\|", line)
+        match = re.match(r"\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*`(TOPICS/[^`]+/README\.md)`\s*\|", line)
         if not match:
             continue
-        entry_name, readme_rel = match.groups()
+        entry_name, state, readme_rel = match.groups()
+        state = state.strip()
+        if state not in TOPIC_STATUS_VALUES:
+            fail(f"Invalid topic status in AI_MEMORY.md: {entry_name} -> {state}", errors)
+            continue
+        topic_name = Path(readme_rel).parts[-2]
+        if topic_name in states:
+            fail(f"Duplicate topic registry entry: {topic_name}", errors)
+        states[topic_name] = state
         readme = ROOT / readme_rel
         if not readme.exists():
-            fail(f"Active topic points to missing README: {entry_name} -> {readme_rel}", errors)
+            fail(f"Topic registry points to missing README: {entry_name} -> {readme_rel}", errors)
             continue
-        active.add(Path(readme_rel).parts[-2])
-    return active
+        if state != "Archived":
+            registered.add(topic_name)
+    if not states:
+        fail("AI_MEMORY.md contains no topic registry entries", errors)
+    return registered, states
 
 
-def validate_topics(active_topics: set[str], errors: list[str]) -> None:
+def validate_topics(active_topics: set[str], registry_states: dict[str, str], errors: list[str]) -> None:
     if not TOPICS.exists():
         fail("Missing TOPICS/", errors)
         return
@@ -90,7 +108,20 @@ def validate_topics(active_topics: set[str], errors: list[str]) -> None:
         else:
             validate_topic_readme(readme, errors)
     for topic in sorted(active_topics - actual):
-        fail(f"Active topic missing from TOPICS/: {topic}", errors)
+        fail(f"Registered topic missing from TOPICS/: {topic}", errors)
+
+
+    for topic in sorted(actual - active_topics):
+        if registry_states.get(topic) != "Archived":
+            fail(f"Topic folder is not registered in AI_MEMORY.md: {topic}", errors)
+    for topic, state in sorted(registry_states.items()):
+        if state == "Archived":
+            continue
+        readme = TOPICS / topic / "README.md"
+        if readme.exists():
+            match = re.search(r"## Status\s*\n\s*- State:\s*([^\n]+)", read_text(readme))
+            if match and match.group(1).strip() != state:
+                fail(f"Topic status mismatch: AI_MEMORY.md={state}, {readme.relative_to(ROOT)}={match.group(1).strip()}", errors)
 
 
 def validate_forbidden_files(errors: list[str]) -> None:
@@ -218,12 +249,12 @@ def validate_high_level_controls(errors: list[str]) -> None:
     readme = ROOT / "README.md"
     if contract.exists():
         text = read_text(contract)
-        for phrase in ["Core invariants", "Source-of-truth hierarchy", "Change contract", "Negative-state contract", "GitHub Actions", "Issue Forms", "Task Lists"]:
+        for phrase in ["Core invariants", "Source-of-truth hierarchy", "Change contract", "Atomic publication contract", "Negative-state contract", "GitHub Actions", "Issue Forms", "Task Lists"]:
             if phrase not in text:
                 fail(f"REPOSITORY_CONTRACT.md missing control section/phrase: {phrase}", errors)
     if workflow.exists():
         text = read_text(workflow)
-        for phrase in ["TARGET STATE", "VALIDATE", "VERIFY", "Risk-based execution", "User prompt reinforcement layer", "GitHub Actions", "Issue Form", "Task List"]:
+        for phrase in ["TARGET STATE", "PRE-FLIGHT", "ATOMIC CHANGE", "VALIDATE", "VERIFY", "Risk-based execution", "User prompt reinforcement layer", "GitHub Actions", "Issue Form", "Task List"]:
             if phrase not in text:
                 fail(f"WORKFLOW.md missing control section/phrase: {phrase}", errors)
     if readme.exists():
@@ -236,8 +267,8 @@ def validate_high_level_controls(errors: list[str]) -> None:
 def main() -> int:
     errors: list[str] = []
     validate_root(errors)
-    active = extract_active_topics(errors)
-    validate_topics(active, errors)
+    active, registry_states = extract_topic_registry(errors)
+    validate_topics(active, registry_states, errors)
     validate_forbidden_files(errors)
     validate_removed_platform_controls(errors)
     validate_local_references(errors)

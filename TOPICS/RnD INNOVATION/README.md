@@ -14,6 +14,13 @@ A recurring R&D workstream involves innovation research for LIXIL. In this conte
 
 The user also works on R&D knowledge-sharing workflows and systems that organize R&D information for reuse.
 
+## Status
+
+- State: Active
+- Summary: The current R&D direction is technology scouting and evidence-driven innovation development across market signals, competitors, suppliers, mechanisms, patents, and existing ideas.
+- Direction: Develop the flow from Knowledge Sheet → research/connect/analyze → idea → evaluate → deep analyze, while keeping evidence traceable and team workload practical.
+- Last reviewed: 2026-09-19
+
 ## Working Principles
 
 - Distinguish genuinely new innovation from technologies that are already widely implemented.

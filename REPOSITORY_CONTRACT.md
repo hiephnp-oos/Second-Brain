@@ -14,8 +14,9 @@ This file defines the repository invariants that must remain true regardless of 
 ### Topic
 
 - Every active topic has exactly one topic-level entry point: `TOPICS/<topic>/README.md`.
-- The topic README contains the eight core sections defined by `WORKFLOW.md`.
+- The topic README contains the nine core sections defined by `WORKFLOW.md`, including a lifecycle `State` plus `Summary`, `Direction`, and `Last reviewed`.
 - A topic README describes current routing/context, not a duplicate of all child artifacts.
+- Topic lifecycle state is one of `Building`, `Active`, `Maintenance`, `Frozen`, `Paused`, or `Archived`.
 
 ### Workstream
 
@@ -61,9 +62,17 @@ Inference must be labeled as inference and cannot silently become authoritative 
 
 For any repository mutation:
 
-`Inspect → Target State → Classify → Mutate → Reconcile → Validate → Verify → Report`
+`Inspect → Target State → Classify → Reconcile → Pre-flight → Atomic Mutate → Validate → Verify → Report`
 
 A successful connector action is an implementation result, not completion evidence.
+
+## Atomic publication contract
+
+- One logical multi-file change must be published as one atomic commit whenever practical.
+- `main` must not be intentionally left at a known-incomplete intermediate state.
+- Preferred sequence: build target tree → preflight validate → create one commit → update branch reference → wait for Actions validation → verify final state.
+- If the execution interface cannot publish atomically, use a temporary branch/worktree and publish only the validated final state to `main`.
+- A successful individual file operation is not evidence that the logical change is complete.
 
 ## Negative-state contract
 
@@ -82,7 +91,7 @@ Second-Brain uses GitHub's native capabilities as execution and verification lay
 
 `/.github/workflows/validate.yml` runs the executable repository validator on pushes to `main` and pull requests targeting `main`.
 
-The validator checks structural invariants, topic README requirements, forbidden artifacts, local references, supported data contracts, and required repository controls.
+The validator checks structural invariants, topic README/status requirements, forbidden artifacts, local references, supported data contracts, and required repository controls.
 
 A validation PASS is evidence that defined machine-checkable invariants hold at that moment. It is not a substitute for human/contextual verification.
 
@@ -104,7 +113,8 @@ A repository mutation is complete only when:
 2. obsolete/superseded state is absent where required;
 3. affected references and canonical documents are synchronized;
 4. automated validation passes when applicable;
-5. final repository state has been verified.
+5. the published logical change is atomic when the change spans multiple files, unless a branch-based workflow is explicitly used;
+6. final repository state has been verified.
 
 ## Scope and simplicity
 

@@ -12,6 +12,13 @@ The DNF R&D Database is a Google Sheets + Google Apps Script system. The project
 
 The current architecture is V4 and is intentionally separated into three deployment layers: Bound Script frontend, standalone `LibDNF` library core, and standalone Backend Scanner.
 
+## Status
+
+- State: Maintenance
+- Summary: The V4 DNF R&D Database has been migrated into Second-Brain with the three-layer architecture established.
+- Direction: Maintain the migrated source and architecture; make implementation changes when concrete database requirements or defects require them.
+- Last reviewed: 2026-09-19
+
 ## Working Principles
 
 - Understand the three-layer architecture before changing implementation.

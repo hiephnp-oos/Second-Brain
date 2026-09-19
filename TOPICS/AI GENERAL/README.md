@@ -16,6 +16,13 @@ The memory workflow distinguishes durable knowledge from temporary conversation 
 
 The user also works with AI-assisted media/streaming systems, including AIOStreams, TorBox, Nuvio, AIOMetadata, BingeCat, stream ranking/filtering/templates, subtitles, proxy behavior, and related configuration. These are practical technical experiments rather than the definition of the user's overall work.
 
+## Status
+
+- State: Building
+- Summary: AI access and the general AI framework are in place, but durable topic content is still limited.
+- Direction: Turn proven AI workflows, tools, prompts, and reusable patterns into durable content only when they demonstrate recurring value.
+- Last reviewed: 2026-09-19
+
 ## Working Principles
 
 - AI memory should capture persistent working context, not dump entire conversations.

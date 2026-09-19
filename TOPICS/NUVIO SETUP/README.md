@@ -25,6 +25,13 @@ The user iteratively builds Nuvio stream configuration rather than treating the 
 
 Known areas of interest include stream filtering, display/format decisions, HDR/SDR playback behavior, subtitle handling, and practical client-side troubleshooting.
 
+## Status
+
+- State: Frozen
+- Summary: A known-good Nuvio/AIOStreams/TorBox setup and backup baseline has been established.
+- Direction: Do not tune the setup proactively; update only when a new requirement, regression, compatibility issue, or new known-good baseline appears.
+- Last reviewed: 2026-09-19
+
 ## Working Principles
 
 - Preserve a known-good Nuvio baseline before making changes.

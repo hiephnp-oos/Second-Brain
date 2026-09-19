@@ -16,6 +16,13 @@ Current geography priority is Da Nang → Quang Nam → Hue → Quang Tri. Roles
 
 Trading and manufacturing environments are both acceptable.
 
+## Status
+
+- State: Building
+- Summary: The Career Orchestrator architecture and three workstreams are defined, but recurring market-data execution is not yet fully operational.
+- Direction: Turn JOB_SEARCH, COMPANY_RADAR, and REMOTE_AI specifications into reliable recurring search and tracking workflows before introducing a dedicated database.
+- Last reviewed: 2026-09-19
+
 ## Working Principles
 
 - Preserve one canonical career profile and avoid duplicating it across workstreams.

@@ -47,19 +47,21 @@ Git history provides historical versions. Do not create additional archive folde
 
 A conversation is not automatically memory. Promote information only when it is useful beyond the current task.
 
-## 6. ACTIVE TOPICS
+## 6. TOPIC REGISTRY
 
 These are the currently recognized work areas, not an exhaustive list of everything the user does.
 
 | Topic | Status | Entry point |
 |---|---|---|
-| AI General | Active | `TOPICS/AI GENERAL/README.md` |
+| AI General | Building | `TOPICS/AI GENERAL/README.md` |
 | Construction | Active | `TOPICS/CONSTRUCTION/README.md` |
-| Nuvio Setup | Active | `TOPICS/NUVIO SETUP/README.md` |
+| Nuvio Setup | Frozen | `TOPICS/NUVIO SETUP/README.md` |
 | Systems | Active | `TOPICS/SYSTEMS/README.md` |
 | R&D Innovation | Active | `TOPICS/RnD INNOVATION/README.md` |
-| R&D Database | Active | `TOPICS/RnD DATABASE/README.md` |
-| Career | Active | `TOPICS/CAREER/README.md` |
+| R&D Database | Maintenance | `TOPICS/RnD DATABASE/README.md` |
+| Career | Building | `TOPICS/CAREER/README.md` |
+
+Status describes the topic lifecycle, not whether every item inside it is being worked on. Allowed values are `Building`, `Active`, `Maintenance`, `Frozen`, `Paused`, and `Archived`. The topic README is the authoritative place for the current status summary and direction; the registry mirrors only the lifecycle state for fast routing.
 
 R&D Innovation is intentionally organized as a parent topic folder with dedicated workstream subfolders. New recurring R&D workstreams may be added there without changing the overall memory architecture.
 
@@ -81,6 +83,7 @@ A topic should be added only when recurring work creates enough durable context 
 - Use semantic connections for discovery, but do not silently convert inferred connections into authoritative relationships.
 - A structural change is incomplete until all dependent registry, navigation, and workflow references are synchronized in the same change.
 - Repository completion is defined by final state, not by successful AI/connector actions.
+- A multi-file logical change must be published atomically so `main` does not expose a known-incomplete intermediate state.
 - Generic controls and executable validation are preferred over one-off rule patches when repeated failures are discovered.
 - Optional GitHub features should be added only when they solve a demonstrated workflow problem; avoid infrastructure that can generate false failure signals.
 
@@ -100,6 +103,7 @@ A topic should be added only when recurring work creates enough durable context 
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
 - R&D Database V4 is maintained inside Second-Brain as a complete project source, organized into Bound Script frontend, standalone Library Core (`LibDNF`), and standalone Backend Scanner. The topic README is the architecture/deployment entry point; the code files are the detailed project source.
 - Repository integrity is checked automatically by `scripts/validate_second_brain.py` through `.github/workflows/validate.yml`.
+- Multi-file repository mutations use target-state preflight and one atomic commit whenever the change is one logical unit; GitHub Actions then validates the published state.
 - Four GitHub-native controls are part of the operating model: GitHub Actions for automated validation, Issue Forms for structured change requests, Task Lists for execution/completion tracking, and Mermaid for visualizing workflows/architecture where useful.
 - GitHub Pages and GitHub Rulesets were evaluated but are not part of the current operating model. Do not create or require them unless a future decision explicitly reintroduces them.
 - Issue Forms and Task Lists are optional execution aids for changes that benefit from traceability; they do not replace `WORKFLOW.md` or `REPOSITORY_CONTRACT.md`.
@@ -118,8 +122,9 @@ Follow this sequence:
 8. Do not assume that the listed active topics are exhaustive.
 9. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
 10. When unsure whether information is durable, keep it in the current conversation rather than promoting it to memory.
-11. Before reporting completion of repository work, verify the actual final GitHub state and perform applicable positive and negative checks.
-12. For structured/high-risk changes, use the Issue Form and Task List controls when they materially improve traceability.
+11. Before publishing repository changes, run target-state preflight validation; publish one atomic commit for one logical multi-file change whenever possible.
+12. Before reporting completion of repository work, verify the actual final GitHub state and perform applicable positive and negative checks.
+13. For structured/high-risk changes, use the Issue Form and Task List controls when they materially improve traceability.
 
 ## 10. MEMORY MAINTENANCE
 
@@ -152,6 +157,7 @@ For exact update lifecycle, routing rules, consistency checklist, and Handoff mo
 
 A periodic review may use this repository to produce a work-status report covering:
 
+- topic status and direction;
 - active topics;
 - completed work;
 - work in progress;
@@ -164,7 +170,7 @@ The review is a derived view, not authoritative memory. It must not infer projec
 
 ## 12. FRESHNESS
 
-Last reviewed: 2026-09-16
+Last reviewed: 2026-09-19
 
 `Active` means the topic is a recognized ongoing area of work. It does not mean every item inside it is currently being worked on.
 

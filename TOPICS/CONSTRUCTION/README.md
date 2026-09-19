@@ -12,6 +12,13 @@ The user handles practical contractor/tender-related work that may require prepa
 
 Recent work includes refining tender/quotation explanations, final-price communication, clarification of scope and drawings, and handover timing between contractors.
 
+## Status
+
+- State: Active
+- Summary: Recurring construction, tendering, quotation, contract, commercial, and execution work is actively using this topic.
+- Direction: Keep the topic as the practical routing layer for current tendering and contractor work; promote only durable rules and recurring context.
+- Last reviewed: 2026-09-19
+
 ## Working Principles
 
 - Keep technical and commercial explanations concrete and defensible.

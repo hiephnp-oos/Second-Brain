@@ -24,13 +24,15 @@ flowchart TD
     G --> H{Durable knowledge<br/>or repository change?}
     H -- No --> I([END<br/>Keep in conversation])
     H -- Yes --> J[TARGET STATE<br/>What must exist / change / be removed?]
-    J --> K[CHANGE<br/>ADD / UPDATE / REMOVE / create / replace / move / delete]
+    J --> K[CLASSIFY<br/>ADD / UPDATE / REMOVE / NO_CHANGE]
     K --> L[RECONCILE<br/>Sync READMEs, registry, references, workflow]
-    L --> M[VALIDATE<br/>Rules, schema, IDs, references]
-    M --> N[VERIFY<br/>Positive + Negative checks]
-    N --> O{Target state achieved?}
-    O -- No --> J
-    O -- Yes --> P([GITHUB<br/>SOURCE OF TRUTH])
+    L --> M[PRE-FLIGHT<br/>Validate complete target state]
+    M --> N[ATOMIC CHANGE<br/>Publish one logical commit]
+    N --> O[VALIDATE<br/>GitHub Actions]
+    O --> P[VERIFY<br/>Positive + Negative checks]
+    P --> Q{Target state achieved?}
+    Q -- No --> J
+    Q -- Yes --> R([GITHUB<br/>SOURCE OF TRUTH])
 ```
 
 ### The flow in one line
@@ -53,7 +55,7 @@ Repository maintenance principle:
 
 | Document | Role |
 |---|---|
-| `AI_MEMORY.md` | Global durable context + canonical active-topic registry |
+| `AI_MEMORY.md` | Global durable context + canonical topic registry and lifecycle status |
 | `WORKFLOW.md` | Operating lifecycle, routing, templates, maintenance rules |
 | `REPOSITORY_CONTRACT.md` | Repository invariants + source-of-truth + completion contract |
 | `TOPICS/SYSTEMS/User_Prompts.md` | Reusable prompts for user-side reinforcement across topics |
@@ -91,7 +93,7 @@ TOPICS/
 scripts/                      ← validation tooling
 ```
 
-The active topic list is maintained only in `AI_MEMORY.md`. The root README does not duplicate the active-topic registry.
+The topic registry and lifecycle state are maintained in `AI_MEMORY.md`; each topic README carries the detailed status summary and direction. The root README does not duplicate the topic registry.
 
 ## Standard topic README
 
@@ -99,16 +101,17 @@ Every topic folder has one canonical topic entry point:
 
 `TOPICS/<topic>/README.md`
 
-All topic READMEs use the same eight core sections defined in `WORKFLOW.md`:
+All topic READMEs use the same nine core sections defined in `WORKFLOW.md`:
 
 1. Scope
 2. Current Context
-3. Working Principles
-4. Active Projects / References
-5. Decisions
-6. Lessons
-7. Routing
-8. Next
+3. Status
+4. Working Principles
+5. Active Projects / References
+6. Decisions
+7. Lessons
+8. Routing
+9. Next
 
 Topic-specific sections may be inserted when useful.
 
@@ -137,7 +140,7 @@ Update the smallest correct scope and avoid duplicate authoritative representati
 
 For repository mutations, follow:
 
-`READ → ROUTE → INSPECT → TARGET STATE → CHANGE → RECONCILE → VALIDATE → VERIFY → REPORT`
+`READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT`
 
 ## Reliability model
 
@@ -147,12 +150,12 @@ The system uses five complementary controls:
 2. **Repository invariants** — `REPOSITORY_CONTRACT.md`.
 3. **User reinforcement prompts** — `TOPICS/SYSTEMS/User_Prompts.md`.
 4. **Executable validation** — `scripts/validate_second_brain.py` + GitHub Actions.
-5. **Structured execution** — Issue Forms + Task Lists when useful.
+6. **Structured execution** — Issue Forms + Task Lists when useful.
 
 A tool action succeeding is not completion evidence. The final repository state is.
 
 ## Scope boundary
 
-Keep the system deliberately small. Do not add Obsidian, a knowledge graph, vector database, RAG layer, automatic ingestion of all conversations, or other infrastructure unless repeated real usage demonstrates that the simpler GitHub-based workflow is insufficient.
+Keep the system deliberately small. Atomic publication is a reliability rule, not additional infrastructure. Do not add Obsidian, a knowledge graph, vector database, RAG layer, automatic ingestion of all conversations, or other infrastructure unless repeated real usage demonstrates that the simpler GitHub-based workflow is insufficient.
 
 Git history already provides historical versions. Detailed project knowledge stays in its authoritative project source unless the project has explicitly been migrated into Second-Brain.
