@@ -34,4 +34,3 @@ Use `Prompt.csv` in this folder for project-review and improvement tasks.
 ## Records
 
 Use `Improvement Records/` for reviewed proposals and test outcomes. Use `Regression/` for regression cases/results when persistent records are useful.
-
