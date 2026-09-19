@@ -8,6 +8,8 @@ Personal engineering research for product/mechanism research, technology scoutin
 
 This is the maintainer-facing research workstream. It is the main route for external evidence work that supports personal engineering decisions or targeted research requested by other workstreams.
 
+Project Improvement is maintained inside this workstream because it improves the research system, prompts, routing, tools, documentation, and regression process used by the maintainer.
+
 ## Working Rules
 
 - Start from the decision and known constraints.
@@ -31,10 +33,14 @@ This is the maintainer-facing research workstream. It is the main route for exte
 
 `Broad / conflicting / high-risk / decision-critical` → deep research
 
+`Project health / prompt / workflow / tool / governance / regression` → Project Improvement
+
 ## Prompt
 
-Use `Prompt.csv` in this folder. Prompts are the task interface; they are not additional sources of truth.
+Use `Prompt.csv` for research tasks. Use `Project Improvement/Prompt.csv` for project-review and maintenance tasks.
 
 ## Outputs
 
 Research results stay in the conversation or designated research artifact unless they qualify for a Knowledge Candidate. Do not automatically copy every research result into the Knowledge Sheet.
+
+Project Improvement proposals remain experimental until tested and human-verified.
