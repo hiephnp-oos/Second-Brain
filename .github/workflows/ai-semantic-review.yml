@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Second-Brain semantic review
         if: steps.config.outputs.enabled == 'true'
-        uses: dlidstrom/genai-code-review@v3
+        uses: dlidstrom/genai-code-review@v3.0.8
         with:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}

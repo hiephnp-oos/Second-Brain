@@ -145,7 +145,7 @@ For repository mutations, follow:
 
 ## Reliability model
 
-The system uses five complementary controls:
+The system uses six complementary controls:
 
 1. **Canonical rules** — `WORKFLOW.md`.
 2. **Repository invariants** — `REPOSITORY_CONTRACT.md`.
