@@ -24,6 +24,14 @@ The validator checks required files, topic README structure and status, topic re
 
 A validation PASS is evidence that machine-checkable invariants hold at that moment. It does not replace final contextual verification.
 
+### AI Semantic Review
+
+`.github/workflows/ai-semantic-review.yml` provides an optional PR-level semantic review using OpenAI through the `dlidstrom/genai-code-review` action. It reviews proposed changes against the Second-Brain operating principles and reports observations in the PR; it does not mutate repository content and does not replace `scripts/validate_second_brain.py`.
+
+The workflow uses `pull_request`, not `pull_request_target`, and requires the repository secret `OPENAI_API_KEY`. If the secret is not configured or is unavailable to a fork PR, the AI review step is skipped rather than treated as a repository validation failure. This avoids turning an optional AI service dependency into a false-negative repository integrity signal.
+
+Treat AI review as advisory unless a future workflow explicitly defines machine-enforceable acceptance criteria. Deterministic validation and final verification remain authoritative.
+
 ### Issue Forms
 
 `.github/ISSUE_TEMPLATE/change_request.yml` is the standardized request format for changes that benefit from explicit traceable requirements.
@@ -46,6 +54,7 @@ Recommended checklist for meaningful repository mutations:
 - [ ] Publish the logical change as one atomic commit when the change spans multiple files
 - [ ] Remove obsolete / duplicate / temporary artifacts
 - [ ] Run automated validation
+- [ ] Review AI Semantic Review findings when the PR workflow is enabled
 - [ ] Perform positive verification
 - [ ] Perform negative verification
 - [ ] Report final state
@@ -265,7 +274,7 @@ When multiple file operations form one logical change, publish them as one atomi
 
 Run applicable automated and artifact-specific validation, including repository contract checks, topic/README structure, local references, CSV schema, IDs, and workstream-specific integrity.
 
-GitHub Actions should execute the machine-checkable repository validator automatically.
+GitHub Actions should execute the machine-checkable repository validator automatically. AI Semantic Review is a secondary semantic signal for PRs and must not be used as a substitute for deterministic validation.
 
 ### VERIFY
 
