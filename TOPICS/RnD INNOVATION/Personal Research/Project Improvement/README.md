@@ -5,14 +5,16 @@
 Improve the R&D Innovation Project itself rather than perform normal product research.
 
 Scope:
-- Workstream 1 Personal Research
-- Workstream 2 Knowledge Sheet + Claw
-- Workstream 3 Existing Ideas + Bi-weekly Review
+- Personal Research
+- Knowledge Sheet + Claw
+- Existing Ideas + Bi-weekly Review
 - prompts
 - routing
 - tool selection
 - documentation
 - validation/regression
+
+This is a maintainer capability under `Personal Research/`, not a separate top-level workstream.
 
 ## Improvement Cycle
 
