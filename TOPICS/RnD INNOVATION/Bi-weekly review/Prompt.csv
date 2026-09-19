@@ -1,6 +1,0 @@
-ID,Status,Name,Purpose,Prompt
-"BR-01","CURRENT","Bi-weekly Review","Review existing ideas and work against the latest available knowledge.","Use NotebookLM/available team context first. Identify meaningful changes, evidence gaps, decision points, follow-ups, and research requests. Do not treat missing information as proof of novelty."
-"BR-02","CURRENT","Review Evidence Gap","Prioritize the few evidence gaps that matter for current decisions.","For each gap, state affected idea/decision, why it matters, existing evidence, missing evidence, and whether targeted external research is justified."
-"BR-03","CURRENT","Review Synthesis","Synthesize review findings into actionable next steps.","Separate verified findings, inference, unresolved questions, research requests, and follow-ups. Keep the result concise and decision-oriented."
-"BR-04","CURRENT","Review to Knowledge Candidate","Identify reusable knowledge from the bi-weekly review.","Prepare Knowledge Candidates only for durable, evidence-backed findings that can benefit future R&D work. Human review is required before Knowledge Sheet write-back."
-"BR-05","CURRENT","Review Research Request","Prepare a maintainer-facing external research request.","State objective, decision, known context, exact evidence gap, requested scope, and stop condition. Keep research limited to what can change the decision."
