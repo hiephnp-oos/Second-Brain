@@ -93,6 +93,82 @@ Do not force every idea into deep analysis.
 
 Use deeper research for selected ideas, covering user problem/value, existing solutions, mechanism, feasibility, technical risks, patent/IP landscape, applications, assumptions, and verification needs.
 
+## Visual Workflow
+
+```mermaid
+flowchart LR
+    M[Material / Signal] --> KS[Knowledge Sheet]
+    KS --> C[Claw Idea]
+    C --> IR[Idea Review]
+    IR -->|Evidence sufficient| EV[Evaluate]
+    IR -->|Evidence gap| PR[Personal Research]
+    PR -->|Verified finding| IR
+    PR -->|Reusable knowledge| KC[Knowledge Candidate]
+    KC -->|Human verify| KS
+    EV -->|Selected idea| DA[Deep Analyze]
+    DA -->|New evidence / gap| PR
+    DA -->|Reusable knowledge| KC
+```
+
+Read the workflow as three operating workstreams:
+
+`Knowledge Sheet` = what the project already knows.
+
+`Personal Research` = investigate what is not known or needs stronger evidence.
+
+`Idea Review` = decide whether an idea is sufficiently supported, what is missing, and whether the idea should change.
+
+## Practical Use Cases
+
+### 1. Knowledge Sheet — "What do we already know?"
+Use when:
+- You receive a new market signal, competitor technology, supplier technology, patent, or technical finding.
+- You want to connect Technology ↔ Competitor ↔ Supplier ↔ Mechanism ↔ Market Signal.
+- You need to know whether an idea is already supported by existing project knowledge.
+- You discover a reusable finding that may deserve promotion into the Knowledge Sheet.
+
+Typical flow:
+`Material → Check Knowledge Sheet → Identify gap → Create Claw connection / Knowledge Candidate`
+
+Example:
+"Supplier X shows a pressure-compensating shower nozzle. Do we already have this technology, competitor precedent, supplier support, and related mechanisms in the Knowledge Sheet?"
+
+### 2. Personal Research — "What do we still need to know?"
+Use when:
+- Knowledge Sheet evidence is insufficient.
+- An Idea Review identifies a blocking evidence gap.
+- You need external research on mechanism, technology existence, competitor adoption, supplier capability, materials, manufacturing, patents, literature, reliability, or testing.
+- You need deeper or independent verification before making an engineering decision.
+
+Typical flow:
+`Question / Gap → Research → Verify → Synthesize → Return finding`
+
+Example:
+"Idea Review says the proposed cartridge mechanism may be feasible, but we have no evidence for the required pressure range. Research the mechanism, available components, relevant technical evidence, and key feasibility limits."
+
+### 3. Idea Review — "Is this idea ready, and what should change?"
+Use when:
+- You have an existing Claw idea and want to verify it.
+- You are doing a periodic review of the idea portfolio.
+- New evidence may invalidate, strengthen, or modify an idea.
+- You need to decide what research is actually necessary before proceeding.
+
+Core questions:
+1. Is the evidence sufficient?
+2. Does the technology really exist?
+3. Is the mechanism reasonable?
+4. Is there competitor adoption / precedent?
+5. Is there supplier / technology support?
+6. Is there a Knowledge Sheet gap?
+7. What research is needed?
+8. Does the idea need modification?
+
+Typical flow:
+`Idea → Review → Research Request if needed → Updated evidence → Review again → Modify / Evaluate / Deep Analyze`
+
+Example:
+"We have an idea for an integrated 2-position diverter cartridge. Check whether the architecture exists commercially, whether the mechanism is reasonable, whether competitors/suppliers support it, what the Knowledge Sheet already knows, and what research is still required."
+
 ## Research Routing
 
 Use the minimum sufficient route:
