@@ -259,7 +259,7 @@ def validate_high_level_controls(errors: list[str]) -> None:
                 fail(f"WORKFLOW.md missing control section/phrase: {phrase}", errors)
     if readme.exists():
         text = read_text(readme)
-        for phrase in ["GitHub Actions", "AI Semantic Review", "Issue Forms", "Task Lists", "Mermaid"]:
+        for phrase in ["GitHub Actions", "Issue Forms", "Task Lists", "Mermaid"]:
             if phrase not in text:
                 fail(f"README.md missing platform capability: {phrase}", errors)
 

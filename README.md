@@ -69,10 +69,11 @@ Repository maintenance principle:
 Second-Brain uses four complementary GitHub-native controls:
 
 1. **GitHub Actions** — automated repository validation.
-2. **AI Semantic Review** — advisory PR-level semantic review against Second-Brain rules.
-3. **Issue Forms** — standardized change-request input when structured requirements are useful.
-4. **Task Lists** — explicit execution/completion checklists for multi-step work.
-5. **Mermaid** — visual presentation of workflows, architecture, relationships, and process where it improves understanding.
+2. **Issue Forms** — standardized change-request input when structured requirements are useful.
+3. **Task Lists** — explicit execution/completion checklists for multi-step work.
+4. **Mermaid** — visual presentation of workflows, architecture, relationships, and process where it improves understanding.
+
+AI Semantic Review is a separate ChatGPT-assisted PR review layer, not a GitHub Action.
 
 These controls do not replace the Markdown source of truth. Canonical rules remain in `WORKFLOW.md` and `REPOSITORY_CONTRACT.md`.
 
@@ -145,22 +146,21 @@ For repository mutations, follow:
 
 ## Reliability model
 
-The system uses six complementary controls:
+The system uses five complementary controls:
 
 1. **Canonical rules** — `WORKFLOW.md`.
 2. **Repository invariants** — `REPOSITORY_CONTRACT.md`.
 3. **User reinforcement prompts** — `TOPICS/SYSTEMS/User_Prompts.md`.
 4. **Executable validation** — `scripts/validate_second_brain.py` + GitHub Actions.
-5. **AI Semantic Review** — advisory PR review for semantic consistency.
-6. **Structured execution** — Issue Forms + Task Lists when useful.
+5. **Structured execution** — Issue Forms + Task Lists when useful.
 
 A tool action succeeding is not completion evidence. The final repository state is.
 
 ## AI Semantic Review
 
-Pull requests may use AI Semantic Review as a secondary review layer. It checks semantic consistency, target-state completeness, cleanup, routing/reference synchronization, and alignment with the repository operating model. It does not replace the deterministic validator or final verification.
+For PRs that need semantic review, use ChatGPT through the GitHub repository connection to review the PR diff against `AI_MEMORY.md`, `WORKFLOW.md`, `REPOSITORY_CONTRACT.md`, and the affected topic/source files. Focus on target-state completeness, synchronization, cleanup, contract alignment, and semantic gaps that deterministic validation may miss.
 
-The review workflow uses `pull_request` and the repository secret `OPENAI_API_KEY`; it does not use `pull_request_target` and does not mutate repository content.
+This review is advisory. It does not require an OpenAI API key and does not replace GitHub Actions validation or final repository verification.
 
 ## Scope boundary
 

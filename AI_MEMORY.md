@@ -104,8 +104,8 @@ A topic should be added only when recurring work creates enough durable context 
 - R&D Database V4 is maintained inside Second-Brain as a complete project source, organized into Bound Script frontend, standalone Library Core (`LibDNF`), and standalone Backend Scanner. The topic README is the architecture/deployment entry point; the code files are the detailed project source.
 - Repository integrity is checked automatically by `scripts/validate_second_brain.py` through `.github/workflows/validate.yml`.
 - Multi-file repository mutations use target-state preflight and one atomic commit whenever the change is one logical unit; GitHub Actions then validates the published state.
-- Pull requests may use AI Semantic Review as a secondary semantic review layer; it must not replace deterministic validation or final repository verification.
-- Five GitHub-native controls are part of the operating model: GitHub Actions for automated validation, AI Semantic Review for PR-level semantic review, Issue Forms for structured change requests, Task Lists for execution/completion tracking, and Mermaid for visualizing workflows/architecture where useful.
+- Pull requests may use AI Semantic Review as a secondary semantic review layer performed by ChatGPT through the GitHub repository connection; it must not replace deterministic validation or final repository verification.
+- Four GitHub-native controls are part of the operating model: GitHub Actions for automated validation, Issue Forms for structured change requests, Task Lists for execution/completion tracking, and Mermaid for visualizing workflows/architecture where useful.
 - GitHub Pages and GitHub Rulesets were evaluated but are not part of the current operating model. Do not create or require them unless a future decision explicitly reintroduces them.
 - Issue Forms and Task Lists are optional execution aids for changes that benefit from traceability; they do not replace `WORKFLOW.md` or `REPOSITORY_CONTRACT.md`.
 
