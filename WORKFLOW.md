@@ -4,6 +4,8 @@
 
 Keep GitHub knowledge useful, current, consistent, and small enough for an AI to read and continue work.
 
+The compact operational guide at `TOPICS/SYSTEMS/Second_Brain_Operations.md` is a supporting execution aid and must remain aligned with this canonical lifecycle.
+
 The repository is the source of truth for completion. AI/connector actions are implementation steps only.
 
 The operating lifecycle is:

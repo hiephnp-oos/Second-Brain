@@ -2,7 +2,14 @@
 
 ## Purpose
 
+This README is the routing and contract entry point for the authoritative R&D Knowledge Sheet data.
+
 The Knowledge Sheet is the reusable structured R&D knowledge layer feeding Claw Idea generation.
+
+## Status
+
+- State: Current authoritative baseline
+- Routing: Use this workstream for reusable structured R&D knowledge and Claw inputs.
 
 ## Current baseline
 

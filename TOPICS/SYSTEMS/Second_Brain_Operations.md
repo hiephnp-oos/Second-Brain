@@ -6,7 +6,7 @@ Operational guide for reliable AI interaction with Second-Brain. This document i
 
 ## Standard lifecycle
 
-`READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → CHANGE → RECONCILE → VALIDATE → VERIFY → REPORT`
+`READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT`
 
 ### READ
 
@@ -46,6 +46,16 @@ For multi-file logical changes, prefer a coherent commit when practical.
 ### RECONCILE
 
 Bring all dependent files to the same final state. This includes README, registry, references, workstream metadata, and workflow documents when affected.
+
+### PRE-FLIGHT
+
+Validate the complete target state as far as the available checks allow before publishing. Confirm required files exist, references resolve, obsolete state is identified for removal, and defined data/structure contracts are internally consistent.
+
+### ATOMIC CHANGE
+
+Publish one logical multi-file change as one commit whenever practical. Do not intentionally leave `main` at a known-incomplete intermediate state.
+
+Deletion is a first-class operation, not optional cleanup.
 
 ### VALIDATE
 

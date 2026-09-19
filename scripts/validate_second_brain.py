@@ -15,7 +15,11 @@ TOPIC_SECTION_ALIASES = {
     "Active Projects / References": {"Active Projects / References", "Active Workstreams"},
 }
 TOPIC_STATUS_VALUES = {"Building", "Active", "Maintenance", "Frozen", "Paused", "Archived"}
-FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder", "staging"]
+FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder"]
+OPERATIONAL_STATE_DIRS = {Path("TOPICS/RnD INNOVATION/Personal Research/Claw Discovery/staging")}
+WORKSTREAM_PURPOSE_MARKERS = {"Purpose", "Purpose / Scope", "Scope", "Current Context"}
+WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule"}
+CANONICAL_LIFECYCLE = "READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT"
 FORBIDDEN_PATHS = [
     Path("docs"),
     Path(".github/workflows/pages.yml"),
@@ -30,6 +34,7 @@ REQUIRED_GITHUB_COMPONENTS = [
     ".github/workflows/validate.yml",
     ".github/ISSUE_TEMPLATE/config.yml",
     ".github/ISSUE_TEMPLATE/change_request.yml",
+    ".github/PULL_REQUEST_TEMPLATE.md",
     "scripts/validate_second_brain.py",
 ]
 
@@ -138,7 +143,14 @@ def validate_forbidden_files(errors: list[str]) -> None:
         if path.exists():
             fail(f"Forbidden legacy platform path found: {forbidden}", errors)
     for path in ROOT.rglob("*"):
-        if not path.is_file() or ".git" in path.parts or path.name == "validate_second_brain.py":
+        if ".git" in path.parts:
+            continue
+        if path.is_dir() and path.name.lower() == "staging":
+            relative = path.relative_to(ROOT)
+            if relative not in OPERATIONAL_STATE_DIRS:
+                fail(f"Unapproved operational staging directory: {relative}", errors)
+            continue
+        if not path.is_file() or path.name == "validate_second_brain.py":
             continue
         lower = path.name.lower()
         if any(marker.lower() in lower for marker in FORBIDDEN_MARKERS):
@@ -161,14 +173,31 @@ def validate_removed_platform_controls(errors: list[str]) -> None:
 
 
 def validate_local_references(errors: list[str]) -> None:
-    pattern = re.compile(r"`((?:TOPICS|\.github|scripts)/[^`]+)`")
+    root_pattern = re.compile(r"`((?:TOPICS|\.github|scripts)/[^`]+)`")
+    markdown_link_pattern = re.compile(r"\]\(([^)]+)\)")
+
+    def check_candidate(source: Path, raw: str) -> None:
+        candidate = raw.strip().strip("<>").split(' "')[0].strip()
+        if not candidate or candidate.startswith(("#", "http://", "https://", "mailto:")):
+            return
+        candidate = candidate.rstrip(".,;:")
+        if candidate.startswith("/"):
+            target = ROOT / candidate.lstrip("/")
+        else:
+            target = source.parent / candidate
+        if not target.exists():
+            fail(f"Broken local reference in {source.relative_to(ROOT)}: {candidate}", errors)
+
     for path in ROOT.rglob("*.md"):
-        for raw in pattern.findall(read_text(path)):
+        text = read_text(path)
+        for raw in root_pattern.findall(text):
             candidate = raw.rstrip(".,;:")
             if "<" in candidate or ">" in candidate:
                 continue
             if not (ROOT / candidate).exists():
                 fail(f"Broken local reference in {path.relative_to(ROOT)}: {candidate}", errors)
+        for raw in markdown_link_pattern.findall(text):
+            check_candidate(path, raw)
 
 
 def validate_csv_shape(errors: list[str]) -> None:
@@ -251,6 +280,22 @@ def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
                         fail(f"Dangling relationship {value} in {filename} line {row_number}", errors)
 
 
+def validate_workstream_readmes(errors: list[str]) -> None:
+    if not TOPICS.exists():
+        return
+    for path in TOPICS.rglob("README.md"):
+        if len(path.relative_to(TOPICS).parts) <= 2:
+            continue
+        text = read_text(path)
+        headings = {line[3:].strip() for line in text.splitlines() if line.startswith("## ")}
+        if not text.lstrip().startswith("# "):
+            fail(f"Workstream README missing title: {path.relative_to(ROOT)}", errors)
+        if not headings.intersection(WORKSTREAM_PURPOSE_MARKERS):
+            fail(f"Workstream README missing purpose/context section: {path.relative_to(ROOT)}", errors)
+        if not headings.intersection(WORKSTREAM_STATE_MARKERS):
+            fail(f"Workstream README missing routing/state/rules section: {path.relative_to(ROOT)}", errors)
+
+
 def validate_high_level_controls(errors: list[str]) -> None:
     contract = ROOT / "REPOSITORY_CONTRACT.md"
     workflow = ROOT / "WORKFLOW.md"
@@ -265,6 +310,11 @@ def validate_high_level_controls(errors: list[str]) -> None:
         for phrase in ["TARGET STATE", "PRE-FLIGHT", "ATOMIC CHANGE", "VALIDATE", "VERIFY", "Risk-based execution", "User prompt reinforcement layer", "GitHub Actions", "Issue Form", "Task List"]:
             if phrase not in text:
                 fail(f"WORKFLOW.md missing control section/phrase: {phrase}", errors)
+        if CANONICAL_LIFECYCLE not in text:
+            fail("WORKFLOW.md lifecycle does not match canonical lifecycle", errors)
+    operations = ROOT / "TOPICS" / "SYSTEMS" / "Second_Brain_Operations.md"
+    if operations.exists() and CANONICAL_LIFECYCLE not in read_text(operations):
+        fail("Second_Brain_Operations.md lifecycle is out of sync with canonical lifecycle", errors)
     if readme.exists():
         text = read_text(readme)
         for phrase in ["GitHub Actions", "Issue Forms", "Task Lists", "Mermaid"]:
@@ -280,6 +330,7 @@ def main() -> int:
     validate_forbidden_files(errors)
     validate_removed_platform_controls(errors)
     validate_local_references(errors)
+    validate_workstream_readmes(errors)
     validate_csv_shape(errors)
     validate_rnd_knowledge_sheet(errors)
     validate_high_level_controls(errors)
