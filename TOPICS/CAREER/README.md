@@ -12,6 +12,8 @@ The workflow operates through three parallel workstreams:
 - `COMPANY_RADAR` — companies entering, expanding, building facilities, or increasing hiring activity in Da Nang, Quang Nam, Hue, Quang Tri and relevant nearby areas.
 - `REMOTE_AI` — remote full-time plus remote contract, part-time, freelance, and AI-enabled work leveraging engineering/quality/project capabilities.
 
+The three workstreams retain independent search and matching logic but are executed by one master scheduler to respect platform task limits. The master scheduler runs daily and internally controls the three-day search cadence and weekly synthesis cadence.
+
 Current geography priority is Da Nang → Quang Nam → Hue → Quang Tri. Roles farther from Da Nang require stronger compensation/conditions. Remote is acceptable when matching is strong and compensation is high.
 
 Trading and manufacturing environments are both acceptable.
@@ -19,8 +21,8 @@ Trading and manufacturing environments are both acceptable.
 ## Status
 
 - State: Building
-- Summary: The Career Orchestrator architecture and three workstreams are defined, but recurring market-data execution is not yet fully operational.
-- Direction: Turn JOB_SEARCH, COMPANY_RADAR, and REMOTE_AI specifications into reliable recurring search and tracking workflows before introducing a dedicated database.
+- Summary: The Career Orchestrator architecture, three workstreams, and one master recurring scheduler are configured. Search execution and output quality still require ongoing real-market validation.
+- Direction: Run the three independent workstreams through the master scheduler, validate output quality, and use external tracking before introducing a dedicated database.
 - Last reviewed: 2026-09-19
 
 ## Working Principles
@@ -33,6 +35,7 @@ Trading and manufacturing environments are both acceptable.
 - Verify current job/company evidence before treating it as confirmed.
 - Keep high-volume opportunity records in the external tracker until real scale demonstrates a database need.
 - Job Search and Remote/AI use different matching logic.
+- Scheduler consolidation must not collapse or weaken workstream-specific search, matching, verification, or output contracts.
 
 ## Active Projects / References
 
@@ -42,7 +45,7 @@ Trading and manufacturing environments are both acceptable.
 
 ### Implementation Plan
 
-`TOPICS/CAREER/IMPLEMENTATION_PLAN.md` defines the business goal, target state, implementation phases, output contracts, matching principles, cadence, and database trigger.
+`TOPICS/CAREER/IMPLEMENTATION_PLAN.md` defines the business goal, target state, implementation phases, output contracts, matching principles, master-scheduler cadence, and database trigger.
 
 ### Job Search
 
@@ -60,6 +63,7 @@ Trading and manufacturing environments are both acceptable.
 
 - Career is a first-class Second-Brain topic because the workflow is recurring and requires durable routing/context.
 - The three workstreams operate in parallel rather than as sequential stages.
+- The workstreams are orchestrated by one daily master schedule; internal cadence rules determine which workstreams execute on each run.
 - Explicit exclusions currently include Premo Vietnam, LIXIL Vietnam, GGEC, and UAC.
 - Current compensation screening uses a general target of `> USD 1,000/month`, with a `> 20,000,000 VND/month` working floor for manufacturing roles in Da Nang/Quang Nam; `1 USD = 26,500 VND` for screening.
 - A future job/opportunity database is allowed only when volume, query complexity, deduplication, historical analysis, or cross-search needs demonstrate that the Markdown/external-tracker model is insufficient.
@@ -70,6 +74,7 @@ Trading and manufacturing environments are both acceptable.
 - Do not create a new rule after every individual search failure; strengthen the reusable baseline when a repeated failure mode is demonstrated.
 - Preserve durable rules in Second-Brain while keeping transient/high-volume results external.
 - A successful search or connector action is not evidence that the resulting career state is correct; verify the output/state.
+- Consolidating schedulers is safe only when execution cadence is separated from workstream logic and the output contracts remain unchanged.
 
 ## Routing
 
@@ -86,4 +91,4 @@ Use `CAREER_PROFILE.md` for cross-workstream criteria, `IMPLEMENTATION_PLAN.md` 
 
 ## Next
 
-Implement the three recurring search engines against real market data, then configure scheduling and external tracking within platform/tool limits. Review the database trigger only after real usage generates sufficient volume or query complexity.
+Validate the master-scheduler runs against real market data, monitor relevance/false-reject/false-accept/duplicate patterns, and configure external tracking as needed. Review the database trigger only after real usage generates sufficient volume or query complexity.

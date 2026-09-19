@@ -13,25 +13,27 @@ Second-Brain stores durable profile, rules, decisions, exclusions, and workflow 
 ## Target State
 
 ```text
-CAREER PROFILE
-      │
-      ├──────────────┬──────────────┐
-      ▼              ▼              ▼
- JOB SEARCH     COMPANY RADAR    REMOTE / AI
-      │              │              │
-      └──────────────┼──────────────┘
-                     ▼
-              DISCOVERY + EVIDENCE
-                     ▼
-              MATCHING + DECISION
-                     ▼
-             EXTERNAL TRACKING
-                     ▼
-                USER DECISION
-                     ▼
-              FEEDBACK / LEARNING
-                     └──────► PROFILE / RULES
+                         CAREER PROFILE
+                               │
+              ┌────────────────┼────────────────┐
+              ▼                ▼                ▼
+         JOB SEARCH      COMPANY RADAR       REMOTE / AI
+              │                │                │
+              └────────────────┼────────────────┘
+                               ▼
+                     DISCOVERY + EVIDENCE
+                               ▼
+                      MATCHING + DECISION
+                               ▼
+                       EXTERNAL TRACKING
+                               ▼
+                         USER DECISION
+                               ▼
+                       FEEDBACK / LEARNING
+                               └──────► PROFILE / RULES
 ```
+
+The three workstreams remain logically independent. Scheduling is an execution layer only.
 
 ## Implementation Phases
 
@@ -42,9 +44,9 @@ CAREER PROFILE
 | 3 | Job Search Engine | NEXT | Define recurring discovery, matching, deduplication and result-table workflow. |
 | 4 | Company Radar Engine | NEXT | Define signal discovery, evidence thresholds, company-to-opportunity routing and result table. |
 | 5 | Remote / AI Engine | NEXT | Implement separate remote/AI matching model and search categories. |
-| 6 | Parallel Scheduling | NEXT | Run the three search workstreams independently on a recurring cadence. |
+| 6 | Master Scheduling | COMPLETE | One daily scheduler orchestrates the three search workstreams and weekly synthesis within platform task limits. |
 | 7 | External Tracking | NEXT | Use Google Sheets/external tools for opportunity records and application history. |
-| 8 | Weekly Synthesis | NEXT | Produce one weekly consolidated view of meaningful changes and actions. |
+| 8 | Weekly Synthesis | COMPLETE | Weekly consolidated view is included in the master scheduler and runs on the weekly cadence. |
 | 9 | Feedback Loop | FUTURE | Convert user decisions and real outcomes into durable rules instead of ad-hoc rule additions. |
 | 10 | Search Quality Review | FUTURE | Measure relevance, false rejects, false accepts, duplicates, evidence quality and usefulness. |
 | 11 | Career Database Trigger | FUTURE | Introduce only when volume/query/history requirements demonstrate the current model is insufficient. |
@@ -140,16 +142,42 @@ For side work alongside the current 9–5, use the reference availability from t
 
 Remote work requiring substantial synchronous daytime availability is a constraint for side work but not for a remote full-time opportunity.
 
-## Operating Cadence
+## Operating Cadence and Master Scheduler
 
-The intended recurring model is:
+The intended recurring model is implemented through **one daily master schedule** because the platform limits the number of independent scheduled tasks.
+
+### Master scheduler
+
+- Runs daily at approximately 09:00 ICT.
+- Uses `SEARCH_ANCHOR = 2026-09-20` as the current search-cycle anchor.
+- On a search day, when `(current_date - SEARCH_ANCHOR) mod 3 = 0`, execute all three search workstreams:
+  - Job Search
+  - Company Radar
+  - Remote / AI
+- On non-search days, do not perform the three search cycles merely because the master schedule ran.
+- Every Monday, execute Weekly Career Synthesis using the latest outputs/state from all three workstreams.
+- Weekly synthesis is independent of whether Monday is a search day; if both conditions are true in the future, perform the search cycle and then synthesis in the same master run.
+
+Consolidation changes only the scheduler. It must not merge the workstream prompts, matching models, evidence requirements, exclusions, or output contracts.
+
+### Execution order on a search day
+
+1. Read the current Career context and workstream READMEs.
+2. Run Job Search and Company Radar as independent workstreams.
+3. Run Remote / AI using its separate matching model.
+4. Keep outputs separated according to each workstream's output contract.
+5. If Monday, synthesize the meaningful changes after the search outputs are available.
+6. Do not create a high-volume job database or write transient search results into Second-Brain.
+
+### Cadence invariants
 
 - Job Search: every 3 days.
 - Company Radar: every 3 days.
 - Remote / AI: every 3 days.
 - Weekly synthesis: once per week.
+- One scheduler does not imply one shared matching model.
 
-Scheduling must respect the available automation/task capacity. If the platform cannot support all four schedules independently, combine weekly synthesis into an existing recurring run rather than creating an unsupported fourth schedule.
+Scheduling must respect the available automation/task capacity.
 
 ## Completion Definition
 
