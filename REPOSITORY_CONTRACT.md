@@ -28,7 +28,8 @@ This file defines the repository invariants that must remain true regardless of 
 
 - Every artifact has one intended current role.
 - Replacement does not mean coexistence: when an old artifact is superseded, the old artifact is removed unless history/archival retention is explicitly part of the design.
-- `.tmp`, `.temp`, `DELETE_ME`, placeholder, staging, and accidental duplicate artifacts must not remain in the final state.
+- `.tmp`, `.temp`, `DELETE_ME`, placeholder, and accidental duplicate artifacts must not remain in the final state.
+- Operational state directories are allowed only when explicitly defined by their owning workstream contract; they are not treated as accidental temporary artifacts.
 - Git history is the default historical archive. Do not create manual archive copies merely to preserve previous versions.
 
 ### References
@@ -57,6 +58,10 @@ When information conflicts, use this order unless the user explicitly overrides 
 7. AI inference.
 
 Inference must be labeled as inference and cannot silently become authoritative memory.
+
+## Operational state
+
+Operational state is permitted only when it has a documented owner, purpose, lifecycle, and retention rule in the relevant workstream README. The current approved operational staging directory is `TOPICS/RnD INNOVATION/Personal Research/Claw Discovery/staging/`; its records are scheduler state and are intentionally retained for evidence traceability.
 
 ## Change contract
 
