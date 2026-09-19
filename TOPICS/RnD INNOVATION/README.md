@@ -95,7 +95,13 @@ Use deeper research for selected ideas, covering user problem/value, existing so
 
 ## Prompt Execution Contract
 
-GitHub is the persistent source of truth for the R&D Innovation repository structure, released Prompt.csv files, workstream ownership, and current routing rules. The Project System Prompt provides operating behavior; it does not replace the repository's released prompt text.
+GitHub is the persistent source of truth for the current R&D Innovation architecture, released Prompt.csv files, workstream ownership, routing rules, and detailed workstream instructions. The Project System Prompt is intentionally compact: it defines global behavior and guardrails, while GitHub holds the current detailed execution content.
+
+### GitHub Execution Rule
+
+When a task requires current repository information or references a Prompt ID, the connected GitHub repository must be accessed before execution. Retrieve only the relevant current file or section; do not load the repository broadly when a targeted read is sufficient.
+
+If GitHub access is unavailable, do not claim that the current repository content was retrieved and do not reconstruct current Prompt.csv content from memory when exact current content matters.
 
 When a user explicitly references a Prompt ID such as IR-01, RS-03, or PI-08:
 
@@ -114,7 +120,7 @@ When a user explicitly references a Prompt ID such as IR-01, RS-03, or PI-08:
 
 Project System Prompt → GitHub workstream architecture → Prompt.csv execution contract → user task/context
 
-The Project System Prompt defines global behavior and guardrails. GitHub defines the current repository structure and released prompt assets. The referenced Prompt.csv entry defines the task contract. User context supplies the actual case to process.
+The Project System Prompt defines global behavior and guardrails. GitHub defines the current repository structure and detailed workstream instructions. The referenced Prompt.csv entry defines the task contract. User context supplies the actual case to process.
 
 A Prompt.csv entry may repeat global evidence and routing rules when repetition materially reduces execution ambiguity. Repetition is intentional and should not be removed only to reduce prompt length.
 
@@ -291,6 +297,12 @@ Use Mermaid only when it materially improves understanding, review, or logic che
 `Personal Research/` → personal research, external investigation, and Project Improvement
 
 `Idea Review/` → evidence review, gap identification, targeted research requests, and idea modification
+
+## System Prompt Boundary
+
+The active ChatGPT Project System Prompt should remain compact and contain only global behavior, routing, evidence discipline, GitHub access rules, and other execution-critical guardrails. Do not duplicate the full repository architecture or released Prompt.csv content inside the Project System Prompt.
+
+Detailed recurring instructions belong here and in the relevant workstream `Prompt.csv` files. The Project System Prompt should retrieve the relevant GitHub content when the task requires current repository instructions.
 
 ## Next
 
