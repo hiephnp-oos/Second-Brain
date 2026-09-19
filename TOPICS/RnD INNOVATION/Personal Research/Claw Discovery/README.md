@@ -1,6 +1,9 @@
 # Claw Discovery
 
-Purpose:
+## Purpose / Scope
+
+Run evidence-grounded Claw discovery without promoting discovery output directly into authoritative memory.
+
 - Run daily evidence-grounded idea discovery for R&D Innovation.
 - Keep discovery separate from human-admitted ideas and authoritative Knowledge Sheet records.
 - Use the released Personal Research prompts as execution contracts.
