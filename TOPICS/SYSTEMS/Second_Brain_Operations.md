@@ -6,7 +6,7 @@ Operational guide for reliable AI interaction with Second-Brain. This document i
 
 ## Standard lifecycle
 
-`READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → CHANGE → RECONCILE → VALIDATE → VERIFY → REPORT`
+`READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT`
 
 ### READ
 
