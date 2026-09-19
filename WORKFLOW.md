@@ -104,7 +104,7 @@ TOPICS/<topic>/
     └── Next
 ```
 
-The nine core sections are mandatory and must remain recognizable and in this order. `Status` is the compact lifecycle/routing state for the topic; its summary and direction explain what the topic is currently doing. Topic-specific sections may be added when they materially improve routing or understanding.
+The nine core sections are mandatory and must remain recognizable and in this order. `Status` is the compact lifecycle/routing state for the topic; its summary and direction explain what the topic is currently doing. For topics whose primary routing unit is workstreams, `Active Workstreams` is an accepted equivalent of `Active Projects / References`; the validator treats these as the same core slot. Topic-specific sections may be added when they materially improve routing or understanding.
 
 A topic README is the single primary entry point and should describe routing/context rather than duplicate all child artifacts.
 
@@ -271,6 +271,8 @@ Run the repository validator against the complete intended target state before p
 When multiple file operations form one logical change, publish them as one atomic commit whenever practical. Build the complete target tree first, then create one commit from that tree. If the available interface cannot publish atomically, use a temporary branch/worktree and merge only the validated final state; do not expose known-incomplete intermediate states on `main`.
 
 ### VALIDATE
+
+Direct single-file uploads through the GitHub web UI are supported for low-risk changes. Validation runs after the upload; a failure means the resulting repository state violates a machine-checkable invariant, not that the upload mechanism itself is broken. For multi-file or structural changes, use a branch/PR so the complete target state is validated before merge.
 
 Run applicable automated and artifact-specific validation, including repository contract checks, topic/README structure, local references, CSV schema, IDs, and workstream-specific integrity.
 
