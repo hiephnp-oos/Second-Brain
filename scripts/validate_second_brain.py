@@ -173,14 +173,31 @@ def validate_removed_platform_controls(errors: list[str]) -> None:
 
 
 def validate_local_references(errors: list[str]) -> None:
-    pattern = re.compile(r"`((?:TOPICS|\.github|scripts)/[^`]+)`")
+    root_pattern = re.compile(r"`((?:TOPICS|\.github|scripts)/[^`]+)`")
+    markdown_link_pattern = re.compile(r"\]\(([^)]+)\)")
+
+    def check_candidate(source: Path, raw: str) -> None:
+        candidate = raw.strip().strip("<>").split(' "')[0].strip()
+        if not candidate or candidate.startswith(("#", "http://", "https://", "mailto:")):
+            return
+        candidate = candidate.rstrip(".,;:")
+        if candidate.startswith("/"):
+            target = ROOT / candidate.lstrip("/")
+        else:
+            target = source.parent / candidate
+        if not target.exists():
+            fail(f"Broken local reference in {source.relative_to(ROOT)}: {candidate}", errors)
+
     for path in ROOT.rglob("*.md"):
-        for raw in pattern.findall(read_text(path)):
+        text = read_text(path)
+        for raw in root_pattern.findall(text):
             candidate = raw.rstrip(".,;:")
             if "<" in candidate or ">" in candidate:
                 continue
             if not (ROOT / candidate).exists():
                 fail(f"Broken local reference in {path.relative_to(ROOT)}: {candidate}", errors)
+        for raw in markdown_link_pattern.findall(text):
+            check_candidate(path, raw)
 
 
 def validate_csv_shape(errors: list[str]) -> None:
