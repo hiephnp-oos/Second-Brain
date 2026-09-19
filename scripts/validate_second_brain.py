@@ -143,7 +143,14 @@ def validate_forbidden_files(errors: list[str]) -> None:
         if path.exists():
             fail(f"Forbidden legacy platform path found: {forbidden}", errors)
     for path in ROOT.rglob("*"):
-        if not path.is_file() or ".git" in path.parts or path.name == "validate_second_brain.py":
+        if ".git" in path.parts:
+            continue
+        if path.is_dir() and path.name.lower() == "staging":
+            relative = path.relative_to(ROOT)
+            if relative not in OPERATIONAL_STATE_DIRS:
+                fail(f"Unapproved operational staging directory: {relative}", errors)
+            continue
+        if not path.is_file() or path.name == "validate_second_brain.py":
             continue
         lower = path.name.lower()
         if any(marker.lower() in lower for marker in FORBIDDEN_MARKERS):
