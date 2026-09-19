@@ -13,16 +13,39 @@ RS-10 Claw Market Pull Scout
 
 The two discovery lanes remain independent until convergence. Recombination is optional and must create a materially different user outcome, physical capability or architecture.
 
+## Daily Staging Contract
+
+Each daily scheduler run writes one discovery record to:
+
+`staging/YYYY-MM-DD.md`
+
+The daily record must preserve:
+- run date
+- RS-10 output
+- RS-11 output
+- RS-12 converged candidates
+- evidence/source references
+- evidence status
+- main uncertainty
+- KEEP / WATCH / DROP disposition
+- batch status: UNBATCHED or BATCHED
+
+Daily staging is operational state for the scheduler. It is not an approved Knowledge Sheet record.
+
 ## Three-Day Batch
 
-RS-13 Claw 3-Day Idea Batch consolidates the last three daily runs into one CSV review batch.
+When three new UNBATCHED daily runs are available, execute RS-13 Claw 3-Day Idea Batch.
 
-Recommended batch path:
+Output:
 `batches/YYYY-MM-DD_to_YYYY-MM-DD.csv`
+
+After successful batch creation, mark only those three source daily records as BATCHED. Do not delete them because they are required for evidence traceability.
+
+If fewer than three new daily runs are available, do not create a batch.
 
 ## Human Review
 
-Daily outputs are discovery material, not approved ideas.
+Three-day CSV outputs are discovery material, not approved ideas.
 
 After human review, use:
 - Idea Review/Prompt.csv for evidence-based idea review.
