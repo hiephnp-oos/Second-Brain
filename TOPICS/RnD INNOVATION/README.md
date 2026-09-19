@@ -1,123 +1,166 @@
 # R&D Innovation
 
-Entry point and durable topic context for recurring R&D innovation work related to bathroom, shower, faucet, and adjacent product technologies.
-
 ## Scope
 
-R&D engineering, innovation research, technology scouting, competitor technology, supplier/OEM/ODM technology, patents, mechanisms, idea generation, evaluation, and supporting workflows.
+R&D engineering, innovation research, technology scouting, competitor/supplier technology, patents, mechanisms, idea generation, evaluation, and related workflows for bathroom, shower, faucet, and adjacent mechanical products.
 
 ## Current Context
 
-The user works across practical R&D and innovation activities, including technology scouting, supplier/OEM/ODM research, competitor benchmarking, patent review, mechanism/structure analysis, and evaluation of whether a technology is genuinely useful or differentiated.
+The topic uses an evidence-driven flow:
 
-A recurring R&D workstream involves innovation research for LIXIL. In this context, LIXIL includes American Standard, INAX, and GROHE. Supplier/OEM/ODM technology evidence is collected and evaluated across multiple source files.
+`Material → Knowledge Sheet → Claw Idea → Evaluate → Deep Analyze`
 
-The user also works on R&D knowledge-sharing workflows and systems that organize R&D information for reuse.
+The project also improves its own prompts, workflows, tool selection, workstream design, and validation through **Project Improvement & Governance**.
 
 ## Status
 
 - State: Active
-- Summary: The current R&D direction is technology scouting and evidence-driven innovation development across market signals, competitors, suppliers, mechanisms, patents, and existing ideas.
-- Direction: Develop the flow from Knowledge Sheet → research/connect/analyze → idea → evaluate → deep analyze, while keeping evidence traceable and team workload practical.
+- Summary: R&D innovation capability is organized into personal research, Knowledge Sheet + Claw, Existing Ideas + Bi-weekly Review, and Project Improvement.
+- Direction: Keep research evidence traceable, minimize repeated work, and improve the system from observed results rather than adding complexity by default.
 - Last reviewed: 2026-09-19
 
 ## Working Principles
 
-- Distinguish genuinely new innovation from technologies that are already widely implemented.
-- When evaluating a technology candidate, consider evidence, mechanism/structure, competitor adoption, supplier availability, patent landscape, and practical applicability.
-- Prefer concrete evidence over marketing claims.
-- Keep candidate evaluation traceable to its source/reference.
-- When screening a large candidate list, prioritize technologies with clear structure/mechanism, competitor evidence, patent/source evidence, and a credible route to implementation.
-- Do not treat a supplier's technology description alone as proof of novelty or innovation value.
-- When designing R&D sharing/workflows, account for existing team practices and workload instead of assuming a blank slate.
+- Prefer primary, technical, and directly relevant evidence.
+- Distinguish evidence, inference, assumption, proposal, and unknown.
+- Existing Knowledge Sheet relationships are facts only when supported by current source data.
+- Semantic candidate connections are useful for discovery but are not automatically written back as relationships.
+- Absence from the Knowledge Sheet or search results is not proof of novelty.
+- Research only to the depth needed for the decision.
+- Do not duplicate detailed knowledge unnecessarily.
+- Human verification is required before promoting a Knowledge Candidate into the authoritative Knowledge Sheet.
 
-## Active Projects / References
+## Active Workstreams
 
-### R&D Innovation workstreams
+| Workstream | Purpose | Primary tools |
+|---|---|---|
+| `Knowledge sheet/` | Structured reusable knowledge, evidence, IDs, and relationships. | ChatGPT Project + Web + GitHub; NotebookLM for team use |
+| `Personal Research/` | Personal engineering research, technology scouting, mechanism/material/process/supplier research, patent and literature research. | ChatGPT Project + Web + GitHub |
+| `Existing Ideas/` | Existing idea verification, evidence gaps, synthesis, and development. | NotebookLM + Custom Gemini + released Prompt.csv |
+| `Bi-weekly review/` | Recurring review, research requests, follow-up and knowledge candidates. | NotebookLM + Custom Gemini + released Prompt.csv |
+| `Project Improvement/` | Improve the three workstreams, prompts, workflow, tool use, and governance. | ChatGPT Project + GitHub + Regression |
 
-This topic is organized as a parent folder so each recurring R&D workstream can keep its own artifacts while this README remains the routing and durable-context layer.
+Each workstream owns its own `Prompt.csv`. Do not create a central prompt repository for this topic.
 
-| Folder | Purpose |
-|---|---|
-| `Knowledge sheet/` | Structured R&D knowledge collection and linked evidence across market signals, competitor technology, supplier technology, technology radar, sources, and ID conventions. |
-| `Bi-weekly review/` | Recurring bi-weekly review outputs, findings, decisions, and follow-ups. |
-| `ADTD Prompting/` | ADTD prompting methods, prompt assets, evaluations, and reusable prompting workflows for R&D innovation research. |
-| `Existing Ideas/` | Existing innovation ideas, evaluation, development status, evidence, and related artifacts. |
+## Core R&D Workflow
 
-Add new R&D workstream folders here as the need emerges. Update this table when a new recurring workstream is created.
+`Material → Claw Idea → Evaluate → Deep Analyze`
 
-### Knowledge Sheet
+Material may come from Market Pull, Tech Push, Competitor Technology, Supplier/OEM/ODM Technology, patents, technical documents, literature, and other evidence.
 
-The current R&D Knowledge Sheet workflow uses six linked views:
+### Knowledge Sheet + Claw
 
-1. `Market_Signal`
-2. `Competitor_Tech`
-3. `Supplier_Tech`
-4. `Tech_Radar`
-5. `Source`
-6. `ID_Convention`
+Before external research:
+1. Check the relevant Knowledge Sheet.
+2. Identify the actual gap.
+3. Research only the gap that can change the decision.
+4. Synthesize evidence.
+5. Create a Knowledge Candidate when the result is reusable.
+6. Human review is required before Knowledge Sheet write-back.
 
-The working chain is:
+Claw connects:
+- Market Signal
+- Technology
+- Competitor
+- Supplier
+- Mechanism
 
-`Material → Knowledge Sheet → TEAM / AI Search-Connect-Analyze → Idea → Evaluate → Deep Analyze`
+Ideas should state the knowledge connections and evidence supporting them.
 
-The four substantive sheets are cross-linked by stable IDs so market needs, competitor implementations, supplier technologies, and external/transferable technologies can be combined by the Claw Idea process. Detailed records and research artifacts should remain in the Knowledge Sheet folder or their authoritative external source rather than being duplicated here.
+### Evaluate
 
-### Sheet roles
+Evaluate ideas using the criteria appropriate to the decision, with emphasis on User Value, Technical Feasibility, Novelty/Differentiation, Business Potential, and Evidence.
 
-**Market_Signal** — records customer/market needs, pain points, current solutions, remaining gaps, and required functions.
+Do not force every idea into deep analysis.
 
-**Competitor_Tech** — structures competitor products/technologies and connects them to market signals and the technology radar.
+### Deep Analyze
 
-**Supplier_Tech** — structures supplier/OEM/ODM technologies currently available in collected supplier evidence. Supplier descriptions are evidence of supplier capability, not proof of novelty.
+Use deeper research for selected ideas, covering user problem/value, existing solutions, mechanism, feasibility, technical risks, patent/IP landscape, applications, assumptions, and verification needs.
 
-**Tech_Radar** — captures external and cross-industry technologies with transfer potential, plus relevant technologies already used in shower/faucet products.
+## Research Routing
 
-**Source** — centralizes evidence and preserves traceability.
+Use the minimum sufficient route:
 
-**ID_Convention** — defines stable IDs and relationship references.
+- Product / mechanism / technology / material / process / supplier → engineering evidence research.
+- Patent / prior art / CPC/IPC / claims / family / status → patent research.
+- Engineering science / performance / compatibility / degradation / reliability / testing → technical literature research.
+- Broad, conflicting, high-risk, exhaustive, or decision-critical questions → deep research.
 
-Canonical prefixes:
+For unclear scope, derive **MUST / SHOULD / COULD** internally. Ask only when an unresolved point materially blocks reliable work.
 
-| Entity | Prefix | Format | Example |
-|---|---|---|---|
-| Market Signal | MS | MS-XXX | MS-001 |
-| Competitor Tech | CT | CT-XXX | CT-001 |
-| Supplier Tech | ST | ST-XXX | ST-001 |
-| Tech Radar | TR | TR-XXX | TR-001 |
-| Source | SRC | SRC-XXX | SRC-001 |
+## Evidence Rules
 
-IDs are unique and stable. Relationship references point only to existing valid IDs. Do not reuse an ID after deletion/obsolescence, and do not invent alternate prefixes or formats.
+Preferred evidence order:
+
+1. Manufacturer / primary source
+2. Technical documentation
+3. Patent / drawing
+4. Standard / authoritative technical publication
+5. Peer-reviewed or specialist literature
+6. Reputable distributor / industry source
+7. Retail / marketplace / blog / forum
+
+Product pages establish existence or advertised function, not hidden internal mechanism. Generic material knowledge does not prove a specific commercial grade. Search snippets are discovery aids, not consequential evidence.
+
+## Tool Selection
+
+- Personal research → ChatGPT Project + Web
+- Existing structured knowledge → NotebookLM
+- Team/shared reasoning → Custom Gemini
+- Persistent source of truth → GitHub
+- Repeatable task → local/released `Prompt.csv`
+- Knowledge maintenance → ChatGPT Project + Web + GitHub
+- Project improvement → ChatGPT Project + GitHub + Regression
+
+Do not create a parallel research database.
+
+## Project Improvement & Governance
+
+Use observed results, failures, feedback, and regression tests to improve:
+- workstream design
+- prompts
+- research routing
+- tool selection
+- documentation
+- validation
+
+Cycle:
+
+`Observe → Identify Gap → Propose Change → Test → Human Verify → Promote to Baseline`
+
+No improvement becomes baseline automatically.
+
+## Visualization
+
+Use Mermaid only when it materially improves understanding, review, or logic checking. Use tables or text when clearer. Visualization is presentation only, never a second source of truth.
 
 ## Decisions
 
-- Detailed candidate data should remain in the relevant research/source artifacts rather than being copied into this parent memory file.
-- Candidate evaluation should preserve source evidence and distinguish competitor evidence from supplier claims.
-- R&D workflow proposals should improve usefulness without creating disproportionate recurring workload.
-- The R&D topic is organized as a parent folder with dedicated workstream subfolders so future recurring work can be added without flattening all files into one topic directory.
+- This topic has four operating layers: three R&D workstreams plus Project Improvement & Governance.
+- Prompt assets are colocated with the workstream they serve.
+- `ADTD Prompting/` is retired; its useful prompt assets are redistributed to the relevant workstreams.
+- Git history is the historical record; do not create manual archive copies unless explicitly required.
+- Knowledge Sheet remains the reusable structured knowledge layer; research output is not automatically promoted into it.
 
 ## Lessons
 
-- Supplier claims are useful evidence of capability but are not, by themselves, proof of novelty or innovation value.
-- Competitor evidence, mechanism/structure, source traceability, and practical applicability should be checked together when screening technology candidates.
-- Knowledge-sharing workflows should reduce repeated work rather than create a new administrative burden for the team.
+- Evidence quality matters more than volume.
+- Research should stop when additional work is unlikely to change the decision.
+- Inferred connections are useful for discovery but must not silently become authoritative relationships.
+- Workflow complexity should be justified by repeated real usage.
 
 ## Routing
 
-Use this topic for R&D innovation, technology scouting, competitor/supplier technology, patent/mechanism research, and innovation ideation.
+`Knowledge sheet/` → reusable knowledge and evidence
 
-Route to the smallest relevant child workstream:
+`Personal Research/` → personal research and external investigation
 
-`Knowledge sheet/` → structured knowledge and evidence
+`Existing Ideas/` → existing ideas and evidence/development work
 
-`ADTD Prompting/` → prompting methods and reusable prompt assets
+`Bi-weekly review/` → recurring review and follow-up
 
-`Existing Ideas/` → existing idea records and evaluation
-
-`Bi-weekly review/` → recurring review outputs
-
-For a new recurring workstream, create a child folder and register it in the table above.
+`Project Improvement/` → improve the system and regression-test changes
 
 ## Next
 
-Maintain this README as the durable routing and summary layer. Add only stable R&D context here; keep detailed candidate records, research evidence, and working artifacts in the relevant child workstream.
+Use the workstream READMEs and local `Prompt.csv` files as the entry points for detailed recurring work. Keep this README focused on durable routing, architecture, and current state.
