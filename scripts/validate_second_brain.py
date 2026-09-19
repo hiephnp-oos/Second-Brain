@@ -280,6 +280,22 @@ def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
                         fail(f"Dangling relationship {value} in {filename} line {row_number}", errors)
 
 
+def validate_workstream_readmes(errors: list[str]) -> None:
+    if not TOPICS.exists():
+        return
+    for path in TOPICS.rglob("README.md"):
+        if len(path.relative_to(TOPICS).parts) <= 2:
+            continue
+        text = read_text(path)
+        headings = {line[3:].strip() for line in text.splitlines() if line.startswith("## ")}
+        if not text.lstrip().startswith("# "):
+            fail(f"Workstream README missing title: {path.relative_to(ROOT)}", errors)
+        if not headings.intersection(WORKSTREAM_PURPOSE_MARKERS):
+            fail(f"Workstream README missing purpose/context section: {path.relative_to(ROOT)}", errors)
+        if not headings.intersection(WORKSTREAM_STATE_MARKERS):
+            fail(f"Workstream README missing routing/state/rules section: {path.relative_to(ROOT)}", errors)
+
+
 def validate_high_level_controls(errors: list[str]) -> None:
     contract = ROOT / "REPOSITORY_CONTRACT.md"
     workflow = ROOT / "WORKFLOW.md"
@@ -309,6 +325,7 @@ def main() -> int:
     validate_forbidden_files(errors)
     validate_removed_platform_controls(errors)
     validate_local_references(errors)
+    validate_workstream_readmes(errors)
     validate_csv_shape(errors)
     validate_rnd_knowledge_sheet(errors)
     validate_high_level_controls(errors)
