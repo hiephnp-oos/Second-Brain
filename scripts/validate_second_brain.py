@@ -15,7 +15,11 @@ TOPIC_SECTION_ALIASES = {
     "Active Projects / References": {"Active Projects / References", "Active Workstreams"},
 }
 TOPIC_STATUS_VALUES = {"Building", "Active", "Maintenance", "Frozen", "Paused", "Archived"}
-FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder", "staging"]
+FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder"]
+OPERATIONAL_STATE_DIRS = {Path("TOPICS/RnD INNOVATION/Personal Research/Claw Discovery/staging")}
+WORKSTREAM_PURPOSE_MARKERS = {"Purpose", "Purpose / Scope", "Scope", "Current Context"}
+WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule"}
+CANONICAL_LIFECYCLE = "READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT"
 FORBIDDEN_PATHS = [
     Path("docs"),
     Path(".github/workflows/pages.yml"),
@@ -30,6 +34,7 @@ REQUIRED_GITHUB_COMPONENTS = [
     ".github/workflows/validate.yml",
     ".github/ISSUE_TEMPLATE/config.yml",
     ".github/ISSUE_TEMPLATE/change_request.yml",
+    ".github/PULL_REQUEST_TEMPLATE.md",
     "scripts/validate_second_brain.py",
 ]
 
