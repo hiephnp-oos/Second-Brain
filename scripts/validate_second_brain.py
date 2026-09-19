@@ -310,6 +310,11 @@ def validate_high_level_controls(errors: list[str]) -> None:
         for phrase in ["TARGET STATE", "PRE-FLIGHT", "ATOMIC CHANGE", "VALIDATE", "VERIFY", "Risk-based execution", "User prompt reinforcement layer", "GitHub Actions", "Issue Form", "Task List"]:
             if phrase not in text:
                 fail(f"WORKFLOW.md missing control section/phrase: {phrase}", errors)
+        if CANONICAL_LIFECYCLE not in text:
+            fail("WORKFLOW.md lifecycle does not match canonical lifecycle", errors)
+    operations = ROOT / "TOPICS" / "SYSTEMS" / "Second_Brain_Operations.md"
+    if operations.exists() and CANONICAL_LIFECYCLE not in read_text(operations):
+        fail("Second_Brain_Operations.md lifecycle is out of sync with canonical lifecycle", errors)
     if readme.exists():
         text = read_text(readme)
         for phrase in ["GitHub Actions", "Issue Forms", "Task Lists", "Mermaid"]:
