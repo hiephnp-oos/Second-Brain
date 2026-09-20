@@ -93,6 +93,36 @@ Escalate instead of guessing when:
 - external source conflict changes the decision;
 - a durable rule appears to require changing the baseline.
 
+## Production Prompt / Capability Contract
+
+Career capabilities use a modular execution pattern rather than one monolithic prompt.
+
+Each capability should keep five layers explicit:
+
+1. **Operational rules** — concrete task rules, not generic personas.
+2. **Input/context contract** — canonical profile, current evidence, and prior-cycle state where applicable.
+3. **Output contract** — fixed fields/enums where structured output is required.
+4. **Fallback / escalation states** — explicit behavior when evidence is missing, conflicting, or insufficient.
+5. **Validation** — a compact pre-output compliance check before reporting results or proposing durable changes.
+
+### Production Prompt Invariants
+
+- Load only the relevant capability contract and context needed for the task.
+- Re-state critical invariants immediately before high-impact actions when a multi-turn workflow could cause context drift.
+- Prefer positive output invariants and explicit allowed values over long lists of negative prohibitions.
+- Use explicit enums/status values for structured outputs where practical.
+- Never infer a missing fact merely to satisfy the output schema; use the declared fallback/unknown state.
+- Do not expose hidden chain-of-thought. Request concise rationale/evidence fields when reasoning needs to be auditable.
+- Self-validation is a gate, not a substitute for deterministic repository validation or human approval.
+- Prompt length is not an optimization target by itself; split instructions when separation improves routing and execution reliability.
+- Do not treat claims such as a universal four-constraint limit or mandatory XML formatting as architecture rules. Use them only when a concrete capability benefits from them.
+
+### Standard Capability Flow
+
+`Load Contract → Load Relevant Context → Execute → Validate → Output / Escalate`
+
+A capability must fail explicitly when its required evidence or input is unavailable rather than silently filling gaps with inference.
+
 ## Human Approval Gate
 
 AI may:
