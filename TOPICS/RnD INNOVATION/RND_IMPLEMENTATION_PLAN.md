@@ -26,6 +26,25 @@ The execution layer is capability-based:
 
 Each capability remains independently routable and keeps its own evidence/output contract.
 
+## Inherited Production Prompt Pattern
+
+R&D Innovation will inherit the production prompt reliability pattern proven through the Career pilot rather than designing a separate prompt framework.
+
+Future R&D capability contracts should therefore include:
+
+- modular capability-specific instructions instead of a monolithic R&D prompt;
+- explicit input/context and output contracts;
+- explicit evidence-state enums;
+- explicit fallback states such as `NO_MATCH`, `INSUFFICIENT_EVIDENCE`, or capability-specific equivalents;
+- a compact pre-output validation checklist;
+- re-injection of critical invariants immediately before high-impact actions in multi-turn workflows;
+- positive output invariants rather than excessive negative prohibitions;
+- human verification for durable promotion or material baseline changes.
+
+These are implementation principles, not a requirement to introduce a generic Skill Engine.
+
+Career must first be exercised with real outputs. R&D should copy only patterns that survive that validation and avoid importing unvalidated prompt heuristics as hard rules.
+
 ## Required Capability Contract
 
 Each future R&D capability should define:
@@ -165,6 +184,21 @@ Require explicit human verification before:
 - changing a released prompt or workflow contract.
 
 AI can discover, analyze, classify, and propose. Human approval controls authoritative promotion.
+
+## Phase 4 — Production Skill Contract Adoption
+
+Before scheduler integration, implement the validated Career prompt pattern across the selected R&D capabilities.
+
+Acceptance:
+- capability instructions are independently routable;
+- inputs/context are explicit;
+- outputs are structured enough to validate;
+- evidence states use the canonical enum set;
+- fallback/escalation behavior is explicit;
+- self-validation exists for high-impact outputs;
+- no hidden or implicit baseline promotion is introduced.
+
+Only proceed when Career evidence shows the pattern improves reliability without adding unnecessary complexity.
 
 ## Phase 4 — Scheduler Integration
 
