@@ -4,11 +4,13 @@
 
 Discover and evaluate remote full-time and remote side-work opportunities using a matching model distinct from traditional ATS/job-title matching.
 
-## Input
+## Input / Context
 
 - Career Profile
 - Current remote/AI market evidence
 - User availability baseline when applicable
+- Prior cycle state when available
+- Current user instruction
 
 ## Task
 
@@ -34,9 +36,11 @@ Working reference: approximately 21:00–00:00 ICT, 2–4 days/week, around 6–
 
 ## Output Contract
 
-Use a decision-oriented table with:
+Use:
 
 `Priority | Matching (%) | Opportunity | Category | Company/Client | Engagement | Location/Timezone | Compensation | Schedule Fit | Evidence / Fit | Gaps / Risks | Recommended Action | Direct Link | Verified`
+
+Allowed `Verified`: `VERIFIED` | `PARTIAL` | `UNKNOWN`.
 
 ## Rules
 
@@ -44,7 +48,24 @@ Use a decision-oriented table with:
 - Do not assume daytime availability for side work.
 - Full-time remote and side-work are evaluated separately.
 - Distinguish verified facts, inference, and unknowns.
+- Do not invent compensation, schedule, deliverables, or eligibility.
+
+## Fallback / Escalation
+
+- `NO_MATCH`: no opportunity meets the relevant remote/AI search contract.
+- `INSUFFICIENT_EVIDENCE`: a potentially relevant opportunity exists but material fit/eligibility/compensation/schedule information cannot be verified.
+- Escalate when timezone, engagement, or schedule ambiguity materially changes feasibility.
 
 ## Validation
 
-Reject only on supported hard constraints; surface uncertainty rather than inventing details.
+Before output, check:
+
+- side-work versus full-time model is correctly separated;
+- schedule compatibility is explicit;
+- material compensation/eligibility claims are evidenced;
+- AI/domain fit is grounded in the Career Profile;
+- gaps are labelled rather than filled by inference;
+- every row follows the output contract;
+- verification state is explicit.
+
+If validation fails, correct the output or return the appropriate fallback state instead of reporting success.
