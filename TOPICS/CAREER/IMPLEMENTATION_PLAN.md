@@ -48,7 +48,24 @@ The shared execution and evaluation rules are defined in `CAREER_EXECUTION_CONTR
 
 The master scheduler triggers capabilities; it does not contain their business logic.
 
-### Pilot Success Criteria
+### Production Prompt Reliability Layer
+
+The Career pilot also validates a production-oriented prompt pattern for future Second-Brain Skills:
+
+- Keep capability instructions modular; the scheduler remains orchestration only.
+- Use concrete operational rules instead of generic personas.
+- Define explicit input/context and output contracts.
+- Use explicit enums/status states where structured output benefits from them.
+- Define explicit fallback states for no-match and insufficient-evidence conditions.
+- Re-inject critical invariants before high-impact actions in multi-turn execution.
+- Perform a compact self-validation before reporting output.
+- Treat self-validation as an execution guard, not as a replacement for deterministic repository validation or human approval.
+- Prefer positive output invariants over long negative-prohibition lists.
+- Do not promote empirical prompt heuristics such as a universal four-constraint ceiling, mandatory XML delimiters, or always placing format instructions at the end into global architecture rules.
+
+The pilot should record recurring prompt failures and convert only repeated, material failures into reusable contract improvements.
+
+## Pilot Success Criteria
 
 The pilot is considered technically validated when:
 1. the three capabilities execute independently under one scheduler;
