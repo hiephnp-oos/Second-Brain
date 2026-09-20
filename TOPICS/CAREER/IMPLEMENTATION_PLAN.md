@@ -35,20 +35,50 @@ Second-Brain stores durable profile, rules, decisions, exclusions, and workflow 
 
 The three workstreams remain logically independent. Scheduling is an execution layer only.
 
+## Capability / Skill Pilot Layer
+
+Career is the first pilot for the Second-Brain Capability/Skill execution pattern.
+
+Each capability is defined by a separate execution contract:
+- `JOB_SEARCH/PROMPT.md`
+- `COMPANY_RADAR/PROMPT.md`
+- `REMOTE_AI/PROMPT.md`
+
+The shared execution and evaluation rules are defined in `CAREER_EXECUTION_CONTRACT.md`.
+
+The master scheduler triggers capabilities; it does not contain their business logic.
+
+### Pilot Success Criteria
+
+The pilot is considered technically validated when:
+1. the three capabilities execute independently under one scheduler;
+2. each capability has a stable input/process/output contract;
+3. current evidence and explicit exclusions are applied consistently;
+4. outputs can be validated without changing the capability definition;
+5. repeated failures can be converted into reusable rule improvements;
+6. authoritative baseline changes remain human-approved;
+7. no generic runtime or database is required to operate the pilot.
+
+### Pilot Evaluation Loop
+
+`Run → Validate → Record Failure Pattern → Propose Rule Change → Human Verify → Update GitHub`
+
+Do not promote isolated misses into permanent rules.
+
 ## Implementation Phases
 
 | # | Phase | Status | Purpose |
 |---|---|---|---|
 | 1 | Career Foundation | COMPLETE | Canonical profile + three workstreams. |
 | 2 | Search Specification | COMPLETE | Lock role, geography, salary, exclusions, evidence and output rules. |
-| 3 | Job Search Engine | NEXT | Define recurring discovery, matching, deduplication and result-table workflow. |
-| 4 | Company Radar Engine | NEXT | Define signal discovery, evidence thresholds, company-to-opportunity routing and result table. |
-| 5 | Remote / AI Engine | NEXT | Implement separate remote/AI matching model and search categories. |
+| 3 | Job Search Capability | PILOT | Execute through the released capability contract; validate discovery, matching, deduplication and result output. |
+| 4 | Company Radar Capability | PILOT | Execute through the released capability contract; validate signal discovery, evidence thresholds and output. |
+| 5 | Remote / AI Capability | PILOT | Execute the separate remote/AI matching model and validate schedule/compensation/deliverable fit. |
 | 6 | Master Scheduling | COMPLETE | One daily scheduler orchestrates the three search workstreams and weekly synthesis within platform task limits. |
 | 7 | External Tracking | NEXT | Use Google Sheets/external tools for opportunity records and application history. |
 | 8 | Weekly Synthesis | COMPLETE | Weekly consolidated view is included in the master scheduler and runs on the weekly cadence. |
-| 9 | Feedback Loop | FUTURE | Convert user decisions and real outcomes into durable rules instead of ad-hoc rule additions. |
-| 10 | Search Quality Review | FUTURE | Measure relevance, false rejects, false accepts, duplicates, evidence quality and usefulness. |
+| 9 | Feedback Loop | ACTIVE | Convert repeated user decisions and real failure patterns into durable rules instead of ad-hoc rule additions. |
+| 10 | Capability Quality Review | ACTIVE | Measure relevance, false rejects, false accepts, duplicates, evidence quality, signal quality and usefulness. |
 | 11 | Career Database Trigger | FUTURE | Introduce only when volume/query/history requirements demonstrate the current model is insufficient. |
 | 12 | Career Database | FUTURE | If justified, support searchable job/company/opportunity history and cross-search analysis similar to the R&D Innovation Knowledge Sheet pattern. |
 
