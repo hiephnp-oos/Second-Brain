@@ -200,7 +200,7 @@ Acceptance:
 
 Only proceed when Career evidence shows the pattern improves reliability without adding unnecessary complexity.
 
-## Phase 4 — Scheduler Integration
+## Phase 5 — Scheduler Integration
 
 Only after capability contracts are stable, connect recurring tasks.
 
@@ -210,7 +210,7 @@ Prefer the smallest number of schedules that preserves workstream cadence and ou
 
 Do not make the R&D system dependent on event-triggered GitHub automation when the available ChatGPT plan cannot provide that architecture reliably.
 
-## Phase 5 — Evaluation & Regression
+## Phase 6 — Evaluation & Regression
 
 Evaluate each capability using real outputs.
 
@@ -230,7 +230,7 @@ Create regression examples only for recurring, material failures.
 
 Do not introduce a database or dedicated evaluation service until real usage demonstrates that Markdown + Prompt.csv + Git history + manual/ChatGPT evaluation is insufficient.
 
-## Phase 6 — Promotion to Baseline
+## Phase 7 — Promotion to Baseline
 
 Use:
 
