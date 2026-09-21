@@ -8,7 +8,7 @@ Build a recurring Career Opportunity System that discovers, evaluates, tracks, a
 2. `COMPANY_RADAR` — companies entering, expanding, or hiring in the target geography.
 3. `REMOTE_AI` — remote/full-time and remote contract, part-time, freelance, or AI-enabled opportunities.
 
-Second-Brain stores durable profile, rules, decisions, exclusions, and workflow context. High-volume opportunity records remain external until scale demonstrates that a searchable database is required.
+Second-Brain stores durable profile, rules, decisions, exclusions, workflow context, and lightweight weekly run records. High-volume opportunity records remain external until scale demonstrates that a searchable database is required.
 
 ## Target State
 
@@ -92,12 +92,13 @@ Do not promote isolated misses into permanent rules.
 | 4 | Company Radar Capability | PILOT | Execute through the released capability contract; validate signal discovery, evidence thresholds and output. |
 | 5 | Remote / AI Capability | PILOT | Execute the separate remote/AI matching model and validate schedule/compensation/deliverable fit. |
 | 6 | Master Scheduling | COMPLETE | One daily scheduler orchestrates the three search workstreams and weekly synthesis within platform task limits. |
-| 7 | External Tracking | NEXT | Use Google Sheets/external tools for opportunity records and application history. |
-| 8 | Weekly Synthesis | COMPLETE | Weekly consolidated view is included in the master scheduler and runs on the weekly cadence. |
-| 9 | Feedback Loop | ACTIVE | Convert repeated user decisions and real failure patterns into durable rules instead of ad-hoc rule additions. |
-| 10 | Capability Quality Review | ACTIVE | Measure relevance, false rejects, false accepts, duplicates, evidence quality, signal quality and usefulness. |
-| 11 | Career Database Trigger | FUTURE | Introduce only when volume/query/history requirements demonstrate the current model is insufficient. |
-| 12 | Career Database | FUTURE | If justified, support searchable job/company/opportunity history and cross-search analysis similar to the R&D Innovation Knowledge Sheet pattern. |
+| 7 | Weekly Run Record | COMPLETE | Persist one compact weekly execution/synthesis record for observability and learning without storing the full job archive. |
+| 8 | External Tracking | NEXT | Use Google Sheets/external tools for opportunity records and application history. |
+| 9 | Weekly Synthesis | COMPLETE | Weekly consolidated view is included in the master scheduler and runs on the weekly cadence. |
+| 10 | Feedback Loop | ACTIVE | Convert repeated user decisions and real failure patterns into durable rules instead of ad-hoc rule additions. |
+| 11 | Capability Quality Review | ACTIVE | Measure relevance, false rejects, false accepts, duplicates, evidence quality, signal quality and usefulness. |
+| 12 | Career Database Trigger | FUTURE | Introduce only when volume/query/history requirements demonstrate the current model is insufficient. |
+| 13 | Career Database | FUTURE | If justified, support searchable job/company/opportunity history and cross-search analysis similar to the R&D Innovation Knowledge Sheet pattern. |
 
 ## Search Priority
 
@@ -203,6 +204,8 @@ The intended recurring model is implemented through **one daily master schedule*
   - Remote / AI
 - On non-search days, do not perform the three search cycles merely because the master schedule ran.
 - Every Monday, execute Weekly Career Synthesis using the latest outputs/state from all three workstreams.
+- Every Monday, after synthesis and validation, write/update exactly one compact weekly run record at `TOPICS/CAREER/RUNS/YYYY-W##.md`.
+- The weekly run record is an observability/learning artifact, not a job archive.
 - Weekly synthesis is independent of whether Monday is a search day; if both conditions are true in the future, perform the search cycle and then synthesis in the same master run.
 
 Consolidation changes only the scheduler. It must not merge the workstream prompts, matching models, evidence requirements, exclusions, or output contracts.
@@ -214,7 +217,9 @@ Consolidation changes only the scheduler. It must not merge the workstream promp
 3. Run Remote / AI using its separate matching model.
 4. Keep outputs separated according to each workstream's output contract.
 5. If Monday, synthesize the meaningful changes after the search outputs are available.
-6. Do not create a high-volume job database or write transient search results into Second-Brain.
+6. Validate the synthesis against actual outputs/state.
+7. If Monday, write/update the compact weekly run record in `TOPICS/CAREER/RUNS/`.
+8. Do not create a high-volume job database or write transient search results into Second-Brain.
 
 ### Cadence invariants
 
@@ -222,9 +227,26 @@ Consolidation changes only the scheduler. It must not merge the workstream promp
 - Company Radar: every 3 days.
 - Remote / AI: every 3 days.
 - Weekly synthesis: once per week.
+- Weekly run record: once per week, after weekly synthesis.
 - One scheduler does not imply one shared matching model.
 
 Scheduling must respect the available automation/task capacity.
+
+## Weekly Run Record Contract
+
+Each `TOPICS/CAREER/RUNS/YYYY-W##.md` file should remain compact and contain:
+
+1. Week/date range.
+2. Search/synthesis runs actually completed.
+3. Job Search — concise meaningful findings.
+4. Company Radar — concise meaningful findings.
+5. Remote / AI — concise meaningful findings.
+6. Quality observations: duplicates, evidence gaps, false rejects/accepts, repeated failure patterns.
+7. Proposed reusable improvements.
+8. Human-review items / unresolved questions.
+9. Validation status.
+
+Do not copy the full opportunity tables into the weekly record. Keep individual opportunity history in the external tracker.
 
 ## Completion Definition
 
