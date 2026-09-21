@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Define the reusable execution contract for the Career pilot. The contract separates durable career knowledge, workstream logic, scheduling, evaluation, and human-approved changes.
+Define the reusable execution contract for the Career pilot. The contract separates durable career knowledge, workstream logic, scheduling, evaluation, weekly observability, and human-approved changes.
 
 ## Capability Model
 
@@ -45,6 +45,7 @@ Every Career capability follows:
 7. Produce the declared output contract.
 8. Run the validation checklist.
 9. Escalate material uncertainty instead of inventing facts.
+10. On the weekly synthesis run, create a compact weekly run record under `TOPICS/CAREER/RUNS/YYYY-W##.md`.
 
 ### Tools
 
@@ -55,6 +56,7 @@ Typical tool classes:
 - Web/search for current opportunities and company signals.
 - GitHub for current Second-Brain rules/context.
 - External tracker for high-volume transient opportunity records.
+- GitHub for current Second-Brain rules/context and weekly run records.
 - ChatGPT scheduled task as the recurring trigger.
 
 ### Output
@@ -80,6 +82,7 @@ Before reporting a successful run, verify:
 - no qualification or salary is invented;
 - output matches the workstream schema;
 - duplicate/stale opportunities are handled where prior state exists;
+- the weekly run record, when required, reflects only the outputs actually produced during the run;
 - material claims have supporting evidence.
 
 ### Escalation
@@ -122,6 +125,23 @@ Each capability should keep five layers explicit:
 `Load Contract → Load Relevant Context → Execute → Validate → Output / Escalate`
 
 A capability must fail explicitly when its required evidence or input is unavailable rather than silently filling gaps with inference.
+
+## Weekly Run Record
+
+Path: `TOPICS/CAREER/RUNS/YYYY-W##.md`
+
+The record should capture:
+
+- week and execution dates;
+- which search cycles actually ran;
+- concise findings from Job Search, Company Radar, and Remote / AI;
+- meaningful changes and notable opportunities;
+- quality observations such as duplicates, false rejects/accepts, evidence issues, or repeated failure patterns;
+- proposed reusable rule/process improvements;
+- explicit unresolved questions or human-review items;
+- validation status.
+
+Do not use the weekly record to silently change `CAREER_PROFILE.md`, workstream contracts, or other baseline files.
 
 ## Human Approval Gate
 
@@ -181,6 +201,8 @@ Check:
 Repeated failure patterns are candidates for rule improvement.
 
 One-off search misses do not automatically create new durable rules.
+
+The weekly run record is the primary lightweight history for reviewing these patterns across runs.
 
 ## Baseline Change Lifecycle
 
