@@ -2,7 +2,7 @@
 
 ## Scope
 
-Durable working context for the Career Orchestrator: career planning, job discovery, company radar, remote/AI opportunities, career-fit analysis, and reusable decision rules. This topic is a routing and decision-context layer, not a job database.
+Durable working context for the Career Orchestrator: career planning, job discovery, company radar, remote/AI opportunities, career-fit analysis, reusable decision rules, and lightweight weekly run records. This topic is a routing and decision-context layer, not a job database.
 
 ## Current Context
 
@@ -21,9 +21,9 @@ Trading and manufacturing environments are both acceptable.
 ## Status
 
 - State: Building
-- Summary: Career is the first Capability/Skill pilot. The canonical profile, three workstreams, execution contracts, and one master recurring scheduler are configured. Real-market execution is now used to validate quality and discover repeated failure modes.
+- Summary: Career is the first Capability/Skill pilot. The canonical profile, three workstreams, execution contracts, one master recurring scheduler, and lightweight weekly run-record layer are configured. Real-market execution is used to validate quality and discover repeated failure modes.
 - Direction: Run the three independent capabilities through the master scheduler, evaluate outputs, and improve reusable rules only when repeated evidence justifies change.
-- Last reviewed: 2026-09-20
+- Last reviewed: 2026-09-21
 
 ## Working Principles
 
@@ -33,7 +33,7 @@ Trading and manufacturing environments are both acceptable.
 - Distinguish hard blockers, preferences, risks, transferable capability, and unknowns.
 - Before rejecting borderline roles, investigate credible transferable evidence.
 - Verify current job/company evidence before treating it as confirmed.
-- Keep high-volume opportunity records in the external tracker until real scale demonstrates a database need.
+- Keep high-volume opportunity records external; GitHub stores only durable context and lightweight weekly run/synthesis records.
 - Job Search and Remote/AI use different matching logic.
 - Scheduler consolidation must not collapse or weaken workstream-specific search, matching, verification, or output contracts.
 - AI may discover, analyze, classify, and propose; authoritative Career baseline changes require human approval.
@@ -52,6 +52,10 @@ Trading and manufacturing environments are both acceptable.
 ### Implementation Plan
 
 `TOPICS/CAREER/IMPLEMENTATION_PLAN.md` defines the business goal, target state, implementation phases, output contracts, matching principles, master-scheduler cadence, and database trigger.
+
+### Weekly Run Records
+
+`TOPICS/CAREER/RUNS/README.md` defines the lightweight weekly output/staging artifact. It records execution coverage, meaningful findings, quality/failure patterns, and proposed improvements without becoming a job database.
 
 ### Job Search
 
@@ -75,6 +79,7 @@ Trading and manufacturing environments are both acceptable.
 - Current compensation screening uses a general target of `> USD 1,000/month`, with a `> 20,000,000 VND/month` working floor for manufacturing roles in Da Nang/Quang Nam; `1 USD = 26,500 VND` for screening.
 - A future job/opportunity database is allowed only when volume, query complexity, deduplication, historical analysis, or cross-search needs demonstrate that the Markdown/external-tracker model is insufficient.
 - High-volume/transient search output is not automatically committed to Second-Brain.
+- A compact weekly run record is committed to `TOPICS/CAREER/RUNS/` to preserve execution observability and reusable learning without storing the full job archive.
 
 ## Lessons
 
@@ -92,6 +97,8 @@ CAREER
 ├── CAREER_PROFILE.md
 ├── CAREER_EXECUTION_CONTRACT.md
 ├── IMPLEMENTATION_PLAN.md
+├── RUNS/
+│   └── README.md
 ├── JOB_SEARCH/
 │   ├── README.md
 │   └── PROMPT.md
@@ -103,7 +110,7 @@ CAREER
     └── PROMPT.md
 ```
 
-Use `CAREER_PROFILE.md` for cross-workstream criteria, `CAREER_EXECUTION_CONTRACT.md` for shared execution/validation rules, `IMPLEMENTATION_PLAN.md` for system/business workflow, and the smallest relevant workstream README + `PROMPT.md` for execution.
+Use `CAREER_PROFILE.md` for cross-workstream criteria, `CAREER_EXECUTION_CONTRACT.md` for shared execution/validation rules, `IMPLEMENTATION_PLAN.md` for system/business workflow, `RUNS/` for weekly execution history and synthesis, and the smallest relevant workstream README + `PROMPT.md` for execution.
 
 ## Next
 
