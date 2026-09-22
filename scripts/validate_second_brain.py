@@ -176,11 +176,20 @@ def validate_local_references(errors: list[str]) -> None:
     root_pattern = re.compile(r"`((?:TOPICS|\.github|scripts)/[^`]+)`")
     markdown_link_pattern = re.compile(r"\]\(([^)]+)\)")
 
+    def is_template_reference(candidate: str) -> bool:
+        """
+        Template/example paths are documentation syntax, not repository references.
+        Do not require a concrete file for placeholders such as YYYY-W##.md.
+        """
+        return bool(re.search(r"\bYYYY(?:-[A-Z]{1,4})+\b|\bYYYY-[Ww]##\b", candidate))
+
     def check_candidate(source: Path, raw: str) -> None:
         candidate = raw.strip().strip("<>").split(' "')[0].strip()
         if not candidate or candidate.startswith(("#", "http://", "https://", "mailto:")):
             return
         candidate = candidate.rstrip(".,;:")
+        if is_template_reference(candidate):
+            return
         if candidate.startswith("/"):
             target = ROOT / candidate.lstrip("/")
         else:
@@ -192,7 +201,7 @@ def validate_local_references(errors: list[str]) -> None:
         text = read_text(path)
         for raw in root_pattern.findall(text):
             candidate = raw.rstrip(".,;:")
-            if "<" in candidate or ">" in candidate:
+            if "<" in candidate or ">" in candidate or is_template_reference(candidate):
                 continue
             if not (ROOT / candidate).exists():
                 fail(f"Broken local reference in {path.relative_to(ROOT)}: {candidate}", errors)
