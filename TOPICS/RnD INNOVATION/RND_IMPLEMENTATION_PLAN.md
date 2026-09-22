@@ -12,13 +12,14 @@ Career is the pilot because its boundaries, outputs, and recurring cadence are c
 
 ## Target Architecture
 
-`Material → Knowledge Check → Research → Knowledge Candidate → Claw Idea → Idea Review → Evaluate → Deep Analyze → Human Verification → Knowledge Promotion`
+`Material → Knowledge Check → Research → Knowledge Candidate → Claw Discovery → Discovery Quality Gate → Idea Review → Evaluate → Deep Analyze → Human Verification → Knowledge Promotion`
 
 The execution layer is capability-based:
 
 - Knowledge Sheet capability
 - Personal Research capability
 - Claw Idea capability
+- Discovery Quality Gate capability
 - Idea Review capability
 - Evaluation capability
 - Deep Analysis capability
@@ -111,6 +112,53 @@ Output: idea candidate.
 
 Validation: distinction between evidence and hypothesis.
 
+
+### Discovery Quality Gate
+
+The Claw discovery layer must distinguish:
+
+- technology signal;
+- technical enabler;
+- product capability;
+- standalone product idea.
+
+A technology or mechanism must not become a standalone idea solely because it is novel in the fitting context, exists in another industry, has a plausible transfer path, or is technically interesting.
+
+Before a candidate enters the three-day batch, apply:
+
+1. **User / Product Outcome**
+   - What materially improves for the user or product?
+   - The benefit must be observable or testable, not only described as “potentially better”.
+
+2. **Existing-Solution Check**
+   - Is the same outcome already adequately solved by a commercial product, relevant patent/prior art, or established technical solution?
+   - Existing-solution collision should be detected before further idea elaboration.
+
+3. **Meaningful Delta**
+   - Is the difference in user outcome, physical capability, or architecture?
+   - Mechanism, material, location, or geometry variation alone is insufficient unless it creates a material outcome/capability change.
+
+4. **Product vs Technical Enabler**
+   - Is this a standalone product/system capability?
+   - If it is mainly a technical enabler, route it to Tech Radar / Knowledge Sheet rather than force a standalone product idea.
+
+5. **Complexity Justification**
+   - If the candidate adds BOM, seals, moving parts, actuators, sensors, energy, packaging, manufacturing, noise, or reliability risk, identify the benefit that justifies the added complexity.
+   - If the benefit does not justify the complexity, classify as WATCH, DROP, BASELINE, or technical enabler.
+
+6. **Transferability**
+   - For Tech Push candidates, test whether the source capability is credible under fitting conditions: water, pressure, temperature, wet environment, debris/scale, chemicals, potable-water contact where relevant, package, manufacturing, cost, noise, and durability.
+
+Recommended discovery dispositions remain:
+
+- KEEP
+- WATCH
+- DROP
+
+with recurrence/baseline/variant/enabler classification preserved separately.
+
+Zero qualified candidates is a valid discovery result.
+
 ### Idea Review
 
 Input: idea candidate + current Knowledge Sheet.
@@ -152,6 +200,27 @@ Output: authoritative Knowledge Sheet update.
 Validation: no duplicate knowledge, no unresolved contradiction, source quality acceptable.
 
 ## Phase 2 — Evidence & Validation Contract
+
+
+### Discovery Validation Contract
+
+The Claw must not equate “technology exists” with “innovation exists”.
+
+Before batch admission, the candidate must preserve:
+
+- evidence for the problem/outcome;
+- evidence for the existing solution or source technology;
+- explicit remaining DELTA;
+- proposed response;
+- user/product benefit;
+- mechanism;
+- fitting insertion point;
+- uncertainty;
+- discovery disposition;
+- classification as NEW / RECURRING SIGNAL / VARIANT / DUPLICATE / BASELINE / TECHNICAL ENABLER where applicable.
+
+Human review remains the final admission authority.
+
 
 Standardize evidence states:
 
@@ -206,6 +275,14 @@ Only after capability contracts are stable, connect recurring tasks.
 
 Scheduling is an execution trigger, not the workflow source of truth.
 
+
+The current Claw cadence remains:
+
+- daily RS-10 → RS-11 → RS-12 discovery/staging;
+- three-day RS-13 consolidation when three new UNBATCHED daily runs are available.
+
+Keep the scheduler lightweight. It should trigger the current GitHub-defined capability contracts and should not contain a second copy of the business rules.
+
 Prefer the smallest number of schedules that preserves workstream cadence and output quality.
 
 Do not make the R&D system dependent on event-triggered GitHub automation when the available ChatGPT plan cannot provide that architecture reliably.
@@ -214,6 +291,9 @@ Do not make the R&D system dependent on event-triggered GitHub automation when t
 
 Evaluate each capability using real outputs.
 
+
+For Claw, compare batches before and after a learning change.
+
 Measure:
 
 - evidence quality;
@@ -221,14 +301,45 @@ Measure:
 - duplicate knowledge rate;
 - false novelty claims;
 - mechanism overclaiming;
+- technical-enabler-as-product rate;
+- baseline/known-solution leakage;
+- weak-user-outcome rate;
+- insufficient-transferability rate;
 - research usefulness;
 - idea quality;
 - reviewer correction rate;
 - repeated failure patterns.
 
+Do not judge the learning patch by KEEP count alone. A smaller batch with stronger distinct opportunities is an improvement if it reduces false novelty, baseline leakage, duplicates, and weak-value candidates without suppressing valid opportunities.
+
+
 Create regression examples only for recurring, material failures.
 
 Do not introduce a database or dedicated evaluation service until real usage demonstrates that Markdown + Prompt.csv + Git history + manual/ChatGPT evaluation is insufficient.
+
+
+## Claw Learning & Regression Loop
+
+Human review of Claw batches is treated as observed system performance.
+
+Process:
+
+`Batch Output → Human Review → Failure Pattern Identification → Learning Rule → Experimental Prompt / Workflow Change → Next Batch → Compare Results → Human Verify → Promote to Baseline`
+
+Batch #1 lesson classes should be tracked as learning signals, not automatically hardened into permanent rules:
+
+- technology-first ideas with weak product outcome;
+- known/commercial/patent baseline solutions;
+- duplicate or saturated variants;
+- technical enablers presented as standalone products;
+- weak or non-testable user value;
+- insufficient technology-transfer evidence;
+- added complexity without clear benefit justification;
+- installation/maintenance/CI ideas outside the intended product-innovation scope.
+
+The Batch #2 experiment must explicitly test whether the Discovery Quality Gate reduces these failure classes.
+
+Do not promote a lesson to permanent baseline from one rejected candidate alone. Promote only when the pattern is material, generalizable, tested on subsequent outputs, and does not introduce unacceptable regression.
 
 ## Phase 7 — Promotion to Baseline
 
