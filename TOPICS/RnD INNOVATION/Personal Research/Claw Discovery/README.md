@@ -13,6 +13,7 @@ Run evidence-grounded Claw discovery without promoting discovery output directly
 RS-10 Claw Market Pull Scout
 → RS-11 Claw Tech Push Scout
 → RS-12 Claw Idea Convergence
+→ Discovery Quality Gate
 
 The two discovery lanes remain independent until convergence. Recombination is optional and must create a materially different user outcome, physical capability or architecture.
 
@@ -30,6 +31,8 @@ The daily record must preserve:
 - evidence/source references
 - evidence status
 - main uncertainty
+- candidate class
+- quality gate result and reason
 - KEEP / WATCH / DROP disposition
 - batch status: UNBATCHED or BATCHED
 
@@ -42,9 +45,23 @@ When three new UNBATCHED daily runs are available, execute RS-13 Claw 3-Day Idea
 Output:
 `batches/YYYY-MM-DD_to_YYYY-MM-DD.csv`
 
-After successful batch creation, mark only those three source daily records as BATCHED. Do not delete them because they are required for evidence traceability.
+After successful batch creation, mark only those three source daily records as BATCHED. Batch admission must preserve the Quality Gate result; failed/blocked candidates must not be promoted merely to fill the batch. Do not delete them because they are required for evidence traceability.
 
 If fewer than three new daily runs are available, do not create a batch.
+
+## Learning Loop
+
+Human review of each three-day batch is an experimental feedback signal for Claw quality. Record recurring failure patterns and test proposed rules/workflow changes on the next batch before promoting them to baseline.
+
+For Batch #2, explicitly test the Batch #1 learning classes:
+- technology-first ideas with weak product outcome;
+- known/commercial/patent baseline leakage;
+- duplicate or saturated variants;
+- technical enablers presented as standalone ideas;
+- weak/non-testable user value;
+- insufficient transferability;
+- complexity without clear benefit justification;
+- installation/maintenance/CI-only ideas without a clear product/user outcome.
 
 ## Human Review
 
