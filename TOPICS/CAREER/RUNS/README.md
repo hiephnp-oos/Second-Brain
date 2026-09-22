@@ -74,3 +74,8 @@ Each weekly record should contain:
 - Contract validation: PASS / FAIL
 - Evidence state: ...
 ```
+## Routing & State
+
+- State: **Operational**
+- Routing: Career scheduler → weekly run record → human review → reusable improvement proposal.
+- Rules: Keep records lightweight; preserve external opportunity history in the tracker; do not promote proposed changes to authoritative Career rules without human review.
