@@ -74,7 +74,8 @@ Each weekly record should contain:
 - Contract validation: PASS / FAIL
 - Evidence state: ...
 ```
-## Routing & State
+
+## Routing
 
 - State: **Operational**
 - Routing: Career scheduler → weekly run record → human review → reusable improvement proposal.
