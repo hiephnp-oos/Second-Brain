@@ -53,21 +53,21 @@ These are the currently recognized work areas, not an exhaustive list of everyth
 
 | Topic | Status | Entry point |
 |---|---|---|
-| AI General | Building | `TOPICS/AI GENERAL/README.md` |
-| Construction | Active | `TOPICS/CONSTRUCTION/README.md` |
-| Nuvio Setup | Frozen | `TOPICS/NUVIO SETUP/README.md` |
-| Systems | Active | `TOPICS/SYSTEMS/README.md` |
-| R&D Innovation | Active | `TOPICS/RnD INNOVATION/README.md` |
-| R&D Database | Maintenance | `TOPICS/RnD DATABASE/README.md` |
-| Career | Building | `TOPICS/CAREER/README.md` |
+| 1. AI General | Building | `TOPICS/1. AI GENERAL/README.md` |
+| 2. Career | Building | `TOPICS/2. CAREER/README.md` |
+| 3. Construction | Active | `TOPICS/3. CONSTRUCTION/README.md` |
+| 4. Nuvio Setup | Frozen | `TOPICS/4. NUVIO SETUP/README.md` |
+| 5. R&D Database | Maintenance | `TOPICS/5. RnD DATABASE/README.md` |
+| 6. R&D Innovation | Active | `TOPICS/6. RnD INNOVATION/README.md` |
+| 7. Systems | Active | `TOPICS/7. SYSTEMS/README.md` |
 
 Status describes the topic lifecycle, not whether every item inside it is being worked on. Allowed values are `Building`, `Active`, `Maintenance`, `Frozen`, `Paused`, and `Archived`. The topic README is the authoritative place for the current status summary and direction; the registry mirrors only the lifecycle state for fast routing.
 
 R&D Innovation is intentionally organized as a parent topic folder with dedicated workstream subfolders. New recurring R&D workstreams may be added there without changing the overall memory architecture.
 
-R&D Database is a migrated project source folder. Its project files are stored directly inside `TOPICS/RnD DATABASE/`; it is not a routing link to the old repository. The current project architecture is explicitly separated into `1_Frontend_UI`, `2_Library_Core`, and `3_Backend_Scanner`.
+R&D Database is a migrated project source folder. Its project files are stored directly inside `TOPICS/5. RnD DATABASE/`; it is not a routing link to the old repository. The current project architecture is explicitly separated into `1_Frontend_UI`, `2_Library_Core`, and `3_Backend_Scanner`.
 
-Career is organized as a parent topic with shared career-profile context and three parallel workstreams: `JOB_SEARCH`, `COMPANY_RADAR`, and `REMOTE_AI`. It is intentionally not a job database at the current stage. High-volume job records remain in external working tools until real usage demonstrates that a searchable database is justified.
+Career is organized as a parent topic with shared career-profile context and three parallel workstreams: `1. JOB_SEARCH`, `2. COMPANY_RADAR`, and `3. REMOTE_AI`. It is intentionally not a job database at the current stage. High-volume job records remain in external working tools until real usage demonstrates that a searchable database is justified.
 
 A topic should be added only when recurring work creates enough durable context to justify a dedicated folder.
 
@@ -95,7 +95,7 @@ A topic should be added only when recurring work creates enough durable context 
 - All topic READMEs use the standard core template defined in `WORKFLOW.md`.
 - `WORKFLOW.md` is the authority for memory maintenance rules, topic README structure, consistency checks, retrieval/routing, and Handoff.
 - `REPOSITORY_CONTRACT.md` defines repository invariants, source-of-truth hierarchy, and completion state.
-- `TOPICS/SYSTEMS/User_Prompts.md` provides reusable user-side reinforcement prompts; it does not replace the canonical workflow rules.
+- `TOPICS/7. SYSTEMS/User_Prompts.md` provides reusable user-side reinforcement prompts; it does not replace the canonical workflow rules.
 - When topics are added, renamed, moved, merged, or removed, `AI_MEMORY.md` and all affected navigation/references must be updated together according to `WORKFLOW.md`.
 - Memory maintenance uses ADD / UPDATE / REMOVE / NO_CHANGE and is defined in `WORKFLOW.md`.
 - Memory quality, retrieval/routing, Handoff, and repository mutation lifecycle are operating rules within `WORKFLOW.md`; there is no separate required phase document.
@@ -180,3 +180,12 @@ When freshness matters, inspect Git history or the referenced project/source rat
 ## 13. REFERENCES
 
 Detailed information normally belongs in its authoritative project repository, document, or source. For projects explicitly migrated into Second-Brain, the migrated files inside the corresponding topic folder become the detailed project source. `RnD DATABASE` is currently such an internal project source.
+
+
+## Topic and Workstream Order
+
+Ordered topic folders and routed child workstream folders use numeric prefixes to make canonical workflow/navigation order explicit. Supporting folders that are not routing stages remain unnumbered.
+
+Current topic order:
+
+`1. AI GENERAL → 2. CAREER → 3. CONSTRUCTION → 4. NUVIO SETUP → 5. RnD DATABASE → 6. RnD INNOVATION → 7. SYSTEMS`

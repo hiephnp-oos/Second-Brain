@@ -58,8 +58,8 @@ Repository maintenance principle:
 | `AI_MEMORY.md` | Global durable context + canonical topic registry and lifecycle status |
 | `WORKFLOW.md` | Operating lifecycle, routing, templates, maintenance rules |
 | `REPOSITORY_CONTRACT.md` | Repository invariants + source-of-truth + completion contract |
-| `TOPICS/SYSTEMS/User_Prompts.md` | Reusable prompts for user-side reinforcement across topics |
-| `TOPICS/SYSTEMS/Second_Brain_Operations.md` | Compact operational execution guide |
+| `TOPICS/7. SYSTEMS/User_Prompts.md` | Reusable prompts for user-side reinforcement across topics |
+| `TOPICS/7. SYSTEMS/Second_Brain_Operations.md` | Compact operational execution guide |
 | `scripts/validate_second_brain.py` | Executable repository validation |
 | `.github/workflows/validate.yml` | Automatic validation on `main` pushes and pull requests |
 | `.github/ISSUE_TEMPLATE/change_request.yml` | Structured change-request form |
@@ -86,9 +86,13 @@ AI_MEMORY.md                  ← global memory + canonical topic registry
 WORKFLOW.md                   ← workflow + templates + lifecycle
 REPOSITORY_CONTRACT.md        ← invariants + completion contract
 TOPICS/
-└── <topic>/
-    ├── README.md             ← topic entry point
-    └── <workstream/files>    ← detailed recurring work when needed
+├── 1. <topic>/
+│   ├── README.md             ← topic entry point
+│   └── <workstream/files>    ← detailed recurring work when needed
+├── 2. <topic>/
+│   └── ...
+└── N. <topic>/
+    └── ...
 .github/
 ├── workflows/                ← automated validation
 └── ISSUE_TEMPLATE/           ← structured change requests
@@ -150,7 +154,7 @@ The system uses five complementary controls:
 
 1. **Canonical rules** — `WORKFLOW.md`.
 2. **Repository invariants** — `REPOSITORY_CONTRACT.md`.
-3. **User reinforcement prompts** — `TOPICS/SYSTEMS/User_Prompts.md`.
+3. **User reinforcement prompts** — `TOPICS/7. SYSTEMS/User_Prompts.md`.
 4. **Executable validation** — `scripts/validate_second_brain.py` + GitHub Actions.
 5. **Structured execution** — Issue Forms + Task Lists when useful.
 
@@ -167,3 +171,18 @@ This review is advisory. It does not require an OpenAI API key and does not repl
 Keep the system deliberately small. Atomic publication is a reliability rule, not additional infrastructure. Do not add Obsidian, a knowledge graph, vector database, RAG layer, automatic ingestion of all conversations, or other infrastructure unless repeated real usage demonstrates that the simpler GitHub-based workflow is insufficient.
 
 Git history already provides historical versions. Detailed project knowledge stays in its authoritative project source unless the project has explicitly been migrated into Second-Brain.
+
+
+## Topic Navigation Order
+
+The topic folders use numeric prefixes in canonical workflow/navigation order:
+
+1. `TOPICS/1. AI GENERAL/`
+2. `TOPICS/2. CAREER/`
+3. `TOPICS/3. CONSTRUCTION/`
+4. `TOPICS/4. NUVIO SETUP/`
+5. `TOPICS/5. RnD DATABASE/`
+6. `TOPICS/6. RnD INNOVATION/`
+7. `TOPICS/7. SYSTEMS/`
+
+Ordered child workstream folders use the same convention when their routing/workflow sequence is meaningful. Supporting artifact folders remain unnumbered.

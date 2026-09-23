@@ -28,7 +28,7 @@ Project Improvement is maintained inside this workstream because it improves the
 When creating or moving an artifact, classify its purpose before choosing its location:
 
 - Product / mechanism / technology / material / process / supplier research → the relevant research workstream or research artifact location.
-- Project health / workflow / prompt / routing / tool / governance / validation / regression / scheduler / architecture improvement → `Project Improvement/`.
+- Project health / workflow / prompt / routing / tool / governance / validation / regression / scheduler / architecture improvement → `2. Project Improvement/`.
 - An implementation plan whose purpose is to improve the R&D Innovation system → `Project Improvement/`.
 - A reference or fallback architecture intended to improve the R&D Innovation system → `Project Improvement/`.
 
@@ -50,10 +50,17 @@ Before creating a new file, check the canonical location and existing artifacts 
 
 ## Prompt
 
-Use `Prompt.csv` for research tasks. Use `Project Improvement/Prompt.csv` for project-review and maintenance tasks.
+Use `Prompt.csv` for research tasks. Use `2. Project Improvement/Prompt.csv` for project-review and maintenance tasks.
 
 ## Outputs
 
 Research results stay in the conversation or designated research artifact unless they qualify for a Knowledge Candidate. Do not automatically copy every research result into the Knowledge Sheet.
 
 Project Improvement proposals remain experimental until tested and human-verified.
+
+
+## Child Folder Order
+
+`1. Claw Discovery → 2. Project Improvement`
+
+The order follows maintainer routing: discovery/output work first, then project/system improvement.

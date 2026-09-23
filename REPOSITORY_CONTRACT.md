@@ -61,7 +61,7 @@ Inference must be labeled as inference and cannot silently become authoritative 
 
 ## Operational state
 
-Operational state is permitted only when it has a documented owner, purpose, lifecycle, and retention rule in the relevant workstream README. The current approved operational staging directory is `TOPICS/RnD INNOVATION/Personal Research/Claw Discovery/staging/`; its records are scheduler state and are intentionally retained for evidence traceability.
+Operational state is permitted only when it has a documented owner, purpose, lifecycle, and retention rule in the relevant workstream README. The current approved operational staging directory is `TOPICS/6. RnD INNOVATION/Personal Research/Claw Discovery/staging/`; its records are scheduler state and are intentionally retained for evidence traceability.
 
 ## Change contract
 
@@ -130,3 +130,12 @@ A repository mutation is complete only when:
 ## Scope and simplicity
 
 Keep the system intentionally small. Add infrastructure only when repeated real usage demonstrates a limitation of the current GitHub + Markdown model. Prefer generic controls over one-off patches.
+
+
+### Folder ordering
+
+- Ordered topic and routed workstream folders use numeric prefixes in the form `N. NAME`.
+- Numeric order represents canonical workflow/navigation sequence; it is not alphabetical order.
+- `AI_MEMORY.md` is the canonical topic order registry; affected topic/workstream README routing trees must remain synchronized.
+- A reorder, rename, insertion, removal, or move of an ordered folder is incomplete until all affected references and validator rules are synchronized and the old path is absent.
+- Supporting folders that are not routing stages may remain unnumbered.

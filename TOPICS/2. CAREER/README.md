@@ -43,31 +43,31 @@ Trading and manufacturing environments are both acceptable.
 
 ### Career Profile
 
-`TOPICS/CAREER/CAREER_PROFILE.md` is the canonical baseline for roles, geography, compensation, capabilities, language constraints, and explicit exclusions.
+`TOPICS/2. CAREER/CAREER_PROFILE.md` is the canonical baseline for roles, geography, compensation, capabilities, language constraints, and explicit exclusions.
 
 ### Execution Contract
 
-`TOPICS/CAREER/CAREER_EXECUTION_CONTRACT.md` defines the shared Trigger → Input → Process → Tools → Output → Validation → Escalation model, human approval gate, and capability-level evaluation model.
+`TOPICS/2. CAREER/CAREER_EXECUTION_CONTRACT.md` defines the shared Trigger → Input → Process → Tools → Output → Validation → Escalation model, human approval gate, and capability-level evaluation model.
 
 ### Implementation Plan
 
-`TOPICS/CAREER/IMPLEMENTATION_PLAN.md` defines the business goal, target state, implementation phases, output contracts, matching principles, master-scheduler cadence, and database trigger.
+`TOPICS/2. CAREER/IMPLEMENTATION_PLAN.md` defines the business goal, target state, implementation phases, output contracts, matching principles, master-scheduler cadence, and database trigger.
 
 ### Weekly Run Records
 
-`TOPICS/CAREER/RUNS/README.md` defines the lightweight weekly output/staging artifact. It records execution coverage, meaningful findings, quality/failure patterns, and proposed improvements without becoming a job database.
+`TOPICS/2. CAREER/RUNS/README.md` defines the lightweight weekly output/staging artifact. It records execution coverage, meaningful findings, quality/failure patterns, and proposed improvements without becoming a job database.
 
 ### Job Search
 
-`TOPICS/CAREER/JOB_SEARCH/README.md` defines local/full-time discovery, matching and the established output table. `PROMPT.md` is the released execution contract for this capability.
+`TOPICS/2. CAREER/JOB_SEARCH/README.md` defines local/full-time discovery, matching and the established output table. `PROMPT.md` is the released execution contract for this capability.
 
 ### Company Radar
 
-`TOPICS/CAREER/COMPANY_RADAR/README.md` defines company-signal discovery and the established output table. `PROMPT.md` is the released execution contract for this capability.
+`TOPICS/2. CAREER/COMPANY_RADAR/README.md` defines company-signal discovery and the established output table. `PROMPT.md` is the released execution contract for this capability.
 
 ### Remote / AI
 
-`TOPICS/CAREER/REMOTE_AI/README.md` defines remote/full-time and remote side-work discovery, the separate matching model, and the output table. `PROMPT.md` is the released execution contract for this capability.
+`TOPICS/2. CAREER/REMOTE_AI/README.md` defines remote/full-time and remote side-work discovery, the separate matching model, and the output table. `PROMPT.md` is the released execution contract for this capability.
 
 ## Decisions
 
@@ -79,7 +79,7 @@ Trading and manufacturing environments are both acceptable.
 - Current compensation screening uses a general target of `> USD 1,000/month`, with a `> 20,000,000 VND/month` working floor for manufacturing roles in Da Nang/Quang Nam; `1 USD = 26,500 VND` for screening.
 - A future job/opportunity database is allowed only when volume, query complexity, deduplication, historical analysis, or cross-search needs demonstrate that the Markdown/external-tracker model is insufficient.
 - High-volume/transient search output is not automatically committed to Second-Brain.
-- A compact weekly run record is committed to `TOPICS/CAREER/RUNS/` to preserve execution observability and reusable learning without storing the full job archive.
+- A compact weekly run record is committed to `TOPICS/2. CAREER/RUNS/` to preserve execution observability and reusable learning without storing the full job archive.
 
 ## Lessons
 
@@ -93,21 +93,21 @@ Trading and manufacturing environments are both acceptable.
 ## Routing
 
 ```text
-CAREER
+2. CAREER
 ├── CAREER_PROFILE.md
 ├── CAREER_EXECUTION_CONTRACT.md
 ├── IMPLEMENTATION_PLAN.md
-├── RUNS/
-│   └── README.md
-├── JOB_SEARCH/
+├── 1. JOB_SEARCH/
 │   ├── README.md
 │   └── PROMPT.md
-├── COMPANY_RADAR/
+├── 2. COMPANY_RADAR/
 │   ├── README.md
 │   └── PROMPT.md
-└── REMOTE_AI/
-    ├── README.md
-    └── PROMPT.md
+├── 3. REMOTE_AI/
+│   ├── README.md
+│   └── PROMPT.md
+└── 4. RUNS/
+    └── README.md
 ```
 
 Use `CAREER_PROFILE.md` for cross-workstream criteria, `CAREER_EXECUTION_CONTRACT.md` for shared execution/validation rules, `IMPLEMENTATION_PLAN.md` for system/business workflow, `RUNS/` for weekly execution history and synthesis, and the smallest relevant workstream README + `PROMPT.md` for execution.
@@ -115,3 +115,10 @@ Use `CAREER_PROFILE.md` for cross-workstream criteria, `CAREER_EXECUTION_CONTRAC
 ## Next
 
 Run the master scheduler against real market data, capture output-quality failures, evaluate each capability using the shared validation model, and promote only repeated, material improvements. Review the database trigger only after real usage generates sufficient volume or query complexity.
+
+
+## Child Folder Order
+
+`1. JOB_SEARCH → 2. COMPANY_RADAR → 3. REMOTE_AI → 4. RUNS`
+
+This order reflects Career routing and workstream capability order; the three search capabilities remain logically independent and parallel.

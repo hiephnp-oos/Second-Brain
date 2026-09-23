@@ -10,7 +10,7 @@ The topic uses an evidence-driven flow:
 
 `Material → Knowledge Sheet → Claw Idea → Idea Review → Evaluate → Deep Analyze`
 
-The project also improves its own prompts, workflows, tool selection, workstream design, and validation through Project Improvement & Governance under `Personal Research/`.
+The project also improves its own prompts, workflows, tool selection, workstream design, and validation through Project Improvement & Governance under `2. Personal Research/`.
 
 ## Status
 
@@ -32,15 +32,15 @@ The project also improves its own prompts, workflows, tool selection, workstream
 
 ## Active Workstreams
 
-| Workstream | Purpose | Primary tools |
+| Order | Workstream | Purpose | Primary tools |
 |---|---|---|
-| `Knowledge sheet/` | Structured reusable knowledge, evidence, IDs, and relationships. | ChatGPT Project + Web + GitHub; NotebookLM for team use |
-| `Personal Research/` | Personal engineering research, external investigation, and maintainer project improvement/governance. | ChatGPT Project + Web + GitHub |
-| `Idea Review/` | Evidence-based review and development of existing ideas. | NotebookLM + Custom Gemini + released Prompt.csv |
+| 1 | `1. Knowledge sheet/` | Structured reusable knowledge, evidence, IDs, and relationships. | ChatGPT Project + Web + GitHub; NotebookLM for team use |
+| 2 | `2. Personal Research/` | Personal engineering research, external investigation, and maintainer project improvement/governance. | ChatGPT Project + Web + GitHub |
+| 3 | `3. Idea Review/` | Evidence-based review and development of existing ideas. | NotebookLM + Custom Gemini + released Prompt.csv |
 
-Project Improvement is a maintainer capability under `Personal Research/Project Improvement/`, not a separate top-level workstream.
+Project Improvement is a maintainer capability under `2. Personal Research/2. Project Improvement/`, not a separate top-level workstream.
 
-`Knowledge sheet/Prompt.csv` is the team-released prompt library. The other Prompt.csv files are maintainer/workstream task interfaces.
+`1. Knowledge sheet/Prompt.csv` is the team-released prompt library. The other Prompt.csv files are maintainer/workstream task interfaces.
 
 ## Core R&D Workflow
 
@@ -302,7 +302,7 @@ R&D implementation is intentionally deferred until the Career pilot has been exe
 
 `Personal Research/` → personal research, external investigation, and Project Improvement
 
-`Idea Review/` → evidence review, gap identification, targeted research requests, and idea modification
+`3. Idea Review/` → evidence review, gap identification, targeted research requests, and idea modification
 
 ## System Prompt Boundary
 
@@ -313,3 +313,10 @@ Detailed recurring instructions belong here and in the relevant workstream `Prom
 ## Next
 
 Use the workstream READMEs and local `Prompt.csv` files as the entry points for detailed recurring work. Project Improvement tasks are under `Personal Research/Project Improvement/`. Keep this README focused on durable routing, architecture, and current state.
+
+
+## Workstream Order
+
+`1. Knowledge Sheet → 2. Personal Research → 3. Idea Review`
+
+The numeric order is the canonical workstream/navigation order. The business flow may route conditionally between workstreams; numbering does not imply every task executes all three sequentially.

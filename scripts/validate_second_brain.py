@@ -16,7 +16,7 @@ TOPIC_SECTION_ALIASES = {
 }
 TOPIC_STATUS_VALUES = {"Building", "Active", "Maintenance", "Frozen", "Paused", "Archived"}
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder"]
-OPERATIONAL_STATE_DIRS = {Path("TOPICS/RnD INNOVATION/Personal Research/Claw Discovery/staging")}
+OPERATIONAL_STATE_DIRS = {Path("TOPICS/6. RnD INNOVATION/Personal Research/Claw Discovery/staging")}
 WORKSTREAM_PURPOSE_MARKERS = {"Purpose", "Purpose / Scope", "Scope", "Current Context"}
 WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule"}
 CANONICAL_LIFECYCLE = "READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT"
@@ -231,7 +231,7 @@ def validate_csv_shape(errors: list[str]) -> None:
 
 
 def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
-    ks = ROOT / "TOPICS" / "RnD INNOVATION" / "Knowledge sheet"
+    ks = ROOT / "TOPICS" / "6. RnD INNOVATION" / "1. Knowledge sheet"
     if not ks.exists():
         return
     specs = {
@@ -321,7 +321,7 @@ def validate_high_level_controls(errors: list[str]) -> None:
                 fail(f"WORKFLOW.md missing control section/phrase: {phrase}", errors)
         if CANONICAL_LIFECYCLE not in text:
             fail("WORKFLOW.md lifecycle does not match canonical lifecycle", errors)
-    operations = ROOT / "TOPICS" / "SYSTEMS" / "Second_Brain_Operations.md"
+    operations = ROOT / "TOPICS" / "7. SYSTEMS" / "Second_Brain_Operations.md"
     if operations.exists() and CANONICAL_LIFECYCLE not in read_text(operations):
         fail("Second_Brain_Operations.md lifecycle is out of sync with canonical lifecycle", errors)
     if readme.exists():

@@ -4,7 +4,7 @@
 
 Keep GitHub knowledge useful, current, consistent, and small enough for an AI to read and continue work.
 
-The compact operational guide at `TOPICS/SYSTEMS/Second_Brain_Operations.md` is a supporting execution aid and must remain aligned with this canonical lifecycle.
+The compact operational guide at `TOPICS/7. SYSTEMS/Second_Brain_Operations.md` is a supporting execution aid and must remain aligned with this canonical lifecycle.
 
 The repository is the source of truth for completion. AI/connector actions are implementation steps only.
 
@@ -196,7 +196,7 @@ When a new topic becomes recurring:
 
 When a topic/workstream is renamed, moved, merged, split, or removed, update the registry and all affected references in the same logical change.
 
-`RnD DATABASE` is an explicitly migrated project source, so its detailed files intentionally live under `TOPICS/RnD DATABASE/`.
+`RnD DATABASE` is an explicitly migrated project source, so its detailed files intentionally live under `TOPICS/5. RnD DATABASE/`.
 
 ## 9. Repository consistency rule — mandatory
 
@@ -375,7 +375,7 @@ Rules:
 9. File existence is not proof of currency.
 10. When freshness matters, inspect Git history or the authoritative source.
 
-`TOPICS/SYSTEMS/Retrieval_Test.md` is the lightweight retrieval test. Repeated retrieval failure should strengthen the generic routing/control model before adding retrieval infrastructure.
+`TOPICS/7. SYSTEMS/Retrieval_Test.md` is the lightweight retrieval test. Repeated retrieval failure should strengthen the generic routing/control model before adding retrieval infrastructure.
 
 ## 16. Handoff
 
@@ -397,6 +397,23 @@ Handoff is temporary continuation state, not automatically persistent memory.
 
 ## 17. User prompt reinforcement layer
 
-`TOPICS/SYSTEMS/User_Prompts.md` contains reusable prompts that reinforce critical repository rules when starting work with a new AI or when an AI has shown signs of skipping repository verification.
+`TOPICS/7. SYSTEMS/User_Prompts.md` contains reusable prompts that reinforce critical repository rules when starting work with a new AI or when an AI has shown signs of skipping repository verification.
 
 These prompts reinforce the canonical rules; they do not override `WORKFLOW.md` or `REPOSITORY_CONTRACT.md`.
+
+
+## Topic / Workstream Folder Ordering
+
+Numeric folder prefixes are the canonical navigation order for topics and routed child workstreams.
+
+Rules:
+
+1. Use `N. NAME` for ordered topic/workstream folders.
+2. The number expresses workflow/navigation order, not alphabetical order.
+3. `AI_MEMORY.md` defines the canonical topic order; affected README routing trees must mirror it.
+4. Ordered child workstreams use the sequence defined by their workflow. Parallel capabilities may still use a stable explicit order when navigation benefits from it.
+5. Supporting/output folders that are not routing stages may remain unnumbered.
+6. When a topic/workstream is inserted, removed, renamed, moved, or reordered, update folder names, registries, routing trees, validators, and all active path references in the same logical change.
+7. Never infer canonical order from GitHub's alphabetical display; numeric prefixes are explicit navigation metadata.
+
+Folder numbering is navigation/routing metadata. It does not change business logic unless the associated workflow contract explicitly changes.
