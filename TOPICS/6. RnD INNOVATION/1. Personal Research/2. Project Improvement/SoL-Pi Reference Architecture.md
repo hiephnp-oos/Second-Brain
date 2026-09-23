@@ -21,7 +21,7 @@ SoL-Pi is retained as a reference architecture for that class of problem.
 
 This document intentionally stands alone from the R&D capability implementation plan. The current implementation path remains governed by:
 
-`TOPICS/RnD INNOVATION/Personal Research/Project Improvement/RND_IMPLEMENTATION_PLAN.md`
+`TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/RND_IMPLEMENTATION_PLAN.md`
 
 If that implementation path proves ineffective in real use, this document provides a separate, pre-defined route for investigating harness-level improvements without reconstructing SoL-Pi from memory.
 
@@ -583,10 +583,10 @@ Upstream files to verify before implementation:
 - https://github.com/NVlabs/SoL-Pi/pulls
 
 R&D Innovation internal references:
-- `TOPICS/RnD INNOVATION/Personal Research/Project Improvement/RND_IMPLEMENTATION_PLAN.md`
-- `TOPICS/RnD INNOVATION/Personal Research/Project Improvement/README.md`
-- `TOPICS/RnD INNOVATION/Personal Research/README.md`
-- `TOPICS/RnD INNOVATION/README.md`
+- `TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/RND_IMPLEMENTATION_PLAN.md`
+- `TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/README.md`
+- `TOPICS/6. RnD INNOVATION/1. Personal Research/README.md`
+- `TOPICS/6. RnD INNOVATION/README.md`
 
 ## 25. Final rule
 
