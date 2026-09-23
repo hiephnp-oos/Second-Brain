@@ -220,7 +220,7 @@ Use the minimum sufficient route:
 - Patent / prior art / CPC/IPC / claims / family / status → patent research.
 - Engineering science / performance / compatibility / degradation / reliability / testing → technical literature research.
 - Broad, conflicting, high-risk, exhaustive, or decision-critical questions → deep research.
-- Project health / prompt / workflow / tool / governance / regression → Personal Research/Project Improvement.
+- Project health / prompt / workflow / tool / governance / regression → 1. Personal Research/2. Project Improvement.
 
 For unclear scope, derive **MUST / SHOULD / COULD** internally. Ask only when an unresolved point materially blocks reliable work.
 
