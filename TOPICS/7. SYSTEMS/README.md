@@ -10,7 +10,7 @@ Software development, GitHub repositories, scripting, system architecture, debug
 
 The user works on practical software and technical systems alongside engineering work. This includes designing and reviewing code, understanding existing repositories, improving workflows, integrating services, and troubleshooting implementation issues.
 
-One known project is the DNF R&D Database, a Google Sheets + Apps Script based R&D data management system involving BOM, Material, Cost, Drawing, SAP integration, search, automation, auditing, and maintenance. It is an important project but only one part of the user's broader work. The project now has its own `TOPICS/RnD DATABASE/` topic and should be routed there for detailed work.
+One known project is the DNF R&D Database, a Google Sheets + Apps Script based R&D data management system involving BOM, Material, Cost, Drawing, SAP integration, search, automation, auditing, and maintenance. It is an important project but only one part of the user's broader work. The project now has its own `TOPICS/5. RnD DATABASE/` topic and should be routed there for detailed work.
 
 The user also works on configuration-heavy software/services, where templates, ranking logic, metadata, proxy behavior, and integrations may need iterative tuning.
 
@@ -38,7 +38,7 @@ The user also works on configuration-heavy software/services, where templates, r
 
 Repository: `hiephnp-oos/DNF-R-D-database`
 
-The project includes BOM, Material, Cost, Drawing, SAP integration, search, automation, auditing, and maintenance workflows. Detailed project source is now migrated into `TOPICS/RnD DATABASE/` in Second-Brain.
+The project includes BOM, Material, Cost, Drawing, SAP integration, search, automation, auditing, and maintenance workflows. Detailed project source is now migrated into `TOPICS/5. RnD DATABASE/` in Second-Brain.
 
 ### Second Brain
 
@@ -50,7 +50,7 @@ Core control documents:
 - `AI_MEMORY.md` — global routing and durable context.
 - `WORKFLOW.md` — operating lifecycle and maintenance rules.
 - `REPOSITORY_CONTRACT.md` — repository invariants and source-of-truth hierarchy.
-- `TOPICS/SYSTEMS/User_Prompts.md` — reusable prompts for reliable interaction with Second-Brain.
+- `TOPICS/7. SYSTEMS/User_Prompts.md` — reusable prompts for reliable interaction with Second-Brain.
 - `.github/workflows/validate.yml` — automated repository validation on pushes and pull requests.
 - `scripts/validate_second_brain.py` — executable repository contract checks.
 
