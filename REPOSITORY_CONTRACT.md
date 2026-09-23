@@ -78,6 +78,7 @@ A successful connector action is an implementation result, not completion eviden
 - Preferred sequence: build target tree → preflight validate → create one commit → update branch reference → wait for Actions validation → verify final state.
 - If the execution interface cannot publish atomically, use a temporary branch/worktree and publish only the validated final state to `main`.
 - A successful individual file operation is not evidence that the logical change is complete.
+- **Atomic mutation tool rule:** multi-file logical changes must not be published to `main` through sequential per-file contents writes (`update_file`, `create_file`, `delete_file`). Build the target tree and publish one commit, or use a temporary branch/worktree when atomic publication is unavailable.
 
 ## Negative-state contract
 

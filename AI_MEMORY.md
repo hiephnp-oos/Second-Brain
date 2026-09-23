@@ -103,7 +103,7 @@ A topic should be added only when recurring work creates enough durable context 
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
 - R&D Database V4 is maintained inside Second-Brain as a complete project source, organized into Bound Script frontend, standalone Library Core (`LibDNF`), and standalone Backend Scanner. The topic README is the architecture/deployment entry point; the code files are the detailed project source.
 - Repository integrity is checked automatically by `scripts/validate_second_brain.py` through `.github/workflows/validate.yml`.
-- Multi-file repository mutations use target-state preflight and one atomic commit whenever the change is one logical unit; GitHub Actions then validates the published state.
+- Multi-file repository mutations use target-state preflight and one atomic commit whenever the change is one logical unit; GitHub Actions then validates the published state. Per-file contents writes must not be used sequentially against `main` for such changes.
 - Pull requests may use AI Semantic Review as a secondary semantic review layer performed by ChatGPT through the GitHub repository connection; it must not replace deterministic validation or final repository verification.
 - Four GitHub-native controls are part of the operating model: GitHub Actions for automated validation, Issue Forms for structured change requests, Task Lists for execution/completion tracking, and Mermaid for visualizing workflows/architecture where useful.
 - GitHub Pages and GitHub Rulesets were evaluated but are not part of the current operating model. Do not create or require them unless a future decision explicitly reintroduces them.

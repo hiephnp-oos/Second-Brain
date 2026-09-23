@@ -272,6 +272,10 @@ Run the repository validator against the complete intended target state before p
 
 When multiple file operations form one logical change, publish them as one atomic commit whenever practical. Build the complete target tree first, then create one commit from that tree. If the available interface cannot publish atomically, use a temporary branch/worktree and merge only the validated final state; do not expose known-incomplete intermediate states on `main`.
 
+#### Atomic mutation tool rule
+
+For a multi-file logical change, do **not** use per-file contents writes (`update_file`, `create_file`, or `delete_file`) directly against `main`. Those operations create independent commits and can trigger GitHub Actions against known-incomplete intermediate states. Instead, prepare all required blobs/files, build one target tree, create one commit, and move the `main` ref once. If the execution interface cannot do that, use a temporary branch/worktree and publish only the validated final state. A single-file, low-risk change may use a direct file update when no dependent state is affected.
+
 ### VALIDATE
 
 Direct single-file uploads through the GitHub web UI are supported for low-risk changes. Validation runs after the upload; a failure means the resulting repository state violates a machine-checkable invariant, not that the upload mechanism itself is broken. For multi-file or structural changes, use a branch/PR so the complete target state is validated before merge.
