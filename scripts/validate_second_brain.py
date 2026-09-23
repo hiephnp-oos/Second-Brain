@@ -16,7 +16,7 @@ TOPIC_SECTION_ALIASES = {
 }
 TOPIC_STATUS_VALUES = {"Building", "Active", "Maintenance", "Frozen", "Paused", "Archived"}
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder"]
-OPERATIONAL_STATE_DIRS = {Path("TOPICS/6. RnD INNOVATION/1. Personal Research/Claw Discovery/staging")}
+OPERATIONAL_STATE_DIRS = {Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/staging")}
 WORKSTREAM_PURPOSE_MARKERS = {"Purpose", "Purpose / Scope", "Scope", "Current Context"}
 WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule"}
 CANONICAL_LIFECYCLE = "READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT"
