@@ -23,6 +23,19 @@ Project Improvement is maintained inside this workstream because it improves the
 - For patents, inspect claims/family/status where material.
 - For materials, do not generalize from generic chemistry to a specific grade without evidence.
 
+## Artifact Routing
+
+When creating or moving an artifact, classify its purpose before choosing its location:
+
+- Product / mechanism / technology / material / process / supplier research → the relevant research workstream or research artifact location.
+- Project health / workflow / prompt / routing / tool / governance / validation / regression / scheduler / architecture improvement → `Project Improvement/`.
+- An implementation plan whose purpose is to improve the R&D Innovation system → `Project Improvement/`.
+- A reference or fallback architecture intended to improve the R&D Innovation system → `Project Improvement/`.
+
+Do not place system-improvement plans or architecture references at the R&D Innovation root merely because they concern R&D. The artifact's purpose determines its canonical location.
+
+Before creating a new file, check the canonical location and existing artifacts for duplicates or conflicting source-of-truth documents.
+
 ## Routing
 
 `Product / mechanism / technology / material / process / supplier` → engineering evidence research
