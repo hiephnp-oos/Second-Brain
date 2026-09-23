@@ -6,7 +6,7 @@ Recurring construction/tender work requiring deeper routing than the topic READM
 
 ## Current Context
 
-The parent `TOPICS/CONSTRUCTION/README.md` is the durable topic entry point. Use this file only when recurring construction work grows into a distinct workstream and specific artifacts need routing/context.
+The parent `TOPICS/3. CONSTRUCTION/README.md` is the durable topic entry point. Use this file only when recurring construction work grows into a distinct workstream and specific artifacts need routing/context.
 
 ## Active Artifacts / References
 
@@ -25,7 +25,7 @@ Workstream scaffold created to provide a stable routing point without forcing a 
 
 ## Routing
 
-`TOPICS/CONSTRUCTION/README.md` → `WORKSPACE.md` → relevant project/task source
+`TOPICS/3. CONSTRUCTION/README.md` → `WORKSPACE.md` → relevant project/task source
 
 ## Next
 
