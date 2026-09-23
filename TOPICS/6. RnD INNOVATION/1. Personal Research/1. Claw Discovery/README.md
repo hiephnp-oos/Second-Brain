@@ -68,9 +68,9 @@ For Batch #2, explicitly test the Batch #1 learning classes:
 Three-day CSV outputs are discovery material, not approved ideas.
 
 After human review, use:
-- Idea Review/Prompt.csv for evidence-based idea review.
-- Personal Research/Prompt.csv RS-03 to RS-09 for targeted external research.
-- Knowledge Sheet only after human verification and the existing Knowledge Sheet promotion process.
+- 2. Idea Review/Prompt.csv for evidence-based idea review.
+- 1. Personal Research/Prompt.csv RS-03 to RS-09 for targeted external research.
+- 3. Knowledge Sheet only after human verification and the existing Knowledge Sheet promotion process.
 
 ## Evidence Rules
 
