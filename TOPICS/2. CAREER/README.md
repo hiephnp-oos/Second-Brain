@@ -55,19 +55,19 @@ Trading and manufacturing environments are both acceptable.
 
 ### Weekly Run Records
 
-`TOPICS/2. CAREER/RUNS/README.md` defines the lightweight weekly output/staging artifact. It records execution coverage, meaningful findings, quality/failure patterns, and proposed improvements without becoming a job database.
+`TOPICS/2. CAREER/4. RUNS/README.md` defines the lightweight weekly output/staging artifact. It records execution coverage, meaningful findings, quality/failure patterns, and proposed improvements without becoming a job database.
 
 ### Job Search
 
-`TOPICS/2. CAREER/JOB_SEARCH/README.md` defines local/full-time discovery, matching and the established output table. `PROMPT.md` is the released execution contract for this capability.
+`TOPICS/2. CAREER/1. JOB_SEARCH/README.md` defines local/full-time discovery, matching and the established output table. `PROMPT.md` is the released execution contract for this capability.
 
 ### Company Radar
 
-`TOPICS/2. CAREER/COMPANY_RADAR/README.md` defines company-signal discovery and the established output table. `PROMPT.md` is the released execution contract for this capability.
+`TOPICS/2. CAREER/2. COMPANY_RADAR/README.md` defines company-signal discovery and the established output table. `PROMPT.md` is the released execution contract for this capability.
 
 ### Remote / AI
 
-`TOPICS/2. CAREER/REMOTE_AI/README.md` defines remote/full-time and remote side-work discovery, the separate matching model, and the output table. `PROMPT.md` is the released execution contract for this capability.
+`TOPICS/2. CAREER/3. REMOTE_AI/README.md` defines remote/full-time and remote side-work discovery, the separate matching model, and the output table. `PROMPT.md` is the released execution contract for this capability.
 
 ## Decisions
 
@@ -79,7 +79,7 @@ Trading and manufacturing environments are both acceptable.
 - Current compensation screening uses a general target of `> USD 1,000/month`, with a `> 20,000,000 VND/month` working floor for manufacturing roles in Da Nang/Quang Nam; `1 USD = 26,500 VND` for screening.
 - A future job/opportunity database is allowed only when volume, query complexity, deduplication, historical analysis, or cross-search needs demonstrate that the Markdown/external-tracker model is insufficient.
 - High-volume/transient search output is not automatically committed to Second-Brain.
-- A compact weekly run record is committed to `TOPICS/2. CAREER/RUNS/` to preserve execution observability and reusable learning without storing the full job archive.
+- A compact weekly run record is committed to `TOPICS/2. CAREER/4. RUNS/` to preserve execution observability and reusable learning without storing the full job archive.
 
 ## Lessons
 
