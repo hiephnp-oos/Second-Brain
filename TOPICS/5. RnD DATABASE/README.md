@@ -8,7 +8,7 @@ R&D data management system development and maintenance covering BOM, Material, C
 
 ## Current Context
 
-The DNF R&D Database is a Google Sheets + Google Apps Script system. The project source has been explicitly migrated into Second-Brain, so `TOPICS/RnD DATABASE/` is the detailed project source rather than only a link to the old repository.
+The DNF R&D Database is a Google Sheets + Google Apps Script system. The project source has been explicitly migrated into Second-Brain, so `TOPICS/5. RnD DATABASE/` is the detailed project source rather than only a link to the old repository.
 
 The current architecture is V4 and is intentionally separated into three deployment layers: Bound Script frontend, standalone `LibDNF` library core, and standalone Backend Scanner.
 
@@ -120,13 +120,13 @@ Các ID Spreadsheet/Folder có thể nằm trong Config; credential nhạy cảm
 
 Toàn bộ source hiện tại được lưu trực tiếp dưới:
 
-`TOPICS/RnD DATABASE/`
+`TOPICS/5. RnD DATABASE/`
 
 Cấu trúc bên trong thư mục này phải phản ánh đúng deployment architecture `1_Frontend_UI / 2_Library_Core / 3_Backend_Scanner`, không flatten các project thành một thư mục chung.
 
 ## Decisions
 
-- `TOPICS/RnD DATABASE/` là source chi tiết của dự án trong Second-Brain vì dự án đã được explicitly migrated.
+- `TOPICS/5. RnD DATABASE/` là source chi tiết của dự án trong Second-Brain vì dự án đã được explicitly migrated.
 - Business logic chính nằm trong `LibDNF`; frontend là UI/bridge layer và Backend Scanner là project độc lập.
 - `Library_Entry.gs` là public API gateway của Library.
 - Không flatten ba project/layer thành một codebase chung.
