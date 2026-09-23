@@ -14,7 +14,7 @@ Scope:
 - documentation
 - validation/regression
 
-This is a maintainer capability under `2. Personal Research/`, not a separate top-level workstream.
+This is a maintainer capability under `1. Personal Research/`, not a separate top-level workstream.
 
 ## Improvement Cycle
 
