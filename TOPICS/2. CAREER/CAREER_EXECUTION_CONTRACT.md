@@ -27,9 +27,9 @@ Every Career capability follows:
 
 ### Input / Context
 
-- `TOPICS/CAREER/CAREER_PROFILE.md`
+- `TOPICS/2. CAREER/CAREER_PROFILE.md`
 - Relevant workstream README.
-- `TOPICS/CAREER/IMPLEMENTATION_PLAN.md`
+- `TOPICS/2. CAREER/IMPLEMENTATION_PLAN.md`
 - Current external market evidence.
 - Previous cycle output when available for freshness/deduplication.
 - Current user instruction overrides older durable context.
@@ -45,7 +45,7 @@ Every Career capability follows:
 7. Produce the declared output contract.
 8. Run the validation checklist.
 9. Escalate material uncertainty instead of inventing facts.
-10. On the weekly synthesis run, create a compact weekly run record under `TOPICS/CAREER/RUNS/YYYY-W##.md`.
+10. On the weekly synthesis run, create a compact weekly run record under `TOPICS/2. CAREER/RUNS/YYYY-W##.md`.
 
 ### Tools
 
@@ -128,7 +128,7 @@ A capability must fail explicitly when its required evidence or input is unavail
 
 ## Weekly Run Record
 
-Path: `TOPICS/CAREER/RUNS/YYYY-W##.md`
+Path: `TOPICS/2. CAREER/RUNS/YYYY-W##.md`
 
 The record should capture:
 
