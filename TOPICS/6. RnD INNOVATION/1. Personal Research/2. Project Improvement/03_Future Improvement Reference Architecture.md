@@ -6,7 +6,7 @@
 - Current implementation: NONE
 - Activation: evidence-driven only
 - Role: future improvement reference after the current R&D improvement sequence has been exercised
-- Independence: independent reference; does not override `RND_IMPLEMENTATION_PLAN.md` or `SoL-Pi Reference Architecture.md`
+- Independence: independent reference; does not override `01_RND_IMPLEMENTATION_PLAN.md` or `02_SoL-Pi Reference Architecture.md`
 
 This document preserves reusable improvement patterns discovered from external systems and research methodologies.
 
@@ -726,8 +726,8 @@ Important upstream references:
 
 ### R&D Innovation internal references
 
-- `TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/RND_IMPLEMENTATION_PLAN.md`
-- `TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/SoL-Pi Reference Architecture.md`
+- `TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/01_RND_IMPLEMENTATION_PLAN.md`
+- `TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/02_SoL-Pi Reference Architecture.md`
 - `TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/README.md`
 
 ---
