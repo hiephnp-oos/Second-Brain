@@ -287,6 +287,41 @@ Prefer the smallest number of schedules that preserves workstream cadence and ou
 
 Do not make the R&D system dependent on event-triggered GitHub automation when the available ChatGPT plan cannot provide that architecture reliably.
 
+## Batch #2 Human Review Lessons
+
+Batch #2 human review produced the following experimental learning signals to test in Batches #3 and #4:
+
+- **Strategic Scope Gate:** evaluate strategic/Tier alignment before mechanism novelty or detailed feasibility. A candidate outside the intended product/strategic scope should not consume discovery/review effort merely because the technical problem is real.
+- **Product Architecture Gate:** trace technology → physical capability → product architecture → measurable product/user outcome. A physical principle alone is insufficient.
+- **Technology ≠ Innovation:** technology proven in another industry remains a technology-transfer signal until application fit, product outcome, and meaningful DELTA are established.
+- **Positive Delta Discovery:** search explicitly for remaining limitations, unresolved capability DELTAs, and system-level combinations that existing solutions do not adequately address; do not optimize discovery only for rejection.
+- **Transfer Candidate Pattern:** retain evidenced cross-industry technology-transfer candidates when the target application is strategically relevant but transferability remains unresolved; route them to targeted research.
+- **C-23-03 review signal:** shower-face/drainage redesign with insufficient product value should be rejected even when the physical principle is valid.
+- **C-24-01 review signal:** technically credible heater/flow problems should be rejected from the current Claw scope when they are outside the active target product/strategic direction.
+- **C-24-02 review signal:** self-healing surface technology is a valid technology-transfer candidate for further research because the source capability is evidenced and exposed faucet/shower application remains an open transferability question.
+- **Classification consistency:** Candidate_Class should use one canonical value only: PRODUCT IDEA / TECHNICAL ENABLER / VARIANT / BASELINE / DUPLICATE / DROP.
+
+These are experimental rules for Batches #3 and #4. Do not promote them to permanent baseline until human review confirms improved quality without unacceptable suppression of valid opportunities.
+
+## Tier 1 Discovery Focus for Batches #3 and #4
+
+Bias discovery toward the strategic territory below, without forcing every candidate into it:
+
+### Showering — Innovation & Technology
+- Wellness / personalized shower experience
+- Circularity: water efficiency, water recovery/reuse, energy/heat recovery, modularity/repairability where relevant
+- Adaptive hydraulic performance and stable spray experience
+- Self-cleaning / anti-scale / durability capabilities with measurable product benefit
+- Premium sensory experience: tactile, acoustic, thermal and interaction improvements
+- Proven cross-industry technology transfer into showering
+
+### Bathroom Fittings — Design / CMF
+- Premium finish durability and appearance retention
+- New material / surface capabilities that create measurable product value
+- CMF differentiation enabled by agile manufacturing/supply chain
+
+Do not manufacture ideas merely to cover these themes; use them as discovery priors and keep the existing Quality Gate.
+
 ## Phase 6 — Evaluation & Regression
 
 Evaluate each capability using real outputs.
