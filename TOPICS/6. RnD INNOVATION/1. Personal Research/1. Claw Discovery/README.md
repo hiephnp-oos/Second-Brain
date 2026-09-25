@@ -53,6 +53,10 @@ If fewer than three new daily runs are available, do not create a batch.
 
 Human review of each three-day batch is an experimental feedback signal for Claw quality. Record recurring failure patterns and test proposed rules/workflow changes on the next batch before promoting them to baseline.
 
+Batch #2 learning is experimentally applied in Batches #3 and #4: apply Strategic Scope / Tier 1 alignment before deeper evaluation; trace technology → physical capability → product architecture → measurable outcome; reject out-of-scope candidates; search for unresolved DELTA rather than only baseline collision; preserve evidenced cross-industry transfer candidates when strategically relevant; use canonical single Candidate_Class values.
+
+Current Tier 1 discovery bias: Showering Innovation & Technology, especially Wellness / Circularity and relevant premium differentiation; Bathroom Fittings Design / CMF differentiation. These are discovery priors, not mandatory coverage targets.
+
 For Batch #2, explicitly test the Batch #1 learning classes:
 - technology-first ideas with weak product outcome;
 - known/commercial/patent baseline leakage;
