@@ -6,7 +6,7 @@
 - Lifecycle: REFERENCE / DEFERRED
 - Current implementation: NONE
 - Activation: evidence-driven only
-- Independence: independent of `RND_IMPLEMENTATION_PLAN.md`
+- Independence: independent of `01_RND_IMPLEMENTATION_PLAN.md`
 - Source reference: NVlabs/SoL-Pi
 - Repository: https://github.com/NVlabs/SoL-Pi
 - Purpose: preserve a detailed, reusable plan for selectively adapting SoL-Pi agent-harness principles to R&D Innovation if the current R&D implementation later demonstrates a material harness limitation.
@@ -445,7 +445,7 @@ Never use "ADOPT_SOL-PI" as a blanket status.
 
 This document is intentionally independent.
 
-`RND_IMPLEMENTATION_PLAN.md` answers:
+`01_RND_IMPLEMENTATION_PLAN.md` answers:
 
 > How should R&D Innovation implement and validate the capability/skill execution pattern?
 
