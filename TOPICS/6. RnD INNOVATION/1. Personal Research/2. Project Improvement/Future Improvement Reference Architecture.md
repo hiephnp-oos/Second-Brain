@@ -6,7 +6,7 @@
 - Current implementation: NONE
 - Activation: evidence-driven only
 - Role: future improvement reference after the current R&D improvement sequence has been exercised
-- Independence: independent reference; does not override `01_RND_IMPLEMENTATION_PLAN.md` or `SoL-Pi Reference Architecture.md`
+- Independence: independent reference; does not override `01_RND_IMPLEMENTATION_PLAN.md` or `02_SoL-Pi Reference Architecture.md`
 
 This document preserves reusable improvement patterns discovered from external systems and research methodologies.
 
