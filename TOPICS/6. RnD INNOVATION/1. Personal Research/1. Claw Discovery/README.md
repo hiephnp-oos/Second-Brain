@@ -150,3 +150,31 @@ Persist daily execution output in the existing staging/YYYY-MM-DD.md path. Promo
 
 ### Failure Handling
 If evidence is insufficient, preserve the candidate with an explicit gap or reject it from promotion. Do not manufacture evidence to complete the output schema.
+
+## Capability Contract — CLAW_DISCOVERY
+
+Purpose: generate evidence-grounded R&D idea candidates.
+
+Trigger: daily scheduled run or explicit manual execution.
+
+Input / Context: research evidence, Knowledge Sheet context, prior learning, RS prompts, and Claw scope.
+
+Preconditions: scope and relevant Knowledge Sheet context are available.
+
+Process: Research Evidence → Problem / Opportunity → Existing Solution → Gap → Proposed Response → Technology Mechanism → Evidence → Candidate Idea → Staging.
+
+Tools / AI: released Claw/RS prompts, research tools, GitHub, and Knowledge Sheet.
+
+Output: candidate idea with problem, solution, gap, response, mechanism, evidence, and status.
+
+Validation: trace evidence; do not invent solution or mechanism claims; staging is not authoritative knowledge.
+
+Evidence State: VERIFIED / EVIDENCED, INFERRED, WORKING ASSUMPTION, UNKNOWN, PROPOSED.
+
+Escalation: evidence gaps → PERSONAL_RESEARCH; evaluation questions → IDEA_REVIEW or EVALUATE.
+
+Human Verification Gate: required before promotion to authoritative knowledge.
+
+Promotion / Persistence: keep execution output in the existing staging path; promotion uses KNOWLEDGE_PROMOTION.
+
+Failure Handling: record insufficient evidence explicitly; never manufacture evidence.
