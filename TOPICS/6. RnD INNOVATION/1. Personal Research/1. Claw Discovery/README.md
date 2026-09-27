@@ -21,7 +21,7 @@ The two discovery lanes remain independent until convergence. Recombination is o
 
 Each daily scheduler run writes one discovery record to:
 
-`staging/YYYY-MM-DD.md`
+`staging/YYYY-MM-DD.md` (where YYYY-MM-DD is the actual scheduler execution date resolved in Asia/Ho_Chi_Minh)
 
 The daily record must preserve:
 - run date
@@ -88,3 +88,7 @@ After human review, use:
 ## Operating Rule
 
 Optimize for distinct, evidence-grounded opportunity seeds rather than idea volume. Zero qualified ideas is a valid result.
+
+## Execution Date Integrity
+
+The scheduler execution date is the source of truth for daily staging. RUN_DATE MUST be resolved from the actual execution timestamp in Asia/Ho_Chi_Minh (UTC+07:00). Never infer it from the previous staging file, conversation context, UTC date, or an existing filename. Never overwrite a prior day's staging record when the resolved date differs. If the execution timestamp cannot be resolved reliably, do not write a daily staging record; report the date as UNKNOWN.
