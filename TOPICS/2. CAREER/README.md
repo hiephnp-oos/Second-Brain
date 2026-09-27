@@ -23,7 +23,7 @@ Trading and manufacturing environments are both acceptable.
 - State: Building
 - Summary: Career is the first Capability/Skill pilot. The canonical profile, three workstreams, execution contracts, one master recurring scheduler, and lightweight weekly run-record layer are configured. Real-market execution is used to validate quality and discover repeated failure modes.
 - Direction: Run the three independent capabilities through the master scheduler, evaluate outputs, and improve reusable rules only when repeated evidence justifies change.
-- Last reviewed: 2026-09-21
+- Last reviewed: 2026-09-27
 
 ## Working Principles
 

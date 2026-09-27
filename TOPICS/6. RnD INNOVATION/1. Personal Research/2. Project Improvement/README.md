@@ -61,7 +61,7 @@ The regression layer evaluates routing, evidence discipline, discovery quality, 
 
 ## Implementation References
 
-- `01_RND_IMPLEMENTATION_PLAN.md` — first applied improvement path: deferred implementation plan for the validated R&D capability/skill execution pattern. It is an execution plan and is not the current execution layer.
+- `01_RND_IMPLEMENTATION_PLAN.md` — first applied improvement path: implementation record for the R&D capability/skill execution pattern and its remaining real-output validation. It is not the active execution layer.
 - `02_SoL-Pi Reference Architecture.md` — second applied/reference path: independent architecture for selectively adapting SoL-Pi agent-harness principles when later evidence shows a material harness problem. It is intentionally independent from `01_RND_IMPLEMENTATION_PLAN.md` and does not activate or require any SoL-Pi implementation.
 - `03_Future Improvement Reference Architecture.md` — third applied/reference path: future improvement architecture retained as a later option; it does not activate the architecture merely by existing.
 

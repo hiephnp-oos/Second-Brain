@@ -12,9 +12,11 @@ Run evidence-grounded Claw discovery without promoting discovery output directly
 
 **Purpose:** discover evidence-grounded R&D opportunity seeds.
 
-**Trigger:** daily external scheduler or manual request.
+**Trigger:** external daily scheduler or manual request.
 
 **Cadence:** daily; create a 3-day batch only when three new UNBATCHED daily runs are available.
+
+**Scheduler Boundary:** the external scheduler is a trigger/orchestration layer only. It must point to this capability contract and must not duplicate RS-10/RS-11/RS-12/RS-13 business rules, discovery gates, output schema, promotion rules, or date semantics. Changes to Claw execution behavior are made here and then reflected by the scheduler only as a thin invocation.
 
 **Input / Context:** active R&D scope, Knowledge Sheet, prior Claw learning, and released RS-10/RS-11/RS-12/RS-13 prompts.
 

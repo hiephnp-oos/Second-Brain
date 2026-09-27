@@ -1,10 +1,10 @@
-# R&D Innovation — Future Implementation Plan
+# R&D Innovation — Implementation Record
 
 ## Purpose
 
-Define the implementation plan for applying the validated Capability/Skill execution pattern to R&D Innovation after the Career pilot is proven in real use.
+Record the applied Capability/Skill architecture for R&D Innovation and define the remaining real-output validation work.
 
-This document is a plan, not the active R&D execution layer.
+This document is an implementation record and validation plan. It is not the active execution layer; the active execution layer remains the capability/workstream contracts and released Prompt.csv files.
 
 ## Why R&D Follows Career
 
@@ -29,9 +29,9 @@ Each capability remains independently routable and keeps its own evidence/output
 
 ## Inherited Production Prompt Pattern
 
-R&D Innovation will inherit the production prompt reliability pattern proven through the Career pilot rather than designing a separate prompt framework.
+R&D Innovation now uses the production prompt reliability pattern proven through the Career pilot rather than a separate prompt framework.
 
-Future R&D capability contracts should therefore include:
+The applied R&D capability contracts therefore include:
 
 - modular capability-specific instructions instead of a monolithic R&D prompt;
 - explicit input/context and output contracts;
@@ -44,11 +44,11 @@ Future R&D capability contracts should therefore include:
 
 These are implementation principles, not a requirement to introduce a generic Skill Engine.
 
-Career must first be exercised with real outputs. R&D should copy only patterns that survive that validation and avoid importing unvalidated prompt heuristics as hard rules.
+Career was exercised as the pilot before this R&D implementation. Remaining validation now focuses on whether the applied R&D contracts produce acceptable real outputs, using the Regression layer, without adding unnecessary architecture.
 
-## Required Capability Contract
+## Applied Capability Contract
 
-Each future R&D capability should define:
+Each applied R&D capability defines:
 
 1. Trigger
 2. Inputs/context
@@ -254,9 +254,9 @@ Require explicit human verification before:
 
 AI can discover, analyze, classify, and propose. Human approval controls authoritative promotion.
 
-## Phase 4 — Production Skill Contract Adoption
+## Phase 4 — Production Skill Contract Adoption — COMPLETE
 
-Before scheduler integration, implement the validated Career prompt pattern across the selected R&D capabilities.
+Implemented the validated Career prompt pattern across the selected R&D capabilities.
 
 Acceptance:
 - capability instructions are independently routable;
@@ -267,13 +267,11 @@ Acceptance:
 - self-validation exists for high-impact outputs;
 - no hidden or implicit baseline promotion is introduced.
 
-Only proceed when Career evidence shows the pattern improves reliability without adding unnecessary complexity.
+Do not add another prompt/runtime layer unless subsequent regression evidence demonstrates a material limitation.
 
-## Phase 5 — Scheduler Integration
+## Phase 5 — Scheduler Integration — COMPLETE
 
-Only after capability contracts are stable, connect recurring tasks.
-
-Scheduling is an execution trigger, not the workflow source of truth.
+Capability contracts are connected to the recurring trigger. Scheduling is an execution trigger, not the workflow source of truth.
 
 
 The current Claw cadence remains:
@@ -281,7 +279,7 @@ The current Claw cadence remains:
 - daily RS-10 → RS-11 → RS-12 discovery/staging;
 - three-day RS-13 consolidation when three new UNBATCHED daily runs are available.
 
-Keep the scheduler lightweight. It should trigger the current GitHub-defined capability contracts and should not contain a second copy of the business rules.
+Keep the scheduler lightweight. The external scheduler now triggers the current GitHub-defined capability contract and does not contain a second copy of the business rules.
 
 Prefer the smallest number of schedules that preserves workstream cadence and output quality.
 
@@ -322,7 +320,7 @@ Bias discovery toward the strategic territory below, without forcing every candi
 
 Do not manufacture ideas merely to cover these themes; use them as discovery priors and keep the existing Quality Gate.
 
-## Phase 6 — Evaluation & Regression
+## Phase 6 — Evaluation & Regression — ACTIVE VALIDATION
 
 Evaluate each capability using real outputs.
 
@@ -396,19 +394,22 @@ No prompt/rule/knowledge change becomes baseline automatically.
 
 ## Deliverables
 
-When R&D implementation starts, expected repository changes are:
+The architecture implementation has produced:
 
 - capability-level execution contracts;
 - synchronized workstream READMEs;
-- updated Prompt.csv contracts where still needed;
+- released Prompt.csv contracts;
 - explicit evaluation/validation criteria;
 - preserved evidence hierarchy;
-- scheduler integration only after contracts stabilize;
+- thin external scheduler triggers;
+- regression artifacts;
 - removal of duplicate or obsolete execution text.
 
 ## Completion Criteria
 
-R&D Innovation implementation is complete when:
+### Architecture / Structure
+
+The architecture implementation is complete when:
 
 1. every recurring R&D workstream has one clear capability contract;
 2. routing is unambiguous;
@@ -416,10 +417,19 @@ R&D Innovation implementation is complete when:
 4. human promotion gates are explicit;
 5. outputs are structured enough to validate;
 6. no duplicate source of truth is introduced;
-7. scheduled execution, if used, triggers capabilities without redefining them;
-8. real usage demonstrates acceptable output quality;
-9. repeated failure modes feed rule improvements;
-10. GitHub reflects the final verified state.
+7. scheduled execution triggers capabilities without redefining them;
+8. GitHub reflects the final verified state.
+
+These structural criteria are now implemented and validated by the repository contract/validator.
+
+### Real-output validation
+
+The following remain empirical validation work, not missing architecture:
+
+9. real usage demonstrates acceptable output quality;
+10. repeated failure modes feed rule improvements without unacceptable regressions.
+
+Batch #3/#4 regression evaluation is the next validation step.
 
 ## Explicit Non-Goals
 

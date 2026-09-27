@@ -17,7 +17,7 @@ The current architecture is V4 and is intentionally separated into three deploym
 - State: Maintenance
 - Summary: The V4 DNF R&D Database has been migrated into Second-Brain with the three-layer architecture established.
 - Direction: Maintain the migrated source and architecture; make implementation changes when concrete database requirements or defects require them.
-- Last reviewed: 2026-09-19
+- Last reviewed: 2026-09-27
 
 ## Working Principles
 
