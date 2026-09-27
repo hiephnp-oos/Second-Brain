@@ -16,6 +16,18 @@ The master scheduler is a trigger/orchestration layer. It is not a fourth matchi
 
 ## Common Execution Contract
 
+### Global Capability alignment
+
+The reusable Capability contract is defined in `WORKFLOW.md`. This file contains Career-specific deltas only.
+
+Non-mutating run:
+`Trigger → Context → Execute → Validate → Output`
+
+Material mutation:
+`Dry-run → Review Gate → Mutate → Post-update Validate → Verify → Promote / Commit`
+
+The master scheduler remains trigger/orchestration only; it does not replace the three capability contracts.
+
 Every Career capability follows:
 
 `Trigger → Input/Context → Process → Tools → Output → Validation → Escalation`

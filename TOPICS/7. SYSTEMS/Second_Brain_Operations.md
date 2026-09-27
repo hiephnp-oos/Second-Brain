@@ -8,6 +8,16 @@ Operational guide for reliable AI interaction with Second-Brain. This document i
 
 `READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT`
 
+### Capability execution
+
+Operational capability:
+`Trigger → Contract → Context → Execute → Validate → Output / Staging → Verify / Promote`
+
+Material mutation:
+`Dry-run / Target State → Review → Mutate → Post-update Validate → Verify`
+
+The Scheduler is a trigger/orchestration layer only. Staging is intermediate state, not source of truth. Conflicting authoritative information must be flagged rather than silently overwritten.
+
 ### READ
 
 Read `AI_MEMORY.md` first. For repository mutations or structural work, also read `WORKFLOW.md` and `REPOSITORY_CONTRACT.md`.

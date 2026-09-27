@@ -30,6 +30,19 @@ The project also improves its own prompts, workflows, tool selection, workstream
 - Do not duplicate detailed knowledge unnecessarily.
 - Human verification is required before promoting a Knowledge Candidate into the authoritative Knowledge Sheet.
 
+## Capability Map
+
+R&D Innovation uses existing workstreams as Capability boundaries; no new `CAPABILITIES/` directory is required.
+
+| Capability | Role | Source |
+|---|---|---|
+| Claw Discovery | Discovery | `1. Personal Research/1. Claw Discovery/README.md` + RS prompts |
+| Idea Review | Evaluation | `2. Idea Review/README.md` + IR prompts |
+| Project Improvement | Governance / improvement | `1. Personal Research/2. Project Improvement/README.md` + PI prompts |
+| Knowledge Sheet | Authoritative knowledge layer | `3. Knowledge sheet/README.md` + v2 datasets |
+
+Flow: `Discovery → Evaluation → Research / Deep Analysis when needed → Human Verification → Knowledge Promotion`.
+
 ## Active Workstreams
 
 | Order | Workstream | Purpose | Primary tools |

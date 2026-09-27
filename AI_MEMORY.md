@@ -4,7 +4,7 @@
 >
 > **Read this file first.** It is a routing and working-context document, not a conversation archive.
 
-GitHub is the persistence layer and source of truth. The system is deliberately minimal: one master memory file plus topic folders. It is not a personal knowledge-management platform or knowledge graph.
+GitHub is the persistence layer and source of truth. The system is deliberately minimal: one master memory file plus topic folders. Active operational topics may use a lightweight Capability layer; storage/archive topics do not need one. It is not a personal knowledge-management platform or knowledge graph.
 
 Do not interpret this repository as a complete record of the user's life, work, or conversations. It is a curated memory layer.
 
@@ -67,7 +67,9 @@ R&D Innovation is intentionally organized as a parent topic folder with dedicate
 
 R&D Database is a migrated project source folder. Its project files are stored directly inside `TOPICS/5. RnD DATABASE/`; it is not a routing link to the old repository. The current project architecture is explicitly separated into `1_Frontend_UI`, `2_Library_Core`, and `3_Backend_Scanner`.
 
-Career is organized as a parent topic with shared career-profile context and three parallel workstreams: `1. JOB_SEARCH`, `2. COMPANY_RADAR`, and `3. REMOTE_AI`. It is intentionally not a job database at the current stage. High-volume job records remain in external working tools until real usage demonstrates that a searchable database is justified.
+Career is organized as a parent topic with shared career-profile context and three parallel Capability/workstream units: `1. JOB_SEARCH`, `2. COMPANY_RADAR`, and `3. REMOTE_AI`. One daily master schedule is the external trigger; it applies each capability's 3-day cadence and weekly synthesis contract. Career is intentionally not a job database at the current stage. High-volume job records remain in external working tools until real usage demonstrates that a searchable database is justified.
+
+R&D Innovation is an active operational Capability domain. Claw Discovery is discovery, Idea Review is evaluation, Project Improvement is governance/improvement, and the Knowledge Sheet is the authoritative structured knowledge layer. Claw staging is intermediate operational state, not approved knowledge.
 
 A topic should be added only when recurring work creates enough durable context to justify a dedicated folder.
 
@@ -108,6 +110,12 @@ A topic should be added only when recurring work creates enough durable context 
 - Four GitHub-native controls are part of the operating model: GitHub Actions for automated validation, Issue Forms for structured change requests, Task Lists for execution/completion tracking, and Mermaid for visualizing workflows/architecture where useful.
 - GitHub Pages and GitHub Rulesets were evaluated but are not part of the current operating model. Do not create or require them unless a future decision explicitly reintroduces them.
 - Issue Forms and Task Lists are optional execution aids for changes that benefit from traceability; they do not replace `WORKFLOW.md` or `REPOSITORY_CONTRACT.md`.
+- Capability architecture is provider-independent and Skill-like; no generic runtime or Capability engine is required.
+- Schedules are external triggers; repository contracts define cadence, inputs, outputs, validation, and date semantics.
+- Staging is intermediate/unvalidated state and is never authoritative merely because it exists.
+- Conflicting authoritative information is flagged and investigated rather than silently overwritten.
+- Health/lint controls target demonstrated failure modes before broader metrics infrastructure.
+- Current recurring external schedules are the Career master scheduler and R&D Claw Discovery daily scheduler; AI General, Nuvio Setup, and R&D Database have no ChatGPT scheduled execution in the current operating model.
 
 ## 9. HOW A NEW AI SHOULD ONBOARD
 

@@ -28,6 +28,22 @@ Core review questions:
 - Create a Knowledge Candidate when a reusable finding is discovered.
 - Do not automatically change the authoritative Knowledge Sheet or idea record from a review.
 
+## Capability Contract
+
+**Purpose:** evidence-based evaluation of existing R&D ideas.
+
+**Trigger:** explicit review request or routed downstream work.
+
+**Input / Context:** idea, current Knowledge Sheet context, prior evidence, and research findings.
+
+**Process:** evidence → technology → mechanism → competitor/precedent → supplier → Knowledge Gap → research need → modification/next action.
+
+**Output:** decision-support review with explicit evidence states.
+
+**Validation:** no invented evidence; VERIFIED / INFERRED / WORKING ASSUMPTION / UNKNOWN / PROPOSED remain distinct.
+
+**Persistence:** review output does not automatically alter authoritative Idea or Knowledge Sheet state.
+
 ## Review Flow
 
 `Idea → Evidence Check → Technology Check → Mechanism Check → Competitor / Precedent Check → Supplier / Technology Support Check → Knowledge Sheet Gap Check → Research Need → Idea Modification / Next Action`

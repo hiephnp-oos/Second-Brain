@@ -45,6 +45,15 @@ This file defines the repository invariants that must remain true regardless of 
 - `ADD / UPDATE / REMOVE / NO_CHANGE` is used for memory decisions.
 - Secrets, credentials, tokens, passwords, and unnecessary confidential material are excluded.
 
+## Capability and lifecycle invariants
+
+- Capability is a reusable, provider-independent execution unit; existing workstreams may be its boundary.
+- Staging is intermediate/unvalidated state and never authoritative merely because it exists.
+- Material mutations use Dry-run / target-state review where preview is possible, followed by post-update validation and final verification.
+- Conflicting authoritative information must not be silently overwritten (Contradiction handling).
+- Health/lint should target demonstrated failure modes before broader infrastructure is added.
+- External schedules are triggers; repository documentation defines expected cadence and behavior, but no external schedule is considered synchronized without direct verification.
+
 ## Source-of-truth hierarchy
 
 When information conflicts, use this order unless the user explicitly overrides it:

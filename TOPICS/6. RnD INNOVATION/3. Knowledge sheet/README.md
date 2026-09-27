@@ -76,6 +76,15 @@ Proposed semantic connections must be labeled as inference/candidate rather than
 
 Use `Prompt.csv` in this folder for Knowledge Sheet and Claw tasks. Do not create a separate global prompt repository.
 
+## Capability Boundary
+
+The Knowledge Sheet is not an execution Capability. It is the authoritative structured knowledge layer consumed by R&D capabilities.
+
+Promotion:
+`Candidate → Evidence Check → Duplicate Check → Contradiction Check → Human Verification → Promote → Validate`
+
+Discovery/staging output is never authoritative Knowledge Sheet state.
+
 ## Validation
 
 Validate CSV structure, IDs, relationships, and source traceability before a release. Generic repository validation does not replace semantic review of the dataset.

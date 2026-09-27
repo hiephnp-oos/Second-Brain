@@ -61,6 +61,29 @@ Recommended checklist for meaningful repository mutations:
 - [ ] Perform negative verification
 - [ ] Report final state
 
+## Capability execution lifecycle
+
+Analysis/derived output: `Trigger → Load Contract → Load Context → Execute → Validate Output → Report / Route`
+
+Material repository mutation: `Trigger → Load Contract → Load Context → Dry-run / Target State → Review Gate → Mutate → Post-update Validate → Verify → Promote / Commit`
+
+The Scheduler is only an external trigger/orchestration layer. Business logic belongs to the Capability.
+
+### Staging
+`staging/` is intermediate, unvalidated, candidate, or operational state. It is not authoritative knowledge.
+
+### Dry-run
+When a material mutation can be previewed, perform or expose a dry-run before mutation. Identify target state, creates/updates/deletes, affected references, and validation expectations. Dry-run does not replace post-update validation or final verification.
+
+### Contradiction handling
+When new evidence conflicts with an authoritative record: `Detect → Flag / Record → Investigate → Resolve or Preserve → Update Source of Truth`. Do not silently overwrite conflicting authoritative information.
+
+### Health / lint
+Health controls should first target demonstrated failure modes such as broken references, stale routing, missing/invalid artifacts, Capability contract gaps, staging misuse, and invalid structured data. Do not add a separate health database or generic metrics platform without demonstrated need.
+
+### Scheduled Capability contract
+A scheduled Capability must document trigger, cadence, timezone/date semantics where relevant, invoked Capability, output, and validation. External ChatGPT Scheduled Tasks are outside GitHub; the repository documents the expected schedule contract but cannot prove external synchronization without direct task verification.
+
 ## 1. Read before work
 
 1. Read `AI_MEMORY.md`.
@@ -87,6 +110,20 @@ A topic is a recurring area with enough durable context to justify `TOPICS/<topi
 A workstream is a recurring or non-trivial sub-area that benefits from independent routing/context. Do not create workstream READMEs merely for symmetry.
 
 An artifact is detailed working material such as a prompt, CSV, JSON, code file, research document, configuration, or template. Artifacts are not automatically memory.
+
+### Capability model
+
+A **Capability** is a reusable execution unit for an operational topic. It is Skill-like in purpose but provider-independent.
+
+An existing workstream may serve as the Capability boundary when it already represents the recurring execution unit. A new `CAPABILITIES/` directory is not required merely for symmetry.
+
+Global contract: `Purpose → Trigger → Input / Context → Preconditions → Process → Tools / AI → Output → Validation → Escalation → Persistence / Promotion`
+
+### Operational vs storage topics
+
+Not every topic is an executable Capability domain. Operational topics may contain recurring capabilities, schedules, run records, staging, and evaluation. Storage/archive topics preserve assets, backups, or migrated source. Governance topics define cross-topic controls. Software/project-source topics retain their native architecture.
+
+Current operational Capability domains are CAREER and R&D INNOVATION. AI GENERAL, NUVIO SETUP, and R&D DATABASE are not refactored into Capability folders merely for symmetry. CONSTRUCTION is outside this Capability migration.
 
 ## 3. Standard topic structure
 

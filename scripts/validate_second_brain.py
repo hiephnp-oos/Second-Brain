@@ -18,7 +18,7 @@ TOPIC_STATUS_VALUES = {"Building", "Active", "Maintenance", "Frozen", "Paused", 
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder"]
 OPERATIONAL_STATE_DIRS = {Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/staging")}
 WORKSTREAM_PURPOSE_MARKERS = {"Purpose", "Purpose / Scope", "Scope", "Current Context"}
-WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule"}
+WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule", "Capability", "Capability Contract"}
 CANONICAL_LIFECYCLE = "READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT"
 FORBIDDEN_PATHS = [
     Path("docs"),
@@ -225,6 +225,8 @@ def validate_csv_shape(errors: list[str]) -> None:
             fail(f"CSV has empty header: {path.relative_to(ROOT)}", errors)
             continue
         for index, row in enumerate(rows[1:], start=2):
+            if not row or all(not cell.strip() for cell in row):
+                continue
             if len(row) != width:
                 fail(f"CSV column mismatch: {path.relative_to(ROOT)} line {index}: expected {width}, got {len(row)}", errors)
                 break
@@ -305,18 +307,92 @@ def validate_workstream_readmes(errors: list[str]) -> None:
             fail(f"Workstream README missing routing/state/rules section: {path.relative_to(ROOT)}", errors)
 
 
+def validate_capabilities(errors: list[str]) -> None:
+    docs = [
+        Path("TOPICS/2. CAREER/CAREER_EXECUTION_CONTRACT.md"),
+        Path("TOPICS/6. RnD INNOVATION/README.md"),
+        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"),
+        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/README.md"),
+        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/README.md"),
+        Path("TOPICS/6. RnD INNOVATION/3. Knowledge sheet/README.md"),
+    ]
+    for rel in docs:
+        path = ROOT / rel
+        if not path.exists():
+            fail(f"Missing capability/knowledge contract: {rel}", errors)
+            continue
+        text = read_text(path).lower()
+        if "capabilit" not in text:
+            fail(f"Capability semantics missing: {rel}", errors)
+        if "validation" not in text:
+            fail(f"Capability validation semantics missing: {rel}", errors)
+
+    career = ROOT / "TOPICS/2. CAREER"
+    for name in ["1. JOB_SEARCH", "2. COMPANY_RADAR", "3. REMOTE_AI"]:
+        if not (career / name / "README.md").exists() or not (career / name / "PROMPT.md").exists():
+            fail(f"Career capability incomplete: {name}", errors)
+
+    for rel in [
+        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"),
+        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/README.md"),
+        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/README.md"),
+    ]:
+        if not (ROOT / rel).exists():
+            fail(f"R&D capability missing: {rel}", errors)
+
+
+def validate_staging_semantics(errors: list[str]) -> None:
+    rel = Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/staging")
+    path = ROOT / rel
+    if not path.exists():
+        fail(f"Approved staging directory missing: {rel}", errors)
+        return
+    owner = path.parent / "README.md"
+    if not owner.exists():
+        fail(f"Staging owner README missing: {owner.relative_to(ROOT)}", errors)
+    else:
+        text = read_text(owner).lower()
+        for phrase in ["staging", "not an approved knowledge sheet record", "execution date"]:
+            if phrase not in text:
+                fail(f"Staging contract missing '{phrase}': {owner.relative_to(ROOT)}", errors)
+
+
+def validate_future_rnd_references(errors: list[str]) -> None:
+    for rel in [
+        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/02_SoL-Pi Reference Architecture.md"),
+        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/03_Future Improvement Reference Architecture.md"),
+    ]:
+        if not (ROOT / rel).exists():
+            fail(f"Required R&D future reference missing: {rel}", errors)
+
+
+def validate_scheduled_capability_contracts(errors: list[str]) -> None:
+    for rel in [
+        Path("TOPICS/2. CAREER/IMPLEMENTATION_PLAN.md"),
+        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"),
+    ]:
+        path = ROOT / rel
+        if not path.exists():
+            fail(f"Scheduled capability contract missing: {rel}", errors)
+            continue
+        text = read_text(path).lower()
+        for phrase in ["scheduler", "cadence", "trigger", "output", "validation"]:
+            if phrase not in text:
+                fail(f"Scheduled capability contract missing '{phrase}': {rel}", errors)
+
+
 def validate_high_level_controls(errors: list[str]) -> None:
     contract = ROOT / "REPOSITORY_CONTRACT.md"
     workflow = ROOT / "WORKFLOW.md"
     readme = ROOT / "README.md"
     if contract.exists():
         text = read_text(contract)
-        for phrase in ["Core invariants", "Source-of-truth hierarchy", "Change contract", "Atomic publication contract", "Negative-state contract", "GitHub Actions", "Issue Forms", "Task Lists"]:
+        for phrase in ["Core invariants", "Source-of-truth hierarchy", "Change contract", "Atomic publication contract", "Negative-state contract", "GitHub Actions", "Issue Forms", "Task Lists", "Capability", "Staging", "Dry-run", "Contradiction", "Health"]:
             if phrase not in text:
                 fail(f"REPOSITORY_CONTRACT.md missing control section/phrase: {phrase}", errors)
     if workflow.exists():
         text = read_text(workflow)
-        for phrase in ["TARGET STATE", "PRE-FLIGHT", "ATOMIC CHANGE", "VALIDATE", "VERIFY", "Risk-based execution", "User prompt reinforcement layer", "GitHub Actions", "Issue Form", "Task List"]:
+        for phrase in ["TARGET STATE", "PRE-FLIGHT", "ATOMIC CHANGE", "VALIDATE", "VERIFY", "Risk-based execution", "User prompt reinforcement layer", "GitHub Actions", "Issue Form", "Task List", "Capability", "Staging", "Dry-run", "Contradiction", "Health"]:
             if phrase not in text:
                 fail(f"WORKFLOW.md missing control section/phrase: {phrase}", errors)
         if CANONICAL_LIFECYCLE not in text:
@@ -326,7 +402,7 @@ def validate_high_level_controls(errors: list[str]) -> None:
         fail("Second_Brain_Operations.md lifecycle is out of sync with canonical lifecycle", errors)
     if readme.exists():
         text = read_text(readme)
-        for phrase in ["GitHub Actions", "Issue Forms", "Task Lists", "Mermaid"]:
+        for phrase in ["GitHub Actions", "Issue Forms", "Task Lists", "Mermaid", "Capability", "Staging"]:
             if phrase not in text:
                 fail(f"README.md missing platform capability: {phrase}", errors)
 
@@ -341,6 +417,10 @@ def main() -> int:
     validate_local_references(errors)
     validate_workstream_readmes(errors)
     validate_csv_shape(errors)
+    validate_capabilities(errors)
+    validate_staging_semantics(errors)
+    validate_future_rnd_references(errors)
+    validate_scheduled_capability_contracts(errors)
     validate_rnd_knowledge_sheet(errors)
     validate_high_level_controls(errors)
     if errors:
