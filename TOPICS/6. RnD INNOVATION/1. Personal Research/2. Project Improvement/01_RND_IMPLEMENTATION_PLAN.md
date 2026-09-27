@@ -326,6 +326,16 @@ Do not manufacture ideas merely to cover these themes; use them as discovery pri
 
 Evaluate each capability using real outputs.
 
+The active regression layer is:
+
+`Regression/CASES.md` — canonical recurring/material cases.
+
+`Regression/RUN_TEMPLATE.md` — repeatable real-run evaluation record.
+
+`Regression/BASELINE.md` — current comparison baseline and limitations.
+
+The repository validator checks that these regression artifacts exist and follow the defined structure. It does not replace semantic human review of real R&D outputs.
+
 
 For Claw, compare batches before and after a learning change.
 
