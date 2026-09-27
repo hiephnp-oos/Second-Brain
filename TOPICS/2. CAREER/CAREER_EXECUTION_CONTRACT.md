@@ -28,13 +28,24 @@ Material mutation:
 
 The master scheduler remains trigger/orchestration only; it does not replace the three capability contracts.
 
+### Master Scheduler Boundary
+
+The external scheduler owns only:
+- invocation of the Career capability contract;
+- the documented recurring trigger;
+- no role, geography, salary, exclusion, search-category, matching, verification, output-schema, or weekly-synthesis business rules.
+
+All business logic remains in this contract and the three workstream contracts. If scheduler behavior needs to change, update the repository contract first, then synchronize the external trigger.
+
+The scheduler must not introduce a second copy of any Career rule. Its prompt should point to this contract and instruct the executor to follow the current repository baseline.
+
 Every Career capability follows:
 
 `Trigger → Input/Context → Process → Tools → Output → Validation → Escalation`
 
 ### Trigger
 
-- Scheduled execution on the master Career schedule.
+- Scheduled execution through the external master Career trigger.
 - Manual execution when explicitly requested by the user.
 
 ### Input / Context
@@ -66,10 +77,9 @@ Use the tools available to the execution environment. The architecture does not 
 Typical tool classes:
 
 - Web/search for current opportunities and company signals.
-- GitHub for current Second-Brain rules/context.
-- External tracker for high-volume transient opportunity records.
 - GitHub for current Second-Brain rules/context and weekly run records.
-- ChatGPT scheduled task as the recurring trigger.
+- External tracker for high-volume transient opportunity records.
+- External scheduled task as the recurring trigger only; it does not own Career business logic.
 
 ### Output
 
