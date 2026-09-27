@@ -348,6 +348,20 @@ def validate_capabilities(errors: list[str]) -> None:
         if not (ROOT / rel).exists():
             fail(f"R&D capability missing: {rel}", errors)
 
+    career_contract = ROOT / "TOPICS/2. CAREER/CAREER_EXECUTION_CONTRACT.md"
+    if career_contract.exists():
+        text = read_text(career_contract)
+        for phrase in ["Master Scheduler Boundary", "trigger/orchestration only", "must not introduce a second copy"]:
+            if phrase not in text:
+                fail(f"Career scheduler boundary missing: {phrase}", errors)
+
+    claw_contract = ROOT / "TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"
+    if claw_contract.exists():
+        text = read_text(claw_contract)
+        for phrase in ["Scheduler Boundary", "trigger/orchestration layer only", "must not duplicate RS-10/RS-11/RS-12/RS-13"]:
+            if phrase not in text:
+                fail(f"Claw scheduler boundary missing: {phrase}", errors)
+
 
 def validate_staging_semantics(errors: list[str]) -> None:
     rel = Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/staging")
@@ -387,6 +401,22 @@ def validate_scheduled_capability_contracts(errors: list[str]) -> None:
         for phrase in ["scheduler", "cadence", "trigger", "output", "validation"]:
             if phrase not in text:
                 fail(f"Scheduled capability contract missing '{phrase}': {rel}", errors)
+
+
+def validate_prompt_duplicate_rules(errors: list[str]) -> None:
+    prompt_files = [
+        ROOT / "TOPICS/6. RnD INNOVATION/1. Personal Research/Prompt.csv",
+        ROOT / "TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/Prompt.csv",
+    ]
+    for path in prompt_files:
+        if not path.exists():
+            continue
+        text = read_text(path)
+        # Detect exact repeated escaped instruction lines inside a prompt asset.
+        logical_lines = [line.strip() for line in text.replace("\\n", "\n").splitlines() if line.strip()]
+        for index in range(1, len(logical_lines)):
+            if logical_lines[index] == logical_lines[index - 1] and logical_lines[index].startswith("- "):
+                fail(f"Duplicated consecutive prompt rule in {path.relative_to(ROOT)}: {logical_lines[index]}", errors)
 
 
 def validate_rnd_regression_contract(errors: list[str]) -> None:
@@ -484,6 +514,7 @@ def main() -> int:
     validate_future_rnd_references(errors)
     validate_scheduled_capability_contracts(errors)
     validate_rnd_knowledge_sheet(errors)
+    validate_prompt_duplicate_rules(errors)
     validate_removed_topic(errors)
     validate_rnd_regression_contract(errors)
     validate_high_level_controls(errors)
