@@ -221,3 +221,31 @@ The weekly run record is the primary lightweight history for reviewing these pat
 `Observe → Identify Gap → Propose Change → Human Verify → Promote`
 
 Git history remains the historical record. The current files remain the source of truth.
+
+## Complete Capability Contract Fields
+
+Purpose: execute the Career workstreams as reusable operational capabilities.
+
+Trigger: scheduled run or explicit manual request.
+
+Input / Context: CAREER_PROFILE.md, workstream README, implementation plan, current market evidence, and prior cycle output where applicable.
+
+Preconditions: current Career context is loaded and the relevant workstream is selected.
+
+Process: load context → route → collect evidence → execute workstream logic → validate → output or escalate.
+
+Tools / AI: available search, web, GitHub, tracker, and scheduled-task tools; no dedicated runtime is required.
+
+Output: workstream-specific structured result or weekly run record when required.
+
+Validation: current evidence, exclusions, unknowns, schema, duplicates, and material claims are checked before reporting success.
+
+Evidence State: distinguish verified information, inference, assumption, and unknown; do not invent missing facts.
+
+Escalation: route material uncertainty or baseline-change needs to the appropriate human review path.
+
+Human Verification Gate: required before authoritative Career baseline changes.
+
+Promotion / Persistence: transient opportunity outputs remain in the operational tracker; durable rules and baseline changes enter GitHub only after approval.
+
+Failure Handling: preserve unknowns, report missing evidence, and do not fabricate fields to satisfy output schemas.
