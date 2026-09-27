@@ -65,7 +65,7 @@ Current operational domains:
 - CAREER: JOB_SEARCH, COMPANY_RADAR, REMOTE_AI.
 - R&D INNOVATION: Claw Discovery, Idea Review, Project Improvement; the Knowledge Sheet remains the authoritative knowledge layer.
 
-AI GENERAL, NUVIO SETUP, and R&D DATABASE remain storage/archive or project-source contexts. CONSTRUCTION is outside the current Capability migration.
+AI GENERAL, NUVIO SETUP, and R&D DATABASE remain storage/archive or project-source contexts.
 
 Staging is intermediate/unvalidated state, not source of truth. Conflicting authoritative information must not be silently overwritten.
 
@@ -197,10 +197,15 @@ The topic folders use numeric prefixes in canonical workflow/navigation order:
 
 1. `TOPICS/1. AI GENERAL/`
 2. `TOPICS/2. CAREER/`
-3. `TOPICS/3. CONSTRUCTION/`
-4. `TOPICS/4. NUVIO SETUP/`
+3. `TOPICS/4. NUVIO SETUP/`
 5. `TOPICS/5. RnD DATABASE/`
 6. `TOPICS/6. RnD INNOVATION/`
 7. `TOPICS/7. SYSTEMS/`
 
 Ordered child workstream folders use the same convention when their routing/workflow sequence is meaningful. Supporting artifact folders remain unnumbered.
+
+## R&D Innovation execution model
+
+Discovery uses PERSONAL_RESEARCH and CLAW_DISCOVERY. Evaluation uses IDEA_REVIEW, EVALUATE, and DEEP_ANALYZE. KNOWLEDGE_PROMOTION controls entry into the authoritative Knowledge Sheet.
+
+The existing R&D workstream structure remains the routing layer; no generic capability directory is introduced.

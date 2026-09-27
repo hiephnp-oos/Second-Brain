@@ -36,10 +36,14 @@ R&D Innovation uses existing workstreams as Capability boundaries; no new `CAPAB
 
 | Capability | Role | Source |
 |---|---|---|
+| Personal Research | Discovery | `1. Personal Research/README.md` |
 | Claw Discovery | Discovery | `1. Personal Research/1. Claw Discovery/README.md` + RS prompts |
 | Idea Review | Evaluation | `2. Idea Review/README.md` + IR prompts |
-| Project Improvement | Governance / improvement | `1. Personal Research/2. Project Improvement/README.md` + PI prompts |
+| Evaluate | Evaluation | `2. Idea Review/EVALUATE.md` |
+| Deep Analyze | Evaluation | `2. Idea Review/DEEP_ANALYZE.md` |
+| Knowledge Promotion | Knowledge | `3. Knowledge sheet/README.md` |
 | Knowledge Sheet | Authoritative knowledge layer | `3. Knowledge sheet/README.md` + v2 datasets |
+| Project Improvement | Governance / improvement | `1. Personal Research/2. Project Improvement/README.md` + PI prompts |
 
 Flow: `Discovery → Evaluation → Research / Deep Analysis when needed → Human Verification → Knowledge Promotion`.
 
@@ -289,7 +293,7 @@ Use Mermaid only when it materially improves understanding, review, or logic che
 
 `1. Personal Research/Project Improvement/01_RND_IMPLEMENTATION_PLAN.md` is the detailed future implementation plan for applying the validated Career capability/skill pattern to R&D Innovation.
 
-R&D implementation is intentionally deferred until the Career pilot has been exercised with real outputs and its reusable execution/evaluation pattern has been validated.
+R&D Capability implementation is now active and uses the existing workstream structure.
 
 ## Decisions
 
@@ -333,3 +337,13 @@ Use the workstream READMEs and local `Prompt.csv` files as the entry points for 
 `1. Personal Research → 2. Idea Review → 3. Knowledge Sheet`
 
 The numeric order is the canonical workstream/navigation order. The business flow may route conditionally between workstreams; numbering does not imply every task executes all three sequentially.
+
+## Capability Baseline
+
+Discovery: PERSONAL_RESEARCH, CLAW_DISCOVERY.
+
+Evaluation: IDEA_REVIEW, EVALUATE, DEEP_ANALYZE.
+
+Knowledge: KNOWLEDGE_PROMOTION.
+
+Knowledge Sheet remains the authoritative structured knowledge layer. Existing workstreams remain the routing structure; no generic CAPABILITIES directory is introduced.

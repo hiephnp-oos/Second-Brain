@@ -149,3 +149,11 @@ Keep the system intentionally small. Add infrastructure only when repeated real 
 - `AI_MEMORY.md` is the canonical topic order registry; affected topic/workstream README routing trees must remain synchronized.
 - A reorder, rename, insertion, removal, or move of an ordered folder is incomplete until all affected references and validator rules are synchronized and the old path is absent.
 - Supporting folders that are not routing stages may remain unnumbered.
+
+### Capability contract completeness
+
+Each active Capability contract must define these 13 fields: Purpose, Trigger, Input / Context, Preconditions, Process, Tools / AI, Output, Validation, Evidence State, Escalation, Human Verification Gate, Promotion / Persistence, and Failure Handling.
+
+The minimum execution lifecycle is: Trigger → Input → Execute → Output → Validate → Verify → Persist / Promote.
+
+For R&D Innovation, the current capability set is PERSONAL_RESEARCH, CLAW_DISCOVERY, IDEA_REVIEW, EVALUATE, DEEP_ANALYZE, and KNOWLEDGE_PROMOTION. Existing workstreams may serve as capability boundaries.

@@ -308,35 +308,43 @@ def validate_workstream_readmes(errors: list[str]) -> None:
 
 
 def validate_capabilities(errors: list[str]) -> None:
+    # Capability contracts are validated against the global 13-field contract.
+    required_fields = ["purpose", "trigger", "input / context", "preconditions", "process", "tools / ai", "output", "validation", "evidence state", "escalation", "human verification gate", "promotion / persistence", "failure handling"]
     docs = [
         Path("TOPICS/2. CAREER/CAREER_EXECUTION_CONTRACT.md"),
-        Path("TOPICS/6. RnD INNOVATION/README.md"),
+        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/README.md"),
         Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"),
         Path("TOPICS/6. RnD INNOVATION/2. Idea Review/README.md"),
-        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/README.md"),
+        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/EVALUATE.md"),
+        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/DEEP_ANALYZE.md"),
         Path("TOPICS/6. RnD INNOVATION/3. Knowledge sheet/README.md"),
     ]
     for rel in docs:
         path = ROOT / rel
         if not path.exists():
-            fail(f"Missing capability/knowledge contract: {rel}", errors)
+            fail(f"Missing capability contract: {rel}", errors)
             continue
         text = read_text(path).lower()
-        if "capabilit" not in text:
+        if "capability" not in text:
             fail(f"Capability semantics missing: {rel}", errors)
-        if "validation" not in text:
-            fail(f"Capability validation semantics missing: {rel}", errors)
+        for field in required_fields:
+            if field not in text:
+                fail(f"Capability contract missing {field}: {rel}", errors)
 
     career = ROOT / "TOPICS/2. CAREER"
     for name in ["1. JOB_SEARCH", "2. COMPANY_RADAR", "3. REMOTE_AI"]:
         if not (career / name / "README.md").exists() or not (career / name / "PROMPT.md").exists():
             fail(f"Career capability incomplete: {name}", errors)
 
-    for rel in [
+    rnd_required = [
+        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/README.md"),
         Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"),
         Path("TOPICS/6. RnD INNOVATION/2. Idea Review/README.md"),
-        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/README.md"),
-    ]:
+        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/EVALUATE.md"),
+        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/DEEP_ANALYZE.md"),
+        Path("TOPICS/6. RnD INNOVATION/3. Knowledge sheet/README.md"),
+    ]
+    for rel in rnd_required:
         if not (ROOT / rel).exists():
             fail(f"R&D capability missing: {rel}", errors)
 
@@ -381,6 +389,15 @@ def validate_scheduled_capability_contracts(errors: list[str]) -> None:
                 fail(f"Scheduled capability contract missing '{phrase}': {rel}", errors)
 
 
+def validate_removed_topic(errors: list[str]) -> None:
+    if (ROOT / "TOPICS" / "3. CONSTRUCTION").exists():
+        fail("Removed topic still exists: TOPICS/3. CONSTRUCTION", errors)
+    for relative in [Path("AI_MEMORY.md"), Path("README.md"), Path("WORKFLOW.md"), Path("REPOSITORY_CONTRACT.md")]:
+        path = ROOT / relative
+        if path.exists() and "TOPICS/3. CONSTRUCTION" in read_text(path):
+            fail(f"Stale removed-topic reference: {relative}", errors)
+
+
 def validate_high_level_controls(errors: list[str]) -> None:
     contract = ROOT / "REPOSITORY_CONTRACT.md"
     workflow = ROOT / "WORKFLOW.md"
@@ -422,6 +439,7 @@ def main() -> int:
     validate_future_rnd_references(errors)
     validate_scheduled_capability_contracts(errors)
     validate_rnd_knowledge_sheet(errors)
+    validate_removed_topic(errors)
     validate_high_level_controls(errors)
     if errors:
         print("Second-Brain validation: FAIL")

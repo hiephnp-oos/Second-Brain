@@ -73,3 +73,31 @@ A review should leave a concise decision-support record containing, as applicabl
 ## Prompt
 
 Use `Prompt.csv` in this folder for Idea Review tasks.
+
+## Capability Contract — IDEA_REVIEW
+
+Purpose: review an R&D idea for duplication, existing solutions, weak problem framing, unsupported mechanisms, poor evidence, and novelty signals.
+
+Trigger: new idea, updated evidence, review cycle, or explicit decision need.
+
+Input / Context: idea, Knowledge Sheet records, evidence, and review history.
+
+Preconditions: idea is identifiable and relevant Knowledge Sheet context is checked.
+
+Process: Idea → Knowledge Check → Evidence Check → Technology → Mechanism → Competitor / Precedent → Supplier Support → Gap → Research Need → Disposition.
+
+Tools / AI: released Idea Review prompts, Knowledge Sheet, targeted research, GitHub.
+
+Output: review with evidence, technology, mechanism, competitor/supplier support, gaps, research needed, modifications, and KEEP / WATCH / DROP / NEEDS_RESEARCH.
+
+Validation: no invented records or evidence; distinguish evidence from inference; absence is not proof of novelty.
+
+Evidence State: VERIFIED / EVIDENCED, INFERRED, WORKING ASSUMPTION, UNKNOWN, PROPOSED.
+
+Escalation: evidence gap → PERSONAL_RESEARCH; consequential evaluation → EVALUATE / DEEP_ANALYZE.
+
+Human Verification Gate: required before authoritative Knowledge Sheet or baseline changes.
+
+Promotion / Persistence: disposition is a workflow state, not permanent knowledge.
+
+Failure Handling: preserve unverifiable claims as UNKNOWN and define required research.

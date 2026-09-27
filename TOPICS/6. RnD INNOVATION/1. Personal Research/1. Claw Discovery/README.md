@@ -110,3 +110,71 @@ Optimize for distinct, evidence-grounded opportunity seeds rather than idea volu
 ## Execution Date Integrity
 
 The scheduler execution date is the source of truth for daily staging. RUN_DATE MUST be resolved from the actual execution timestamp in Asia/Ho_Chi_Minh (UTC+07:00). Never infer it from the previous staging file, conversation context, UTC date, or an existing filename. Never overwrite a prior day's staging record when the resolved date differs. If the execution timestamp cannot be resolved reliably, do not write a daily staging record; report the date as UNKNOWN.
+## Capability Contract — CLAW_DISCOVERY
+
+### Purpose
+Generate evidence-grounded R&D opportunity/idea candidates from research evidence.
+
+### Trigger
+Daily external scheduler or explicit manual execution. A 3-day batch is formed only when the required unbatched daily runs are available.
+
+### Input / Context
+Research evidence; relevant Knowledge Sheet context; prior learning; current RS prompt set and Claw Discovery scope.
+
+### Preconditions
+Current research scope is known; relevant Knowledge Sheet context is checked; evidence is available for the proposed opportunity.
+
+### Process
+Research Evidence → Problem / Opportunity → Existing Solution → Gap → Proposed Response → Technology Mechanism → Evidence → Candidate Idea → Staging
+
+### Tools / AI
+Use the released Claw/RS prompts, available web/search research tools, GitHub for current rules, and the Knowledge Sheet as the structured baseline.
+
+### Output
+A candidate R&D idea with problem/opportunity, existing solution, gap, proposed response, technology mechanism, evidence/source traceability, and explicit candidate status.
+
+### Validation
+Evidence must be traceable. Existing solution and mechanism claims must not be invented. A candidate in staging is not validated knowledge and is not an authoritative Knowledge Sheet record.
+
+### Evidence State
+Distinguish VERIFIED / EVIDENCED, INFERRED, WORKING ASSUMPTION, UNKNOWN, and PROPOSED according to the existing R&D prompt conventions.
+
+### Escalation
+Route material evidence gaps to PERSONAL_RESEARCH and material idea-evaluation questions to IDEA_REVIEW/EVALUATE.
+
+### Human Verification Gate
+Human review is required before candidate knowledge or authoritative relationships are promoted.
+
+### Promotion / Persistence
+Persist daily execution output in the existing staging/YYYY-MM-DD.md path. Promotion to authoritative knowledge is handled only through KNOWLEDGE_PROMOTION.
+
+### Failure Handling
+If evidence is insufficient, preserve the candidate with an explicit gap or reject it from promotion. Do not manufacture evidence to complete the output schema.
+
+## Capability Contract — CLAW_DISCOVERY
+
+Purpose: generate evidence-grounded R&D idea candidates.
+
+Trigger: daily scheduled run or explicit manual execution.
+
+Input / Context: research evidence, Knowledge Sheet context, prior learning, RS prompts, and Claw scope.
+
+Preconditions: scope and relevant Knowledge Sheet context are available.
+
+Process: Research Evidence → Problem / Opportunity → Existing Solution → Gap → Proposed Response → Technology Mechanism → Evidence → Candidate Idea → Staging.
+
+Tools / AI: released Claw/RS prompts, research tools, GitHub, and Knowledge Sheet.
+
+Output: candidate idea with problem, solution, gap, response, mechanism, evidence, and status.
+
+Validation: trace evidence; do not invent solution or mechanism claims; staging is not authoritative knowledge.
+
+Evidence State: VERIFIED / EVIDENCED, INFERRED, WORKING ASSUMPTION, UNKNOWN, PROPOSED.
+
+Escalation: evidence gaps → PERSONAL_RESEARCH; evaluation questions → IDEA_REVIEW or EVALUATE.
+
+Human Verification Gate: required before promotion to authoritative knowledge.
+
+Promotion / Persistence: keep execution output in the existing staging path; promotion uses KNOWLEDGE_PROMOTION.
+
+Failure Handling: record insufficient evidence explicitly; never manufacture evidence.

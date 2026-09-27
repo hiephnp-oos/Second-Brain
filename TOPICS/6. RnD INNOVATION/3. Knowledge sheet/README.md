@@ -88,3 +88,31 @@ Discovery/staging output is never authoritative Knowledge Sheet state.
 ## Validation
 
 Validate CSV structure, IDs, relationships, and source traceability before a release. Generic repository validation does not replace semantic review of the dataset.
+
+## Capability Contract — KNOWLEDGE_PROMOTION
+
+Purpose: promote verified reusable R&D findings into the authoritative Knowledge Sheet.
+
+Trigger: explicit Knowledge Candidate proposal after research or evaluation.
+
+Input / Context: candidate, supporting evidence, source links, existing records, and relationships.
+
+Preconditions: evidence is traceable and target schema is known.
+
+Process: Candidate → Evidence Check → Duplicate Check → Contradiction Check → Human Verification → Promote → Validate.
+
+Tools / AI: Knowledge Sheet CSVs, relationship rules, GitHub, research tools.
+
+Output: verified Knowledge Sheet record or explicit hold/rejection with reason.
+
+Validation: IDs, relationships, source traceability, schema, duplicates, and contradictions are checked after promotion.
+
+Evidence State: only verified evidence becomes authoritative; INFERENCE, ASSUMPTION, UNKNOWN, PROPOSAL remain non-authoritative until verified.
+
+Escalation: conflicting evidence, uncertain identity, weak sources, or material claims → human review.
+
+Human Verification Gate: mandatory; uncertain research cannot be promoted automatically.
+
+Promotion / Persistence: only human-verified candidates enter the Knowledge Sheet source of truth.
+
+Failure Handling: hold/reject missing evidence, duplicates, contradictions, invalid relationships, or schema errors.

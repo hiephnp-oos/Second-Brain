@@ -55,7 +55,6 @@ These are the currently recognized work areas, not an exhaustive list of everyth
 |---|---|---|
 | 1. AI General | Building | `TOPICS/1. AI GENERAL/README.md` |
 | 2. Career | Building | `TOPICS/2. CAREER/README.md` |
-| 3. Construction | Active | `TOPICS/3. CONSTRUCTION/README.md` |
 | 4. Nuvio Setup | Frozen | `TOPICS/4. NUVIO SETUP/README.md` |
 | 5. R&D Database | Maintenance | `TOPICS/5. RnD DATABASE/README.md` |
 | 6. R&D Innovation | Active | `TOPICS/6. RnD INNOVATION/README.md` |
@@ -196,4 +195,12 @@ Ordered topic folders and routed child workstream folders use numeric prefixes t
 
 Current topic order:
 
-`1. AI GENERAL → 2. CAREER → 3. CONSTRUCTION → 4. NUVIO SETUP → 5. RnD DATABASE → 6. RnD INNOVATION → 7. SYSTEMS`
+`1. AI GENERAL → 2. CAREER → 4. NUVIO SETUP → 5. RnD DATABASE → 6. RnD INNOVATION → 7. SYSTEMS`
+
+## R&D Capability baseline
+
+R&D Innovation now exposes six execution capabilities using the existing workstream structure: PERSONAL_RESEARCH, CLAW_DISCOVERY, IDEA_REVIEW, EVALUATE, DEEP_ANALYZE, and KNOWLEDGE_PROMOTION. The Knowledge Sheet remains the authoritative structured knowledge layer; Claw staging remains intermediate state.
+
+Research Skill reference lessons adopted at the architecture level: deterministic routing where useful, explicit research intake/scope, source and evidence traceability, separation of evidence from inference/assumption/unknown/proposal, explicit failure handling, auditable outputs, and human verification before authoritative promotion. Claude-specific runtime architecture is not adopted.
+
+CONSTRUCTION was removed after repository reference/dependency inspection. Active topic navigation and registry no longer include it.

@@ -69,6 +69,15 @@ Material repository mutation: `Trigger → Load Contract → Load Context → Dr
 
 The Scheduler is only an external trigger/orchestration layer. Business logic belongs to the Capability.
 
+### Evidence state
+Capabilities must distinguish evidence from inference, assumption, unknown, and proposal. Source traceability is required for consequential research claims.
+
+### Human verification
+Human verification is required before authoritative knowledge or baseline changes are promoted when the capability contract specifies the gate.
+
+### Failure handling
+A capability must fail explicitly when required evidence or input is unavailable. It must not silently fill missing facts with inference.
+
 ### Staging
 `staging/` is intermediate, unvalidated, candidate, or operational state. It is not authoritative knowledge.
 
@@ -117,13 +126,17 @@ A **Capability** is a reusable execution unit for an operational topic. It is Sk
 
 An existing workstream may serve as the Capability boundary when it already represents the recurring execution unit. A new `CAPABILITIES/` directory is not required merely for symmetry.
 
-Global contract: `Purpose → Trigger → Input / Context → Preconditions → Process → Tools / AI → Output → Validation → Escalation → Persistence / Promotion`
+Global Capability contract (13 fields): `Purpose → Trigger → Input / Context → Preconditions → Process → Tools / AI → Output → Validation → Evidence State → Escalation → Human Verification Gate → Promotion / Persistence → Failure Handling`.
+
+Minimum lifecycle: `Trigger → Input → Execute → Output → Validate → Verify → Persist / Promote`.
+
+Capability-specific contracts belong in the existing workstream boundary or a focused capability artifact. Do not duplicate the complete global contract in every topic.
 
 ### Operational vs storage topics
 
 Not every topic is an executable Capability domain. Operational topics may contain recurring capabilities, schedules, run records, staging, and evaluation. Storage/archive topics preserve assets, backups, or migrated source. Governance topics define cross-topic controls. Software/project-source topics retain their native architecture.
 
-Current operational Capability domains are CAREER and R&D INNOVATION. AI GENERAL, NUVIO SETUP, and R&D DATABASE are not refactored into Capability folders merely for symmetry. CONSTRUCTION is outside this Capability migration.
+Current operational Capability domains are CAREER and R&D INNOVATION. AI GENERAL, NUVIO SETUP, and R&D DATABASE remain storage/archive or project-source contexts and are not refactored into Capability folders merely for symmetry.
 
 ## 3. Standard topic structure
 
