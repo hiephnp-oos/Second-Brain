@@ -14,6 +14,8 @@ Run evidence-grounded Claw discovery without promoting discovery output directly
 
 **Trigger:** daily external scheduler or manual request.
 
+**Cadence:** daily; create a 3-day batch only when three new UNBATCHED daily runs are available.
+
 **Input / Context:** active R&D scope, Knowledge Sheet, prior Claw learning, and released RS-10/RS-11/RS-12/RS-13 prompts.
 
 **Process:** RS-10 Market Pull → RS-11 Tech Push → RS-12 Convergence → Discovery Quality Gate → daily staging.
