@@ -308,31 +308,24 @@ def validate_workstream_readmes(errors: list[str]) -> None:
 
 
 def validate_capabilities(errors: list[str]) -> None:
+    required_fields = ["purpose", "trigger", "input / context", "preconditions", "process", "tools / ai", "output", "validation", "evidence state", "escalation", "human verification gate", "promotion / persistence", "failure handling"]
     docs = [
         Path("TOPICS/2. CAREER/CAREER_EXECUTION_CONTRACT.md"),
-        Path("TOPICS/6. RnD INNOVATION/README.md"),
+        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/README.md"),
         Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"),
         Path("TOPICS/6. RnD INNOVATION/2. Idea Review/README.md"),
-        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/README.md"),
+        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/EVALUATE.md"),
+        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/DEEP_ANALYZE.md"),
         Path("TOPICS/6. RnD INNOVATION/3. Knowledge sheet/README.md"),
     ]
     for rel in docs:
         path = ROOT / rel
         if not path.exists():
-            fail(f"Missing capability/knowledge contract: {rel}", errors)
-            continue
-        text = read_text(path).lower()
-        if "capabilit" not in text:
-            fail(f"Capability semantics missing: {rel}", errors)
-        if "validation" not in text:
-            fail(f"Capability validation semantics missing: {rel}", errors)
-
-    for rel in [Path("TOPICS/2. CAREER/CAREER_EXECUTION_CONTRACT.md"), Path("TOPICS/6. RnD INNOVATION/1. Personal Research/README.md"), Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"), Path("TOPICS/6. RnD INNOVATION/2. Idea Review/README.md"), Path("TOPICS/6. RnD INNOVATION/2. Idea Review/EVALUATE.md"), Path("TOPICS/6. RnD INNOVATION/2. Idea Review/DEEP_ANALYZE.md"), Path("TOPICS/6. RnD INNOVATION/3. Knowledge sheet/README.md")]:
-        path = ROOT / rel
-        if not path.exists():
             fail(f"Missing capability contract: {rel}", errors)
             continue
         text = read_text(path).lower()
+        if "capability" not in text:
+            fail(f"Capability semantics missing: {rel}", errors)
         for field in required_fields:
             if field not in text:
                 fail(f"Capability contract missing {field}: {rel}", errors)
@@ -342,12 +335,15 @@ def validate_capabilities(errors: list[str]) -> None:
         if not (career / name / "README.md").exists() or not (career / name / "PROMPT.md").exists():
             fail(f"Career capability incomplete: {name}", errors)
 
-    required_fields = ["purpose", "trigger", "input / context", "preconditions", "process", "tools / ai", "output", "validation", "evidence state", "escalation", "human verification gate", "promotion / persistence", "failure handling"]
-    for rel in [
+    rnd_required = [
+        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/README.md"),
         Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"),
         Path("TOPICS/6. RnD INNOVATION/2. Idea Review/README.md"),
-        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/README.md"),
-    ]:
+        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/EVALUATE.md"),
+        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/DEEP_ANALYZE.md"),
+        Path("TOPICS/6. RnD INNOVATION/3. Knowledge sheet/README.md"),
+    ]
+    for rel in rnd_required:
         if not (ROOT / rel).exists():
             fail(f"R&D capability missing: {rel}", errors)
 
