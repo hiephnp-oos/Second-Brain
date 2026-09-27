@@ -203,3 +203,9 @@ The topic folders use numeric prefixes in canonical workflow/navigation order:
 7. `TOPICS/7. SYSTEMS/`
 
 Ordered child workstream folders use the same convention when their routing/workflow sequence is meaningful. Supporting artifact folders remain unnumbered.
+
+## R&D Innovation execution model
+
+Discovery uses PERSONAL_RESEARCH and CLAW_DISCOVERY. Evaluation uses IDEA_REVIEW, EVALUATE, and DEEP_ANALYZE. KNOWLEDGE_PROMOTION controls entry into the authoritative Knowledge Sheet.
+
+The existing R&D workstream structure remains the routing layer; no generic capability directory is introduced.
