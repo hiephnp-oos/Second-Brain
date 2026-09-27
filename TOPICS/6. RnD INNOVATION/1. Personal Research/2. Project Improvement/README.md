@@ -53,6 +53,12 @@ Use `Prompt.csv` in this folder for project-review and improvement tasks.
 
 Use `Improvement Records/` for reviewed proposals and test outcomes. Use `Regression/` for regression cases/results when persistent records are useful.
 
+### Regression layer
+
+`Regression/README.md` is the canonical lightweight evaluation contract for real R&D capability executions. `Regression/CASES.md` contains recurring/material regression cases and `Regression/RUN_TEMPLATE.md` provides the standard evaluation record.
+
+The regression layer evaluates routing, evidence discipline, discovery quality, state/promotion behavior, and output contracts. It does not become a second workflow or autonomous scoring system.
+
 ## Implementation References
 
 - `01_RND_IMPLEMENTATION_PLAN.md` — first applied improvement path: deferred implementation plan for the validated R&D capability/skill execution pattern. It is an execution plan and is not the current execution layer.
@@ -94,11 +100,12 @@ Use this section to follow the actual improvement sequence. Numbering reflects a
 | 01 | `01_RND_IMPLEMENTATION_PLAN.md` | Active experimental path | Applied after review of Claw Batch #2; added Strategic Scope / Tier 1 alignment, Product Architecture Trace, Technology ≠ Innovation, Positive Delta Discovery, transfer-candidate handling, and Tier 1 discovery focus for Batches #3–#4. |
 | 02 | `02_SoL-Pi Reference Architecture.md` | Reference / fallback | Independent reference architecture to use only if the R&D implementation path later demonstrates a material harness limitation. |
 | 03 | `03_Future Improvement Reference Architecture.md` | Future reference | Additional future-improvement reference retained for later evidence-driven evaluation; not part of the current execution baseline. |
+| 04 | `Regression/` | Active evaluation layer | Added after architecture review to evaluate real R&D capability outputs against recurring/material regression cases before changing the baseline. |
 
 ### Follow Rule
 
 Follow the numbered sequence when reviewing or deciding the next improvement:
 
-`01 → observe/test → human review → 02 if needed → 03 if needed`
+`01 → observe/test → regression evaluation → human review → 02 if needed → 03 if needed`
 
 Do not interpret the numbering as an instruction to implement every artifact. Each later architecture remains conditional on evidence from the preceding stage and human verification.

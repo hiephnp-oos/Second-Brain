@@ -389,6 +389,51 @@ def validate_scheduled_capability_contracts(errors: list[str]) -> None:
                 fail(f"Scheduled capability contract missing '{phrase}': {rel}", errors)
 
 
+def validate_rnd_regression_contract(errors: list[str]) -> None:
+    root = Path("TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/Regression")
+    required = [root / "README.md", root / "CASES.md", root / "RUN_TEMPLATE.md", root / "BASELINE.md"]
+    for rel in required:
+        if not rel.exists():
+            fail(f"Missing R&D regression artifact: {rel}", errors)
+
+    cases = root / "CASES.md"
+    if cases.exists():
+        text = read_text(cases)
+        required_case_ids = [f"RND-REG-{i:03d}" for i in range(1, 13)]
+        for case_id in required_case_ids:
+            if case_id not in text:
+                fail(f"Missing R&D regression case: {case_id}", errors)
+        for result in ["PASS", "FAIL", "NOT OBSERVED", "INCONCLUSIVE"]:
+            if result not in text:
+                fail(f"R&D regression result state missing: {result}", errors)
+
+    template = root / "RUN_TEMPLATE.md"
+    if template.exists():
+        text = read_text(template)
+        for phrase in [
+            "Capability:",
+            "Prompt ID / execution contract:",
+            "Baseline compared with:",
+            "Regression cases",
+            "Human decision",
+            "Do not update the R&D baseline",
+        ]:
+            if phrase not in text:
+                fail(f"R&D regression run template missing '{phrase}'", errors)
+
+    readme = root / "README.md"
+    if readme.exists():
+        text = read_text(readme)
+        for phrase in [
+            "real R&D capability executions",
+            "CASES.md",
+            "RUN_TEMPLATE.md",
+            "does not become a second workflow",
+        ]:
+            if phrase not in text:
+                fail(f"R&D regression README missing '{phrase}'", errors)
+
+
 def validate_removed_topic(errors: list[str]) -> None:
     if (ROOT / "TOPICS" / "3. CONSTRUCTION").exists():
         fail("Removed topic still exists: TOPICS/3. CONSTRUCTION", errors)
@@ -440,6 +485,7 @@ def main() -> int:
     validate_scheduled_capability_contracts(errors)
     validate_rnd_knowledge_sheet(errors)
     validate_removed_topic(errors)
+    validate_rnd_regression_contract(errors)
     validate_high_level_controls(errors)
     if errors:
         print("Second-Brain validation: FAIL")

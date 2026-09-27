@@ -114,6 +114,7 @@ A topic should be added only when recurring work creates enough durable context 
 - Staging is intermediate/unvalidated state and is never authoritative merely because it exists.
 - Conflicting authoritative information is flagged and investigated rather than silently overwritten.
 - Health/lint controls target demonstrated failure modes before broader metrics infrastructure.
+- R&D Innovation now has a lightweight regression/evaluation layer under `1. Personal Research/2. Project Improvement/Regression/` for real capability outputs; it is an evaluation aid, not a second workflow or scoring engine.
 - Current recurring external schedules are the Career master scheduler and R&D Claw Discovery daily scheduler; AI General, Nuvio Setup, and R&D Database have no ChatGPT scheduled execution in the current operating model.
 
 ## 9. HOW A NEW AI SHOULD ONBOARD
