@@ -308,6 +308,7 @@ def validate_workstream_readmes(errors: list[str]) -> None:
 
 
 def validate_capabilities(errors: list[str]) -> None:
+    # Capability contracts are validated against the global 13-field contract.
     required_fields = ["purpose", "trigger", "input / context", "preconditions", "process", "tools / ai", "output", "validation", "evidence state", "escalation", "human verification gate", "promotion / persistence", "failure handling"]
     docs = [
         Path("TOPICS/2. CAREER/CAREER_EXECUTION_CONTRACT.md"),
