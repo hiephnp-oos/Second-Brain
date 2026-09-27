@@ -1,4 +1,4 @@
-# R&D Innovation — Future Implementation Plan
+# R&D Innovation — Implementation Record
 
 ## Purpose
 
@@ -396,7 +396,7 @@ No prompt/rule/knowledge change becomes baseline automatically.
 
 ## Deliverables
 
-When R&D implementation starts, expected repository changes are:
+For remaining validation and future evidence-driven improvements, expected repository changes are:
 
 - capability-level execution contracts;
 - synchronized workstream READMEs;
