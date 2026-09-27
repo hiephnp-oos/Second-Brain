@@ -38,6 +38,23 @@ Regression is performed on real outputs. The repository validator checks the reg
 - `RUN_TEMPLATE.md` — standard record for evaluating a real batch/run.
 - `BASELINE.md` — current comparison baseline and known limitations.
 
+## Decisions / Status
+
+- State: Active evaluation layer.
+- Owner: Project Improvement under Personal Research.
+- Scope: real R&D capability outputs, especially Claw Discovery and subsequent evaluation/promotion stages.
+- The regression layer does not become a second workflow or source of truth.
+- Human review remains authoritative for semantic evaluation and baseline promotion.
+
+## Working Rules
+
+- Evaluate actual outputs, not hypothetical behavior.
+- Separate mechanical validation from semantic human judgment.
+- Record PASS, FAIL, NOT OBSERVED, or INCONCLUSIVE; do not convert NOT OBSERVED into PASS.
+- Create or retain a regression case when a failure is recurring/material or protects a critical invariant.
+- Do not change prompts, workflow contracts, or baseline rules from a single isolated failure unless the change is explicitly approved as a controlled experiment.
+- Do not optimize for KEEP count alone.
+
 ## Current baseline
 
 Batches `2026-09-20_to_2026-09-22` and `2026-09-23_to_2026-09-25` are the current observed baseline inputs.
@@ -63,6 +80,16 @@ For each real evaluation run:
 `Observe → Identify Gap → Propose Change → Test → Human Verify → Promote`
 
 A regression result does not itself modify the R&D baseline.
+
+## Routing
+
+`Capability execution → Regression cases → Human review → Project Improvement`
+
+Regression does not replace PERSONAL_RESEARCH, CLAW_DISCOVERY, IDEA_REVIEW, EVALUATE, DEEP_ANALYZE, or KNOWLEDGE_PROMOTION. It observes their outputs.
+
+## Next
+
+Run the regression contract against the next comparable real Claw batches, especially Batches #3 and #4, and compare recurring/material failure classes before changing the baseline.
 
 ## Scope boundary
 

@@ -426,8 +426,8 @@ def validate_rnd_regression_contract(errors: list[str]) -> None:
         text = read_text(readme)
         for phrase in [
             "real R&D capability executions",
-            "Regression/CASES.md",
-            "Regression/RUN_TEMPLATE.md",
+            "CASES.md",
+            "RUN_TEMPLATE.md",
             "does not become a second workflow",
         ]:
             if phrase not in text:
