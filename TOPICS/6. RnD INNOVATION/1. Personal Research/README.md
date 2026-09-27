@@ -106,3 +106,31 @@ Research output remains in the conversation or designated research artifact. A r
 
 ### Failure Handling
 Do not fill missing evidence with inference. Record the gap, retry only when a defined failure policy allows it, and return a limited result with explicit uncertainty when the evidence remains insufficient.
+
+## Capability Contract — PERSONAL_RESEARCH
+
+Purpose: research defined R&D evidence gaps using the minimum sufficient research route.
+
+Trigger: manual request, routed research gap, or approved scheduled run.
+
+Input / Context: research question or gap, Knowledge Sheet context, constraints, prior research, and current project context.
+
+Preconditions: scope is defined and relevant existing Knowledge Sheet context has been checked.
+
+Process: Research Question → Source Discovery → Evidence Collection → Evidence Classification → Candidate Finding → Staging / Return Finding.
+
+Tools / AI: available web/search, technical-document, patent, literature, GitHub, and research-skill capabilities.
+
+Output: traceable finding with question/gap, sources, evidence state, findings, unknowns, and next action.
+
+Validation: consequential claims require supporting evidence or explicit uncertainty; search snippets are discovery aids only; absence of found evidence is not proof of novelty.
+
+Evidence State: EVIDENCE, INFERENCE, ASSUMPTION, UNKNOWN, PROPOSAL.
+
+Escalation: escalate material ambiguity, conflicting sources, unavailable evidence, or decision-critical questions requiring deeper research.
+
+Human Verification Gate: required before a research finding becomes authoritative Knowledge Sheet content.
+
+Promotion / Persistence: research remains in the conversation or research artifact; reusable findings become Knowledge Candidates and follow KNOWLEDGE_PROMOTION.
+
+Failure Handling: record evidence gaps and return limited results with explicit uncertainty; never fill missing evidence with inference.
