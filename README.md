@@ -51,6 +51,24 @@ Repository maintenance principle:
 
 `Final repository state > tool actions`
 
+## Architecture model
+
+Second-Brain uses a lightweight Capability layer only for active operational topics.
+
+```text
+Knowledge → Workflow → Capability → Execution Contract → Tool / AI
+→ Staging / Output → Validation → Human Verification → Promote / Commit
+→ GitHub Source of Truth
+```
+
+Current operational domains:
+- CAREER: JOB_SEARCH, COMPANY_RADAR, REMOTE_AI.
+- R&D INNOVATION: Claw Discovery, Idea Review, Project Improvement; the Knowledge Sheet remains the authoritative knowledge layer.
+
+AI GENERAL, NUVIO SETUP, and R&D DATABASE remain storage/archive or project-source contexts. CONSTRUCTION is outside the current Capability migration.
+
+Staging is intermediate/unvalidated state, not source of truth. Conflicting authoritative information must not be silently overwritten.
+
 ## Core control documents
 
 | Document | Role |

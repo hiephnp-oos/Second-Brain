@@ -8,6 +8,22 @@ Run evidence-grounded Claw discovery without promoting discovery output directly
 - Keep discovery separate from human-admitted ideas and authoritative Knowledge Sheet records.
 - Use the released Personal Research prompts as execution contracts.
 
+## Capability Contract
+
+**Purpose:** discover evidence-grounded R&D opportunity seeds.
+
+**Trigger:** daily external scheduler or manual request.
+
+**Input / Context:** active R&D scope, Knowledge Sheet, prior Claw learning, and released RS-10/RS-11/RS-12/RS-13 prompts.
+
+**Process:** RS-10 Market Pull → RS-11 Tech Push → RS-12 Convergence → Discovery Quality Gate → daily staging.
+
+**Output:** `staging/YYYY-MM-DD.md`.
+
+**Validation:** evidence/source traceability, quality gate, execution-date integrity, and explicit non-promotion to authoritative knowledge.
+
+**Persistence:** staging only; downstream review/promotion is separate.
+
 ## Daily Flow
 
 RS-10 Claw Market Pull Scout

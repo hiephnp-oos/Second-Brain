@@ -16,6 +16,22 @@ Scope:
 
 This is a maintainer capability under `1. Personal Research/`, not a separate top-level workstream.
 
+## Capability Contract
+
+**Purpose:** improve the R&D Innovation system itself.
+
+**Trigger:** observed failure, regression, feedback, health issue, or explicit architecture review.
+
+**Input / Context:** current baseline, evidence, outputs, failures, and related prompts/contracts.
+
+**Process:** Observe → Identify Gap → Propose Change → Test → Human Verify → Promote.
+
+**Output:** controlled proposal/test result and, after approval, updated baseline.
+
+**Validation:** regression evidence precedes baseline promotion.
+
+**Future architecture boundary:** `02_SoL-Pi Reference Architecture.md` and `03_Future Improvement Reference Architecture.md` remain independent future reference tracks and are not activated by this refactor.
+
 ## Improvement Cycle
 
 `Observe → Identify Gap → Propose Change → Test → Human Verify → Promote to Baseline`
