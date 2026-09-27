@@ -327,6 +327,16 @@ def validate_capabilities(errors: list[str]) -> None:
         if "validation" not in text:
             fail(f"Capability validation semantics missing: {rel}", errors)
 
+    for rel in [Path("TOPICS/2. CAREER/CAREER_EXECUTION_CONTRACT.md"), Path("TOPICS/6. RnD INNOVATION/1. Personal Research/README.md"), Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"), Path("TOPICS/6. RnD INNOVATION/2. Idea Review/README.md"), Path("TOPICS/6. RnD INNOVATION/2. Idea Review/EVALUATE.md"), Path("TOPICS/6. RnD INNOVATION/2. Idea Review/DEEP_ANALYZE.md"), Path("TOPICS/6. RnD INNOVATION/3. Knowledge sheet/README.md")]:
+        path = ROOT / rel
+        if not path.exists():
+            fail(f"Missing capability contract: {rel}", errors)
+            continue
+        text = read_text(path).lower()
+        for field in required_fields:
+            if field not in text:
+                fail(f"Capability contract missing {field}: {rel}", errors)
+
     career = ROOT / "TOPICS/2. CAREER"
     for name in ["1. JOB_SEARCH", "2. COMPANY_RADAR", "3. REMOTE_AI"]:
         if not (career / name / "README.md").exists() or not (career / name / "PROMPT.md").exists():
