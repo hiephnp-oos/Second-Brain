@@ -17,7 +17,7 @@ The project also improves its own prompts, workflows, tool selection, workstream
 - State: Active
 - Summary: R&D innovation capability is organized into Personal Research, Knowledge Sheet + Claw, Idea Review, and the maintainer Project Improvement capability.
 - Direction: Keep research evidence traceable, minimize repeated work, and improve the system from observed results rather than adding complexity by default.
-- Last reviewed: 2026-09-19
+- Last reviewed: 2026-09-27
 
 ## Working Principles
 
@@ -289,11 +289,11 @@ No improvement becomes baseline automatically.
 
 Use Mermaid only when it materially improves understanding, review, or logic checking. Use tables or text when clearer. Visualization is presentation only, never a second source of truth.
 
-## Future Implementation
+## Implementation Status
 
-`1. Personal Research/Project Improvement/01_RND_IMPLEMENTATION_PLAN.md` is the detailed future implementation plan for applying the validated Career capability/skill pattern to R&D Innovation.
+`1. Personal Research/2. Project Improvement/01_RND_IMPLEMENTATION_PLAN.md` is now the implementation record for the applied R&D capability architecture and its remaining validation work.
 
-R&D Capability implementation is now active and uses the existing workstream structure.
+R&D Capability implementation is active and uses the existing workstream structure. The remaining architecture validation step is real-output regression on subsequent Claw batches; no new architecture layer is implied by that validation.
 
 ## Decisions
 
