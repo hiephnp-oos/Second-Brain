@@ -289,7 +289,7 @@ Use Mermaid only when it materially improves understanding, review, or logic che
 
 `1. Personal Research/Project Improvement/01_RND_IMPLEMENTATION_PLAN.md` is the detailed future implementation plan for applying the validated Career capability/skill pattern to R&D Innovation.
 
-R&D implementation is intentionally deferred until the Career pilot has been exercised with real outputs and its reusable execution/evaluation pattern has been validated.
+R&D Capability implementation is now active and uses the existing workstream structure.
 
 ## Decisions
 
