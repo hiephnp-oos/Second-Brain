@@ -333,3 +333,13 @@ Use the workstream READMEs and local `Prompt.csv` files as the entry points for 
 `1. Personal Research → 2. Idea Review → 3. Knowledge Sheet`
 
 The numeric order is the canonical workstream/navigation order. The business flow may route conditionally between workstreams; numbering does not imply every task executes all three sequentially.
+
+## Capability Baseline
+
+Discovery: PERSONAL_RESEARCH, CLAW_DISCOVERY.
+
+Evaluation: IDEA_REVIEW, EVALUATE, DEEP_ANALYZE.
+
+Knowledge: KNOWLEDGE_PROMOTION.
+
+Knowledge Sheet remains the authoritative structured knowledge layer. Existing workstreams remain the routing structure; no generic CAPABILITIES directory is introduced.
