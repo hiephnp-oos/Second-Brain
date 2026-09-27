@@ -332,6 +332,7 @@ def validate_capabilities(errors: list[str]) -> None:
         if not (career / name / "README.md").exists() or not (career / name / "PROMPT.md").exists():
             fail(f"Career capability incomplete: {name}", errors)
 
+    required_fields = ["purpose", "trigger", "input / context", "preconditions", "process", "tools / ai", "output", "validation", "evidence state", "escalation", "human verification gate", "promotion / persistence", "failure handling"]
     for rel in [
         Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"),
         Path("TOPICS/6. RnD INNOVATION/2. Idea Review/README.md"),
