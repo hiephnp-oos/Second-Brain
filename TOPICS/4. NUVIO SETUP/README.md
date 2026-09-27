@@ -30,7 +30,7 @@ Known areas of interest include stream filtering, display/format decisions, HDR/
 - State: Frozen
 - Summary: A known-good Nuvio/AIOStreams/TorBox setup and backup baseline has been established.
 - Direction: Do not tune the setup proactively; update only when a new requirement, regression, compatibility issue, or new known-good baseline appears.
-- Last reviewed: 2026-09-19
+- Last reviewed: 2026-09-27
 
 ## Working Principles
 
