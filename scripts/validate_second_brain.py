@@ -392,6 +392,15 @@ def validate_scheduled_capability_contracts(errors: list[str]) -> None:
                 fail(f"Scheduled capability contract missing '{phrase}': {rel}", errors)
 
 
+def validate_removed_topic(errors: list[str]) -> None:
+    if (ROOT / "TOPICS" / "3. CONSTRUCTION").exists():
+        fail("Removed topic still exists: TOPICS/3. CONSTRUCTION", errors)
+    for relative in [Path("AI_MEMORY.md"), Path("README.md"), Path("WORKFLOW.md"), Path("REPOSITORY_CONTRACT.md")]:
+        path = ROOT / relative
+        if path.exists() and "TOPICS/3. CONSTRUCTION" in read_text(path):
+            fail(f"Stale removed-topic reference: {relative}", errors)
+
+
 def validate_high_level_controls(errors: list[str]) -> None:
     contract = ROOT / "REPOSITORY_CONTRACT.md"
     workflow = ROOT / "WORKFLOW.md"
@@ -433,6 +442,7 @@ def main() -> int:
     validate_future_rnd_references(errors)
     validate_scheduled_capability_contracts(errors)
     validate_rnd_knowledge_sheet(errors)
+    validate_removed_topic(errors)
     validate_high_level_controls(errors)
     if errors:
         print("Second-Brain validation: FAIL")
