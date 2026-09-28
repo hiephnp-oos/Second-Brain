@@ -307,7 +307,10 @@ def validate_workstream_readmes(errors: list[str]) -> None:
     if not TOPICS.exists():
         return
     for path in TOPICS.rglob("README.md"):
-        if len(path.relative_to(TOPICS).parts) <= 2:
+        relative = path.relative_to(TOPICS)
+        # Apply workstream-specific README requirements only to workstream-owned docs.
+        # Capability and Knowledge READMEs have separate contracts/validators.
+        if "2. WORKSTREAMS" not in relative.parts:
             continue
         text = read_text(path)
         headings = {line[3:].strip() for line in text.splitlines() if line.startswith("## ")}
@@ -373,7 +376,7 @@ def validate_capabilities(errors: list[str]) -> None:
         path = rnd / "2. WORKSTREAMS" / name / "README.md"
         if not path.exists():
             fail(f"R&D workstream missing: {path.relative_to(ROOT)}", errors)
-    if not (rnd / "3. KNOWLEDGE/RELEASED/3.1 KNOWLEDGE_SHEET/README.md").exists():
+    if not (rnd / "3. KNOWLEDGE/RELEASED/Release_23Sep2026/README.md").exists():
         fail("Released R&D Knowledge Sheet entry point missing", errors)
     if not (rnd / "3. KNOWLEDGE/CANDIDATE_TEST/README.md").exists():
         fail("R&D Knowledge candidate/test entry point missing", errors)
