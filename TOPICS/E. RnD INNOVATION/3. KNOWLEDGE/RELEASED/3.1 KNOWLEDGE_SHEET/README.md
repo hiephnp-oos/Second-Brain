@@ -2,14 +2,14 @@
 
 ## Purpose
 
-This README is the routing and contract entry point for the authoritative R&D Knowledge Sheet data.
+This README is the release documentation and contract entry point for the authoritative R&D Knowledge Sheet data.
 
-The Knowledge Sheet is the reusable structured R&D knowledge layer feeding Claw Idea generation.
+The Knowledge Sheet is the released structured R&D knowledge layer feeding R&D capabilities.
 
 ## Status
 
-- State: Current authoritative baseline
-- Routing: Use this workstream for reusable structured R&D knowledge and Claw inputs.
+- State: RELEASED
+- Role: Authoritative Knowledge Sheet
 
 ## Current baseline
 
@@ -27,7 +27,7 @@ Do not reconstruct or rewrite those datasets from this README.
 
 ## Workflow
 
-`Material → structured knowledge → verified relationships → Claw Idea`
+`Candidate / Test → Evidence Check → Duplicate Check → Contradiction Check → Human Verification → Released Knowledge`
 
 Before new external research, check the existing Knowledge Sheet and define the gap. Research only what is needed to resolve a material uncertainty.
 
@@ -74,7 +74,7 @@ Proposed semantic connections must be labeled as inference/candidate rather than
 
 ## Prompt
 
-Use `Prompt.csv` in this folder for Knowledge Sheet and Claw tasks. Do not create a separate global prompt repository.
+Use `Prompt.csv` in this folder for released Knowledge Sheet search and knowledge tasks.
 
 ## Capability Boundary
 
