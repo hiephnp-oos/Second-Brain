@@ -12,7 +12,7 @@ The operating lifecycle is:
 
 `READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT`
 
-Canonical repository invariants are defined in `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md`.
+Canonical repository invariants are defined in `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 
 ## 0. GitHub control layer
 
@@ -32,7 +32,7 @@ AI Semantic Review is an advisory PR review performed by ChatGPT through the Git
 
 This is intentionally not a GitHub Actions AI call. A ChatGPT Go subscription does not provide an OpenAI API key or convert ChatGPT subscription usage into API usage; ChatGPT and the API platform have separate billing systems. Deterministic validation therefore remains automated in GitHub Actions, while semantic review is invoked through ChatGPT when a PR requires it.
 
-Recommended trigger: any PR that changes `AI_MEMORY.md`, `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md`, `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md`, topic READMEs, routing/navigation, validator logic, or other multi-file structural changes.
+Recommended trigger: any PR that changes `AI_MEMORY.md`, `SYSTEM CORE/WORKFLOW.md`, `SYSTEM CORE/REPOSITORY_CONTRACT.md`, topic READMEs, routing/navigation, validator logic, or other multi-file structural changes.
 
 ### Issue Forms
 
@@ -44,7 +44,7 @@ Use it when a request is multi-step, affects repository architecture, requires c
 
 Use Markdown/GitHub task lists for multi-step execution and completion tracking.
 
-A task list answers: "Have all required steps for this change been completed?" It does not redefine canonical requirements. `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md` remain authoritative, while GitHub Actions enforce machine-verifiable requirements.
+A task list answers: "Have all required steps for this change been completed?" It does not redefine canonical requirements. `SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/REPOSITORY_CONTRACT.md` remain authoritative, while GitHub Actions enforce machine-verifiable requirements.
 
 Recommended checklist for meaningful repository mutations:
 
@@ -99,7 +99,7 @@ A scheduled Capability must document trigger, cadence, timezone/date semantics w
 2. Identify the relevant topic folder(s) from the active-topic registry.
 3. Read `TOPICS/<topic>/README.md`.
 4. If a relevant child workstream exists, read its README before deeper artifacts.
-5. For repository maintenance or structural changes, read `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md`.
+5. For repository maintenance or structural changes, read `SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 6. Follow authoritative project/source references when detailed facts are needed.
 7. Inspect the actual repository state before deciding what to create, update, move, or delete.
 8. Use current conversation context together with memory; current explicit user information takes precedence.
@@ -242,7 +242,7 @@ When a new topic becomes recurring:
 2. Create its `README.md` using the standard template.
 3. Add it to the active-topic table in `AI_MEMORY.md`.
 4. Update root `README.md` when repository architecture/navigation is affected.
-5. Update `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` in the same logical change if a workflow rule changes.
+5. Update `SYSTEM CORE/WORKFLOW.md` in the same logical change if a workflow rule changes.
 
 When a topic/workstream is renamed, moved, merged, split, or removed, update the registry and all affected references in the same logical change.
 
@@ -263,7 +263,7 @@ For a structural or memory-maintenance change, check all affected layers:
 | Remove topic | Remove path + `AI_MEMORY.md` + affected references |
 | New workstream | Workstream artifacts/README as needed + topic routing |
 | Workstream rename/move | Path + references + topic README |
-| Topic template/rule change | `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` + affected READMEs + `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md` when invariants change |
+| Topic template/rule change | `SYSTEM CORE/WORKFLOW.md` + affected READMEs + `SYSTEM CORE/REPOSITORY_CONTRACT.md` when invariants change |
 | Global memory change | `AI_MEMORY.md` + affected topic/workstream context |
 | Topic knowledge change | Topic/workstream/artifact; update `AI_MEMORY.md` only when global/cross-topic |
 | Artifact replacement | New artifact + references + delete old artifact + verify absence |
@@ -279,7 +279,7 @@ Minimum final check:
 4. Relevant workstreams have usable routing information.
 5. Renamed/deleted/superseded files no longer appear in active references.
 6. Temporary, placeholder, duplicate, and obsolete artifacts are absent when required.
-7. If the process/template changed, `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md` are aligned.
+7. If the process/template changed, `SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/REPOSITORY_CONTRACT.md` are aligned.
 8. If repository architecture/navigation changed, root `README.md` is aligned.
 9. The final tree matches the target state rather than intended actions.
 10. Automated validation passes when available.
@@ -453,7 +453,7 @@ Handoff is temporary continuation state, not automatically persistent memory.
 
 `SYSTEM CORE/User_Prompts.md` contains reusable prompts that reinforce critical repository rules when starting work with a new AI or when an AI has shown signs of skipping repository verification.
 
-These prompts reinforce the canonical rules; they do not override `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` or `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md`.
+These prompts reinforce the canonical rules; they do not override `SYSTEM CORE/WORKFLOW.md` or `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 
 
 ## Topic / Workstream Folder Ordering

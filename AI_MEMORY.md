@@ -93,13 +93,13 @@ A topic should be added only when recurring work creates enough durable context 
 - GitHub is the persistence layer and source of truth for this AI working context.
 - The system is provider-independent so another AI can read it and continue working.
 - The preferred structure is one master memory file plus topic folders, with one `README.md` entry point per topic.
-- All topic READMEs use the standard core template defined in `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md`.
-- `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` is the authority for memory maintenance rules, topic README structure, consistency checks, retrieval/routing, and Handoff.
-- `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md` defines repository invariants, source-of-truth hierarchy, and completion state.
+- All topic READMEs use the standard core template defined in `SYSTEM CORE/WORKFLOW.md`.
+- `SYSTEM CORE/WORKFLOW.md` is the authority for memory maintenance rules, topic README structure, consistency checks, retrieval/routing, and Handoff.
+- `SYSTEM CORE/REPOSITORY_CONTRACT.md` defines repository invariants, source-of-truth hierarchy, and completion state.
 - `SYSTEM CORE/User_Prompts.md` provides reusable user-side reinforcement prompts; it does not replace the canonical workflow rules.
-- When topics are added, renamed, moved, merged, or removed, `AI_MEMORY.md` and all affected navigation/references must be updated together according to `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md`.
-- Memory maintenance uses ADD / UPDATE / REMOVE / NO_CHANGE and is defined in `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md`.
-- Memory quality, retrieval/routing, Handoff, and repository mutation lifecycle are operating rules within `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md`; there is no separate required phase document.
+- When topics are added, renamed, moved, merged, or removed, `AI_MEMORY.md` and all affected navigation/references must be updated together according to `SYSTEM CORE/WORKFLOW.md`.
+- Memory maintenance uses ADD / UPDATE / REMOVE / NO_CHANGE and is defined in `SYSTEM CORE/WORKFLOW.md`.
+- Memory quality, retrieval/routing, Handoff, and repository mutation lifecycle are operating rules within `SYSTEM CORE/WORKFLOW.md`; there is no separate required phase document.
 - Periodic review is a quality check and derived report; it should not silently modify authoritative memory.
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
 - R&D Database V4 is maintained inside Second-Brain as a complete project source, organized into Bound Script frontend, standalone Library Core (`LibDNF`), and standalone Backend Scanner. The topic README is the architecture/deployment entry point; the code files are the detailed project source.
@@ -108,7 +108,7 @@ A topic should be added only when recurring work creates enough durable context 
 - Pull requests may use AI Semantic Review as a secondary semantic review layer performed by ChatGPT through the GitHub repository connection; it must not replace deterministic validation or final repository verification.
 - Four GitHub-native controls are part of the operating model: GitHub Actions for automated validation, Issue Forms for structured change requests, Task Lists for execution/completion tracking, and Mermaid for visualizing workflows/architecture where useful.
 - GitHub Pages and GitHub Rulesets were evaluated but are not part of the current operating model. Do not create or require them unless a future decision explicitly reintroduces them.
-- Issue Forms and Task Lists are optional execution aids for changes that benefit from traceability; they do not replace `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` or `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md`.
+- Issue Forms and Task Lists are optional execution aids for changes that benefit from traceability; they do not replace `SYSTEM CORE/WORKFLOW.md` or `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 - Capability architecture is provider-independent and Skill-like; no generic runtime or Capability engine is required.
 - Schedules are external triggers; repository contracts define cadence, inputs, outputs, validation, and date semantics.
 - Staging is intermediate/unvalidated state and is never authoritative merely because it exists.
@@ -125,7 +125,7 @@ Follow this sequence:
 2. Identify which topic folder(s) are relevant to the current request.
 3. Read the relevant `TOPICS/<topic>/README.md`.
 4. If the topic contains child workstream folders, read only the relevant folder/file(s).
-5. For repository maintenance, also read `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md` before mutating content.
+5. For repository maintenance, also read `SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/REPOSITORY_CONTRACT.md` before mutating content.
 6. If a topic README or artifact references an external project/repository/document, only use that source when needed for detailed facts. For `RnD DATABASE`, use the migrated project files inside the topic folder as the detailed source; do not redirect to the old repository as the primary source.
 7. Use current conversation context together with this memory. New explicit user information takes precedence over older memory.
 8. Do not assume that the listed active topics are exhaustive.
@@ -160,7 +160,7 @@ Avoid storing:
 - confidential information that should not be shared across AI systems;
 - large copies of source code or documents already stored elsewhere.
 
-For exact update lifecycle, routing rules, consistency checklist, and Handoff model, use `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md`. For repository invariants and source-of-truth priority, use `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md`.
+For exact update lifecycle, routing rules, consistency checklist, and Handoff model, use `SYSTEM CORE/WORKFLOW.md`. For repository invariants and source-of-truth priority, use `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 
 ## 11. PERIODIC REVIEW
 
