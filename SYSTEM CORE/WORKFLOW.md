@@ -429,7 +429,7 @@ Rules:
 9. File existence is not proof of currency.
 10. When freshness matters, inspect Git history or the authoritative source.
 
-`SYSTEM CORE/Retrieval_Test.md` is the lightweight retrieval test. Repeated retrieval failure should strengthen the generic routing/control model before adding retrieval infrastructure.
+`SYSTEM CORE/CAPABILITIES/2. RETRIEVAL/Retrieval_Test.md` is the lightweight retrieval test. Repeated retrieval failure should strengthen the generic routing/control model before adding retrieval infrastructure.
 
 ## 16. Handoff
 

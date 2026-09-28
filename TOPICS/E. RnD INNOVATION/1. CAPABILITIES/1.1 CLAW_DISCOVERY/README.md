@@ -16,4 +16,4 @@ Reusable R&D discovery capability for generating technology/solution candidates 
 This capability is reusable by Personal Research, Idea Review, and future R&D workstreams.
 
 ## Scheduler Contract
-The scheduler is a trigger/orchestration layer only. Follow repository-defined cadence and execution-date semantics. Staging is not an approved Knowledge Sheet record.
+The scheduler is a trigger/orchestration layer only. Follow repository-defined cadence and execution date semantics. Staging is not an approved Knowledge Sheet record.
