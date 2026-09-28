@@ -34,6 +34,20 @@ Discover and evaluate remote full-time and remote side-work opportunities using 
 
 Working reference: approximately 21:00–00:00 ICT, 2–4 days/week, around 6–12 hours/week. Treat this as a constraint baseline, not permanent memory if the user changes it.
 
+## Matching Model
+
+Calculate Matching (%) using this weighted screening model:
+
+- Domain / engineering / quality fit: 25%
+- Deliverable / task fit: 20%
+- AI leverage or AI-enabled value: 15%
+- Evidence / delivery credibility: 15%
+- Remote feasibility: 10%
+- Compensation / commercial fit: 10%
+- Schedule compatibility: 5%
+
+The score is a screening aid, not an automatic decision. Apply hard blockers separately; mark a component unknown when evidence is missing and do not silently redistribute its weight. Explain material uncertainty in Gaps / Risks.
+
 ## Output Contract
 
 Use:
