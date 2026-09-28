@@ -259,3 +259,8 @@ Human Verification Gate: required before authoritative Career baseline changes.
 Promotion / Persistence: transient opportunity outputs remain in the operational tracker; durable rules and baseline changes enter GitHub only after approval.
 
 Failure Handling: preserve unknowns, report missing evidence, and do not fabricate fields to satisfy output schemas.
+
+
+## Scheduler Persistence / Verification
+
+On Monday, the weekly run record is a required durable output. The sequence is `Execute search/synthesis → Write GitHub record → Re-read exact path → Validate → Verify final repository state → Report`. A successful search or synthesis is not evidence that the weekly record exists.
