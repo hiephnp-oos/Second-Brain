@@ -16,9 +16,9 @@ TOPIC_SECTION_ALIASES = {
 }
 TOPIC_STATUS_VALUES = {"Building", "Active", "Maintenance", "Frozen", "Paused", "Archived"}
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder"]
-OPERATIONAL_STATE_DIRS = {Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/staging")}
+OPERATIONAL_STATE_DIRS = {Path("TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/staging")}
 WORKSTREAM_PURPOSE_MARKERS = {"Purpose", "Purpose / Scope", "Scope", "Current Context"}
-WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule", "Capability", "Capability Contract"}
+WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule", "Capability", "Capability Contract", "Contract"}
 CANONICAL_LIFECYCLE = "READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT"
 FORBIDDEN_PATHS = [
     Path("docs"),
@@ -26,8 +26,8 @@ FORBIDDEN_PATHS = [
 ]
 CANONICAL_DOCS = [
     Path("README.md"),
-    Path("WORKFLOW.md"),
-    Path("REPOSITORY_CONTRACT.md"),
+    Path("SYSTEM CORE/WORKFLOW.md"),
+    Path("SYSTEM CORE/REPOSITORY_CONTRACT.md"),
 ]
 REMOVED_PLATFORM_CONTROLS = ["GitHub Pages", "GitHub Rulesets"]
 REQUIRED_GITHUB_COMPONENTS = [
@@ -48,13 +48,13 @@ def read_text(path: Path) -> str:
 
 
 def validate_root(errors: list[str]) -> None:
-    for name in ["AI_MEMORY.md", "WORKFLOW.md", "REPOSITORY_CONTRACT.md", "README.md"]:
+    required = ["AI_MEMORY.md", "README.md", "SYSTEM CORE/WORKFLOW.md", "SYSTEM CORE/REPOSITORY_CONTRACT.md"]
+    for name in required:
         if not (ROOT / name).exists():
-            fail(f"Missing required root file: {name}", errors)
+            fail(f"Missing required root/system file: {name}", errors)
     for name in REQUIRED_GITHUB_COMPONENTS:
         if not (ROOT / name).exists():
             fail(f"Missing required GitHub component: {name}", errors)
-
 
 def validate_topic_readme(path: Path, errors: list[str]) -> None:
     text = read_text(path)
@@ -173,7 +173,7 @@ def validate_removed_platform_controls(errors: list[str]) -> None:
 
 
 def validate_local_references(errors: list[str]) -> None:
-    root_pattern = re.compile(r"`((?:TOPICS|\.github|scripts)/[^`]+)`")
+    root_pattern = re.compile(r"`((?:TOPICS|SYSTEM CORE|\.github|scripts)/[^`]+)`")
     markdown_link_pattern = re.compile(r"\]\(([^)]+)\)")
 
     def is_template_reference(candidate: str) -> bool:
@@ -308,63 +308,41 @@ def validate_workstream_readmes(errors: list[str]) -> None:
 
 
 def validate_capabilities(errors: list[str]) -> None:
-    # Capability contracts are validated against the global 13-field contract.
-    required_fields = ["purpose", "trigger", "input / context", "preconditions", "process", "tools / ai", "output", "validation", "evidence state", "escalation", "human verification gate", "promotion / persistence", "failure handling"]
-    docs = [
-        Path("TOPICS/2. CAREER/CAREER_EXECUTION_CONTRACT.md"),
-        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/README.md"),
-        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"),
-        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/README.md"),
-        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/EVALUATE.md"),
-        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/DEEP_ANALYZE.md"),
-        Path("TOPICS/6. RnD INNOVATION/3. Knowledge sheet/README.md"),
-    ]
-    for rel in docs:
-        path = ROOT / rel
+    career = ROOT / "TOPICS/B. CAREER"
+    for name in ["1.1 JOB_SEARCH", "1.2 COMPANY_RADAR", "1.3 REMOTE_AI"]:
+        if not (career / "1. CAPABILITIES" / name / "README.md").exists() or not (career / "1. CAPABILITIES" / name / "PROMPT.md").exists():
+            fail(f"Career capability incomplete: {name}", errors)
+    weekly = career / "2. REPORTS/2.1 WEEKLY"
+    if not (weekly / "README.md").exists():
+        fail("Career weekly report contract missing", errors)
+
+    rnd = ROOT / "TOPICS/E. RnD INNOVATION"
+    capability_names = ["1.1 CLAW_DISCOVERY","1.2 VERIFICATION","1.3 DEEP_RESEARCH","1.4 EVALUATION","1.5 KNOWLEDGE_PROMOTION"]
+    for name in capability_names:
+        path = rnd / "1. CAPABILITIES" / name / "README.md"
         if not path.exists():
-            fail(f"Missing capability contract: {rel}", errors)
+            fail(f"R&D capability missing: {path.relative_to(ROOT)}", errors)
             continue
         text = read_text(path).lower()
-        if "capability" not in text:
-            fail(f"Capability semantics missing: {rel}", errors)
-        for field in required_fields:
-            if field not in text:
-                fail(f"Capability contract missing {field}: {rel}", errors)
-
-    career = ROOT / "TOPICS/2. CAREER"
-    for name in ["1. JOB_SEARCH", "2. COMPANY_RADAR", "3. REMOTE_AI"]:
-        if not (career / name / "README.md").exists() or not (career / name / "PROMPT.md").exists():
-            fail(f"Career capability incomplete: {name}", errors)
-
-    rnd_required = [
-        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/README.md"),
-        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"),
-        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/README.md"),
-        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/EVALUATE.md"),
-        Path("TOPICS/6. RnD INNOVATION/2. Idea Review/DEEP_ANALYZE.md"),
-        Path("TOPICS/6. RnD INNOVATION/3. Knowledge sheet/README.md"),
-    ]
-    for rel in rnd_required:
-        if not (ROOT / rel).exists():
-            fail(f"R&D capability missing: {rel}", errors)
-
-    career_contract = ROOT / "TOPICS/2. CAREER/CAREER_EXECUTION_CONTRACT.md"
-    if career_contract.exists():
-        text = read_text(career_contract)
-        for phrase in ["Master Scheduler Boundary", "trigger/orchestration only", "must not introduce a second copy"]:
+        for phrase in ["purpose", "trigger", "input", "process", "output", "validation"]:
             if phrase not in text:
-                fail(f"Career scheduler boundary missing: {phrase}", errors)
+                fail(f"R&D capability contract missing '{phrase}': {path.relative_to(ROOT)}", errors)
 
-    claw_contract = ROOT / "TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"
-    if claw_contract.exists():
-        text = read_text(claw_contract)
-        for phrase in ["Scheduler Boundary", "trigger/orchestration layer only", "must not duplicate RS-10/RS-11/RS-12/RS-13"]:
-            if phrase not in text:
-                fail(f"Claw scheduler boundary missing: {phrase}", errors)
+    for name in ["2.1 PERSONAL_RESEARCH","2.2 IDEA_REVIEW","2.3 PROJECT_IMPROVEMENT"]:
+        path = rnd / "2. WORKSTREAMS" / name / "README.md"
+        if not path.exists():
+            fail(f"R&D workstream missing: {path.relative_to(ROOT)}", errors)
+    if not (rnd / "3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/README.md").exists():
+        fail("R&D Knowledge Sheet entry point missing", errors)
 
+    system = ROOT / "SYSTEM CORE/CAPABILITIES"
+    for name in ["1. HANDOFF","2. RETRIEVAL"]:
+        path = system / name / "README.md"
+        if not path.exists():
+            fail(f"System Core capability missing: {path.relative_to(ROOT)}", errors)
 
 def validate_staging_semantics(errors: list[str]) -> None:
-    rel = Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/staging")
+    rel = Path("TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/staging")
     path = ROOT / rel
     if not path.exists():
         fail(f"Approved staging directory missing: {rel}", errors)
@@ -381,8 +359,8 @@ def validate_staging_semantics(errors: list[str]) -> None:
 
 def validate_future_rnd_references(errors: list[str]) -> None:
     for rel in [
-        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/02_SoL-Pi Reference Architecture.md"),
-        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/03_Future Improvement Reference Architecture.md"),
+        Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/02_SoL-Pi Reference Architecture.md"),
+        Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/03_Future Improvement Reference Architecture.md"),
     ]:
         if not (ROOT / rel).exists():
             fail(f"Required R&D future reference missing: {rel}", errors)
@@ -390,8 +368,8 @@ def validate_future_rnd_references(errors: list[str]) -> None:
 
 def validate_scheduled_capability_contracts(errors: list[str]) -> None:
     for rel in [
-        Path("TOPICS/2. CAREER/IMPLEMENTATION_PLAN.md"),
-        Path("TOPICS/6. RnD INNOVATION/1. Personal Research/1. Claw Discovery/README.md"),
+        Path("TOPICS/B. CAREER/IMPLEMENTATION_PLAN.md"),
+        Path("TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/README.md"),
     ]:
         path = ROOT / rel
         if not path.exists():
@@ -405,8 +383,8 @@ def validate_scheduled_capability_contracts(errors: list[str]) -> None:
 
 def validate_prompt_duplicate_rules(errors: list[str]) -> None:
     prompt_files = [
-        ROOT / "TOPICS/6. RnD INNOVATION/1. Personal Research/Prompt.csv",
-        ROOT / "TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/Prompt.csv",
+        ROOT / "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/Prompt.csv",
+        ROOT / "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/Prompt.csv",
     ]
     for path in prompt_files:
         if not path.exists():
@@ -420,7 +398,7 @@ def validate_prompt_duplicate_rules(errors: list[str]) -> None:
 
 
 def validate_rnd_regression_contract(errors: list[str]) -> None:
-    root = Path("TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/Regression")
+    root = Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/Regression")
     required = [root / "README.md", root / "CASES.md", root / "RUN_TEMPLATE.md", root / "BASELINE.md"]
     for rel in required:
         if not rel.exists():
@@ -467,15 +445,15 @@ def validate_rnd_regression_contract(errors: list[str]) -> None:
 def validate_removed_topic(errors: list[str]) -> None:
     if (ROOT / "TOPICS" / "3. CONSTRUCTION").exists():
         fail("Removed topic still exists: TOPICS/3. CONSTRUCTION", errors)
-    for relative in [Path("AI_MEMORY.md"), Path("README.md"), Path("WORKFLOW.md"), Path("REPOSITORY_CONTRACT.md")]:
+    for relative in [Path("AI_MEMORY.md"), Path("README.md"), Path("SYSTEM CORE/WORKFLOW.md"), Path("SYSTEM CORE/REPOSITORY_CONTRACT.md")]:
         path = ROOT / relative
         if path.exists() and "TOPICS/3. CONSTRUCTION" in read_text(path):
             fail(f"Stale removed-topic reference: {relative}", errors)
 
 
 def validate_high_level_controls(errors: list[str]) -> None:
-    contract = ROOT / "REPOSITORY_CONTRACT.md"
-    workflow = ROOT / "WORKFLOW.md"
+    contract = ROOT / "SYSTEM CORE/REPOSITORY_CONTRACT.md"
+    workflow = ROOT / "SYSTEM CORE/WORKFLOW.md"
     readme = ROOT / "README.md"
     if contract.exists():
         text = read_text(contract)
@@ -489,19 +467,44 @@ def validate_high_level_controls(errors: list[str]) -> None:
                 fail(f"WORKFLOW.md missing control section/phrase: {phrase}", errors)
         if CANONICAL_LIFECYCLE not in text:
             fail("WORKFLOW.md lifecycle does not match canonical lifecycle", errors)
-    operations = ROOT / "TOPICS" / "7. SYSTEMS" / "Second_Brain_Operations.md"
+    operations = ROOT / "SYSTEM CORE/Second_Brain_Operations.md"
     if operations.exists() and CANONICAL_LIFECYCLE not in read_text(operations):
         fail("Second_Brain_Operations.md lifecycle is out of sync with canonical lifecycle", errors)
     if readme.exists():
         text = read_text(readme)
-        for phrase in ["GitHub Actions", "Issue Forms", "Task Lists", "Mermaid", "Capability", "Staging"]:
+        for phrase in ["GitHub Actions", "Issue Forms", "Task Lists", "Mermaid", "Capability", "Staging", "SYSTEM CORE"]:
             if phrase not in text:
                 fail(f"README.md missing platform capability: {phrase}", errors)
 
+def validate_target_structure(errors: list[str]) -> None:
+    expected = {"A. AI GENERAL","B. CAREER","C. NUVIO SETUP","D. RnD DATABASE","E. RnD INNOVATION"}
+    actual = {p.name for p in (ROOT / "TOPICS").iterdir() if p.is_dir()} if (ROOT / "TOPICS").exists() else set()
+    if actual != expected:
+        fail(f"Topic structure mismatch: expected {sorted(expected)}, got {sorted(actual)}", errors)
+    legacy = ["1. AI GENERAL","2. CAREER","3. CONSTRUCTION","4. NUVIO SETUP","5. RnD DATABASE","6. RnD INNOVATION","7. SYSTEMS"]
+    for name in legacy:
+        if (ROOT / "TOPICS" / name).exists():
+            fail(f"Legacy topic folder still exists: TOPICS/{name}", errors)
+    for name in ["WORKFLOW.md","REPOSITORY_CONTRACT.md"]:
+        if (ROOT / name).exists():
+            fail(f"Legacy root control still exists: {name}", errors)
+    required_system = [
+        "SYSTEM CORE/README.md",
+        "SYSTEM CORE/WORKFLOW.md",
+        "SYSTEM CORE/REPOSITORY_CONTRACT.md",
+        "SYSTEM CORE/CAPABILITIES/1. HANDOFF/README.md",
+        "SYSTEM CORE/CAPABILITIES/1. HANDOFF/Handoff_Template.md",
+        "SYSTEM CORE/CAPABILITIES/2. RETRIEVAL/README.md",
+        "SYSTEM CORE/CAPABILITIES/2. RETRIEVAL/Retrieval_Test.md",
+    ]
+    for rel in required_system:
+        if not (ROOT / rel).exists():
+            fail(f"Missing System Core artifact: {rel}", errors)
 
 def main() -> int:
     errors: list[str] = []
     validate_root(errors)
+    validate_target_structure(errors)
     active, registry_states = extract_topic_registry(errors)
     validate_topics(active, registry_states, errors)
     validate_forbidden_files(errors)

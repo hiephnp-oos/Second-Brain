@@ -105,7 +105,7 @@ Topic rename/move, architecture change, mass migration, workflow/contract change
 
 ## When AI starts drifting
 
-Use `TOPICS/7. SYSTEMS/User_Prompts.md`, especially:
+Use `SYSTEM CORE/User_Prompts.md`, especially:
 
 - SB-03 reliable mutation;
 - SB-04 target-state thinking;
