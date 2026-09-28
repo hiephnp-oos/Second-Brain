@@ -10,7 +10,7 @@ Create or update one file per ISO week: `YYYY-W##.md`, after Monday Weekly Caree
 
 ## Required Review Format
 
-The report must contain exactly three primary result tables, in this order:
+Create exactly **one weekly report file per ISO week**. That single report must contain exactly three primary result tables, in this order:
 
 1. **Job Search** — use the exact 16-column schema in `1. CAPABILITIES/1.1 JOB_SEARCH/README.md`.
 2. **Company Radar** — use the exact 13-column schema in `1. CAPABILITIES/1.2 COMPANY_RADAR/README.md`.
