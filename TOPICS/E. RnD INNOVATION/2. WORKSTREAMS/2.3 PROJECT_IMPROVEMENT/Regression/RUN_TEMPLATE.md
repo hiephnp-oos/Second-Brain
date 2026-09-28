@@ -7,9 +7,14 @@ Copy this template for a real batch/capability evaluation when a persistent run 
 - Run ID:
 - Batch / execution date:
 - Capability:
+- Capability version / commit:
 - Prompt ID / execution contract:
+- Test layer: TRIGGER / FUNCTIONAL / PERFORMANCE
 - Evaluator:
 - Baseline compared with:
+- Input and available context:
+- Expected behavior:
+- Observed output reference:
 - Input/output source:
 
 ## Mechanical checks
@@ -21,7 +26,16 @@ Copy this template for a real batch/capability evaluation when a persistent run 
 - Staging / persistence path correct:
 - Human-verification gate preserved:
 
-## Regression cases
+## Trigger tests
+
+| Test | Expected behavior | Observed output reference | Result |
+|---|---|---|---|
+| Intended trigger | | | |
+| Paraphrased trigger | | | |
+| Unrelated / non-trigger | | | |
+| Capability overlap boundary | | | |
+
+## Functional regression cases
 
 | Case ID | Result | Evidence / observation | Source location |
 |---|---|---|---|
@@ -37,6 +51,43 @@ Copy this template for a real batch/capability evaluation when a persistent run 
 | RND-REG-010 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
 | RND-REG-011 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
 | RND-REG-012 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-013 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-014 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-015 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-016 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-017 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-018 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-019 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-020 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-021 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-022 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-023 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-024 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-025 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-026 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-027 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-028 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-029 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-030 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-031 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-032 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-033 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-034 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-035 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-036 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-037 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+| RND-REG-038 | PASS / FAIL / NOT OBSERVED / INCONCLUSIVE | | |
+
+## Performance comparison
+
+- Baseline task/run:
+- Compared task/run:
+- Materially comparable (Y/N) and rationale:
+- Conditions changed (prompt, context, tools, schema, evaluator):
+- Observable measure(s):
+- Baseline result:
+- Current result:
+- Attribution limitations:
 
 ## Summary
 
