@@ -180,3 +180,8 @@ Human Verification Gate: required before promotion to authoritative knowledge.
 Promotion / Persistence: keep execution output in the existing staging path; promotion uses KNOWLEDGE_PROMOTION.
 
 Failure Handling: record insufficient evidence explicitly; never manufacture evidence.
+
+
+## Scheduler Persistence / Verification
+
+A Claw run is complete only after the daily record is written and re-read. When three new UNBATCHED daily records exist, the RS-13 batch must be written and re-read, and exactly those three source records must be marked BATCHED. Persistence or verification failure is FAILED / INCOMPLETE.
