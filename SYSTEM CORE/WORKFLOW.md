@@ -362,7 +362,7 @@ Treat the GitHub connector as an execution interface, not as completion truth.
 - Do not use repeated individual file commits on `main` for one logical multi-file change when an atomic commit mechanism is available.
 - After mutation, verify the complete final state rather than stopping after an individual successful action.
 
-## 12. Risk-based review depth
+## 12. Risk-based execution and review depth
 
 Risk determines the **depth of review**, not whether to use a PR.
 
