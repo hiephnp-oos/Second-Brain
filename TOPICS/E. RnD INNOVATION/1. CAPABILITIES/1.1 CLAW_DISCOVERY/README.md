@@ -108,3 +108,8 @@ Execution output belongs to the invoking Workstream. For scheduled Claw, the can
 - **Prior-batch duplicate:** identify prior candidate and preserve duplicate disposition under Workstream rules.
 - **Cross-industry technology:** retain as transfer candidate until target-condition evidence exists.
 - **Regression:** apply RND-REG-001–010 and relevant later cases in Project Improvement. Contract completeness is not functional PASS.
+
+
+## Scheduler and cadence
+The scheduler is a trigger/orchestration layer only; it does not redefine discovery methods, own outputs, or authorize Knowledge promotion. Scheduled Claw execution follows the cadence and run-date semantics defined by the active PERSONAL_RESEARCH scheduler contract. This capability does not establish a second cadence or override that source. The execution date recorded in an output must reflect the scheduled run's intended local date, not the previous UTC date or workflow start date. If the scheduler context is missing or ambiguous, do not infer a date; record the limitation and request clarification.
+
