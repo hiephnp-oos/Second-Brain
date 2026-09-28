@@ -496,7 +496,7 @@ def validate_rnd_regression_contract(errors: list[str]) -> None:
     cases = root / "CASES.md"
     if cases.exists():
         text = read_text(cases)
-        required_case_ids = [f"RND-REG-{i:03d}" for i in range(1, 13)]
+        required_case_ids = [f"RND-REG-{i:03d}" for i in range(1, 39)]
         for case_id in required_case_ids:
             if case_id not in text:
                 fail(f"Missing R&D regression case: {case_id}", errors)
@@ -512,6 +512,8 @@ def validate_rnd_regression_contract(errors: list[str]) -> None:
             "Prompt ID / execution contract:",
             "Baseline compared with:",
             "Regression cases",
+            *[f"RND-REG-{i:03d}" for i in range(1, 39)],
+            "Performance comparison",
             "Human decision",
             "Do not update the R&D baseline",
         ]:
