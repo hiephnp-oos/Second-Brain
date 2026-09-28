@@ -30,11 +30,14 @@ Core review questions:
 
 ## Capability Routing
 
+Shared capability rules are governed by [`1. CAPABILITIES/README.md`](../../1. CAPABILITIES/README.md). This workstream may specialize task routing but must not redefine reusable methods.
+
 IDEA_REVIEW is the workstream that owns idea-specific inputs, review records, and dispositions. It invokes reusable capabilities rather than redefining them:
 
 - `../../1. CAPABILITIES/1.4 EVALUATION/README.md` — reusable evaluation contract.
 - `../../1. CAPABILITIES/1.3 DEEP_RESEARCH/README.md` — reusable deep research contract.
-- `../../1. CAPABILITIES/1.2 VERIFICATION/README.md` — verification when evidence needs confirmation.
+- `../../1. CAPABILITIES/1.2 VERIFICATION/README.md` — invoke for bounded checks of material claims in IR-02 through IR-06 and when IR-01 identifies a decision-relevant evidence gap. Use the capability's claim-state and verification-outcome distinction; do not copy its procedure into this workstream.
+
 
 Capability definitions are maintained only in `1. CAPABILITIES`. This workstream owns the execution context and resulting records.
 
@@ -86,7 +89,7 @@ Output: review with evidence, technology, mechanism, competitor/supplier support
 
 Validation: no invented records or evidence; distinguish evidence from inference; absence is not proof of novelty.
 
-Evidence State: VERIFIED / EVIDENCED, INFERRED, WORKING ASSUMPTION, UNKNOWN, PROPOSED.
+Evidence State: follow the shared capability baseline. Use EVIDENCED / INFERRED / ASSUMPTION / UNKNOWN / PROPOSED / CONFLICTING for claims; record verification outcome separately. Do not use VERIFIED as an epistemic state.
 
 Escalation: evidence gap → PERSONAL_RESEARCH; structured evaluation → EVALUATION capability; deeper investigation → DEEP_RESEARCH capability.
 

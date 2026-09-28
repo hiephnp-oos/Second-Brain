@@ -423,6 +423,8 @@ Execute in the order below. Each action is a bounded pull request or cohesive ch
 
 ### Phase 2 — Core capability implementation
 
+**Execution status (2026-09-28):** VERIFICATION contract and direct IDEA_REVIEW routing updates are implemented on the Phase 2 branch and pending PR validation/review. Regression cases RND-REG-013–015 have been added. This is not yet a functional PASS; execution tests remain to be run and recorded.
+
 **Objective:** upgrade one capability at a time using the approved standard.
 
 Recommended order:

@@ -38,6 +38,8 @@ Before creating a new file, check the canonical location and existing artifacts 
 
 ## Routing
 
+Shared reusable methods are governed by [`1. CAPABILITIES/README.md`](../../1. CAPABILITIES/README.md). Use VERIFICATION for bounded material-claim checks; use DEEP_RESEARCH only when scope, conflict, or decision impact requires broader synthesis.
+
 `Product / mechanism / technology / material / process / supplier` → engineering evidence research
 
 `Patent / prior art / claims / CPC / IPC` → patent research
