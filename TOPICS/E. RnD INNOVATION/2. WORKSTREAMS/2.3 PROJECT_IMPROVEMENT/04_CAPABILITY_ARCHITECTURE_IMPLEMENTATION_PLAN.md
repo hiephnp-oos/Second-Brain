@@ -496,21 +496,7 @@ Use the existing `2.3 PROJECT_IMPROVEMENT/Regression/` artifacts. Extend them on
 
 ### Phase 5 — Workstream integration and hardening
 
-**Execution status (2026-09-28):** Workstreams and Knowledge entrypoint/ownership/handoff refactor merged in PR #38 (`f8ef8df`). Actual saved Claw batch and released Knowledge v2 were inspected; findings are recorded in `Regression/WORKSTREAM_KNOWLEDGE_OUTPUT_REVIEW_2026-09-28.md`. Supplier Tech v2 schema defect was corrected; Knowledge references are structurally intact. RS-13 evidence-state contract hardening and the output review record are in progress on a follow-up PR. The integrated run across the five capabilities is the remaining execution/acceptance step; do not require separate real-output gates after each phase.
-
-| Action | Work | Acceptance |
-|---|---|---|
-| P5-A01 | Integrate Personal Research routes and scheduled Claw contract | Scheduler remains trigger-only; outputs remain workstream-owned |
-| P5-A02 | Integrate Idea Review routes | Idea-specific data stays in Idea Review; reusable methods are referenced |
-| P5-A03 | Integrate Project Improvement routes | System-improvement artifacts remain in Project Improvement |
-| P5-A04 | Audit Knowledge Candidate/Released boundary | No staging or unapproved candidate is treated as authoritative |
-| P5-A05 | Search for stale links, duplicated methods, old names, and conflicting enums | No active stale reference |
-| P5-A06 | Run full repository validator and relevant real-output regression | Mechanical and semantic results separately reported |
-| P5-A07 | Update topic README capability map and implementation history | Documentation reflects only merged/verified state |
-
-**Gate G5:** integration is accepted only when source files, routing, prompts, Knowledge boundary, and validation artifacts agree.
-
-### Phase 6 — Baseline promotion and maintenance
+**Execution status (2026-09-28):** Workstreams/Knowledge refactor merged in PR #38; RS-13 contract hardening and saved-output review merged in PR #39; integrated C-27-02 run merged in PR #40. The run used the committed real Claw batch and traversed Claw output → Verification → Deep Research → Evaluation → Knowledge Promotion readiness. Fresh external evidence was checked; candidate was recommended DROP as currently framed; no Released Knowledge write was made. CI passed for PRs #38–#40 and link validation passed. Scheduler itself was not invoked. Phase 5 integration is complete for this representative path; broad regression coverage and any human-authorized Knowledge promotion remain separate. Do not require separate real-output gates after each capability phase.
 
 **Objective:** promote only tested changes and keep the architecture maintainable.
 
