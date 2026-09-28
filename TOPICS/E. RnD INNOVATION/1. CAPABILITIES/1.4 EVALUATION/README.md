@@ -25,7 +25,7 @@ A reusable capability that assesses an identified idea, candidate, or finding ag
 
 If the target or decision cannot be identified, request the minimum missing context. Missing evidence is not a reason to invent values or force a disposition.
 
-## 5. Procedure
+## 5. Process
 1. Frame the decision question and identify the target and intended application.
 2. Inspect relevant Released Knowledge, prior evaluations, and supplied evidence; record access gaps.
 3. Define decision-relevant criteria and explain their relevance. Separate mandatory constraints from preferences.
@@ -69,7 +69,7 @@ Return, as applicable:
 - Next action/route or explicit no-handoff, with rationale
 - Output destination and human approval status
 
-## 10. Quality gates
+## 10. Validation and quality gates
 - [ ] Target and decision context are explicit.
 - [ ] Criteria are relevant and explained; no hidden universal checklist.
 - [ ] Mandatory constraints are distinct from preferences.
@@ -81,7 +81,7 @@ Return, as applicable:
 - [ ] Decision-critical unknowns and next evidence are visible.
 - [ ] Workstream retains final decision and output ownership.
 
-## 11. Handoffs
+## 11. Escalation and handoffs
 | Condition | Route | Minimum payload |
 |---|---|---|
 | Narrow factual claim unresolved | VERIFICATION | Claim, decision impact, scope, sources checked, exact gap |
@@ -96,7 +96,7 @@ Do not hand off merely to complete a pipeline.
 ## 12. Human verification gate
 Human/workstream owner retains the final disposition. Human/specialist review is required for consequential unresolved technical risks, physical testing, supplier confirmation, certification/compliance authority, legal/IP interpretation, and durable baseline or Released Knowledge changes.
 
-## 13. Failure and stop conditions
+## 13. Failure handling and stop conditions
 Return a bounded inconclusive/unknown result when criteria are missing or unsuitable, evidence is inaccessible, material conflicts remain, or the requested conclusion exceeds available evidence. State what was checked, what remains unresolved, and the minimum next evidence needed. Do not force a score or disposition.
 
 ## 14. Promotion / persistence
