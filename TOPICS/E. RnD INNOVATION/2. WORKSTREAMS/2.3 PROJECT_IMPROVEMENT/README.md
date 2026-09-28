@@ -64,6 +64,7 @@ The regression layer evaluates routing, evidence discipline, discovery quality, 
 - `01_RND_IMPLEMENTATION_PLAN.md` — first applied improvement path: implementation record for the R&D capability/skill execution pattern and its remaining real-output validation. It is not the active execution layer.
 - `02_SoL-Pi Reference Architecture.md` — second applied/reference path: independent architecture for selectively adapting SoL-Pi agent-harness principles when later evidence shows a material harness problem. It is intentionally independent from `01_RND_IMPLEMENTATION_PLAN.md` and does not activate or require any SoL-Pi implementation.
 - `03_Future Improvement Reference Architecture.md` — third applied/reference path: future improvement architecture retained as a later option; it does not activate the architecture merely by existing.
+- `04_CAPABILITY_ARCHITECTURE_IMPLEMENTATION_PLAN.md` — detailed, controlling plan for the next R&D capability architecture expansion. It defines target contracts, routing, phased actions, acceptance gates, testing, change control, and the evidence-based decision for a possible Experiment Design capability. It is a planning artifact and does not activate implementation by itself.
 
 Both documents are planning/reference artifacts. Neither changes the current R&D baseline merely by existing.
 
@@ -101,6 +102,7 @@ Use this section to follow the actual improvement sequence. Numbering reflects a
 | 02 | `02_SoL-Pi Reference Architecture.md` | Reference / fallback | Independent reference architecture to use only if the R&D implementation path later demonstrates a material harness limitation. |
 | 03 | `03_Future Improvement Reference Architecture.md` | Future reference | Additional future-improvement reference retained for later evidence-driven evaluation; not part of the current execution baseline. |
 | 04 | `Regression/` | Active evaluation layer | Added after architecture review to evaluate real R&D capability outputs against recurring/material regression cases before changing the baseline. |
+| 05 | `04_CAPABILITY_ARCHITECTURE_IMPLEMENTATION_PLAN.md` | Proposed / planning baseline | Detailed architecture and controlled implementation roadmap for expanding reusable R&D capabilities; implementation begins with a baseline/dependency audit. |
 
 ### Follow Rule
 
