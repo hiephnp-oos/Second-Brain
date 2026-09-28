@@ -455,6 +455,8 @@ For each capability, execute the same action sequence:
 
 ### Phase 3 — Capability extension decision and implementation
 
+**Execution status (2026-09-28):** P3-A01 through P3-A03 are complete and merged. P3-A04 human decision: **DEFER** (recorded in `PHASE3_P3-A04_DECISION_DEFER.md`). P3-A05 and P3-A06 are not activated; no CAP-06 folder, conditional method, or routing change is authorized. Phase 3 is closed as deferred, with a defined evidence trigger for reopening.
+
 **Objective:** decide whether CAP-06 is justified.
 
 | Action | Work | Acceptance |
@@ -462,7 +464,7 @@ For each capability, execute the same action sequence:
 | P3-A01 | Collect real cases where desk research cannot resolve physical uncertainty | Case register with source/output references |
 | P3-A02 | Identify whether current DEEP_RESEARCH/EVALUATION can handle test planning without boundary confusion | Overlap analysis |
 | P3-A03 | Check reuse across workstreams and expected frequency | Reuse evidence, not hypothetical appeal |
-| P3-A04 | Decide add standalone capability, add conditional reference, or defer | Human-approved decision |
+| P3-A04 | Decide add standalone capability, add conditional reference, or defer | Human-approved decision | **Completed: DEFER.** See decision record.
 | P3-A05 | If approved, implement CAP-06 with same contract/test standard | No test execution or lab-data ownership implied |
 | P3-A06 | Integrate routing and workstream handoffs | No duplicate experiment instructions |
 
