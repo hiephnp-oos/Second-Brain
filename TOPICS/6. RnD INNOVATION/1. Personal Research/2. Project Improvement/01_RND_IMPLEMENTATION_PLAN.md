@@ -384,6 +384,23 @@ The Batch #2 experiment must explicitly test whether the Discovery Quality Gate 
 
 Do not promote a lesson to permanent baseline from one rejected candidate alone. Promote only when the pattern is material, generalizable, tested on subsequent outputs, and does not introduce unacceptable regression.
 
+## Batch #3 Human Review Lessons
+
+Batch #3 human review identified a recurring discovery failure pattern: technically plausible candidates were being framed as product ideas even when the pain point was weak, the market category already existed, the delta was mainly a spray/feature variation, the novelty came from recombination without a new outcome, or the proposed solution belonged primarily at system level.
+
+Experimental rules for Batch #4:
+- **Strong Pain / Opportunity:** require a materially important user or product problem; incremental improvement alone is insufficient.
+- **Early Market Precedent Check:** check commercial categories and established solutions before detailed idea elaboration; no meaningful DELTA → VARIANT / BASELINE / DROP.
+- **Feature / Variant Boundary:** spray pattern, nozzle geometry, material, treatment method, location or similar implementation changes remain variants unless they create a materially different outcome, capability or architecture.
+- **Recombination Value:** A+B+C is not innovation unless the combination creates a capability/outcome not adequately delivered by the components independently.
+- **System Boundary:** do not force water-heater, plumbing, upstream-treatment or other system architecture into a fitting idea without a distinct fitting-level capability/outcome.
+- **Quality target:** prefer fewer, stronger candidates and accept a zero-qualified batch when no candidate passes the gate.
+
+Validation:
+Batch #3 observation → Batch #4 experimental rules → Batch #4 output comparison → Human Verify → Promote / Revise / Reject
+
+These rules remain experimental and are not permanent baseline until Batch #4 evidence confirms improved discovery quality without unacceptable suppression of valid opportunities.
+
 ## Phase 7 — Promotion to Baseline
 
 Use:
