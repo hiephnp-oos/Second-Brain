@@ -1,40 +1,43 @@
-# EVALUATE Capability
+# EVALUATION
 
 ## Purpose
-Evaluate candidate ideas against technical and business criteria without converting assumptions into facts.
+Reusable R&D capability for evaluating ideas or findings against technical feasibility, evidence quality, constraints, risks, practical relevance, and decision needs.
 
 ## Trigger
-An idea passes Idea Review or an explicit evaluation decision is required.
+A workstream needs a structured evaluation of an idea or finding.
 
 ## Input / Context
-Candidate idea, Idea Review result, Knowledge Sheet evidence, research findings, constraints, and decision context.
+Idea or finding, relevant released Knowledge Sheet context, evidence, constraints, and evaluation criteria.
 
 ## Preconditions
-The idea has a defined problem/opportunity and enough evidence to perform a bounded evaluation. Missing evidence remains explicit.
+The evaluation target and decision context are identifiable. Missing evidence remains explicit.
 
 ## Process
-Customer/problem relevance → Technical feasibility → Differentiation → Evidence quality → Implementation complexity → Potential value → Patent/novelty signal → Supplier feasibility → Evaluation synthesis.
+Context → evidence check → technical/mechanism feasibility → differentiation / precedent → complexity / risk → value / practicality → uncertainty synthesis → next route.
 
 ## Tools / AI
-Knowledge Sheet, released Idea Review prompts, targeted research, patent/technical research when needed, and GitHub.
+Released Knowledge Sheet, relevant workstream prompts, technical/product evidence, targeted research, patents when relevant, and GitHub.
 
 ## Output
-Criterion-by-criterion evaluation, evidence and uncertainty labels, key risks, missing evidence, and a proposed next route: hold, research, or Deep Analyze.
+Decision-support evaluation with criterion-level evidence, uncertainty, key risks, evidence gaps, and a recommended next route for the owning workstream.
 
 ## Validation
-Every criterion is supported by evidence or labeled as inference, assumption, unknown, or proposal. No score is presented as objective fact when the evidence does not support it.
+Separate evidence, inference, assumption, unknown, and proposal. Do not infer novelty from absence of found prior art. Do not present unsupported numeric scores as objective facts.
 
 ## Evidence State
 EVIDENCE, INFERENCE, ASSUMPTION, UNKNOWN, PROPOSAL.
 
 ## Escalation
-Route unresolved evidence gaps to PERSONAL_RESEARCH and selected technically consequential ideas to DEEP_ANALYZE.
+Route unresolved evidence gaps to VERIFICATION or DEEP_RESEARCH. Route technically consequential unresolved questions to the appropriate deeper research path.
 
 ## Human Verification Gate
-Required before an evaluation is used to change authoritative Knowledge Sheet content or baseline architecture.
+Required before evaluation findings change released Knowledge or a durable project baseline.
 
 ## Promotion / Persistence
-Evaluation remains decision-support work. Reusable verified findings become Knowledge Candidates and use KNOWLEDGE_PROMOTION.
+Evaluation remains a workstream decision-support output. Reusable verified findings may become a Knowledge Candidate and enter KNOWLEDGE_PROMOTION.
 
 ## Failure Handling
-If a criterion cannot be evaluated reliably, mark it UNKNOWN and identify the evidence required rather than filling the gap.
+When criteria or evidence are insufficient, mark the affected conclusion UNKNOWN and state the evidence required. Do not force a conclusion.
+
+## Boundary
+This file defines a reusable capability contract. Evaluation outputs belong to the invoking workstream and are not stored here.
