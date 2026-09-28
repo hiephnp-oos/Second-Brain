@@ -55,7 +55,7 @@ Trading and manufacturing environments are both acceptable.
 
 ### Weekly Run Records
 
-`TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/README.md` defines the weekly review artifact: exactly three separate tables (Job Search, Company Radar, Remote / AI) using each capability's output schema, followed by concise quality observations and user-review items.
+`TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/README.md` defines one weekly report file containing exactly three separate tables (Job Search, Company Radar, Remote / AI), each using its capability's output schema, followed by concise quality observations and user-review items. No per-capability weekly report files are created.
 
 ### Job Search
 
