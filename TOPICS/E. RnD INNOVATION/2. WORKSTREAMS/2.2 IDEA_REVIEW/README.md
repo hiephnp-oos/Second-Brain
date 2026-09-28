@@ -28,21 +28,15 @@ Core review questions:
 - Create a Knowledge Candidate when a reusable finding is discovered.
 - Do not automatically change the released Knowledge Sheet or idea record from a review.
 
-## Capability Contract
+## Capability Routing
 
-**Purpose:** evidence-based evaluation of existing R&D ideas.
+IDEA_REVIEW is the workstream that owns idea-specific inputs, review records, and dispositions. It invokes reusable capabilities rather than redefining them:
 
-**Trigger:** explicit review request or routed downstream work.
+- `../../1. CAPABILITIES/1.4 EVALUATION/README.md` — reusable evaluation contract.
+- `../../1. CAPABILITIES/1.3 DEEP_RESEARCH/README.md` — reusable deep research contract.
+- `../../1. CAPABILITIES/1.2 VERIFICATION/README.md` — verification when evidence needs confirmation.
 
-**Input / Context:** idea, current Knowledge Sheet context, prior evidence, and research findings.
-
-**Process:** evidence → technology → mechanism → competitor/precedent → supplier → Knowledge Gap → research need → modification/next action.
-
-**Output:** decision-support review with explicit evidence states.
-
-**Validation:** no invented evidence; VERIFIED / INFERRED / WORKING ASSUMPTION / UNKNOWN / PROPOSED remain distinct.
-
-**Persistence:** review output does not automatically alter authoritative Idea or Knowledge Sheet state.
+Capability definitions are maintained only in `1. CAPABILITIES`. This workstream owns the execution context and resulting records.
 
 ## Review Flow
 
@@ -94,7 +88,7 @@ Validation: no invented records or evidence; distinguish evidence from inference
 
 Evidence State: VERIFIED / EVIDENCED, INFERRED, WORKING ASSUMPTION, UNKNOWN, PROPOSED.
 
-Escalation: evidence gap → PERSONAL_RESEARCH; consequential evaluation → EVALUATE / DEEP_ANALYZE.
+Escalation: evidence gap → PERSONAL_RESEARCH; structured evaluation → EVALUATION capability; deeper investigation → DEEP_RESEARCH capability.
 
 Human Verification Gate: required before released Knowledge Sheet or baseline changes.
 

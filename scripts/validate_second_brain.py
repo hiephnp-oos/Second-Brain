@@ -241,9 +241,13 @@ def validate_csv_shape(errors: list[str]) -> None:
 
 
 def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
-    ks = ROOT / "TOPICS/E. RnD INNOVATION/3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET"
+    ks = ROOT / "TOPICS/E. RnD INNOVATION/3. KNOWLEDGE/RELEASED/3.1 KNOWLEDGE_SHEET"
     if not ks.exists():
+        fail(f"Released R&D Knowledge Sheet missing: {ks.relative_to(ROOT)}", errors)
         return
+    candidate = ROOT / "TOPICS/E. RnD INNOVATION/3. KNOWLEDGE/CANDIDATE_TEST"
+    if not candidate.exists():
+        fail(f"R&D Knowledge candidate/test area missing: {candidate.relative_to(ROOT)}", errors)
     specs = {
         "Market_Signal_v2.csv": "MS", "Competitor_Tech_v2.csv": "CT",
         "Supplier_tech_v2.csv": "ST", "Tech_radar_v2.csv": "TR", "Sources_v2.csv": "SRC",
@@ -369,8 +373,10 @@ def validate_capabilities(errors: list[str]) -> None:
         path = rnd / "2. WORKSTREAMS" / name / "README.md"
         if not path.exists():
             fail(f"R&D workstream missing: {path.relative_to(ROOT)}", errors)
-    if not (rnd / "3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/README.md").exists():
-        fail("R&D Knowledge Sheet entry point missing", errors)
+    if not (rnd / "3. KNOWLEDGE/RELEASED/3.1 KNOWLEDGE_SHEET/README.md").exists():
+        fail("Released R&D Knowledge Sheet entry point missing", errors)
+    if not (rnd / "3. KNOWLEDGE/CANDIDATE_TEST/README.md").exists():
+        fail("R&D Knowledge candidate/test entry point missing", errors)
 
     system = ROOT / "SYSTEM CORE/CAPABILITIES"
     for name in ["1. HANDOFF","2. RETRIEVAL"]:

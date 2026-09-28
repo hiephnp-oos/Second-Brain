@@ -1,22 +1,43 @@
 # DEEP_RESEARCH
 
 ## Purpose
-Reusable R&D capability for broad, conflicting, high-risk, or decision-critical research that cannot be closed by the minimum sufficient research route.
+Reusable R&D capability for deeper technical investigation when a question is broad, conflicting, high-risk, or decision-critical and cannot be closed by minimum sufficient research.
 
-## Contract
-- Trigger: material evidence gap, conflicting sources, high-risk decision, or explicit deep-research request.
-- Input: scoped question, decision context, known constraints, prior findings, and evidence gaps.
-- Process: scope → source plan → multi-source investigation → contradiction analysis → synthesis → uncertainty statement.
-- Output: auditable research synthesis with evidence, inference, unknowns, and implications separated.
-- Validation: source quality, traceability, contradiction handling, and scope coverage are checked before conclusion.
-- Escalation: unresolved material uncertainty remains explicit and is routed to human review when required.
+## Trigger
+A workstream has a material evidence gap, conflicting evidence, or an explicit need for deeper technical investigation.
 
-## Capability Contract Completeness
+## Input / Context
+Scoped research question, decision context, constraints, relevant released Knowledge Sheet context, prior findings, and unresolved evidence gaps.
 
-- **Preconditions:** The question is broad, conflicting, high-risk, or decision-critical enough to justify deeper research.
-- **Tools / AI:** Primary sources, technical documentation, patents, literature, and other traceable research sources.
-- **Evidence State:** Separate evidence, inference, assumption, unknown, contradiction, and proposal throughout synthesis.
-- **Escalation:** Unresolved material uncertainty routes to human review or additional targeted research.
-- **Human Verification Gate:** Required before authoritative baseline or Knowledge Sheet promotion when material uncertainty remains.
-- **Promotion / Persistence:** Persist synthesis in the invoking workstream artifact; promotion is handled by KNOWLEDGE_PROMOTION.
-- **Failure Handling:** Return explicit unresolved-evidence state when scope cannot be closed; do not manufacture a conclusion.
+## Preconditions
+The question and the decision it supports are explicit. Known evidence and remaining gaps are identified before starting.
+
+## Process
+Scope → source plan → targeted / multi-source investigation → contradiction analysis → mechanism / architecture analysis → feasibility boundaries → synthesis → uncertainty statement → verification needs.
+
+## Tools / AI
+Primary and technical sources, manufacturer / supplier documentation, patents, literature, competitor evidence, released Knowledge Sheet, targeted research tools, and GitHub.
+
+## Output
+Auditable research synthesis containing source traceability, established evidence, mechanism / architecture findings, feasibility boundaries, competitor / supplier evidence, patent signals where relevant, risks, assumptions, unknowns, verification actions, and explicit unresolved questions.
+
+## Validation
+Separate evidence from inference, assumption, unknown, contradiction, and proposal. Product existence or UX does not prove a hidden mechanism. Absence of found prior art does not prove novelty.
+
+## Evidence State
+EVIDENCE, INFERENCE, ASSUMPTION, UNKNOWN, CONTRADICTION, PROPOSAL.
+
+## Escalation
+Unresolved material contradictions or evidence gaps require additional targeted research or human review. Legal / IP interpretation is escalated rather than asserted.
+
+## Human Verification Gate
+Required before material findings are promoted into released Knowledge or used to change a durable project baseline.
+
+## Promotion / Persistence
+Research output remains owned by the invoking workstream. Reusable verified findings may become a Knowledge Candidate and enter KNOWLEDGE_PROMOTION.
+
+## Failure Handling
+Stop with an explicit bounded result when critical evidence cannot be established. Record the unresolved question instead of manufacturing a mechanism, feasibility conclusion, or precedent.
+
+## Boundary
+This file is the single source of truth for the reusable DEEP_RESEARCH capability. Workstreams invoke it and own their research outputs; they must not duplicate this capability contract.
