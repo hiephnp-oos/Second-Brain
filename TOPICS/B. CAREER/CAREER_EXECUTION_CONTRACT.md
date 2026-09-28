@@ -152,7 +152,7 @@ A capability must fail explicitly when its required evidence or input is unavail
 
 Path: `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/YYYY-W##.md`
 
-The weekly review must present exactly three separate result tables, in this order: Job Search, Company Radar, Remote / AI. Each table must use the exact column schema declared by its capability README. Include only results actually produced; use an explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` row/status when applicable. Do not merge streams or replace the tables with narrative summaries.
+Every Monday, create or update **exactly one weekly report file** at `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/YYYY-W##.md`. That single report must contain exactly three result tables, in this order: Job Search, Company Radar, Remote / AI. Each table must use the exact column schema declared by its capability README. Include only results actually produced; use an explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` row/status when applicable. Keep the three tables separate within the same report; do not create one report per capability or merge the streams into one table.
 
 Before the tables, record week/date range, actual execution coverage, synthesis status, and validation status. After the tables, include concise cross-stream quality observations, proposed improvements, and user-review items.
 
