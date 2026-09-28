@@ -25,7 +25,7 @@ A reusable capability that assesses an identified idea, candidate, or finding ag
 
 If the target or decision cannot be identified, request the minimum missing context. Missing evidence is not a reason to invent values or force a disposition.
 
-## 5. Process
+## 5. Procedure
 1. Frame the decision question and identify the target and intended application.
 2. Inspect relevant Released Knowledge, prior evaluations, and supplied evidence; record access gaps.
 3. Define decision-relevant criteria and explain their relevance. Separate mandatory constraints from preferences.
@@ -44,7 +44,7 @@ If the target or decision cannot be identified, request the minimum missing cont
 - Use sensitivity analysis only when changing an assumption/weight could materially change the decision.
 - Stop when the decision question is sufficiently bounded or remaining uncertainty requires evidence/authority unavailable to desk research.
 
-## 7. Tools / AI boundary
+## 7. Tool boundary
 Use repository context, Released Knowledge, supplied material, and available research tools. Inspect underlying sources where possible. If access or full text is unavailable, disclose it. Never fabricate sources, test results, supplier confirmation, patent status, or calculations. Tool availability does not confer authority to approve decisions or modify Released Knowledge.
 
 ## 8. Evidence and uncertainty
@@ -99,7 +99,7 @@ Human/workstream owner retains the final disposition. Human/specialist review is
 ## 13. Failure handling and stop conditions
 Return a bounded inconclusive/unknown result when criteria are missing or unsuitable, evidence is inaccessible, material conflicts remain, or the requested conclusion exceeds available evidence. State what was checked, what remains unresolved, and the minimum next evidence needed. Do not force a score or disposition.
 
-## 14. Promotion / persistence
+## 14. Persistence boundary
 The invoking Workstream owns evaluation outputs and their canonical destination. EVALUATION owns no idea record, batch, or Knowledge Sheet row. Reusable findings may be proposed through KNOWLEDGE_PROMOTION after workstream review and required human approval. Never write directly to Released Knowledge.
 
 ## 15. Examples and tests
