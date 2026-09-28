@@ -57,7 +57,7 @@ If scope is too broad, propose a bounded research question or split into work pa
 - Use **patent/prior-art mapping** when relevant; identify documents, claims/families/status as available. Search results or absence of found documents do not establish novelty, freedom to operate, or legal interpretation.
 - Scale source breadth to consequence and uncertainty. No arbitrary minimum source count. Stop when the decision question is sufficiently bounded or remaining gaps require authority/testing unavailable to desk research.
 
-## 7. Tools / AI boundary
+## 7. Tool boundary
 Use repository/Released Knowledge and available research tools. Prefer original documents and inspect relevant passages/data. If access, full text, or tool capability is unavailable, disclose it and mark affected claims UNKNOWN / NOT_VERIFIABLE. Never fabricate sources, citations, tests, supplier confirmations, patent status, or access. Tool output is evidence only to the extent its underlying source and scope are inspectable.
 
 ## 8. Evidence and uncertainty
