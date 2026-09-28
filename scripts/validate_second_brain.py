@@ -347,9 +347,9 @@ def validate_staging_semantics(errors: list[str]) -> None:
     if not path.exists():
         fail(f"Approved staging directory missing: {rel}", errors)
         return
-    owner = ROOT / "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/README.md"
+    owner = path.parent / "README.md"
     if not owner.exists():
-        fail(f"Staging owner workstream README missing: {owner.relative_to(ROOT)}", errors)
+        fail(f"Staging owner README missing: {owner.relative_to(ROOT)}", errors)
     else:
         text = read_text(owner).lower()
         for phrase in ["staging", "not an approved knowledge sheet record", "execution date"]:

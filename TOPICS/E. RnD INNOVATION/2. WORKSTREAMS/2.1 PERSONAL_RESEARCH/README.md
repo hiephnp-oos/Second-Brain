@@ -58,7 +58,7 @@ Scheduled Claw Discovery output is owned by this workstream:
 
 OUTPUT/CLAW_DISCOVERY/
 
-The staging records are operational state, not approved Knowledge Sheet records. The execution date is resolved from the actual scheduler execution timestamp in Asia/Ho_Chi_Minh; filenames must use that resolved date.
+The staging records are operational state, not an approved Knowledge Sheet record. The execution date is resolved from the actual scheduler execution timestamp in Asia/Ho_Chi_Minh; filenames must use that resolved date.
 
 - staging/ — daily unvalidated discovery records.
 - batches/ — RS-13 three-day consolidation outputs.
