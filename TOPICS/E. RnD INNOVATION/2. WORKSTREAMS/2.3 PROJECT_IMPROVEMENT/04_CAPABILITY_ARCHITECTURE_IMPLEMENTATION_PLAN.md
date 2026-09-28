@@ -5,7 +5,7 @@
 **Scope:** Reusable capabilities under `1. CAPABILITIES/`, their workstream routing, Knowledge boundaries, and regression/validation  
 **Decision rule:** This document guides implementation actions. It does not itself activate a new runtime, authorize Knowledge promotion, or change existing capability behavior.
 
-**Execution status (2026-09-28):** P0, Phase 1, and all five Phase 2 capability contracts are merged. Controlled contract-level regression records exist for all five capabilities. PR #31 and post-merge repository validation passed (run `36393004711`). Real-output validation and live workstream integration remain open across Phase 2; therefore contract implementation is complete, but Gate G2 / overall Phase 2 acceptance is not yet closed. `1. CAPABILITIES/` remains the first baseline; downstream contracts inherit it.
+**Execution status (2026-09-28):** P0, Phase 1, all five Phase 2 capability contracts, Phase 3 DEFER decision, Phase 4 regression framework/validator hardening, and Phase 5 Workstreams/Knowledge integration are implemented and merged. The representative integrated real-output path C-27-02 is recorded in PR #40; PR #41 synchronized this plan and parent index. CI passed for PRs #38–#41. The capability architecture implementation is complete for the approved scope. Residual validation is explicitly bounded: the 38-case catalog is structurally enforced but was not all re-executed as functional tests; scheduler invocation and human-authorized Knowledge promotion were not performed. `1. CAPABILITIES/` remains the first baseline; downstream contracts inherit it.
 
 ## 1. Purpose and intended use
 
@@ -423,7 +423,7 @@ Execute in the order below. Each action is a bounded pull request or cohesive ch
 
 ### Phase 2 — Core capability implementation
 
-**Execution status (2026-09-28):** All five Phase 2 capability contracts are merged and have controlled contract-level regression records. RND-REG-033–038 and the KNOWLEDGE_PROMOTION report are recorded. Real-output and live workstream integration tests remain NOT OBSERVED / open; do not claim operational effectiveness or close Gate G2 until follow-up evidence is recorded.
+**Execution status (2026-09-28):** All five Phase 2 capability contracts are merged and have controlled contract-level regression records. RND-REG-033–038 and the KNOWLEDGE_PROMOTION report are recorded. Representative integrated real-output/workstream evidence is recorded for C-27-02 in PR #40, completing the planned integrated path. This does not mean all 38 regression cases were functionally re-executed; unrun cases remain NOT OBSERVED. Scheduler invocation and Knowledge promotion remain outside this acceptance.
 
 **Objective:** upgrade one capability at a time using the approved standard.
 
@@ -619,17 +619,17 @@ The architecture expansion is complete only when all applicable conditions are m
 - [ ] CAP-06 has an evidence-based add/embed/defer decision.
 
 ### Implementation
-- [ ] Core capabilities are upgraded in bounded changes.
+- [x] Core capabilities are upgraded in bounded changes.
 - [ ] Reusable methods are separated only where justified.
-- [ ] Workstream prompts reference capabilities rather than duplicate their reusable methods.
-- [ ] Output ownership and Knowledge promotion boundaries remain intact.
+- [x] Workstream prompts reference capabilities rather than duplicate their reusable methods.
+- [x] Output ownership and Knowledge promotion boundaries remain intact.
 
 ### Validation
-- [ ] Trigger, functional, boundary, and integration tests are recorded.
+- [x] Trigger, functional, boundary, and representative integrated tests are recorded; unexecuted catalog cases remain NOT OBSERVED.
 - [ ] Real-output regression is performed for relevant cases.
-- [ ] PASS / FAIL / NOT OBSERVED / INCONCLUSIVE are used honestly.
-- [ ] No relevant required CI check is failing or unverified at acceptance.
-- [ ] Post-merge main state is verified.
+- [x] PASS / FAIL / NOT OBSERVED / INCONCLUSIVE are used honestly.
+- [x] No relevant required CI check is failing or unverified at acceptance (PRs #38–#41 CI PASS).
+- [x] Post-merge main state is verified.
 
 ### Governance
 - [ ] Human decisions and baseline promotions are recorded.
