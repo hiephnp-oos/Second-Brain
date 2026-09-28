@@ -335,9 +335,9 @@ def validate_control_reference_consistency(errors: list[str]) -> None:
             if fragment in text:
                 fail(f"Stale architecture reference in {path.relative_to(ROOT)}: {fragment}", errors)
         if path.suffix.lower() in {".md", ".yml", ".yaml"}:
-            if re.search(r"(?<!SYSTEM CORE/)\bWORKFLOW\.md\b", text):
+            if re.search(r"(?<!SYSTEM CORE/)(?<!SYSTEM%20CORE/)\bWORKFLOW\.md\b", text):
                 fail(f"Unqualified legacy workflow reference in {path.relative_to(ROOT)}", errors)
-            if re.search(r"(?<!SYSTEM CORE/)\bREPOSITORY_CONTRACT\.md\b", text):
+            if re.search(r"(?<!SYSTEM CORE/)(?<!SYSTEM%20CORE/)\bREPOSITORY_CONTRACT\.md\b", text):
                 fail(f"Unqualified legacy repository contract reference in {path.relative_to(ROOT)}", errors)
     config = ROOT / ".github/ISSUE_TEMPLATE/config.yml"
     if config.exists() and "SYSTEM%20CORE/WORKFLOW.md" not in read_text(config):
