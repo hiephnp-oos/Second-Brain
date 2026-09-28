@@ -38,7 +38,7 @@ Working reference: approximately 21:00–00:00 ICT, 2–4 days/week, around 6–
 
 Use:
 
-`Priority | Matching (%) | Opportunity | Category | Company/Client | Engagement | Location/Timezone | Compensation | Schedule Fit | Evidence / Fit | Gaps / Risks | Recommended Action | Direct Link | Verified`
+`Priority | Matching (%) | Job / Project Title | Work Type | Platform / Company | Location / Remote Scope | Engagement | Budget / Salary | Posted | Status | CV / Capability Fit | Gaps / Risks | Schedule Fit | Recommended Action | Direct Link | Verified`
 
 Allowed `Verified`: `VERIFIED` | `PARTIAL` | `UNKNOWN`.
 
@@ -65,7 +65,7 @@ Before output, check:
 - material compensation/eligibility claims are evidenced;
 - AI/domain fit is grounded in the Career Profile;
 - gaps are labelled rather than filled by inference;
-- every row follows the output contract;
+- every row follows the exact 16-column output contract shared with the README and weekly report;
 - verification state is explicit.
 
 If validation fails, correct the output or return the appropriate fallback state instead of reporting success.
