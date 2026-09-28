@@ -93,24 +93,20 @@ Trading and manufacturing environments are both acceptable.
 ## Routing
 
 ```text
-2. CAREER
+B. CAREER
 ├── CAREER_PROFILE.md
 ├── CAREER_EXECUTION_CONTRACT.md
 ├── IMPLEMENTATION_PLAN.md
-├── 1. JOB_SEARCH/
-│   ├── README.md
-│   └── PROMPT.md
-├── 2. COMPANY_RADAR/
-│   ├── README.md
-│   └── PROMPT.md
-├── 3. REMOTE_AI/
-│   ├── README.md
-│   └── PROMPT.md
-└── 4. RUNS/
-    └── README.md
+├── 1. CAPABILITIES/
+│   ├── 1.1 JOB_SEARCH/
+│   ├── 1.2 COMPANY_RADAR/
+│   └── 1.3 REMOTE_AI/
+└── 2. REPORTS/
+    └── 2.1 WEEKLY/
+        └── README.md
 ```
 
-Use `CAREER_PROFILE.md` for cross-workstream criteria, `CAREER_EXECUTION_CONTRACT.md` for shared execution/validation rules, `IMPLEMENTATION_PLAN.md` for system/business workflow, `RUNS/` for weekly execution history and synthesis, and the smallest relevant workstream README + `PROMPT.md` for execution.
+Use `CAREER_PROFILE.md` for cross-workstream criteria, `CAREER_EXECUTION_CONTRACT.md` for shared execution/validation rules, `IMPLEMENTATION_PLAN.md` for system/business workflow, `2. REPORTS/2.1 WEEKLY/` for weekly execution history and synthesis, and the smallest relevant capability README + `PROMPT.md` for execution.
 
 ## Next
 
@@ -119,6 +115,6 @@ Run the master scheduler against real market data, capture output-quality failur
 
 ## Child Folder Order
 
-`1. JOB_SEARCH → 2. COMPANY_RADAR → 3. REMOTE_AI → 4. RUNS`
+`1. CAPABILITIES/1.1 JOB_SEARCH → 1.2 COMPANY_RADAR → 1.3 REMOTE_AI → 2. REPORTS/2.1 WEEKLY`
 
 This order reflects Career routing and workstream capability order; the three search capabilities remain logically independent and parallel.

@@ -18,7 +18,15 @@ This file defines the repository invariants that must remain true regardless of 
 - A topic README describes current routing/context, not a duplicate of all child artifacts.
 - Topic lifecycle state is one of `Building`, `Active`, `Maintenance`, `Frozen`, `Paused`, or `Archived`.
 
-### Workstream
+### Capability / Workstream Boundary
+
+- Capability folders contain reusable execution contracts and supporting instructions.
+- Workstream folders contain business-context execution logic and workstream-owned outputs.
+- A capability may be reused by multiple workstreams.
+- A workstream may consume multiple capabilities.
+- Operational output, staging, batches, and reports must not be stored inside a reusable capability folder.
+
+## Workstream
 
 - A recurring child workstream that needs routing has its own README.
 - Workstream README describes the purpose, current state, routing, and authoritative artifacts for that workstream.
@@ -70,7 +78,7 @@ Inference must be labeled as inference and cannot silently become authoritative 
 
 ## Operational state
 
-Operational state is permitted only when it has a documented owner, purpose, lifecycle, and retention rule in the relevant workstream README. The current approved operational staging directory is `TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/staging/`; its records are scheduler state and are intentionally retained for evidence traceability.
+Operational state is permitted only when it has a documented owner, purpose, lifecycle, and retention rule in the relevant workstream README. The current approved operational staging directory is `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/staging/`; its records are scheduler state owned by the Personal Research workstream and are intentionally retained for evidence traceability.
 
 ## Change contract
 
@@ -156,7 +164,7 @@ Each active Capability contract must define these 13 fields: Purpose, Trigger, I
 
 The minimum execution lifecycle is: Trigger → Input → Execute → Output → Validate → Verify → Persist / Promote.
 
-For R&D Innovation, the current capability set is PERSONAL_RESEARCH, CLAW_DISCOVERY, IDEA_REVIEW, EVALUATE, DEEP_ANALYZE, and KNOWLEDGE_PROMOTION. Existing workstreams may serve as capability boundaries.
+For R&D Innovation, reusable capabilities are CLAW_DISCOVERY, VERIFICATION, DEEP_RESEARCH, EVALUATION, and KNOWLEDGE_PROMOTION. Workstreams are PERSONAL_RESEARCH, IDEA_REVIEW, and PROJECT_IMPROVEMENT. Capabilities do not own execution output; the invoking workstream owns its outputs.
 
 ## Scheduled Output Persistence Invariant
 

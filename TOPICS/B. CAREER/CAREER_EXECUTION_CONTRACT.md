@@ -18,7 +18,7 @@ The master scheduler is a trigger/orchestration layer. It is not a fourth matchi
 
 ### Global Capability alignment
 
-The reusable Capability contract is defined in `WORKFLOW.md`. This file contains Career-specific deltas only.
+The reusable Capability contract is defined in `SYSTEM CORE/WORKFLOW.md`. This file contains Career-specific deltas only.
 
 Non-mutating run:
 `Trigger → Context → Execute → Validate → Output`
@@ -68,7 +68,7 @@ Every Career capability follows:
 7. Produce the declared output contract.
 8. Run the validation checklist.
 9. Escalate material uncertainty instead of inventing facts.
-10. On the weekly synthesis run, create a compact weekly run record under `TOPICS/B. CAREER/4. RUNS/YYYY-W##.md`.
+10. On the weekly synthesis run, create a compact weekly run record under `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/YYYY-W##.md`.
 
 ### Tools
 
@@ -150,7 +150,7 @@ A capability must fail explicitly when its required evidence or input is unavail
 
 ## Weekly Run Record
 
-Path: `TOPICS/B. CAREER/4. RUNS/YYYY-W##.md`
+Path: `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/YYYY-W##.md`
 
 The record should capture:
 
