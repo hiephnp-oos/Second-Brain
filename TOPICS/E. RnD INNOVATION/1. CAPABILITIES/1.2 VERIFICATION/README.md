@@ -25,6 +25,27 @@ A reusable capability that checks whether specific material claims, sources, rel
 
 If underspecified, split compound claims or request the minimum decision-changing context. Do not silently broaden scope.
 
+## Process
+Follow the ordered procedure below; use the minimum sufficient evidence check and preserve unresolved states.
+
+## Tools / AI
+Use available repository/Knowledge context and research tools. Prefer original documents and inspect relevant passages/data; disclose unavailable access.
+
+## Validation
+Apply the quality gates in Section 10 before returning any result.
+
+## Evidence State
+Use the shared canonical claim states and keep them separate from verification outcomes as defined in Section 8.
+
+## Human Verification Gate
+Human/specialist review is required for consequential unresolved conflicts, physical testing, supplier confirmation, certification, legal/IP interpretation, or authoritative Released Knowledge changes.
+
+## Promotion / Persistence
+The invoking Workstream owns the result. VERIFICATION never writes to Released Knowledge; route a reusable candidate through KNOWLEDGE_PROMOTION after review.
+
+## Failure Handling
+Stop with UNKNOWN, NOT_VERIFIABLE, or CONFLICTING when evidence/access is insufficient; do not fabricate completion or negative conclusions.
+
 ## 5. Procedure
 1. Frame each claim as a specific, bounded proposition; split existence, mechanism, performance, compatibility, qualification, and compliance.
 2. Record the decision affected and relevant boundary conditions.
