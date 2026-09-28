@@ -10,6 +10,8 @@ Keep each distinct future improvement as a standalone plan/reference file direct
 
 Existing implementation plans, architecture references, and regression/validation records are retained as historical planning and evidence. Their presence does not activate a plan or authorize a baseline change.
 
+## Working Rules
+
 ## Planning Rules
 
 Each new plan should state, at minimum:
