@@ -25,7 +25,7 @@ Use `Prompt.csv` for Personal Research tasks. The prompt is the input; a separat
 
 ## Outputs
 
-- `staging/` — daily discovery records; operational state, not approved Knowledge.
+- `staging/` — daily discovery records; operational state; not an approved Knowledge Sheet record.
 - `batches/` — three-day consolidated idea-discovery outputs.
 
 These folders live directly under this workstream. Do not create an additional `OUTPUT/CLAW_DISCOVERY/` layer.
