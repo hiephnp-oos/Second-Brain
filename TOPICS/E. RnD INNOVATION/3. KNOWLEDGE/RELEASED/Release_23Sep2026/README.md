@@ -56,6 +56,10 @@ IDs are unique and stable. Do not reuse deleted IDs or invent alternate formats.
 
 Relationship IDs and Source IDs must point to existing valid records. Empty relationship fields are allowed when no verified relationship exists.
 
+## Schema integrity
+
+Each released CSV must have a complete, non-empty, unique header row; every data row must match the header width. The Supplier Tech v2 schema has eight fields: Supplier Tech ID, Supplier / Company, Technology / Component, Capability / Principle, Current Application, Maturity, Fitting Applicability, and Source ID. The prior export contained two trailing unnamed columns; one was empty and the other duplicated Fitting Applicability across all 58 records. Those redundant columns were removed without changing any named field or source relationship.
+
 ## Evidence discipline
 
 Supplier claims establish supplier capability only; they do not prove novelty. Competitor evidence establishes precedent and boundary conditions. Absence of a record or relationship is not proof of novelty.
