@@ -15,8 +15,8 @@ Two operating modes should be distinguished:
 
 ## Active Artifacts / References
 
-- `../CAREER_PROFILE.md` — canonical career baseline.
-- `../IMPLEMENTATION_PLAN.md` — Career Orchestrator business workflow and target state.
+- `../../CAREER_PROFILE.md` — canonical career baseline.
+- `../../IMPLEMENTATION_PLAN.md` — Career Orchestrator business workflow and target state.
 - `HoangNguyenPhuocHiep_RemoteJob_Matching.xlsx` — supplied reference material for remote opportunity categories and an earlier scoring approach; it is reference evidence, not the authoritative current profile.
 - External search/tracking tools may hold individual remote opportunities, engagement terms, application status, and compensation.
 
