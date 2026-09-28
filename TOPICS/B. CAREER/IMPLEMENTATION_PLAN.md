@@ -234,7 +234,7 @@ Scheduling must respect the available automation/task capacity.
 
 ## Weekly Run Record Contract
 
-Each `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/YYYY-W##.md` file is the user's weekly review artifact and must contain exactly three primary tables, in this order: Job Search, Company Radar, Remote / AI. Each table uses the exact column schema declared in its capability README. Include actual results for the review period; use explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` status when applicable. Do not merge the streams or replace tables with narrative bullets.
+Create exactly one `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/YYYY-W##.md` file per ISO week. This single file is the user's weekly review artifact and must contain exactly three primary tables, in this order: Job Search, Company Radar, Remote / AI. Do not create separate report files for the three capabilities. Each table uses the exact column schema declared in its capability README. Include actual results for the review period; use explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` status when applicable. Do not merge the streams or replace tables with narrative bullets.
 
 Before the tables, record week/date range, actual execution coverage, synthesis status, and validation status. After the tables, include concise cross-stream quality observations, proposed improvements, and user-review items. Keep individual opportunity history in the external tracker; the weekly tables are a review snapshot, not the archive.
 
