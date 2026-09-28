@@ -71,30 +71,10 @@ A review should leave a concise decision-support record containing, as applicabl
 
 Use `Prompt.csv` in this folder for Idea Review tasks.
 
-## Capability Contract — IDEA_REVIEW
+## Contract ownership
 
-Purpose: review an R&D idea for duplication, existing solutions, weak problem framing, unsupported mechanisms, poor evidence, and novelty signals.
+This README owns IDEA_REVIEW workstream context, routing, and output expectations. Reusable methods are owned only by the shared [capability baseline](../../1. CAPABILITIES/README.md) and the linked capability contracts above. Do not maintain a parallel IDEA_REVIEW capability procedure here.
 
-Trigger: new idea, updated evidence, review cycle, or explicit decision need.
+For material claims, use the canonical claim states from the shared baseline: EVIDENCED, INFERRED, ASSUMPTION, UNKNOWN, PROPOSED, or CONFLICTING. Record verification outcome separately (for example SUPPORTED, PARTIALLY_SUPPORTED, CONFLICTING, UNSUPPORTED, or NOT_VERIFIABLE). Do not use VERIFIED as an epistemic state.
 
-Input / Context: idea, Knowledge Sheet records, evidence, and review history.
-
-Preconditions: idea is identifiable and relevant Knowledge Sheet context is checked.
-
-Process: Idea → Knowledge Check → Evidence Check → Technology → Mechanism → Competitor / Precedent → Supplier Support → Gap → Research Need → Disposition.
-
-Tools / AI: released Idea Review prompts, Knowledge Sheet, targeted research, GitHub.
-
-Output: review with evidence, technology, mechanism, competitor/supplier support, gaps, research needed, modifications, and KEEP / WATCH / DROP / NEEDS_RESEARCH.
-
-Validation: no invented records or evidence; distinguish evidence from inference; absence is not proof of novelty.
-
-Evidence State: follow the shared capability baseline. Use EVIDENCED / INFERRED / ASSUMPTION / UNKNOWN / PROPOSED / CONFLICTING for claims; record verification outcome separately. Do not use VERIFIED as an epistemic state.
-
-Escalation: evidence gap → PERSONAL_RESEARCH; structured evaluation → EVALUATION capability; deeper investigation → DEEP_RESEARCH capability.
-
-Human Verification Gate: required before released Knowledge Sheet or baseline changes.
-
-Promotion / Persistence: disposition is a workflow state, not permanent knowledge.
-
-Failure Handling: preserve unverifiable claims as UNKNOWN and define required research.
+Knowledge promotion remains a separate controlled capability and requires human verification before any Released Knowledge write.
