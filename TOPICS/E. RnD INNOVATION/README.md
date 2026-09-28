@@ -30,8 +30,8 @@ Capabilities provide reusable execution ability. Workstreams own business contex
 ## Active Projects / References
 
 - Capability contracts: 1. CAPABILITIES/
-- Workstream contracts and execution: 2. WORKSTREAMS/
-- Authoritative R&D knowledge: 3. KNOWLEDGE/RELEASED/Release_23Sep2026/
+- Workstream contracts and execution: [2. WORKSTREAMS/](2. WORKSTREAMS/README.md)
+- Knowledge lifecycle and authoritative data: [3. KNOWLEDGE/](3. KNOWLEDGE/README.md) · [Released v2](3. KNOWLEDGE/RELEASED/Release_23Sep2026/README.md)
 - R&D system-improvement record: 2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/
 
 ## Capability Architecture Baseline
