@@ -75,6 +75,14 @@ Human review of each three-day batch is an experimental feedback signal for Claw
 
 Batch #2 learning is experimentally applied in Batches #3 and #4: apply Strategic Scope / Tier 1 alignment before deeper evaluation; trace technology → physical capability → product architecture → measurable outcome; reject out-of-scope candidates; search for unresolved DELTA rather than only baseline collision; preserve evidenced cross-industry transfer candidates when strategically relevant; use canonical single Candidate_Class values.
 
+Batch #3 learning is experimentally applied in Batch #4:
+- Strong Pain / Opportunity: require a materially important user or product problem; incremental improvement alone is insufficient.
+- Early Market Precedent Check: detect existing commercial categories/solutions before elaborating an idea; if no meaningful DELTA remains, classify as VARIANT / BASELINE / DROP.
+- Feature / Variant Boundary: a new spray pattern, nozzle geometry, material, treatment method, location change or similar implementation variation is not a standalone idea unless it creates a materially different outcome/capability/architecture.
+- Recombination Value: combining existing technologies is not innovation unless the combination creates a capability or outcome not adequately provided by the components independently.
+- System Boundary: keep water-heater, building-plumbing, upstream-treatment and other system architectures separate from fitting-level innovation unless a distinct fitting capability/outcome is established.
+- Validation target: reduce false novelty, saturated variants, weak-pain candidates and system-level concepts presented as fitting ideas without suppressing valid technology-transfer opportunities.
+
 Current Tier 1 discovery bias: Showering Innovation & Technology, especially Wellness / Circularity and relevant premium differentiation; Bathroom Fittings Design / CMF differentiation. These are discovery priors, not mandatory coverage targets.
 
 For Batch #2, explicitly test the Batch #1 learning classes:
