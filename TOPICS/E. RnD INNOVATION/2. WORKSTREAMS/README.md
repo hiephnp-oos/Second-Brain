@@ -12,6 +12,8 @@ This layer organizes three workstreams by business purpose. It owns task-specifi
 | 2.2 IDEA_REVIEW | Review selected ideas. Each idea gets its own folder containing its related review records. The internal template is defined when an idea enters review. | [README](2.2 IDEA_REVIEW/README.md) · [Prompt.csv](2.2 IDEA_REVIEW/Prompt.csv) |
 | 2.3 PROJECT_IMPROVEMENT | Maintain future plans intended to improve R&D Innovation. | [README](2.3 PROJECT_IMPROVEMENT/README.md) |
 
+## Routing
+
 ## Capability routing
 
 | Need | Capability | Contract |
