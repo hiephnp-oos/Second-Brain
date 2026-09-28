@@ -104,7 +104,7 @@ Before reporting a successful run, verify:
 - no qualification or salary is invented;
 - output matches the workstream schema;
 - duplicate/stale opportunities are handled where prior state exists;
-- the weekly run record, when required, reflects only the outputs actually produced during the run;
+- the weekly review, when required, contains exactly three capability-specific tables with the exact declared schemas and only outputs actually produced during the run;
 - material claims have supporting evidence.
 
 ### Escalation
@@ -152,16 +152,9 @@ A capability must fail explicitly when its required evidence or input is unavail
 
 Path: `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/YYYY-W##.md`
 
-The record should capture:
+The weekly review must present exactly three separate result tables, in this order: Job Search, Company Radar, Remote / AI. Each table must use the exact column schema declared by its capability README. Include only results actually produced; use an explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` row/status when applicable. Do not merge streams or replace the tables with narrative summaries.
 
-- week and execution dates;
-- which search cycles actually ran;
-- concise findings from Job Search, Company Radar, and Remote / AI;
-- meaningful changes and notable opportunities;
-- quality observations such as duplicates, false rejects/accepts, evidence issues, or repeated failure patterns;
-- proposed reusable rule/process improvements;
-- explicit unresolved questions or human-review items;
-- validation status.
+Before the tables, record week/date range, actual execution coverage, synthesis status, and validation status. After the tables, include concise cross-stream quality observations, proposed improvements, and user-review items.
 
 Do not use the weekly record to silently change `CAREER_PROFILE.md`, workstream contracts, or other baseline files.
 
