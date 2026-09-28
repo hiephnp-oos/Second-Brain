@@ -19,6 +19,8 @@ Move an eligible, reusable Knowledge Candidate from its invoking workstream into
 Required: candidate finding and type; owning workstream and source artifact; claim-level evidence state; source-to-claim references; proposed Knowledge Sheet target/file; proposed relationships; reason the finding is reusable; and proposed change type (add/correct/extend/supersede).
 Before execution, inspect the current Knowledge lifecycle contract and released CSV headers/ID conventions. Missing or inaccessible schema, source, owner, or approval means HOLD, not inference.
 
+## Process
+
 ## 5. Procedure
 1. **Establish ownership and destination.** Keep the candidate in its invoking workstream; target only the existing authoritative release structure.
 2. **Check eligibility.** Confirm bounded, reusable finding; traceable sources; claim-level states; applicable research/verification gates; and explicit change intent.
@@ -34,6 +36,8 @@ Before execution, inspect the current Knowledge lifecycle contract and released 
 ## 6. Method selection
 Use readiness review when the user asks whether a candidate is promotable; do not write. Use controlled promotion only when the user explicitly requests it and the specific change has human approval. For a narrow source/claim gap, route to VERIFICATION; for broad/conflicting material gaps, DEEP_RESEARCH; for a decision on usefulness or priority, EVALUATION. Do not repeat those methods inside this capability.
 
+## Tools / AI
+
 ## 7. Tool boundary
 Use current repository files and CSV headers as schema authority, plus available source references and repository validation. Do not claim repository access, external source checking, atomic writes, or validation execution unless actually available and performed. If tools are unavailable, return a bounded review package and state what remains unverified.
 
@@ -46,6 +50,8 @@ Return one of: **READY FOR HUMAN APPROVAL**, **HOLD**, **REJECT**, or **PROMOTED
 ## 10. Quality gates
 Before approval: eligibility, provenance, duplicate, contradiction, schema, ID, relationship, and impact checks are explicit. Before reporting success: human approval is evidenced, write actually occurred, and post-write reread/validation passed. A clean repository validator alone does not prove semantic correctness.
 
+## Escalation
+
 ## 11. Handoffs
 - Evidence gap → VERIFICATION or DEEP_RESEARCH with the exact unresolved claim and source gap.
 - Decision about reuse/value → EVALUATION with candidate, context, and criteria needed.
@@ -53,11 +59,17 @@ Before approval: eligibility, provenance, duplicate, contradiction, schema, ID, 
 - Ready candidate → designated human approver with complete review package.
 - Approved but no write access → invoking workstream with an implementation-ready change package.
 
+## Human Verification Gate
+
 ## 12. Human gate
 A human must explicitly approve the specific proposed authoritative change before any write. AI may prepare, check, and explain a proposal; it must not self-approve, infer approval, or autonomously release/supersede records.
 
+## Failure Handling
+
 ## 13. Failure and stop conditions
 Stop and HOLD on missing schema, source traceability, owner, approval, uncertain identity, unresolved material contradiction, invalid ID/relationship, or unavailable write access. Reject only when the candidate is out of scope, non-reusable, duplicate without a meaningful update, or otherwise ineligible with a stated rationale. If post-write validation fails, do not report success; preserve the failed state, identify the affected record, and request controlled correction/rollback by the authorized maintainer. Never silently delete history or reuse IDs.
+
+## Promotion / Persistence
 
 ## 14. Persistence boundary
 Candidate, research notes, and run outputs remain in the invoking workstream or Candidate/Test lifecycle. Only approved and verified changes enter `3. KNOWLEDGE/RELEASED/Release_23Sep2026/`. The released CSVs remain the data source of truth; this contract and changelog do not duplicate their data. Record the release/change reference in the existing changelog where applicable.
