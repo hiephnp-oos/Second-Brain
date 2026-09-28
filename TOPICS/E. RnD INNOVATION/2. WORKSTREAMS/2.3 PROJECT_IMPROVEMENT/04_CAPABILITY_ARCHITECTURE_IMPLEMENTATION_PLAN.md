@@ -5,6 +5,8 @@
 **Scope:** Reusable capabilities under `1. CAPABILITIES/`, their workstream routing, Knowledge boundaries, and regression/validation  
 **Decision rule:** This document guides implementation actions. It does not itself activate a new runtime, authorize Knowledge promotion, or change existing capability behavior.
 
+**Execution status (2026-09-28):** P0 baseline audit completed. Phase 1 architecture/contract standard is implemented in `1. CAPABILITIES/README.md` on the implementation branch and is pending PR validation/review. Phase 1 does not rewrite the five capability-specific contracts; that is Phase 2. `1. CAPABILITIES/` is the first baseline, and later contract folders must inherit it rather than create a parallel source of truth.
+
 ## 1. Purpose and intended use
 
 This plan defines the target architecture, implementation sequence, deliverables, acceptance criteria, and change controls for improving R&D Innovation capabilities.
@@ -644,6 +646,6 @@ The architecture expansion is complete only when all applicable conditions are m
 
 ## 13. Execution rule
 
-The next implementation action should be **P0-A01 through P0-A05: Baseline and dependency audit**, not immediate rewriting of all five capabilities. The audit output should identify exact source paths, prompt dependencies, duplication, routing gaps, and validator coverage. Only then proceed to Phase 1.
+P0-A01 through P0-A05 are complete as the baseline audit. Phase 1 (P1-A01 through P1-A07) establishes the shared architecture and contract standard in `1. CAPABILITIES/README.md`. The next implementation action after Phase 1 approval is Phase 2: upgrade one existing capability at a time, beginning with VERIFICATION, then DEEP_RESEARCH, EVALUATION, CLAW_DISCOVERY, and KNOWLEDGE_PROMOTION. Do not rewrite all five in one broad change. Later contract folders must follow the `1. CAPABILITIES/` baseline.
 
 The plan is a guide for controlled implementation, not permission to perform every listed change. If evidence shows an action is unnecessary, record **DEFER / NOT NEEDED** with rationale rather than implementing it for completeness.

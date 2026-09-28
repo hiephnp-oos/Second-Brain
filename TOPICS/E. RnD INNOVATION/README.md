@@ -34,6 +34,10 @@ Capabilities provide reusable execution ability. Workstreams own business contex
 - Authoritative R&D knowledge: 3. KNOWLEDGE/RELEASED/Release_23Sep2026/
 - R&D system-improvement record: 2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/
 
+## Capability Architecture Baseline
+
+`1. CAPABILITIES/README.md` is the first and authoritative baseline for shared R&D capability boundaries, evidence vocabulary, contract fields, routing conventions, and handoff rules. Every current/future capability contract must conform to it. Any contract folder introduced later under Workstreams, Knowledge, or another layer must follow and reference this baseline; it may add local execution detail but must not fork or redefine shared capability rules. See the baseline for authority, exception, and change-impact rules.
+
 ## Capability Map
 
 | Capability | Role | Used by |
