@@ -267,6 +267,11 @@ def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
             fail(f"Cannot parse Knowledge Sheet file {path.relative_to(ROOT)}: {exc}", errors)
             continue
         rows_by_file[filename], headers_by_file[filename] = rows, headers
+        if any(not (header or "").strip() for header in headers):
+            fail(f"Blank CSV header: {path.relative_to(ROOT)}", errors)
+        normalized_headers = [(header or "").strip().casefold() for header in headers]
+        if len(normalized_headers) != len(set(normalized_headers)):
+            fail(f"Duplicate CSV headers: {path.relative_to(ROOT)}", errors)
         id_field = next((h for h in headers if h and "ID" in h.upper()), None)
         if not id_field:
             fail(f"No ID column detected: {path.relative_to(ROOT)}", errors)
