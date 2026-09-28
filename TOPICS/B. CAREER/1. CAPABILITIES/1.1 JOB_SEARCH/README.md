@@ -17,12 +17,12 @@ Trading and manufacturing environments are both acceptable.
 
 Geography priority: Da Nang → Quang Nam → Hue → Quang Tri. Roles farther from Da Nang require stronger compensation/conditions to justify the location burden. Business travel is acceptable. Remote full-time can be considered when matching is strong and compensation is high.
 
-Use `../CAREER_PROFILE.md` as the single career baseline.
+Use `../../CAREER_PROFILE.md` as the single career baseline.
 
 ## Active Artifacts / References
 
-- `../CAREER_PROFILE.md` — canonical profile and constraints.
-- `../IMPLEMENTATION_PLAN.md` — Career Orchestrator business workflow and target state.
+- `../../CAREER_PROFILE.md` — canonical profile and constraints.
+- `../../IMPLEMENTATION_PLAN.md` — Career Orchestrator business workflow and target state.
 - External job-tracking data may contain individual opportunities, application status, interview outcomes, and search history.
 
 ## Working Rules
