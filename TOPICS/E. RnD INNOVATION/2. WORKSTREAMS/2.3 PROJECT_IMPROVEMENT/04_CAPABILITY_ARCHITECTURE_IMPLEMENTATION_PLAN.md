@@ -472,7 +472,7 @@ For each capability, execute the same action sequence:
 
 ### Phase 4 — Testing and evaluation
 
-**Execution status (2026-09-28):** Phase 4 framework alignment started. Regression README and run template are being aligned to the five Phase 2 capabilities, 38 regression cases, and trigger/functional/performance test layers. This is preparation, not evidence that the capabilities have passed real-output testing; G2 remains open.
+**Execution status (2026-09-28):** Phase 4 regression framework alignment is merged (PR #36, `49cb0fe`). Validator coverage hardening is merged (PR #37, `534c7cd`): CI run `36396822011` passed before merge; post-merge CI was not returned by the available workflow query. The validator now requires all 38 regression IDs in the catalog and run template, plus the performance-comparison section. This is mechanical coverage, not semantic or real-output capability acceptance. Next: execute and record real-output runs by capability using the aligned template; do not infer PASS from controlled fixtures or retrospective artifact review. G2 remains open.
 
 **Objective:** prove that the capability instructions improve behavior, not merely documentation completeness.
 
