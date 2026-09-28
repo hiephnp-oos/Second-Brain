@@ -1,40 +1,54 @@
-# DEEP_ANALYZE Capability
+# DEEP_RESEARCH
 
 ## Purpose
-Perform deeper technical investigation for selected R&D ideas where the decision requires stronger evidence.
+Reusable capability for deeper technical investigation when a question is broad, conflicting, high-risk, or decision-critical and cannot be closed by minimum sufficient research.
 
 ## Trigger
-An evaluated idea requires deeper technical investigation or an explicit decision-critical research request is made.
+A workstream has a material evidence gap, conflicting evidence, or an explicit need for deeper technical investigation.
 
 ## Input / Context
-Selected idea, evaluation, Knowledge Sheet records, research findings, constraints, and open questions.
+Scoped research question, decision context, constraints, existing released Knowledge Sheet context, prior findings, and unresolved evidence gaps.
 
 ## Preconditions
-The investigation question is defined and the decision requiring deeper evidence is known.
+The question and the decision it supports are explicit. Known evidence and remaining gaps are identified before starting.
 
 ## Process
-Mechanism → Architecture → Technical feasibility → Existing solutions → Competitor evidence → Supplier technology → Patent landscape → Risks → Open questions → Verification needs.
+Scope → source plan → targeted/multi-source investigation → contradiction analysis → mechanism / architecture analysis → feasibility boundaries → synthesis → uncertainty statement → verification needs.
 
 ## Tools / AI
-Primary technical sources, product/engineering documentation, patents, literature, supplier/competitor evidence, Knowledge Sheet, GitHub, and available research capabilities.
+Primary and technical sources, manufacturer/supplier documentation, patents, literature, competitor evidence, released Knowledge Sheet, targeted research tools, and GitHub.
 
 ## Output
-Deep analysis with source traceability, mechanism/architecture findings, feasibility boundaries, competitor/supplier evidence, patent signals, technical risks, assumptions, unknowns, and verification actions.
+Auditable research synthesis containing:
+- source traceability
+- established evidence
+- mechanism / architecture findings
+- feasibility boundaries
+- competitor / supplier evidence
+- patent signals where relevant
+- risks and constraints
+- assumptions
+- unknowns
+- verification actions
+- explicit unresolved questions
 
 ## Validation
-Separate observed evidence from inference and proposal. Product UX does not prove hidden mechanism. Patent conclusions require appropriate evidence and human verification.
+Separate evidence from inference, assumption, unknown, contradiction, and proposal. Product existence or UX does not prove hidden mechanism. Absence of found prior art does not prove novelty.
 
 ## Evidence State
-EVIDENCE, INFERENCE, ASSUMPTION, UNKNOWN, PROPOSAL.
+EVIDENCE, INFERENCE, ASSUMPTION, UNKNOWN, CONTRADICTION, PROPOSAL.
 
 ## Escalation
-Escalate unresolved contradictions, insufficient evidence, or legal/IP questions requiring professional interpretation.
+Unresolved material contradictions or evidence gaps require additional targeted research or human review. Legal/IP interpretation is escalated rather than asserted.
 
 ## Human Verification Gate
-Required before patent/IP conclusions are treated as authoritative decisions and before verified findings are promoted into the Knowledge Sheet.
+Required before material findings are promoted into released Knowledge or used to change a durable project baseline.
 
 ## Promotion / Persistence
-Deep-analysis findings remain research outputs unless selected for Knowledge Candidate promotion through KNOWLEDGE_PROMOTION.
+Research output remains owned by the invoking workstream. Reusable verified findings may become a Knowledge Candidate and enter KNOWLEDGE_PROMOTION.
 
 ## Failure Handling
-Stop or return a bounded result when critical evidence cannot be established. Record the open question instead of inferring the missing mechanism or feasibility limit.
+Stop with an explicit bounded result when critical evidence cannot be established. Record the unresolved question instead of manufacturing a mechanism, feasibility conclusion, or precedent.
+
+## Boundary
+This file defines a reusable capability contract. Research outputs belong to the invoking workstream and are not stored in the capability folder.
