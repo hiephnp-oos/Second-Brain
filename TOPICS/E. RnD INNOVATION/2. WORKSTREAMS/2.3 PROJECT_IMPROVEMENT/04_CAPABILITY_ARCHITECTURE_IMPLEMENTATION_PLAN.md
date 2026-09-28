@@ -5,7 +5,7 @@
 **Scope:** Reusable capabilities under `1. CAPABILITIES/`, their workstream routing, Knowledge boundaries, and regression/validation  
 **Decision rule:** This document guides implementation actions. It does not itself activate a new runtime, authorize Knowledge promotion, or change existing capability behavior.
 
-**Execution status (2026-09-28):** P0 and Phase 1 are merged. VERIFICATION, DEEP_RESEARCH, and EVALUATION Phase 2 contracts are merged. Controlled contract-level regression records exist for all three; real-output validation remains open for each. CLAW_DISCOVERY Phase 2 contract and regression cases are in the current change; no functional PASS is claimed until its regression run is recorded. `1. CAPABILITIES/` remains the first baseline; downstream contracts inherit it.
+**Execution status (2026-09-28):** P0, Phase 1, and all five Phase 2 capability contracts are merged. Controlled contract-level regression records exist for VERIFICATION, DEEP_RESEARCH, EVALUATION, and CLAW_DISCOVERY; KNOWLEDGE_PROMOTION controlled regression is pending. Real-output validation remains open across Phase 2. `1. CAPABILITIES/` remains the first baseline; downstream contracts inherit it.
 
 ## 1. Purpose and intended use
 
@@ -423,7 +423,7 @@ Execute in the order below. Each action is a bounded pull request or cohesive ch
 
 ### Phase 2 — Core capability implementation
 
-**Execution status (2026-09-28):** VERIFICATION, DEEP_RESEARCH, and EVALUATION contracts are merged with controlled contract-level regression records; real-output validation remains open. CLAW_DISCOVERY and RND-REG-027–032 are included in the current implementation change; its controlled regression must be recorded separately.
+**Execution status (2026-09-28):** VERIFICATION, DEEP_RESEARCH, EVALUATION, and CLAW_DISCOVERY contracts are merged with controlled contract-level regression records; real-output validation remains open. KNOWLEDGE_PROMOTION contract and RND-REG-033–038 are in the current implementation change; controlled regression must be recorded separately.
 
 **Objective:** upgrade one capability at a time using the approved standard.
 
