@@ -30,7 +30,7 @@ Core review questions:
 
 ## Capability Routing
 
-Shared capability rules are governed by [`1. CAPABILITIES/README.md`](../../1.%20CAPABILITIES/README.md). This workstream may specialize task routing but must not redefine reusable methods.
+Shared capability rules are governed by [`1. CAPABILITIES/README.md`](../../1. CAPABILITIES/README.md). This workstream may specialize task routing but must not redefine reusable methods.
 
 IDEA_REVIEW is the workstream that owns idea-specific inputs, review records, and dispositions. It invokes reusable capabilities rather than redefining them:
 
