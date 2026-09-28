@@ -20,6 +20,14 @@ OPERATIONAL_STATE_DIRS = {Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERS
 WORKSTREAM_PURPOSE_MARKERS = {"Purpose", "Purpose / Scope", "Scope", "Current Context"}
 WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule", "Capability", "Capability Contract", "Contract"}
 CANONICAL_LIFECYCLE = "READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT"
+STALE_REFERENCE_FRAGMENTS = [
+    "TOPICS/6. RnD INNOVATION",
+    "TOPICS/2. CAREER/4. RUNS",
+    "1. Personal Research/2. Project Improvement/",
+    "1. Personal Research/1. Claw Discovery/",
+    "2. Idea Review/",
+    "3. Knowledge sheet/",
+]
 FORBIDDEN_PATHS = [
     Path("docs"),
     Path(".github/workflows/pages.yml"),
@@ -307,6 +315,35 @@ def validate_workstream_readmes(errors: list[str]) -> None:
             fail(f"Workstream README missing routing/state/rules section: {path.relative_to(ROOT)}", errors)
 
 
+def validate_control_reference_consistency(errors: list[str]) -> None:
+    """Prevent structural refactors from leaving stale control or routing references."""
+    roots = [ROOT / "AI_MEMORY.md", ROOT / "README.md", ROOT / "SYSTEM CORE", ROOT / ".github", ROOT / "TOPICS"]
+    files = []
+    for base in roots:
+        if base.is_file():
+            files.append(base)
+        elif base.exists():
+            files.extend(path for path in base.rglob("*") if path.is_file() and ".git" not in path.parts)
+    for path in files:
+        if path.name == "validate_second_brain.py":
+            continue
+        try:
+            text = read_text(path)
+        except UnicodeDecodeError:
+            continue
+        for fragment in STALE_REFERENCE_FRAGMENTS:
+            if fragment in text:
+                fail(f"Stale architecture reference in {path.relative_to(ROOT)}: {fragment}", errors)
+        if path.suffix.lower() in {".md", ".yml", ".yaml"}:
+            if re.search(r"(?<!SYSTEM CORE/)\bWORKFLOW\.md\b", text):
+                fail(f"Unqualified legacy workflow reference in {path.relative_to(ROOT)}", errors)
+            if re.search(r"(?<!SYSTEM CORE/)\bREPOSITORY_CONTRACT\.md\b", text):
+                fail(f"Unqualified legacy repository contract reference in {path.relative_to(ROOT)}", errors)
+    config = ROOT / ".github/ISSUE_TEMPLATE/config.yml"
+    if config.exists() and "SYSTEM%20CORE/WORKFLOW.md" not in read_text(config):
+        fail("Issue template contact link does not point to SYSTEM CORE/WORKFLOW.md", errors)
+
+
 def validate_capabilities(errors: list[str]) -> None:
     career = ROOT / "TOPICS/B. CAREER"
     for name in ["1.1 JOB_SEARCH", "1.2 COMPANY_RADAR", "1.3 REMOTE_AI"]:
@@ -324,7 +361,7 @@ def validate_capabilities(errors: list[str]) -> None:
             fail(f"R&D capability missing: {path.relative_to(ROOT)}", errors)
             continue
         text = read_text(path).lower()
-        for phrase in ["purpose", "trigger", "input", "process", "output", "validation"]:
+        for phrase in ["purpose", "trigger", "input", "preconditions", "process", "tools / ai", "output", "validation", "evidence state", "escalation", "human verification gate", "promotion / persistence", "failure handling"]:
             if phrase not in text:
                 fail(f"R&D capability contract missing '{phrase}': {path.relative_to(ROOT)}", errors)
 
@@ -563,6 +600,7 @@ def main() -> int:
     validate_rnd_knowledge_sheet(errors)
     validate_prompt_duplicate_rules(errors)
     validate_removed_topic(errors)
+    validate_control_reference_consistency(errors)
     validate_rnd_regression_contract(errors)
     validate_high_level_controls(errors)
     if errors:

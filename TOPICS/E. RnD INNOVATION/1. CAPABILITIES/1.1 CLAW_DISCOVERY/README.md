@@ -16,6 +16,16 @@ Reusable R&D discovery capability for generating technology/solution candidates 
 
 This capability defines discovery behavior only. It must not contain `staging/`, `batches/`, reports, or other execution output. Scheduled Claw output is owned by `PERSONAL_RESEARCH`.
 
+## Capability Contract Completeness
+
+- **Preconditions:** A scoped problem, opportunity, or evidence gap exists and relevant Knowledge Sheet context is available.
+- **Tools / AI:** Knowledge Sheet, repository-defined prompts, and approved external research sources as required by the invoking workstream.
+- **Evidence State:** Candidate output distinguishes EVIDENCE, INFERENCE, ASSUMPTION, UNKNOWN, and PROPOSED states.
+- **Escalation:** Route material evidence gaps or conflicting findings to VERIFICATION or DEEP_RESEARCH.
+- **Human Verification Gate:** Required before promotion into authoritative knowledge or a durable baseline.
+- **Promotion / Persistence:** Execution output remains owned by the invoking workstream; promotion into the Knowledge Sheet uses KNOWLEDGE_PROMOTION.
+- **Failure Handling:** Fail explicitly when required scope or evidence is unavailable; do not fabricate candidates, mechanisms, or evidence.
+
 ## Routing
 This capability is reusable by Personal Research, Idea Review, and future R&D workstreams.
 
