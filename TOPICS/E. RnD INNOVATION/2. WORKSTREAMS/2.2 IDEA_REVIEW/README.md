@@ -73,7 +73,7 @@ Use `Prompt.csv` in this folder for Idea Review tasks.
 
 ## Contract ownership
 
-This README owns IDEA_REVIEW workstream context, routing, and output expectations. Reusable methods are owned only by the shared [capability baseline](../../1.%20CAPABILITIES/README.md) and the linked capability contracts above. Do not maintain a parallel IDEA_REVIEW capability procedure here.
+This README owns IDEA_REVIEW workstream context, routing, and output expectations. Reusable methods are owned only by the shared [capability baseline](../../1. CAPABILITIES/README.md) and the linked capability contracts above. Do not maintain a parallel IDEA_REVIEW capability procedure here.
 
 For material claims, use the canonical claim states from the shared baseline: EVIDENCED, INFERRED, ASSUMPTION, UNKNOWN, PROPOSED, or CONFLICTING. Record verification outcome separately (for example SUPPORTED, PARTIALLY_SUPPORTED, CONFLICTING, UNSUPPORTED, or NOT_VERIFIABLE). Do not use VERIFIED as an epistemic state.
 
