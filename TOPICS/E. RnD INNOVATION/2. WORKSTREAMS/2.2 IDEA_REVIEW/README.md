@@ -46,7 +46,7 @@ The steps are applied as needed; they are not a mandatory heavy checklist for ev
 
 ## Tool Use
 
-Team-facing work uses NotebookLM + Custom Gemini + the released `../3. KNOWLEDGE/RELEASED/3.1 KNOWLEDGE_SHEET/Prompt.csv`.
+Team-facing work uses NotebookLM + Custom Gemini + the released `../3. KNOWLEDGE/RELEASED/Release_23Sep2026/Prompt.csv`.
 
 When deeper external research is required, the maintainer uses `../2.1 PERSONAL_RESEARCH/` and returns a concise verified result.
 

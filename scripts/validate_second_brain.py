@@ -241,7 +241,7 @@ def validate_csv_shape(errors: list[str]) -> None:
 
 
 def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
-    ks = ROOT / "TOPICS/E. RnD INNOVATION/3. KNOWLEDGE/RELEASED/3.1 KNOWLEDGE_SHEET"
+    ks = ROOT / "TOPICS/E. RnD INNOVATION/3. KNOWLEDGE/RELEASED/Release_23Sep2026"
     if not ks.exists():
         fail(f"Released R&D Knowledge Sheet missing: {ks.relative_to(ROOT)}", errors)
         return

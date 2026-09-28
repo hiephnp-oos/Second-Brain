@@ -4,7 +4,7 @@ R&D Innovation knowledge is separated by lifecycle state.
 
 ## Released
 
-`RELEASED/3.1 KNOWLEDGE_SHEET/` contains the current authoritative, human-verified Knowledge Sheet.
+`RELEASED/Release_23Sep2026/` contains the current authoritative, human-verified Knowledge Sheet.
 
 ## Candidate / Test
 

@@ -30,7 +30,7 @@ Classify an artifact by its primary purpose before choosing its location:
 - Product / mechanism / technology / material / process / supplier research → this workstream and its research artifacts.
 - Scheduled Claw Discovery execution output → OUTPUT/CLAW_DISCOVERY/.
 - Project health / workflow / prompt / routing / tool / governance / validation / regression / architecture improvement → ../2.3 PROJECT_IMPROVEMENT/.
-- Authoritative reusable knowledge → ../3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/.
+- Authoritative reusable knowledge → ../3. KNOWLEDGE/RELEASED/Release_23Sep2026/.
 
 Capabilities provide reusable execution logic; they do not own the resulting output.
 
