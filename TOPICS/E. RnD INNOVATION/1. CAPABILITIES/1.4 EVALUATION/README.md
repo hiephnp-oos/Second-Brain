@@ -1,22 +1,43 @@
 # EVALUATION
 
 ## Purpose
-Reusable R&D capability for evaluating ideas or findings against technical feasibility, evidence, constraints, novelty boundaries, risks, and practical relevance.
+Reusable R&D capability for evaluating ideas or findings against technical feasibility, evidence quality, constraints, differentiation / precedent, risks, practical relevance, and decision needs.
 
-## Contract
-- Trigger: Idea Review or another R&D workstream needs structured evaluation.
-- Input: idea/finding, relevant Knowledge Sheet context, evidence, constraints, and decision criteria.
-- Process: context → evidence check → mechanism/feasibility analysis → risk/gap assessment → feedback.
-- Output: traceable evaluation and explicit next action, without pretending that missing evidence is verified.
-- Validation: separate fact, inference, assumption, unknown, and proposal; do not claim novelty from absence of found prior art.
-- Escalation: material uncertainty routes to VERIFICATION or DEEP_RESEARCH.
+## Trigger
+A workstream needs a structured evaluation of an idea or finding.
 
-## Capability Contract Completeness
+## Input / Context
+Idea or finding, relevant released Knowledge Sheet context, evidence, constraints, and evaluation criteria.
 
-- **Preconditions:** An idea/finding, relevant evidence, constraints, and evaluation criteria are available.
-- **Tools / AI:** Knowledge Sheet context, evidence sources, technical reasoning, and applicable Idea Review criteria.
-- **Evidence State:** Keep evidence, inference, assumption, unknown, and proposal separate from the evaluation conclusion.
-- **Escalation:** Material uncertainty routes to VERIFICATION or DEEP_RESEARCH.
-- **Human Verification Gate:** Required before changing authoritative baseline knowledge or promoting a material evaluation conclusion.
-- **Promotion / Persistence:** Evaluation output remains with the invoking workstream; durable promotion uses KNOWLEDGE_PROMOTION.
-- **Failure Handling:** Escalate when criteria or evidence are insufficient; do not force a conclusion from missing evidence.
+## Preconditions
+The evaluation target and decision context are identifiable. Missing evidence remains explicit.
+
+## Process
+Context → evidence check → technical / mechanism feasibility → differentiation / precedent → complexity / risk → value / practicality → uncertainty synthesis → next route.
+
+## Tools / AI
+Released Knowledge Sheet, relevant workstream prompts, technical / product evidence, targeted research, patents when relevant, and GitHub.
+
+## Output
+Decision-support evaluation with criterion-level evidence, uncertainty, key risks, evidence gaps, and a recommended next route for the owning workstream.
+
+## Validation
+Separate evidence, inference, assumption, unknown, and proposal. Do not infer novelty from absence of found prior art. Do not present unsupported numeric scores as objective facts.
+
+## Evidence State
+EVIDENCE, INFERENCE, ASSUMPTION, UNKNOWN, PROPOSAL.
+
+## Escalation
+Route unresolved evidence gaps to VERIFICATION or DEEP_RESEARCH. Route technically consequential unresolved questions to the appropriate deeper research path.
+
+## Human Verification Gate
+Required before evaluation findings change released Knowledge or a durable project baseline.
+
+## Promotion / Persistence
+Evaluation remains a workstream decision-support output. Reusable verified findings may become a Knowledge Candidate and enter KNOWLEDGE_PROMOTION.
+
+## Failure Handling
+When criteria or evidence are insufficient, mark the affected conclusion UNKNOWN and state the evidence required. Do not force a conclusion.
+
+## Boundary
+This file is the single source of truth for the reusable EVALUATION capability. Workstreams invoke it and own their evaluation outputs; they must not duplicate this capability contract.
