@@ -160,7 +160,9 @@ Keep the system intentionally small. Add infrastructure only when repeated real 
 
 ### Capability contract completeness
 
-Each active reusable Capability contract must define these 13 fields: Purpose, Trigger, Input / Context, Preconditions, Process, Tools / AI, Output, Validation, Evidence State, Escalation, Human Verification Gate, Promotion / Persistence, and Failure Handling.
+Each active reusable Capability contract must satisfy its owning capability baseline. For R&D Innovation, the required contract is the shared 15-field standard defined in `TOPICS/E. RnD INNOVATION/1. CAPABILITIES/README.md`: Identity and purpose, Use cases, Trigger / non-trigger, Inputs and preconditions, Procedure, Method selection, Tool boundary, Evidence and uncertainty, Output contract, Quality gates, Handoffs, Human gate, Failure and stop conditions, Persistence boundary, Examples and tests.
+
+Generic active capabilities outside R&D retain the 13 operational fields unless their owning topic defines a stricter contract.
 
 The minimum execution lifecycle is: Trigger → Input → Execute → Output → Validate → Verify → Persist / Promote.
 

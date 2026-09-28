@@ -54,7 +54,7 @@ Capability contracts live under 1. CAPABILITIES/. They contain reusable instruct
 
 | Order | Workstream | Purpose | Output owner |
 |---|---|---|---|
-| 2.1 | PERSONAL_RESEARCH | Personal engineering research, external investigation, and scheduled Claw discovery | 2.1 PERSONAL_RESEARCH/OUTPUT/ |
+| 2.1 | PERSONAL_RESEARCH | Personal engineering research, external investigation, and scheduled Claw discovery | 2.1 PERSONAL_RESEARCH/ |
 | 2.2 | IDEA_REVIEW | Evidence-based review and development of existing ideas | 2.2 IDEA_REVIEW/ and designated review artifacts |
 | 2.3 | PROJECT_IMPROVEMENT | Improve prompts, workflow, tooling, architecture, and validation | 2.3 PROJECT_IMPROVEMENT/ |
 
@@ -71,7 +71,7 @@ A workstream may consume multiple capabilities, and a capability may be reused b
 CLAW_DISCOVERY is a reusable capability. Its scheduled execution currently belongs to PERSONAL_RESEARCH.
 
 Execution outputs are owned by:
-TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/
+TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/
 
 - staging/ — daily unvalidated discovery records.
 - batches/ — RS-13 three-day consolidation outputs.

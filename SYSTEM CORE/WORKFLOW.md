@@ -126,7 +126,9 @@ A **Capability** is a reusable execution unit for an operational topic. It is Sk
 
 An existing workstream may serve as the Capability boundary when it already represents the recurring execution unit. A new `CAPABILITIES/` directory is not required merely for symmetry.
 
-Global Capability contract (13 fields): `Purpose → Trigger → Input / Context → Preconditions → Process → Tools / AI → Output → Validation → Evidence State → Escalation → Human Verification Gate → Promotion / Persistence → Failure Handling`.
+R&D capabilities use the shared 15-field contract defined by `TOPICS/E. RnD INNOVATION/1. CAPABILITIES/README.md`: Identity and purpose → Use cases → Trigger / non-trigger → Inputs and preconditions → Procedure → Method selection → Tool boundary → Evidence and uncertainty → Output contract → Quality gates → Handoffs → Human gate → Failure and stop conditions → Persistence boundary → Examples and tests.
+
+For generic active capabilities outside R&D, the 13 operational fields remain sufficient unless their owning topic defines a stricter contract.
 
 Minimum lifecycle: `Trigger → Input → Execute → Output → Validate → Verify → Persist / Promote`.
 

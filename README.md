@@ -208,6 +208,6 @@ Ordered child workstream folders use the same convention when their routing/work
 
 ## R&D Innovation execution model
 
-Discovery uses PERSONAL_RESEARCH and CLAW_DISCOVERY. Evaluation uses IDEA_REVIEW, EVALUATE, and DEEP_ANALYZE. KNOWLEDGE_PROMOTION controls entry into the authoritative Knowledge Sheet.
+Discovery uses PERSONAL_RESEARCH and CLAW_DISCOVERY. Evaluation uses IDEA_REVIEW with the reusable `EVALUATION` and `DEEP_RESEARCH` capabilities as required. `KNOWLEDGE_PROMOTION` controls entry into the authoritative Knowledge Sheet.
 
 The existing R&D workstream structure remains the routing layer; no generic capability directory is introduced.

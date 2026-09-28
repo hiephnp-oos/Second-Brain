@@ -67,7 +67,7 @@ R&D Database is a migrated project source folder. Its project files are stored d
 
 Career is organized as a parent topic with shared career-profile context and three parallel Capability/workstream units: `1. JOB_SEARCH`, `2. COMPANY_RADAR`, and `3. REMOTE_AI`. One daily master schedule is only the external trigger; the Career execution contract owns capability cadence, matching logic, validation, and weekly synthesis. Career is intentionally not a job database at the current stage. High-volume job records remain in external working tools until real usage demonstrates that a searchable database is justified.
 
-R&D Innovation is an active operational Capability domain. Five reusable capabilities live under `1. CAPABILITIES/`; three workstreams live under `2. WORKSTREAMS/`; the Knowledge Sheet is the authoritative structured knowledge layer. Scheduled Claw Discovery output is owned by `PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/` and remains intermediate operational state until the applicable gates are passed.
+R&D Innovation is an active operational Capability domain. Five reusable capabilities live under `1. CAPABILITIES/`; three workstreams live under `2. WORKSTREAMS/`; the Knowledge Sheet is the authoritative structured knowledge layer. Scheduled Claw Discovery output is owned by `PERSONAL_RESEARCH/` and remains intermediate operational state until the applicable gates are passed.
 
 A topic should be added only when recurring work creates enough durable context to justify a dedicated folder.
 

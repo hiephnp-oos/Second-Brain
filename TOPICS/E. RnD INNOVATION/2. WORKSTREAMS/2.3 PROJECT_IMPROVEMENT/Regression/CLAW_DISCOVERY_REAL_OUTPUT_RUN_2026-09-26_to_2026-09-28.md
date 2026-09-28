@@ -5,8 +5,8 @@
 - Capability: CLAW_DISCOVERY
 - Workstream: PERSONAL_RESEARCH / scheduled Claw
 - Input/output source:
-  - `2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/batches/2026-09-26_to_2026-09-28.csv`
-  - `2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/staging/2026-09-28.md`
+  - `2.1 PERSONAL_RESEARCH/batches/2026-09-26_to_2026-09-28.csv`
+  - `2.1 PERSONAL_RESEARCH/staging/2026-09-28.md`
 - Evaluation type: retrospective real-output review of repository artifacts; not a newly executed scheduler run.
 - Human disposition: not performed in this review.
 - External source validation: not performed; links and source contents were not independently re-fetched.

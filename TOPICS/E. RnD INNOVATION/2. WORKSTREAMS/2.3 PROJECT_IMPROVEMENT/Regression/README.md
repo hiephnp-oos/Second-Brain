@@ -85,7 +85,7 @@ A regression result does not itself modify the R&D baseline.
 
 `Capability execution → Regression cases → Human review → Project Improvement`
 
-Regression does not replace PERSONAL_RESEARCH, CLAW_DISCOVERY, IDEA_REVIEW, EVALUATE, DEEP_ANALYZE, or KNOWLEDGE_PROMOTION. It observes their outputs.
+Regression does not replace PERSONAL_RESEARCH, CLAW_DISCOVERY, IDEA_REVIEW, EVALUATION, DEEP_RESEARCH, or KNOWLEDGE_PROMOTION. It observes their outputs.
 
 ## Phase 4 testing sequence
 
