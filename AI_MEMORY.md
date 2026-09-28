@@ -53,18 +53,17 @@ These are the currently recognized work areas, not an exhaustive list of everyth
 
 | Topic | Status | Entry point |
 |---|---|---|
-| 1. AI General | Building | `TOPICS/1. AI GENERAL/README.md` |
-| 2. Career | Building | `TOPICS/2. CAREER/README.md` |
-| 4. Nuvio Setup | Frozen | `TOPICS/4. NUVIO SETUP/README.md` |
-| 5. R&D Database | Maintenance | `TOPICS/5. RnD DATABASE/README.md` |
-| 6. R&D Innovation | Active | `TOPICS/6. RnD INNOVATION/README.md` |
-| 7. Systems | Active | `TOPICS/7. SYSTEMS/README.md` |
+| A. AI General | Building | `TOPICS/A. AI GENERAL/README.md` |
+| B. Career | Building | `TOPICS/B. CAREER/README.md` |
+| C. Nuvio Setup | Frozen | `TOPICS/C. NUVIO SETUP/README.md` |
+| D. R&D Database | Maintenance | `TOPICS/D. RnD DATABASE/README.md` |
+| E. R&D Innovation | Active | `TOPICS/E. RnD INNOVATION/README.md` |
 
 Status describes the topic lifecycle, not whether every item inside it is being worked on. Allowed values are `Building`, `Active`, `Maintenance`, `Frozen`, `Paused`, and `Archived`. The topic README is the authoritative place for the current status summary and direction; the registry mirrors only the lifecycle state for fast routing.
 
 R&D Innovation is intentionally organized as a parent topic folder with dedicated workstream subfolders. New recurring R&D workstreams may be added there without changing the overall memory architecture.
 
-R&D Database is a migrated project source folder. Its project files are stored directly inside `TOPICS/5. RnD DATABASE/`; it is not a routing link to the old repository. The current project architecture is explicitly separated into `1_Frontend_UI`, `2_Library_Core`, and `3_Backend_Scanner`.
+R&D Database is a migrated project source folder. Its project files are stored directly inside `TOPICS/D. RnD DATABASE/`; it is not a routing link to the old repository. The current project architecture is explicitly separated into `1_Frontend_UI`, `2_Library_Core`, and `3_Backend_Scanner`.
 
 Career is organized as a parent topic with shared career-profile context and three parallel Capability/workstream units: `1. JOB_SEARCH`, `2. COMPANY_RADAR`, and `3. REMOTE_AI`. One daily master schedule is only the external trigger; the Career execution contract owns capability cadence, matching logic, validation, and weekly synthesis. Career is intentionally not a job database at the current stage. High-volume job records remain in external working tools until real usage demonstrates that a searchable database is justified.
 
@@ -94,13 +93,13 @@ A topic should be added only when recurring work creates enough durable context 
 - GitHub is the persistence layer and source of truth for this AI working context.
 - The system is provider-independent so another AI can read it and continue working.
 - The preferred structure is one master memory file plus topic folders, with one `README.md` entry point per topic.
-- All topic READMEs use the standard core template defined in `WORKFLOW.md`.
-- `WORKFLOW.md` is the authority for memory maintenance rules, topic README structure, consistency checks, retrieval/routing, and Handoff.
-- `REPOSITORY_CONTRACT.md` defines repository invariants, source-of-truth hierarchy, and completion state.
-- `TOPICS/7. SYSTEMS/User_Prompts.md` provides reusable user-side reinforcement prompts; it does not replace the canonical workflow rules.
-- When topics are added, renamed, moved, merged, or removed, `AI_MEMORY.md` and all affected navigation/references must be updated together according to `WORKFLOW.md`.
-- Memory maintenance uses ADD / UPDATE / REMOVE / NO_CHANGE and is defined in `WORKFLOW.md`.
-- Memory quality, retrieval/routing, Handoff, and repository mutation lifecycle are operating rules within `WORKFLOW.md`; there is no separate required phase document.
+- All topic READMEs use the standard core template defined in `SYSTEM CORE/WORKFLOW.md`.
+- `SYSTEM CORE/WORKFLOW.md` is the authority for memory maintenance rules, topic README structure, consistency checks, retrieval/routing, and Handoff.
+- `SYSTEM CORE/REPOSITORY_CONTRACT.md` defines repository invariants, source-of-truth hierarchy, and completion state.
+- `SYSTEM CORE/User_Prompts.md` provides reusable user-side reinforcement prompts; it does not replace the canonical workflow rules.
+- When topics are added, renamed, moved, merged, or removed, `AI_MEMORY.md` and all affected navigation/references must be updated together according to `SYSTEM CORE/WORKFLOW.md`.
+- Memory maintenance uses ADD / UPDATE / REMOVE / NO_CHANGE and is defined in `SYSTEM CORE/WORKFLOW.md`.
+- Memory quality, retrieval/routing, Handoff, and repository mutation lifecycle are operating rules within `SYSTEM CORE/WORKFLOW.md`; there is no separate required phase document.
 - Periodic review is a quality check and derived report; it should not silently modify authoritative memory.
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
 - R&D Database V4 is maintained inside Second-Brain as a complete project source, organized into Bound Script frontend, standalone Library Core (`LibDNF`), and standalone Backend Scanner. The topic README is the architecture/deployment entry point; the code files are the detailed project source.
@@ -109,7 +108,7 @@ A topic should be added only when recurring work creates enough durable context 
 - Pull requests may use AI Semantic Review as a secondary semantic review layer performed by ChatGPT through the GitHub repository connection; it must not replace deterministic validation or final repository verification.
 - Four GitHub-native controls are part of the operating model: GitHub Actions for automated validation, Issue Forms for structured change requests, Task Lists for execution/completion tracking, and Mermaid for visualizing workflows/architecture where useful.
 - GitHub Pages and GitHub Rulesets were evaluated but are not part of the current operating model. Do not create or require them unless a future decision explicitly reintroduces them.
-- Issue Forms and Task Lists are optional execution aids for changes that benefit from traceability; they do not replace `WORKFLOW.md` or `REPOSITORY_CONTRACT.md`.
+- Issue Forms and Task Lists are optional execution aids for changes that benefit from traceability; they do not replace `SYSTEM CORE/WORKFLOW.md` or `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 - Capability architecture is provider-independent and Skill-like; no generic runtime or Capability engine is required.
 - Schedules are external triggers; repository contracts define cadence, inputs, outputs, validation, and date semantics.
 - Staging is intermediate/unvalidated state and is never authoritative merely because it exists.
@@ -126,7 +125,7 @@ Follow this sequence:
 2. Identify which topic folder(s) are relevant to the current request.
 3. Read the relevant `TOPICS/<topic>/README.md`.
 4. If the topic contains child workstream folders, read only the relevant folder/file(s).
-5. For repository maintenance, also read `WORKFLOW.md` and `REPOSITORY_CONTRACT.md` before mutating content.
+5. For repository maintenance, also read `SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/REPOSITORY_CONTRACT.md` before mutating content.
 6. If a topic README or artifact references an external project/repository/document, only use that source when needed for detailed facts. For `RnD DATABASE`, use the migrated project files inside the topic folder as the detailed source; do not redirect to the old repository as the primary source.
 7. Use current conversation context together with this memory. New explicit user information takes precedence over older memory.
 8. Do not assume that the listed active topics are exhaustive.
@@ -161,7 +160,7 @@ Avoid storing:
 - confidential information that should not be shared across AI systems;
 - large copies of source code or documents already stored elsewhere.
 
-For exact update lifecycle, routing rules, consistency checklist, and Handoff model, use `WORKFLOW.md`. For repository invariants and source-of-truth priority, use `REPOSITORY_CONTRACT.md`.
+For exact update lifecycle, routing rules, consistency checklist, and Handoff model, use `SYSTEM CORE/WORKFLOW.md`. For repository invariants and source-of-truth priority, use `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 
 ## 11. PERIODIC REVIEW
 
@@ -197,12 +196,17 @@ Ordered topic folders and routed child workstream folders use numeric prefixes t
 
 Current topic order:
 
-`1. AI GENERAL → 2. CAREER → 4. NUVIO SETUP → 5. RnD DATABASE → 6. RnD INNOVATION → 7. SYSTEMS`
+`A. AI GENERAL → B. CAREER → C. NUVIO SETUP → D. RnD DATABASE → E. RnD INNOVATION`
 
 ## R&D Capability baseline
 
-R&D Innovation now exposes six execution capabilities using the existing workstream structure: PERSONAL_RESEARCH, CLAW_DISCOVERY, IDEA_REVIEW, EVALUATE, DEEP_ANALYZE, and KNOWLEDGE_PROMOTION. The Knowledge Sheet remains the authoritative structured knowledge layer; Claw staging remains intermediate state.
+R&D Innovation exposes five reusable capabilities: CLAW_DISCOVERY, VERIFICATION, DEEP_RESEARCH, EVALUATION, and KNOWLEDGE_PROMOTION. It exposes three workstreams: PERSONAL_RESEARCH, IDEA_REVIEW, and PROJECT_IMPROVEMENT. The Knowledge Sheet remains the authoritative structured knowledge layer; Claw staging remains intermediate state.
 
 Research Skill reference lessons adopted at the architecture level: deterministic routing where useful, explicit research intake/scope, source and evidence traceability, separation of evidence from inference/assumption/unknown/proposal, explicit failure handling, auditable outputs, and human verification before authoritative promotion. Claude-specific runtime architecture is not adopted.
 
 CONSTRUCTION was removed after repository reference/dependency inspection. Active topic navigation and registry no longer include it.
+
+
+## System Core
+
+`SYSTEM CORE/` is repository-level infrastructure outside `TOPICS/`. It contains canonical operating controls and reusable cross-topic capabilities. Current shared capabilities are `HANDOFF` and `RETRIEVAL`. Add new shared capabilities only when reuse across multiple topics is demonstrated.
