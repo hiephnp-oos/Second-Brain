@@ -4,8 +4,8 @@
 
 This folder owns the lifecycle of structured R&D knowledge. It does not own reusable capability methods or raw workstream execution logs.
 
-- Shared capability baseline: [../1. CAPABILITIES/README.md](../1.%20CAPABILITIES/README.md)
-- Workstream routing and output ownership: [../2. WORKSTREAMS/README.md](../2.%20WORKSTREAMS/README.md)
+- Shared capability baseline: [../1. CAPABILITIES/README.md](../1. CAPABILITIES/README.md)
+- Workstream routing and output ownership: [../2. WORKSTREAMS/README.md](../2. WORKSTREAMS/README.md)
 - Parent R&D architecture: [../README.md](../README.md)
 
 ## Lifecycle
