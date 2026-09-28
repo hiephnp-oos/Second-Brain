@@ -12,12 +12,12 @@ Target role priority for company signals follows the Career Profile: Quality / S
 
 Trading and manufacturing companies are both valid targets.
 
-Use `../CAREER_PROFILE.md` as the single career baseline.
+Use `../../CAREER_PROFILE.md` as the single career baseline.
 
 ## Active Artifacts / References
 
-- `../CAREER_PROFILE.md` — canonical profile, role priorities, geography, compensation and exclusions.
-- `../IMPLEMENTATION_PLAN.md` — Career Orchestrator business workflow and output contract.
+- `../../CAREER_PROFILE.md` — canonical profile, role priorities, geography, compensation and exclusions.
+- `../../IMPLEMENTATION_PLAN.md` — Career Orchestrator business workflow and output contract.
 - External research/search outputs may contain current company evidence and individual vacancy details.
 
 ## Working Rules
