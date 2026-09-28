@@ -86,6 +86,7 @@ A topic should be added only when recurring work creates enough durable context 
 - Repository completion is defined by final state, not by successful AI/connector actions.
 - A multi-file logical change must be published atomically so `main` does not expose a known-incomplete intermediate state.
 - Generic controls and executable validation are preferred over one-off rule patches when repeated failures are discovered.
+- Scheduled capability execution is incomplete until required GitHub persistence is written, re-read, and verified; scheduler completion must never be inferred from search or execution success alone.
 - Optional GitHub features should be added only when they solve a demonstrated workflow problem; avoid infrastructure that can generate false failure signals.
 
 ## 8. GLOBAL DECISIONS
@@ -179,7 +180,7 @@ The review is a derived view, not authoritative memory. It must not infer projec
 
 ## 12. FRESHNESS
 
-Last reviewed: 2026-09-27
+Last reviewed: 2026-09-28
 
 `Active` means the topic is a recognized ongoing area of work. It does not mean every item inside it is currently being worked on.
 
