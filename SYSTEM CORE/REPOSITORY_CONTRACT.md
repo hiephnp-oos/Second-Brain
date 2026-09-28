@@ -78,7 +78,7 @@ Inference must be labeled as inference and cannot silently become authoritative 
 
 ## Operational state
 
-Operational state is permitted only when it has a documented owner, purpose, lifecycle, and retention rule in the relevant workstream README. The current approved operational staging directory is `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/staging/`; its records are scheduler state owned by the Personal Research workstream and are intentionally retained for evidence traceability.
+Operational state is permitted only when it has a documented owner, purpose, lifecycle, and retention rule in the relevant workstream README. The current approved operational staging directory is `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging/`; its records are scheduler state owned by the Personal Research workstream and are intentionally retained for evidence traceability.
 
 ## Change contract
 

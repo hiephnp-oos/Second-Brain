@@ -16,7 +16,7 @@ TOPIC_SECTION_ALIASES = {
 }
 TOPIC_STATUS_VALUES = {"Building", "Active", "Maintenance", "Frozen", "Paused", "Archived"}
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder"]
-OPERATIONAL_STATE_DIRS = {Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/staging")}
+OPERATIONAL_STATE_DIRS = {Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging")}
 WORKSTREAM_PURPOSE_MARKERS = {"Purpose", "Purpose / Scope", "Scope", "Current Context"}
 WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule", "Capability", "Capability Contract", "Contract"}
 CANONICAL_LIFECYCLE = "READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT"
@@ -407,7 +407,7 @@ def validate_capabilities(errors: list[str]) -> None:
             fail(f"System Core capability missing: {path.relative_to(ROOT)}", errors)
 
 def validate_staging_semantics(errors: list[str]) -> None:
-    rel = Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/staging")
+    rel = Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging")
     path = ROOT / rel
     if not path.exists():
         fail(f"Approved staging directory missing: {rel}", errors)
@@ -426,18 +426,18 @@ def validate_staging_semantics(errors: list[str]) -> None:
 def validate_architecture_boundaries(errors: list[str]) -> None:
     rnd = ROOT / "TOPICS/E. RnD INNOVATION"
     capabilities = rnd / "1. CAPABILITIES"
-    output = rnd / "2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY"
+    output = rnd / "2. WORKSTREAMS/2.1 PERSONAL_RESEARCH"
 
     if not output.exists():
-        fail(f"Claw output owner missing: {output.relative_to(ROOT)}", errors)
+        fail(f"Personal Research output owner missing: {output.relative_to(ROOT)}", errors)
     if (capabilities / "1.1 CLAW_DISCOVERY/staging").exists():
         fail("Capability owns execution staging; move it to the invoking workstream output area", errors)
     if (capabilities / "1.1 CLAW_DISCOVERY/batches").exists():
         fail("Capability owns execution batches; move them to the invoking workstream output area", errors)
     if not (output / "staging").exists():
-        fail("Claw staging missing from workstream-owned output area", errors)
+        fail("Personal Research staging directory missing", errors)
     if not (output / "batches").exists():
-        fail("Claw batch output missing from workstream-owned output area", errors)
+        fail("Personal Research batches directory missing", errors)
 
     stale_fragments = [
         "TOPICS/6. RnD INNOVATION",
