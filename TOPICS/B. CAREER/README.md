@@ -43,31 +43,31 @@ Trading and manufacturing environments are both acceptable.
 
 ### Career Profile
 
-`TOPICS/2. CAREER/CAREER_PROFILE.md` is the canonical baseline for roles, geography, compensation, capabilities, language constraints, and explicit exclusions.
+`TOPICS/B. CAREER/CAREER_PROFILE.md` is the canonical baseline for roles, geography, compensation, capabilities, language constraints, and explicit exclusions.
 
 ### Execution Contract
 
-`TOPICS/2. CAREER/CAREER_EXECUTION_CONTRACT.md` defines the shared Trigger → Input → Process → Tools → Output → Validation → Escalation model, human approval gate, and capability-level evaluation model.
+`TOPICS/B. CAREER/CAREER_EXECUTION_CONTRACT.md` defines the shared Trigger → Input → Process → Tools → Output → Validation → Escalation model, human approval gate, and capability-level evaluation model.
 
 ### Implementation Plan
 
-`TOPICS/2. CAREER/IMPLEMENTATION_PLAN.md` defines the business goal, target state, implementation phases, output contracts, matching principles, master-scheduler cadence, and database trigger.
+`TOPICS/B. CAREER/IMPLEMENTATION_PLAN.md` defines the business goal, target state, implementation phases, output contracts, matching principles, master-scheduler cadence, and database trigger.
 
 ### Weekly Run Records
 
-`TOPICS/2. CAREER/4. RUNS/README.md` defines the lightweight weekly output/staging artifact. It records execution coverage, meaningful findings, quality/failure patterns, and proposed improvements without becoming a job database.
+`TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/README.md` defines the lightweight weekly output/staging artifact. It records execution coverage, meaningful findings, quality/failure patterns, and proposed improvements without becoming a job database.
 
 ### Job Search
 
-`TOPICS/2. CAREER/1. JOB_SEARCH/README.md` defines local/full-time discovery, matching and the established output table. `PROMPT.md` is the released execution contract for this capability.
+`TOPICS/B. CAREER/1. CAPABILITIES/1.1 JOB_SEARCH/README.md` defines local/full-time discovery, matching and the established output table. `PROMPT.md` is the released execution contract for this capability.
 
 ### Company Radar
 
-`TOPICS/2. CAREER/2. COMPANY_RADAR/README.md` defines company-signal discovery and the established output table. `PROMPT.md` is the released execution contract for this capability.
+`TOPICS/B. CAREER/1. CAPABILITIES/1.2 COMPANY_RADAR/README.md` defines company-signal discovery and the established output table. `PROMPT.md` is the released execution contract for this capability.
 
 ### Remote / AI
 
-`TOPICS/2. CAREER/3. REMOTE_AI/README.md` defines remote/full-time and remote side-work discovery, the separate matching model, and the output table. `PROMPT.md` is the released execution contract for this capability.
+`TOPICS/B. CAREER/1. CAPABILITIES/1.3 REMOTE_AI/README.md` defines remote/full-time and remote side-work discovery, the separate matching model, and the output table. `PROMPT.md` is the released execution contract for this capability.
 
 ## Decisions
 
@@ -79,7 +79,7 @@ Trading and manufacturing environments are both acceptable.
 - Current compensation screening uses a general target of `> USD 1,000/month`, with a `> 20,000,000 VND/month` working floor for manufacturing roles in Da Nang/Quang Nam; `1 USD = 26,500 VND` for screening.
 - A future job/opportunity database is allowed only when volume, query complexity, deduplication, historical analysis, or cross-search needs demonstrate that the Markdown/external-tracker model is insufficient.
 - High-volume/transient search output is not automatically committed to Second-Brain.
-- A compact weekly run record is committed to `TOPICS/2. CAREER/4. RUNS/` to preserve execution observability and reusable learning without storing the full job archive.
+- A compact weekly run record is committed to `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/` to preserve execution observability and reusable learning without storing the full job archive.
 
 ## Lessons
 

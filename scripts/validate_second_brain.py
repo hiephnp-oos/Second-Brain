@@ -18,7 +18,7 @@ TOPIC_STATUS_VALUES = {"Building", "Active", "Maintenance", "Frozen", "Paused", 
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder"]
 OPERATIONAL_STATE_DIRS = {Path("TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/staging")}
 WORKSTREAM_PURPOSE_MARKERS = {"Purpose", "Purpose / Scope", "Scope", "Current Context"}
-WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule", "Capability", "Capability Contract"}
+WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule", "Capability", "Capability Contract", "Contract"}
 CANONICAL_LIFECYCLE = "READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT"
 FORBIDDEN_PATHS = [
     Path("docs"),
@@ -26,8 +26,8 @@ FORBIDDEN_PATHS = [
 ]
 CANONICAL_DOCS = [
     Path("README.md"),
-    Path("WORKFLOW.md"),
-    Path("REPOSITORY_CONTRACT.md"),
+    Path("SYSTEM CORE/WORKFLOW.md"),
+    Path("SYSTEM CORE/REPOSITORY_CONTRACT.md"),
 ]
 REMOVED_PLATFORM_CONTROLS = ["GitHub Pages", "GitHub Rulesets"]
 REQUIRED_GITHUB_COMPONENTS = [
@@ -445,7 +445,7 @@ def validate_rnd_regression_contract(errors: list[str]) -> None:
 def validate_removed_topic(errors: list[str]) -> None:
     if (ROOT / "TOPICS" / "3. CONSTRUCTION").exists():
         fail("Removed topic still exists: TOPICS/3. CONSTRUCTION", errors)
-    for relative in [Path("AI_MEMORY.md"), Path("README.md"), Path("WORKFLOW.md"), Path("REPOSITORY_CONTRACT.md")]:
+    for relative in [Path("AI_MEMORY.md"), Path("README.md"), Path("SYSTEM CORE/WORKFLOW.md"), Path("SYSTEM CORE/REPOSITORY_CONTRACT.md")]:
         path = ROOT / relative
         if path.exists() and "TOPICS/3. CONSTRUCTION" in read_text(path):
             fail(f"Stale removed-topic reference: {relative}", errors)

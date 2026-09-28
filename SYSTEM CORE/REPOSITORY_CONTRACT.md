@@ -1,20 +1,20 @@
 # Second-Brain Repository Contract
 
-This file defines the repository invariants that must remain true regardless of which AI or connector performs the work. `SYSTEM CORE/WORKFLOW.md` defines how to operate; this file defines the state that must be true.
+This file defines the repository invariants that must remain true regardless of which AI or connector performs the work. `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` defines how to operate; this file defines the state that must be true.
 
 ## Core invariants
 
 ### Root
 
 - `AI_MEMORY.md` exists and is the canonical global memory/topic registry.
-- `SYSTEM CORE/WORKFLOW.md` exists and is the canonical process/template/validation authority.
+- `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` exists and is the canonical process/template/validation authority.
 - `README.md` exists and provides human-readable repository orientation.
 - `TOPICS/` contains the active topic folders.
 
 ### Topic
 
 - Every active topic has exactly one topic-level entry point: `TOPICS/<topic>/README.md`.
-- The topic README contains the nine core sections defined by `SYSTEM CORE/WORKFLOW.md`, including a lifecycle `State` plus `Summary`, `Direction`, and `Last reviewed`. `Active Workstreams` is accepted as the `Active Projects / References` core slot when the topic is organized primarily around workstreams.
+- The topic README contains the nine core sections defined by `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md`, including a lifecycle `State` plus `Summary`, `Direction`, and `Last reviewed`. `Active Workstreams` is accepted as the `Active Projects / References` core slot when the topic is organized primarily around workstreams.
 - A topic README describes current routing/context, not a duplicate of all child artifacts.
 - Topic lifecycle state is one of `Building`, `Active`, `Maintenance`, `Frozen`, `Paused`, or `Archived`.
 
@@ -124,7 +124,7 @@ Issue Forms do not replace direct conversation for ordinary low-risk work. They 
 
 ### Task Lists
 
-Task lists/checklists are execution controls used to make completion criteria explicit. They track work; they do not define repository invariants. Canonical requirements remain in `SYSTEM CORE/WORKFLOW.md` and this contract, while automated checks enforce machine-verifiable requirements.
+Task lists/checklists are execution controls used to make completion criteria explicit. They track work; they do not define repository invariants. Canonical requirements remain in `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` and this contract, while automated checks enforce machine-verifiable requirements.
 
 ## Completion contract
 

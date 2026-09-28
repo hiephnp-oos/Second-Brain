@@ -75,8 +75,8 @@ Staging is intermediate/unvalidated state, not source of truth. Conflicting auth
 | Document | Role |
 |---|---|
 | `AI_MEMORY.md` | Global durable context + canonical topic registry and lifecycle status |
-| `SYSTEM CORE/WORKFLOW.md` | Operating lifecycle, routing, templates, maintenance rules |
-| `SYSTEM CORE/REPOSITORY_CONTRACT.md` | Repository invariants + source-of-truth + completion contract |
+| `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` | Operating lifecycle, routing, templates, maintenance rules |
+| `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md` | Repository invariants + source-of-truth + completion contract |
 | `SYSTEM CORE/User_Prompts.md` | Reusable prompts for user-side reinforcement across topics |
 | `SYSTEM CORE/Second_Brain_Operations.md` | Compact operational execution guide |
 | `scripts/validate_second_brain.py` | Executable repository validation |
@@ -94,7 +94,7 @@ Second-Brain uses four complementary GitHub-native controls:
 
 AI Semantic Review is a separate ChatGPT-assisted PR review layer, not a GitHub Action.
 
-These controls do not replace the Markdown source of truth. Canonical rules remain in `SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
+These controls do not replace the Markdown source of truth. Canonical rules remain in `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 
 ## Repository structure
 
@@ -102,8 +102,8 @@ The structure remains intentionally small:
 
 ```text
 AI_MEMORY.md                  ← global memory + canonical topic registry
-SYSTEM CORE/WORKFLOW.md                   ← workflow + templates + lifecycle
-SYSTEM CORE/REPOSITORY_CONTRACT.md        ← invariants + completion contract
+SYSTEM CORE/SYSTEM CORE/WORKFLOW.md                   ← workflow + templates + lifecycle
+SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md        ← invariants + completion contract
 TOPICS/
 ├── 1. <topic>/
 │   ├── README.md             ← topic entry point
@@ -126,7 +126,7 @@ Every topic folder has one canonical topic entry point:
 
 `TOPICS/<topic>/README.md`
 
-All topic READMEs use the same nine core sections defined in `SYSTEM CORE/WORKFLOW.md`:
+All topic READMEs use the same nine core sections defined in `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md`:
 
 1. Scope
 2. Current Context
@@ -148,7 +148,7 @@ Recurring non-trivial child areas may use a workstream README, but not every fol
 2. Identify the relevant topic.
 3. Read the topic `README.md`.
 4. Read the relevant workstream README when one exists.
-5. For repository maintenance or structural changes, read `SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
+5. For repository maintenance or structural changes, read `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 6. Read only the artifacts needed for the current task.
 7. Combine repository knowledge with current conversation context; current explicit user information takes precedence.
 8. Use Handoff only as temporary continuation state.
@@ -171,8 +171,8 @@ For repository mutations, follow:
 
 The system uses five complementary controls:
 
-1. **Canonical rules** — `SYSTEM CORE/WORKFLOW.md`.
-2. **Repository invariants** — `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
+1. **Canonical rules** — `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md`.
+2. **Repository invariants** — `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 3. **User reinforcement prompts** — `SYSTEM CORE/User_Prompts.md`.
 4. **Executable validation** — `scripts/validate_second_brain.py` + GitHub Actions.
 5. **Structured execution** — Issue Forms + Task Lists when useful.
@@ -181,7 +181,7 @@ A tool action succeeding is not completion evidence. The final repository state 
 
 ## AI Semantic Review
 
-For PRs that need semantic review, use ChatGPT through the GitHub repository connection to review the PR diff against `AI_MEMORY.md`, `SYSTEM CORE/WORKFLOW.md`, `SYSTEM CORE/REPOSITORY_CONTRACT.md`, and the affected topic/source files. Focus on target-state completeness, synchronization, cleanup, contract alignment, and semantic gaps that deterministic validation may miss.
+For PRs that need semantic review, use ChatGPT through the GitHub repository connection to review the PR diff against `AI_MEMORY.md`, `SYSTEM CORE/SYSTEM CORE/WORKFLOW.md`, `SYSTEM CORE/SYSTEM CORE/REPOSITORY_CONTRACT.md`, and the affected topic/source files. Focus on target-state completeness, synchronization, cleanup, contract alignment, and semantic gaps that deterministic validation may miss.
 
 This review is advisory. It does not require an OpenAI API key and does not replace GitHub Actions validation or final repository verification.
 

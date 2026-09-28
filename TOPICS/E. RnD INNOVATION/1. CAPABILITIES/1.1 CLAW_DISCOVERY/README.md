@@ -10,3 +10,10 @@ Reusable R&D discovery capability for generating technology/solution candidates 
 - Output: candidate ideas/findings with evidence, mechanism, and explicit uncertainty.
 - Validation: do not treat inferred relationships or absence of evidence as verified fact; use defined evidence states and quality gates.
 - Persistence: staging/batch outputs remain operational until the relevant verification/promotion gate is passed.
+
+
+## Routing
+This capability is reusable by Personal Research, Idea Review, and future R&D workstreams.
+
+## Scheduler Contract
+The scheduler is a trigger/orchestration layer only. Follow repository-defined cadence and execution-date semantics. Staging is not an approved Knowledge Sheet record.

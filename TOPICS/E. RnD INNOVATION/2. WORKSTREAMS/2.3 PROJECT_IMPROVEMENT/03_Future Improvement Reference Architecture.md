@@ -726,9 +726,9 @@ Important upstream references:
 
 ### R&D Innovation internal references
 
-- `TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/01_RND_IMPLEMENTATION_PLAN.md`
-- `TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/02_SoL-Pi Reference Architecture.md`
-- `TOPICS/6. RnD INNOVATION/1. Personal Research/2. Project Improvement/README.md`
+- `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/01_RND_IMPLEMENTATION_PLAN.md`
+- `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/02_SoL-Pi Reference Architecture.md`
+- `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/README.md`
 
 ---
 
