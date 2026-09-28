@@ -5,7 +5,7 @@
 **Scope:** Reusable capabilities under `1. CAPABILITIES/`, their workstream routing, Knowledge boundaries, and regression/validation  
 **Decision rule:** This document guides implementation actions. It does not itself activate a new runtime, authorize Knowledge promotion, or change existing capability behavior.
 
-**Execution status (2026-09-28):** P0 and Phase 1 are merged. VERIFICATION Phase 2 contract is merged; its controlled contract-level regression is recorded in `Regression/VERIFICATION_RUN_2026-09-28.md` (real-output validation remains open). DEEP_RESEARCH Phase 2 contract and regression cases are being implemented in the current change; no functional PASS is claimed until its regression run is recorded. `1. CAPABILITIES/` remains the first baseline; downstream contracts inherit it.
+**Execution status (2026-09-28):** P0 and Phase 1 are merged. VERIFICATION, DEEP_RESEARCH, and EVALUATION Phase 2 contracts are merged. Controlled contract-level regression records exist for all three; real-output validation remains open for each. CLAW_DISCOVERY Phase 2 contract and regression cases are in the current change; no functional PASS is claimed until its regression run is recorded. `1. CAPABILITIES/` remains the first baseline; downstream contracts inherit it.
 
 ## 1. Purpose and intended use
 
@@ -423,7 +423,7 @@ Execute in the order below. Each action is a bounded pull request or cohesive ch
 
 ### Phase 2 — Core capability implementation
 
-**Execution status (2026-09-28):** VERIFICATION contract and IDEA_REVIEW routing updates are merged. Controlled contract-level regression is recorded; real-output validation remains open. DEEP_RESEARCH contract and RND-REG-016–021 are included in the current implementation change; functional regression is pending and must be recorded separately.
+**Execution status (2026-09-28):** VERIFICATION, DEEP_RESEARCH, and EVALUATION contracts are merged with controlled contract-level regression records; real-output validation remains open. CLAW_DISCOVERY and RND-REG-027–032 are included in the current implementation change; its controlled regression must be recorded separately.
 
 **Objective:** upgrade one capability at a time using the approved standard.
 
