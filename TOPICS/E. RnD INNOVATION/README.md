@@ -31,7 +31,7 @@ Capabilities provide reusable execution ability. Workstreams own business contex
 
 - Capability contracts: 1. CAPABILITIES/
 - Workstream contracts and execution: 2. WORKSTREAMS/
-- Authoritative R&D knowledge: 3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/
+- Authoritative R&D knowledge: 3. KNOWLEDGE/RELEASED/3.1 KNOWLEDGE_SHEET/
 - R&D system-improvement record: 2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/
 
 ## Capability Map
@@ -54,7 +54,7 @@ Capability contracts live under 1. CAPABILITIES/. They contain reusable instruct
 | 2.2 | IDEA_REVIEW | Evidence-based review and development of existing ideas | 2.2 IDEA_REVIEW/ and designated review artifacts |
 | 2.3 | PROJECT_IMPROVEMENT | Improve prompts, workflow, tooling, architecture, and validation | 2.3 PROJECT_IMPROVEMENT/ |
 
-The Knowledge Sheet is a knowledge layer, not a workstream execution output. It lives under 3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/.
+The Knowledge Sheet is a knowledge layer, not a workstream execution output. It lives under 3. KNOWLEDGE/RELEASED/3.1 KNOWLEDGE_SHEET/.
 
 ## Core R&D Workflow
 
@@ -76,7 +76,7 @@ These are operational outputs, not capability definition artifacts and not autho
 
 ## Knowledge Sheet
 
-3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/ contains the authoritative structured R&D datasets and their prompt/contract entry point.
+3. KNOWLEDGE/RELEASED/3.1 KNOWLEDGE_SHEET/ contains the authoritative structured R&D datasets and their prompt/contract entry point.
 
 Knowledge promotion is controlled by KNOWLEDGE_PROMOTION. Research output is not automatically written back.
 
@@ -134,7 +134,7 @@ The SoL-Pi and future-improvement documents remain reference tracks; their exist
 - Product / mechanism / technology / material / process / supplier research → 2.1 PERSONAL_RESEARCH/
 - Existing idea evaluation → 2.2 IDEA_REVIEW/
 - Project/workflow/prompt/tool/architecture/validation improvement → 2.3 PROJECT_IMPROVEMENT/
-- Authoritative structured knowledge → 3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/
+- Authoritative structured knowledge → 3. KNOWLEDGE/RELEASED/3.1 KNOWLEDGE_SHEET/
 - Reusable discovery/evidence/evaluation/promotion ability → 1. CAPABILITIES/
 
 ## Next

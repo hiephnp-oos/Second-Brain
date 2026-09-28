@@ -26,7 +26,7 @@ Core review questions:
 - Do not automatically force an idea into POC or Deep Analyze.
 - Modify the idea when evidence materially challenges or improves the original concept.
 - Create a Knowledge Candidate when a reusable finding is discovered.
-- Do not automatically change the authoritative Knowledge Sheet or idea record from a review.
+- Do not automatically change the released Knowledge Sheet or idea record from a review.
 
 ## Capability Contract
 
@@ -52,7 +52,7 @@ The steps are applied as needed; they are not a mandatory heavy checklist for ev
 
 ## Tool Use
 
-Team-facing work uses NotebookLM + Custom Gemini + the released `../3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/Prompt.csv`.
+Team-facing work uses NotebookLM + Custom Gemini + the released `../3. KNOWLEDGE/RELEASED/3.1 KNOWLEDGE_SHEET/Prompt.csv`.
 
 When deeper external research is required, the maintainer uses `../2.1 PERSONAL_RESEARCH/` and returns a concise verified result.
 
@@ -96,7 +96,7 @@ Evidence State: VERIFIED / EVIDENCED, INFERRED, WORKING ASSUMPTION, UNKNOWN, PRO
 
 Escalation: evidence gap → PERSONAL_RESEARCH; consequential evaluation → EVALUATE / DEEP_ANALYZE.
 
-Human Verification Gate: required before authoritative Knowledge Sheet or baseline changes.
+Human Verification Gate: required before released Knowledge Sheet or baseline changes.
 
 Promotion / Persistence: disposition is a workflow state, not permanent knowledge.
 
