@@ -471,3 +471,20 @@ Rules:
 7. Never infer canonical order from GitHub's alphabetical display; numeric prefixes are explicit navigation metadata.
 
 Folder numbering is navigation/routing metadata. It does not change business logic unless the associated workflow contract explicitly changes.
+
+## Scheduled Capability Persistence Contract
+
+A scheduled Capability with a durable GitHub output must treat persistence as part of execution, not an optional follow-up.
+
+Required lifecycle:
+
+`Resolve execution date → Execute capability → Write required output → Re-read exact path → Validate content → Verify final repository state → Report`
+
+Rules:
+- The scheduler prompt must explicitly require the GitHub write action for every durable output defined by the Capability contract.
+- After writing, re-read the exact repository path and verify the expected date, required sections/schema, and state transitions.
+- Multi-file scheduled mutations must follow the atomic publication contract.
+- If a required output is absent after execution, the run is FAILED / INCOMPLETE even when research/search succeeded.
+- A scheduler must never report completion based only on a successful tool call or generated content.
+- R&D Claw must verify the RS-13 batch and source BATCHED states.
+- Career must verify the Monday weekly run record.
