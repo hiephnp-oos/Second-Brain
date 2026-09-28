@@ -101,7 +101,7 @@ Human review is required before final KEEP/DROP or equivalent workstream disposi
 If scope, evidence access, or required target conditions are unavailable, return a bounded failure/inconclusive result and state the missing input. If no material outcome or meaningful delta is established, do not force a candidate; record the reason. Do not fabricate candidates to meet a count. Stop when the scope is answered or remaining uncertainty requires a specific test, source, or authority.
 
 ## 14. Persistence boundary
-Execution output belongs to the invoking Workstream. For scheduled Claw, the canonical output location is `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/`. Staging is intermediate and non-authoritative. This capability owns no batches, staging files, reports, or Knowledge Sheet rows. Reusable findings enter KNOWLEDGE_PROMOTION through the Workstream and required human gate.
+Execution output belongs to the invoking Workstream. For scheduled Claw, the canonical output location is `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/`. Staging is intermediate and non-authoritative. This capability owns no batches, staging files, reports, or Knowledge Sheet rows. Reusable findings enter KNOWLEDGE_PROMOTION through the Workstream and required human gate.
 
 ## 15. Examples and tests
 - **Technology-only signal:** classify as a signal/enabler; do not elevate to standalone idea without outcome and delta.
