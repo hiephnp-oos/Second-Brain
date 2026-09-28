@@ -4,6 +4,16 @@
 **Contract version:** Phase 2 implementation  
 **Output owner:** Invoking Workstream
 
+## Contract validator alignment
+
+This contract explicitly covers the required baseline controls:
+- **Process:** Sections 5–6 define the ordered research process and depth selection.
+- **Evidence state:** Section 8 defines canonical claim states and uncertainty.
+- **Escalation:** Section 11 defines routing and escalation conditions.
+- **Human verification gate:** Section 12 defines mandatory human/specialist review.
+- **Promotion / persistence:** Section 14 defines ownership and persistence boundaries.
+- **Failure handling:** Section 13 defines stop conditions and unresolved outcomes.
+
 ## 1. Identity and purpose
 A reusable capability for investigating broad, interdependent, conflicting, high-risk, or decision-critical R&D questions that cannot be closed by minimum sufficient targeted verification. It produces an auditable synthesis and bounded next actions; it does not establish universal truth, execute physical tests, make idea dispositions, interpret legal rights, or approve Knowledge release.
 
