@@ -41,7 +41,7 @@ Repository: `hiephnp-oos/Second-Brain`
 Current structure:
 - `AI_MEMORY.md` — global user and working context.
 - `TOPICS/<topic>/README.md` — topic entry point and durable topic context.
-- `WORKFLOW.md` — memory onboarding, promotion, update, validation, and review rules.
+- `SYSTEM CORE/WORKFLOW.md` — memory onboarding, promotion, update, validation, and review rules.
 
 ### AI Media / Streaming
 
@@ -65,7 +65,7 @@ Current work includes optimizing stream aggregation, ranking/filtering, metadata
 
 ## Routing
 
-For general AI/automation work, start here. For persistent-memory architecture or repository workflow, read the root `AI_MEMORY.md` and `WORKFLOW.md`. For topic-specific work, route to the relevant topic README instead of duplicating its detailed context here.
+For general AI/automation work, start here. For persistent-memory architecture or repository workflow, read the root `AI_MEMORY.md` and `SYSTEM CORE/WORKFLOW.md`. For topic-specific work, route to the relevant topic README instead of duplicating its detailed context here.
 
 ## Next
 

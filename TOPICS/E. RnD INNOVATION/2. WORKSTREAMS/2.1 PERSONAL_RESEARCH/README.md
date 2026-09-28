@@ -63,13 +63,7 @@ The staging records are operational state, not an approved Knowledge Sheet recor
 - staging/ — daily unvalidated discovery records.
 - batches/ — RS-13 three-day consolidation outputs.
 
-Research findings remain in the conversation or designated artifact unless they qualify for a Knowledge Candidate. Do not automatically copy every research result into the Knowledge Sheet.
-
-
-
-Research results stay in the conversation or designated research artifact unless they qualify for a Knowledge Candidate. Do not automatically copy every research result into the Knowledge Sheet.
-
-Project Improvement proposals remain experimental until tested and human-verified.
+Research findings remain in the conversation or designated research artifact unless they qualify for a Knowledge Candidate. Do not automatically copy every research result into the Knowledge Sheet.
 
 
 ## Child Folder Order

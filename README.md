@@ -101,15 +101,16 @@ These controls do not replace the Markdown source of truth. Canonical rules rema
 The structure remains intentionally small:
 
 ```text
-AI_MEMORY.md                  ← global memory + canonical topic registry
-SYSTEM CORE/WORKFLOW.md                   ← workflow + templates + lifecycle
-SYSTEM CORE/REPOSITORY_CONTRACT.md        ← invariants + completion contract
+AI_MEMORY.md                           ← global memory + canonical topic registry
+SYSTEM CORE/WORKFLOW.md                ← workflow + templates + lifecycle
+SYSTEM CORE/REPOSITORY_CONTRACT.md     ← invariants + completion contract
 TOPICS/
-├── 1. <topic>/
-│   ├── README.md             ← topic entry point
-│   └── <workstream/files>    ← detailed recurring work when needed
-├── 2. <topic>/
-│   └── ...
+├── A. AI GENERAL/                    ← AI / automation context
+├── B. CAREER/                        ← career capabilities + reports
+├── C. NUVIO SETUP/                   ← Nuvio configuration context
+├── D. RnD DATABASE/                  ← migrated R&D database source
+└── E. RnD INNOVATION/                ← capabilities + workstreams + knowledge
+```
 └── N. <topic>/
     └── ...
 .github/
