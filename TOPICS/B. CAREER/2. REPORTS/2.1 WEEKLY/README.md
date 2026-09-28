@@ -32,6 +32,7 @@ After the three tables, include only:
 ## Persistence Rules
 
 - Keep the report concise; the three tables are the primary review artifact.
+- Create only one `YYYY-W##.md` file per ISO week. Do not create separate weekly files for individual capabilities.
 - Do not store the full search archive or duplicate the external tracker.
 - Record only evidence actually produced by the run.
 - Do not silently modify `CAREER_PROFILE.md`, capability contracts, or scheduler rules.
@@ -72,4 +73,4 @@ After the three tables, include only:
 ## Routing
 
 - State: **Operational**
-- Routing: Career master scheduler → three independent outputs → three-table weekly review → user review → approved reusable improvement.
+- Routing: Career master scheduler → three independent capability outputs → one weekly report containing three tables → user review → approved reusable improvement.
