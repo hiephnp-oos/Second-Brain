@@ -35,7 +35,7 @@ Copy this template for a real batch/capability evaluation when a persistent run 
 | Unrelated / non-trigger | | | |
 | Capability overlap boundary | | | |
 
-## Functional regression cases
+## Regression cases (functional)
 
 | Case ID | Result | Evidence / observation | Source location |
 |---|---|---|---|
