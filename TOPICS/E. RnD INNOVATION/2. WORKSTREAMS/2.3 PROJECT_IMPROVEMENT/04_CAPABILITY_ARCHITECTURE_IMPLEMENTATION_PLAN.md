@@ -5,7 +5,7 @@
 **Scope:** Reusable capabilities under `1. CAPABILITIES/`, their workstream routing, Knowledge boundaries, and regression/validation  
 **Decision rule:** This document guides implementation actions. It does not itself activate a new runtime, authorize Knowledge promotion, or change existing capability behavior.
 
-**Execution status (2026-09-28):** P0 baseline audit completed. Phase 1 architecture/contract standard is implemented in `1. CAPABILITIES/README.md` on the implementation branch and is pending PR validation/review. Phase 1 does not rewrite the five capability-specific contracts; that is Phase 2. `1. CAPABILITIES/` is the first baseline, and later contract folders must inherit it rather than create a parallel source of truth.
+**Execution status (2026-09-28):** P0 and Phase 1 are merged. VERIFICATION Phase 2 contract is merged; its controlled contract-level regression is recorded in `Regression/VERIFICATION_RUN_2026-09-28.md` (real-output validation remains open). DEEP_RESEARCH Phase 2 contract and regression cases are being implemented in the current change; no functional PASS is claimed until its regression run is recorded. `1. CAPABILITIES/` remains the first baseline; downstream contracts inherit it.
 
 ## 1. Purpose and intended use
 
@@ -423,7 +423,7 @@ Execute in the order below. Each action is a bounded pull request or cohesive ch
 
 ### Phase 2 — Core capability implementation
 
-**Execution status (2026-09-28):** VERIFICATION contract and direct IDEA_REVIEW routing updates are implemented on the Phase 2 branch and pending PR validation/review. Regression cases RND-REG-013–015 have been added. This is not yet a functional PASS; execution tests remain to be run and recorded.
+**Execution status (2026-09-28):** VERIFICATION contract and IDEA_REVIEW routing updates are merged. Controlled contract-level regression is recorded; real-output validation remains open. DEEP_RESEARCH contract and RND-REG-016–021 are included in the current implementation change; functional regression is pending and must be recorded separately.
 
 **Objective:** upgrade one capability at a time using the approved standard.
 
