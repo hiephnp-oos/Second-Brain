@@ -2,27 +2,15 @@
 
 ## Purpose
 
-This layer organizes the three R&D workstreams and their task-specific execution contracts.
-
-## Working Rules
-
-
-
-This folder contains workstream-specific context, routing, prompts, execution records, and outputs. It does not define reusable capability methods or own authoritative Knowledge.
-
-- Shared capability contract: [../1. CAPABILITIES/README.md](../1. CAPABILITIES/README.md)
-- Knowledge lifecycle and authority: [../3. KNOWLEDGE/README.md](../3. KNOWLEDGE/README.md)
-- Parent R&D architecture: [../README.md](../README.md)
-
-Capabilities are invoked by workstreams; folder order is navigation, not a mandatory pipeline. The invoking workstream owns each execution output.
+This layer organizes three workstreams by business purpose. It owns task-specific context, prompts, execution records, and outputs; reusable methods belong to `1. CAPABILITIES/`, while authoritative Knowledge belongs to `3. KNOWLEDGE/`.
 
 ## Workstream map
 
-| Workstream | Owns | Entry point |
+| Workstream | Purpose | Entry point |
 |---|---|---|
-| 2.1 PERSONAL_RESEARCH | Research context, RS prompts, research artifacts, scheduled Claw staging and batches | [README](2.1 PERSONAL_RESEARCH/README.md) · [Prompt.csv](2.1 PERSONAL_RESEARCH/Prompt.csv) |
-| 2.2 IDEA_REVIEW | Idea-specific review context, IR prompts, review records and dispositions | [README](2.2 IDEA_REVIEW/README.md) · [Prompt.csv](2.2 IDEA_REVIEW/Prompt.csv) |
-| 2.3 PROJECT_IMPROVEMENT | System review, implementation plans, prompt/workflow changes, regression and validation records | [README](2.3 PROJECT_IMPROVEMENT/README.md) · [Prompt.csv](2.3 PROJECT_IMPROVEMENT/Prompt.csv) |
+| 2.1 PERSONAL_RESEARCH | Discover ideas independently; maintain discovery staging and three-day batches. Ideas selected to proceed move to IDEA_REVIEW. | [README](2.1 PERSONAL_RESEARCH/README.md) · [Prompt.csv](2.1 PERSONAL_RESEARCH/Prompt.csv) |
+| 2.2 IDEA_REVIEW | Review selected ideas. Each idea gets its own folder containing its related review records. The internal template is defined when an idea enters review. | [README](2.2 IDEA_REVIEW/README.md) · [Prompt.csv](2.2 IDEA_REVIEW/Prompt.csv) |
+| 2.3 PROJECT_IMPROVEMENT | Maintain future plans intended to improve R&D Innovation. | [README](2.3 PROJECT_IMPROVEMENT/README.md) |
 
 ## Capability routing
 
@@ -34,20 +22,17 @@ Capabilities are invoked by workstreams; folder order is navigation, not a manda
 | Assess an identified candidate against decision criteria | EVALUATION | [1.4](../1. CAPABILITIES/1.4 EVALUATION/README.md) |
 | Review an explicit candidate for controlled Knowledge promotion | KNOWLEDGE_PROMOTION | [1.5](../1. CAPABILITIES/1.5 KNOWLEDGE_PROMOTION/README.md) |
 
-Use the narrowest sufficient capability. These are conditional routes, not a required linear sequence. Workstream Prompt.csv owns task-specific orchestration; capability README owns reusable method.
+Use only the capabilities needed for the task. These routes are conditional, not a mandatory linear sequence. Workstream Prompt.csv owns task-specific orchestration; capability README owns reusable methods.
 
-## End-to-end handoff contract
+## Handoff
 
-`Workstream input → selected capability(ies) → workstream-owned output → optional review/evaluation → optional Knowledge Candidate → human verification → Released Knowledge`
+`PERSONAL_RESEARCH batch → selected idea → IDEA_REVIEW/<IDEA_ID>/ → optional Knowledge Candidate → human verification → Released Knowledge`
 
-Each handoff must carry enough context to continue without assuming undocumented work: item/claim ID, result, source-to-claim links, epistemic state, limits, checks performed/not performed, next action, output owner, and approval state where applicable.
+A handoff carries the idea ID, source/evidence links, epistemic state, known limits, checks performed/not performed, next action, and approval state where applicable. Promotion is never automatic. Staging, batches, and review records are non-authoritative until the Knowledge lifecycle is completed.
 
-Knowledge promotion is never an automatic side effect. Staging, batches, research notes, and evaluation outputs remain non-authoritative until the Knowledge lifecycle is completed.
+## Change rules
 
-## Link and change rules
-
-- Resolve repository links relative to the file containing the link; encode spaces as ` ` in Markdown URLs.
-- Link to canonical entry points, not copied contract text.
+- Link to canonical entry points rather than copying capability or Knowledge contracts.
 - Workstream prompts may specialize routing and outputs but must not redefine capability methods, evidence states, or Knowledge authorization.
-- When moving or renaming a file, update inbound links, parent indexes, prompt references, and validators in the same change.
-- Validate links and referenced Prompt IDs after refactors; a syntactically present link is not proof that its target exists.
+- When moving files, update inbound links, parent indexes, prompt references, and validators in the same change.
+- Validate links and referenced Prompt IDs after refactors.
