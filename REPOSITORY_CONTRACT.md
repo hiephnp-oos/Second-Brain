@@ -157,3 +157,7 @@ Each active Capability contract must define these 13 fields: Purpose, Trigger, I
 The minimum execution lifecycle is: Trigger → Input → Execute → Output → Validate → Verify → Persist / Promote.
 
 For R&D Innovation, the current capability set is PERSONAL_RESEARCH, CLAW_DISCOVERY, IDEA_REVIEW, EVALUATE, DEEP_ANALYZE, and KNOWLEDGE_PROMOTION. Existing workstreams may serve as capability boundaries.
+
+## Scheduled Output Persistence Invariant
+
+Execution success and persistence success are separate states. Required scheduled output must exist at its contract-defined path and be re-read and validated before success is reported. Missing output means the scheduled run is incomplete. Multi-file scheduled mutations follow the atomic publication contract.
