@@ -472,7 +472,7 @@ For each capability, execute the same action sequence:
 
 ### Phase 4 — Testing and evaluation
 
-**Execution status (2026-09-28):** Phase 4 regression framework alignment is merged (PR #36, `49cb0fe`). Validator coverage hardening is merged (PR #37, `534c7cd`): CI run `36396822011` passed before merge; post-merge CI was not returned by the available workflow query. The validator now requires all 38 regression IDs in the catalog and run template, plus the performance-comparison section. This is mechanical coverage, not semantic or real-output capability acceptance. Next: execute and record real-output runs by capability using the aligned template; do not infer PASS from controlled fixtures or retrospective artifact review. G2 remains open.
+**Execution status (2026-09-28):** Regression framework alignment and full 38-case validator coverage are merged (PR #36/#37). Per user direction, do not block progression on separate real-output acceptance after each capability phase. Complete the five capability implementation phases and Workstream/Knowledge integration first, then execute one integrated end-to-end run and inspect its actual outputs. Controlled fixtures remain distinct from operational evidence. G2 remains open until the integrated run is recorded and reviewed.
 
 **Objective:** prove that the capability instructions improve behavior, not merely documentation completeness.
 
@@ -496,7 +496,7 @@ Use the existing `2.3 PROJECT_IMPROVEMENT/Regression/` artifacts. Extend them on
 
 ### Phase 5 — Workstream integration and hardening
 
-**Objective:** ensure the capability architecture works in real R&D workflows.
+**Execution status (2026-09-28):** Workstreams and Knowledge entrypoint/ownership/handoff refactor merged in PR #38 (`f8ef8df`). Actual saved Claw batch and released Knowledge v2 were inspected; findings are recorded in `Regression/WORKSTREAM_KNOWLEDGE_OUTPUT_REVIEW_2026-09-28.md`. Supplier Tech v2 schema defect was corrected; Knowledge references are structurally intact. RS-13 evidence-state contract hardening and the output review record are in progress on a follow-up PR. The integrated run across the five capabilities is the remaining execution/acceptance step; do not require separate real-output gates after each phase.
 
 | Action | Work | Acceptance |
 |---|---|---|
