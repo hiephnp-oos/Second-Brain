@@ -16,7 +16,7 @@ TOPIC_SECTION_ALIASES = {
 }
 TOPIC_STATUS_VALUES = {"Building", "Active", "Maintenance", "Frozen", "Paused", "Archived"}
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder"]
-OPERATIONAL_STATE_DIRS = {Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/staging")}
+OPERATIONAL_STATE_DIRS = {Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging")}
 WORKSTREAM_PURPOSE_MARKERS = {"Purpose", "Purpose / Scope", "Scope", "Current Context"}
 WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule", "Capability", "Capability Contract", "Contract"}
 CANONICAL_LIFECYCLE = "READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT"
@@ -407,7 +407,7 @@ def validate_capabilities(errors: list[str]) -> None:
             fail(f"System Core capability missing: {path.relative_to(ROOT)}", errors)
 
 def validate_staging_semantics(errors: list[str]) -> None:
-    rel = Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/staging")
+    rel = Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging")
     path = ROOT / rel
     if not path.exists():
         fail(f"Approved staging directory missing: {rel}", errors)
