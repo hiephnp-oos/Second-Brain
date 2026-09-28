@@ -20,6 +20,7 @@ Required: candidate finding and type; owning workstream and source artifact; cla
 Before execution, inspect the current Knowledge lifecycle contract and released CSV headers/ID conventions. Missing or inaccessible schema, source, owner, or approval means HOLD, not inference.
 
 ## Process
+The ordered execution sequence is defined in Section 5; this compatibility anchor points to that single source.
 
 ## 5. Procedure
 1. **Establish ownership and destination.** Keep the candidate in its invoking workstream; target only the existing authoritative release structure.
@@ -37,6 +38,7 @@ Before execution, inspect the current Knowledge lifecycle contract and released 
 Use readiness review when the user asks whether a candidate is promotable; do not write. Use controlled promotion only when the user explicitly requests it and the specific change has human approval. For a narrow source/claim gap, route to VERIFICATION; for broad/conflicting material gaps, DEEP_RESEARCH; for a decision on usefulness or priority, EVALUATION. Do not repeat those methods inside this capability.
 
 ## Tools / AI
+Tool availability and AI execution limits are defined in Section 7; no duplicate tool contract is maintained.
 
 ## 7. Tool boundary
 Use current repository files and CSV headers as schema authority, plus available source references and repository validation. Do not claim repository access, external source checking, atomic writes, or validation execution unless actually available and performed. If tools are unavailable, return a bounded review package and state what remains unverified.
@@ -51,6 +53,7 @@ Return one of: **READY FOR HUMAN APPROVAL**, **HOLD**, **REJECT**, or **PROMOTED
 Before approval: eligibility, provenance, duplicate, contradiction, schema, ID, relationship, and impact checks are explicit. Before reporting success: human approval is evidenced, write actually occurred, and post-write reread/validation passed. A clean repository validator alone does not prove semantic correctness.
 
 ## Escalation
+Escalation destinations and minimum handoff payloads are defined in Section 11.
 
 ## 11. Handoffs
 - Evidence gap → VERIFICATION or DEEP_RESEARCH with the exact unresolved claim and source gap.
@@ -60,16 +63,19 @@ Before approval: eligibility, provenance, duplicate, contradiction, schema, ID, 
 - Approved but no write access → invoking workstream with an implementation-ready change package.
 
 ## Human Verification Gate
+The mandatory approval boundary is defined in Section 12; no second approval rule is maintained.
 
 ## 12. Human gate
 A human must explicitly approve the specific proposed authoritative change before any write. AI may prepare, check, and explain a proposal; it must not self-approve, infer approval, or autonomously release/supersede records.
 
 ## Failure Handling
+Failure and stop conditions are defined in Section 13.
 
 ## 13. Failure and stop conditions
 Stop and HOLD on missing schema, source traceability, owner, approval, uncertain identity, unresolved material contradiction, invalid ID/relationship, or unavailable write access. Reject only when the candidate is out of scope, non-reusable, duplicate without a meaningful update, or otherwise ineligible with a stated rationale. If post-write validation fails, do not report success; preserve the failed state, identify the affected record, and request controlled correction/rollback by the authorized maintainer. Never silently delete history or reuse IDs.
 
 ## Promotion / Persistence
+The authoritative persistence boundary is defined in Section 14.
 
 ## 14. Persistence boundary
 Candidate, research notes, and run outputs remain in the invoking workstream or Candidate/Test lifecycle. Only approved and verified changes enter `3. KNOWLEDGE/RELEASED/Release_23Sep2026/`. The released CSVs remain the data source of truth; this contract and changelog do not duplicate their data. Record the release/change reference in the existing changelog where applicable.

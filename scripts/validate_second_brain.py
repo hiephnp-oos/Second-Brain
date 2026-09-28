@@ -373,9 +373,23 @@ def validate_capabilities(errors: list[str]) -> None:
             fail(f"R&D capability missing: {path.relative_to(ROOT)}", errors)
             continue
         text = read_text(path).lower()
-        for phrase in ["purpose", "trigger", "input", "preconditions", "process", "tools / ai", "output", "validation", "evidence state", "escalation", "human verification gate", "promotion / persistence", "failure handling"]:
-            if phrase not in text:
-                fail(f"R&D capability contract missing '{phrase}': {path.relative_to(ROOT)}", errors)
+        required_groups = {
+            "purpose": ["purpose"],
+            "trigger": ["trigger"],
+            "inputs": ["input", "preconditions"],
+            "procedure": ["procedure", "process"],
+            "tool boundary": ["tool boundary", "tools / ai"],
+            "output": ["output"],
+            "quality gate": ["quality gates", "validation"],
+            "evidence state": ["evidence state", "evidence and uncertainty", "canonical states"],
+            "handoff/escalation": ["handoffs", "escalation"],
+            "human gate": ["human gate", "human verification gate"],
+            "persistence boundary": ["persistence boundary", "promotion / persistence"],
+            "failure handling": ["failure handling", "failure and stop conditions"],
+        }
+        for field, alternatives in required_groups.items():
+            if not any(phrase in text for phrase in alternatives):
+                fail(f"R&D capability contract missing '{field}' (accepted: {', '.join(alternatives)}): {path.relative_to(ROOT)}", errors)
 
     for name in ["2.1 PERSONAL_RESEARCH","2.2 IDEA_REVIEW","2.3 PROJECT_IMPROVEMENT"]:
         path = rnd / "2. WORKSTREAMS" / name / "README.md"
