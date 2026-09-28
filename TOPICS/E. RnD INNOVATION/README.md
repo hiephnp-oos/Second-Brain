@@ -27,6 +27,13 @@ Capabilities provide reusable execution ability. Workstreams own business contex
 - Human verification is required before promoting a Knowledge Candidate into the authoritative Knowledge Sheet.
 - Capabilities do not own execution output; the invoking workstream owns its outputs.
 
+## Active Projects / References
+
+- Capability contracts: 1. CAPABILITIES/
+- Workstream contracts and execution: 2. WORKSTREAMS/
+- Authoritative R&D knowledge: 3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/
+- R&D system-improvement record: 2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/
+
 ## Capability Map
 
 | Capability | Role | Used by |
@@ -107,14 +114,6 @@ Cycle: Observe → Identify Gap → Propose Change → Test → Human Verify →
 
 The SoL-Pi and future-improvement documents remain reference tracks; their existence does not activate a new runtime architecture.
 
-## Routing
-
-- Product / mechanism / technology / material / process / supplier research → 2.1 PERSONAL_RESEARCH/
-- Existing idea evaluation → 2.2 IDEA_REVIEW/
-- Project/workflow/prompt/tool/architecture/validation improvement → 2.3 PROJECT_IMPROVEMENT/
-- Authoritative structured knowledge → 3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/
-- Reusable discovery/evidence/evaluation/promotion ability → 1. CAPABILITIES/
-
 ## Decisions
 
 - Capabilities and workstreams are separate architectural layers.
@@ -130,6 +129,14 @@ The SoL-Pi and future-improvement documents remain reference tracks; their exist
 - Physical refactors must update semantic contracts, routing, schedulers, and validators together.
 - Deterministic validation must check architectural boundaries, not only file existence.
 
+## Routing
+
+- Product / mechanism / technology / material / process / supplier research → 2.1 PERSONAL_RESEARCH/
+- Existing idea evaluation → 2.2 IDEA_REVIEW/
+- Project/workflow/prompt/tool/architecture/validation improvement → 2.3 PROJECT_IMPROVEMENT/
+- Authoritative structured knowledge → 3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/
+- Reusable discovery/evidence/evaluation/promotion ability → 1. CAPABILITIES/
+
 ## Next
 
-Use the workstream README and the relevant capability contract as the execution entry point. Use Project Improvement when observed failures justify changes to the system itself.
+Use the workstream README and the relevant capability contract as the execution entry point. Use Project Improvement when observed failures justify changes to the system.
