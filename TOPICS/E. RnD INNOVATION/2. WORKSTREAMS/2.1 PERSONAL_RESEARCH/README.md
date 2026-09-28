@@ -8,7 +8,7 @@ Personal engineering research for product/mechanism research, technology scoutin
 
 This is the maintainer-facing research workstream. It is the main route for external evidence work that supports personal engineering decisions or targeted research requested by other workstreams.
 
-Project Improvement is maintained inside this workstream because it improves the research system, prompts, routing, tools, documentation, and regression process used by the maintainer.
+Project Improvement is a separate first-class workstream under ../2.3 PROJECT_IMPROVEMENT/. This workstream can consume Project Improvement capabilities and artifacts when a research-system problem is observed.
 
 ## Working Rules
 
