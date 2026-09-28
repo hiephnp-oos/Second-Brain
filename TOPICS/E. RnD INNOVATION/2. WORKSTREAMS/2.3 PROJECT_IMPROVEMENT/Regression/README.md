@@ -57,11 +57,11 @@ Regression is performed on real outputs. The repository validator checks the reg
 
 ## Current baseline
 
-Batches `2026-09-20_to_2026-09-22` and `2026-09-23_to_2026-09-25` are the current observed baseline inputs.
+The regression baseline covers five Phase 2 capabilities and 38 cases (`RND-REG-001–038`). Controlled contract-level runs exist for all five capabilities; these controlled tests do not establish real-output effectiveness.
 
-Batch #2 introduced explicit `Candidate_Class`, `Quality_Gate_Result`, and `Quality_Gate_Reason` fields. This makes the second batch more directly evaluable against the Discovery Quality Gate than Batch #1.
+Real-output evidence is capability-specific and must cite an exact artifact/run. The Claw Discovery retrospective review for `2026-09-26_to_2026-09-28` recorded 5 PASS, 0 FAIL, and 1 INCONCLUSIVE; it reviewed saved output, not a newly executed scheduler run. Other capabilities remain NOT OBSERVED for real-output validation unless a run record explicitly says otherwise.
 
-No claim that Batch #2 is objectively better is made here. The schemas and learning rules changed between the batches, so a controlled quality-improvement conclusion requires subsequent comparable runs.
+Do not compare batches as performance improvement unless tasks, context, prompts/contracts, and evaluation conditions are materially comparable. Record changed conditions and avoid attributing differences to the capability alone.
 
 ## Run rule
 
@@ -87,9 +87,13 @@ A regression result does not itself modify the R&D baseline.
 
 Regression does not replace PERSONAL_RESEARCH, CLAW_DISCOVERY, IDEA_REVIEW, EVALUATE, DEEP_ANALYZE, or KNOWLEDGE_PROMOTION. It observes their outputs.
 
-## Next
+## Phase 4 testing sequence
 
-Run the regression contract against the next comparable real Claw batches, especially Batches #3 and #4, and compare recurring/material failure classes before changing the baseline.
+1. Align the run template with all current regression cases and the three test layers: trigger, functional, and performance comparison.
+2. Select actual, inspectable outputs for each capability; record NOT OBSERVED where no suitable run exists.
+3. Evaluate trigger and boundary behavior separately from functional output quality.
+4. Compare performance only on materially comparable tasks and context; do not infer improvement from changed schemas or prompts.
+5. Record defects and proposed changes; do not promote a baseline change from one isolated observation without human review.
 
 ## Scope boundary
 
