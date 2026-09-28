@@ -1,10 +1,10 @@
 # R&D Workstreams
 
-## Purpose and context
+## Purpose
 
 This layer organizes the three R&D workstreams and their task-specific execution contracts.
 
-## Routing and rules
+## Working Rules
 
 
 
