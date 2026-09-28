@@ -90,12 +90,14 @@ A successful connector action is an implementation result, not completion eviden
 
 ## Atomic publication contract
 
-- One logical multi-file change must be published as one atomic commit whenever practical.
-- `main` must not be intentionally left at a known-incomplete intermediate state.
-- Preferred sequence: build target tree → preflight validate → create one commit → update branch reference → wait for Actions validation → verify final state.
-- If the execution interface cannot publish atomically, use a temporary branch/worktree and publish only the validated final state to `main`.
-- A successful individual file operation is not evidence that the logical change is complete.
-- **Atomic mutation tool rule:** multi-file logical changes must not be published to `main` through sequential per-file contents writes (`update_file`, `create_file`, `delete_file`). Build the target tree and publish one commit, or use a temporary branch/worktree when atomic publication is unavailable.
+- **Mandatory path:** every repository content mutation, including single-file and low-risk changes, must use a dedicated branch → PR to `main` → diff review → applicable validation → merge.
+- Never write directly to `main` unless the user explicitly authorizes a direct-main exception for that specific change.
+- Risk determines review depth, not whether a PR is required.
+- Keep one logical change in one coherent commit whenever practical; do not expose known-incomplete intermediate states on `main`.
+- Preferred sequence: inspect current `main` → create task branch → build target state → preflight validate → commit to task branch → open PR → review diff and checks → merge only after verification → re-read final `main` state.
+- If branch/PR creation or validation is unavailable, stop before publishing to `main` and report the blocker. Do not silently fall back to direct-main writes.
+- A successful individual file operation or PR creation is not evidence that the logical change is complete.
+- **Atomic mutation tool rule:** do not publish sequential per-file contents writes directly to `main`. Build the complete target tree on the task branch and publish a coherent commit.
 
 ## Negative-state contract
 
@@ -112,7 +114,7 @@ Second-Brain uses GitHub's native capabilities as execution and verification lay
 
 ### GitHub Actions
 
-`/.github/workflows/validate.yml` runs the executable repository validator on pushes to `main` and pull requests targeting `main`. Direct GitHub web uploads are therefore supported for valid low-risk single-file changes; the resulting commit is validated after publication.
+`/.github/workflows/validate.yml` runs the executable repository validator on pushes to `main` and pull requests targeting `main`. PR validation is the required pre-merge gate for every repository mutation; a low-risk single-file change is not exempt.
 
 The validator checks structural invariants, topic README/status requirements, forbidden artifacts, local references, supported data contracts, and required repository controls.
 
@@ -142,7 +144,7 @@ A repository mutation is complete only when:
 2. obsolete/superseded state is absent where required;
 3. affected references and canonical documents are synchronized;
 4. automated validation passes when applicable;
-5. the published logical change is atomic when the change spans multiple files, unless a branch-based workflow is explicitly used;
+5. the change was made through a task branch and PR, reviewed, validated as applicable, and merged only after verification;
 6. final repository state has been verified.
 
 ## Scope and simplicity

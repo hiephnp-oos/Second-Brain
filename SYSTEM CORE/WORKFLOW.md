@@ -322,15 +322,15 @@ Run the repository validator against the complete intended target state before p
 
 ### ATOMIC CHANGE
 
-When multiple file operations form one logical change, publish them as one atomic commit whenever practical. Build the complete target tree first, then create one commit from that tree. If the available interface cannot publish atomically, use a temporary branch/worktree and merge only the validated final state; do not expose known-incomplete intermediate states on `main`.
+For **every repository content mutation**, use the mandatory Branch → Change → Pull Request (PR) → Validate / Review → Merge workflow, including single-file and low-risk edits. Never write directly to `main` unless the user explicitly authorizes a direct-main exception for that specific change. Build the complete target state on a dedicated branch and keep each logical change in one coherent commit whenever practical. If branch/PR creation or validation is unavailable, stop before publishing to `main` and report the blocker; do not silently fall back to direct-main writes.
 
 #### Atomic mutation tool rule
 
-For a multi-file logical change, do **not** use per-file contents writes (`update_file`, `create_file`, or `delete_file`) directly against `main`. Those operations create independent commits and can trigger GitHub Actions against known-incomplete intermediate states. Instead, prepare all required blobs/files, build one target tree, create one commit, and move the `main` ref once. If the execution interface cannot do that, use a temporary branch/worktree and publish only the validated final state. A single-file, low-risk change may use a direct file update when no dependent state is affected.
+All repository writes must target the task branch, never `main`. For a multi-file logical change, do not use sequential per-file contents writes; prepare the complete target tree and publish one coherent commit to the task branch. A single-file change also uses a task branch and PR.
 
 ### VALIDATE
 
-Direct single-file uploads through the GitHub web UI are supported for low-risk changes. Validation runs after the upload; a failure means the resulting repository state violates a machine-checkable invariant, not that the upload mechanism itself is broken. For multi-file or structural changes, use a branch/PR so the complete target state is validated before merge.
+Open a PR from the task branch to `main` for every repository mutation. Review the complete diff, run applicable deterministic validation, and perform contextual/semantic review. Merge only after the PR is verified and required checks pass. If checks fail, are unavailable, or the diff cannot be verified, leave the PR unmerged and report the exact state. A PR is the review and validation boundary; creating one alone does not mean the change is complete.
 
 Run applicable automated and artifact-specific validation, including repository contract checks, topic/README structure, local references, CSV schema, IDs, and workstream-specific integrity.
 
@@ -362,27 +362,15 @@ Treat the GitHub connector as an execution interface, not as completion truth.
 - Do not use repeated individual file commits on `main` for one logical multi-file change when an atomic commit mechanism is available.
 - After mutation, verify the complete final state rather than stopping after an individual successful action.
 
-## 12. Risk-based execution
+## 12. Risk-based review depth
 
-### Low risk
+Risk determines the **depth of review**, not whether to use a PR.
 
-Single-file correction, small durable-memory update, typo/wording change.
+- **Low risk:** single-file correction, small durable-memory update, typo/wording change. Use a concise diff review and applicable validation.
+- **Medium risk:** new workstream, multiple related files, dataset/configuration release, backup replacement. Review dependent references, schemas, cleanup, and final tree.
+- **High risk:** topic move/rename, architecture change, mass migration, workflow/contract change, security-sensitive change. Perform full target-state review, negative-state checks, AI Semantic Review when appropriate, and all relevant deterministic checks.
 
-→ Direct main change + validation when available.
-
-### Medium risk
-
-New workstream, multiple related files, dataset/configuration release, backup replacement.
-
-→ Target-state planning + validation + final tree verification.
-
-### High risk
-
-Topic move/rename, architecture change, mass migration, workflow/contract change, security-sensitive change.
-
-→ Prefer branch → change → validation → verification → merge when practical.
-
-Do not add branch/PR ceremony to ordinary low-risk memory maintenance unless it materially reduces risk.
+Every category follows Branch → PR → Validate / Review → Merge. Do not bypass the PR based on low risk.
 
 ## 13. Artifact lifecycle and versioning
 
