@@ -472,7 +472,7 @@ For each capability, execute the same action sequence:
 
 ### Phase 4 — Testing and evaluation
 
-**Execution status (2026-09-28):** Regression framework alignment and full 38-case validator coverage are merged (PR #36/#37). Per user direction, do not block progression on separate real-output acceptance after each capability phase. Complete the five capability implementation phases and Workstream/Knowledge integration first, then execute one integrated end-to-end run and inspect its actual outputs. Controlled fixtures remain distinct from operational evidence. G2 remains open until the integrated run is recorded and reviewed.
+**Execution status (2026-09-28):** Regression framework alignment and full 38-case validator coverage are merged (PR #36/#37). Per user direction, do not block progression on separate real-output acceptance after each capability phase. Complete the five capability implementation phases and Workstream/Knowledge integration first, then execute one integrated end-to-end run and inspect its actual outputs. Controlled fixtures remain distinct from operational evidence. The integrated representative run is recorded and reviewed in PR #40; remaining NOT OBSERVED cases are listed as residual regression coverage, not a blocker to the approved architecture implementation.
 
 **Objective:** prove that the capability instructions improve behavior, not merely documentation completeness.
 
