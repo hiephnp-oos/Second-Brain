@@ -160,7 +160,7 @@ Keep the system intentionally small. Add infrastructure only when repeated real 
 
 ### Capability contract completeness
 
-Each active Capability contract must define these 13 fields: Purpose, Trigger, Input / Context, Preconditions, Process, Tools / AI, Output, Validation, Evidence State, Escalation, Human Verification Gate, Promotion / Persistence, and Failure Handling.
+Each active reusable Capability contract must define these 13 fields: Purpose, Trigger, Input / Context, Preconditions, Process, Tools / AI, Output, Validation, Evidence State, Escalation, Human Verification Gate, Promotion / Persistence, and Failure Handling.
 
 The minimum execution lifecycle is: Trigger → Input → Execute → Output → Validate → Verify → Persist / Promote.
 

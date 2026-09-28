@@ -47,7 +47,7 @@ Instructions for the receiving AI:
 
 ## Memory Delta Rule
 
-The Handoff should propose memory changes, not silently write them. The receiving AI should apply `ADD / UPDATE / REMOVE / NO_CHANGE` using `WORKFLOW.md` before changing persistent memory.
+The Handoff should propose memory changes, not silently write them. The receiving AI should apply `ADD / UPDATE / REMOVE / NO_CHANGE` using `SYSTEM CORE/WORKFLOW.md` before changing persistent memory.
 
 ## Good Handoff Characteristics
 

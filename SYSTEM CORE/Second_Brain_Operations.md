@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Operational guide for reliable AI interaction with Second-Brain. This document is a compact execution aid; canonical rules remain in `WORKFLOW.md` and `REPOSITORY_CONTRACT.md`.
+Operational guide for reliable AI interaction with Second-Brain. This document is a compact execution aid; canonical rules remain in `SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 
 ## Standard lifecycle
 
@@ -20,7 +20,7 @@ The Scheduler is a trigger/orchestration layer only. Staging is intermediate sta
 
 ### READ
 
-Read `AI_MEMORY.md` first. For repository mutations or structural work, also read `WORKFLOW.md` and `REPOSITORY_CONTRACT.md`.
+Read `AI_MEMORY.md` first. For repository mutations or structural work, also read `SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 
 ### ROUTE
 

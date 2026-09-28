@@ -12,4 +12,4 @@ Reusable session-continuity capability for transferring current task state betwe
 - Escalation: conflicting or missing durable information is resolved against current GitHub state before continuation.
 
 ## Boundary
-Handoff is a reusable cross-topic capability. It does not own persistent memory and does not replace `AI_MEMORY.md`, `WORKFLOW.md`, or topic artifacts.
+Handoff is a reusable cross-topic capability. It does not own persistent memory and does not replace `AI_MEMORY.md`, `SYSTEM CORE/WORKFLOW.md`, or topic artifacts.

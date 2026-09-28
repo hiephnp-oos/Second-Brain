@@ -25,7 +25,7 @@ body:
     attributes:
       label: Target
       description: Topic, workstream, file, or repository area affected.
-      placeholder: TOPICS/SYSTEMS
+      placeholder: TOPICS/A. AI GENERAL
     validations:
       required: true
   - type: textarea
@@ -51,8 +51,8 @@ body:
         - label: Workstream README
         - label: AI_MEMORY.md
         - label: Root README.md
-        - label: WORKFLOW.md
-        - label: REPOSITORY_CONTRACT.md
+        - label: SYSTEM CORE/WORKFLOW.md
+        - label: SYSTEM CORE/REPOSITORY_CONTRACT.md
         - label: Local references
         - label: Obsolete / duplicate artifacts
   - type: textarea

@@ -13,4 +13,4 @@
 
 ## AI Semantic Review scope
 
-<!-- When used, ask ChatGPT to review this PR against AI_MEMORY.md, WORKFLOW.md, REPOSITORY_CONTRACT.md, and affected topic/source files. -->
+<!-- When used, ask ChatGPT to review this PR against AI_MEMORY.md, SYSTEM CORE/WORKFLOW.md, SYSTEM CORE/REPOSITORY_CONTRACT.md, and affected topic/source files. -->
