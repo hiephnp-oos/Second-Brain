@@ -20,7 +20,7 @@ Trading and manufacturing environments are both acceptable.
 
 ## Status
 
-- State: Building
+- State: Pilot / Operational Validation
 - Summary: Career is the first Capability/Skill pilot. The canonical profile, three workstreams, execution contracts, one master recurring scheduler, and lightweight weekly run-record layer are configured. Real-market execution is used to validate quality and discover repeated failure modes.
 - Direction: Run the three independent capabilities through the master scheduler, evaluate outputs, and improve reusable rules only when repeated evidence justifies change.
 - Last reviewed: 2026-09-27
@@ -55,7 +55,7 @@ Trading and manufacturing environments are both acceptable.
 
 ### Weekly Run Records
 
-`TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/README.md` defines the lightweight weekly output/staging artifact. It records execution coverage, meaningful findings, quality/failure patterns, and proposed improvements without becoming a job database.
+`TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/README.md` defines the weekly review artifact: exactly three separate tables (Job Search, Company Radar, Remote / AI) using each capability's output schema, followed by concise quality observations and user-review items.
 
 ### Job Search
 
