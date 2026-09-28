@@ -6,240 +6,84 @@ R&D engineering, innovation research, technology scouting, competitor/supplier t
 
 ## Current Context
 
-The topic uses an evidence-driven flow:
+R&D Innovation separates reusable capabilities from the workstreams that execute them.
 
-`Material → Knowledge Sheet → Claw Idea → Idea Review → Evaluate → Deep Analyze`
-
-The project also improves its own prompts, workflows, tool selection, workstream design, and validation through Project Improvement & Governance under `1. Personal Research/`.
+Capabilities provide reusable execution ability. Workstreams own business context, execution outputs, and workstream-specific routing. The Knowledge Sheet is the authoritative structured knowledge layer.
 
 ## Status
 
 - State: Active
-- Summary: R&D innovation capability is organized into Personal Research, Knowledge Sheet + Claw, Idea Review, and the maintainer Project Improvement capability.
+- Summary: R&D Innovation currently has five reusable capabilities, three workstreams, and one authoritative Knowledge Sheet.
 - Direction: Keep research evidence traceable, minimize repeated work, and improve the system from observed results rather than adding complexity by default.
-- Last reviewed: 2026-09-27
+- Last reviewed: 2026-09-28
 
 ## Working Principles
 
 - Prefer primary, technical, and directly relevant evidence.
 - Distinguish evidence, inference, assumption, proposal, and unknown.
-- Existing Knowledge Sheet relationships are facts only when supported by current source data.
-- Semantic candidate connections are useful for discovery but are not automatically written back as relationships.
+- Existing Knowledge Sheet relationships are authoritative only when supported by current source data.
 - Absence from the Knowledge Sheet or search results is not proof of novelty.
 - Research only to the depth needed for the decision.
-- Do not duplicate detailed knowledge unnecessarily.
 - Human verification is required before promoting a Knowledge Candidate into the authoritative Knowledge Sheet.
+- Capabilities do not own execution output; the invoking workstream owns its outputs.
 
 ## Capability Map
 
-R&D Innovation uses existing workstreams as Capability boundaries; no new `CAPABILITIES/` directory is required.
-
-| Capability | Role | Source |
+| Capability | Role | Used by |
 |---|---|---|
-| Personal Research | Discovery | `1. Personal Research/README.md` |
-| Claw Discovery | Discovery | `1. Personal Research/1. Claw Discovery/README.md` + RS prompts |
-| Idea Review | Evaluation | `2. Idea Review/README.md` + IR prompts |
-| Evaluate | Evaluation | `2. Idea Review/EVALUATE.md` |
-| Deep Analyze | Evaluation | `2. Idea Review/DEEP_ANALYZE.md` |
-| Knowledge Promotion | Knowledge | `3. Knowledge sheet/README.md` |
-| Knowledge Sheet | Authoritative knowledge layer | `3. Knowledge sheet/README.md` + v2 datasets |
-| Project Improvement | Governance / improvement | `1. Personal Research/2. Project Improvement/README.md` + PI prompts |
+| CLAW_DISCOVERY | Structured discovery / candidate generation | Personal Research, Idea Review |
+| VERIFICATION | Evidence and claim verification | Personal Research, Idea Review, Project Improvement |
+| DEEP_RESEARCH | Broad/conflicting/high-risk research | Personal Research, Idea Review |
+| EVALUATION | Structured technical/decision evaluation | Idea Review, other R&D workstreams |
+| KNOWLEDGE_PROMOTION | Verified promotion into authoritative knowledge | Personal Research, Idea Review |
 
-Flow: `Discovery → Evaluation → Research / Deep Analysis when needed → Human Verification → Knowledge Promotion`.
+Capability contracts live under 1. CAPABILITIES/. They contain reusable instructions and validation boundaries, not daily output records.
 
 ## Active Workstreams
 
-| Order | Workstream | Purpose | Primary tools |
-|---|---|---|
-| 3 | `3. Knowledge sheet/` | Structured reusable knowledge, evidence, IDs, and relationships. | ChatGPT Project + Web + GitHub; NotebookLM for team use |
-| 1 | `1. Personal Research/` | Personal engineering research, external investigation, and maintainer project improvement/governance. | ChatGPT Project + Web + GitHub |
-| 2 | `2. Idea Review/` | Evidence-based review and development of existing ideas. | NotebookLM + Custom Gemini + released Prompt.csv |
+| Order | Workstream | Purpose | Output owner |
+|---|---|---|---|
+| 2.1 | PERSONAL_RESEARCH | Personal engineering research, external investigation, and scheduled Claw discovery | 2.1 PERSONAL_RESEARCH/OUTPUT/ |
+| 2.2 | IDEA_REVIEW | Evidence-based review and development of existing ideas | 2.2 IDEA_REVIEW/ and designated review artifacts |
+| 2.3 | PROJECT_IMPROVEMENT | Improve prompts, workflow, tooling, architecture, and validation | 2.3 PROJECT_IMPROVEMENT/ |
 
-Project Improvement is a maintainer capability under `1. Personal Research/2. Project Improvement/`, not a separate top-level workstream.
-
-`3. Knowledge sheet/Prompt.csv` is the team-released prompt library. The other Prompt.csv files are maintainer/workstream task interfaces.
+The Knowledge Sheet is a knowledge layer, not a workstream execution output. It lives under 3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/.
 
 ## Core R&D Workflow
 
-`Material → Claw Idea → Idea Review → Evaluate → Deep Analyze`
+Input / Problem / Signal → Workstream → Reusable Capability → Workstream Output → Verification / Evaluation → Knowledge Candidate → Human Verification → Knowledge Sheet
 
-Material may come from Market Pull, Tech Push, Competitor Technology, Supplier/OEM/ODM Technology, patents, technical documents, literature, and other evidence.
+A workstream may consume multiple capabilities, and a capability may be reused by multiple workstreams. Folder order is navigation metadata, not mandatory execution sequence.
 
-### Knowledge Sheet + Claw
+## Claw Discovery
 
-Before external research:
-1. Check the relevant Knowledge Sheet.
-2. Identify the actual gap.
-3. Research only the gap that can change the decision.
-4. Synthesize evidence.
-5. Create a Knowledge Candidate when the result is reusable.
-6. Human review is required before Knowledge Sheet write-back.
+CLAW_DISCOVERY is a reusable capability. Its scheduled execution currently belongs to PERSONAL_RESEARCH.
 
-Claw connects:
-- Market Signal
-- Technology
-- Competitor
-- Supplier
-- Mechanism
+Execution outputs are owned by:
+TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/
 
-Ideas should state the knowledge connections and evidence supporting them.
+- staging/ — daily unvalidated discovery records.
+- batches/ — RS-13 three-day consolidation outputs.
 
-### Idea Review
+These are operational outputs, not capability definition artifacts and not authoritative Knowledge Sheet records.
 
-Idea Review is the unified successor to the former `Existing Ideas/` and `Bi-weekly review/` workstreams.
+## Knowledge Sheet
 
-Review questions:
-- Is the evidence sufficient?
-- Does the technology really exist?
-- Is the mechanism reasonable?
-- Is there competitor adoption or a relevant commercial precedent?
-- Is there supplier / technology support?
-- Is there a gap in the Knowledge Sheet?
-- What additional research is needed?
-- Does the idea need modification?
+3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/ contains the authoritative structured R&D datasets and their prompt/contract entry point.
 
-The review may be triggered by a new idea, updated evidence, a review cycle, or a specific decision need.
-
-### Evaluate
-
-Evaluate ideas using the criteria appropriate to the decision, with emphasis on User Value, Technical Feasibility, Novelty/Differentiation, Business Potential, and Evidence.
-
-Do not force every idea into deep analysis.
-
-### Deep Analyze
-
-Use deeper research for selected ideas, covering user problem/value, existing solutions, mechanism, feasibility, technical risks, patent/IP landscape, applications, assumptions, and verification needs.
+Knowledge promotion is controlled by KNOWLEDGE_PROMOTION. Research output is not automatically written back.
 
 ## Prompt Execution Contract
 
-GitHub is the persistent source of truth for the current R&D Innovation architecture, released Prompt.csv files, workstream ownership, routing rules, and detailed workstream instructions. The Project System Prompt is intentionally compact: it defines global behavior and guardrails, while GitHub holds the current detailed execution content.
+When a task requires current repository information or references a Prompt ID:
 
-### GitHub Execution Rule
-
-When a task requires current repository information or references a Prompt ID, the connected GitHub repository must be accessed before execution. Retrieve only the relevant current file or section; do not load the repository broadly when a targeted read is sufficient.
-
-If GitHub access is unavailable, do not claim that the current repository content was retrieved and do not reconstruct current Prompt.csv content from memory when exact current content matters.
-
-When a user explicitly references a Prompt ID such as IR-01, RS-03, or PI-08:
-
-1. Resolve the Prompt ID against the corresponding workstream Prompt.csv in GitHub.
-2. Use the full released prompt text as the task-specific instruction. Do not reconstruct a prompt from memory when the repository version is available.
-3. Resolve the workstream path from the current repository structure before execution.
-4. Use the prompt's declared Input/Context requirements. If required input is missing, request only the missing information that materially blocks reliable execution.
-5. Follow the prompt's Output structure and Rules in addition to the Project System Prompt.
-6. Do not silently broaden the task into another workstream. Route only when the prompt or architecture explicitly requires it.
-7. For Idea Review, check relevant Knowledge Sheet context before external research. If a material evidence gap remains, route to Personal Research.
-8. Distinguish VERIFIED/EVIDENCED, INFERRED, WORKING ASSUMPTION, UNKNOWN, and PROPOSED information as required by the prompt.
-9. Do not invent Knowledge Sheet records, relationships, evidence, repository paths, or prompt text.
-10. If a Prompt ID cannot be resolved in the current repository baseline, state that the prompt cannot be resolved and do not recreate it from memory.
-
-### Contract hierarchy
-
-Project System Prompt → GitHub workstream architecture → Prompt.csv execution contract → user task/context
-
-The Project System Prompt defines global behavior and guardrails. GitHub defines the current repository structure and detailed workstream instructions. The referenced Prompt.csv entry defines the task contract. User context supplies the actual case to process.
-
-A Prompt.csv entry may repeat global evidence and routing rules when repetition materially reduces execution ambiguity. Repetition is intentional and should not be removed only to reduce prompt length.
-
-### Prompt Contract Standard
-
-Every workstream prompt should explicitly define, at minimum:
-
-Purpose → Input / Context → Task → Output → Rules
-
-Where material, also define:
-
-Stop condition → Escalation / Routing → Evidence status → Human verification gate
-
-The prompt may repeat these rules across prompts when the repeated rule is needed to preserve behavior when the prompt is executed independently.
-
-## Visual Workflow
-
-```mermaid
-flowchart LR
-    M[Material / Signal] --> KS[Knowledge Sheet]
-    KS --> C[Claw Idea]
-    C --> IR[Idea Review]
-    IR -->|Evidence sufficient| EV[Evaluate]
-    IR -->|Evidence gap| PR[Personal Research]
-    PR -->|Verified finding| IR
-    PR -->|Reusable knowledge| KC[Knowledge Candidate]
-    KC -->|Human verify| KS
-    EV -->|Selected idea| DA[Deep Analyze]
-    DA -->|New evidence / gap| PR
-    DA -->|Reusable knowledge| KC
-```
-
-Read the workflow as three operating workstreams:
-
-`Knowledge Sheet` = what the project already knows.
-
-`Personal Research` = investigate what is not known or needs stronger evidence.
-
-`Idea Review` = decide whether an idea is sufficiently supported, what is missing, and whether the idea should change.
-
-## Practical Use Cases
-
-### 1. Knowledge Sheet — "What do we already know?"
-Use when:
-- You receive a new market signal, competitor technology, supplier technology, patent, or technical finding.
-- You want to connect Technology ↔ Competitor ↔ Supplier ↔ Mechanism ↔ Market Signal.
-- You need to know whether an idea is already supported by existing project knowledge.
-- You discover a reusable finding that may deserve promotion into the Knowledge Sheet.
-
-Typical flow:
-`Material → Check Knowledge Sheet → Identify gap → Create Claw connection / Knowledge Candidate`
-
-Example:
-"Supplier X shows a pressure-compensating shower nozzle. Do we already have this technology, competitor precedent, supplier support, and related mechanisms in the Knowledge Sheet?"
-
-### 2. Personal Research — "What do we still need to know?"
-Use when:
-- Knowledge Sheet evidence is insufficient.
-- An Idea Review identifies a blocking evidence gap.
-- You need external research on mechanism, technology existence, competitor adoption, supplier capability, materials, manufacturing, patents, literature, reliability, or testing.
-- You need deeper or independent verification before making an engineering decision.
-
-Typical flow:
-`Question / Gap → Research → Verify → Synthesize → Return finding`
-
-Example:
-"Idea Review says the proposed cartridge mechanism may be feasible, but we have no evidence for the required pressure range. Research the mechanism, available components, relevant technical evidence, and key feasibility limits."
-
-### 3. Idea Review — "Is this idea ready, and what should change?"
-Use when:
-- You have an existing Claw idea and want to verify it.
-- You are doing a periodic review of the idea portfolio.
-- New evidence may invalidate, strengthen, or modify an idea.
-- You need to decide what research is actually necessary before proceeding.
-
-Core questions:
-1. Is the evidence sufficient?
-2. Does the technology really exist?
-3. Is the mechanism reasonable?
-4. Is there competitor adoption / precedent?
-5. Is there supplier / technology support?
-6. Is there a Knowledge Sheet gap?
-7. What research is needed?
-8. Does the idea need modification?
-
-Typical flow:
-`Idea → Review → Research Request if needed → Updated evidence → Review again → Modify / Evaluate / Deep Analyze`
-
-Example:
-"We have an idea for an integrated 2-position diverter cartridge. Check whether the architecture exists commercially, whether the mechanism is reasonable, whether competitors/suppliers support it, what the Knowledge Sheet already knows, and what research is still required."
-
-## Research Routing
-
-Use the minimum sufficient route:
-
-- Product / mechanism / technology / material / process / supplier → engineering evidence research.
-- Patent / prior art / CPC/IPC / claims / family / status → patent research.
-- Engineering science / performance / compatibility / degradation / reliability / testing → technical literature research.
-- Broad, conflicting, high-risk, exhaustive, or decision-critical questions → deep research.
-- Project health / prompt / workflow / tool / governance / regression → 1. Personal Research/2. Project Improvement.
-
-For unclear scope, derive **MUST / SHOULD / COULD** internally. Ask only when an unresolved point materially blocks reliable work.
+1. Access the current GitHub repository.
+2. Resolve the Prompt ID against the correct workstream Prompt.csv.
+3. Use the full released prompt as the task-specific contract.
+4. Read only the relevant capability/workstream context.
+5. Follow the prompt's declared input, output, evidence, and validation rules.
+6. Do not reconstruct current prompt text from memory when the repository version exists.
+7. Preserve UNKNOWN / INFERRED / ASSUMPTION / PROPOSED states explicitly.
 
 ## Evidence Rules
 
@@ -253,97 +97,39 @@ Preferred evidence order:
 6. Reputable distributor / industry source
 7. Retail / marketplace / blog / forum
 
-Product pages establish existence or advertised function, not hidden internal mechanism. Generic material knowledge does not prove a specific commercial grade. Search snippets are discovery aids, not consequential evidence.
+Search snippets are discovery aids, not consequential evidence. Product pages establish existence or advertised function, not hidden internal mechanism.
 
-## Tool Selection
+## Project Improvement
 
-- Personal research → ChatGPT Project + Web
-- Existing structured knowledge → NotebookLM
-- Team/shared reasoning → Custom Gemini
-- Persistent source of truth → GitHub
-- Repeatable task → local/released `Prompt.csv`
-- Knowledge maintenance → ChatGPT Project + Web + GitHub
-- Project improvement → ChatGPT Project + GitHub + Regression
+2.3 PROJECT_IMPROVEMENT/ owns system-improvement artifacts including prompts, workflow, routing, tooling, governance, validation, regression, scheduler, implementation-plan, and architecture-improvement work.
 
-Do not create a parallel research database.
+Cycle: Observe → Identify Gap → Propose Change → Test → Human Verify → Promote
 
-## Project Improvement & Governance
-
-Project Improvement is nested under `1. Personal Research/` and uses the same maintainer toolchain.
-
-Use observed results, failures, feedback, and regression tests to improve:
-- workstream design
-- prompts
-- research routing
-- tool selection
-- documentation
-- validation
-
-Cycle:
-
-`Observe → Identify Gap → Propose Change → Test → Human Verify → Promote to Baseline`
-
-No improvement becomes baseline automatically.
-
-## Visualization
-
-Use Mermaid only when it materially improves understanding, review, or logic checking. Use tables or text when clearer. Visualization is presentation only, never a second source of truth.
-
-## Implementation Status
-
-`1. Personal Research/2. Project Improvement/01_RND_IMPLEMENTATION_PLAN.md` is now the implementation record for the applied R&D capability architecture and its remaining validation work.
-
-R&D Capability implementation is active and uses the existing workstream structure. The remaining architecture validation step is real-output regression on subsequent Claw batches; no new architecture layer is implied by that validation.
-
-## Decisions
-
-- This topic has three active workstreams: Knowledge Sheet, Personal Research, and Idea Review.
-- Idea Review is the unified successor to `Existing Ideas/` and `Bi-weekly review/`.
-- Project Improvement & Governance is a maintainer capability nested under Personal Research.
-- `3. Knowledge sheet/Prompt.csv` is the team-released prompt library; maintainer/workstream prompts remain in their relevant workstream folders.
-- Prompt assets are colocated with the workstream or maintainer capability they serve.
-- `ADTD Prompting/` is retired; its useful prompt assets are redistributed to the relevant workstreams.
-- Git history is the historical record; do not create manual archive copies unless explicitly required.
-- Knowledge Sheet remains the reusable structured knowledge layer; research output is not automatically promoted into it.
-
-## Lessons
-
-- Evidence quality matters more than volume.
-- Research should stop when additional work is unlikely to change the decision.
-- Inferred connections are useful for discovery but must not silently become authoritative relationships.
-- Workflow complexity should be justified by repeated real usage.
+The SoL-Pi and future-improvement documents remain reference tracks; their existence does not activate a new runtime architecture.
 
 ## Routing
 
-`3. Knowledge sheet/` → reusable knowledge and evidence
+- Product / mechanism / technology / material / process / supplier research → 2.1 PERSONAL_RESEARCH/
+- Existing idea evaluation → 2.2 IDEA_REVIEW/
+- Project/workflow/prompt/tool/architecture/validation improvement → 2.3 PROJECT_IMPROVEMENT/
+- Authoritative structured knowledge → 3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET/
+- Reusable discovery/evidence/evaluation/promotion ability → 1. CAPABILITIES/
 
-`1. Personal Research/` → personal research, external investigation, and Project Improvement
+## Decisions
 
-`2. Idea Review/` → evidence review, gap identification, targeted research requests, and idea modification
+- Capabilities and workstreams are separate architectural layers.
+- Workstreams own execution context and output; reusable capabilities do not.
+- CLAW_DISCOVERY is reusable R&D capability; its scheduled output is owned by PERSONAL_RESEARCH.
+- PROJECT_IMPROVEMENT is a first-class R&D workstream.
+- Knowledge Sheet remains the authoritative structured knowledge layer.
+- Human verification remains mandatory before authoritative promotion.
 
-## System Prompt Boundary
+## Lessons
 
-The active ChatGPT Project System Prompt should remain compact and contain only global behavior, routing, evidence discipline, GitHub access rules, and other execution-critical guardrails. Do not duplicate the full repository architecture or released Prompt.csv content inside the Project System Prompt.
-
-Detailed recurring instructions belong here and in the relevant workstream `Prompt.csv` files. The Project System Prompt should retrieve the relevant GitHub content when the task requires current repository instructions.
+- A folder hierarchy must not imply that a capability owns the output of every workflow that uses it.
+- Physical refactors must update semantic contracts, routing, schedulers, and validators together.
+- Deterministic validation must check architectural boundaries, not only file existence.
 
 ## Next
 
-Use the workstream READMEs and local `Prompt.csv` files as the entry points for detailed recurring work. Project Improvement tasks are under `1. Personal Research/Project Improvement/`. Keep this README focused on durable routing, architecture, and current state.
-
-
-## Workstream Order
-
-`1. Personal Research → 2. Idea Review → 3. Knowledge Sheet`
-
-The numeric order is the canonical workstream/navigation order. The business flow may route conditionally between workstreams; numbering does not imply every task executes all three sequentially.
-
-## Capability Baseline
-
-Discovery: PERSONAL_RESEARCH, CLAW_DISCOVERY.
-
-Evaluation: IDEA_REVIEW, EVALUATE, DEEP_ANALYZE.
-
-Knowledge: KNOWLEDGE_PROMOTION.
-
-Knowledge Sheet remains the authoritative structured knowledge layer. Existing workstreams remain the routing structure; no generic CAPABILITIES directory is introduced.
+Use the workstream README and the relevant capability contract as the execution entry point. Use Project Improvement when observed failures justify changes to the system itself.

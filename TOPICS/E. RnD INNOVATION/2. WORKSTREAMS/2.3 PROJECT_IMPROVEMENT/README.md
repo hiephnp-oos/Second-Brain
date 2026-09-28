@@ -14,7 +14,7 @@ Scope:
 - documentation
 - validation/regression
 
-This is a maintainer capability under `1. Personal Research/`, not a separate top-level workstream.
+This is a first-class R&D workstream. It consumes reusable capabilities from `1. CAPABILITIES/` as needed.
 
 ## Capability Contract
 
@@ -69,7 +69,7 @@ Both documents are planning/reference artifacts. Neither changes the current R&D
 
 ## Artifact Placement Rule
 
-`2. Project Improvement/` is the canonical location for artifacts whose primary purpose is to improve how R&D Innovation operates.
+`TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/` is the canonical location for artifacts whose primary purpose is to improve how R&D Innovation operates.
 
 This includes workflow, workstream, prompt, routing, tool, governance, validation, regression, scheduler, capability/skill execution, implementation-plan, and architecture-improvement artifacts.
 

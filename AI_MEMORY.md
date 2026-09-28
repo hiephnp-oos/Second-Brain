@@ -67,7 +67,7 @@ R&D Database is a migrated project source folder. Its project files are stored d
 
 Career is organized as a parent topic with shared career-profile context and three parallel Capability/workstream units: `1. JOB_SEARCH`, `2. COMPANY_RADAR`, and `3. REMOTE_AI`. One daily master schedule is only the external trigger; the Career execution contract owns capability cadence, matching logic, validation, and weekly synthesis. Career is intentionally not a job database at the current stage. High-volume job records remain in external working tools until real usage demonstrates that a searchable database is justified.
 
-R&D Innovation is an active operational Capability domain. Claw Discovery is discovery, Idea Review is evaluation, Project Improvement is governance/improvement, and the Knowledge Sheet is the authoritative structured knowledge layer. Claw staging is intermediate operational state, not approved knowledge.
+R&D Innovation is an active operational Capability domain. Five reusable capabilities live under `1. CAPABILITIES/`; three workstreams live under `2. WORKSTREAMS/`; the Knowledge Sheet is the authoritative structured knowledge layer. Scheduled Claw Discovery output is owned by `PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/` and remains intermediate operational state until the applicable gates are passed.
 
 A topic should be added only when recurring work creates enough durable context to justify a dedicated folder.
 
@@ -114,7 +114,7 @@ A topic should be added only when recurring work creates enough durable context 
 - Staging is intermediate/unvalidated state and is never authoritative merely because it exists.
 - Conflicting authoritative information is flagged and investigated rather than silently overwritten.
 - Health/lint controls target demonstrated failure modes before broader metrics infrastructure.
-- R&D Innovation now has a lightweight regression/evaluation layer under `1. Personal Research/2. Project Improvement/Regression/` for real capability outputs; it is an evaluation aid, not a second workflow or scoring engine. The framework is implemented; semantic validation remains to be exercised on subsequent real batches.
+- R&D Innovation now has a lightweight regression/evaluation layer under `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/Regression/` for real capability outputs; it is an evaluation aid, not a second workflow or scoring engine. The framework is implemented; semantic validation remains to be exercised on subsequent real batches.
 - Current recurring external schedules are the Career master scheduler and R&D Claw Discovery daily scheduler; AI General, Nuvio Setup, and R&D Database have no ChatGPT scheduled execution in the current operating model.
 
 ## 9. HOW A NEW AI SHOULD ONBOARD

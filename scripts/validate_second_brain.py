@@ -16,7 +16,7 @@ TOPIC_SECTION_ALIASES = {
 }
 TOPIC_STATUS_VALUES = {"Building", "Active", "Maintenance", "Frozen", "Paused", "Archived"}
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder"]
-OPERATIONAL_STATE_DIRS = {Path("TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/staging")}
+OPERATIONAL_STATE_DIRS = {Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/staging")}
 WORKSTREAM_PURPOSE_MARKERS = {"Purpose", "Purpose / Scope", "Scope", "Current Context"}
 WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule", "Capability", "Capability Contract", "Contract"}
 CANONICAL_LIFECYCLE = "READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT"
@@ -233,7 +233,7 @@ def validate_csv_shape(errors: list[str]) -> None:
 
 
 def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
-    ks = ROOT / "TOPICS" / "6. RnD INNOVATION" / "3. Knowledge sheet"
+    ks = ROOT / "TOPICS/E. RnD INNOVATION/3. KNOWLEDGE/3.1 KNOWLEDGE_SHEET"
     if not ks.exists():
         return
     specs = {
@@ -342,7 +342,7 @@ def validate_capabilities(errors: list[str]) -> None:
             fail(f"System Core capability missing: {path.relative_to(ROOT)}", errors)
 
 def validate_staging_semantics(errors: list[str]) -> None:
-    rel = Path("TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/staging")
+    rel = Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY/staging")
     path = ROOT / rel
     if not path.exists():
         fail(f"Approved staging directory missing: {rel}", errors)
@@ -356,6 +356,49 @@ def validate_staging_semantics(errors: list[str]) -> None:
             if phrase not in text:
                 fail(f"Staging contract missing '{phrase}': {owner.relative_to(ROOT)}", errors)
 
+
+
+def validate_architecture_boundaries(errors: list[str]) -> None:
+    rnd = ROOT / "TOPICS/E. RnD INNOVATION"
+    capabilities = rnd / "1. CAPABILITIES"
+    output = rnd / "2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/OUTPUT/CLAW_DISCOVERY"
+
+    if not output.exists():
+        fail(f"Claw output owner missing: {output.relative_to(ROOT)}", errors)
+    if (capabilities / "1.1 CLAW_DISCOVERY/staging").exists():
+        fail("Capability owns execution staging; move it to the invoking workstream output area", errors)
+    if (capabilities / "1.1 CLAW_DISCOVERY/batches").exists():
+        fail("Capability owns execution batches; move them to the invoking workstream output area", errors)
+    if not (output / "staging").exists():
+        fail("Claw staging missing from workstream-owned output area", errors)
+    if not (output / "batches").exists():
+        fail("Claw batch output missing from workstream-owned output area", errors)
+
+    stale_fragments = [
+        "TOPICS/6. RnD INNOVATION",
+        "TOPICS/2. CAREER/4. RUNS",
+        "1. Personal Research/",
+        "2. Idea Review/",
+        "3. Knowledge sheet/",
+        "1. Personal Research/2. Project Improvement/",
+    ]
+    canonical_docs = [
+        ROOT / "AI_MEMORY.md",
+        ROOT / "README.md",
+        ROOT / "SYSTEM CORE/README.md",
+        ROOT / "SYSTEM CORE/WORKFLOW.md",
+        ROOT / "SYSTEM CORE/REPOSITORY_CONTRACT.md",
+        rnd / "README.md",
+        ROOT / "TOPICS/B. CAREER/README.md",
+        ROOT / "TOPICS/B. CAREER/CAREER_EXECUTION_CONTRACT.md",
+    ]
+    for path in canonical_docs:
+        if not path.exists():
+            continue
+        text = read_text(path)
+        for fragment in stale_fragments:
+            if fragment in text:
+                fail(f"Stale refactor path/semantic reference in {path.relative_to(ROOT)}: {fragment}", errors)
 
 def validate_future_rnd_references(errors: list[str]) -> None:
     for rel in [
@@ -514,6 +557,7 @@ def main() -> int:
     validate_csv_shape(errors)
     validate_capabilities(errors)
     validate_staging_semantics(errors)
+    validate_architecture_boundaries(errors)
     validate_future_rnd_references(errors)
     validate_scheduled_capability_contracts(errors)
     validate_rnd_knowledge_sheet(errors)
