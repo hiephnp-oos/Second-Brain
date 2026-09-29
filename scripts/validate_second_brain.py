@@ -361,9 +361,11 @@ def validate_capabilities(errors: list[str]) -> None:
     for name in ["1.1 JOB_SEARCH", "1.2 COMPANY_RADAR", "1.3 REMOTE_AI"]:
         if not (career / "1. CAPABILITIES" / name / "README.md").exists() or not (career / "1. CAPABILITIES" / name / "PROMPT.md").exists():
             fail(f"Career capability incomplete: {name}", errors)
-    weekly = career / "2. REPORTS/2.1 WEEKLY"
-    if not (weekly / "README.md").exists():
+    reports = career / "2. REPORTS"
+    if not (reports / "README.md").exists():
         fail("Career weekly report contract missing", errors)
+    if (reports / "2.1 WEEKLY").exists():
+        fail("Obsolete Career weekly subfolder still exists", errors)
 
     rnd = ROOT / "TOPICS/E. RnD INNOVATION"
     capability_names = ["1.1 CLAW_DISCOVERY","1.2 VERIFICATION","1.3 DEEP_RESEARCH","1.4 EVALUATION","1.5 KNOWLEDGE_PROMOTION"]
