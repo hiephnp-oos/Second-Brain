@@ -1,6 +1,6 @@
 # IDEA_REVIEW
 
-## Mục đích
+## Purpose / Scope — Mục đích
 
 Đánh giá ban đầu các idea R&D do nhóm đề xuất hoặc được chuyển từ PERSONAL_RESEARCH hay nguồn khác. Trọng tâm là xác định **Idea Validity** (idea có được hình thành đủ rõ để nhận diện và review hay chưa), vấn đề người dùng mà idea hướng đến và bằng chứng hiện có.
 
@@ -41,11 +41,11 @@ Không chấm điểm hoặc xếp hạng idea ở bước này, trừ khi ngư�
 - Gắn nhãn rõ nội dung là bằng chứng, suy luận, giả định, đề xuất hay chưa xác định khi điều đó ảnh hưởng đến kết luận.
 - Chỉ mở rộng sang capability khác khi câu hỏi vượt khỏi review ban đầu hoặc người dùng yêu cầu.
 - Không tự động chuyển idea sang POC, Deep Research hoặc Knowledge.
-- **Mọi báo cáo và nội dung do IDEA_REVIEW tạo ra phải viết bằng tiếng Việt rõ ràng, tự nhiên, dễ hiểu với kỹ sư.** Giữ nguyên tên riêng, mã, tiêu chuẩn và thuật ngữ tiếng Anh cần thiết. Tham chiếu [VIETNAMESE_REWRITE](../../1.%20CAPABILITIES/VIETNAMESE_REWRITE.md). Skill này chỉ biên tập ngôn ngữ, không bổ sung hoặc xác minh nội dung kỹ thuật.
+- **Mọi báo cáo và nội dung do IDEA_REVIEW tạo ra phải viết bằng tiếng Việt rõ ràng, tự nhiên, dễ hiểu với kỹ sư.** Giữ nguyên tên riêng, mã, tiêu chuẩn và thuật ngữ tiếng Anh cần thiết. Tham chiếu [VIETNAMESE_REWRITE](/TOPICS/E. RnD INNOVATION/1. CAPABILITIES/VIETNAMESE_REWRITE.md). Skill này chỉ biên tập ngôn ngữ, không bổ sung hoặc xác minh nội dung kỹ thuật.
 
-## Capability routing
+## Routing / Working Rules — Định tuyến và quy tắc
 
-Phương pháp dùng chung thuộc [1. CAPABILITIES](../../1.%20CAPABILITIES/README.md). Review ban đầu không bắt buộc gọi EVALUATION, DEEP_RESEARCH hoặc VERIFICATION. Chỉ dùng khi câu hỏi và phạm vi thực sự cần.
+Phương pháp dùng chung thuộc [1. CAPABILITIES](/TOPICS/E. RnD INNOVATION/1. CAPABILITIES/README.md). Review ban đầu không bắt buộc gọi EVALUATION, DEEP_RESEARCH hoặc VERIFICATION. Chỉ dùng khi câu hỏi và phạm vi thực sự cần.
 
 ## Handoff
 
