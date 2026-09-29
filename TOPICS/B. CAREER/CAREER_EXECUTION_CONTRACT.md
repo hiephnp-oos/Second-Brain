@@ -68,7 +68,7 @@ Every Career capability follows:
 7. Produce the declared output contract.
 8. Run the validation checklist.
 9. Escalate material uncertainty instead of inventing facts.
-10. On the weekly synthesis run, create a compact weekly run record under `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/YYYY-W##.md`.
+10. On the weekly synthesis run, create a compact weekly run record under `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md`.
 
 ### Tools
 
@@ -80,6 +80,26 @@ Typical tool classes:
 - GitHub for current Second-Brain rules/context and weekly run records.
 - External tracker for high-volume transient opportunity records.
 - External scheduled task as the recurring trigger only; it does not own Career business logic.
+
+### Search Tool Routing
+
+Search tools are execution resources, not independent evidence authorities. Use only tools actually available in the current runtime; installation in the ChatGPT UI does not prove scheduled-task availability. Record actual tool use and distinguish `USED`, `NOT_USED`, `UNAVAILABLE`, and `FAILED`. Never claim a tool was used unless the call succeeded.
+
+Default routing:
+- **Parallel Search** — broad discovery across current jobs, company signals, and opportunity platforms.
+- **Exa** — semantic and adjacent-category discovery where keyword search may miss relevant opportunities; prioritize Company Radar and Remote / AI.
+- **ChatGPT Native Search** — independent discovery, fallback when connectors are unavailable, and targeted cross-checks.
+- **Tavily** — targeted follow-up for a specific evidence gap or source conflict; not a mandatory second search for every result.
+- **Firecrawl** — selective extraction of a known relevant page after discovery; not broad default crawling.
+
+Routing rules:
+1. Start with the smallest suitable set of available discovery tools; do not run all tools for every query.
+2. Deduplicate candidates across tools before deeper verification.
+3. Verify material claims against the employer/platform/official source or another credible primary source where possible. Search snippets are leads, not sufficient evidence for consequential claims.
+4. Invoke Tavily only when a material field remains unresolved or sources conflict. Invoke Firecrawl only when page extraction materially helps.
+5. Stop searching when evidence is sufficient for the declared output; preserve unresolved fields as unknown.
+6. If a connector is unavailable in a scheduled run, continue with available native search where feasible and record the limitation. Do not silently lower verification standards.
+7. Keep search-tool metadata in run/report metadata, not in the fixed opportunity table schemas.
 
 ### Output
 
@@ -150,9 +170,9 @@ A capability must fail explicitly when its required evidence or input is unavail
 
 ## Weekly Run Record
 
-Path: `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/YYYY-W##.md`
+Path: `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md`
 
-Every Monday, create or update **exactly one weekly report file** at `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/YYYY-W##.md`. That single report must contain exactly three result tables, in this order: Job Search, Company Radar, Remote / AI. Each table must use the exact column schema declared by its capability README. Include only results actually produced; use an explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` row/status when applicable. Keep the three tables separate within the same report; do not create one report per capability or merge the streams into one table.
+Every Monday, create or update **exactly one weekly report file** at `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md`. That single report must contain exactly three result tables, in this order: Job Search, Company Radar, Remote / AI. Each table must use the exact column schema declared by its capability README. Include only results actually produced; use an explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` row/status when applicable. Keep the three tables separate within the same report; do not create one report per capability or merge the streams into one table.
 
 Before the tables, record week/date range, actual execution coverage, synthesis status, and validation status. After the tables, include concise cross-stream quality observations, proposed improvements, and user-review items.
 
