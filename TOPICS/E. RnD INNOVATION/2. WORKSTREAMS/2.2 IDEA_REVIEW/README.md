@@ -1,6 +1,6 @@
 # IDEA_REVIEW
 
-## Purpose / Scope — Mục đích
+## Purpose
 
 Đánh giá ban đầu các idea R&D do nhóm đề xuất hoặc được chuyển từ PERSONAL_RESEARCH hay nguồn khác. Trọng tâm là xác định **Idea Validity** (idea có được hình thành đủ rõ để nhận diện và review hay chưa), vấn đề người dùng mà idea hướng đến và bằng chứng hiện có.
 
@@ -43,7 +43,7 @@ Không chấm điểm hoặc xếp hạng idea ở bước này, trừ khi ngư�
 - Không tự động chuyển idea sang POC, Deep Research hoặc Knowledge.
 - **Mọi báo cáo và nội dung do IDEA_REVIEW tạo ra phải viết bằng tiếng Việt rõ ràng, tự nhiên, dễ hiểu với kỹ sư.** Giữ nguyên tên riêng, mã, tiêu chuẩn và thuật ngữ tiếng Anh cần thiết. Tham chiếu [VIETNAMESE_REWRITE](/TOPICS/E. RnD INNOVATION/1. CAPABILITIES/VIETNAMESE_REWRITE.md). Skill này chỉ biên tập ngôn ngữ, không bổ sung hoặc xác minh nội dung kỹ thuật.
 
-## Routing / Working Rules — Định tuyến và quy tắc
+## Routing
 
 Phương pháp dùng chung thuộc [1. CAPABILITIES](/TOPICS/E. RnD INNOVATION/1. CAPABILITIES/README.md). Review ban đầu không bắt buộc gọi EVALUATION, DEEP_RESEARCH hoặc VERIFICATION. Chỉ dùng khi câu hỏi và phạm vi thực sự cần.
 
