@@ -476,5 +476,5 @@ Rules:
 - Multi-file scheduled mutations must follow the atomic publication contract.
 - If a required output is absent after execution, the run is FAILED / INCOMPLETE even when research/search succeeded.
 - A scheduler must never report completion based only on a successful tool call or generated content.
-- R&D Claw must verify the RS-13 batch and source BATCHED states.
+- R&D Claw must verify the date-specific daily record and all scheduled run slots; no batch state is used.
 - Career must verify the Monday weekly run record.
