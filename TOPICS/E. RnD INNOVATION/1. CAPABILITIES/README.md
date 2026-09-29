@@ -18,6 +18,10 @@
 
 This is an architecture and instruction contract, not a runtime engine. Folder order is navigation metadata, not mandatory execution order.
 
+## Cross-cutting language skill
+
+[VIETNAMESE_REWRITE.md](VIETNAMESE_REWRITE.md) is the reusable language-only standard for Vietnamese R&D outputs. It preserves meaning, technical terminology, evidence level, uncertainty, limitations, decisions, and structure. It must not research, fact-check, add technical content, or change conclusions. Workstreams may require Vietnamese output and reference this skill; they remain owners of their reports.
+
 ## 2. Layer boundary contract (P1-A01)
 
 | Layer | Owns | Must not own |
