@@ -9,7 +9,7 @@ This layer organizes three workstreams by business purpose. It owns task-specifi
 | Workstream | Purpose | Entry point |
 |---|---|---|
 | 2.1 PERSONAL_RESEARCH | Discover ideas independently; maintain discovery staging and three-day batches. Ideas selected to proceed move to IDEA_REVIEW. | [README](2.1 PERSONAL_RESEARCH/README.md) · [Prompt.csv](2.1 PERSONAL_RESEARCH/Prompt.csv) |
-| 2.2 IDEA_REVIEW | Review selected ideas. Each idea gets its own folder containing its related review records. The internal template is defined when an idea enters review. | [README](2.2 IDEA_REVIEW/README.md) · [Prompt.csv](2.2 IDEA_REVIEW/Prompt.csv) |
+| 2.2 IDEA_REVIEW | Conduct an initial validity review for team and Personal Research ideas; one folder per idea, with Vietnamese Markdown reports. Validity is not feasibility. | [README](2.2 IDEA_REVIEW/README.md) · [Prompt.csv](2.2 IDEA_REVIEW/Prompt.csv) |
 | 2.3 PROJECT_IMPROVEMENT | Maintain future plans intended to improve R&D Innovation. | [README](2.3 PROJECT_IMPROVEMENT/README.md) |
 
 ## Routing
@@ -28,7 +28,7 @@ Use only the capabilities needed for the task. These routes are conditional, not
 
 ## Handoff
 
-`PERSONAL_RESEARCH batch → selected idea → IDEA_REVIEW/<IDEA_ID>/ → optional Knowledge Candidate → human verification → Released Knowledge`
+`Idea source (team / PERSONAL_RESEARCH) → IDEA_REVIEW/<IDEA_NAME>/ → initial review → next action as needed`
 
 A handoff carries the idea ID, source/evidence links, epistemic state, known limits, checks performed/not performed, next action, and approval state where applicable. Promotion is never automatic. Staging, batches, and review records are non-authoritative until the Knowledge lifecycle is completed.
 
