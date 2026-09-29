@@ -20,17 +20,17 @@ Reusable capability for exploring a scoped problem, opportunity, technology sign
 
 ## 4. Inputs and preconditions
 **Required:** scoped problem/opportunity/signal, target product/application or explicit exploratory boundary, constraints, and intended output.  
-**Optional:** Knowledge Sheet context, prior batches/candidates, competitor/supplier evidence, target user, strategic scope, technical constraints, and evidence gaps.
+**Optional:** Knowledge Sheet context, prior daily candidates, competitor/supplier evidence, target user, strategic scope, technical constraints, and evidence gaps.
 
 If scope or target boundary is unavailable, do not generate unbounded candidates. State the missing input and request only what changes the search.
 
 ## 5. Procedure
 1. Confirm workstream, problem, desired outcome, target boundary, constraints, and decision/use context.
-2. Inspect relevant Released Knowledge, candidate/test material, prior batches, and existing-solution evidence; preserve source authority and status.
+2. Inspect relevant Released Knowledge, candidate/test material, prior daily records, and existing-solution evidence; preserve source authority and status.
 3. Separate the observed problem/signal from proposed solution and mechanism.
 4. Explore relevant solution spaces and generate candidates from distinct response principles, not superficial rewordings.
 5. For each candidate, state target outcome, proposed capability, mechanism hypothesis, system boundary, and meaningful difference from baseline/existing solutions.
-6. Check commercial precedent, prior art where relevant, Knowledge Sheet, and prior batches; record search scope and unresolved coverage.
+6. Check commercial precedent, prior art where relevant, Knowledge Sheet, and prior daily records; record search scope and unresolved coverage.
 7. Assess evidence and transferability to the target conditions. Keep cross-industry concepts as transfer candidates until target evidence supports applicability.
 8. Apply quality gates: material user/product outcome, meaningful delta, strategic fit, evidence traceability, complexity justified by benefit, and no duplicate/saturated candidate.
 9. Classify candidate and claim states; preserve unknowns and conflicts. Do not turn a technology or mechanism alone into a standalone product idea.
@@ -101,7 +101,7 @@ Human review is required before final KEEP/DROP or equivalent workstream disposi
 If scope, evidence access, or required target conditions are unavailable, return a bounded failure/inconclusive result and state the missing input. If no material outcome or meaningful delta is established, do not force a candidate; record the reason. Do not fabricate candidates to meet a count. Stop when the scope is answered or remaining uncertainty requires a specific test, source, or authority.
 
 ## 14. Persistence boundary
-Execution output belongs to the invoking Workstream. For scheduled Claw, the canonical output location is `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/`. Staging is intermediate and non-authoritative. This capability owns no batches, staging files, reports, or Knowledge Sheet rows. Reusable findings enter KNOWLEDGE_PROMOTION through the Workstream and required human gate.
+Execution output belongs to the invoking Workstream. For scheduled Claw, the canonical output location is `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/`. Each scheduled execution appends to the date-specific daily record directly under PERSONAL_RESEARCH; the Workstream owns that record. No staging or batch workflow is used. This capability owns no Knowledge Sheet rows. Reusable findings enter KNOWLEDGE_PROMOTION through the Workstream and required human gate.
 
 ## 15. Examples and tests
 - **Technology-only signal:** classify as a signal/enabler; do not elevate to standalone idea without outcome and delta.

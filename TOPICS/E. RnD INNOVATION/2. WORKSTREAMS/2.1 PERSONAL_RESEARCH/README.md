@@ -23,12 +23,12 @@ The sole output goal of this workstream is idea discovery. Ideas selected to pro
 
 Use `Prompt.csv` for Personal Research tasks. The prompt is the input; a separate INPUT folder is not required. Reusable methods are governed by [1. CAPABILITIES](../../1. CAPABILITIES/README.md).
 
-## Outputs
+## Daily Output
 
-- `staging/` — daily discovery records; operational state; not an approved Knowledge Sheet record.
-- `batches/` — three-day consolidated idea-discovery outputs.
-
-These folders live directly under this workstream. Do not create an additional `OUTPUT/CLAW_DISCOVERY/` layer.
+- One canonical daily discovery record: `YYYY-MM-DD.md` directly in this workstream.
+- The three scheduled executions append their distinct results to the same daily record; they must not overwrite earlier slots.
+- The user reviews the daily record directly. It is not an approved Knowledge Sheet record. No staging state, three-day consolidation, or batch output is used for new runs.
+- Existing `staging/` and `batches/` contents are legacy historical records only; do not write new files there or use them as active workflow state.
 
 The execution date is resolved from the actual scheduler execution timestamp in Asia/Ho_Chi_Minh; filenames use that resolved date.
 

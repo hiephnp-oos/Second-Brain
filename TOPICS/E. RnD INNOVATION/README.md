@@ -73,10 +73,11 @@ CLAW_DISCOVERY is a reusable capability. Its scheduled execution currently belon
 Execution outputs are owned by:
 TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/
 
-- staging/ — daily unvalidated discovery records.
-- batches/ — RS-13 three-day consolidation outputs.
+- One date-specific daily discovery record is written directly under PERSONAL_RESEARCH/ and reviewed by the user.
+- Three scheduled executions append distinct run sections to that daily record.
+- No staging or batch workflow is used. Existing staging/ and batches/ folders are legacy historical records only; do not write new outputs there.
 
-These are operational outputs, not capability definition artifacts and not authoritative Knowledge Sheet records.
+Daily records are workstream outputs, not capability definition artifacts or authoritative Knowledge Sheet records.
 
 ## Knowledge Sheet
 

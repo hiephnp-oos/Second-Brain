@@ -67,7 +67,7 @@ R&D Database is a migrated project source folder. Its project files are stored d
 
 Career is organized as a parent topic with shared career-profile context and three parallel Capability/workstream units: `1. JOB_SEARCH`, `2. COMPANY_RADAR`, and `3. REMOTE_AI`. One daily master schedule is only the external trigger; the Career execution contract owns capability cadence, matching logic, validation, and weekly synthesis. Career is intentionally not a job database at the current stage. High-volume job records remain in external working tools until real usage demonstrates that a searchable database is justified.
 
-R&D Innovation is an active operational Capability domain. Five reusable capabilities live under `1. CAPABILITIES/`; three workstreams live under `2. WORKSTREAMS/`; the Knowledge Sheet is the authoritative structured knowledge layer. Scheduled Claw Discovery output is owned by `PERSONAL_RESEARCH/` and remains intermediate operational state until the applicable gates are passed.
+R&D Innovation is an active operational Capability domain. Five reusable capabilities live under `1. CAPABILITIES/`; three workstreams live under `2. WORKSTREAMS/`; the Knowledge Sheet is the authoritative structured knowledge layer. Scheduled Claw Discovery output is owned by `PERSONAL_RESEARCH/` as a date-specific daily record for direct user review; Knowledge promotion still requires its applicable gates.
 
 A topic should be added only when recurring work creates enough durable context to justify a dedicated folder.
 
@@ -113,10 +113,9 @@ A topic should be added only when recurring work creates enough durable context 
 - Issue Forms and Task Lists are optional execution aids for changes that benefit from traceability; they do not replace `SYSTEM CORE/WORKFLOW.md` or `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 - Capability architecture is provider-independent and Skill-like; no generic runtime or Capability engine is required.
 - Schedules are external triggers; repository contracts define cadence, inputs, outputs, validation, and date semantics.
-- Staging is intermediate/unvalidated state and is never authoritative merely because it exists.
 - Conflicting authoritative information is flagged and investigated rather than silently overwritten.
 - Health/lint controls target demonstrated failure modes before broader metrics infrastructure.
-- R&D Innovation now has a lightweight regression/evaluation layer under `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/Regression/` for real capability outputs; it is an evaluation aid, not a second workflow or scoring engine. The framework is implemented; semantic validation remains to be exercised on subsequent real batches.
+- R&D Innovation now has a lightweight regression/evaluation layer under `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/Regression/` for real capability outputs; it is an evaluation aid, not a second workflow or scoring engine. The framework is implemented; semantic validation remains to be exercised on subsequent real daily outputs.
 - Current recurring external schedules are the Career master scheduler and R&D Claw Discovery daily scheduler; AI General, Nuvio Setup, and R&D Database have no ChatGPT scheduled execution in the current operating model.
 
 ## 9. HOW A NEW AI SHOULD ONBOARD
@@ -202,7 +201,7 @@ Current topic order:
 
 ## R&D Capability baseline
 
-R&D Innovation exposes five reusable capabilities: CLAW_DISCOVERY, VERIFICATION, DEEP_RESEARCH, EVALUATION, and KNOWLEDGE_PROMOTION. It exposes three workstreams: PERSONAL_RESEARCH, IDEA_REVIEW, and PROJECT_IMPROVEMENT. The Knowledge Sheet remains the authoritative structured knowledge layer; Claw staging remains intermediate state.
+R&D Innovation exposes five reusable capabilities: CLAW_DISCOVERY, VERIFICATION, DEEP_RESEARCH, EVALUATION, and KNOWLEDGE_PROMOTION. It exposes three workstreams: PERSONAL_RESEARCH, IDEA_REVIEW, and PROJECT_IMPROVEMENT. The Knowledge Sheet remains the authoritative structured knowledge layer; Claw daily records are workstream outputs for user review.
 
 Research Skill reference lessons adopted at the architecture level: deterministic routing where useful, explicit research intake/scope, source and evidence traceability, separation of evidence from inference/assumption/unknown/proposal, explicit failure handling, auditable outputs, and human verification before authoritative promotion. Claude-specific runtime architecture is not adopted.
 
