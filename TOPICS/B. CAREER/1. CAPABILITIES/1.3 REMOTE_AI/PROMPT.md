@@ -12,6 +12,16 @@ Discover and evaluate remote full-time and remote side-work opportunities using 
 - Prior cycle state when available
 - Current user instruction
 
+## Search Tool Routing
+
+- Use Exa for semantic/adjacent discovery across AI evaluation, technical SME, documentation, engineering, quality, and project-support opportunities.
+- Use Parallel Search for broad discovery across job boards, freelance platforms, and employer listings.
+- Use ChatGPT Native Search for independent discovery and fallback.
+- Use Tavily only for targeted gaps in eligibility, engagement, compensation, schedule, or source conflicts.
+- Use Firecrawl selectively to extract a known relevant listing/platform page when material terms are not visible in search results.
+- Deduplicate across sources and verify eligibility/terms on the original platform or employer source.
+- Apply the shared routing and tool-state rules in `CAREER_EXECUTION_CONTRACT.md`.
+
 ## Task
 
 1. Search the defined remote/AI categories.
