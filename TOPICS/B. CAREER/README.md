@@ -55,7 +55,7 @@ Trading and manufacturing environments are both acceptable.
 
 ### Weekly Run Records
 
-`TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/README.md` defines one weekly report file containing exactly three separate tables (Job Search, Company Radar, Remote / AI), each using its capability's output schema, followed by concise quality observations and user-review items. No per-capability weekly report files are created.
+`TOPICS/B. CAREER/2. REPORTS/README.md` defines one weekly report file containing exactly three separate tables (Job Search, Company Radar, Remote / AI), each using its capability's output schema, followed by concise quality observations and user-review items. No per-capability weekly report files are created.
 
 ### Job Search
 
@@ -69,6 +69,10 @@ Trading and manufacturing environments are both acceptable.
 
 `TOPICS/B. CAREER/1. CAPABILITIES/1.3 REMOTE_AI/README.md` defines remote/full-time and remote side-work discovery, the separate matching model, and the output table. `PROMPT.md` is the released execution contract for this capability.
 
+## Search Tool Routing
+
+All capabilities follow the shared tool-routing and availability rules in `CAREER_EXECUTION_CONTRACT.md`; individual capability prompts define their search emphasis. Tool metadata belongs in weekly report metadata, not the fixed opportunity tables.
+
 ## Decisions
 
 - Career is a first-class Second-Brain topic because the workflow is recurring and requires durable routing/context.
@@ -79,7 +83,7 @@ Trading and manufacturing environments are both acceptable.
 - Current compensation screening uses a general target of `> USD 1,000/month`, with a `> 20,000,000 VND/month` working floor for manufacturing roles in Da Nang/Quang Nam; `1 USD = 26,500 VND` for screening.
 - A future job/opportunity database is allowed only when volume, query complexity, deduplication, historical analysis, or cross-search needs demonstrate that the Markdown/external-tracker model is insufficient.
 - High-volume/transient search output is not automatically committed to Second-Brain.
-- A compact weekly run record is committed to `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/` to preserve execution observability and reusable learning without storing the full job archive.
+- A compact weekly run record is committed to `TOPICS/B. CAREER/2. REPORTS/` to preserve execution observability and reusable learning without storing the full job archive.
 
 ## Lessons
 
@@ -102,11 +106,11 @@ B. CAREER
 │   ├── 1.2 COMPANY_RADAR/
 │   └── 1.3 REMOTE_AI/
 └── 2. REPORTS/
-    └── 2.1 WEEKLY/
-        └── README.md
+    ├── README.md
+    └── YYYY-W##.md
 ```
 
-Use `CAREER_PROFILE.md` for cross-workstream criteria, `CAREER_EXECUTION_CONTRACT.md` for shared execution/validation rules, `IMPLEMENTATION_PLAN.md` for system/business workflow, `2. REPORTS/2.1 WEEKLY/` for weekly execution history and synthesis, and the smallest relevant capability README + `PROMPT.md` for execution.
+Use `CAREER_PROFILE.md` for cross-workstream criteria, `CAREER_EXECUTION_CONTRACT.md` for shared execution/validation rules, `IMPLEMENTATION_PLAN.md` for system/business workflow, `2. REPORTS/` for weekly execution history and synthesis, and the smallest relevant capability README + `PROMPT.md` for execution.
 
 ## Next
 
@@ -115,6 +119,6 @@ Run the master scheduler against real market data, capture output-quality failur
 
 ## Child Folder Order
 
-`1. CAPABILITIES/1.1 JOB_SEARCH → 1.2 COMPANY_RADAR → 1.3 REMOTE_AI → 2. REPORTS/2.1 WEEKLY`
+`1. CAPABILITIES/1.1 JOB_SEARCH → 1.2 COMPANY_RADAR → 1.3 REMOTE_AI → 2. REPORTS`
 
 This order reflects Career routing and workstream capability order; the three search capabilities remain logically independent and parallel.

@@ -11,6 +11,16 @@ Detect companies with meaningful expansion, entry, facility, investment, hiring,
 - Prior radar state when available
 - Current user instruction
 
+## Search Tool Routing
+
+- Use Exa for semantic discovery of regional expansion, investment, facility, manufacturing, and hiring signals that may not use explicit hiring keywords.
+- Use Parallel Search for broad regional/company coverage and current announcements.
+- Use ChatGPT Native Search for independent discovery and cross-checks.
+- Use Tavily only for a specific unresolved signal/date/value or source conflict.
+- Use Firecrawl selectively to extract known official company, investor, industrial-zone, or government pages.
+- Prefer primary sources; do not treat a company signal as a confirmed vacancy.
+- Apply the shared routing and tool-state rules in `CAREER_EXECUTION_CONTRACT.md`.
+
 ## Task
 
 1. Search target geographies for credible company signals.

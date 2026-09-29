@@ -136,6 +136,10 @@ Do not return or prioritize opportunities from:
 
 These exclusions are user decisions and apply across relevant search workstreams unless the user explicitly changes them.
 
+## Search Tool Routing
+
+All three capabilities use the shared routing contract in `CAREER_EXECUTION_CONTRACT.md`. Parallel Search and ChatGPT Native Search provide broad discovery/fallback; Exa adds semantic discovery where useful; Tavily is targeted gap resolution; Firecrawl is selective extraction of known pages. Tool use is availability-driven and evidence-driven, not a fixed five-tool sequence. The weekly report records actual tool states without changing opportunity table schemas.
+
 ## Standard Job / Company Output
 
 Job Search and Company Radar should produce a compact table matching the established working format, with enough fields to support action without creating a duplicate database inside Second-Brain.
@@ -204,7 +208,7 @@ The intended recurring model is implemented through **one daily master schedule*
   - Remote / AI
 - On non-search days, do not perform the three search cycles merely because the master schedule ran.
 - Every Monday, execute Weekly Career Synthesis using the latest outputs/state from all three workstreams.
-- Every Monday, after synthesis and validation, write/update exactly one compact weekly run record at `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/YYYY-W##.md`.
+- Every Monday, after synthesis and validation, write/update exactly one compact weekly run record at `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md`.
 - The weekly run record is an observability/learning artifact, not a job archive.
 - Weekly synthesis is independent of whether Monday is a search day; if both conditions are true in the future, perform the search cycle and then synthesis in the same master run.
 
@@ -218,7 +222,7 @@ Consolidation changes only the scheduler. It must not merge the workstream promp
 4. Keep outputs separated according to each workstream's output contract.
 5. If Monday, synthesize the meaningful changes after the search outputs are available.
 6. Validate the synthesis against actual outputs/state.
-7. If Monday, write/update the compact weekly run record in `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/`.
+7. If Monday, write/update the compact weekly run record in `TOPICS/B. CAREER/2. REPORTS/`.
 8. Do not create a high-volume job database or write transient search results into Second-Brain.
 
 ### Cadence invariants
@@ -234,7 +238,7 @@ Scheduling must respect the available automation/task capacity.
 
 ## Weekly Run Record Contract
 
-Create exactly one `TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY/YYYY-W##.md` file per ISO week. This single file is the user's weekly review artifact and must contain exactly three primary tables, in this order: Job Search, Company Radar, Remote / AI. Do not create separate report files for the three capabilities. Each table uses the exact column schema declared in its capability README. Include actual results for the review period; use explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` status when applicable. Do not merge the streams or replace tables with narrative bullets.
+Create exactly one `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md` file per ISO week. This single file is the user's weekly review artifact and must contain exactly three primary tables, in this order: Job Search, Company Radar, Remote / AI. Do not create separate report files for the three capabilities. Each table uses the exact column schema declared in its capability README. Include actual results for the review period; use explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` status when applicable. Do not merge the streams or replace tables with narrative bullets.
 
 Before the tables, record week/date range, actual execution coverage, synthesis status, and validation status. After the tables, include concise cross-stream quality observations, proposed improvements, and user-review items. Keep individual opportunity history in the external tracker; the weekly tables are a review snapshot, not the archive.
 
