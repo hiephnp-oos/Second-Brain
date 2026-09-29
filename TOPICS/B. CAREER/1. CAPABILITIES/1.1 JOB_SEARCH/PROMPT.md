@@ -11,6 +11,15 @@ Discover and evaluate current local/full-time roles using the canonical Career P
 - Prior cycle state when available
 - Current user instruction
 
+## Search Tool Routing
+
+- Start with Parallel Search for broad current role discovery and ChatGPT Native Search for independent coverage/fallback.
+- Use Exa only when semantic/adjacent role discovery is likely to add coverage beyond title/keyword search.
+- Use Tavily only for targeted gaps such as unclear posting status, salary, eligibility, or conflicting details.
+- Use Firecrawl only to extract a known relevant employer/job page when the available page content is insufficient.
+- Deduplicate cross-tool results before verifying against the employer's official careers page or a credible original listing.
+- Apply the shared routing and tool-state rules in `CAREER_EXECUTION_CONTRACT.md`.
+
 ## Task
 
 1. Search the priority role groups.
