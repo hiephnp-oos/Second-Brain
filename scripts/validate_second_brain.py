@@ -168,6 +168,10 @@ def validate_forbidden_files(errors: list[str]) -> None:
 
 
 def validate_platform_layers(errors: list[str]) -> None:
+    projects = ROOT / "GITHUB_PROJECTS.md"
+    security = ROOT / "SECURITY.md"
+    dependabot = ROOT / ".github/dependabot.yml"
+
     if (ROOT / ".github/workflows/pages.yml").exists() or (ROOT / ".github/pages").exists():
         fail("Removed GitHub Pages artifacts remain", errors)
 
