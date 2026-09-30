@@ -40,6 +40,12 @@ Recommended trigger: any PR that changes `AI_MEMORY.md`, `SYSTEM CORE/WORKFLOW.m
 
 Use it when a request is multi-step, affects repository architecture, requires cleanup/negative-state checks, or needs acceptance criteria that should remain visible beyond a chat turn. Do not force an Issue Form onto ordinary low-risk work when direct conversation is sufficient.
 
+### PR description and conflict record
+
+Every PR must make its review contract explicit: objective/root cause, target state, logical changes, synchronization/cleanup, validation evidence, and limitations or follow-up. Use `.github/PULL_REQUEST_TEMPLATE.md` as the default structure. The PR authoring AI is responsible for completing it from observed repository state; do not claim validation or cleanup that was not performed.
+
+Record merge-conflict resolution only when a conflict materially affects content, behavior, or source-of-truth interpretation. State the affected area, competing intent, chosen resolution and rationale, whether both sides' valid changes were preserved, and validation performed afterward. Trivial/non-semantic conflicts do not require a separate record. Conflict notes belong in the PR, not a new permanent knowledge artifact.
+
 ### Task Lists
 
 Use Markdown/GitHub task lists for multi-step execution and completion tracking.
