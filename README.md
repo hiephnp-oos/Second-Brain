@@ -87,13 +87,12 @@ Staging is intermediate/unvalidated state, not source of truth. Conflicting auth
 
 Second-Brain uses complementary GitHub-native controls with explicit boundaries:
 
-1. **GitHub Actions** — automated repository validation and Pages deployment.
+1. **GitHub Actions** — automated repository validation.
 2. **Issue Forms** — standardized change-request input when structured requirements are useful.
 3. **Task Lists** — explicit execution/completion checklists for multi-step work.
 4. **GitHub Projects** — execution tracking only; it does not replace Markdown source of truth.
-5. **GitHub Pages** — read-only presentation generated from repository Markdown; it does not write back to the repository.
-6. **Security controls** — public-repository secret scanning plus Dependabot configuration for GitHub Actions.
-7. **Mermaid** — visual presentation of workflows, architecture, relationships, and process where it improves understanding.
+5. **Security controls** — public-repository secret scanning plus Dependabot configuration for GitHub Actions.
+6. **Mermaid** — visual presentation of workflows, architecture, relationships, and process where it improves understanding.
 
 AI Semantic Review is a separate ChatGPT-assisted PR review layer, not a GitHub Action.
 
@@ -102,8 +101,6 @@ These controls do not replace the Markdown source of truth. Canonical rules rema
 ## Platform boundaries
 
 **Projects:** execution state only. Use it for issue/PR status, topic/workstream visibility, priority, dates, and milestones. The repository remains authoritative for knowledge and contracts.
-
-**Pages:** presentation only. `.github/workflows/pages.yml` builds from `main` and publishes a read-only site. Generated site output is not written back into the repository.
 
 **Security:** protection/maintenance only. `SECURITY.md` and `.github/dependabot.yml` define the repository-side security baseline. Security or dependency changes still use the normal Branch → PR → Validate / Review → Merge lifecycle.
 

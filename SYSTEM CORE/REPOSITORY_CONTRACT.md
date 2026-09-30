@@ -142,10 +142,6 @@ Task lists/checklists are execution controls used to make completion criteria ex
 
 The actual Project board is account-level GitHub state. It is not required for repository validation and must not write canonical Markdown or bypass the normal Branch → PR → Validate / Review → Merge lifecycle.
 
-### GitHub Pages
-
-`.github/workflows/pages.yml` is a separate read-only presentation workflow. It runs from `main`, builds from repository Markdown, and deploys to GitHub Pages. It must not modify repository content, become a validation dependency of `validate.yml`, or couple to R&D Claw execution.
-
 ### Security
 
 `SECURITY.md` defines the security reporting/baseline boundary. Public-repository secret scanning is GitHub-managed, and `.github/dependabot.yml` requests weekly GitHub Actions dependency updates. Security findings and dependency maintenance remain within the normal repository mutation lifecycle when repository changes are required.

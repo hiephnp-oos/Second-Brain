@@ -89,7 +89,6 @@ A topic should be added only when recurring work creates enough durable context 
 - Scheduled capability execution is incomplete until required GitHub persistence is written, re-read, and verified; scheduler completion must never be inferred from search or execution success alone.
 - Optional GitHub features should be added only when they solve a demonstrated workflow problem; avoid infrastructure that can generate false failure signals.
 - GitHub Projects is an execution-tracking layer only; the repository remains the source of truth.
-- GitHub Pages is a read-only presentation projection and must not write back to the repository.
 - Security controls are protective layers; they may create maintenance/security alerts or PRs without changing the Claw workflow.
 
 ## 8. GLOBAL DECISIONS
@@ -111,7 +110,6 @@ A topic should be added only when recurring work creates enough durable context 
 - All repository mutations use a dedicated task branch and PR to `main`; review the diff and applicable checks before merging. Risk changes review depth, not the requirement to use a PR. If branch/PR or validation is unavailable, do not fall back to direct-main writes; report the blocker.
 - Build the complete target state on the task branch and keep one logical change in one coherent commit whenever practical. GitHub Actions validates the PR before merge.
 - Pull requests may use AI Semantic Review as a secondary semantic review layer performed by ChatGPT through the GitHub repository connection; it must not replace deterministic validation or final repository verification.
-- GitHub-native controls in the operating model now include Actions, Issue Forms, Task Lists, GitHub Projects, GitHub Pages, security controls, and Mermaid. Projects track execution; Pages present a read-only projection; security controls protect the repository.
 - GitHub Rulesets remain outside the operating model unless explicitly reintroduced.
 - Issue Forms and Task Lists are optional execution aids for changes that benefit from traceability; they do not replace `SYSTEM CORE/WORKFLOW.md` or `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 - Capability architecture is provider-independent and Skill-like; no generic runtime or Capability engine is required.
