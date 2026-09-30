@@ -136,6 +136,20 @@ Issue Forms do not replace direct conversation for ordinary low-risk work. They 
 
 Task lists/checklists are execution controls used to make completion criteria explicit. They track work; they do not define repository invariants. Canonical requirements remain in `SYSTEM CORE/WORKFLOW.md` and this contract, while automated checks enforce machine-verifiable requirements.
 
+### GitHub Projects
+
+`GITHUB_PROJECTS.md` defines the execution-tracking boundary for the user-level **Second-Brain Operations** project. Projects track issue/PR status, topic/workstream visibility, priority, dates, and milestones only. Markdown remains the source of truth; Project fields must not become a second authoritative copy of repository knowledge or capability contracts.
+
+The actual Project board is account-level GitHub state. It is not required for repository validation and must not write canonical Markdown or bypass the normal Branch → PR → Validate / Review → Merge lifecycle.
+
+### GitHub Pages
+
+`.github/workflows/pages.yml` is a separate read-only presentation workflow. It runs from `main`, builds from repository Markdown, and deploys to GitHub Pages. It must not modify repository content, become a validation dependency of `validate.yml`, or couple to R&D Claw execution.
+
+### Security
+
+`SECURITY.md` defines the security reporting/baseline boundary. Public-repository secret scanning is GitHub-managed, and `.github/dependabot.yml` requests weekly GitHub Actions dependency updates. Security findings and dependency maintenance remain within the normal repository mutation lifecycle when repository changes are required.
+
 ## Completion contract
 
 A repository mutation is complete only when:

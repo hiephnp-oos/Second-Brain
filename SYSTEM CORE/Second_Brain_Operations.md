@@ -67,6 +67,12 @@ Publish one logical multi-file change as one commit whenever practical. Do not i
 
 Deletion is a first-class operation, not optional cleanup.
 
+### GitHub platform layers
+
+- **Projects:** execution tracking only; repository Markdown remains the source of truth.
+- **Pages:** read-only presentation projection from `main`; no write-back and no dependency on Claw execution.
+- **Security:** secret scanning and Dependabot are protective/maintenance controls; they do not change the core Second-Brain lifecycle.
+
 ### VALIDATE
 
 Run executable repository validation when available. Validate local data contracts such as CSV schema, IDs, configuration structure, or migration inventory when defined.
