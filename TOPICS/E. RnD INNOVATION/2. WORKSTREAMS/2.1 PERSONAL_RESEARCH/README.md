@@ -49,6 +49,6 @@ Historical DROP/WATCH/BASELINE records are not interchangeable: preserve the ori
 
 ## Language and Readability Contract
 
-All user-facing daily report content must be natural Vietnamese and follow [VIETNAMESE_REWRITE.md](../../1.%20CAPABILITIES/VIETNAMESE_REWRITE.md). Translate ordinary headings and field labels while preserving their meaning and order. Keep canonical IDs, enum values, source titles, proper names, standards, patent identifiers, and necessary technical terms unchanged.
+All user-facing daily report content must be natural Vietnamese and follow [VIETNAMESE_REWRITE.md](../../1. CAPABILITIES/VIETNAMESE_REWRITE.md). Translate ordinary headings and field labels while preserving their meaning and order. Keep canonical IDs, enum values, source titles, proper names, standards, patent identifiers, and necessary technical terms unchanged.
 
 Before persistence, inspect the rendered Markdown for Vietnamese labels, concise bullets, one main point per bullet, clear evidence/inference/unknown distinctions, and unnecessary English-Vietnamese mixing. Rewrite before PR if the report is difficult to scan. This is a language/presentation requirement and must not change technical meaning, evidence state, or disposition.
