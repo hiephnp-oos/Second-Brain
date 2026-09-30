@@ -34,6 +34,9 @@ jobs:
           cp GITHUB_PROJECTS.md _site_source/GITHUB_PROJECTS.md
           cp -R 'SYSTEM CORE' _site_source/'SYSTEM CORE'
           cp -R TOPICS _site_source/TOPICS
+          python3 .github/pages/build_portal.py
+          cp .github/pages/career.html _site_source/career.html
+          cp .github/pages/ideas.html _site_source/ideas.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
