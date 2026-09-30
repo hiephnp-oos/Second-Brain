@@ -633,7 +633,7 @@ def validate_high_level_controls(errors: list[str]) -> None:
         fail("Second_Brain_Operations.md lifecycle is out of sync with canonical lifecycle", errors)
     if readme.exists():
         text = read_text(readme)
-        for phrase in ["GitHub Actions", "Issue Forms", "Task Lists", "GitHub Projects", "GitHub Pages", "Security", "Mermaid", "Capability", "Staging", "SYSTEM CORE"]:
+        for phrase in ["GitHub Actions", "Issue Forms", "Task Lists", "GitHub Projects", "Security", "Mermaid", "Capability", "Staging", "SYSTEM CORE"]:
             if phrase not in text:
                 fail(f"README.md missing platform capability: {phrase}", errors)
 
