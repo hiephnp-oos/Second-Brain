@@ -93,6 +93,22 @@ Health controls should first target demonstrated failure modes such as broken re
 ### Scheduled Capability contract
 A scheduled Capability must document trigger, cadence, timezone/date semantics where relevant, invoked Capability, output, and validation. External ChatGPT Scheduled Tasks are outside GitHub; the repository documents the expected schedule contract but cannot prove external synchronization without direct task verification.
 
+## GitHub platform layers
+
+### GitHub Projects
+
+`GITHUB_PROJECTS.md` defines the execution-tracking boundary for the user-level **Second-Brain Operations** project. Use Projects for issue/PR status, topic/workstream visibility, priority, dates, and milestones only. Markdown remains the source of truth; Project fields must not duplicate authoritative knowledge or capability contracts.
+
+The actual Project board is account-level GitHub state. It is not required for repository validation and must not write canonical Markdown or bypass the normal Branch → PR → Validate / Review → Merge lifecycle.
+
+### GitHub Pages
+
+`.github/workflows/pages.yml` is a separate read-only presentation workflow. It runs from `main`, builds the site from repository Markdown, and deploys the generated site to Pages. It must not modify repository content, become a required dependency of `validate.yml`, or couple to R&D Claw execution.
+
+### Security
+
+`SECURITY.md` defines the security reporting/baseline boundary. Public-repository secret scanning is GitHub-managed, and `.github/dependabot.yml` requests weekly GitHub Actions dependency updates. Security alerts and dependency updates remain separate from the Claw workflow and still follow the normal mutation lifecycle when repository changes are required.
+
 ## 1. Read before work
 
 1. Read `AI_MEMORY.md`.

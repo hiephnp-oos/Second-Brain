@@ -52,6 +52,10 @@ Core control documents:
 - `SYSTEM CORE/REPOSITORY_CONTRACT.md` — repository invariants and source-of-truth hierarchy.
 - `SYSTEM CORE/User_Prompts.md` — reusable prompts for reliable interaction with Second-Brain.
 - `.github/workflows/validate.yml` — automated repository validation on pushes and pull requests.
+- `.github/workflows/pages.yml` — read-only GitHub Pages presentation deployment.
+- `.github/dependabot.yml` — weekly GitHub Actions dependency update configuration.
+- `GITHUB_PROJECTS.md` — execution-tracking boundary and recommended Project configuration.
+- `SECURITY.md` — security reporting and repository security baseline.
 - `scripts/validate_second_brain.py` — executable repository contract checks.
 
 ## Decisions
@@ -87,6 +91,14 @@ Core control documents:
 ### Repository Validation
 
 `SYSTEM CORE/REPOSITORY_CONTRACT.md`, `scripts/validate_second_brain.py`, and `.github/workflows/validate.yml` define the executable integrity layer for the repository. The validator checks root structure, topic registration, topic README sections, forbidden artifacts, local references, CSV structure, and R&D Knowledge Sheet IDs.
+
+## GitHub platform layers
+
+- GitHub Projects: execution tracking only; see `GITHUB_PROJECTS.md`.
+- GitHub Pages: read-only presentation projection; see `.github/workflows/pages.yml`.
+- Security: protective/maintenance controls; see `SECURITY.md` and `.github/dependabot.yml`.
+
+These layers are intentionally outside the core memory/mutation lifecycle. The R&D Claw schedule and its date-specific output contract remain owned by `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/`.
 
 ## Routing
 

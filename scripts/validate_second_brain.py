@@ -30,19 +30,22 @@ STALE_REFERENCE_FRAGMENTS = [
 ]
 FORBIDDEN_PATHS = [
     Path("docs"),
-    Path(".github/workflows/pages.yml"),
 ]
 CANONICAL_DOCS = [
     Path("README.md"),
     Path("SYSTEM CORE/WORKFLOW.md"),
     Path("SYSTEM CORE/REPOSITORY_CONTRACT.md"),
 ]
-REMOVED_PLATFORM_CONTROLS = ["GitHub Pages", "GitHub Rulesets"]
+REMOVED_PLATFORM_CONTROLS = ["GitHub Rulesets"]
 REQUIRED_GITHUB_COMPONENTS = [
     ".github/workflows/validate.yml",
+    ".github/workflows/pages.yml",
+    ".github/dependabot.yml",
     ".github/ISSUE_TEMPLATE/config.yml",
     ".github/ISSUE_TEMPLATE/change_request.yml",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    "GITHUB_PROJECTS.md",
+    "SECURITY.md",
     "scripts/validate_second_brain.py",
 ]
 
@@ -163,6 +166,71 @@ def validate_forbidden_files(errors: list[str]) -> None:
         lower = path.name.lower()
         if any(marker.lower() in lower for marker in FORBIDDEN_MARKERS):
             fail(f"Forbidden artifact marker found: {path.relative_to(ROOT)}", errors)
+
+
+def validate_platform_layers(errors: list[str]) -> None:
+    pages = ROOT / ".github/workflows/pages.yml"
+    projects = ROOT / "GITHUB_PROJECTS.md"
+    security = ROOT / "SECURITY.md"
+    dependabot = ROOT / ".github/dependabot.yml"
+
+    if not pages.exists():
+        fail("GitHub Pages workflow missing", errors)
+    else:
+        text = read_text(pages)
+        for phrase in [
+            "actions/configure-pages@v5",
+            "actions/upload-pages-artifact@v4",
+            "actions/deploy-pages@v4",
+            "pages: write",
+            "id-token: write",
+            "needs: build",
+            "branches: [main]",
+        ]:
+            if phrase not in text:
+                fail(f"GitHub Pages workflow missing '{phrase}'", errors)
+        if "validate.yml" in text:
+            fail("GitHub Pages workflow must remain separate from repository validation workflow", errors)
+        if "CLAW_DISCOVERY" in text or "PERSONAL_RESEARCH" in text:
+            fail("GitHub Pages workflow must not couple to R&D Claw execution", errors)
+
+    if not projects.exists():
+        fail("GitHub Projects configuration contract missing", errors)
+    else:
+        text = read_text(projects).lower()
+        for phrase in [
+            "execution-tracking layer",
+            "markdown files remain the source of truth",
+            "must not become a second authoritative copy",
+            "second-brain operations",
+        ]:
+            if phrase not in text:
+                fail(f"GITHUB_PROJECTS.md missing platform boundary '{phrase}'", errors)
+
+    if not security.exists():
+        fail("SECURITY.md missing", errors)
+    else:
+        text = read_text(security).lower()
+        for phrase in [
+            "secret scanning",
+            "dependabot",
+            "security controls are protection layers",
+            "claw",
+        ]:
+            if phrase not in text:
+                fail(f"SECURITY.md missing security boundary '{phrase}'", errors)
+
+    if not dependabot.exists():
+        fail(".github/dependabot.yml missing", errors)
+    else:
+        text = read_text(dependabot).lower()
+        for phrase in [
+            'package-ecosystem: "github-actions"',
+            'directory: "/"',
+            'interval: "weekly"',
+        ]:
+            if phrase not in text:
+                fail(f"Dependabot configuration missing '{phrase}'", errors)
 
 
 def validate_removed_platform_controls(errors: list[str]) -> None:
@@ -569,12 +637,12 @@ def validate_high_level_controls(errors: list[str]) -> None:
     readme = ROOT / "README.md"
     if contract.exists():
         text = read_text(contract)
-        for phrase in ["Core invariants", "Source-of-truth hierarchy", "Change contract", "Atomic publication contract", "Negative-state contract", "GitHub Actions", "Issue Forms", "Task Lists", "Capability", "Staging", "Dry-run", "Contradiction", "Health"]:
+        for phrase in ["Core invariants", "Source-of-truth hierarchy", "Change contract", "Atomic publication contract", "Negative-state contract", "GitHub Actions", "Issue Forms", "Task Lists", "GitHub Projects", "GitHub Pages", "Security", "Capability", "Staging", "Dry-run", "Contradiction", "Health"]:
             if phrase not in text:
                 fail(f"REPOSITORY_CONTRACT.md missing control section/phrase: {phrase}", errors)
     if workflow.exists():
         text = read_text(workflow)
-        for phrase in ["TARGET STATE", "PRE-FLIGHT", "ATOMIC CHANGE", "VALIDATE", "VERIFY", "Risk-based execution", "User prompt reinforcement layer", "GitHub Actions", "Issue Form", "Task List", "Capability", "Staging", "Dry-run", "Contradiction", "Health"]:
+        for phrase in ["TARGET STATE", "PRE-FLIGHT", "ATOMIC CHANGE", "VALIDATE", "VERIFY", "Risk-based execution", "User prompt reinforcement layer", "GitHub Actions", "Issue Form", "Task List", "GitHub Projects", "GitHub Pages", "Security", "Capability", "Staging", "Dry-run", "Contradiction", "Health"]:
             if phrase not in text:
                 fail(f"WORKFLOW.md missing control section/phrase: {phrase}", errors)
         if CANONICAL_LIFECYCLE not in text:
@@ -584,7 +652,7 @@ def validate_high_level_controls(errors: list[str]) -> None:
         fail("Second_Brain_Operations.md lifecycle is out of sync with canonical lifecycle", errors)
     if readme.exists():
         text = read_text(readme)
-        for phrase in ["GitHub Actions", "Issue Forms", "Task Lists", "Mermaid", "Capability", "Staging", "SYSTEM CORE"]:
+        for phrase in ["GitHub Actions", "Issue Forms", "Task Lists", "GitHub Projects", "GitHub Pages", "Security", "Mermaid", "Capability", "Staging", "SYSTEM CORE"]:
             if phrase not in text:
                 fail(f"README.md missing platform capability: {phrase}", errors)
 
@@ -632,6 +700,7 @@ def main() -> int:
     validate_rnd_knowledge_sheet(errors)
     validate_prompt_duplicate_rules(errors)
     validate_removed_topic(errors)
+    validate_platform_layers(errors)
     validate_control_reference_consistency(errors)
     validate_rnd_regression_contract(errors)
     validate_high_level_controls(errors)

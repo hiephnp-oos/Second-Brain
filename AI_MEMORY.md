@@ -88,6 +88,9 @@ A topic should be added only when recurring work creates enough durable context 
 - Generic controls and executable validation are preferred over one-off rule patches when repeated failures are discovered.
 - Scheduled capability execution is incomplete until required GitHub persistence is written, re-read, and verified; scheduler completion must never be inferred from search or execution success alone.
 - Optional GitHub features should be added only when they solve a demonstrated workflow problem; avoid infrastructure that can generate false failure signals.
+- GitHub Projects is an execution-tracking layer only; the repository remains the source of truth.
+- GitHub Pages is a read-only presentation projection and must not write back to the repository.
+- Security controls are protective layers; they may create maintenance/security alerts or PRs without changing the Claw workflow.
 
 ## 8. GLOBAL DECISIONS
 
@@ -108,8 +111,8 @@ A topic should be added only when recurring work creates enough durable context 
 - All repository mutations use a dedicated task branch and PR to `main`; review the diff and applicable checks before merging. Risk changes review depth, not the requirement to use a PR. If branch/PR or validation is unavailable, do not fall back to direct-main writes; report the blocker.
 - Build the complete target state on the task branch and keep one logical change in one coherent commit whenever practical. GitHub Actions validates the PR before merge.
 - Pull requests may use AI Semantic Review as a secondary semantic review layer performed by ChatGPT through the GitHub repository connection; it must not replace deterministic validation or final repository verification.
-- Four GitHub-native controls are part of the operating model: GitHub Actions for automated validation, Issue Forms for structured change requests, Task Lists for execution/completion tracking, and Mermaid for visualizing workflows/architecture where useful.
-- GitHub Pages and GitHub Rulesets were evaluated but are not part of the current operating model. Do not create or require them unless a future decision explicitly reintroduces them.
+- GitHub-native controls in the operating model now include Actions, Issue Forms, Task Lists, GitHub Projects, GitHub Pages, security controls, and Mermaid. Projects track execution; Pages present a read-only projection; security controls protect the repository.
+- GitHub Rulesets remain outside the operating model unless explicitly reintroduced.
 - Issue Forms and Task Lists are optional execution aids for changes that benefit from traceability; they do not replace `SYSTEM CORE/WORKFLOW.md` or `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 - Capability architecture is provider-independent and Skill-like; no generic runtime or Capability engine is required.
 - Schedules are external triggers; repository contracts define cadence, inputs, outputs, validation, and date semantics.
@@ -180,7 +183,7 @@ The review is a derived view, not authoritative memory. It must not infer projec
 
 ## 12. FRESHNESS
 
-Last reviewed: 2026-09-28
+Last reviewed: 2026-09-30
 
 `Active` means the topic is a recognized ongoing area of work. It does not mean every item inside it is currently being worked on.
 
