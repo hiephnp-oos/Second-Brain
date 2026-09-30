@@ -26,11 +26,11 @@ If scope or target boundary is unavailable, do not generate unbounded candidates
 
 ## 5. Procedure
 1. Confirm workstream, problem, desired outcome, target boundary, constraints, and decision/use context.
-2. Inspect relevant Released Knowledge, candidate/test material, prior daily records, and existing-solution evidence; preserve source authority and status.
+2. Inspect relevant Released Knowledge, candidate/test material, prior daily records, historical batch records, reviewed outcomes/lessons, and existing-solution evidence; preserve source authority and status. For recurring discovery, retrieve all available historical batch files and at least the previous 7 daily records before convergence; record unavailable sources explicitly.
 3. Separate the observed problem/signal from proposed solution and mechanism.
 4. Explore relevant solution spaces and generate candidates from distinct response principles, not superficial rewordings.
 5. For each candidate, state target outcome, proposed capability, mechanism hypothesis, system boundary, and meaningful difference from baseline/existing solutions.
-6. Check commercial precedent, prior art where relevant, Knowledge Sheet, and prior daily records; record search scope and unresolved coverage.
+6. Check commercial precedent, prior art where relevant, Knowledge Sheet, prior daily records, and historical candidate records; record search scope and unresolved coverage. Compare candidates semantically by problem/outcome, mechanism, and target application; record matched IDs and whether each is a duplicate, related variant, or no match.
 7. Assess evidence and transferability to the target conditions. Keep cross-industry concepts as transfer candidates until target evidence supports applicability.
 8. Apply quality gates: material user/product outcome, meaningful delta, strategic fit, evidence traceability, complexity justified by benefit, and no duplicate/saturated candidate.
 9. Classify candidate and claim states; preserve unknowns and conflicts. Do not turn a technology or mechanism alone into a standalone product idea.
@@ -77,7 +77,7 @@ Do not invent a universal score or disposition. Use the active Workstream's requ
 - [ ] Problem, target, and intended outcome are explicit.
 - [ ] Candidate is more than a technology name or mechanism.
 - [ ] User/product outcome is material and observable/testable.
-- [ ] Meaningful delta and existing-solution/duplicate checks are documented.
+- [ ] Meaningful delta and existing-solution/duplicate checks are documented, including historical candidate sources checked and matched IDs.
 - [ ] Candidate class is not conflated with evidence state or disposition.
 - [ ] Cross-industry transfer limits remain explicit.
 - [ ] Added complexity is tied to a justified benefit.

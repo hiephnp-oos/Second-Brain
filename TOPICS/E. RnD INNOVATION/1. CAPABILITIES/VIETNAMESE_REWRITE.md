@@ -10,7 +10,7 @@ Giữ nguyên ý nghĩa, độ chính xác kỹ thuật, dữ kiện, mức đ�
 
 ## Giữ nguyên cấu trúc
 
-Giữ nguyên tiêu đề và cấp bậc, thứ tự phần, tên trường, danh sách, bảng, cấu trúc Markdown, ID, nhãn, tag, URL, công thức, mã kỹ thuật và placeholder. Chỉ viết lại phần văn bản. Không tự tạo phần mới, tóm tắt hoặc giải thích ngoài cấu trúc đầu vào.
+Giữ nguyên cấp bậc, thứ tự phần, danh sách, bảng, cấu trúc Markdown, ID, tag, URL, công thức, mã kỹ thuật và placeholder. Bảo toàn ý nghĩa của tên trường nhưng **dịch nhãn hiển thị thông thường sang tiếng Việt**; không bắt buộc giữ nguyên tiếng Anh của nhãn trình bày. Giữ nguyên key/enum có tính định danh hoặc được máy đọc (ví dụ RS-10, KEEP/WATCH/DROP, EVIDENCED/UNKNOWN/PROPOSED, Candidate ID). Chỉ viết lại phần văn bản và nhãn hiển thị; không tự tạo phần mới, tóm tắt hoặc giải thích ngoài cấu trúc đầu vào.
 
 ## Giữ nguyên mức độ bằng chứng và quyết định
 
@@ -21,6 +21,10 @@ Không biến suy luận thành sự thật; đề xuất thành sự thật; kh
 - Dùng tiếng Việt tự nhiên, rõ ràng, phù hợp với kỹ sư.
 - Ưu tiên chủ thể cụ thể, hành động rõ, quan hệ nguyên nhân–kết quả minh bạch và câu ngắn.
 - Ưu tiên thuật ngữ kỹ thuật tiếng Việt khi tương đương tự nhiên; tránh dịch sát chữ và pha trộn Anh–Việt không cần thiết.
+- Với báo cáo kỹ thuật dành cho kỹ sư Việt Nam, tiêu đề và nhãn trường phải bằng tiếng Việt, trừ ID/enum/tên riêng/thuật ngữ định danh cần giữ nguyên.
+- Không giữ nguyên một nhãn tiếng Anh chỉ vì nó là tên trường trong template; giữ nguyên vị trí và ý nghĩa trường, dịch cách hiển thị.
+- Viết câu ngắn, mỗi bullet tập trung một ý; tách bằng chứng, nhận định và điểm chưa rõ khi cấu trúc nguồn đã có các trường tương ứng. Không gộp nhiều trường thành một câu dài.
+- Dùng tiếng Anh trong ngoặc ở lần đầu khi cần bảo toàn thuật ngữ chuyên môn; sau đó dùng nhất quán một cách gọi.
 - Giữ nguyên tên sản phẩm/công ty, mã bằng sáng chế/claim, mã tiêu chuẩn, mác vật liệu, tên công nghệ riêng, thuật ngữ chuyên ngành và từ viết tắt cần cho độ chính xác.
 - Chỉ sửa ở mức tối thiểu để dễ hiểu; không làm câu chữ cầu kỳ khi bản gốc đã rõ.
 
