@@ -27,7 +27,8 @@ jobs:
           rm -rf _site_source
           mkdir -p _site_source
           cp README.md _site_source/index.md
-          printf '%s\n' 'title: Second-Brain' 'theme: jekyll-theme-minimal' > _site_source/_config.yml
+          cp .github/pages/index.html _site_source/index.html
+          printf '%s\n' 'title: Second-Brain' > _site_source/_config.yml
           cp AI_MEMORY.md _site_source/AI_MEMORY.md
           cp SECURITY.md _site_source/SECURITY.md
           cp GITHUB_PROJECTS.md _site_source/GITHUB_PROJECTS.md
