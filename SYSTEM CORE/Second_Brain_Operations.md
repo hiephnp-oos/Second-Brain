@@ -70,7 +70,6 @@ Deletion is a first-class operation, not optional cleanup.
 ### GitHub platform layers
 
 - **Projects:** execution tracking only; repository Markdown remains the source of truth.
-- **Pages:** read-only presentation projection from `main`; no write-back and no dependency on Claw execution.
 - **Security:** secret scanning and Dependabot are protective/maintenance controls; they do not change the core Second-Brain lifecycle.
 
 ### VALIDATE

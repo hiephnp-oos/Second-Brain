@@ -101,10 +101,6 @@ A scheduled Capability must document trigger, cadence, timezone/date semantics w
 
 The actual Project board is account-level GitHub state. It is not required for repository validation and must not write canonical Markdown or bypass the normal Branch → PR → Validate / Review → Merge lifecycle.
 
-### GitHub Pages
-
-`.github/workflows/pages.yml` is a separate read-only presentation workflow. It runs from `main`, builds the site from repository Markdown, and deploys the generated site to Pages. It must not modify repository content, become a required dependency of `validate.yml`, or couple to R&D Claw execution.
-
 ### Security
 
 `SECURITY.md` defines the security reporting/baseline boundary. Public-repository secret scanning is GitHub-managed, and `.github/dependabot.yml` requests weekly GitHub Actions dependency updates. Security alerts and dependency updates remain separate from the Claw workflow and still follow the normal mutation lifecycle when repository changes are required.

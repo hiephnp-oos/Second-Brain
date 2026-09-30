@@ -39,7 +39,6 @@ CANONICAL_DOCS = [
 REMOVED_PLATFORM_CONTROLS = ["GitHub Rulesets"]
 REQUIRED_GITHUB_COMPONENTS = [
     ".github/workflows/validate.yml",
-    ".github/workflows/pages.yml",
     ".github/dependabot.yml",
     ".github/ISSUE_TEMPLATE/config.yml",
     ".github/ISSUE_TEMPLATE/change_request.yml",
@@ -169,30 +168,8 @@ def validate_forbidden_files(errors: list[str]) -> None:
 
 
 def validate_platform_layers(errors: list[str]) -> None:
-    pages = ROOT / ".github/workflows/pages.yml"
-    projects = ROOT / "GITHUB_PROJECTS.md"
-    security = ROOT / "SECURITY.md"
-    dependabot = ROOT / ".github/dependabot.yml"
-
-    if not pages.exists():
-        fail("GitHub Pages workflow missing", errors)
-    else:
-        text = read_text(pages)
-        for phrase in [
-            "actions/configure-pages@v5",
-            "actions/upload-pages-artifact@v4",
-            "actions/deploy-pages@v4",
-            "pages: write",
-            "id-token: write",
-            "needs: build",
-            "branches: [main]",
-        ]:
-            if phrase not in text:
-                fail(f"GitHub Pages workflow missing '{phrase}'", errors)
-        if "validate.yml" in text:
-            fail("GitHub Pages workflow must remain separate from repository validation workflow", errors)
-        if "CLAW_DISCOVERY" in text or "PERSONAL_RESEARCH" in text:
-            fail("GitHub Pages workflow must not couple to R&D Claw execution", errors)
+    if (ROOT / ".github/workflows/pages.yml").exists() or (ROOT / ".github/pages").exists():
+        fail("Removed GitHub Pages artifacts remain", errors)
 
     if not projects.exists():
         fail("GitHub Projects configuration contract missing", errors)
@@ -637,12 +614,12 @@ def validate_high_level_controls(errors: list[str]) -> None:
     readme = ROOT / "README.md"
     if contract.exists():
         text = read_text(contract)
-        for phrase in ["Core invariants", "Source-of-truth hierarchy", "Change contract", "Atomic publication contract", "Negative-state contract", "GitHub Actions", "Issue Forms", "Task Lists", "GitHub Projects", "GitHub Pages", "Security", "Capability", "Staging", "Dry-run", "Contradiction", "Health"]:
+        for phrase in ["Core invariants", "Source-of-truth hierarchy", "Change contract", "Atomic publication contract", "Negative-state contract", "GitHub Actions", "Issue Forms", "Task Lists", "GitHub Projects", "Security", "Capability", "Staging", "Dry-run", "Contradiction", "Health"]:
             if phrase not in text:
                 fail(f"REPOSITORY_CONTRACT.md missing control section/phrase: {phrase}", errors)
     if workflow.exists():
         text = read_text(workflow)
-        for phrase in ["TARGET STATE", "PRE-FLIGHT", "ATOMIC CHANGE", "VALIDATE", "VERIFY", "Risk-based execution", "User prompt reinforcement layer", "GitHub Actions", "Issue Form", "Task List", "GitHub Projects", "GitHub Pages", "Security", "Capability", "Staging", "Dry-run", "Contradiction", "Health"]:
+        for phrase in ["TARGET STATE", "PRE-FLIGHT", "ATOMIC CHANGE", "VALIDATE", "VERIFY", "Risk-based execution", "User prompt reinforcement layer", "GitHub Actions", "Issue Form", "Task List", "GitHub Projects", "Security", "Capability", "Staging", "Dry-run", "Contradiction", "Health"]:
             if phrase not in text:
                 fail(f"WORKFLOW.md missing control section/phrase: {phrase}", errors)
         if CANONICAL_LIFECYCLE not in text:
