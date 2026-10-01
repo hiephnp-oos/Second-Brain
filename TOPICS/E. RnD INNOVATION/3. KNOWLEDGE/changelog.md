@@ -1,5 +1,15 @@
 # Changelog
 
+## beta-2026-10-01
+
+Updated the BETA Agent–Prompt–Knowledge operating contract.
+
+- Added `Knowledge Sheet Input Mode` to each Prompt.csv template: `KS_REQUIRED`, `KS_OPTIONAL`, or `KS_NOT_USED`.
+- Clarified that requested idea counts (including 5–10) are adjustable target ranges, not mandatory quotas; quality and evidence gates take precedence.
+- Added Agent instructions to report actual Knowledge Sheet retrieval scope, tables read, data gaps, and relationship checks; do not overstate coverage.
+- No Knowledge Sheet data/schema or RELEASED artifacts changed.
+
+
 ## v2 — 2026-09-15
 
 Updated and locked the Knowledge Sheet dataset for the next Claw Idea stage.
