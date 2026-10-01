@@ -1,0 +1,52 @@
+# Human Review Memory — Personal Research / ADTD Claw
+
+**Purpose:** Durable, AI-readable record of user-reviewed discovery decisions. Read before RS-12 convergence and semantic duplicate checks. This file records human decisions; it does not replace daily reports, IDEA_REVIEW, historical batches, or the Knowledge Sheet.
+
+## Decision rules
+
+- Preserve the scope of each decision. A DROP rejects the reviewed candidate/delta; it does not automatically reject the entire problem domain or mechanism family.
+- Before revisiting a DROP, state the exact material DELTA in user/product outcome, physical capability, or architecture, then check it against the recorded reason and relevant precedents. A cosmetic, naming, location, material, sensor, or geometry change alone is not a DELTA.
+- A human-selected candidate may proceed even when its discovery disposition remains WATCH. Record the user's decision separately; do not silently rewrite WATCH as KEEP or as technical validation.
+- After DROP/DUPLICATE, continue discovery by testing a genuine DELTA or searching a different direction until at least WATCH, unless a specific hard blocker and bounded search coverage are documented.
+- Append new decisions with dates and source references through the normal Branch → PR → validation → merge workflow. Never silently overwrite prior decisions.
+
+## Reviewed decisions
+
+### C-24-02 — EverGlow™ Self-Healing Finish
+
+- **Review date:** 2026-10-01 (user-confirmed)
+- **User decision:** PROCEED — selected for further work.
+- **Discovery origin:** 2026-09-24, Tech Push; PERSONAL_RESEARCH historical batch: batches/2026-09-23_to_2026-09-25.csv.
+- **Existing IDEA_REVIEW status:** VALID — KEEP (2026-09-29).
+- **Scope:** Idea validity only; feasibility was not assessed.
+- **Core concept:** Transfer self-healing polymer/topcoat technology to exposed faucet/handshower/accessory finishes to recover some minor surface damage and maintain premium appearance.
+- **Known baseline / distinction:** Scratch resistance is not equivalent to self-healing. Automotive clearcoat and commercial self-healing coating precedents establish source technology, not bathroom-finish compatibility.
+- **Key unknowns:** Warm-water healing, chemical/cleaner resistance, hardness, adhesion, appearance, durability over cycles, user value and willingness to pay in bathroom use.
+- **Next boundary:** Continue through the existing IDEA_REVIEW workstream; do not infer feasibility or target-product validation from KEEP.
+- **Sources:** ../2.2 IDEA_REVIEW/03-hiep-everglow-self-healing-finish/IDEA_REVIEW_2026-09-29.md; historical batch above.
+
+### C-30-01 — Chỉ báo bảo dưỡng theo tình trạng cho bộ lọc xử lý nước vòi sen
+
+- **Review date:** 2026-10-01 (user-confirmed)
+- **User decision:** PROCEED — selected for further work.
+- **Discovery disposition:** WATCH (2026-09-30); retain this status as the discovery/evidence status. User selection to proceed is a separate decision and does not validate feasibility.
+- **Core concept:** Use measured flow and differential pressure trends to estimate filter condition and indicate maintenance, rather than relying only on a fixed replacement interval.
+- **Meaningful DELTA to investigate:** Condition-based maintenance versus time-based replacement, with measurable improvement in replacement timing and/or avoidance of unexpected flow degradation.
+- **Key unknowns:** Sensor cost, calibration across filter media and water conditions, reliability, maintenance burden, transferability to target shower architecture, and whether user value justifies added complexity.
+- **Next boundary:** Targeted research/initial evaluation only; define target filter architecture and measurable comparison before any feasibility claim.
+- **Source:** 2.1 PERSONAL_RESEARCH/2026-09-30.md, RS-12 C-30-01.
+
+### C-01-01 — Tạm dừng vòi sen theo trạng thái đặt tay sen (PAUSA)
+
+- **Review date:** 2026-10-01 (user-confirmed)
+- **User decision:** DROP — deep analysis không tạo được khác biệt thực chất so với PAUSA và các tiền lệ gần.
+- **Discovery disposition:** DROP as a standalone new product idea. Keep PAUSA and related prior art as reference baselines; do not reopen by superficial variation.
+- **Core rejected mechanism:** Docking/placing the handshower triggers automatic pause or flow reduction; removing it resumes flow.
+- **Deep-analysis finding:** Changing Hall sensing to a mechanical plunger, changing dock form, partial pause/trickle, or adding feedback/Eco behavior did not establish sufficient DELTA. The analysis also identified close cradle-actuated flow-control prior art.
+- **Re-entry condition:** Only a genuinely different use case and material outcome/architecture beyond dock-triggered pause, supported by evidence and a fresh precedent check, may be considered as a new candidate. Do not rename C-01-01 to revive it.
+- **PR #75:** https://github.com/hiephnp-oos/Second-Brain/pull/75 — closed without merge by user decision. Its deep-analysis branch/report is reference material, not an accepted repository change. The DROP decision is recorded here based on the user's review.
+- **Source:** 2.1 PERSONAL_RESEARCH/2026-10-01.md; PR #75 deep-analysis report on its closed branch.
+
+## Update log
+
+- 2026-10-01: Initial memory created from user's review of ADTD Claw outputs dated 2026-09-29, 2026-09-30 and 2026-10-01. Two candidates selected to proceed: C-24-02 and C-30-01. C-01-01 dropped after deep analysis; PR #75 not merged.

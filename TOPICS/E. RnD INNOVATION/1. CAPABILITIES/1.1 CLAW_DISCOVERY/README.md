@@ -42,7 +42,9 @@ If scope or target boundary is unavailable, do not generate unbounded candidates
 - Use precedent/duplicate checks before treating a candidate as differentiated.
 - Expand to adjacent industries only when the transfer mechanism and target relevance can be stated.
 - Use deeper research for broad, fragmented, conflicting, or decision-critical gaps; use VERIFICATION for narrow claims.
-- Stop when the scoped candidate set is sufficiently diverse and traceable, or when missing authority/test/evidence prevents responsible continuation.
+- For scheduled Personal Research discovery, use the Iterative Discovery rule in RS-12: a DROP/DUPLICATE does not end the search. First test whether a materially different outcome, physical capability, or architecture can be defined; if not, return to RS-10/RS-11 to explore a genuinely different candidate space.
+- Stop only when the requested discovery has produced one or more candidates at least at WATCH, or a documented hard blocker prevents responsible continuation. Do not fabricate candidates, weaken gates, or relabel a rejected candidate to satisfy the stop condition.
+- A WATCH result is a discovery stopping threshold, not technical validation, feasibility approval, or automatic promotion to IDEA_REVIEW.
 
 ## 7. Tool boundary
 Use current repository Knowledge and prompts plus external research tools only when available and authorized by the invoking Workstream. Do not imply access to paywalled sources, patent databases, supplier confirmation, physical testing, or live market data unless actually available. Record search limits. Never fabricate sources, product features, mechanisms, or test results.
@@ -78,6 +80,7 @@ Do not invent a universal score or disposition. Use the active Workstream's requ
 - [ ] Candidate is more than a technology name or mechanism.
 - [ ] User/product outcome is material and observable/testable.
 - [ ] Meaningful delta and existing-solution/duplicate checks are documented, including historical candidate sources checked and matched IDs.
+- [ ] If a candidate is DROP/DUPLICATE, the search continues through a DELTA test or a genuinely new candidate until WATCH or a documented hard blocker; no artificial quota or fabricated candidate is used.
 - [ ] Candidate class is not conflated with evidence state or disposition.
 - [ ] Cross-industry transfer limits remain explicit.
 - [ ] Added complexity is tied to a justified benefit.
