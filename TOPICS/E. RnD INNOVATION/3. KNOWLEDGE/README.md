@@ -2,31 +2,25 @@
 
 ## Purpose and authority
 
-This folder owns the lifecycle of structured R&D knowledge. It does not own reusable capability methods or raw workstream execution logs.
+This folder owns the lifecycle of structured R&D knowledge. It separates the working dataset from the immutable team-facing releases.
 
-- Shared capability baseline: [../1. CAPABILITIES/README.md](../1. CAPABILITIES/README.md)
-- Workstream routing and output ownership: [../2. WORKSTREAMS/README.md](../2. WORKSTREAMS/README.md)
-- Parent R&D architecture: [../README.md](../README.md)
+## Two knowledge states
 
-## Lifecycle
-
-`Workstream output → Knowledge Candidate → evidence check → duplicate check → contradiction check → human verification → Released Knowledge → schema/relationship validation`
-
-Candidate/Test is non-authoritative. Released is authoritative. No discovery, verification, evaluation, scheduler, or prompt execution may write directly to Released Knowledge without explicit human verification and the KNOWLEDGE_PROMOTION contract.
-
-## Locations
-
-| State | Location | Authority |
+| State | Location | Meaning |
 |---|---|---|
-| Candidate / experimental | [CANDIDATE_TEST](CANDIDATE_TEST/README.md) | Non-authoritative |
-| Current released dataset | [Release_23Sep2026](RELEASED/Release_23Sep2026/README.md) | Authoritative v2 |
+| Working dataset | [BETA](BETA/README.md) | Independent working copy initialized from Release_23Sep2026; non-authoritative and updated only on explicit user request |
+| Published snapshot | [Release_23Sep2026](RELEASED/Release_23Sep2026/README.md) | Existing official dataset shared with the team; preserve unchanged |
 
-## Released v2 data contract
+BETA has the same five CSV datasets and schema as the release baseline. It may evolve through requested update batches sourced from specified Claw outputs, Idea Reviews, internet research, supplier catalogs, or other named inputs. The ADTD Claw schedule only records/discovers ideas; it does not update BETA.
 
-The five CSV snapshots in the release README are the data source of truth. Preserve canonical IDs and existing records; do not reconstruct data from documentation. Relationships must resolve to existing IDs. Empty relationships are allowed when no verified relationship exists. Source-to-claim traceability must be preserved.
+## Update and release are separate operations
 
-Every CSV must have non-empty unique headers and consistent row width. Schema/data changes require impact review of prompts, consumers, relationships, and validators, followed by human verification before release.
+`BETA_UPDATE`: on explicit request, identify the exact input sources and scope; inspect evidence, provenance, duplicates, contradictions, IDs, relationships, and schema; prepare a change summary; then update BETA only. Never write directly to RELEASED during this operation.
 
-## Release handling
+`KNOWLEDGE_RELEASE`: only when separately requested, review BETA as a whole, validate it against the release contract, obtain explicit approval, and create a new versioned snapshot under RELEASED. Do not mutate an existing release. Release_23Sep2026 remains official until a later release is approved and designated.
 
-Use the current release README and [changelog](changelog.md). A substantive dataset change creates the next versioned release; do not silently mutate the meaning of a released snapshot. The current v2 remains authoritative until a new release is explicitly verified and designated.
+## Data integrity
+
+Preserve canonical IDs and source-to-claim traceability. Relationships must resolve to existing IDs; empty relationships are allowed where no verified relationship exists. Every CSV must have non-empty unique headers and consistent row width. Do not reconstruct records from documentation. Record batch provenance and a before/after summary for each BETA update.
+
+BETA changes do not imply release approval. Evidence verification, BETA update approval, and publication approval are distinct decisions.

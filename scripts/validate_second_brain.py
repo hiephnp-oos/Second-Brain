@@ -294,9 +294,9 @@ def validate_rnd_knowledge_sheet(errors: list[str]) -> None:
     if not ks.exists():
         fail(f"Released R&D Knowledge Sheet missing: {ks.relative_to(ROOT)}", errors)
         return
-    candidate = ROOT / "TOPICS/E. RnD INNOVATION/3. KNOWLEDGE/CANDIDATE_TEST"
+    candidate = ROOT / "TOPICS/E. RnD INNOVATION/3. KNOWLEDGE/BETA"
     if not candidate.exists():
-        fail(f"R&D Knowledge candidate/test area missing: {candidate.relative_to(ROOT)}", errors)
+        fail(f"R&D BETA knowledge area missing: {candidate.relative_to(ROOT)}", errors)
     specs = {
         "Market_Signal_v2.csv": "MS", "Competitor_Tech_v2.csv": "CT",
         "Supplier_tech_v2.csv": "ST", "Tech_radar_v2.csv": "TR", "Sources_v2.csv": "SRC",
@@ -448,8 +448,8 @@ def validate_capabilities(errors: list[str]) -> None:
             fail(f"R&D workstream missing: {path.relative_to(ROOT)}", errors)
     if not (rnd / "3. KNOWLEDGE/RELEASED/Release_23Sep2026/README.md").exists():
         fail("Released R&D Knowledge Sheet entry point missing", errors)
-    if not (rnd / "3. KNOWLEDGE/CANDIDATE_TEST/README.md").exists():
-        fail("R&D Knowledge candidate/test entry point missing", errors)
+    if not (rnd / "3. KNOWLEDGE/BETA/README.md").exists():
+        fail("R&D BETA knowledge entry point missing", errors)
 
     system = ROOT / "SYSTEM CORE/CAPABILITIES"
     for name in ["1. HANDOFF","2. RETRIEVAL"]:

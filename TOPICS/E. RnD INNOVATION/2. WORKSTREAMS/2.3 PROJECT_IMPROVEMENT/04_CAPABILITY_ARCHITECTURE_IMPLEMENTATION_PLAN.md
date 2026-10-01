@@ -71,10 +71,10 @@ The Anthropic guide describes Claude Skills and their packaging/runtime conventi
 |---|---|---|
 | `1. CAPABILITIES/` | Reusable instructions, methods, decision rules, input/output contracts, validation and handoff behavior | Batch outputs, idea records, research reports, user-specific execution data |
 | `2. WORKSTREAMS/` | Business context, task execution, workstream-specific prompts/routing, user inputs and execution outputs | Duplicated canonical capability methodology |
-| `3. KNOWLEDGE/` | Candidate/test knowledge and human-verified Released Knowledge | Raw workstream execution logs or unapproved findings |
+| `3. KNOWLEDGE/` | Explicitly updated BETA working dataset and separately approved, versioned RELEASED snapshots | Raw workstream execution logs or unapproved findings |
 | `2.3 PROJECT_IMPROVEMENT/` | Architecture plans, implementation actions, observed failures, regression and improvement records | Normal product/technology research unrelated to improving the system |
 
-The authoritative Knowledge release currently referenced by the topic is `3. KNOWLEDGE/RELEASED/Release_23Sep2026/`. Candidate/test material remains non-authoritative under `3. KNOWLEDGE/CANDIDATE_TEST/`.
+The current authoritative Knowledge release is `3. KNOWLEDGE/RELEASED/Release_23Sep2026/`. `3. KNOWLEDGE/BETA/` is a non-authoritative working copy initialized from that release and updated only in explicitly requested batches. BETA updates never publish a release; a separate explicit release decision is required.
 
 ### 3.2 Existing capabilities
 
@@ -292,7 +292,7 @@ Tests:
 
 ### 5.5 CAP-05 — KNOWLEDGE_PROMOTION
 
-**Target outcome:** safely move eligible reusable knowledge from workstream-owned candidate artifacts into the authoritative Released Knowledge Sheet.
+**Target outcome:** safely manage explicitly requested BETA update batches from workstream-owned candidate artifacts, while keeping publication to a versioned RELEASED snapshot as a separate human-approved operation.
 
 Required improvements:
 - Define candidate eligibility and required provenance.
@@ -356,7 +356,7 @@ Create this capability only if evidence shows that experiment planning is recurr
 - Start from the user's requested outcome and owning workstream, not from folder order.
 - Invoke the smallest sufficient set of capabilities.
 - Use VERIFICATION for bounded claim checks; use DEEP_RESEARCH when the question requires multi-part investigation, synthesis, or contradiction resolution.
-- Discovery generates candidates; Evaluation supports decisions; Knowledge Promotion governs authoritative writes.
+- Discovery generates candidates; Evaluation supports decisions; KNOWLEDGE_PROMOTION governs requested BETA updates, while a separate KNOWLEDGE_RELEASE decision governs publication.
 - Physical test design is a separate route only after uncertainty is shown to require empirical testing.
 - Do not invoke every capability by default.
 - A capability may return a bounded result and stop; no forced pipeline completion.
@@ -369,7 +369,7 @@ Create this capability only if evidence shows that experiment planning is recurr
 | Check one material claim/source | VERIFICATION | DEEP_RESEARCH if unresolved/material | CLAW_DISCOVERY |
 | Investigate a broad technical question | DEEP_RESEARCH | VERIFICATION / EVALUATION | CLAW_DISCOVERY |
 | Decide whether an existing idea merits further work | EVALUATION | VERIFICATION / DEEP_RESEARCH / experiment design | KNOWLEDGE_PROMOTION |
-| Prepare reusable finding for Released Knowledge | KNOWLEDGE_PROMOTION | VERIFICATION if evidence gap | CLAW_DISCOVERY |
+| Prepare reusable finding for a requested BETA batch | KNOWLEDGE_PROMOTION | VERIFICATION if evidence gap | CLAW_DISCOVERY |
 | Plan physical validation | Proposed EXPERIMENT_DESIGN | EVALUATION after results | KNOWLEDGE_PROMOTION before review |
 | Improve the capability/workflow system | PROJECT_IMPROVEMENT workstream | relevant capability as needed | treating improvement plan as product research |
 

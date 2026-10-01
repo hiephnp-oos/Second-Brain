@@ -13,7 +13,7 @@ Capabilities provide reusable execution ability. Workstreams own business contex
 ## Status
 
 - State: Active
-- Summary: R&D Innovation currently has five reusable capabilities, three workstreams, and one authoritative Knowledge Sheet.
+- Summary: R&D Innovation currently has five reusable capabilities, three workstreams, and one working BETA Knowledge Sheet and one current authoritative release.
 - Direction: Keep research evidence traceable, minimize repeated work, and improve the system from observed results rather than adding complexity by default.
 - Last reviewed: 2026-09-28
 
@@ -24,14 +24,14 @@ Capabilities provide reusable execution ability. Workstreams own business contex
 - Existing Knowledge Sheet relationships are authoritative only when supported by current source data.
 - Absence from the Knowledge Sheet or search results is not proof of novelty.
 - Research only to the depth needed for the decision.
-- Human verification is required before promoting a Knowledge Candidate into the authoritative Knowledge Sheet.
+- BETA is updated only in explicitly requested batches; publishing to the authoritative Knowledge Sheet requires a separate explicit release decision.
 - Capabilities do not own execution output; the invoking workstream owns its outputs.
 
 ## Active Projects / References
 
 - Capability contracts: 1. CAPABILITIES/
 - Workstream contracts and execution: [2. WORKSTREAMS/](2. WORKSTREAMS/README.md)
-- Knowledge lifecycle and authoritative data: [3. KNOWLEDGE/](3. KNOWLEDGE/README.md) · [Released v2](3. KNOWLEDGE/RELEASED/Release_23Sep2026/README.md)
+- Knowledge lifecycle and authoritative data: [3. KNOWLEDGE/](3. KNOWLEDGE/README.md) · [BETA](3. KNOWLEDGE/BETA/README.md) · [Released v2](3. KNOWLEDGE/RELEASED/Release_23Sep2026/README.md)
 - R&D system-improvement record: 2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/
 
 ## Capability Architecture Baseline
@@ -46,7 +46,7 @@ Capabilities provide reusable execution ability. Workstreams own business contex
 | VERIFICATION | Evidence and claim verification | Personal Research, Idea Review, Project Improvement |
 | DEEP_RESEARCH | Broad/conflicting/high-risk research | Personal Research, Idea Review |
 | EVALUATION | Structured technical/decision evaluation | Idea Review, other R&D workstreams |
-| KNOWLEDGE_PROMOTION | Verified promotion into authoritative knowledge | Personal Research, Idea Review |
+| KNOWLEDGE_PROMOTION | Controlled, requested updates into BETA; never publishes releases | Personal Research, Idea Review |
 
 Capability contracts live under 1. CAPABILITIES/. They contain reusable instructions and validation boundaries, not daily output records.
 
@@ -58,7 +58,7 @@ Capability contracts live under 1. CAPABILITIES/. They contain reusable instruct
 | 2.2 | IDEA_REVIEW | Evidence-based review and development of existing ideas | 2.2 IDEA_REVIEW/ and designated review artifacts |
 | 2.3 | PROJECT_IMPROVEMENT | Improve prompts, workflow, tooling, architecture, and validation | 2.3 PROJECT_IMPROVEMENT/ |
 
-The Knowledge Sheet is a knowledge layer, not a workstream execution output. It lives under 3. KNOWLEDGE/RELEASED/Release_23Sep2026/.
+The Knowledge layer contains BETA/ (working copy) and RELEASED/ (published snapshots). BETA starts as a copy of Release_23Sep2026; only explicit batch requests update it.
 
 ## Core R&D Workflow
 
@@ -81,9 +81,9 @@ Daily records are workstream outputs, not capability definition artifacts or aut
 
 ## Knowledge Sheet
 
-3. KNOWLEDGE/RELEASED/Release_23Sep2026/ contains the authoritative structured R&D datasets and their prompt/contract entry point.
+3. KNOWLEDGE/BETA/ is the working dataset; 3. KNOWLEDGE/RELEASED/Release_23Sep2026/ remains the official team-shared snapshot.
 
-Knowledge promotion is controlled by KNOWLEDGE_PROMOTION. Research output is not automatically written back.
+BETA updates are controlled, explicit batch operations under KNOWLEDGE_PROMOTION. Research and schedule outputs are never automatically written back. Release publication is a separate user decision.
 
 ## Prompt Execution Contract
 
@@ -139,7 +139,7 @@ The SoL-Pi and future-improvement documents remain reference tracks; their exist
 - Product / mechanism / technology / material / process / supplier research → 2.1 PERSONAL_RESEARCH/
 - Existing idea evaluation → 2.2 IDEA_REVIEW/
 - Project/workflow/prompt/tool/architecture/validation improvement → 2.3 PROJECT_IMPROVEMENT/
-- Authoritative structured knowledge → 3. KNOWLEDGE/RELEASED/Release_23Sep2026/
+- Working knowledge updates → 3. KNOWLEDGE/BETA/; published knowledge → 3. KNOWLEDGE/RELEASED/
 - Reusable discovery/evidence/evaluation/promotion ability → 1. CAPABILITIES/
 
 ## Next
