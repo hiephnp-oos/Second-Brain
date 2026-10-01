@@ -1,7 +1,7 @@
-"﻿No.","Công cụ","Mô tả","","","","",""
-"1","NotebookLLM","Tra cứu, tổng hợp và phân tích thông tin đã có trong Knowledge Sheet / tài liệu được cung cấp. Phù hợp khi cần tìm kiếm và truy vấn dữ liệu hiện có.","","","","",""
-"2","DNF R&D Innovation Agent","Phân tích, kết nối và tạo insight / opportunity / R&D idea, đồng thời có thể mở rộng tìm kiếm bên ngoài Knowledge Sheet bằng web search khi cần. Phù hợp cho các nhiệm vụ cần suy luận, sáng tạo, đánh giá hoặc nghiên cứu bổ sung.","","","","",""
-"","","","","","","",""
+"﻿No.","Công cụ","Mô tả","","","","","",""
+"1","NotebookLLM","Tra cứu, tổng hợp và phân tích thông tin đã có trong Knowledge Sheet / tài liệu được cung cấp. Phù hợp khi cần tìm kiếm và truy vấn dữ liệu hiện có.","","","","","",""
+"2","DNF R&D Innovation Agent","Phân tích, kết nối và tạo insight / opportunity / R&D idea, đồng thời có thể mở rộng tìm kiếm bên ngoài Knowledge Sheet bằng web search khi cần. Phù hợp cho các nhiệm vụ cần suy luận, sáng tạo, đánh giá hoặc nghiên cứu bổ sung.","","","","","",""
+"","","","","","","","",""
 "No.","Group","Mục đích sử dụng","Công cụ","Prompt templete","Input [Context]","Default Input [Context]","Output prompt to AI","Knowledge Sheet Input Mode"
 "1","Knowledge Sheet Search","Tìm technology trong Knowledge Sheet có thể giải quyết hoặc hỗ trợ giải quyết một problem/pain point cụ thể.","NotebookLLM","Purpose:
   Từ một user problem, tìm các technology trong Knowledge Sheet có khả năng giải quyết hoặc hỗ trợ giải quyết vấn đề đó.
