@@ -74,7 +74,7 @@ Execution outputs are owned by:
 TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/
 
 - One date-specific daily discovery record is written directly under PERSONAL_RESEARCH/ and reviewed by the user.
-- Three scheduled executions append distinct run sections to that daily record.
+- One scheduled execution runs per local date at 05:00 Asia/Ho_Chi_Minh and writes `RUN_SLOT 01` to that daily record.
 - No staging or batch workflow is used. Existing staging/ and batches/ folders are legacy historical records only; do not write new outputs there.
 
 Daily records are workstream outputs, not capability definition artifacts or authoritative Knowledge Sheet records.
