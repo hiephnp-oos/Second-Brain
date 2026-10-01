@@ -11,7 +11,7 @@ Manage explicit, user-requested knowledge update batches into BETA, separate fro
 - Hold or reject a candidate whose evidence, identity, schema, relationship, or authorization is insufficient.
 
 ## 3. Trigger / non-trigger
-**Trigger:** the invoking workstream explicitly submits a Knowledge Candidate and requests promotion or a promotion-readiness review.
+**Trigger:** the user explicitly requests a BETA update and identifies the input batch/scope, or requests a readiness review without a write.
 
 **Do not trigger:** merely because research/evaluation completed, a claim is EVIDENCED, a candidate appears in staging, or a scheduled batch produced an output. If the request is ambiguous, perform readiness review only; do not write.
 
@@ -30,12 +30,12 @@ The ordered execution sequence is defined in Section 5; this compatibility ancho
 5. **Check contradictions and freshness.** Compare scope, definitions, dates, and evidence. Preserve unresolved conflict as CONFLICTING and hold. Determine whether an existing record should be corrected, extended, or superseded; do not silently overwrite.
 6. **Validate proposed record.** Match the current CSV schema and canonical ID prefixes; verify all referenced Source IDs and relationship IDs exist. Empty relationship fields are allowed only when no verified relationship exists.
 7. **Prepare review package.** Show before/after or proposed row, source-to-claim map, duplicate/contradiction findings, change type, impact, and unresolved limitations.
-8. **Obtain explicit user authorization for the requested BETA batch and its scope. This does not authorize publication to RELEASED.
+8. **Obtain explicit user authorization for the requested BETA batch and its scope.** This does not authorize publication to RELEASED.
 9. **Persist only after approval.** Write only to BETA after the requested batch passes its gates. A separate KNOWLEDGE_RELEASE request is required to publish. If write access is unavailable, return the approved change package without claiming it was committed.
 10. **Verify after write.** Re-read the changed record and validate schema, unique/stable IDs, relationships, provenance, and release documentation/changelog as applicable. Record the resulting commit/release reference.
 
 ## 6. Method selection
-Use readiness review when the user asks whether a candidate is promotable; do not write. Use controlled promotion only when the user explicitly requests it and the specific change has human approval. For a narrow source/claim gap, route to VERIFICATION; for broad/conflicting material gaps, DEEP_RESEARCH; for a decision on usefulness or priority, EVALUATION. Do not repeat those methods inside this capability.
+Use readiness review when the user asks whether a candidate is promotable; do not write. Use a controlled BETA update only when the user explicitly requests the batch and scope and the specific changes have been approved. For a narrow source/claim gap, route to VERIFICATION; for broad/conflicting material gaps, DEEP_RESEARCH; for a decision on usefulness or priority, EVALUATION. Do not repeat those methods inside this capability.
 
 ## Tools / AI
 Tool availability and AI execution limits are defined in Section 7; no duplicate tool contract is maintained.
