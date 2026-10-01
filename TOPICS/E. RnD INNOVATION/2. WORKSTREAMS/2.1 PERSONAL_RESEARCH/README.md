@@ -52,6 +52,21 @@ The run must build a temporary comparison ledger (Candidate ID/title, problem/ou
 
 Historical DROP/WATCH/BASELINE records are not interchangeable: preserve the original disposition and extract reusable lessons without treating a prior rejection as proof that a new candidate is invalid.
 
+## Scheduled Output PR — Conditional Auto-Merge
+
+The daily scheduler may auto-merge only its own date-specific discovery-output PR, and only when every condition below is verified:
+
+1. The PR is for the current resolved local run date and its branch/PR was created by that run.
+2. The complete changed-file set contains exactly one added or updated file: this workstream's `YYYY-MM-DD.md` matching the run date. No other path, deletion, rename, or system/prompt/memory change is allowed.
+3. The report contains the required `RUN_DATE`, `RUN_SLOT 01`, execution status, evidence/duplicate-check fields, and Vietnamese user-facing content; read-back from the PR branch succeeds.
+4. The repository's required validation checks have completed successfully. A pending, skipped, missing, or failed required check is not a pass.
+5. The PR is open, non-draft, mergeable, targets `main`, has no unresolved blocking review/change request, and GitHub permits the merge.
+6. Immediately before merge, re-fetch the PR and verify its head SHA and changed-file set have not changed. Merge using the expected head SHA, then re-read the exact daily path from `main` and verify the merged content and commit.
+
+If any condition is false or cannot be verified, do not merge; leave the PR open and report the exact blocker and URL. Do not enable repository-wide auto-merge or grant the scheduler authority to merge arbitrary PRs.
+
+All changes to prompts, capabilities, workflow rules, review memory, Knowledge, IDEA_REVIEW decisions, or other system/baseline files remain subject to explicit human review and merge. Auto-merge is limited to the single daily report artifact; it does not approve its ideas for downstream work or Knowledge promotion.
+
 ## Language and Readability Contract
 
 All user-facing daily report content must be natural Vietnamese and follow [VIETNAMESE_REWRITE.md](../../1. CAPABILITIES/VIETNAMESE_REWRITE.md). Translate ordinary headings and field labels while preserving their meaning and order. Keep canonical IDs, enum values, source titles, proper names, standards, patent identifiers, and necessary technical terms unchanged.
