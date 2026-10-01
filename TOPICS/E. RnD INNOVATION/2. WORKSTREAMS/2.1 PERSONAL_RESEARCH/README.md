@@ -26,7 +26,8 @@ Use `Prompt.csv` for Personal Research tasks. The prompt is the input; a separat
 ## Daily Output
 
 - One canonical daily discovery record: `YYYY-MM-DD.md` directly in this workstream.
-- The three scheduled executions append their distinct results to the same daily record; they must not overwrite earlier slots.
+- Exactly one scheduled execution runs per local date at 05:00 Asia/Ho_Chi_Minh and writes `RUN_SLOT 01`.
+- There are no RUN_SLOT 02/03 executions in the active schedule. Any legacy three-slot records remain historical only.
 - The user reviews the daily record directly. It is not an approved Knowledge Sheet record. No staging state, three-day consolidation, or batch output is used for new runs.
 - Existing `staging/` and `batches/` contents are legacy historical records only; do not write new files there or use them as active workflow state.
 
