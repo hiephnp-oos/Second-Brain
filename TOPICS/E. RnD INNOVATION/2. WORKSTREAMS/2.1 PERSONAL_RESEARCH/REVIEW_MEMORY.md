@@ -47,9 +47,7 @@
 - **PR #75:** https://github.com/hiephnp-oos/Second-Brain/pull/75 — closed without merge by user decision. Its deep-analysis branch/report is reference material, not an accepted repository change. The DROP decision is recorded here based on the user's review.
 - **Source:** 2.1 PERSONAL_RESEARCH/2026-10-01.md; PR #75 deep-analysis report on its closed branch.
 
-## Update log
 
-- 2026-10-01: Initial memory created from user's review of ADTD Claw outputs dated 2026-09-29, 2026-09-30 and 2026-10-01. Two candidates selected to proceed: C-24-02 and C-30-01. C-01-01 dropped after deep analysis; PR #75 not merged.
 
 
 ### C-32-01 — Shower Thermal Energy Awareness
@@ -64,6 +62,8 @@
 - **Next boundary:** Limited targeted research only. Benchmark concrete smart-shower products and validate a sensing/estimation setup against a reference meter before considering IDEA_REVIEW or fitting integration. Do not initiate broad deep analysis without new decision-relevant evidence.
 - **Source:** 2.1 PERSONAL_RESEARCH/2026-10-02.md, RS-12 C-32-01; direct user review in conversation dated 2026-10-02.
 
+
 ## Update log
 
+- 2026-10-01: Initial memory created from user's review of ADTD Claw outputs dated 2026-09-29, 2026-09-30 and 2026-10-01. Two candidates selected to proceed: C-24-02 and C-30-01. C-01-01 dropped after deep analysis; PR #75 not merged.
 - 2026-10-02: Added user-confirmed WATCH decision for C-32-01. Preserved its discovery classification as a technical enabler, not a validated product idea; next step is limited targeted research only.
