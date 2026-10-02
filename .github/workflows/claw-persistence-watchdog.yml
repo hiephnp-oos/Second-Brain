@@ -69,4 +69,4 @@ jobs:
           fi
           gh issue create \
             --title "$TITLE" \
-            --body "The independent Claw persistence watchdog found **${STATE}** for ${RUN_DATE} (Asia/Ho_Chi_Minh).\n\nExpected artifact: `${REPORT}`\n\nThe 05:00 scheduled run did not leave a complete daily artifact on `main` by the 08:30 verification. Inspect the scheduled task execution, matching branches/PRs, Actions runs, and persistence response. Recover this date without overwriting human review.\n\nWatchdog run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            --body "The independent Claw persistence watchdog found **${STATE}** for ${RUN_DATE} (Asia/Ho_Chi_Minh).\n\nExpected artifact: \`${REPORT}\`\n\nThe 05:00 scheduled run did not leave a complete daily artifact on \`main\` by the 08:30 verification. Inspect the scheduled task execution, matching branches/PRs, Actions runs, and persistence response. Recover this date without overwriting human review.\n\nWatchdog run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
