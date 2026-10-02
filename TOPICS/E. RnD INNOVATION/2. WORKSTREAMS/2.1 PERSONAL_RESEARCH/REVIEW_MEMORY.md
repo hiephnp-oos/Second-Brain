@@ -47,6 +47,23 @@
 - **PR #75:** https://github.com/hiephnp-oos/Second-Brain/pull/75 — closed without merge by user decision. Its deep-analysis branch/report is reference material, not an accepted repository change. The DROP decision is recorded here based on the user's review.
 - **Source:** 2.1 PERSONAL_RESEARCH/2026-10-01.md; PR #75 deep-analysis report on its closed branch.
 
+
+
+
+### C-32-01 — Shower Thermal Energy Awareness
+
+- **Review date:** 2026-10-02 (user-confirmed)
+- **User decision:** WATCH — giữ lại để theo dõi/nghiên cứu có giới hạn; chưa đủ mạnh để trở thành product idea, nhưng cũng chưa đủ yếu để DROP.
+- **Discovery disposition:** WATCH (2026-10-02); preserve this status. The user decision confirms WATCH, not product validation or approval to proceed to IDEA_REVIEW.
+- **Core concept:** Estimate thermal energy per shower session from flow and temperature measurements, then provide simple user feedback.
+- **Current classification:** TECHNICAL ENABLER / WATCH — not yet a validated product idea.
+- **Meaningful DELTA:** Energy-based feedback rather than time- or volume-based feedback. This is currently a difference in information output; meaningful behavioral or outcome differentiation has not been demonstrated.
+- **Key unknowns:** Availability of commercial products with session-level thermal-energy feedback; measurement accuracy and sensor configuration; whether energy feedback reduces consumption more than timer/ordinary smart feedback; sensor BOM, durability, maintenance and user acceptance.
+- **Next boundary:** Limited targeted research only. Benchmark concrete smart-shower products and validate a sensing/estimation setup against a reference meter before considering IDEA_REVIEW or fitting integration. Do not initiate broad deep analysis without new decision-relevant evidence.
+- **Source:** 2.1 PERSONAL_RESEARCH/2026-10-02.md, RS-12 C-32-01; direct user review in conversation dated 2026-10-02.
+
+
 ## Update log
 
 - 2026-10-01: Initial memory created from user's review of ADTD Claw outputs dated 2026-09-29, 2026-09-30 and 2026-10-01. Two candidates selected to proceed: C-24-02 and C-30-01. C-01-01 dropped after deep analysis; PR #75 not merged.
+- 2026-10-02: Added user-confirmed WATCH decision for C-32-01. Preserved its discovery classification as a technical enabler, not a validated product idea; next step is limited targeted research only.
