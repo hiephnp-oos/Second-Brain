@@ -1,0 +1,72 @@
+name: Claw Daily Persistence Watchdog
+
+on:
+  schedule:
+    # 08:00 Asia/Ho_Chi_Minh; independent check after the 05:00 scheduled run.
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  verify-daily-artifact:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Verify today's Claw report
+        id: verify
+        shell: bash
+        run: |
+          RUN_DATE="$(TZ=Asia/Ho_Chi_Minh date +%F)"
+          REPORT="TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/${RUN_DATE}.md"
+          echo "run_date=${RUN_DATE}" >> "$GITHUB_OUTPUT"
+          echo "report=${REPORT}" >> "$GITHUB_OUTPUT"
+          if [ ! -f "$REPORT" ]; then
+            echo "state=MISSING" >> "$GITHUB_OUTPUT"
+            echo "Missing report: $REPORT"
+            exit 0
+          fi
+          python - "$REPORT" "$RUN_DATE" <<'PY'
+          import os, pathlib, sys
+          path, run_date = pathlib.Path(sys.argv[1]), sys.argv[2]
+          text = path.read_text(encoding="utf-8")
+          required = {
+              "RUN_DATE": f"**RUN_DATE:** {run_date}",
+              "RUN_SLOT": "**RUN_SLOT:** 01",
+              "RS-10": "RS-10",
+              "RS-11": "RS-11",
+              "RS-12": "RS-12",
+          }
+          missing = [name for name, marker in required.items() if marker not in text]
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write("state=" + ("INCOMPLETE" if missing else "PRESENT") + "\n")
+          if missing:
+              print("Incomplete report; missing markers:", ", ".join(missing))
+              sys.exit(0)
+          print("Daily report exists and required contract markers are present.")
+          PY
+
+      - name: Open or reuse a GitHub issue when report is missing/incomplete
+        if: steps.verify.outputs.state == 'MISSING' || steps.verify.outputs.state == 'INCOMPLETE'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_DATE: ${{ steps.verify.outputs.run_date }}
+          REPORT: ${{ steps.verify.outputs.report }}
+          STATE: ${{ steps.verify.outputs.state }}
+        shell: bash
+        run: |
+          TITLE="Claw daily report ${STATE}: ${RUN_DATE}"
+          EXISTING="$(gh issue list --state open --search "\"$TITLE\"" --json number --jq '.[0].number // empty')"
+          if [ -n "$EXISTING" ]; then
+            echo "Existing watchdog issue #$EXISTING; no duplicate created."
+            exit 0
+          fi
+          gh issue create \
+            --title "$TITLE" \
+            --body "The independent Claw persistence watchdog found **${STATE}** for ${RUN_DATE} (Asia/Ho_Chi_Minh).\n\nExpected artifact: \`${REPORT}\`\n\nThe 05:00 scheduled run did not leave a complete daily artifact on \`main\` by the 08:00 verification. Inspect the scheduled task execution, matching branches/PRs, Actions runs, and persistence response. Recover this date without overwriting human review.\n\nWatchdog run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
