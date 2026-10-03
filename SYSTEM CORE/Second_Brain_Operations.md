@@ -63,7 +63,7 @@ Validate the complete target state as far as the available checks allow before p
 
 ### ATOMIC CHANGE
 
-Publish one logical multi-file change as one commit whenever practical. Do not intentionally leave `main` at a known-incomplete intermediate state.
+Every repository content mutation uses a dedicated task branch and PR to `main`. Risk determines review depth, not whether a PR is required. Direct writes to `main` require explicit user authorization for that specific change. Publish one logical multi-file change as one commit whenever practical. Do not intentionally leave `main` at a known-incomplete intermediate state.
 
 Deletion is a first-class operation, not optional cleanup.
 
@@ -94,7 +94,7 @@ Describe the resulting repository state. Never report completion solely because 
 
 Single-topic content correction, small durable-memory update, typo/wording correction.
 
-→ Direct main change + validation.
+→ Task branch → PR → validation → verification → merge.
 
 ### Medium risk
 
@@ -106,7 +106,7 @@ New workstream, multiple related files, data release, configuration update.
 
 Topic rename/move, architecture change, mass migration, workflow/contract change, security-sensitive change.
 
-→ Prefer branch → change → validation → verification → merge when practical.
+→ Task branch → change → validation → verification → merge.
 
 ## When AI starts drifting
 
