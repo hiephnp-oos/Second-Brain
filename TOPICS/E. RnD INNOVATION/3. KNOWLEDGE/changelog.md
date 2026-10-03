@@ -1,5 +1,17 @@
 # Changelog
 
+## beta-2026-10-03
+
+Promoted and audited Solex supplier knowledge across six reviewed PDFs in BETA.
+
+- Consolidated the Water System platform into `ST-061`; removed duplicate `ST-084`. Added subsystem records `ST-089`–`ST-096`, preserving supplier-provided specifications and claims with source traceability.
+- Consolidated Height-Adjustable Rain Showerhead evidence into `ST-036`, retaining source-specific configurations and differing supplier claims without reconciliation; removed duplicate `ST-087`.
+- Separated Digitally Controlled Thermostatic Valve / DualMaster Concealed Box into `ST-088` and `TR-077`; kept kitchen ThermoHybrid `ST-070` distinct.
+- Expanded `SRC-366` with page-range and subsystem-level coverage.
+- Preserved Market Signal records; supplier claims were not treated as independently verified market evidence.
+- Validated BETA CSV structure, IDs, and ST / CT / MS / SRC references; no malformed rows, duplicate IDs, blank IDs, or dangling references were found.
+- No RELEASED artifacts changed. PR #91 remains pending owner confirmation; this changelog entry documents the BETA candidate on the PR branch, not a merged release.
+
 ## beta-2026-10-01
 
 Updated the BETA Agent–Prompt–Knowledge operating contract.
