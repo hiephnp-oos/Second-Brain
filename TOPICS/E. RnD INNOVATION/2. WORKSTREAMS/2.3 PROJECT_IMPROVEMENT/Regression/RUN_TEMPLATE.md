@@ -8,6 +8,8 @@ Copy this template for a real batch/capability evaluation when a persistent run 
 - Batch / execution date:
 - Capability:
 - Capability version / commit:
+- Repository commit / task ref:
+- Knowledge snapshot / release:
 - Prompt ID / execution contract:
 - Test layer: TRIGGER / FUNCTIONAL / PERFORMANCE
 - Evaluator:
@@ -34,6 +36,13 @@ Copy this template for a real batch/capability evaluation when a persistent run 
 | Paraphrased trigger | | | |
 | Unrelated / non-trigger | | | |
 | Capability overlap boundary | | | |
+
+## Positive-control evidence
+
+- Known-good control / reference:
+- Expected control behavior:
+- Observed control output reference:
+- Evidence that the control behaved as expected:
 
 ## Regression cases (functional)
 
@@ -88,6 +97,12 @@ Copy this template for a real batch/capability evaluation when a persistent run 
 - Baseline result:
 - Current result:
 - Attribution limitations:
+
+## Limitations
+
+- Scope / cases not exercised:
+- Evidence or tool access limitations:
+- Attribution / comparability limitations:
 
 ## Summary
 
