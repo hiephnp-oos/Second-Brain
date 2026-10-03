@@ -31,7 +31,7 @@ Use `Prompt.csv` for Personal Research tasks. The prompt is the input; a separat
 - The user reviews the daily record directly. It is not an approved Knowledge Sheet record. No staging state, three-day consolidation, or batch output is used for new runs.
 - Existing `staging/` and `batches/` contents are legacy historical records only; do not write new files there or use them as active workflow state.
 
-The execution date is resolved from the actual scheduler execution timestamp in Asia/Ho_Chi_Minh; filenames use that resolved date.
+The execution date is the calendar date of the current scheduled invocation in Asia/Ho_Chi_Minh, resolved from the active invocation/runtime date-time context. The scheduler is not required to expose a separate execution-timestamp field. If only the current date is available, use that local date; clock time is not needed for the filename. Never derive the date from a prior last-run timestamp, previous report, UTC date, or assumed date. If no usable current invocation date is available, report `RUN_DATE_UNAVAILABLE` and do not write.
 
 When an idea is selected to proceed, transfer it to `../2.2 IDEA_REVIEW/<IDEA_ID>/`. Do not turn every discovered idea into a review folder.
 
