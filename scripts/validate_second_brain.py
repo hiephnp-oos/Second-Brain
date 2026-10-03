@@ -16,7 +16,6 @@ TOPIC_SECTION_ALIASES = {
 }
 TOPIC_STATUS_VALUES = {"Building", "Active", "Maintenance", "Frozen", "Paused", "Archived"}
 FORBIDDEN_MARKERS = ["DELETE_ME", ".tmp", ".temp", "placeholder"]
-OPERATIONAL_STATE_DIRS = {Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging")}
 WORKSTREAM_PURPOSE_MARKERS = {"Purpose", "Purpose / Scope", "Scope", "Current Context"}
 WORKSTREAM_STATE_MARKERS = {"Routing", "Next", "Decisions", "Decisions / Status", "Status", "Working Rules", "Operating Rule", "Capability", "Capability Contract", "Contract"}
 CANONICAL_LIFECYCLE = "READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT"
@@ -154,11 +153,6 @@ def validate_forbidden_files(errors: list[str]) -> None:
             fail(f"Forbidden legacy platform path found: {forbidden}", errors)
     for path in ROOT.rglob("*"):
         if ".git" in path.parts:
-            continue
-        if path.is_dir() and path.name.lower() == "staging":
-            relative = path.relative_to(ROOT)
-            if relative not in OPERATIONAL_STATE_DIRS:
-                fail(f"Unapproved operational staging directory: {relative}", errors)
             continue
         if not path.is_file() or path.name == "validate_second_brain.py":
             continue
@@ -457,23 +451,6 @@ def validate_capabilities(errors: list[str]) -> None:
         if not path.exists():
             fail(f"System Core capability missing: {path.relative_to(ROOT)}", errors)
 
-def validate_staging_semantics(errors: list[str]) -> None:
-    rel = Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging")
-    path = ROOT / rel
-    if not path.exists():
-        fail(f"Approved staging directory missing: {rel}", errors)
-        return
-    owner = ROOT / "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/README.md"
-    if not owner.exists():
-        fail(f"Staging owner workstream README missing: {owner.relative_to(ROOT)}", errors)
-    else:
-        text = read_text(owner).lower()
-        for phrase in ["staging", "not an approved knowledge sheet record", "execution date"]:
-            if phrase not in text:
-                fail(f"Staging contract missing '{phrase}': {owner.relative_to(ROOT)}", errors)
-
-
-
 def validate_architecture_boundaries(errors: list[str]) -> None:
     rnd = ROOT / "TOPICS/E. RnD INNOVATION"
     capabilities = rnd / "1. CAPABILITIES"
@@ -485,10 +462,9 @@ def validate_architecture_boundaries(errors: list[str]) -> None:
         fail("Capability owns execution staging; move it to the invoking workstream output area", errors)
     if (capabilities / "1.1 CLAW_DISCOVERY/batches").exists():
         fail("Capability owns execution batches; move them to the invoking workstream output area", errors)
-    if not (output / "staging").exists():
-        fail("Personal Research staging directory missing", errors)
-    if not (output / "batches").exists():
-        fail("Personal Research batches directory missing", errors)
+    for legacy_dir in ["staging", "batches"]:
+        if (output / legacy_dir).exists():
+            fail(f"Retired Personal Research directory must not exist: {output / legacy_dir}", errors)
 
     stale_fragments = [
         "TOPICS/6. RnD INNOVATION",
@@ -674,7 +650,6 @@ def main() -> int:
     validate_workstream_readmes(errors)
     validate_csv_shape(errors)
     validate_capabilities(errors)
-    validate_staging_semantics(errors)
     validate_architecture_boundaries(errors)
     validate_future_rnd_references(errors)
     validate_scheduled_capability_contracts(errors)
