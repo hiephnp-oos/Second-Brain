@@ -4,7 +4,7 @@
 
 Promoted and audited Solex supplier knowledge across six reviewed PDFs in BETA.
 
-- Consolidated the Water System platform into `ST-061`; removed duplicate `ST-084`. Added subsystem records `ST-089`–`ST-096), preserving supplier-provided specifications and claims with source traceability.
+- Consolidated the Water System platform into `ST-061`; removed duplicate `ST-084`. Added subsystem records `ST-089`–`ST-096`, preserving supplier-provided specifications and claims with source traceability.
 - Consolidated Height-Adjustable Rain Showerhead evidence into `ST-036`, retaining source-specific configurations and differing supplier claims without reconciliation; removed duplicate `ST-087`.
 - Separated Digitally Controlled Thermostatic Valve / DualMaster Concealed Box into `ST-088` and `TR-077`; kept kitchen ThermoHybrid `ST-070` distinct.
 - Expanded `SRC-366` with page-range and subsystem-level coverage.
