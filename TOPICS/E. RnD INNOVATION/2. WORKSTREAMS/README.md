@@ -23,6 +23,7 @@ This layer organizes three workstreams by business purpose. It owns task-specifi
 | Synthesize broad, conflicting or decision-critical research | DEEP_RESEARCH | [1.3](../1. CAPABILITIES/1.3 DEEP_RESEARCH/README.md) |
 | Assess an identified candidate against decision criteria | EVALUATION | [1.4](../1. CAPABILITIES/1.4 EVALUATION/README.md) |
 | Review an explicit candidate for controlled Knowledge promotion | KNOWLEDGE_PROMOTION | [1.5](../1. CAPABILITIES/1.5 KNOWLEDGE_PROMOTION/README.md) |
+| Intake supplier PDF/PPTX knowledge into BETA | SUPPLIER_KNOWLEDGE_INTAKE | [1.6](../1. CAPABILITIES/1.6 SUPPLIER_KNOWLEDGE_INTAKE/README.md) |
 
 Use only the capabilities needed for the task. These routes are conditional, not a mandatory linear sequence. Workstream Prompt.csv owns task-specific orchestration; capability README owns reusable methods.
 
