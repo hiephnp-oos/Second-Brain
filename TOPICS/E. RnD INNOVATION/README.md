@@ -13,7 +13,7 @@ Capabilities provide reusable execution ability. Workstreams own business contex
 ## Status
 
 - State: Active
-- Summary: R&D Innovation currently has five reusable capabilities, three workstreams, and one working BETA Knowledge Sheet and one current authoritative release.
+- Summary: R&D Innovation currently has six active reusable capabilities, three workstreams, and one working BETA Knowledge Sheet and one current authoritative release. CAP-06 `EXPERIMENT_DESIGN` remains DEFER.
 - Direction: Keep research evidence traceable, minimize repeated work, and improve the system from observed results rather than adding complexity by default.
 - Last reviewed: 2026-09-28
 
@@ -47,6 +47,7 @@ Capabilities provide reusable execution ability. Workstreams own business contex
 | DEEP_RESEARCH | Broad/conflicting/high-risk research | Personal Research, Idea Review |
 | EVALUATION | Structured technical/decision evaluation | Idea Review, other R&D workstreams |
 | KNOWLEDGE_PROMOTION | Controlled, requested updates into BETA; never publishes releases | Personal Research, Idea Review |
+| SUPPLIER_KNOWLEDGE_INTAKE | PR-first supplier PDF/PPTX intake into Knowledge BETA with provenance and audit | Supplier document intake requests |
 
 Capability contracts live under 1. CAPABILITIES/. They contain reusable instructions and validation boundaries, not daily output records.
 
@@ -124,6 +125,7 @@ The SoL-Pi and future-improvement documents remain reference tracks; their exist
 - Capabilities and workstreams are separate architectural layers.
 - Workstreams own execution context and output; reusable capabilities do not.
 - CLAW_DISCOVERY is reusable R&D capability; its scheduled output is owned by PERSONAL_RESEARCH.
+- SUPPLIER_KNOWLEDGE_INTAKE is the sixth active reusable R&D capability; CAP-06 `EXPERIMENT_DESIGN` remains DEFER.
 - PROJECT_IMPROVEMENT is a first-class R&D workstream.
 - Knowledge Sheet remains the authoritative structured knowledge layer.
 - Human verification remains mandatory before authoritative promotion.
