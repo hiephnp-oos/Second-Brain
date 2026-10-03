@@ -197,3 +197,8 @@ Phase 1 is complete when:
 This completes the **architecture standard**, not the implementation of the five capability contracts. Phase 2 must update one capability at a time, then update affected workstream routing/prompts and tests.
 
 Every change to this baseline must identify the plan action ID, affected paths, compatibility/migration impact, tests, and approval state. Never report semantic or functional PASS based only on structural checks.
+
+
+## Supplier Knowledge Intake
+
+[1.6 SUPPLIER_KNOWLEDGE_INTAKE](1.6 SUPPLIER_KNOWLEDGE_INTAKE/README.md) defines the PR-first supplier PDF/PPTX intake workflow and its mandatory [progress checklist](1.6 SUPPLIER_KNOWLEDGE_INTAKE/INTAKE_CHECKLIST.md). It works directly in BETA on a Draft PR and does not create a parallel supplier knowledge database.
