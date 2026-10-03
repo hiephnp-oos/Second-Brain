@@ -201,4 +201,4 @@ Every change to this baseline must identify the plan action ID, affected paths, 
 
 ## Supplier Knowledge Intake
 
-[1.6 SUPPLIER_KNOWLEDGE_INTAKE](1.6%20SUPPLIER_KNOWLEDGE_INTAKE/README.md) defines the PR-first supplier PDF/PPTX intake workflow and its mandatory [progress checklist](1.6%20SUPPLIER_KNOWLEDGE_INTAKE/INTAKE_CHECKLIST.md). It works directly in BETA on a Draft PR and does not create a parallel supplier knowledge database.
+[1.6 SUPPLIER_KNOWLEDGE_INTAKE](1.6 SUPPLIER_KNOWLEDGE_INTAKE/README.md) defines the PR-first supplier PDF/PPTX intake workflow and its mandatory [progress checklist](1.6 SUPPLIER_KNOWLEDGE_INTAKE/INTAKE_CHECKLIST.md). It works directly in BETA on a Draft PR and does not create a parallel supplier knowledge database.
