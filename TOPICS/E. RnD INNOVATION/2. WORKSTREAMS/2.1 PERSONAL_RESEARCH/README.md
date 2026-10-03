@@ -29,7 +29,7 @@ Use `Prompt.csv` for Personal Research tasks. The prompt is the input; a separat
 - Exactly one scheduled execution runs per local date at 05:00 Asia/Ho_Chi_Minh and writes `RUN_SLOT 01`.
 - There are no RUN_SLOT 02/03 executions in the active schedule. Any legacy three-slot records remain historical only.
 - The user reviews the daily record directly. It is not an approved Knowledge Sheet record. No staging state, three-day consolidation, or batch output is used for new runs.
-- Existing `staging/` and `batches/` contents are legacy historical records only; do not write new files there or use them as active workflow state.
+- Previous Claw records are retained directly in this workstream root as historical reference. Do not use them as active workflow state or recreate `staging/` and `batches/`.
 
 The execution date is the calendar date of the current scheduled invocation in Asia/Ho_Chi_Minh, resolved from the active invocation/runtime date-time context. The scheduler is not required to expose a separate execution-timestamp field. If only the current date is available, use that local date; clock time is not needed for the filename. Never derive the date from a prior last-run timestamp, previous report, UTC date, or assumed date. If no usable current invocation date is available, report `RUN_DATE_UNAVAILABLE` and do not write.
 
@@ -39,12 +39,12 @@ Research findings remain in the discovery artifact unless they qualify for a Kno
 
 ## Review Memory — Human-reviewed outcomes
 
-Before RS-12, read [REVIEW_MEMORY.md](REVIEW_MEMORY.md). It is the durable record of user-reviewed candidate decisions and rejected mechanisms; it supplements, but does not replace, daily records, historical batches, IDEA_REVIEW artifacts, or regression cases. Preserve each decision's scope: a DROP rejects the reviewed candidate/delta, not automatically the entire problem domain. A later candidate may proceed only when its material DELTA is explicit and checked against the recorded reason. New user review decisions must be appended through the repository PR workflow; never overwrite historical decisions.
+Before RS-12, read [REVIEW_MEMORY.md](REVIEW_MEMORY.md). It is the durable record of user-reviewed candidate decisions and rejected mechanisms; it supplements, but does not replace, daily records, previous Claw records, IDEA_REVIEW artifacts, or regression cases. Preserve each decision's scope: a DROP rejects the reviewed candidate/delta, not automatically the entire problem domain. A later candidate may proceed only when its material DELTA is explicit and checked against the recorded reason. New user review decisions must be appended through the repository PR workflow; never overwrite historical decisions.
 
 ## Historical Learning and Duplicate Control
 
 Before RS-12, every daily run must retrieve and compare against:
-- All legacy CSV files currently present in `batches/` (read-only historical records).
+- All previous Claw CSV files retained directly in this workstream root (read-only historical records).
 - Prior daily discovery records: at minimum the previous 7 calendar days, plus any older record explicitly referenced by a reviewed lesson or matching candidate.
 - Relevant reviewed IDEA_REVIEW outcomes and Project Improvement regression cases.
 

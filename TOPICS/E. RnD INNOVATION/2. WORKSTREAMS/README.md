@@ -8,7 +8,7 @@ This layer organizes three workstreams by business purpose. It owns task-specifi
 
 | Workstream | Purpose | Entry point |
 |---|---|---|
-| 2.1 PERSONAL_RESEARCH | Discover ideas independently; maintain discovery staging and three-day batches. Ideas selected to proceed move to IDEA_REVIEW. | [README](2.1 PERSONAL_RESEARCH/README.md) · [Prompt.csv](2.1 PERSONAL_RESEARCH/Prompt.csv) |
+| 2.1 PERSONAL_RESEARCH | Discover ideas independently; write one daily record directly in the workstream. Previous Claw records are retained at the workstream root as history. Ideas selected to proceed move to IDEA_REVIEW. | [README](2.1 PERSONAL_RESEARCH/README.md) · [Prompt.csv](2.1 PERSONAL_RESEARCH/Prompt.csv) |
 | 2.2 IDEA_REVIEW | Conduct an initial validity review for team and Personal Research ideas; one folder per idea, with Vietnamese Markdown reports. Validity is not feasibility. | [README](2.2 IDEA_REVIEW/README.md) · [Prompt.csv](2.2 IDEA_REVIEW/Prompt.csv) |
 | 2.3 PROJECT_IMPROVEMENT | Maintain future plans intended to improve R&D Innovation. | [README](2.3 PROJECT_IMPROVEMENT/README.md) |
 
@@ -30,7 +30,7 @@ Use only the capabilities needed for the task. These routes are conditional, not
 
 `Idea source (team / PERSONAL_RESEARCH) → IDEA_REVIEW/<IDEA_NAME>/ → initial review → next action as needed`
 
-A handoff carries the idea ID, source/evidence links, epistemic state, known limits, checks performed/not performed, next action, and approval state where applicable. Promotion is never automatic. Staging, batches, and review records are non-authoritative until the Knowledge lifecycle is completed.
+A handoff carries the idea ID, source/evidence links, epistemic state, known limits, checks performed/not performed, next action, and approval state where applicable. Promotion is never automatic. Daily and previous Claw records, plus review records, are non-authoritative until the Knowledge lifecycle is completed.
 
 ## Change rules
 
