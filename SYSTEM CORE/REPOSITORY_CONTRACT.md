@@ -78,7 +78,7 @@ Inference must be labeled as inference and cannot silently become authoritative 
 
 ## Operational state
 
-Operational state is permitted only when it has a documented owner, purpose, lifecycle, and retention rule in the relevant workstream README. `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging/` and `batches/` are legacy, read-only historical archives. They may be retained for traceability or removed through an approved migration; neither directory is active scheduler state or required by validation. New scheduled output is written directly to the Personal Research root.
+Operational state is permitted only when it has a documented owner, purpose, lifecycle, and retention rule in the relevant workstream README. The `staging/` and `batches/` subdirectories under PERSONAL_RESEARCH are legacy, read-only historical archives. They may be retained for traceability or removed through an approved migration; neither directory is active scheduler state or required by validation. New scheduled output is written directly to the Personal Research root.
 
 ## Change contract
 
