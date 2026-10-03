@@ -67,7 +67,7 @@ R&D Database is a migrated project source folder. Its project files are stored d
 
 Career is organized as a parent topic with shared career-profile context and three parallel Capability/workstream units: `1. JOB_SEARCH`, `2. COMPANY_RADAR`, and `3. REMOTE_AI`. One daily master schedule is only the external trigger; the Career execution contract owns capability cadence, matching logic, validation, and weekly synthesis. Career is intentionally not a job database at the current stage. High-volume job records remain in external working tools until real usage demonstrates that a searchable database is justified.
 
-R&D Innovation is an active operational Capability domain. Five reusable capabilities live under `1. CAPABILITIES/`; three workstreams live under `2. WORKSTREAMS/`; the Knowledge Sheet is the authoritative structured knowledge layer. Scheduled Claw Discovery output is owned by `PERSONAL_RESEARCH/` as a date-specific daily record for direct user review; Knowledge promotion still requires its applicable gates.
+R&D Innovation is an active operational Capability domain. Six active reusable capabilities live under `1. CAPABILITIES/`: CLAW_DISCOVERY, VERIFICATION, DEEP_RESEARCH, EVALUATION, KNOWLEDGE_PROMOTION, and SUPPLIER_KNOWLEDGE_INTAKE. Three workstreams live under `2. WORKSTREAMS/`; the Knowledge Sheet is the authoritative structured knowledge layer. Scheduled Claw Discovery output is owned by `PERSONAL_RESEARCH/` as a date-specific daily record for direct user review; Knowledge promotion still requires its applicable gates.
 
 A topic should be added only when recurring work creates enough durable context to justify a dedicated folder.
 
@@ -202,7 +202,7 @@ Current topic order:
 
 ## R&D Capability baseline
 
-R&D Innovation exposes five reusable capabilities: CLAW_DISCOVERY, VERIFICATION, DEEP_RESEARCH, EVALUATION, and KNOWLEDGE_PROMOTION. It exposes three workstreams: PERSONAL_RESEARCH, IDEA_REVIEW, and PROJECT_IMPROVEMENT. The Knowledge Sheet remains the authoritative structured knowledge layer; Claw daily records are workstream outputs for user review.
+R&D Innovation exposes six active reusable capabilities: CLAW_DISCOVERY, VERIFICATION, DEEP_RESEARCH, EVALUATION, KNOWLEDGE_PROMOTION, and SUPPLIER_KNOWLEDGE_INTAKE. It exposes three workstreams: PERSONAL_RESEARCH, IDEA_REVIEW, and PROJECT_IMPROVEMENT. CAP-06 `EXPERIMENT_DESIGN` remains DEFER and is not an active capability. The Knowledge Sheet remains the authoritative structured knowledge layer; Claw daily records are workstream outputs for user review.
 
 Research Skill reference lessons adopted at the architecture level: deterministic routing where useful, explicit research intake/scope, source and evidence traceability, separation of evidence from inference/assumption/unknown/proposal, explicit failure handling, auditable outputs, and human verification before authoritative promotion. Claude-specific runtime architecture is not adopted.
 

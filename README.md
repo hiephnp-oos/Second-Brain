@@ -63,7 +63,7 @@ Knowledge → Workflow → Capability → Execution Contract → Tool / AI
 
 Current operational domains:
 - CAREER: three topic capabilities under `B. CAREER/1. CAPABILITIES/` with one consolidated weekly report.
-- R&D INNOVATION: five reusable capabilities, three workstreams, and one authoritative Knowledge Sheet.
+- R&D INNOVATION: six active reusable capabilities, three workstreams, and one authoritative Knowledge Sheet; CAP-06 `EXPERIMENT_DESIGN` remains DEFER.
 - AI GENERAL, NUVIO SETUP, and R&D DATABASE remain storage/archive or project-source contexts.
 
 `SYSTEM CORE/` is repository-level infrastructure outside `TOPICS/` and contains canonical controls plus reusable cross-topic capabilities.

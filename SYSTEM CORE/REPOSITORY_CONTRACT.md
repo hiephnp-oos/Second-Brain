@@ -178,7 +178,7 @@ Generic active capabilities outside R&D retain the 13 operational fields unless 
 
 The minimum execution lifecycle is: Trigger → Input → Execute → Output → Validate → Verify → Persist / Promote.
 
-For R&D Innovation, reusable capabilities are CLAW_DISCOVERY, VERIFICATION, DEEP_RESEARCH, EVALUATION, and KNOWLEDGE_PROMOTION. Workstreams are PERSONAL_RESEARCH, IDEA_REVIEW, and PROJECT_IMPROVEMENT. Capabilities do not own execution output; the invoking workstream owns its outputs.
+For R&D Innovation, six active reusable capabilities are CLAW_DISCOVERY, VERIFICATION, DEEP_RESEARCH, EVALUATION, KNOWLEDGE_PROMOTION, and SUPPLIER_KNOWLEDGE_INTAKE. CAP-06 `EXPERIMENT_DESIGN` remains DEFER and is not an active capability. Workstreams are PERSONAL_RESEARCH, IDEA_REVIEW, and PROJECT_IMPROVEMENT. Capabilities do not own execution output; the invoking workstream owns its outputs.
 
 ## Scheduled Output Persistence Invariant
 

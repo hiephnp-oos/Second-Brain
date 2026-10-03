@@ -57,7 +57,7 @@ Regression is performed on real outputs. The repository validator checks the reg
 
 ## Current baseline
 
-The regression baseline covers five Phase 2 capabilities and 38 cases (`RND-REG-001–038`). Controlled contract-level runs exist for all five capabilities; these controlled tests do not establish real-output effectiveness.
+The regression baseline covers six active capabilities and 38 cases (`RND-REG-001–038`). Controlled contract-level runs exist for the six active capabilities; these controlled tests do not establish real-output effectiveness. CAP-06 `EXPERIMENT_DESIGN` remains DEFER and is outside the active capability set.
 
 Real-output evidence is capability-specific and must cite an exact artifact/run. The Claw Discovery retrospective review for `2026-09-26_to_2026-09-28` recorded 5 PASS, 0 FAIL, and 1 INCONCLUSIVE; it reviewed saved output, not a newly executed scheduler run. Other capabilities remain NOT OBSERVED for real-output validation unless a run record explicitly says otherwise.
 

@@ -14,7 +14,7 @@
 - Any later contract folder created under a Workstream, Knowledge, or another layer must **follow and reference this baseline**. It may add local execution details, but must not redefine, fork, weaken, or silently override shared capability rules.
 - If a downstream contract needs an exception, document the reason, scope, owner, and approval in that contract and update this baseline only if the rule is intended to change globally.
 - A downstream folder is not a second source of truth. Workstreams own execution context and outputs; Knowledge owns lifecycle-governed records; neither owns reusable capability methodology.
-- Changes to this baseline require impact review of all five capability READMEs, active workstream prompts/routing, Knowledge boundaries, and relevant regression/validator rules.
+- Changes to this baseline require impact review of all six active capability READMEs, active workstream prompts/routing, Knowledge boundaries, and relevant regression/validator rules.
 
 This is an architecture and instruction contract, not a runtime engine. Folder order is navigation metadata, not mandatory execution order.
 
@@ -123,6 +123,7 @@ Do not add boilerplate just to fill fields. Mark `N/A` only when the capability 
 | `DEEP_RESEARCH` | The question is broad, conflicting, high-risk, or decision-critical and cannot be closed by minimum sufficient targeted checking | A single narrow claim can be checked directly |
 | `EVALUATION` | An identified idea/finding must be assessed against decision-relevant criteria | A simple factual lookup or evidence check is sufficient |
 | `KNOWLEDGE_PROMOTION` | An explicit reusable Knowledge Candidate is proposed for controlled promotion | Research output merely exists or a claim is marked EVIDENCED |
+| `SUPPLIER_KNOWLEDGE_INTAKE` | Supplier PDF/PPTX intake into R&D Knowledge BETA is explicitly requested | Standalone idea discovery, unrelated broad research, or Knowledge release decisions |
 
 ### 5.3 Handoff / escalation rules
 
@@ -178,7 +179,9 @@ Only include fields relevant to the task, but do not omit decision-critical unce
 
 Rationale:
 - P0 identified physical-validation uncertainty as a boundary to preserve, but did not establish a sufficiently documented set of recurring real cases, reuse frequency, or demonstrated overlap failure in current DEEP_RESEARCH/EVALUATION.
-- Creating a sixth capability now would be speculative and add maintenance/routing cost before reuse is demonstrated.
+- Creating a standalone CAP-06 `EXPERIMENT_DESIGN` capability now would be speculative and add maintenance/routing cost before reuse is demonstrated.
+- `SUPPLIER_KNOWLEDGE_INTAKE` is the sixth active R&D capability; it is distinct from CAP-06 and already has its own contract.
+
 - Current capabilities must explicitly preserve physical uncertainty and identify the experiment needed; they must not claim to design/execute/validate physical tests beyond their evidence and tool access.
 
 Reopen only when Project Improvement records actual cases with source/output references, recurring cross-workstream need, and an overlap analysis showing why a conditional method inside an existing capability is insufficient. A later decision must choose add / embed / continue defer and receive human approval before any new capability folder is created.
@@ -194,7 +197,7 @@ Phase 1 is complete when:
 - [x] P1-A06 target file map and reference split are decided without creating duplicate folders.
 - [x] P1-A07 CAP-06 disposition is recorded as DEFER with rationale and reopen criteria.
 
-This completes the **architecture standard**, not the implementation of the five capability contracts. Phase 2 must update one capability at a time, then update affected workstream routing/prompts and tests.
+This completes the **architecture standard** for six active capability contracts. CAP-06 `EXPERIMENT_DESIGN` remains DEFER. Phase 2 updates active capabilities one at a time, then updates affected workstream routing/prompts and tests.
 
 Every change to this baseline must identify the plan action ID, affected paths, compatibility/migration impact, tests, and approval state. Never report semantic or functional PASS based only on structural checks.
 

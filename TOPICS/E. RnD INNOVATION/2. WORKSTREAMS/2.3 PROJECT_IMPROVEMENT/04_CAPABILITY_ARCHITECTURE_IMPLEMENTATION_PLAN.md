@@ -5,7 +5,7 @@
 **Scope:** Reusable capabilities under `1. CAPABILITIES/`, their workstream routing, Knowledge boundaries, and regression/validation  
 **Decision rule:** This document guides implementation actions. It does not itself activate a new runtime, authorize Knowledge promotion, or change existing capability behavior.
 
-**Execution status (2026-09-28):** P0, Phase 1, all five Phase 2 capability contracts, Phase 3 DEFER decision, Phase 4 regression framework/validator hardening, and Phase 5 Workstreams/Knowledge integration are implemented and merged. The representative integrated real-output path C-27-02 is recorded in PR #40; PR #41 synchronized this plan and parent index. CI passed for PRs #38–#41. The capability architecture implementation is complete for the approved scope. Residual validation is explicitly bounded: the 38-case catalog is structurally enforced but was not all re-executed as functional tests; scheduler invocation and human-authorized Knowledge promotion were not performed. `1. CAPABILITIES/` remains the first baseline; downstream contracts inherit it.
+**Execution status (2026-09-28):** P0, Phase 1, all six active capability contracts, Phase 3 DEFER decision, Phase 4 regression framework/validator hardening, and Phase 5 Workstreams/Knowledge integration are implemented and merged. CAP-06 `EXPERIMENT_DESIGN` remains DEFER; the sixth active capability is `SUPPLIER_KNOWLEDGE_INTAKE`. The representative integrated real-output path C-27-02 is recorded in PR #40; PR #41 synchronized this plan and parent index. CI passed for PRs #38–#41. The capability architecture implementation is complete for the approved scope. Residual validation is explicitly bounded: the 38-case catalog is structurally enforced but was not all re-executed as functional tests; scheduler invocation and human-authorized Knowledge promotion were not performed. `1. CAPABILITIES/` remains the first baseline; downstream contracts inherit it.
 
 ## 1. Purpose and intended use
 
@@ -45,7 +45,7 @@ Unless later evidence and explicit approval justify a change, this plan does not
 ## 2. Source basis and design interpretation
 
 This plan uses:
-1. The current R&D Innovation repository contracts, especially the topic README, five capability READMEs, workstream READMEs, Knowledge lifecycle, and Project Improvement regression artifacts.
+1. The current R&D Innovation repository contracts, especially the topic README, six active capability READMEs, workstream READMEs, Knowledge lifecycle, and Project Improvement regression artifacts.
 2. Anthropic's *The Complete Guide to Building Skills for Claude* as a design reference for use-case-first planning, progressive disclosure, composability, actionable instructions, error handling, examples, triggering tests, functional tests, performance comparison, and iteration from observed failures.
 
 The Anthropic guide describes Claude Skills and their packaging/runtime conventions. R&D CAPABILITIES are repository-level reusable contracts intended to guide multiple AI workflows. Therefore, adopt relevant design principles, not Claude-specific implementation requirements or assumptions about automatic skill loading.
@@ -423,7 +423,7 @@ Execute in the order below. Each action is a bounded pull request or cohesive ch
 
 ### Phase 2 — Core capability implementation
 
-**Execution status (2026-09-28):** All five Phase 2 capability contracts are merged and have controlled contract-level regression records. RND-REG-033–038 and the KNOWLEDGE_PROMOTION report are recorded. Representative integrated real-output/workstream evidence is recorded for C-27-02 in PR #40, completing the planned integrated path. This does not mean all 38 regression cases were functionally re-executed; unrun cases remain NOT OBSERVED. Scheduler invocation and Knowledge promotion remain outside this acceptance.
+**Execution status (2026-09-28):** All six active capability contracts are merged and have controlled contract-level regression records; CAP-06 `EXPERIMENT_DESIGN` remains DEFER. RND-REG-033–038 and the KNOWLEDGE_PROMOTION report are recorded. Representative integrated real-output/workstream evidence is recorded for C-27-02 in PR #40, completing the planned integrated path. This does not mean all 38 regression cases were functionally re-executed; unrun cases remain NOT OBSERVED. Scheduler invocation and Knowledge promotion remain outside this acceptance.
 
 **Objective:** upgrade one capability at a time using the approved standard.
 
@@ -472,7 +472,7 @@ For each capability, execute the same action sequence:
 
 ### Phase 4 — Testing and evaluation
 
-**Execution status (2026-09-28):** Regression framework alignment and full 38-case validator coverage are merged (PR #36/#37). Per user direction, do not block progression on separate real-output acceptance after each capability phase. Complete the five capability implementation phases and Workstream/Knowledge integration first, then execute one integrated end-to-end run and inspect its actual outputs. Controlled fixtures remain distinct from operational evidence. The integrated representative run is recorded and reviewed in PR #40; remaining NOT OBSERVED cases are listed as residual regression coverage, not a blocker to the approved architecture implementation.
+**Execution status (2026-09-28):** Regression framework alignment and full 38-case validator coverage are merged (PR #36/#37). Per user direction, do not block progression on separate real-output acceptance after each capability phase. Complete the active capability implementation phases and Workstream/Knowledge integration first, then execute one integrated end-to-end run and inspect its actual outputs. Controlled fixtures remain distinct from operational evidence. The integrated representative run is recorded and reviewed in PR #40; remaining NOT OBSERVED cases are listed as residual regression coverage, not a blocker to the approved architecture implementation.
 
 **Objective:** prove that the capability instructions improve behavior, not merely documentation completeness.
 
