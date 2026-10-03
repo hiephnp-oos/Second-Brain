@@ -1,6 +1,6 @@
 # Human Review Memory — Personal Research / ADTD Claw
 
-**Purpose:** Durable, AI-readable record of user-reviewed discovery decisions. Read before RS-12 convergence and semantic duplicate checks. This file records human decisions; it does not replace daily reports, IDEA_REVIEW, historical batches, or the Knowledge Sheet.
+**Purpose:** Durable, AI-readable record of user-reviewed discovery decisions. Read before RS-12 convergence and semantic duplicate checks. This file records human decisions; it does not replace daily reports, IDEA_REVIEW, historical records, or the Knowledge Sheet.
 
 ## Decision rules
 
@@ -16,7 +16,7 @@
 
 - **Review date:** 2026-10-01 (user-confirmed)
 - **User decision:** PROCEED — selected for further work.
-- **Discovery origin:** 2026-09-24, Tech Push; PERSONAL_RESEARCH historical batch: batches/2026-09-23_to_2026-09-25.csv.
+- **Discovery origin:** 2026-09-24, Tech Push; PERSONAL_RESEARCH daily record: 2026-09-24.md.
 - **Existing IDEA_REVIEW status:** VALID — KEEP (2026-09-29).
 - **Scope:** Idea validity only; feasibility was not assessed.
 - **Core concept:** Transfer self-healing polymer/topcoat technology to exposed faucet/handshower/accessory finishes to recover some minor surface damage and maintain premium appearance.

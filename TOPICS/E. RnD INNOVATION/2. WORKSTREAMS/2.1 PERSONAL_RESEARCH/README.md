@@ -44,7 +44,7 @@ Before RS-12, read [REVIEW_MEMORY.md](REVIEW_MEMORY.md). It is the durable recor
 ## Historical Learning and Duplicate Control
 
 Before RS-12, every daily run must retrieve and compare against:
-- All previous Claw CSV files retained directly in this workstream root (read-only historical records).
+- Previous daily Claw Markdown records retained directly in this workstream root (read-only historical records). Legacy three-day CSV batch files have been removed; do not recreate or depend on them.
 - Prior daily discovery records: at minimum the previous 7 calendar days, plus any older record explicitly referenced by a reviewed lesson or matching candidate.
 - Relevant reviewed IDEA_REVIEW outcomes and Project Improvement regression cases.
 
