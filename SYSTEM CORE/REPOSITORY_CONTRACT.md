@@ -60,7 +60,7 @@ This file defines the repository invariants that must remain true regardless of 
 - Material mutations use Dry-run / target-state review where preview is possible, followed by post-update validation and final verification.
 - Conflicting authoritative information must not be silently overwritten (Contradiction handling).
 - Health/lint should target demonstrated failure modes before broader infrastructure is added.
-- External schedules are triggers; repository documentation defines expected cadence and behavior, but no external schedule is considered synchronized without direct verification.
+- External schedules are triggers; repository documentation defines expected cadence and behavior, but no external schedule is considered synchronized without direct verification. The GitHub Actions Claw watchdog is alert-only: it verifies the merged daily artifact and opens/reuses an Issue on failure; it does not execute discovery or repair the artifact.
 
 ## Source-of-truth hierarchy
 
@@ -78,7 +78,7 @@ Inference must be labeled as inference and cannot silently become authoritative 
 
 ## Operational state
 
-Operational state is permitted only when it has a documented owner, purpose, lifecycle, and retention rule in the relevant workstream README. The current approved operational staging directory is `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging/`; its records are scheduler state owned by the Personal Research workstream and are intentionally retained for evidence traceability.
+Operational state is permitted only when it has a documented owner, purpose, lifecycle, and retention rule in the relevant workstream README. `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging/` and `batches/` are legacy, read-only historical archives. They may be retained for traceability or removed through an approved migration; neither directory is active scheduler state or required by validation. New scheduled output is written directly to the Personal Research root.
 
 ## Change contract
 

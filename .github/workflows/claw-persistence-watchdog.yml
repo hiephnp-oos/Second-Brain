@@ -2,13 +2,17 @@ name: Claw Daily Persistence Watchdog
 
 on:
   schedule:
-    # 08:00 Asia/Ho_Chi_Minh; independent check after the 05:00 scheduled run.
-    - cron: "0 1 * * *"
+    # 08:17 Asia/Ho_Chi_Minh; avoid the top-of-hour schedule congestion window.
+    - cron: "17 1 * * *"
   workflow_dispatch:
 
 permissions:
   contents: read
   issues: write
+
+concurrency:
+  group: claw-persistence-watchdog-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   verify-daily-artifact:
@@ -39,9 +43,10 @@ jobs:
           required = {
               "RUN_DATE": f"**RUN_DATE:** {run_date}",
               "RUN_SLOT": "**RUN_SLOT:** 01",
-              "RS-10": "RS-10",
-              "RS-11": "RS-11",
-              "RS-12": "RS-12",
+              "RS-10": "## RS-10",
+              "RS-11": "## RS-11",
+              "RS-12": "## RS-12",
+              "SUMMARY": "## Tổng kết",
           }
           missing = [name for name, marker in required.items() if marker not in text]
           with open(os.environ["GITHUB_OUTPUT"], "a") as out:
@@ -67,6 +72,8 @@ jobs:
             echo "Existing watchdog issue #$EXISTING; no duplicate created."
             exit 0
           fi
+          MATCHING_PRS="$(gh pr list --state open --search "Claw daily report ${RUN_DATE}" --json number,title,url --jq '.[] | "- #\(.number) \(.title) \(.url)"')"
+          if [ -z "$MATCHING_PRS" ]; then MATCHING_PRS="None found."; fi
           gh issue create \
             --title "$TITLE" \
-            --body "The independent Claw persistence watchdog found **${STATE}** for ${RUN_DATE} (Asia/Ho_Chi_Minh).\n\nExpected artifact: \`${REPORT}\`\n\nThe 05:00 scheduled run did not leave a complete daily artifact on \`main\` by the 08:00 verification. Inspect the scheduled task execution, matching branches/PRs, Actions runs, and persistence response. Recover this date without overwriting human review.\n\nWatchdog run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            --body "The independent Claw persistence watchdog found **${STATE}** for ${RUN_DATE} (Asia/Ho_Chi_Minh).\n\nExpected artifact: \`${REPORT}\`\n\nThe 05:00 scheduled task did not leave a complete daily artifact on \`main\` by the 08:17 verification. Matching open PRs: \n${MATCHING_PRS}\n\nThis watchdog does not execute or recover discovery. Inspect the scheduled task execution and persistence response; recover this date without overwriting human review.\n\nWatchdog run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
