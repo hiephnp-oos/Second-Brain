@@ -90,6 +90,8 @@ BETA updates are controlled, explicit batch operations under KNOWLEDGE_PROMOTION
 
 When a task requires current repository information or references a Prompt ID:
 
+- For R&D repository work, use ChatGPT for reasoning/execution and connected GitHub for the repository source of truth and repository mutations.
+
 1. Access the current GitHub repository.
 2. Resolve the Prompt ID against the correct workstream Prompt.csv.
 3. Use the full released prompt as the task-specific contract.
