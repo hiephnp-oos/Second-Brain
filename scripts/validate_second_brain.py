@@ -411,7 +411,7 @@ def validate_capabilities(errors: list[str]) -> None:
         fail("Obsolete Career weekly subfolder still exists", errors)
 
     rnd = ROOT / "TOPICS/E. RnD INNOVATION"
-    capability_names = ["1.1 CLAW_DISCOVERY","1.2 VERIFICATION","1.3 DEEP_RESEARCH","1.4 EVALUATION","1.5 KNOWLEDGE_PROMOTION"]
+    capability_names = ["1.1 CLAW_DISCOVERY","1.2 VERIFICATION","1.3 DEEP_RESEARCH","1.4 EVALUATION","1.5 KNOWLEDGE_PROMOTION","1.6 SUPPLIER_KNOWLEDGE_INTAKE"]
     for name in capability_names:
         path = rnd / "1. CAPABILITIES" / name / "README.md"
         if not path.exists():
@@ -533,7 +533,7 @@ def validate_prompt_duplicate_rules(errors: list[str]) -> None:
 
 
 def validate_rnd_regression_contract(errors: list[str]) -> None:
-    root = Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/Regression")
+    root = ROOT / "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/Regression"
     required = [root / "README.md", root / "CASES.md", root / "RUN_TEMPLATE.md", root / "BASELINE.md"]
     for rel in required:
         if not rel.exists():
@@ -557,6 +557,10 @@ def validate_rnd_regression_contract(errors: list[str]) -> None:
             "Capability:",
             "Prompt ID / execution contract:",
             "Baseline compared with:",
+            "Repository commit / task ref:",
+            "Knowledge snapshot / release:",
+            "Positive-control evidence",
+            "Limitations",
             "Regression cases",
             *[f"RND-REG-{i:03d}" for i in range(1, 39)],
             "Performance comparison",
