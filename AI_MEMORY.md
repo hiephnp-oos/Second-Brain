@@ -107,7 +107,7 @@ A topic should be added only when recurring work creates enough durable context 
 - Schedules are external triggers; repository contracts define cadence, inputs, outputs, validation, and date semantics.
 - Conflicting authoritative information is flagged and investigated rather than silently overwritten.
 - Health/lint controls target demonstrated failure modes before broader metrics infrastructure.
-- R&D Innovation now has a lightweight regression/evaluation layer under `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/Regression/` for real capability outputs; it is an evaluation aid, not a second workflow or scoring engine. The framework is implemented; semantic validation remains to be exercised on subsequent real daily outputs.
+- R&D Innovation now has a lightweight regression/evaluation layer under `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/Regression/` for real capability outputs; it is an evaluation aid, not a second workflow or scoring engine. Future-improvement references remain dormant unless recurring material evidence justifies activation through the Project Improvement gate.
 - Current recurring external schedules are the Career master scheduler and R&D Claw Discovery daily scheduler; AI General, Nuvio Setup, and R&D Database have no ChatGPT scheduled execution in the current operating model.
 
 ## 9. HOW A NEW AI SHOULD ONBOARD
