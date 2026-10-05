@@ -292,13 +292,13 @@ On Monday, the weekly run record is a required durable output. The sequence is `
 A verified weekly artifact and a verified scheduled execution are separate states. A report may be persisted or recovered without proving that the external scheduler successfully invoked the Career run.
 
 Use these execution states:
-- `SCHEDULED_INVOCATION_VERIFIED` — independent evidence shows the external scheduled invocation occurred for the expected run date.
-- `EXECUTION_COMPLETED` — the Career capability execution reached its declared output/validation boundary.
-- `OUTPUT_PERSISTED` — the required weekly report exists at the exact canonical path.
-- `OUTPUT_RE_READ` — the exact persisted report was read back successfully.
-- `FINAL_REPOSITORY_STATE_VERIFIED` — the expected repository state was re-checked after persistence.
-- `SCHEDULED_EXECUTION_VERIFIED` — the scheduled invocation is evidenced and all required execution/output/final-state checks are verified.
-- `OUTPUT_RECOVERED` — a missing scheduled output was recreated or repaired after the fact; this does not prove the original scheduled invocation or scheduled execution succeeded.
+- `SCHEDULED INVOCATION VERIFIED` — independent evidence shows the external scheduled invocation occurred for the expected run date.
+- `EXECUTION COMPLETED` — the Career capability execution reached its declared output/validation boundary.
+- `OUTPUT PERSISTED` — the required weekly report exists at the exact canonical path.
+- `OUTPUT RE-READ` — the exact persisted report was read back successfully.
+- `FINAL REPOSITORY STATE VERIFIED` — the expected repository state was re-checked after persistence.
+- `SCHEDULED EXECUTION VERIFIED` — the scheduled invocation is evidenced and all required execution/output/final-state checks are verified.
+- `OUTPUT RECOVERED` — a missing scheduled output was recreated or repaired after the fact; this does not prove the original scheduled invocation or scheduled execution succeeded.
 - `NOT_VERIFIED` — evidence is insufficient to establish scheduled provenance or another required completion state.
 
 A recovered report must retain its recovery nature in the run metadata/summary. Never infer `SCHEDULED_EXECUTION_VERIFIED` from artifact existence, commit existence, successful search results, or a later manual/recovery write. When scheduler provenance is unavailable, report `NOT_VERIFIED` (or `OUTPUT_RECOVERED` when the artifact was subsequently restored) rather than retroactively attributing the artifact to the scheduler.
