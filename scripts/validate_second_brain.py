@@ -583,7 +583,7 @@ def validate_authority_boundaries(errors: list[str]) -> None:
         ],
         "SYSTEM CORE/REPOSITORY_CONTRACT.md": [
             "This file defines the repository invariants",
-            "the operational mutation lifecycle and detailed execution procedure are defined by `SYSTEM CORE/WORKFLOW.md`",
+            "The operational mutation lifecycle and detailed execution procedure are defined by `SYSTEM CORE/WORKFLOW.md`.",
             "A repository mutation is complete only when:",
         ],
     }
