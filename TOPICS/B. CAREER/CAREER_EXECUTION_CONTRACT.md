@@ -68,7 +68,7 @@ Every Career capability follows:
 7. Produce the declared output contract.
 8. Run the validation checklist.
 9. Escalate material uncertainty instead of inventing facts.
-10. On the weekly synthesis run, create a compact weekly run record under `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md`.
+10. On the weekly synthesis run, create/update the single compact weekly run record under `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md`. Weekly persistence is mandatory even if one or more search capabilities fail or are unavailable: continue the synthesis with the available evidence and mark affected streams `NOT_RUN` (or the applicable explicit fallback state) rather than aborting the weekly report.
 
 ### Tools
 
@@ -167,6 +167,14 @@ Each capability should keep five layers explicit:
 `Load Contract → Load Relevant Context → Execute → Validate → Output / Escalate`
 
 A capability must fail explicitly when its required evidence or input is unavailable rather than silently filling gaps with inference.
+
+## Monday Persistence Invariant
+
+On Monday, the weekly synthesis/report path must be attempted independently of search-cycle success. The required sequence is:
+
+Determine Monday → Execute available search capabilities → Synthesize available state → Persist exactly one weekly report → Re-read and validate.
+
+If a search capability fails before producing output, do not treat that as permission to skip weekly persistence. Persist the report with explicit NOT_RUN or the capability fallback state and disclose the execution gap. A scheduler firing without a verified weekly file is not completion.
 
 ## Weekly Run Record
 
@@ -276,4 +284,4 @@ Failure Handling: preserve unknowns, report missing evidence, and do not fabrica
 
 ## Scheduler Persistence / Verification
 
-On Monday, the weekly run record is a required durable output. The sequence is `Execute search/synthesis → Write GitHub record → Re-read exact path → Validate → Verify final repository state → Report`. A successful search or synthesis is not evidence that the weekly record exists.
+On Monday, the weekly run record is a required durable output. The sequence is `Determine Monday → Execute available search/synthesis → Write exactly one GitHub record → Re-read exact path → Validate → Verify final repository state → Report`. Search failure or tool unavailability must not skip the weekly record; affected streams must be marked NOT_RUN or with their explicit fallback state. A successful search or synthesis is not evidence that the weekly record exists.
