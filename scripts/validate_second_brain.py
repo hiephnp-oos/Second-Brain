@@ -417,7 +417,17 @@ def validate_capabilities(errors: list[str]) -> None:
         if not path.exists():
             fail(f"R&D capability missing: {path.relative_to(ROOT)}", errors)
             continue
-        text = read_text(path).lower()
+        text = read_text(path)
+        required_headings = [
+            "## 1. Identity and purpose", "## 2. Use cases", "## 3. Trigger / non-trigger",
+            "## 4. Inputs and preconditions", "## 5. Procedure", "## 6. ",
+            "## 7. Tool boundary", "## 8. Evidence and uncertainty", "## 9. Output contract",
+            "## 10. ", "## 11. ", "## 12. ", "## 13. ", "## 14. ", "## 15. ",
+        ]
+        for heading in required_headings:
+            if not any(line.startswith(heading) for line in text.splitlines()):
+                fail(f"R&D capability contract missing numbered section '{heading}': {path.relative_to(ROOT)}", errors)
+        text = text.lower()
         required_groups = {
             "purpose": ["purpose"],
             "trigger": ["trigger"],
