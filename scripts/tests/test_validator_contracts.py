@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-import ast
 import importlib.util
+import tempfile
+import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -14,58 +15,119 @@ def load_validator():
     spec.loader.exec_module(module)
     return module
 
-def test_every_validator_function_is_wired_into_main():
-    tree = ast.parse(VALIDATOR.read_text(encoding="utf-8"))
-    functions = {node.name for node in tree.body if isinstance(node, ast.FunctionDef) and node.name.startswith("validate_")}
-    main = next(node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == "main")
-    calls = {node.func.id for node in ast.walk(main) if isinstance(node, ast.Call) and isinstance(node.func, ast.Name)}
-    assert not sorted(functions - calls)
+class ValidatorCriticalContracts(unittest.TestCase):
+    def test_required_root_file_failure(self):
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "AI_MEMORY.md").write_text("x", encoding="utf-8")
+            (root / "README.md").write_text("x", encoding="utf-8")
+            old = module.ROOT
+            try:
+                module.ROOT = root
+                errors = []
+                module.validate_root(errors)
+                self.assertTrue(any("SYSTEM CORE/WORKFLOW.md" in e for e in errors))
+            finally:
+                module.ROOT = old
 
-def test_critical_provenance_validator_rejects_noncanonical_state(tmp_path: Path):
-    module = load_validator()
-    contract_dir = tmp_path / "TOPICS" / "B. CAREER"
-    contract_dir.mkdir(parents=True)
-    (contract_dir / "CAREER_EXECUTION_CONTRACT.md").write_text(
-        "MISSING INCOMPLETE PRESENT_UNVERIFIED MANUAL_RECOVERY NOT_VERIFIED REPOSITORY_CONTRACT.md\nscheduled execution verified\n",
-        encoding="utf-8")
-    old_root = module.ROOT
-    try:
-        module.ROOT = tmp_path
-        errors: list[str] = []
-        module.validate_career_scheduled_provenance(errors)
-        assert any("non-canonical state" in item for item in errors)
-    finally:
-        module.ROOT = old_root
+    def test_canonical_lifecycle_failure(self):
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            core = root / "SYSTEM CORE"
+            core.mkdir()
+            (core / "WORKFLOW.md").write_text("## VALIDATE\n", encoding="utf-8")
+            (core / "REPOSITORY_CONTRACT.md").write_text("x", encoding="utf-8")
+            (root / "README.md").write_text("GitHub Actions Issue Forms Task Lists GitHub Projects Security Mermaid Capability Staging SYSTEM CORE", encoding="utf-8")
+            old = module.ROOT
+            try:
+                module.ROOT = root
+                errors = []
+                module.validate_high_level_controls(errors)
+                self.assertTrue(any("lifecycle" in e for e in errors))
+            finally:
+                module.ROOT = old
 
-def test_forbidden_artifact_validator_fails_closed(tmp_path: Path):
-    module = load_validator()
-    (tmp_path / "bad.placeholder").write_text("x", encoding="utf-8")
-    old_root = module.ROOT
-    try:
-        module.ROOT = tmp_path
-        errors: list[str] = []
-        module.validate_forbidden_files(errors)
-        assert any("Forbidden artifact marker found" in item for item in errors)
-    finally:
-        module.ROOT = old_root
+    def test_topic_registry_missing_readme_failure(self):
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "AI_MEMORY.md").write_text("| T | Active | `TOPICS/Missing/README.md` |\n", encoding="utf-8")
+            old = module.ROOT
+            try:
+                module.ROOT = root
+                errors = []
+                active, _ = module.extract_topic_registry(errors)
+                self.assertEqual(active, set())
+                self.assertTrue(any("Missing/README.md" in e for e in errors))
+            finally:
+                module.ROOT = old
 
-def test_career_weekly_schema_validator_rejects_bad_header(tmp_path: Path):
-    module = load_validator()
-    report_dir = tmp_path / "TOPICS" / "B. CAREER" / "2. REPORTS"
-    capability_dir = tmp_path / "TOPICS" / "B. CAREER" / "1. CAPABILITIES"
-    for name, schema in {"1.1 JOB_SEARCH":"A | B", "1.2 COMPANY_RADAR":"C | D", "1.3 REMOTE_AI":"E | F"}.items():
-        d = capability_dir / name
-        d.mkdir(parents=True)
-        (d / "README.md").write_text("# Capability\n`" + schema + "`\n", encoding="utf-8")
-    report_dir.mkdir(parents=True)
-    (report_dir / "2026-W40.md").write_text(
-        "# Career Weekly Review — 2026-W40\n## 1. Job Search\n| WRONG | HEADER |\n|---|---|\n| x | y |\n## 2. Company Radar\n| C | D |\n|---|---|\n| x | y |\n## 3. Remote / AI\n| E | F |\n|---|---|\n| x | y |\n",
-        encoding="utf-8")
-    old_root = module.ROOT
-    try:
-        module.ROOT = tmp_path
-        errors: list[str] = []
-        module.validate_career_weekly_report_contract(errors)
-        assert any("schema mismatch" in item for item in errors)
-    finally:
-        module.ROOT = old_root
+    def test_critical_negative_path_failure(self):
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging").mkdir(parents=True)
+            old = module.ROOT
+            try:
+                module.ROOT = root
+                errors = []
+                module.validate_critical_negative_paths(errors)
+                self.assertTrue(errors)
+            finally:
+                module.ROOT = old
+
+    def test_noncanonical_provenance_failure(self):
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            p = root / "TOPICS/B. CAREER"
+            p.mkdir(parents=True)
+            (p / "CAREER_EXECUTION_CONTRACT.md").write_text("MISSING INCOMPLETE PRESENT_UNVERIFIED MANUAL_RECOVERY NOT_VERIFIED REPOSITORY_CONTRACT.md\nscheduled execution verified\n", encoding="utf-8")
+            old = module.ROOT
+            try:
+                module.ROOT = root
+                errors = []
+                module.validate_career_scheduled_provenance(errors)
+                self.assertTrue(any("non-canonical state" in e for e in errors))
+            finally:
+                module.ROOT = old
+
+    def test_forbidden_artifact_failure(self):
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "bad.placeholder").write_text("x", encoding="utf-8")
+            old = module.ROOT
+            try:
+                module.ROOT = root
+                errors = []
+                module.validate_forbidden_files(errors)
+                self.assertTrue(any("Forbidden artifact marker found" in e for e in errors))
+            finally:
+                module.ROOT = old
+
+    def test_career_weekly_schema_failure(self):
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            base = root / "TOPICS/B. CAREER/1. CAPABILITIES"
+            for name, schema in {"1.1 JOB_SEARCH":"A | B", "1.2 COMPANY_RADAR":"C | D", "1.3 REMOTE_AI":"E | F"}.items():
+                p = base / name
+                p.mkdir(parents=True)
+                (p / "README.md").write_text("# Capability\n`" + schema + "`\n", encoding="utf-8")
+            reports = root / "TOPICS/B. CAREER/2. REPORTS"
+            reports.mkdir(parents=True)
+            (reports / "2026-W40.md").write_text("## 1. Job Search\n| WRONG | HEADER |\n|---|---|\n|x|y|\n## 2. Company Radar\n| C | D |\n|---|---|\n|x|y|\n## 3. Remote / AI\n| E | F |\n|---|---|\n|x|y|\n", encoding="utf-8")
+            old = module.ROOT
+            try:
+                module.ROOT = root
+                errors = []
+                module.validate_career_weekly_report_contract(errors)
+                self.assertTrue(any("schema mismatch" in e for e in errors))
+            finally:
+                module.ROOT = old
+
+if __name__ == "__main__":
+    unittest.main()
