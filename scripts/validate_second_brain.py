@@ -461,6 +461,15 @@ def validate_capabilities(errors: list[str]) -> None:
         if not path.exists():
             fail(f"System Core capability missing: {path.relative_to(ROOT)}", errors)
 
+def validate_future_rnd_references(errors: list[str]) -> None:
+    for rel in [
+        Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/02_SoL-Pi Reference Architecture.md"),
+        Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/03_Future Improvement Reference Architecture.md"),
+    ]:
+        if not (ROOT / rel).exists():
+            fail(f"Required R&D future reference missing: {rel}", errors)
+
+
 def validate_architecture_boundaries(errors: list[str]) -> None:
     rnd = ROOT / "TOPICS/E. RnD INNOVATION"
     capabilities = rnd / "1. CAPABILITIES"
