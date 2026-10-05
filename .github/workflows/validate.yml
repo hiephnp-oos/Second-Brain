@@ -32,7 +32,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           STATUS_STATE: ${{ steps.validate.outcome }}
-          STATUS_SHA: ${{ github.event.pull_request.head.sha }}
+          STATUS_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          STATUS_MERGE_SHA: ${{ github.sha }}
           STATUS_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           python - <<'PY'
@@ -44,17 +45,16 @@ jobs:
               "description": "Repository contract validation" if state == "success" else "Repository contract validation failed",
               "target_url": os.environ["STATUS_URL"],
           }
-          req = urllib.request.Request(
-              f"https://api.github.com/repos/hiephnp-oos/Second-Brain/statuses/{os.environ['STATUS_SHA']}",
-              data=json.dumps(payload).encode(),
-              headers={
-                  "Accept": "application/vnd.github+json",
-                  "Authorization": f"Bearer {os.environ['GH_TOKEN']}",
-                  "X-GitHub-Api-Version": "2022-11-28",
-                  "Content-Type": "application/json",
-              },
-              method="POST",
-          )
-          with urllib.request.urlopen(req) as response:
-              print(response.read().decode())
+          headers = {
+              "Accept": "application/vnd.github+json",
+              "Authorization": f"Bearer {os.environ['GH_TOKEN']}",
+              "X-GitHub-Api-Version": "2022-11-28",
+              "Content-Type": "application/json",
+          }
+          for sha in dict.fromkeys([os.environ["STATUS_HEAD_SHA"], os.environ["STATUS_MERGE_SHA"]]):
+              req = urllib.request.Request(
+                  f"https://api.github.com/repos/hiephnp-oos/Second-Brain/statuses/{sha}",
+                  data=json.dumps(payload).encode(), headers=headers, method="POST")
+              with urllib.request.urlopen(req) as response:
+                  print(response.read().decode())
           PY
