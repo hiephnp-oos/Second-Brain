@@ -546,6 +546,51 @@ def validate_claw_watchdog_contract(errors: list[str]) -> None:
             fail(f"Claw watchdog must not claim external scheduler provenance: '{phrase}'", errors)
 
 
+def validate_career_weekly_report_contract(errors: list[str]) -> None:
+    reports = ROOT / Path("TOPICS/B. CAREER/2. REPORTS")
+    if not reports.exists():
+        fail("Career weekly reports directory missing", errors)
+        return
+
+    capability_paths = [
+        ROOT / Path("TOPICS/B. CAREER/1. CAPABILITIES/1.1 JOB_SEARCH/README.md"),
+        ROOT / Path("TOPICS/B. CAREER/1. CAPABILITIES/1.2 COMPANY_RADAR/README.md"),
+        ROOT / Path("TOPICS/B. CAREER/1. CAPABILITIES/1.3 REMOTE_AI/README.md"),
+    ]
+    section_names = ["## 1. Job Search", "## 2. Company Radar", "## 3. Remote / AI"]
+
+    def schema_from_readme(path: Path) -> list[str] | None:
+        for line in read_text(path).splitlines():
+            stripped = line.strip()
+            if stripped.startswith("`") and stripped.endswith("`") and "|" in stripped:
+                return [cell.strip() for cell in stripped[1:-1].split("|")]
+        return None
+
+    schemas = [schema_from_readme(path) if path.exists() else None for path in capability_paths]
+
+    for report in sorted(reports.glob("*.md")):
+        if not re.fullmatch(r"\d{4}-W\d{2}\.md", report.name):
+            continue
+        text = read_text(report)
+        positions = [text.find(section) for section in section_names]
+        if any(pos < 0 for pos in positions) or positions != sorted(positions):
+            fail(f"Career weekly report sections invalid: {report.relative_to(ROOT)}", errors)
+            continue
+
+        table_headers = []
+        lines = text.splitlines()
+        for index, line in enumerate(lines[:-1]):
+            if line.startswith("|") and re.match(r"^\|\s*:?-{3,}", lines[index + 1]):
+                table_headers.append([cell.strip() for cell in line.strip()[1:-1].split("|")])
+        if len(table_headers) != 3:
+            fail(f"Career weekly report must contain exactly 3 result tables: {report.relative_to(ROOT)}", errors)
+            continue
+        for section, expected, actual in zip(section_names, schemas, table_headers):
+            if expected is None:
+                fail(f"Career capability schema source missing for {section}: {report.relative_to(ROOT)}", errors)
+            elif actual != expected:
+                fail(f"Career weekly report schema mismatch in {section}: {report.relative_to(ROOT)}", errors)
+
 def validate_career_weekly_watchdog_contract(errors: list[str]) -> None:
     path = ROOT / Path(".github/workflows/career-weekly-watchdog.yml")
     if not path.exists():
@@ -747,6 +792,7 @@ def main() -> int:
     validate_career_scheduled_provenance(errors)
     validate_claw_watchdog_contract(errors)
     validate_career_weekly_watchdog_contract(errors)
+    validate_career_weekly_report_contract(errors)
     validate_scheduled_capability_contracts(errors)
     validate_rnd_knowledge_sheet(errors)
     validate_prompt_duplicate_rules(errors)

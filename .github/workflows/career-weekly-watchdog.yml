@@ -39,8 +39,49 @@ jobs:
           text = path.read_text(encoding="utf-8")
           required = [f"# Career Weekly Review — {week}", "## Execution", "## 1. Job Search", "## 2. Company Radar", "## 3. Remote / AI", "Weekly synthesis:", "Validation:"]
           missing = [m for m in required if m not in text]
+
+          capability_paths = [
+              pathlib.Path("TOPICS/B. CAREER/1. CAPABILITIES/1.1 JOB_SEARCH/README.md"),
+              pathlib.Path("TOPICS/B. CAREER/1. CAPABILITIES/1.2 COMPANY_RADAR/README.md"),
+              pathlib.Path("TOPICS/B. CAREER/1. CAPABILITIES/1.3 REMOTE_AI/README.md"),
+          ]
+          section_names = ["## 1. Job Search", "## 2. Company Radar", "## 3. Remote / AI"]
+
+          def schema_from_readme(path):
+              for line in path.read_text(encoding="utf-8").splitlines():
+                  stripped = line.strip()
+                  if stripped.startswith("`") and stripped.endswith("`") and "|" in stripped:
+                      return stripped[1:-1].split("|")
+              return None
+
+          def table_header(section):
+              start = text.find(section)
+              if start < 0:
+                  return None
+              next_positions = [text.find(name, start + len(section)) for name in section_names if name != section]
+              end = min([p for p in next_positions if p >= 0] or [len(text)])
+              block = text[start:end]
+              lines = block.splitlines()
+              for i, line in enumerate(lines):
+                  if line.startswith("|") and i + 1 < len(lines) and re.match(r"^\|\s*:?-{3,}", lines[i + 1]):
+                      return line.strip()[1:-1].split("|")
+              return None
+
+          schema_errors = []
+          for path, section in zip(capability_paths, section_names):
+              expected = schema_from_readme(path)
+              actual = table_header(section)
+              if expected is None or actual is None or [x.strip() for x in actual] != [x.strip() for x in expected]:
+                  schema_errors.append(section)
+          table_count = sum(
+              1 for i, line in enumerate(text.splitlines()[:-1])
+              if line.startswith("|") and re.match(r"^\|\s*:?-{3,}", text.splitlines()[i + 1])
+          )
+          if table_count != 3:
+              schema_errors.append(f"table_count={table_count}")
+
           manual = bool(re.search(r"MANUAL\s+RECOVERY", text, re.I))
-          state = "INCOMPLETE" if missing else ("MANUAL_RECOVERY" if manual else "PRESENT_UNVERIFIED")
+          state = "INCOMPLETE" if missing or schema_errors else ("MANUAL_RECOVERY" if manual else "PRESENT_UNVERIFIED")
           with open(os.environ["GITHUB_OUTPUT"], "a") as out:
               out.write(f"artifact_state={state}\nprovenance_state=NOT_VERIFIED\nstate={state}\n")
           PY
