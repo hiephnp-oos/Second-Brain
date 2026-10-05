@@ -518,6 +518,35 @@ def validate_career_scheduled_provenance(errors: list[str]) -> None:
             fail(f"Career scheduled provenance contract contains non-canonical state '{phrase}'", errors)
 
 
+def validate_claw_watchdog_contract(errors: list[str]) -> None:
+    path = ROOT / Path(".github/workflows/claw-persistence-watchdog.yml")
+    if not path.exists():
+        fail("Claw persistence watchdog workflow missing", errors)
+        return
+    text = read_text(path)
+    required = [
+        'name: Claw Daily Persistence Watchdog',
+        'cron: "0 1 * * *"',
+        'TZ=Asia/Ho_Chi_Minh date +%F',
+        'artifact_state=MISSING',
+        'artifact_state=INCOMPLETE',
+        'artifact_state=PRESENT_UNVERIFIED',
+        'artifact_state=MANUAL_RECOVERY',
+        'provenance_state=NOT_VERIFIED',
+        'does not prove that the external 05:00 scheduled task executed',
+    ]
+    for phrase in required:
+        if phrase not in text:
+            fail(f"Claw watchdog contract missing '{phrase}'", errors)
+    forbidden = [
+        'provenance_state=SCHEDULED_EXECUTION_VERIFIED',
+        'artifact_state=SCHEDULED_EXECUTION_VERIFIED',
+    ]
+    for phrase in forbidden:
+        if phrase in text:
+            fail(f"Claw watchdog must not claim external scheduler provenance: '{phrase}'", errors)
+
+
 def validate_scheduled_capability_contracts(errors: list[str]) -> None:
     for rel in [
         Path("TOPICS/B. CAREER/IMPLEMENTATION_PLAN.md"),
