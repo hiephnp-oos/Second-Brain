@@ -56,6 +56,7 @@ def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
+
 def validate_root(errors: list[str]) -> None:
     required = ["AI_MEMORY.md", "README.md", "SYSTEM CORE/WORKFLOW.md", "SYSTEM CORE/REPOSITORY_CONTRACT.md"]
     for name in required:
@@ -242,9 +243,9 @@ def validate_local_references(errors: list[str]) -> None:
         if is_template_reference(candidate):
             return
         if candidate.startswith("/"):
-            target = ROOT / candidate.lstrip("/")
-        else:
-            target = source.parent / candidate
+            fail(f"Broken repository-local Markdown link in {source.relative_to(ROOT)}: {candidate}", errors)
+            return
+        target = source.parent / candidate
         if not target.exists():
             fail(f"Broken local reference in {source.relative_to(ROOT)}: {candidate}", errors)
 

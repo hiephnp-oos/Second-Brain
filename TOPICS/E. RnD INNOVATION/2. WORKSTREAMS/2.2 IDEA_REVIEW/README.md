@@ -17,7 +17,13 @@ Mỗi idea có một thư mục riêng, đặt theo tên ngắn gọn, dễ nh�
 - Mỗi lần review lưu thành một file Markdown trong thư mục idea. Báo cáo đầu tiên dùng tên `IDEA_REVIEW_YYYY-MM-DD.md`; các lần sau dùng ngày tương ứng.
 - Không tạo thư mục con hoặc báo cáo phụ nếu chưa có nhu cầu thực tế.
 
-## Default report output\n\n- **Mọi Idea Review mặc định phải trả về một báo cáo Markdown hoàn chỉnh bằng tiếng Việt**, không chỉ đưa ra nhận xét rời rạc hoặc tóm tắt trong chat.\n- Khi thực hiện trong repository, lưu report vào thư mục riêng của idea theo quy ước bên dưới; trong phản hồi cho người dùng, xác nhận đường dẫn report và nêu kết luận chính.\n- Chỉ thay đổi định dạng hoặc phạm vi report khi người dùng yêu cầu rõ.\n\n## Nội dung review ban đầu
+## Default report output
+
+- **Mọi Idea Review mặc định phải trả về một báo cáo Markdown hoàn chỉnh bằng tiếng Việt**, không chỉ đưa ra nhận xét rời rạc hoặc tóm tắt trong chat.
+- Khi thực hiện trong repository, lưu report vào thư mục riêng của idea theo quy ước bên dưới; trong phản hồi cho người dùng, xác nhận đường dẫn report và nêu kết luận chính.
+- Chỉ thay đổi định dạng hoặc phạm vi report khi người dùng yêu cầu rõ.
+
+## Nội dung review ban đầu
 
 1. **Idea Validity — Đây có phải là một idea không?** Phân biệt idea với mô tả vấn đề, quan sát, yêu cầu tính năng hoặc giải pháp đã có. Nếu chưa rõ, nêu điểm cần làm rõ; không tự loại bỏ chỉ vì mô tả chưa hoàn chỉnh.
 2. **Pain Point & User Benefit — Vấn đề và lợi ích cho người dùng:** Idea giải quyết khó khăn nào, cho nhóm người dùng nào và lợi ích dự kiến là gì? Phân biệt lợi ích được chứng minh với lợi ích giả định.
@@ -41,11 +47,11 @@ Không chấm điểm hoặc xếp hạng idea ở bước này, trừ khi ngư�
 - Gắn nhãn rõ nội dung là bằng chứng, suy luận, giả định, đề xuất hay chưa xác định khi điều đó ảnh hưởng đến kết luận.
 - Chỉ mở rộng sang capability khác khi câu hỏi vượt khỏi review ban đầu hoặc người dùng yêu cầu.
 - Không tự động chuyển idea sang POC, Deep Research hoặc Knowledge.
-- **Mọi báo cáo và nội dung do IDEA_REVIEW tạo ra phải viết bằng tiếng Việt rõ ràng, tự nhiên, dễ hiểu với kỹ sư.** Giữ nguyên tên riêng, mã, tiêu chuẩn và thuật ngữ tiếng Anh cần thiết. Tham chiếu [VIETNAMESE_REWRITE](/TOPICS/E. RnD INNOVATION/1. CAPABILITIES/VIETNAMESE_REWRITE.md). Skill này chỉ biên tập ngôn ngữ, không bổ sung hoặc xác minh nội dung kỹ thuật.
+- **Mọi báo cáo và nội dung do IDEA_REVIEW tạo ra phải viết bằng tiếng Việt rõ ràng, tự nhiên, dễ hiểu với kỹ sư.** Giữ nguyên tên riêng, mã, tiêu chuẩn và thuật ngữ tiếng Anh cần thiết. Tham chiếu [VIETNAMESE_REWRITE](<../../1. CAPABILITIES/VIETNAMESE_REWRITE.md>). Skill này chỉ biên tập ngôn ngữ, không bổ sung hoặc xác minh nội dung kỹ thuật.
 
 ## Routing
 
-Phương pháp dùng chung thuộc [1. CAPABILITIES](/TOPICS/E. RnD INNOVATION/1. CAPABILITIES/README.md). Review ban đầu không bắt buộc gọi EVALUATION, DEEP_RESEARCH hoặc VERIFICATION. Chỉ dùng khi câu hỏi và phạm vi thực sự cần.
+Phương pháp dùng chung thuộc [1. CAPABILITIES](<../../1. CAPABILITIES/README.md>). Review ban đầu không bắt buộc gọi EVALUATION, DEEP_RESEARCH hoặc VERIFICATION. Chỉ dùng khi câu hỏi và phạm vi thực sự cần.
 
 ## Handoff
 
