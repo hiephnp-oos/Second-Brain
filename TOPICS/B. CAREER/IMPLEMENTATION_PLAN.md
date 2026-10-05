@@ -239,18 +239,11 @@ Scheduling must respect the available automation/task capacity.
 
 ## Scheduled Execution Provenance
 
-A persisted weekly report proves artifact persistence only; it does not by itself prove that the external master scheduler invoked or completed the run. Career execution records must preserve the distinction between:
+Career scheduled execution uses the canonical artifact/provenance states defined in `SYSTEM CORE/REPOSITORY_CONTRACT.md`; this plan must not introduce a second scheduler-state enum.
 
-- `SCHEDULED_INVOCATION_VERIFIED` — independent scheduler evidence is available for the expected run date.
-- `EXECUTION_COMPLETED` — the capability execution reached its declared output/validation boundary.
-- `OUTPUT_PERSISTED` — the canonical weekly report exists.
-- `OUTPUT_RE_READ` — the exact report was successfully read back.
-- `FINAL_REPOSITORY_STATE_VERIFIED` — the expected repository state was verified after persistence.
-- `SCHEDULED_EXECUTION_VERIFIED` — scheduled invocation plus required execution and persistence evidence are all present.
-- `OUTPUT_RECOVERED` — a later recovery/manual action restored the expected output after an earlier failure; this is not evidence of scheduled success.
-- `NOT_VERIFIED` — available evidence is insufficient to establish the claimed scheduled state.
+Artifact state is `MISSING`, `INCOMPLETE`, `PRESENT_UNVERIFIED`, or `MANUAL_RECOVERY`. External scheduler provenance is `NOT_VERIFIED` unless independently matched to the scheduler's own execution record.
 
-Never infer scheduled execution success from a later commit, recovered report, successful search, or artifact existence alone. Recovery must remain explicitly identified as recovery and must not be promoted to `SCHEDULED_EXECUTION_VERIFIED` without independent scheduler provenance.
+A persisted or recovered weekly report is evidence of repository artifact state, not proof of scheduled execution.
 
 ## Weekly Run Record Contract
 
