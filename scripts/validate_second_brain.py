@@ -4,7 +4,6 @@ import csv
 import re
 import sys
 from pathlib import Path
-from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 TOPICS = ROOT / "TOPICS"
@@ -57,44 +56,6 @@ def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
-
-def validate_local_markdown_links(errors: list[str]) -> None:
-    """Catch broken repository-local Markdown links without linting prose."""
-    pattern = re.compile(r"(?<!!)\[[^\]]*\]\(([^)]+)\)")
-    for path in ROOT.rglob("*.md"):
-        if ".git" in path.parts:
-            continue
-        in_fence = False
-        for line_no, line in enumerate(read_text(path).splitlines(), start=1):
-            if line.strip().startswith("```"):
-                in_fence = not in_fence
-                continue
-            if in_fence:
-                continue
-            for match in pattern.finditer(line):
-                target = match.group(1).strip().split("#", 1)[0].split("?", 1)[0].strip()
-                if not target or target.startswith(("#", "http://", "https://", "mailto:")):
-                    continue
-                if target.startswith("/"):
-                    fail(
-                        f"Broken repository-local Markdown link: {path.relative_to(ROOT)}:{line_no} -> {target}",
-                        errors,
-                    )
-                    continue
-                target_path = (path.parent / unquote(target)).resolve()
-                try:
-                    target_path.relative_to(ROOT.resolve())
-                except ValueError:
-                    fail(
-                        f"Markdown link escapes repository: {path.relative_to(ROOT)}:{line_no} -> {target}",
-                        errors,
-                    )
-                    continue
-                if not target_path.exists():
-                    fail(
-                        f"Broken repository-local Markdown link: {path.relative_to(ROOT)}:{line_no} -> {target}",
-                        errors,
-                    )
 
 def validate_root(errors: list[str]) -> None:
     required = ["AI_MEMORY.md", "README.md", "SYSTEM CORE/WORKFLOW.md", "SYSTEM CORE/REPOSITORY_CONTRACT.md"]
@@ -282,9 +243,9 @@ def validate_local_references(errors: list[str]) -> None:
         if is_template_reference(candidate):
             return
         if candidate.startswith("/"):
-            target = ROOT / candidate.lstrip("/")
-        else:
-            target = source.parent / candidate
+            fail(f"Broken repository-local Markdown link in {source.relative_to(ROOT)}: {candidate}", errors)
+            return
+        target = source.parent / candidate
         if not target.exists():
             fail(f"Broken local reference in {source.relative_to(ROOT)}: {candidate}", errors)
 
@@ -919,7 +880,6 @@ def main() -> int:
     validate_forbidden_files(errors)
     validate_removed_platform_controls(errors)
     validate_local_references(errors)
-    validate_local_markdown_links(errors)
     validate_workstream_readmes(errors)
     validate_csv_shape(errors)
     validate_capabilities(errors)
