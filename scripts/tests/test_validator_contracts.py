@@ -16,6 +16,10 @@ def load_validator():
     return module
 
 class ValidatorCriticalContracts(unittest.TestCase):
+    def test_validator_module_imports_cleanly(self):
+        module = load_validator()
+        self.assertTrue(callable(module.main))
+
     def test_required_root_file_failure(self):
         module = load_validator()
         with tempfile.TemporaryDirectory() as d:
