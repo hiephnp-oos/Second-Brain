@@ -11,16 +11,11 @@ Do not duplicate global workflow rules here.
 
 ## Standard lifecycle
 
-```text
-1. Read
-2. Route
-3. Execute
-4. Target + Reconcile if durable change
-5. Publish
-6. Validate
-7. Verify
-8. Report
-```
+Canonical lifecycle reference:
+
+`READ → ROUTE → INSPECT → TARGET STATE → CLASSIFY → RECONCILE → PRE-FLIGHT → ATOMIC CHANGE → VALIDATE → VERIFY → REPORT`
+
+The detailed lifecycle definition is maintained in `SYSTEM CORE/WORKFLOW.md`.
 
 ## Execution boundary
 
