@@ -535,10 +535,7 @@ def validate_claw_watchdog_contract(errors: list[str]) -> None:
         if phrase not in text:
             fail(f"Claw watchdog contract missing '{phrase}'", errors)
     for state in ["MISSING", "INCOMPLETE", "PRESENT_UNVERIFIED", "MANUAL_RECOVERY"]:
-        if not (
-            f'artifact_state={state}' in text
-            or re.search(rf'artifact_state\\s*=\\s*["\\\']{state}["\\\']', text)
-        ):
+        if not re.search(rf'["\\\']{state}["\\\']', text) and f"artifact_state={state}" not in text:
             fail(f"Claw watchdog contract missing artifact state '{state}'", errors)
     forbidden = [
         'provenance_state=SCHEDULED_EXECUTION_VERIFIED',
@@ -564,10 +561,7 @@ def validate_career_weekly_watchdog_contract(errors: list[str]) -> None:
         if phrase not in text:
             fail(f"Career weekly watchdog contract missing '{phrase}'", errors)
     for state in ["MISSING", "INCOMPLETE", "PRESENT_UNVERIFIED", "MANUAL_RECOVERY"]:
-        if not (
-            f"artifact_state={state}" in text
-            or re.search(rf'artifact_state\\s*=\\s*["\\\']{state}["\\\']', text)
-        ):
+        if not re.search(rf'["\\\']{state}["\\\']', text) and f"artifact_state={state}" not in text:
             fail(f"Career weekly watchdog contract missing artifact state '{state}'", errors)
     for phrase in ["provenance_state=SCHEDULED_EXECUTION_VERIFIED", "artifact_state=SCHEDULED_EXECUTION_VERIFIED"]:
         if phrase in text:
