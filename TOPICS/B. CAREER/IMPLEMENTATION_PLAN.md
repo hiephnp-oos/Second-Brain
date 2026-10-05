@@ -237,6 +237,21 @@ Consolidation changes only the scheduler. It must not merge the workstream promp
 
 Scheduling must respect the available automation/task capacity.
 
+## Scheduled Execution Provenance
+
+A persisted weekly report proves artifact persistence only; it does not by itself prove that the external master scheduler invoked or completed the run. Career execution records must preserve the distinction between:
+
+- `SCHEDULED_INVOCATION_VERIFIED` — independent scheduler evidence is available for the expected run date.
+- `EXECUTION_COMPLETED` — the capability execution reached its declared output/validation boundary.
+- `OUTPUT_PERSISTED` — the canonical weekly report exists.
+- `OUTPUT_RE_READ` — the exact report was successfully read back.
+- `FINAL_REPOSITORY_STATE_VERIFIED` — the expected repository state was verified after persistence.
+- `SCHEDULED_EXECUTION_VERIFIED` — scheduled invocation plus required execution and persistence evidence are all present.
+- `OUTPUT_RECOVERED` — a later recovery/manual action restored the expected output after an earlier failure; this is not evidence of scheduled success.
+- `NOT_VERIFIED` — available evidence is insufficient to establish the claimed scheduled state.
+
+Never infer scheduled execution success from a later commit, recovered report, successful search, or artifact existence alone. Recovery must remain explicitly identified as recovery and must not be promoted to `SCHEDULED_EXECUTION_VERIFIED` without independent scheduler provenance.
+
 ## Weekly Run Record Contract
 
 Create exactly one `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md` file per ISO week. This single file is the user's weekly review artifact and must contain exactly three primary tables, in this order: Job Search, Company Radar, Remote / AI. Do not create separate report files for the three capabilities. Each table uses the exact column schema declared in its capability README. Include actual results for the review period; use explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` status when applicable. Do not merge the streams or replace tables with narrative bullets.

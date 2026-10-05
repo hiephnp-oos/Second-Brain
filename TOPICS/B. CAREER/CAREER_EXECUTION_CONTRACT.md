@@ -285,3 +285,20 @@ Failure Handling: preserve unknowns, report missing evidence, and do not fabrica
 ## Scheduler Persistence / Verification
 
 On Monday, the weekly run record is a required durable output. The sequence is `Determine Monday → Execute available search/synthesis → Write exactly one GitHub record → Re-read exact path → Validate → Verify final repository state → Report`. Search failure or tool unavailability must not skip the weekly record; affected streams must be marked NOT_RUN or with their explicit fallback state. A successful search or synthesis is not evidence that the weekly record exists.
+
+
+## Scheduled Execution Provenance
+
+A verified weekly artifact and a verified scheduled execution are separate states. A report may be persisted or recovered without proving that the external scheduler successfully invoked the Career run.
+
+Use these execution states:
+- `SCHEDULED INVOCATION VERIFIED` — independent evidence shows the external scheduled invocation occurred for the expected run date.
+- `EXECUTION COMPLETED` — the Career capability execution reached its declared output/validation boundary.
+- `OUTPUT PERSISTED` — the required weekly report exists at the exact canonical path.
+- `OUTPUT RE-READ` — the exact persisted report was read back successfully.
+- `FINAL REPOSITORY STATE VERIFIED` — the expected repository state was re-checked after persistence.
+- `SCHEDULED EXECUTION VERIFIED` — the scheduled invocation is evidenced and all required execution/output/final-state checks are verified.
+- `OUTPUT RECOVERED` — a missing scheduled output was recreated or repaired after the fact; this does not prove the original scheduled invocation or scheduled execution succeeded.
+- `NOT_VERIFIED` — evidence is insufficient to establish scheduled provenance or another required completion state.
+
+A recovered report must retain its recovery nature in the run metadata/summary. Never infer `SCHEDULED_EXECUTION_VERIFIED` from artifact existence, commit existence, successful search results, or a later manual/recovery write. When scheduler provenance is unavailable, report `NOT_VERIFIED` (or `OUTPUT_RECOVERED` when the artifact was subsequently restored) rather than retroactively attributing the artifact to the scheduler.
