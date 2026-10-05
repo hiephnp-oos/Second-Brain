@@ -129,5 +129,10 @@ class ValidatorCriticalContracts(unittest.TestCase):
             finally:
                 module.ROOT = old
 
+    def test_valid_full_repository_passes(self):
+        import subprocess
+        result = subprocess.run(["python", "scripts/validate_second_brain.py"], cwd=ROOT, text=True, capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Second-Brain validation: PASS", result.stdout)
 if __name__ == "__main__":
     unittest.main()
