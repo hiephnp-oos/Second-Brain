@@ -457,7 +457,7 @@ None of them may redefine:
 
 Before activating any pattern from this document, answer:
 
-NaN
+### 1. What observed problem remains?
 
 Describe it using real R&D outputs.
 
