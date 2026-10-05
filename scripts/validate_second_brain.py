@@ -745,6 +745,8 @@ def main() -> int:
     validate_architecture_boundaries(errors)
     validate_future_rnd_references(errors)
     validate_career_scheduled_provenance(errors)
+    validate_claw_watchdog_contract(errors)
+    validate_career_weekly_watchdog_contract(errors)
     validate_scheduled_capability_contracts(errors)
     validate_rnd_knowledge_sheet(errors)
     validate_prompt_duplicate_rules(errors)
