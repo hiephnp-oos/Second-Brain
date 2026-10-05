@@ -81,15 +81,6 @@ A topic should be added only when recurring work creates enough durable context 
 - Prefer maintaining existing knowledge over creating duplicate new knowledge when a new finding refines, corrects, or supersedes something already stored.
 - Surface possible contradictions and obsolete assumptions before writing durable memory.
 - Use semantic connections for discovery, but do not silently convert inferred connections into authoritative relationships.
-- A structural change is incomplete until all dependent registry, navigation, and workflow references are synchronized in the same change.
-- Repository completion is defined by final state, not by successful AI/connector actions.
-- Every repository content mutation, including small single-file edits, must use Branch → PR → review/validation → merge. Direct writes to `main` require the user's explicit authorization for that specific change.
-- A logical change should use one coherent commit where practical so `main` does not expose known-incomplete intermediate states.
-- Generic controls and executable validation are preferred over one-off rule patches when repeated failures are discovered.
-- Scheduled capability execution is incomplete until required GitHub persistence is written, re-read, and verified; scheduler completion must never be inferred from search or execution success alone.
-- Optional GitHub features should be added only when they solve a demonstrated workflow problem; avoid infrastructure that can generate false failure signals.
-- GitHub Projects is an execution-tracking layer only; the repository remains the source of truth.
-- Security controls are protective layers; they may create maintenance/security alerts or PRs without changing the Claw workflow.
 
 ## 8. GLOBAL DECISIONS
 
@@ -133,9 +124,8 @@ Follow this sequence:
 8. Do not assume that the listed active topics are exhaustive.
 9. Do not claim a task is completed, blocked, or next unless the available context supports that conclusion.
 10. When unsure whether information is durable, keep it in the current conversation rather than promoting it to memory.
-11. Before publishing repository changes, run target-state preflight validation; create a task branch and PR for every change, including single-file edits, and merge only after review/validation.
-12. Before reporting completion of repository work, verify the actual final GitHub state and perform applicable positive and negative checks.
-13. For structured/high-risk changes, use the Issue Form and Task List controls when they materially improve traceability.
+11. For repository maintenance, follow `SYSTEM CORE/WORKFLOW.md` and `SYSTEM CORE/REPOSITORY_CONTRACT.md`; those documents own the mutation lifecycle and completion checks.
+12. For structured/high-risk changes, use the Issue Form and Task List controls when they materially improve traceability.
 
 ## 10. MEMORY MAINTENANCE
 

@@ -82,11 +82,7 @@ Operational state is permitted only when it has a documented owner, purpose, lif
 
 ## Change contract
 
-For any repository mutation:
-
-`Inspect → Target State → Classify → Reconcile → Pre-flight → Atomic Mutate → Validate → Verify → Report`
-
-A successful connector action is an implementation result, not completion evidence.
+Repository mutations must satisfy the Atomic publication contract below. The operational mutation lifecycle and detailed execution procedure are defined by `SYSTEM CORE/WORKFLOW.md`.
 
 ## Atomic publication contract
 
@@ -176,7 +172,6 @@ Each active reusable Capability contract must satisfy its owning capability base
 
 Generic active capabilities outside R&D retain the 13 operational fields unless their owning topic defines a stricter contract.
 
-The minimum execution lifecycle is: Trigger → Input → Execute → Output → Validate → Verify → Persist / Promote.
 
 For R&D Innovation, six active reusable capabilities are CLAW_DISCOVERY, VERIFICATION, DEEP_RESEARCH, EVALUATION, KNOWLEDGE_PROMOTION, and SUPPLIER_KNOWLEDGE_INTAKE. CAP-06 `EXPERIMENT_DESIGN` remains DEFER and is not an active capability. Workstreams are PERSONAL_RESEARCH, IDEA_REVIEW, and PROJECT_IMPROVEMENT. Capabilities do not own execution output; the invoking workstream owns its outputs.
 
