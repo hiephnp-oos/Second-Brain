@@ -97,7 +97,9 @@ When new evidence conflicts with an authoritative record: `Detect → Flag / Rec
 Health controls should first target demonstrated failure modes such as broken references, stale routing, missing/invalid artifacts, Capability contract gaps, staging misuse, and invalid structured data. Do not add a separate health database or generic metrics platform without demonstrated need.
 
 ### Scheduled Capability contract
-A scheduled Capability must document trigger, cadence, timezone/date semantics where relevant, invoked Capability, output, and validation. External ChatGPT Scheduled Tasks are outside GitHub; the repository documents the expected schedule contract but cannot prove external synchronization without direct task verification.
+A scheduled Capability must document trigger, cadence, timezone/date semantics where relevant, invoked Capability, output, and validation. A durable scheduled output must also define the exact persistence path/record, re-read verification, and incomplete-state behavior. External ChatGPT Scheduled Tasks are outside GitHub; the repository documents the expected schedule contract but cannot prove external synchronization without direct task verification.
+
+Scheduled-output reliability is a contract, not a best-effort behavior: when a required durable artifact is missing, the execution is incomplete even if discovery, search, synthesis, or another upstream step succeeded. Capability contracts for scheduled outputs must therefore make persistence and final-state verification explicit enough for deterministic contract checks to protect against regression.
 
 ## GitHub platform layers
 

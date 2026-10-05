@@ -515,6 +515,27 @@ def validate_scheduled_capability_contracts(errors: list[str]) -> None:
             if phrase not in text:
                 fail(f"Scheduled capability contract missing '{phrase}': {rel}", errors)
 
+    # Durable scheduled outputs must expose persistence verification explicitly.
+    persistence_contracts = [
+        (
+            Path("TOPICS/B. CAREER/CAREER_EXECUTION_CONTRACT.md"),
+            ["weekly persistence", "re-read", "final repository state", "not completion"],
+        ),
+        (
+            Path("TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/README.md"),
+            ["date-specific daily record", "re-read", "final repository state", "not completion"],
+        ),
+    ]
+    for rel, phrases in persistence_contracts:
+        path = ROOT / rel
+        if not path.exists():
+            fail(f"Scheduled persistence contract missing: {rel}", errors)
+            continue
+        text = read_text(path).lower()
+        for phrase in phrases:
+            if phrase not in text:
+                fail(f"Scheduled persistence contract missing '{phrase}': {rel}", errors)
+
 
 def validate_prompt_duplicate_rules(errors: list[str]) -> None:
     prompt_files = [
