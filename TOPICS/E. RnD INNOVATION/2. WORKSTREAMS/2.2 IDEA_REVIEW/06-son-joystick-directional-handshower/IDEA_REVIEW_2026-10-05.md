@@ -1,405 +1,612 @@
-# IDEA REVIEW — Rear Joystick Directional Handshower
+# ĐÁNH GIÁ IDEA — Handshower điều khiển hướng phun bằng Joystick phía sau
 
 - **Prompt:** IR-01 — Initial Idea Validity Review
 - **Ngày review:** 2026-10-05
-- **Idea:** Rear Joystick Directional Handshower — Handshower tích hợp Joystick điều khiển hướng phun
+- **Idea:** Handshower tích hợp Joystick điều khiển hướng phun
 - **Nguồn idea:** User-provided concept
-- **Phạm vi:** Initial Idea Validity + market precedent verification theo yêu cầu; không kết luận feasibility chi tiết.
-- **Evidence note:** Các patent được dùng để xác định precedent/architecture, không phải ý kiến pháp lý về novelty hoặc freedom-to-operate.
+- **Phạm vi:** Đánh giá ban đầu tính hợp lệ của idea và kiểm tra precedent thị trường/kỹ thuật theo yêu cầu; chưa kết luận feasibility chi tiết.
+- **Trạng thái:** **WATCH**
+- **Ghi chú bằng chứng:** Patent được sử dụng để xác định precedent kỹ thuật và vùng cần nghiên cứu thêm; không phải ý kiến pháp lý về novelty, patentability, infringement hoặc freedom-to-operate.
 
 ## 1. Idea Validity — Đây có phải là idea không?
 
 **Có.**
 
-Idea có một proposition rõ ràng:
+Idea hiện được hiểu rõ như sau:
 
-> Tách **định vị thân handshower** khỏi **điều khiển hướng phun**, bằng một joystick đa hướng đặt ở mặt sau handshower.
+> Một handshower có **joystick đa trục đặt ở mặt sau**. Người dùng dùng 4 ngón tay để giữ handshower như bình thường và dùng ngón cái để điều khiển joystick. Sau khi chọn hướng, người dùng có thể thả ngón cái; joystick giữ vị trí đã chọn và spray tiếp tục phun theo hướng đó. Thân handshower và grip không cần thay đổi orientation đáng kể.
 
-Điểm cốt lõi không phải là “handshower có thể đổi hướng phun”. Chức năng này đã có nhiều precedent. Điểm cốt lõi là **interaction architecture**: người dùng giữ thân handshower/grip tương đối ổn định nhưng dùng một điều khiển đa hướng bằng ngón tay để thay đổi hướng spray.
+Điểm cốt lõi của idea không phải là:
 
-Idea đủ rõ để review, nhưng mức độ mới cần hạ xuống so với giả định ban đầu vì research đã tìm thấy precedent gần.
+> “Handshower có thể đổi hướng phun.”
 
-## 2. Pain Point & User Benefit
+Chức năng này đã có nhiều precedent.
+
+Điểm cốt lõi là:
+
+> **Tách việc giữ/định vị thân handshower khỏi việc điều khiển hướng vector phun bằng một control đa trục nằm ngay trong vùng ngón cái.**
+
+Idea đủ rõ để review và có một hypothesis UX cụ thể để kiểm chứng.
+
+## 2. Pain Point & User Benefit — Vấn đề và lợi ích cho người dùng cuối
 
 ### Pain point
 
-Với handshower có hướng spray cố định theo thân, người dùng phải thay đổi orientation của cả handshower để thay đổi hướng dòng nước.
+Với handshower có hướng phun cố định tương đối với thân, người dùng phải thay đổi orientation của cả handshower để đưa nước sang vị trí khác.
 
-Các giải pháp pivot/orientable head đã giảm vấn đề này, nhưng vẫn yêu cầu người dùng tác động lên chính đầu/cụm handshower để đổi orientation.
+Các giải pháp pivot/orientable head đã giảm vấn đề này, nhưng người dùng vẫn phải tác động lên head hoặc orientation của sản phẩm để thay đổi hướng phun.
 
-### Proposed user benefit
+Idea hướng tới một trường hợp khác:
 
-Idea hướng tới:
+> Người dùng muốn **giữ handshower ở orientation và grip thuận tiện**, nhưng vẫn muốn đưa spray tới vị trí mà orientation thông thường khó reach.
 
-- Giữ grip/body ở vị trí thuận tiện hơn.
-- Điều khiển hướng phun bằng một ngón tay.
-- Không cần xoay toàn bộ handshower cho mỗi lần thay đổi hướng.
-- Có khả năng điều khiển X/Y trực tiếp.
-- Nếu triển khai continuous joystick, có khả năng điều khiển hướng trung gian thay vì chỉ các vị trí preset.
+### Lợi ích dự kiến
+
+- Giữ handshower ổn định bằng 4 ngón.
+- Dùng ngón cái để điều chỉnh hướng phun.
+- Sau khi điều chỉnh có thể thả ngón cái, không cần giữ lực liên tục.
+- Không cần xoay lại toàn bộ handshower mỗi lần muốn thay đổi hướng.
+- Có thể điều khiển hướng X/Y trực tiếp.
+- Có thể hướng spray tới các vị trí ngoài centerline mà không thay đổi đáng kể tư thế cầm.
 
 **EVIDENCE STATUS:** Đây là lợi ích dự kiến từ concept, chưa có user test chứng minh tốt hơn pivot head.
 
 ## 3. Mô tả idea
 
-Một joystick đa hướng được bố trí ở mặt sau của đầu handshower, trong vùng ngón tay có thể tiếp cận khi vẫn giữ grip.
+### Interaction dự kiến
 
-Concept interaction:
-
-| Joystick input | Proposed spray response |
+| Thao tác của joystick | Phản ứng của spray |
 |---|---|
-| Neutral | Spray thẳng / nominal direction |
-| Up | Spray lệch lên |
-| Down | Spray lệch xuống |
-| Left | Spray lệch trái |
-| Right | Spray lệch phải |
-| Diagonal | Spray theo hướng trung gian |
+| Neutral | Phun theo hướng danh định |
+| Lên | Lệch hướng lên |
+| Xuống | Lệch hướng xuống |
+| Trái | Lệch hướng trái |
+| Phải | Lệch hướng phải |
+| Chéo | Lệch theo hướng trung gian |
 
-Có hai hướng concept:
+### Cách sử dụng
 
-### Concept A — Discrete positioning
+1. Người dùng giữ handshower bằng 4 ngón như bình thường.
+2. Ngón cái tiếp cận joystick phía sau.
+3. Ngón cái nghiêng joystick theo hướng mong muốn.
+4. Hướng spray thay đổi tương ứng.
+5. Người dùng thả ngón cái.
+6. Joystick giữ vị trí và spray tiếp tục theo hướng đã chọn.
 
-Joystick chọn một số góc/vị trí định trước.
+**PROPOSED:** Cơ chế giữ vị trí joystick chưa được xác nhận bằng prototype.
 
-### Concept B — Continuous positioning
+### Range mục tiêu ban đầu
 
-Độ nghiêng joystick tương ứng với độ lệch hướng spray.
+**PROPOSED: ±10° theo X/Y.**
 
-**PROPOSED:** Cả hai chưa được xác nhận bằng prototype.
+Không nên hiểu đây là “góc mở rộng của spray cone”. Mục tiêu là **độ lệch trục phun**, từ đó mở rộng vùng target mà người dùng có thể tiếp cận.
+
+Ví dụ, với độ lệch ±10°:
+
+| Khoảng cách từ nozzle tới target | Độ dịch chuyển xấp xỉ |
+|---:|---:|
+| 0,30 m | 5,3 cm |
+| 0,50 m | 8,8 cm |
+| 0,70 m | 12,3 cm |
+| 1,00 m | 17,6 cm |
+
+Do đó, ở khoảng cách sử dụng khoảng 0,5–0,7 m, ±10° có thể tạo khoảng dịch chuyển target khoảng 9–12 cm.
+
+Đây là cơ sở hình học, không phải bằng chứng rằng người dùng sẽ cảm nhận mức dịch chuyển này là đủ hữu ích.
 
 ## 4. Khác biệt so với sản phẩm/giải pháp thị trường
 
-Kết quả tìm kiếm cho thấy cần phân biệt ít nhất 4 nhóm precedent.
+Kết quả tìm kiếm cho thấy cần phân biệt các nhóm precedent sau:
 
-| Precedent | Cách điều khiển | Có điều khiển hướng spray? | Có joystick? | Mức gần với idea |
+| Precedent | Cách điều khiển | Có điều khiển hướng phun? | Có joystick? | Mức gần với idea |
 |---|---|---:|---:|---|
-| Waterpik ShowerCare Pivoting Hand Held | Pivot toàn bộ head | Có | Không | **DIRECT FUNCTION / khác interaction** |
-| Speakman Neo Anystream | Xoay spray face để đổi spray pattern | Không phải directional steering | Không | **ADJACENT** |
-| EP4644623A1 Orientable Handheld Shower | Xoay/orient head tương đối với handle | Có | Không | **DIRECT FUNCTION / khác interaction** |
-| US 4,881,282 Adjustable Shower Head | Joystick + cable điều khiển pivoting shower head | Có | Có | **VERY CLOSE ARCHITECTURE, khác package/use** |
-| Delta CN122215427A | Rear button/joystick-button trên handshower để điều khiển chức năng/hướng dòng giữa các outlet | Có, theo các outlet | Có dạng joystick button | **VERY CLOSE INTERACTION, nhưng không phải continuous 2-axis steering** |
-| C-30-01 idea | Rear multi-axis joystick → spray direction | Có | Có | **Target concept** |
+| Waterpik ShowerCare | Pivot toàn bộ head | Có | Không | **Chức năng trực tiếp / khác interaction** |
+| Speakman Neo Anystream | Xoay spray face | Không phải directional steering | Không | **Liền kề** |
+| EP4644623A1 | Orient head tương đối với handle | Có | Không | **Chức năng trực tiếp / khác interaction** |
+| US 4,881,282 | Joystick + cable điều khiển shower head | Có | Có | **Kiến trúc rất gần / khác package** |
+| US20110192915A1 | Joystick điều khiển chức năng water outlet | Có | Có | **Precedent joystick / khác mục tiêu** |
+| Delta CN122215427A | Rear button/joystick-button trên handshower, điều khiển các hướng outlet | Có theo các outlet | Có dạng joystick button | **Tương tác rất gần / chưa chứng minh continuous 2-axis** |
+| Idea hiện tại | Rear multi-axis joystick → spray-vector control | Có | Có | **Concept mục tiêu** |
 
 ### 4.1 Waterpik — pivoting head
 
-Waterpik ShowerCare quảng bá **180° pivoting head**, cho phép người dùng pivot showerhead để spray vào vị trí mong muốn và giảm strain, kể cả khi hỗ trợ người khác tắm.
+Waterpik ShowerCare có **180° pivoting head**, cho phép điều chỉnh hướng spray và hỗ trợ đưa nước tới vị trí mong muốn.
 
 [Waterpik ShowerCare — product reference](https://www.waterpik.com/shower-heads/products/FN-20032320-FAB/)
 
-Một retail reference cũng mô tả pivoting head giúp direct spray “where needed”.
+Điều này xác nhận:
 
-**Điều này xác nhận:** user problem không phải mới.
+- pain point về hướng phun là có thật;
+- directional handshower không phải chức năng mới.
 
-**Khác với idea:** Waterpik vẫn dùng chuyển động của chính head; không tách độc lập “body positioning” và “spray direction control”.
+Khác biệt với idea:
+
+> Waterpik dùng chuyển động của chính head; idea muốn giữ grip/body tương đối ổn định và dùng thumb control để thay đổi spray direction.
 
 ### 4.2 Speakman Neo Anystream
 
-Speakman Neo dùng **360° spray technology** bằng cách xoay spray face để thay đổi spray pattern.
+Speakman Neo sử dụng cơ chế xoay spray face để thay đổi spray pattern.
 
-[Speakman Neo Anystream — product reference](https://speakman.com/products/neo-hand-shower)
+[Speakman Neo Hand Shower](https://speakman.com/products/neo-hand-shower)
 
-Đây là precedent cho việc người dùng thao tác trực tiếp với spray face, nhưng mục tiêu chính được công bố là thay đổi spray pattern/intensity/combination, không phải joystick-based directional steering.
+Đây là precedent cho việc người dùng thao tác trực tiếp với phần spray face, nhưng không phải precedent cho joystick điều khiển hướng vector phun.
 
-**Mức gần:** adjacent.
+**Mức gần:** liền kề.
 
 ### 4.3 EP4644623A1 — Orientable handheld shower
 
-Một patent gần đây mô tả **orientable handheld shower** và xác định chính pain point này: handshower truyền thống có hướng head cố định tương đối với handle nên người dùng phải di chuyển cả handshower để đổi hướng dòng nước.
-
-Patent này đề xuất head có thể orient theo nhiều hướng tương đối với handle và nêu lợi ích về flexibility, reach và accessibility.
+Patent này mô tả handshower có head có thể định hướng tương đối với handle. Functional objective rất gần: giảm việc phải di chuyển toàn bộ handshower để thay đổi hướng nước.
 
 [EP4644623A1 — Orientable handheld shower](https://patents.google.com/patent/EP4644623A1/en)
 
-**Điểm quan trọng:** đây là precedent rất gần về **functional objective**, nhưng không chứng minh joystick interaction.
+**Điểm giống:** giải quyết cùng functional objective.
 
-### 4.4 US 4,881,282 — Adjustable shower head with joystick
+**Điểm khác:** không chứng minh rear joystick interaction.
 
-Đây là precedent quan trọng nhất về mặt **joystick → directional control**.
+### 4.4 US 4,881,282 — Joystick điều khiển hướng shower head
 
-Patent mô tả một pivotal shower head được điều khiển bằng joystick từ xa. Joystick điều khiển một hệ thống yoke/cable; chuyển động của joystick theo hướng nào sẽ làm shower head pivot theo hướng tương ứng.
+Patent mô tả joystick điều khiển một shower head có khả năng pivot thông qua cơ cấu yoke/cable.
 
 [US 4,881,282 — Adjustable shower head](https://patents.justia.com/patent/4881282)
 
-**Điểm giống idea:**
+Điểm giống quan trọng:
 
-> Joystick direction → corresponding shower-head direction.
+> **Hướng joystick → hướng shower head tương ứng.**
 
-**Điểm khác:**
+Điểm khác:
 
-- joystick là remote control, không nằm ở rear surface của handshower;
-- dùng cable/yoke architecture;
-- shower head không phải handheld body tích hợp rear joystick;
-- use case ban đầu nhấn mạnh accessibility/handicapped showering.
+- joystick là điều khiển từ xa;
+- dùng cable/yoke;
+- không phải rear joystick tích hợp trên handheld shower;
+- không phải exact package của idea hiện tại.
 
-Do đó, concept “joystick điều khiển hướng shower spray” **không phải concept chưa từng được đề xuất**.
+Do đó, “joystick điều khiển hướng shower spray” không thể coi là hoàn toàn mới.
 
-### 4.5 Delta CN122215427A — rear joystick/button trên handheld shower
+### 4.5 US20110192915A1 — Shower with joystick function
 
-Đây là precedent rất đáng chú ý.
+Patent của Xiamen Solex mô tả shower có joystick để điều khiển các water outlet/sealing columns.
 
-Patent application **CN122215427A**, assignee Delta Faucet Company, công bố năm 2026, mô tả handheld shower có **button ở rear portion**. Hồ sơ nêu button có thể dùng để điều khiển chức năng của handshower và cụ thể có embodiment điều hướng nước giữa các outlet có hướng khác nhau.
+[US20110192915A1 — Shower with joystick function](https://patentsencyclopedia.com/inventor/huasong-zhou-xiamen-cn-1/)
 
-Patent còn mô tả một embodiment của **“joystick button”**.
+Precedent này cho thấy:
+
+> **Joystick + shower water control** đã tồn tại trong patent literature từ ít nhất năm 2011.
+
+Giới hạn so sánh:
+
+- trọng tâm là điều khiển outlet/function;
+- không chứng minh rear-mounted 2-axis continuous joystick điều khiển spray vector.
+
+### 4.6 Delta CN122215427A — Rear control trên handheld shower
+
+Đây là precedent rất gần về interaction.
+
+Patent application của Delta Faucet Company mô tả handheld shower có control ở phần rear. Hồ sơ có các embodiment điều khiển nước giữa các outlet có hướng khác nhau và đề cập **“joystick button”**.
 
 [CN122215427A — Handheld shower assembly](https://eureka.patsnap.com/patent/CN122215427A)
 
-Theo nội dung công bố:
+Điểm giống:
 
-- rear button nằm trên handheld shower;
-- button có thể điều khiển chức năng liên quan đến water direction;
-- front spray holes và additional holes có thể tạo các hướng phun khác nhau;
-- button/joystick-button được bố trí ở rear;
-- mục tiêu còn liên quan đến thao tác thuận tiện và magnetic docking.
+- handheld shower;
+- rear control;
+- water direction/function;
+- joystick-button precedent.
 
-**Giới hạn so sánh:** hồ sơ này không chứng minh một **2-axis continuous joystick** dùng để điều khiển một spray vector liên tục theo X/Y như C-30-01. Nội dung được tìm thấy chủ yếu mô tả chuyển đổi giữa các trạng thái/outlet.
+Giới hạn:
 
-Tuy nhiên, nó làm giảm đáng kể khoảng cách giữa idea và prior/commercial technology.
+> Chưa có bằng chứng trong phạm vi tìm kiếm hiện tại cho thấy patent này mô tả đúng **continuous 2-axis joystick → continuous spray-vector steering** như idea hiện tại.
+
+Do đó, exact combination vẫn là **UNKNOWN**, không được kết luận là mới.
 
 ## 5. Evidence — Bằng chứng tìm được
 
 ### EVIDENCED
 
-1. **Pivot/orientable handshower để thay đổi hướng spray đã tồn tại.**
-   - Waterpik ShowerCare: 180° pivoting head.
+1. **Directional/orientable handshower đã tồn tại.**
+   - Waterpik ShowerCare: pivoting head.
    - EP4644623A1: orientable handheld shower.
 
-2. **Joystick điều khiển hướng shower head đã có precedent patent.**
-   - US 4,881,282 mô tả joystick điều khiển pivotal shower head qua cable/yoke.
+2. **Joystick điều khiển hướng shower head đã có precedent.**
+   - US 4,881,282.
 
-3. **Rear-mounted control trên handheld shower đã có precedent.**
-   - Delta CN122215427A mô tả rear magnetic button và các embodiment điều khiển hướng dòng nước.
-   - Hồ sơ cũng đề cập “joystick button”.
+3. **Joystick điều khiển chức năng water outlet của shower đã có precedent.**
+   - US20110192915A1.
 
-4. **Tách body positioning khỏi spray direction chưa được chứng minh là lợi ích UX vượt trội.**
-   - Đây vẫn là hypothesis của idea.
+4. **Rear control trên handheld shower đã có precedent.**
+   - Delta CN122215427A có rear control và embodiment “joystick button”.
+
+5. **Các cơ cấu pivot/tilt có thể tạo directional spray.**
+   - Đây là một nhóm precedent kỹ thuật đã tồn tại; vì vậy bản thân “tilt spray face” không phải điểm mới đã được chứng minh.
+
+6. **Commercial market search hiện chưa tìm thấy exact product** có đủ các yếu tố:
+   - rear-mounted multi-axis joystick;
+   - thumb operation;
+   - continuous X/Y spray-vector control;
+   - handheld shower package.
+
+Điểm 6 chỉ có nghĩa:
+
+> **NOT FOUND IN THIS SEARCH**
+
+Không có nghĩa:
+
+> “Không tồn tại trên thị trường.”
 
 ### INFERRED
 
-Idea có thể tạo một interaction model khác với pivot head:
+Idea có thể tạo một interaction model khác pivot head:
 
-> Hand/grip = giữ vị trí  
-> Joystick = điều khiển hướng spray
+> **Tay/grip = giữ vị trí**  
+> **Joystick = điều khiển hướng spray**
 
-Nếu mapping X/Y trực tiếp và liên tục thực sự dễ dùng, đây có thể là differentiation ở **interaction architecture**, không phải ở chức năng directional spray cơ bản.
+Nếu mapping X/Y trực tiếp, liên tục và dễ học, differentiation tiềm năng nằm ở **interaction architecture**, không phải ở chức năng directional spray cơ bản.
+
+### PROPOSED
+
+- Joystick đặt ở vùng thumb reach.
+- Same-direction mapping: đẩy joystick lên → spray lên.
+- Joystick giữ vị trí sau khi thả ngón cái.
+- Range ban đầu ±10° X/Y.
+- Mục tiêu chính là tăng **reachable target envelope**, không phải tăng physical spray cone.
 
 ### UNKNOWN
 
-- Người dùng có thực sự thấy joystick dễ hơn pivot head không?
-- Một tay có thể vừa giữ handshower vừa điều khiển joystick chính xác không?
-- Joystick có gây accidental input khi grip không?
-- Continuous control có giá trị hơn 2–4 preset positions không?
-- Người dùng có hiểu mapping “joystick direction = spray direction” ngay lập tức không?
-- Độ lệch spray cần bao nhiêu độ để tạo lợi ích cảm nhận rõ?
-- Cơ cấu nào đạt được directional control mà không làm giảm spray quality?
-- Concept có tạo freedom-to-operate risk đáng kể so với các patent precedent hay không?
+- Joystick có thực sự dễ và nhanh hơn pivot head không?
+- Một tay có thể điều khiển chính xác trong điều kiện sử dụng thực tế không?
+- Có xảy ra accidental input khi grip không?
+- Continuous control có tạo giá trị đủ lớn so với 4/8 preset directions không?
+- ±10° có đủ tạo lợi ích cảm nhận không?
+- Exact commercial precedent còn thiếu hay không?
+- Exact patent combination có tồn tại hay không?
+- UX advantage có đủ lớn để justify thêm complexity không?
 
-## 6. Advantage so với sản phẩm thị trường
+## 6. Initial Assessment — Nhận định ban đầu về validity
 
-Đây là phần quyết định của review.
+### 6.1 Validity
 
-### Advantage 1 — Tách “body orientation” và “spray orientation”
+**VALID IDEA.**
 
-**Potential advantage — chưa chứng minh.**
+Concept hiện đã rõ, có:
 
-Pivot head yêu cầu người dùng tác động lên head/orientation của sản phẩm.
+- user interaction cụ thể;
+- pain point cụ thể;
+- expected benefit cụ thể;
+- một khác biệt interaction có thể kiểm chứng.
 
-Idea đề xuất:
+### 6.2 Differentiation
 
-> giữ body tương đối cố định → điều khiển spray bằng joystick.
+Differentiation không nên dựa trên các tuyên bố:
 
-Nếu UX hoạt động tốt, đây là khác biệt rõ nhất.
+- “Directional shower là mới.”
+- “Joystick shower là mới.”
+- “Rear control trên handshower là mới.”
+- “Tilt spray face là mới.”
 
-### Advantage 2 — Điều khiển bằng một ngón tay trong cùng grip
+Các precedent đã tìm thấy làm yếu các tuyên bố này.
 
-**Potential advantage — chưa chứng minh.**
+Differentiation tiềm năng nên tập trung vào:
 
-Không cần chuyển tay để nắm phần pivot hoặc xoay head.
+> **Rear-mounted, thumb-operated, position-retaining, multi-axis joystick cho phép điều khiển độc lập vector phun trong khi người dùng duy trì grip ổn định.**
 
-Tuy nhiên, đây chỉ là advantage nếu joystick thực sự có thể được thao tác chính xác mà không làm mất stability của handshower.
+**Status: PROPOSED / UNKNOWN.**
 
-### Advantage 3 — Continuous 2-axis directional control
+### 6.3 Advantage so với pivot head
 
-**Potential advantage — mạnh hơn nếu chứng minh được.**
+Advantage quan trọng nhất cần chứng minh:
 
-Các precedent thương mại được tìm thấy chủ yếu dùng:
+> Người dùng có thể đưa spray tới cùng một target **nhanh hơn, chính xác hơn hoặc ít thay đổi grip hơn** so với pivot head.
 
-- pivot head;
-- rotating/orientable head;
-- discrete outlet selection.
+Không nên tuyên bố joystick tốt hơn pivot head trước khi có user test.
 
-Một joystick 2-axis có thể tạo mapping:
+### 6.4 Assisted bathing
 
-> joystick vector → spray vector.
+Assisted bathing là use case hợp lý nhưng **không phải differentiation mới** vì các sản phẩm pivot đã hướng tới use case này.
 
-Đây là điểm khác biệt tiềm năng đáng test nhất.
+Advantage của joystick chỉ có ý nghĩa nếu người dùng/người hỗ trợ có thể giữ handshower ổn định và redirect spray bằng thumb dễ hơn pivot.
 
-### Advantage 4 — UX có thể phù hợp với assisted bathing
-
-**Potential advantage — chưa chứng minh.**
-
-Waterpik đã xác định pivoting head có giá trị trong seated/assisted showering. Vì vậy **use case này không mới**.
-
-Advantage của joystick chỉ tồn tại nếu người hỗ trợ có thể giữ handshower ổn định và redirect spray bằng một ngón tay nhanh hơn pivoting head.
-
-### Advantage 5 — Có thể tạo “new interaction architecture”
-
-**Potential advantage — có cơ sở nhưng chưa đủ để kết luận novelty.**
-
-Research đã tìm thấy joystick directional control và rear joystick/button precedent. Vì vậy không nên gọi architecture này là “first” hoặc “new-to-market”.
-
-Điểm có thể còn khác biệt là **cụm cụ thể: rear-mounted multi-axis joystick + handheld fixed grip + continuous spray-vector control**.
-
-Mức độ mới của combination này: **UNKNOWN**.
-
-## 7. Initial Assessment
-
-### Validity
-
-**VALID IDEA — nhưng differentiation hiện chưa mạnh.**
-
-Pain point rõ.
-
-Functional objective đã có nhiều precedent.
-
-Interaction concept có logic và đủ rõ để tiếp tục xem xét.
-
-### Market position
-
-Idea **không còn phù hợp với giả định “không có sản phẩm tương tự”.**
-
-Thay vào đó:
-
-> **Có nhiều precedent cho directional/orientable handshower và đã có precedent patent cho joystick directional control. Đã tìm thấy thêm precedent rất gần về rear joystick/button trên handheld shower.**
-
-### Advantage hiện tại
-
-Advantage mạnh nhất có thể là:
-
-> **Continuous, direct, one-handed spray-vector control while maintaining a stable handshower grip.**
-
-Nhưng hiện tại đây vẫn là **PROPOSED / UNKNOWN**, chưa phải demonstrated advantage.
-
-### Disposition
+### 6.5 Disposition
 
 **WATCH**
 
-Chưa DROP vì interaction architecture vẫn có thể tạo UX khác biệt.
+Chưa DROP vì:
 
-Chưa nâng thành strong concept vì chưa có bằng chứng rằng joystick tốt hơn pivot head đủ nhiều để justify complexity.
+- UX hypothesis rõ;
+- có thể prototype/test nhanh;
+- exact commercial combination chưa được tìm thấy trong phạm vi search hiện tại.
 
-## 8. Key Unknowns
+Chưa nâng lên mức phát triển sâu vì:
 
-1. **UX DELTA:** joystick có nhanh/chính xác/dễ hiểu hơn pivot head không?
-2. **Control mapping:** joystick vector có thực sự tương ứng trực quan với spray vector không?
-3. **Range:** cần ±10°, ±20°, ±30° hay continuous?
-4. **Grip interference:** thao tác joystick có làm mất ổn định handshower không?
-5. **Accidental activation:** lực giữ, tì tay và hose reaction có gây input ngoài ý muốn không?
-6. **Mechanical architecture:** tilt spray face hay redirect water internally?
-7. **Spray quality:** directional control có làm giảm coverage/uniformity không?
-8. **Market precedent completeness:** còn sản phẩm thương mại chưa tìm thấy hay không?
-9. **Patent/IP:** combination cụ thể rear multi-axis joystick + directional spray control cần patent search riêng nếu idea vượt qua UX screening.
+- prior art khá gần;
+- advantage so với pivot chưa được chứng minh;
+- IP status chưa rõ.
 
-## 9. Recommended Next Action
+## 7. Key Unknowns — Thông tin còn thiếu ảnh hưởng đến nhận định
+
+### 7.1 UX Delta
+
+**Câu hỏi:** Joystick có thực sự dễ hơn pivot head không?
+
+Cần so sánh cùng một task:
+
+> Đưa spray từ target A → target B.
+
+Đo:
+
+- thời gian redirect;
+- số lần thay đổi grip;
+- độ chính xác;
+- độ ổn định;
+- cảm nhận dễ sử dụng.
+
+### 7.2 Điều khiển bằng một tay
+
+Concept hiện tại giả định:
+
+- 4 ngón giữ handshower;
+- ngón cái điều khiển joystick.
+
+Điều này **có thể thực hiện về mặt interaction concept**, nhưng chưa chứng minh ergonomic trong điều kiện wet/slippery và có lực từ hose.
+
+### 7.3 Accidental input — hiểu rõ vấn đề
+
+**Accidental input** là việc spray tự đổi hướng khi người dùng không chủ định điều chỉnh.
+
+Ví dụ:
+
+- lòng bàn tay tì vào joystick;
+- ngón cái chạm joystick khi đổi grip;
+- lực kéo của hose truyền vào cơ cấu;
+- người dùng bóp grip mạnh làm joystick dịch chuyển.
+
+Các biện pháp có thể xem xét ở giai đoạn concept:
+
+- joystick nằm trong recess;
+- vùng neutral/deadband;
+- lực detent đủ rõ;
+- giới hạn hành trình;
+- vị trí joystick chỉ thuận tiện khi chủ động dùng ngón cái.
+
+Đây mới là **PROPOSED**, chưa được kiểm chứng.
+
+### 7.4 Continuous hay preset?
+
+Câu hỏi không phải “continuous có tốt hơn về lý thuyết hay không”, mà là:
+
+> Người dùng có cần mọi góc trong vùng ±10° hay chỉ cần 4/8 hướng cố định?
+
+Continuous có thể cho target chính xác hơn nhưng có thể làm cơ cấu và interaction phức tạp hơn.
+
+**Khuyến nghị:** giữ continuous ±10° làm concept mục tiêu để test differentiation, nhưng UX test nên so sánh với 4/8 preset.
+
+### 7.5 Mapping
+
+Mapping đề xuất:
+
+> joystick lên → spray lên  
+> joystick trái → spray trái
+
+Có thể có learning curve ban đầu, nhưng same-direction mapping được xem là dễ hiểu hơn mapping ngược.
+
+**Status:** INFERRED, chưa có user test.
+
+### 7.6 Range
+
+**PROPOSED: ±10° X/Y.**
+
+±10° không lớn hơn đáng kể so với một số cơ cấu ball-joint commercial đã có range khoảng ±16–18°. Vì vậy advantage không nằm ở “góc lớn hơn”.
+
+Advantage tiềm năng nằm ở:
+
+> **Có thể đạt độ lệch khoảng ±10° mà vẫn giữ orientation của grip.**
+
+### 7.7 Spray quality
+
+Mục tiêu của idea không phải làm physical spray cone lớn hơn.
+
+Mục tiêu là:
+
+> **Tăng vùng target có thể reach bằng cách thay đổi hướng trục spray.**
+
+Do đó cần phân biệt:
+
+- **spray coverage:** diện tích vùng nước bao phủ;
+- **reachable target envelope:** vùng mà người dùng có thể đưa spray tới.
+
+Idea chủ yếu muốn tăng **reachable target envelope**.
+
+### 7.8 Mechanical architecture
+
+Hai hướng chính cần xem xét sau khi UX được chứng minh:
+
+**A. Tilt spray face**
+
+Joystick → linkage/cam → spray-face cartridge nghiêng.
+
+Ưu điểm tiềm năng:
+
+- mapping trực tiếp;
+- waterway chính có thể giữ tương đối cố định;
+- ít phải thay đổi đường nước bên trong.
+
+Nhược điểm cần kiểm chứng:
+
+- sealing;
+- limescale;
+- durability;
+- appearance;
+- spray pattern khi nghiêng.
+
+**B. Internal flow redirection**
+
+Joystick → cơ cấu bên trong → thay đổi hướng dòng nước.
+
+Ưu điểm tiềm năng:
+
+- spray face có thể giữ cố định.
+
+Rủi ro tiềm năng:
+
+- pressure loss;
+- turbulence;
+- flow distribution;
+- spray uniformity;
+- sealing/clearance;
+- scale và độ bền cơ cấu.
+
+**Đánh giá sơ bộ:** nếu idea vượt qua UX screening, **tilt spray face** là hướng nên prototype trước. Đây là đề xuất kiến trúc, chưa phải kết luận feasibility.
+
+### 7.9 Market precedent completeness
+
+Search hiện tại:
+
+- đã tìm thấy nhiều precedent chức năng;
+- đã tìm thấy precedent joystick;
+- đã tìm thấy rear control trên handheld shower;
+- chưa tìm thấy exact commercial product của combination hiện tại.
+
+**Status:** NOT FOUND IN THIS SEARCH, không phải negative evidence.
+
+### 7.10 Patent/IP
+
+**Freedom-to-operate (FTO)** nghĩa là đánh giá xem một sản phẩm cụ thể có nguy cơ nằm trong phạm vi claim của patent còn hiệu lực tại thị trường mục tiêu hay không.
+
+FTO khác với novelty.
+
+Hiện tại:
+
+- không thể nói idea an toàn về IP;
+- không thể nói idea vi phạm patent;
+- chưa đủ cơ sở để kết luận novelty/patentability.
+
+Nếu idea vượt qua UX screening, cần một patent search riêng tập trung vào:
+
+- rear-mounted control;
+- multi-axis joystick;
+- spray-direction control;
+- continuous directional steering;
+- handheld shower packaging;
+- patent family và legal status;
+- claim mapping.
+
+**Status: UNKNOWN.**
+
+## 8. Recommended Next Action — Bước tiếp theo đề xuất
 
 Không nên đi ngay vào detailed mechanical feasibility.
 
-Bước tiếp theo có giá trị nhất là **UX / architecture screening**:
+Bước tiếp theo có giá trị nhất là **UX screening**.
 
-### Test A — Compare interaction
-
-So sánh prototype concept với:
-
-- conventional fixed head;
-- pivoting head;
-- rear joystick directional control.
-
-Đánh giá:
-
-- time to redirect;
-- number of hand movements;
-- grip stability;
-- targeting accuracy;
-- accidental input;
-- subjective ease of use.
-
-### Test B — Discrete vs continuous
+### Test A — So sánh interaction
 
 So sánh:
 
-- 4/8 preset directions;
-- continuous 2-axis joystick.
+1. Handshower thông thường.
+2. Handshower có pivot head.
+3. Handshower có rear joystick.
 
-Nếu continuous không tạo lợi ích rõ, nên ưu tiên discrete để giảm complexity.
+Cùng một task:
 
-### Test C — Architecture screening
+> Đưa spray từ target A → target B.
 
-Chỉ sau khi UX cho thấy advantage rõ, mới so sánh:
+Đánh giá:
 
-- joystick → mechanical linkage → tilting spray face;
-- joystick → internal flow-direction mechanism.
+- thời gian redirect;
+- số lần thay đổi tay/grip;
+- độ chính xác;
+- độ ổn định;
+- accidental input;
+- mức dễ sử dụng.
+
+### Test B — Range
+
+Test:
+
+- 0°;
+- ±5°;
+- ±10°.
+
+Mục tiêu:
+
+> Xác định ±10° có tạo lợi ích cảm nhận rõ hay không.
+
+### Test C — Continuous vs preset
+
+So sánh:
+
+- 4 hướng;
+- 8 hướng;
+- continuous 2-axis.
+
+Nếu continuous không tạo lợi ích rõ, có thể giảm complexity bằng preset.
+
+### Test D — Sau khi UX vượt qua
+
+Nếu joystick cho thấy advantage rõ so với pivot:
+
+1. Prototype **tilt spray face** trước.
+2. Đánh giá spray quality, sealing, durability và scale.
+3. Chỉ nghiên cứu **internal flow redirection** nếu tilt spray face không phù hợp.
+4. Thực hiện dedicated patent landscape/claim-level screening.
 
 ### Stop condition
 
-Nếu người dùng không đạt được improvement rõ ràng so với pivot head, hoặc joystick làm tăng thao tác/khó giữ grip, **giữ WATCH và không đầu tư sâu vào cơ cấu**.
+**Giữ WATCH và không đầu tư sâu** nếu:
 
-## 10. Evidence Boundary / IP Note
+- user không thấy improvement rõ so với pivot;
+- thao tác joystick chậm hơn;
+- accuracy không tốt hơn;
+- accidental input đáng kể;
+- hoặc complexity tăng nhưng user value không tăng tương ứng.
 
-Các patent được sử dụng ở đây chỉ để xác định **technical/market precedent**.
+## 9. Kết luận
 
-Không kết luận:
+**WATCH**
 
-- novelty;
-- patentability;
-- infringement;
-- freedom to operate.
+Lý do giữ idea không còn là:
 
-Đặc biệt, việc tìm thấy US 4,881,282 và Delta CN122215427A có nghĩa là **joystick/directional control/rear control đã có precedent**, nhưng không tự động chứng minh rằng exact combination của idea này đã được claim hoặc không thể bảo hộ.
+> “Chưa có ai làm joystick cho shower.”
 
-## 11. Core Idea Statement
+Research cho thấy giả định này **không đúng**.
 
-> **A handheld showerhead with a rear-mounted multi-axis joystick that allows users to independently control the spray direction while keeping the handshower body and grip in a comfortable, relatively stable position.**
+Lý do giữ idea là:
 
-### Short version
+> **Có thể tồn tại một UX advantage khi joystick đa trục phía sau cho phép người dùng điều khiển vector phun độc lập với orientation của handshower, trong khi vẫn giữ grip ổn định bằng một tay.**
 
-> **Separate handshower positioning from spray-direction control through an integrated rear joystick.**
+Đây là hypothesis cụ thể và có thể kiểm chứng bằng prototype UX.
 
-## 12. Kết luận
+Nếu test chứng minh người dùng:
 
-**C-idea này vẫn đáng WATCH, nhưng lý do giữ lại đã thay đổi.**
+- redirect spray nhanh hơn;
+- chính xác hơn;
+- ít thay đổi grip hơn;
+- và không gặp accidental input đáng kể,
 
-Không nên giữ vì:
-
-> “chưa có ai làm joystick cho shower.”
-
-Research cho thấy điều này **không đúng**.
-
-Nên giữ vì:
-
-> “Có thể tồn tại một UX advantage thực sự khi joystick đa trục cho phép điều khiển vector hướng phun độc lập với orientation của handshower, nhưng advantage này chưa được chứng minh so với pivot/orientable head.”
-
-Đây là câu hỏi quyết định của idea.
-
----
+idea mới có cơ sở để chuyển sang phân tích cơ khí và IP sâu hơn.
 
 ## Reference links
 
-### Commercial / product references
+### Sản phẩm / precedent thị trường
 
 - [Waterpik ShowerCare — Pivoting Hand Held Shower Head](https://www.waterpik.com/shower-heads/products/FN-20032320-FAB/)
 - [Speakman Neo Hand Shower — Anystream](https://speakman.com/products/neo-hand-shower)
-- [Delta Faucet — Adjustable Raincan / Hand Shower reference](https://www.deltafaucet.com/bathroom/product/75107.html)
+- [Delta Faucet — Hand Shower reference](https://www.deltafaucet.com/bathroom/product/75107.html)
 
-### Patent / technical precedent
+### Patent / precedent kỹ thuật
 
 - [US 4,881,282 — Adjustable shower head](https://patents.justia.com/patent/4881282)
-- [US 10,335,822 — Showerhead directional control apparatus](https://patents.justia.com/patent/10335822)
+- [US20110192915A1 — Shower with joystick function](https://patentsencyclopedia.com/inventor/huasong-zhou-xiamen-cn-1/)
 - [EP4644623A1 — Orientable handheld shower](https://patents.google.com/patent/EP4644623A1/en)
 - [CN122215427A — Handheld shower assembly, Delta Faucet Company](https://eureka.patsnap.com/patent/CN122215427A)
-- [US 11,826,769 B2 — Shower system including magnetic handshower docking](https://patents.google.com/patent/US11826769B2/en)
+- [US 7,455,247 — Bodyspray having adjustable spray orientation](https://patents.justia.com/patent/7455247)
 
-**Evidence status summary:**  
-- Directional/orientable handshower: **EVIDENCED**  
-- Joystick directional shower control: **EVIDENCED — patent precedent**  
-- Rear joystick/button on handheld shower: **EVIDENCED — recent Delta patent precedent**  
-- Exact continuous 2-axis rear joystick spray-vector control as a commercial product: **NOT FOUND in this search; not evidence of absence**  
-- Advantage over pivot head: **UNKNOWN**  
-- Novelty/IP: **UNKNOWN**
+**Evidence status summary:**
+
+- Directional/orientable handshower: **EVIDENCED**
+- Joystick directional shower control: **EVIDENCED — patent precedent**
+- Rear joystick/button on handheld shower: **EVIDENCED — patent precedent**
+- Exact continuous 2-axis rear joystick spray-vector control as a commercial product: **NOT FOUND IN THIS SEARCH**
+- Advantage over pivot head: **UNKNOWN**
+- Exact combination novelty/IP: **UNKNOWN**
+- Current disposition: **WATCH**
+
+**Confidence: Cao**
