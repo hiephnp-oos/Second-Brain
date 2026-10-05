@@ -8,7 +8,7 @@ Maintain future plans intended to improve R&D Innovation. This workstream is a p
 
 Keep each distinct future improvement as a standalone plan/reference file directly in this folder. Do not create extra category folders until volume makes navigation difficult.
 
-Existing implementation plans, architecture references, and regression/validation records are retained as historical planning and evidence. Their presence does not activate a plan or authorize a baseline change.
+Existing implementation plans, reference architectures, and regression/validation records are retained as planning/evidence. Reference architectures are dormant by default: their presence does not activate a plan, capability, runtime, or baseline change.
 
 ## Working Rules
 
@@ -24,6 +24,12 @@ Each new plan should state, at minimum:
 - links to related work and implementation evidence, when available.
 
 Prefer small, independently reviewable plans. A plan is not an implementation instruction until explicitly selected and approved. Changes to the R&D baseline must follow the applicable capability, validation, and human-approval rules.
+
+## Activation Boundary
+
+Reference architecture files are lookup material only. A reference-derived change requires a demonstrated recurring/material problem, explicit mapping to the reference, a smallest-sufficient proposed change, representative validation/regression evidence, human verification where applicable, and explicit promotion before entering the R&D baseline.
+
+The active implementation path remains `01_RND_IMPLEMENTATION_PLAN.md`; `02_SoL-Pi Reference Architecture.md` and `03_Future Improvement Reference Architecture.md` do not form an automatic execution chain.
 
 ## Existing References
 
