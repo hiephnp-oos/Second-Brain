@@ -506,20 +506,16 @@ def validate_career_scheduled_provenance(errors: list[str]) -> None:
     if not path.exists():
         fail("Career scheduled execution provenance contract missing", errors)
         return
-    text = read_text(path).lower()
-    required = [
-        "scheduled invocation verified",
-        "execution completed",
-        "output persisted",
-        "output re-read",
-        "final repository state verified",
-        "scheduled execution verified",
-        "output recovered",
-        "not_verified",
-    ]
-    for phrase in required:
-        if phrase not in text:
-            fail(f"Career scheduled provenance contract missing '{phrase}'", errors)
+    text = read_text(path)
+    lowered = text.lower()
+    canonical = ["missing", "incomplete", "present_unverified", "manual_recovery", "not_verified", "repository_contract.md"]
+    for phrase in canonical:
+        if phrase not in lowered:
+            fail(f"Career scheduled provenance contract missing canonical state/reference '{phrase}'", errors)
+    forbidden = ["scheduled invocation verified", "scheduled execution verified", "execution completed", "output recovered"]
+    for phrase in forbidden:
+        if phrase in lowered:
+            fail(f"Career scheduled provenance contract contains non-canonical state '{phrase}'", errors)
 
 
 def validate_scheduled_capability_contracts(errors: list[str]) -> None:
