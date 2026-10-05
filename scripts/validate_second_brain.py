@@ -569,7 +569,7 @@ def validate_career_weekly_report_contract(errors: list[str]) -> None:
     schemas = [schema_from_readme(path) if path.exists() else None for path in capability_paths]
 
     for report in sorted(reports.glob("*.md")):
-        if not re.fullmatch(r"\\d{4}-W\\d{2}\\.md", report.name):
+        if not re.fullmatch(r"\d{4}-W\d{2}\.md", report.name):
             continue
         text = read_text(report)
         positions = [text.find(section) for section in section_names]
@@ -580,7 +580,7 @@ def validate_career_weekly_report_contract(errors: list[str]) -> None:
         table_headers = []
         lines = text.splitlines()
         for index, line in enumerate(lines[:-1]):
-            if line.startswith("|") and re.match(r"^\\|\\s*:?-{3,}", lines[index + 1]):
+            if line.startswith("|") and re.match(r"^\|\s*:?-{3,}", lines[index + 1]):
                 table_headers.append([cell.strip() for cell in line.strip()[1:-1].split("|")])
         if len(table_headers) != 3:
             fail(f"Career weekly report must contain exactly 3 result tables: {report.relative_to(ROOT)}", errors)
