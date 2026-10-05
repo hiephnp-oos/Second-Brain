@@ -207,8 +207,9 @@ The intended recurring model is implemented through **one daily master schedule*
   - Company Radar
   - Remote / AI
 - On non-search days, do not perform the three search cycles merely because the master schedule ran.
-- Every Monday, execute Weekly Career Synthesis using the latest outputs/state from all three workstreams.
-- Every Monday, after synthesis and validation, write/update exactly one compact weekly run record at `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md`.
+- Every Monday, execute Weekly Career Synthesis using the latest available outputs/state from all three workstreams.
+- Weekly synthesis/report persistence is mandatory and independent of search-tool success. If a search capability fails or is unavailable, continue the synthesis and record `NOT_RUN` (or the applicable explicit fallback state) for that stream instead of aborting the weekly report.
+- Every Monday, after synthesis and validation, write/update exactly one compact weekly run record at `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md`; a scheduler run without a verified weekly file is incomplete.
 - The weekly run record is an observability/learning artifact, not a job archive.
 - Weekly synthesis is independent of whether Monday is a search day; if both conditions are true in the future, perform the search cycle and then synthesis in the same master run.
 

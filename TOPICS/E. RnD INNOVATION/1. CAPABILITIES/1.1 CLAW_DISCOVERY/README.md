@@ -26,11 +26,11 @@ If scope or target boundary is unavailable, do not generate unbounded candidates
 
 ## 5. Procedure
 1. Confirm workstream, problem, desired outcome, target boundary, constraints, and decision/use context.
-2. Inspect relevant Released Knowledge, candidate/test material, prior daily records, historical batch records, reviewed outcomes/lessons, and existing-solution evidence; preserve source authority and status. For recurring discovery, retrieve all available historical batch files and at least the previous 7 daily records before convergence; record unavailable sources explicitly.
+2. Inspect relevant Released Knowledge, candidate/test material, prior daily records retained directly in PERSONAL_RESEARCH, reviewed outcomes/lessons, and existing-solution evidence; preserve source authority and status. For recurring discovery, retrieve at least the previous 7 available daily records plus any older record explicitly referenced by a reviewed lesson or matching candidate. Legacy batch files were removed and are not an active input; do not search for, require, or recreate them. Record unavailable required sources explicitly.
 3. Separate the observed problem/signal from proposed solution and mechanism.
 4. Explore relevant solution spaces and generate candidates from distinct response principles, not superficial rewordings.
 5. For each candidate, state target outcome, proposed capability, mechanism hypothesis, system boundary, and meaningful difference from baseline/existing solutions.
-6. Check commercial precedent, prior art where relevant, Knowledge Sheet, prior daily records, and historical candidate records; record search scope and unresolved coverage. Compare candidates semantically by problem/outcome, mechanism, and target application; record matched IDs and whether each is a duplicate, related variant, or no match.
+6. Check commercial precedent, prior art where relevant, Knowledge Sheet, prior daily records, and reviewed candidate records; record search scope and unresolved coverage. Compare candidates semantically by problem/outcome, mechanism, and target application; record matched IDs and whether each is a duplicate, related variant, or no match.
 7. Assess evidence and transferability to the target conditions. Keep cross-industry concepts as transfer candidates until target evidence supports applicability.
 8. Apply quality gates: material user/product outcome, meaningful delta, strategic fit, evidence traceability, complexity justified by benefit, and no duplicate/saturated candidate.
 9. Classify candidate and claim states; preserve unknowns and conflicts. Do not turn a technology or mechanism alone into a standalone product idea.
@@ -79,7 +79,7 @@ Do not invent a universal score or disposition. Use the active Workstream's requ
 - [ ] Problem, target, and intended outcome are explicit.
 - [ ] Candidate is more than a technology name or mechanism.
 - [ ] User/product outcome is material and observable/testable.
-- [ ] Meaningful delta and existing-solution/duplicate checks are documented, including historical candidate sources checked and matched IDs.
+- [ ] Meaningful delta and existing-solution/duplicate checks are documented, including the daily/reviewed candidate sources actually checked and matched IDs.
 - [ ] If a candidate is DROP/DUPLICATE, the search continues through a DELTA test or a genuinely new candidate until WATCH or a documented hard blocker; no artificial quota or fabricated candidate is used.
 - [ ] Candidate class is not conflated with evidence state or disposition.
 - [ ] Cross-industry transfer limits remain explicit.
@@ -108,7 +108,7 @@ Execution output belongs to the invoking Workstream. For scheduled Claw, the can
 
 ## 15. Examples and tests
 - **Technology-only signal:** classify as a signal/enabler; do not elevate to standalone idea without outcome and delta.
-- **Prior-batch duplicate:** identify prior candidate and preserve duplicate disposition under Workstream rules.
+- **Historical duplicate:** identify the prior daily/reviewed candidate and preserve duplicate disposition under Workstream rules; legacy batch files are not required.
 - **Cross-industry technology:** retain as transfer candidate until target-condition evidence exists.
 - **Regression:** apply RND-REG-001–010 and relevant later cases in Project Improvement. Contract completeness is not functional PASS.
 

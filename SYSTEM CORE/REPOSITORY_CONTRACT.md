@@ -183,3 +183,14 @@ For R&D Innovation, six active reusable capabilities are CLAW_DISCOVERY, VERIFIC
 ## Scheduled Output Persistence Invariant
 
 Execution success and persistence success are separate states. Required scheduled output must exist at its contract-defined path and be re-read and validated before success is reported. Missing output means the scheduled run is incomplete. Multi-file scheduled mutations follow the atomic publication contract.
+
+
+## Scheduled artifact versus execution provenance
+
+A persistence watchdog and the scheduled executor observe different systems. A watchdog run (including a successful GitHub Actions `schedule` event) proves only that the watchdog ran; it does not prove that an external scheduled task ran. A daily file's presence or self-reported provenance marker is not independent execution evidence.
+
+Use separate states:
+- Artifact: `MISSING`, `INCOMPLETE`, `PRESENT_UNVERIFIED`, or `MANUAL_RECOVERY`.
+- External scheduler provenance: `NOT_VERIFIED` unless independently matched to the scheduler's own execution record.
+
+Never label artifact presence as scheduled success. A complete manual-recovery artifact remains `MANUAL_RECOVERY`; validate its content separately and preserve provenance as `NOT_VERIFIED`. Only an independently verified scheduler record linked to the exact date/output may upgrade provenance. The watchdog must create/reuse an issue for missing or incomplete artifacts, while present-but-unverified provenance is reported as such without claiming a failure or success of the external scheduler.
