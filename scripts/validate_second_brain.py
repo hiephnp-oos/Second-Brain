@@ -910,4 +910,398 @@ def main() -> int:
 
 
 if __name__ == "__main__":
+    sys.exit(main())    for field in [
+        "Identity and purpose", "Use cases", "Trigger / non-trigger",
+        "Inputs and preconditions", "Procedure", "Method selection",
+        "Tool boundary", "Evidence and uncertainty", "Output contract",
+        "Quality gates", "Handoffs", "Human gate",
+        "Failure and stop conditions", "Persistence boundary", "Examples and tests",
+    ]:
+        if field not in baseline_text:
+            fail(f"R&D capability baseline missing contract field definition: {field}", errors)
+
+    for field in required_baseline_fields:
+        if field not in baseline_text:
+            fail(f"R&D capability baseline missing contract field definition: {field}", errors)
+
+    capabilities = [
+        "1.1 CLAW_DISCOVERY", "1.2 VERIFICATION", "1.3 DEEP_RESEARCH",
+        "1.4 EVALUATION", "1.5 KNOWLEDGE_PROMOTION", "1.6 SUPPLIER_KNOWLEDGE_INTAKE",
+    ]
+    expected_numbers = {str(i) for i in range(1, 16)}
+    for name in capabilities:
+        path = baseline.parent / name / "README.md"
+        if not path.exists():
+            fail(f"R&D capability missing: {path.relative_to(ROOT)}", errors)
+            continue
+        numbered = {}
+        for line in read_text(path).splitlines():
+            match = re.match(r"^## (\d+)\.\s+(.+)$", line.strip())
+            if match:
+                numbered[match.group(1)] = match.group(2).strip()
+        actual_numbers = set(numbered)
+        missing = sorted(expected_numbers - actual_numbers, key=int)
+        extra = sorted(actual_numbers - expected_numbers, key=int)
+        if missing:
+            fail(f"R&D capability contract missing numbered sections {missing}: {path.relative_to(ROOT)}", errors)
+        if extra:
+            fail(f"R&D capability contract has unexpected numbered sections {extra}: {path.relative_to(ROOT)}", errors)
+
+def validate_critical_negative_paths(errors: list[str]) -> None:
+    """Protect retired states that have previously caused real regressions."""
+    retired = [
+        "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging",
+        "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/batches",
+        "TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/staging",
+        "TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/batches",
+        "TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY",
+        "TOPICS/3. CONSTRUCTION",
+    ]
+    for rel in retired:
+        if (ROOT / rel).exists():
+            fail(f"Critical retired path must remain absent: {rel}", errors)
+
+def validate_validation_selftests(errors: list[str]) -> None:
+    """Require the validator's own regression suite to remain present."""
+    for rel in ["scripts/tests/test_validator_dispatch.py", "scripts/tests/test_validator_contracts.py"]:
+        if not (ROOT / rel).exists():
+            fail(f"Validator self-test missing: {rel}", errors)
+
+def validate_authority_boundaries(errors: list[str]) -> None:
+    """Protect the intended division between process and invariant documents."""
+    checks = {
+        "SYSTEM CORE/WORKFLOW.md": [
+            "Canonical repository invariants are defined in `SYSTEM CORE/REPOSITORY_CONTRACT.md`.",
+            "Every GitHub mutation that changes repository content must follow:",
+            "Run the repository validator against the complete intended target state before publishing it.",
+        ],
+        "SYSTEM CORE/REPOSITORY_CONTRACT.md": [
+            "This file defines the repository invariants",
+            "The operational mutation lifecycle and detailed execution procedure are defined by `SYSTEM CORE/WORKFLOW.md`.",
+            "A repository mutation is complete only when:",
+        ],
+    }
+    for rel, phrases in checks.items():
+        path = ROOT / rel
+        if not path.exists():
+            continue
+        text = read_text(path)
+        for phrase in phrases:
+            if phrase not in text:
+                fail(f"Canonical authority boundary missing in {rel}: {phrase}", errors)
+
+def validate_career_scheduled_provenance(errors: list[str]) -> None:
+    path = ROOT / Path("TOPICS/B. CAREER/CAREER_EXECUTION_CONTRACT.md")
+    if not path.exists():
+        fail("Career scheduled execution provenance contract missing", errors)
+        return
+    text = read_text(path)
+    lowered = text.lower()
+    canonical = ["missing", "incomplete", "present_unverified", "manual_recovery", "not_verified", "repository_contract.md"]
+    for phrase in canonical:
+        if phrase not in lowered:
+            fail(f"Career scheduled provenance contract missing canonical state/reference '{phrase}'", errors)
+    forbidden = ["scheduled invocation verified", "scheduled execution verified", "execution completed", "output recovered"]
+    for phrase in forbidden:
+        if phrase in lowered:
+            fail(f"Career scheduled provenance contract contains non-canonical state '{phrase}'", errors)
+
+
+def validate_claw_watchdog_contract(errors: list[str]) -> None:
+    path = ROOT / Path(".github/workflows/claw-persistence-watchdog.yml")
+    if not path.exists():
+        fail("Claw persistence watchdog workflow missing", errors)
+        return
+    text = read_text(path)
+    required = [
+        'name: Claw Daily Persistence Watchdog',
+        'cron: "0 1 * * *"',
+        'TZ=Asia/Ho_Chi_Minh date +%F',
+        'provenance_state=NOT_VERIFIED',
+        'does not prove that the external 05:00 scheduled task executed',
+    ]
+    for phrase in required:
+        if phrase not in text:
+            fail(f"Claw watchdog contract missing '{phrase}'", errors)
+    for state in ["MISSING", "INCOMPLETE", "PRESENT_UNVERIFIED", "MANUAL_RECOVERY"]:
+        if not re.search(rf'["\\\']{state}["\\\']', text) and f"artifact_state={state}" not in text:
+            fail(f"Claw watchdog contract missing artifact state '{state}'", errors)
+    forbidden = [
+        'provenance_state=SCHEDULED_EXECUTION_VERIFIED',
+        'artifact_state=SCHEDULED_EXECUTION_VERIFIED',
+    ]
+    for phrase in forbidden:
+        if phrase in text:
+            fail(f"Claw watchdog must not claim external scheduler provenance: '{phrase}'", errors)
+
+
+def validate_career_weekly_report_contract(errors: list[str]) -> None:
+    reports = ROOT / Path("TOPICS/B. CAREER/2. REPORTS")
+    if not reports.exists():
+        fail("Career weekly reports directory missing", errors)
+        return
+
+    capability_paths = [
+        ROOT / Path("TOPICS/B. CAREER/1. CAPABILITIES/1.1 JOB_SEARCH/README.md"),
+        ROOT / Path("TOPICS/B. CAREER/1. CAPABILITIES/1.2 COMPANY_RADAR/README.md"),
+        ROOT / Path("TOPICS/B. CAREER/1. CAPABILITIES/1.3 REMOTE_AI/README.md"),
+    ]
+    section_names = ["## 1. Job Search", "## 2. Company Radar", "## 3. Remote / AI"]
+
+    def schema_from_readme(path: Path) -> list[str] | None:
+        for line in read_text(path).splitlines():
+            stripped = line.strip()
+            if stripped.startswith("`") and stripped.endswith("`") and "|" in stripped:
+                return [cell.strip() for cell in stripped[1:-1].split("|")]
+        return None
+
+    schemas = [schema_from_readme(path) if path.exists() else None for path in capability_paths]
+
+    for report in sorted(reports.glob("*.md")):
+        if not re.fullmatch(r"\d{4}-W\d{2}\.md", report.name):
+            continue
+        text = read_text(report)
+        positions = [text.find(section) for section in section_names]
+        if any(pos < 0 for pos in positions) or positions != sorted(positions):
+            fail(f"Career weekly report sections invalid: {report.relative_to(ROOT)}", errors)
+            continue
+
+        table_headers = []
+        lines = text.splitlines()
+        for index, line in enumerate(lines[:-1]):
+            if line.startswith("|") and re.match(r"^\|\s*:?-{3,}", lines[index + 1]):
+                table_headers.append([cell.strip() for cell in line.strip()[1:-1].split("|")])
+        if len(table_headers) != 3:
+            fail(f"Career weekly report must contain exactly 3 result tables: {report.relative_to(ROOT)}", errors)
+            continue
+        for section, expected, actual in zip(section_names, schemas, table_headers):
+            if expected is None:
+                fail(f"Career capability schema source missing for {section}: {report.relative_to(ROOT)}", errors)
+            elif actual != expected:
+                fail(f"Career weekly report schema mismatch in {section}: {report.relative_to(ROOT)}", errors)
+
+def validate_career_weekly_watchdog_contract(errors: list[str]) -> None:
+    path = ROOT / Path(".github/workflows/career-weekly-watchdog.yml")
+    if not path.exists():
+        fail("Career weekly persistence watchdog workflow missing", errors)
+        return
+    text = read_text(path)
+    for phrase in [
+        "name: Career Weekly Persistence Watchdog", 'cron: "0 1 * * 2"',
+        "TZ=Asia/Ho_Chi_Minh", "date -d 'yesterday'",
+        "provenance_state=NOT_VERIFIED",
+        "does not prove that the external Monday Career scheduler executed",
+    ]:
+        if phrase not in text:
+            fail(f"Career weekly watchdog contract missing '{phrase}'", errors)
+    for state in ["MISSING", "INCOMPLETE", "PRESENT_UNVERIFIED", "MANUAL_RECOVERY"]:
+        if not re.search(rf'["\\\']{state}["\\\']', text) and f"artifact_state={state}" not in text:
+            fail(f"Career weekly watchdog contract missing artifact state '{state}'", errors)
+    for phrase in ["provenance_state=SCHEDULED_EXECUTION_VERIFIED", "artifact_state=SCHEDULED_EXECUTION_VERIFIED"]:
+        if phrase in text:
+            fail(f"Career weekly watchdog must not claim external scheduler provenance: '{phrase}'", errors)
+
+
+def validate_scheduled_capability_contracts(errors: list[str]) -> None:
+    for rel in [
+        Path("TOPICS/B. CAREER/IMPLEMENTATION_PLAN.md"),
+        Path("TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/README.md"),
+    ]:
+        path = ROOT / rel
+        if not path.exists():
+            fail(f"Scheduled capability contract missing: {rel}", errors)
+            continue
+        text = read_text(path).lower()
+        for phrase in ["scheduler", "cadence", "trigger", "output", "validation"]:
+            if phrase not in text:
+                fail(f"Scheduled capability contract missing '{phrase}': {rel}", errors)
+
+    # Durable scheduled outputs must expose persistence verification explicitly.
+    persistence_contracts = [
+        (
+            Path("TOPICS/B. CAREER/CAREER_EXECUTION_CONTRACT.md"),
+            ["weekly persistence", "re-read", "final repository state", "not completion"],
+        ),
+        (
+            Path("TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/README.md"),
+            ["date-specific daily record", "re-read", "final repository state", "not completion"],
+        ),
+    ]
+    for rel, phrases in persistence_contracts:
+        path = ROOT / rel
+        if not path.exists():
+            fail(f"Scheduled persistence contract missing: {rel}", errors)
+            continue
+        text = read_text(path).lower()
+        for phrase in phrases:
+            if phrase not in text:
+                fail(f"Scheduled persistence contract missing '{phrase}': {rel}", errors)
+
+
+def validate_prompt_duplicate_rules(errors: list[str]) -> None:
+    prompt_files = [
+        ROOT / "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/Prompt.csv",
+        ROOT / "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/Prompt.csv",
+    ]
+    for path in prompt_files:
+        if not path.exists():
+            continue
+        text = read_text(path)
+        # Detect exact repeated escaped instruction lines inside a prompt asset.
+        logical_lines = [line.strip() for line in text.replace("\\n", "\n").splitlines() if line.strip()]
+        for index in range(1, len(logical_lines)):
+            if logical_lines[index] == logical_lines[index - 1] and logical_lines[index].startswith("- "):
+                fail(f"Duplicated consecutive prompt rule in {path.relative_to(ROOT)}: {logical_lines[index]}", errors)
+
+
+def validate_rnd_regression_contract(errors: list[str]) -> None:
+    root = ROOT / "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/Regression"
+    required = [root / "README.md", root / "CASES.md", root / "RUN_TEMPLATE.md", root / "BASELINE.md"]
+    for rel in required:
+        if not rel.exists():
+            fail(f"Missing R&D regression artifact: {rel}", errors)
+
+    cases = root / "CASES.md"
+    if cases.exists():
+        text = read_text(cases)
+        required_case_ids = [f"RND-REG-{i:03d}" for i in range(1, 39)]
+        for case_id in required_case_ids:
+            if case_id not in text:
+                fail(f"Missing R&D regression case: {case_id}", errors)
+        for result in ["PASS", "FAIL", "NOT OBSERVED", "INCONCLUSIVE"]:
+            if result not in text:
+                fail(f"R&D regression result state missing: {result}", errors)
+
+    template = root / "RUN_TEMPLATE.md"
+    if template.exists():
+        text = read_text(template)
+        for phrase in [
+            "Capability:",
+            "Prompt ID / execution contract:",
+            "Baseline compared with:",
+            "Repository commit / task ref:",
+            "Knowledge snapshot / release:",
+            "Positive-control evidence",
+            "Limitations",
+            "Regression cases",
+            *[f"RND-REG-{i:03d}" for i in range(1, 39)],
+            "Performance comparison",
+            "Human decision",
+            "Do not update the R&D baseline",
+        ]:
+            if phrase not in text:
+                fail(f"R&D regression run template missing '{phrase}'", errors)
+
+    readme = root / "README.md"
+    if readme.exists():
+        text = read_text(readme)
+        for phrase in [
+            "real R&D capability executions",
+            "CASES.md",
+            "RUN_TEMPLATE.md",
+            "does not become a second workflow",
+        ]:
+            if phrase not in text:
+                fail(f"R&D regression README missing '{phrase}'", errors)
+
+
+def validate_removed_topic(errors: list[str]) -> None:
+    if (ROOT / "TOPICS" / "3. CONSTRUCTION").exists():
+        fail("Removed topic still exists: TOPICS/3. CONSTRUCTION", errors)
+    for relative in [Path("AI_MEMORY.md"), Path("README.md"), Path("SYSTEM CORE/WORKFLOW.md"), Path("SYSTEM CORE/REPOSITORY_CONTRACT.md")]:
+        path = ROOT / relative
+        if path.exists() and "TOPICS/3. CONSTRUCTION" in read_text(path):
+            fail(f"Stale removed-topic reference: {relative}", errors)
+
+
+def validate_high_level_controls(errors: list[str]) -> None:
+    contract = ROOT / "SYSTEM CORE/REPOSITORY_CONTRACT.md"
+    workflow = ROOT / "SYSTEM CORE/WORKFLOW.md"
+    readme = ROOT / "README.md"
+    if contract.exists():
+        text = read_text(contract)
+        for phrase in ["Core invariants", "Source-of-truth hierarchy", "Change contract", "Atomic publication contract", "Negative-state contract", "GitHub Actions", "Issue Forms", "Task Lists", "GitHub Projects", "Security", "Capability", "Staging", "Dry-run", "Contradiction", "Health"]:
+            if phrase not in text:
+                fail(f"REPOSITORY_CONTRACT.md missing control section/phrase: {phrase}", errors)
+    if workflow.exists():
+        text = read_text(workflow)
+        for phrase in ["TARGET STATE", "PRE-FLIGHT", "ATOMIC CHANGE", "VALIDATE", "VERIFY", "Risk-based execution", "User prompt reinforcement layer", "GitHub Actions", "Issue Form", "Task List", "GitHub Projects", "Security", "Capability", "Staging", "Dry-run", "Contradiction", "Health"]:
+            if phrase not in text:
+                fail(f"WORKFLOW.md missing control section/phrase: {phrase}", errors)
+        if CANONICAL_LIFECYCLE not in text:
+            fail("WORKFLOW.md lifecycle does not match canonical lifecycle", errors)
+    operations = ROOT / "SYSTEM CORE/Second_Brain_Operations.md"
+    if operations.exists() and CANONICAL_LIFECYCLE not in read_text(operations):
+        fail("Second_Brain_Operations.md lifecycle is out of sync with canonical lifecycle", errors)
+    if readme.exists():
+        text = read_text(readme)
+        for phrase in ["GitHub Actions", "Issue Forms", "Task Lists", "GitHub Projects", "Security", "Mermaid", "Capability", "Staging", "SYSTEM CORE"]:
+            if phrase not in text:
+                fail(f"README.md missing platform capability: {phrase}", errors)
+
+def validate_target_structure(errors: list[str]) -> None:
+    expected = {"A. AI GENERAL","B. CAREER","C. NUVIO SETUP","D. RnD DATABASE","E. RnD INNOVATION"}
+    actual = {p.name for p in (ROOT / "TOPICS").iterdir() if p.is_dir()} if (ROOT / "TOPICS").exists() else set()
+    if actual != expected:
+        fail(f"Topic structure mismatch: expected {sorted(expected)}, got {sorted(actual)}", errors)
+    legacy = ["1. AI GENERAL","2. CAREER","3. CONSTRUCTION","4. NUVIO SETUP","5. RnD DATABASE","6. RnD INNOVATION","7. SYSTEMS"]
+    for name in legacy:
+        if (ROOT / "TOPICS" / name).exists():
+            fail(f"Legacy topic folder still exists: TOPICS/{name}", errors)
+    for name in ["WORKFLOW.md","REPOSITORY_CONTRACT.md"]:
+        if (ROOT / name).exists():
+            fail(f"Legacy root control still exists: {name}", errors)
+    required_system = [
+        "SYSTEM CORE/README.md",
+        "SYSTEM CORE/WORKFLOW.md",
+        "SYSTEM CORE/REPOSITORY_CONTRACT.md",
+        "SYSTEM CORE/CAPABILITIES/1. HANDOFF/README.md",
+        "SYSTEM CORE/CAPABILITIES/1. HANDOFF/Handoff_Template.md",
+        "SYSTEM CORE/CAPABILITIES/2. RETRIEVAL/README.md",
+        "SYSTEM CORE/CAPABILITIES/2. RETRIEVAL/Retrieval_Test.md",
+    ]
+    for rel in required_system:
+        if not (ROOT / rel).exists():
+            fail(f"Missing System Core artifact: {rel}", errors)
+
+def main() -> int:
+    errors: list[str] = []
+    validate_root(errors)
+    validate_target_structure(errors)
+    active, registry_states = extract_topic_registry(errors)
+    validate_topics(active, registry_states, errors)
+    validate_forbidden_files(errors)
+    validate_removed_platform_controls(errors)
+    validate_local_references(errors)
+    validate_workstream_readmes(errors)
+    validate_csv_shape(errors)
+    validate_capabilities(errors)
+    validate_architecture_boundaries(errors)
+    validate_future_rnd_references(errors)
+    validate_rnd_capability_contract_structure(errors)
+    validate_critical_negative_paths(errors)
+    validate_validation_selftests(errors)
+    validate_authority_boundaries(errors)
+    validate_career_scheduled_provenance(errors)
+    validate_claw_watchdog_contract(errors)
+    validate_career_weekly_watchdog_contract(errors)
+    validate_career_weekly_report_contract(errors)
+    validate_scheduled_capability_contracts(errors)
+    validate_rnd_knowledge_sheet(errors)
+    validate_prompt_duplicate_rules(errors)
+    validate_removed_topic(errors)
+    validate_platform_layers(errors)
+    validate_control_reference_consistency(errors)
+    validate_rnd_regression_contract(errors)
+    validate_high_level_controls(errors)
+    if errors:
+        print("Second-Brain validation: FAIL")
+        for error in errors:
+            print(f"- {error}")
+        return 1
+    print("Second-Brain validation: PASS")
+    return 0
+
+
+if __name__ == "__main__":
     sys.exit(main())
