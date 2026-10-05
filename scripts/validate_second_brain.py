@@ -528,16 +528,18 @@ def validate_claw_watchdog_contract(errors: list[str]) -> None:
         'name: Claw Daily Persistence Watchdog',
         'cron: "0 1 * * *"',
         'TZ=Asia/Ho_Chi_Minh date +%F',
-        'artifact_state=MISSING',
-        'artifact_state=INCOMPLETE',
-        'artifact_state=PRESENT_UNVERIFIED',
-        'artifact_state=MANUAL_RECOVERY',
         'provenance_state=NOT_VERIFIED',
         'does not prove that the external 05:00 scheduled task executed',
     ]
     for phrase in required:
         if phrase not in text:
             fail(f"Claw watchdog contract missing '{phrase}'", errors)
+    for state in ["MISSING", "INCOMPLETE", "PRESENT_UNVERIFIED", "MANUAL_RECOVERY"]:
+        if not (
+            f'artifact_state={state}' in text
+            or re.search(rf'artifact_state\\s*=\\s*["\\\']{state}["\\\']', text)
+        ):
+            fail(f"Claw watchdog contract missing artifact state '{state}'", errors)
     forbidden = [
         'provenance_state=SCHEDULED_EXECUTION_VERIFIED',
         'artifact_state=SCHEDULED_EXECUTION_VERIFIED',
@@ -556,13 +558,17 @@ def validate_career_weekly_watchdog_contract(errors: list[str]) -> None:
     for phrase in [
         "name: Career Weekly Persistence Watchdog", 'cron: "0 1 * * 2"',
         "TZ=Asia/Ho_Chi_Minh", "date -d 'yesterday'",
-        "artifact_state=MISSING", "artifact_state=INCOMPLETE",
-        "artifact_state=PRESENT_UNVERIFIED", "artifact_state=MANUAL_RECOVERY",
         "provenance_state=NOT_VERIFIED",
         "does not prove that the external Monday Career scheduler executed",
     ]:
         if phrase not in text:
             fail(f"Career weekly watchdog contract missing '{phrase}'", errors)
+    for state in ["MISSING", "INCOMPLETE", "PRESENT_UNVERIFIED", "MANUAL_RECOVERY"]:
+        if not (
+            f"artifact_state={state}" in text
+            or re.search(rf'artifact_state\\s*=\\s*["\\\']{state}["\\\']', text)
+        ):
+            fail(f"Career weekly watchdog contract missing artifact state '{state}'", errors)
     for phrase in ["provenance_state=SCHEDULED_EXECUTION_VERIFIED", "artifact_state=SCHEDULED_EXECUTION_VERIFIED"]:
         if phrase in text:
             fail(f"Career weekly watchdog must not claim external scheduler provenance: '{phrase}'", errors)
