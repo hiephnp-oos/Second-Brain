@@ -547,6 +547,27 @@ def validate_claw_watchdog_contract(errors: list[str]) -> None:
             fail(f"Claw watchdog must not claim external scheduler provenance: '{phrase}'", errors)
 
 
+def validate_career_weekly_watchdog_contract(errors: list[str]) -> None:
+    path = ROOT / Path(".github/workflows/career-weekly-watchdog.yml")
+    if not path.exists():
+        fail("Career weekly persistence watchdog workflow missing", errors)
+        return
+    text = read_text(path)
+    for phrase in [
+        "name: Career Weekly Persistence Watchdog", 'cron: "0 1 * * 2"',
+        "TZ=Asia/Ho_Chi_Minh", "date -d 'yesterday'",
+        "artifact_state=MISSING", "artifact_state=INCOMPLETE",
+        "artifact_state=PRESENT_UNVERIFIED", "artifact_state=MANUAL_RECOVERY",
+        "provenance_state=NOT_VERIFIED",
+        "does not prove that the external Monday Career scheduler executed",
+    ]:
+        if phrase not in text:
+            fail(f"Career weekly watchdog contract missing '{phrase}'", errors)
+    for phrase in ["provenance_state=SCHEDULED_EXECUTION_VERIFIED", "artifact_state=SCHEDULED_EXECUTION_VERIFIED"]:
+        if phrase in text:
+            fail(f"Career weekly watchdog must not claim external scheduler provenance: '{phrase}'", errors)
+
+
 def validate_scheduled_capability_contracts(errors: list[str]) -> None:
     for rel in [
         Path("TOPICS/B. CAREER/IMPLEMENTATION_PLAN.md"),
