@@ -5,7 +5,7 @@
 - Lifecycle: REFERENCE / DEFERRED
 - Current implementation: NONE
 - Activation: evidence-driven only
-- Role: future improvement reference after the current R&D improvement sequence has been exercised
+- Role: dormant future-improvement reference; consult only after the current R&D improvement sequence has produced a demonstrated recurring/material gap
 - Independence: independent reference; does not override `01_RND_IMPLEMENTATION_PLAN.md` or `02_SoL-Pi Reference Architecture.md`
 
 This document preserves reusable improvement patterns discovered from external systems and research methodologies.
@@ -15,6 +15,10 @@ It is **not an active execution instruction**.
 The existence of this document must not change the current R&D Innovation improvement process.
 
 ---
+
+## Activation Boundary
+
+This document is dormant reference material. Its presence does not activate Research Pass, Autoresearch, SoL-Pi, a new workflow, a new runtime, or a baseline change. Activation requires a demonstrated recurring/material gap, explicit classification of the gap, a smallest-sufficient change, representative validation/regression evidence, and human verification where applicable.
 
 ## 1. Current improvement sequence
 
@@ -37,7 +41,7 @@ Observe subsequent real usage
     ↓
 Future Improvement Reference Architecture.md
     ↓
-Evaluate only if a demonstrated remaining problem maps to a reference pattern
+Evaluate only if a demonstrated recurring/material problem maps to a reference pattern
 ```
 
 The sequence is deliberately incremental.
@@ -70,7 +74,7 @@ The main reference patterns currently retained are:
 1. Research Pass — research-quality and uncertainty-reduction discipline.
 2. Autoresearch — experiment, regression, and iterative-improvement discipline.
 
-These references operate at different layers.
+These references are dormant and operate at different layers.
 
 ```text
 Research Pass
@@ -264,7 +268,7 @@ Consider adopting a Research Pass pattern only if real R&D usage demonstrates re
 - researchers over-research simple questions;
 - important research conclusions lack sufficient traceability.
 
-A single weak research result is not enough to justify a framework change.
+A single weak research result is not enough to activate or justify a framework change.
 
 ---
 
@@ -453,7 +457,7 @@ None of them may redefine:
 
 Before activating any pattern from this document, answer:
 
-### 1. What observed problem remains?
+NaN
 
 Describe it using real R&D outputs.
 
