@@ -417,7 +417,17 @@ def validate_capabilities(errors: list[str]) -> None:
         if not path.exists():
             fail(f"R&D capability missing: {path.relative_to(ROOT)}", errors)
             continue
-        text = read_text(path).lower()
+        text = read_text(path)
+        required_headings = [
+            "## 1. Identity and purpose", "## 2. Use cases", "## 3. Trigger / non-trigger",
+            "## 4. Inputs and preconditions", "## 5. Procedure", "## 6. ",
+            "## 7. Tool boundary", "## 8. Evidence and uncertainty", "## 9. Output contract",
+            "## 10. ", "## 11. ", "## 12. ", "## 13. ", "## 14. ", "## 15. ",
+        ]
+        for heading in required_headings:
+            if not any(line.startswith(heading) for line in text.splitlines()):
+                fail(f"R&D capability contract missing numbered section '{heading}': {path.relative_to(ROOT)}", errors)
+        text = text.lower()
         required_groups = {
             "purpose": ["purpose"],
             "trigger": ["trigger"],
@@ -450,6 +460,15 @@ def validate_capabilities(errors: list[str]) -> None:
         path = system / name / "README.md"
         if not path.exists():
             fail(f"System Core capability missing: {path.relative_to(ROOT)}", errors)
+
+def validate_future_rnd_references(errors: list[str]) -> None:
+    for rel in [
+        Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/02_SoL-Pi Reference Architecture.md"),
+        Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/03_Future Improvement Reference Architecture.md"),
+    ]:
+        if not (ROOT / rel).exists():
+            fail(f"Required R&D future reference missing: {rel}", errors)
+
 
 def validate_architecture_boundaries(errors: list[str]) -> None:
     rnd = ROOT / "TOPICS/E. RnD INNOVATION"
@@ -492,14 +511,90 @@ def validate_architecture_boundaries(errors: list[str]) -> None:
             if fragment in text:
                 fail(f"Stale refactor path/semantic reference in {path.relative_to(ROOT)}: {fragment}", errors)
 
-def validate_future_rnd_references(errors: list[str]) -> None:
-    for rel in [
-        Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/02_SoL-Pi Reference Architecture.md"),
-        Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/03_Future Improvement Reference Architecture.md"),
-    ]:
-        if not (ROOT / rel).exists():
-            fail(f"Required R&D future reference missing: {rel}", errors)
 
+def validate_rnd_capability_contract_structure(errors: list[str]) -> None:
+    """Enforce the shared R&D capability contract as actual numbered sections."""
+    baseline = ROOT / "TOPICS/E. RnD INNOVATION/1. CAPABILITIES/README.md"
+    if not baseline.exists():
+        fail("R&D capability baseline missing", errors)
+        return
+    baseline_text = read_text(baseline)
+    required_baseline_fields = [
+        "Identity and purpose", "Use cases", "Trigger / non-trigger",
+        "Inputs and preconditions", "Procedure", "Method selection",
+        "Tool boundary", "Evidence and uncertainty", "Output contract",
+        "Quality gates", "Handoffs", "Human gate",
+        "Failure and stop conditions", "Persistence boundary", "Examples and tests",
+    ]
+    for field in required_baseline_fields:
+        if field not in baseline_text:
+            fail(f"R&D capability baseline missing contract field definition: {field}", errors)
+
+    capabilities = [
+        "1.1 CLAW_DISCOVERY", "1.2 VERIFICATION", "1.3 DEEP_RESEARCH",
+        "1.4 EVALUATION", "1.5 KNOWLEDGE_PROMOTION", "1.6 SUPPLIER_KNOWLEDGE_INTAKE",
+    ]
+    expected_numbers = {str(i) for i in range(1, 16)}
+    for name in capabilities:
+        path = baseline.parent / name / "README.md"
+        if not path.exists():
+            fail(f"R&D capability missing: {path.relative_to(ROOT)}", errors)
+            continue
+        numbered = {}
+        for line in read_text(path).splitlines():
+            match = re.match(r"^## (\d+)\.\s+(.+)$", line.strip())
+            if match:
+                numbered[match.group(1)] = match.group(2).strip()
+        actual_numbers = set(numbered)
+        missing = sorted(expected_numbers - actual_numbers, key=int)
+        extra = sorted(actual_numbers - expected_numbers, key=int)
+        if missing:
+            fail(f"R&D capability contract missing numbered sections {missing}: {path.relative_to(ROOT)}", errors)
+        if extra:
+            fail(f"R&D capability contract has unexpected numbered sections {extra}: {path.relative_to(ROOT)}", errors)
+
+def validate_critical_negative_paths(errors: list[str]) -> None:
+    """Protect retired states that have previously caused real regressions."""
+    retired = [
+        "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging",
+        "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/batches",
+        "TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/staging",
+        "TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/batches",
+        "TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY",
+        "TOPICS/3. CONSTRUCTION",
+    ]
+    for rel in retired:
+        if (ROOT / rel).exists():
+            fail(f"Critical retired path must remain absent: {rel}", errors)
+
+def validate_validation_selftests(errors: list[str]) -> None:
+    """Require the validator's own regression suite to remain present."""
+    for rel in ["scripts/tests/test_validator_dispatch.py", "scripts/tests/test_validator_contracts.py"]:
+        if not (ROOT / rel).exists():
+            fail(f"Validator self-test missing: {rel}", errors)
+
+def validate_authority_boundaries(errors: list[str]) -> None:
+    """Protect the intended division between process and invariant documents."""
+    checks = {
+        "SYSTEM CORE/WORKFLOW.md": [
+            "Canonical repository invariants are defined in `SYSTEM CORE/REPOSITORY_CONTRACT.md`.",
+            "Every GitHub mutation that changes repository content must follow:",
+            "Run the repository validator against the complete intended target state before publishing it.",
+        ],
+        "SYSTEM CORE/REPOSITORY_CONTRACT.md": [
+            "This file defines the repository invariants",
+            "The operational mutation lifecycle and detailed execution procedure are defined by `SYSTEM CORE/WORKFLOW.md`.",
+            "A repository mutation is complete only when:",
+        ],
+    }
+    for rel, phrases in checks.items():
+        path = ROOT / rel
+        if not path.exists():
+            continue
+        text = read_text(path)
+        for phrase in phrases:
+            if phrase not in text:
+                fail(f"Canonical authority boundary missing in {rel}: {phrase}", errors)
 
 def validate_career_scheduled_provenance(errors: list[str]) -> None:
     path = ROOT / Path("TOPICS/B. CAREER/CAREER_EXECUTION_CONTRACT.md")
@@ -789,6 +884,72 @@ def main() -> int:
     validate_capabilities(errors)
     validate_architecture_boundaries(errors)
     validate_future_rnd_references(errors)
+    validate_rnd_capability_contract_structure(errors)
+    validate_critical_negative_paths(errors)
+    validate_validation_selftests(errors)
+    validate_authority_boundaries(errors)
+    validate_career_scheduled_provenance(errors)
+    validate_claw_watchdog_contract(errors)
+    validate_career_weekly_watchdog_contract(errors)
+    validate_career_weekly_report_contract(errors)
+    validate_scheduled_capability_contracts(errors)
+    validate_rnd_knowledge_sheet(errors)
+    validate_prompt_duplicate_rules(errors)
+    validate_removed_topic(errors)
+    validate_platform_layers(errors)
+    validate_control_reference_consistency(errors)
+    validate_rnd_regression_contract(errors)
+    validate_high_level_controls(errors)
+    if errors:
+        print("Second-Brain validation: FAIL")
+        for error in errors:
+            print(f"- {error}")
+        return 1
+    print("Second-Brain validation: PASS")
+    return 0
+
+
+    capabilities = [
+        "1.1 CLAW_DISCOVERY", "1.2 VERIFICATION", "1.3 DEEP_RESEARCH",
+        "1.4 EVALUATION", "1.5 KNOWLEDGE_PROMOTION", "1.6 SUPPLIER_KNOWLEDGE_INTAKE",
+    ]
+    expected_numbers = {str(i) for i in range(1, 16)}
+    for name in capabilities:
+        path = baseline.parent / name / "README.md"
+        if not path.exists():
+            fail(f"R&D capability missing: {path.relative_to(ROOT)}", errors)
+            continue
+        numbered = {}
+        for line in read_text(path).splitlines():
+            match = re.match(r"^## (\d+)\.\s+(.+)$", line.strip())
+            if match:
+                numbered[match.group(1)] = match.group(2).strip()
+        actual_numbers = set(numbered)
+        missing = sorted(expected_numbers - actual_numbers, key=int)
+        extra = sorted(actual_numbers - expected_numbers, key=int)
+        if missing:
+            fail(f"R&D capability contract missing numbered sections {missing}: {path.relative_to(ROOT)}", errors)
+        if extra:
+            fail(f"R&D capability contract has unexpected numbered sections {extra}: {path.relative_to(ROOT)}", errors)
+
+def main() -> int:
+    errors: list[str] = []
+    validate_root(errors)
+    validate_target_structure(errors)
+    active, registry_states = extract_topic_registry(errors)
+    validate_topics(active, registry_states, errors)
+    validate_forbidden_files(errors)
+    validate_removed_platform_controls(errors)
+    validate_local_references(errors)
+    validate_workstream_readmes(errors)
+    validate_csv_shape(errors)
+    validate_capabilities(errors)
+    validate_architecture_boundaries(errors)
+    validate_future_rnd_references(errors)
+    validate_rnd_capability_contract_structure(errors)
+    validate_critical_negative_paths(errors)
+    validate_validation_selftests(errors)
+    validate_authority_boundaries(errors)
     validate_career_scheduled_provenance(errors)
     validate_claw_watchdog_contract(errors)
     validate_career_weekly_watchdog_contract(errors)
