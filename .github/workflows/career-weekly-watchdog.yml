@@ -1,0 +1,59 @@
+name: Career Weekly Persistence Watchdog
+
+on:
+  schedule:
+    - cron: "0 1 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  verify-weekly-artifact:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Classify previous Monday Career weekly artifact
+        id: verify
+        shell: bash
+        run: |
+          TARGET_DATE="$(TZ=Asia/Ho_Chi_Minh date -d 'yesterday' +%F)"
+          WEEK="$(TZ=Asia/Ho_Chi_Minh date -d "$TARGET_DATE" +%G-W%V)"
+          REPORT="TOPICS/B. CAREER/2. REPORTS/${WEEK}.md"
+          echo "week=${WEEK}" >> "$GITHUB_OUTPUT"
+          echo "report=${REPORT}" >> "$GITHUB_OUTPUT"
+          if [ ! -f "$REPORT" ]; then
+            echo "artifact_state=MISSING" >> "$GITHUB_OUTPUT"
+            echo "provenance_state=NOT_VERIFIED" >> "$GITHUB_OUTPUT"
+            echo "state=MISSING" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python - "$REPORT" "$WEEK" <<'PY'
+          import os, pathlib, re, sys
+          path, week = pathlib.Path(sys.argv[1]), sys.argv[2]
+          text = path.read_text(encoding="utf-8")
+          required = [f"# Career Weekly Review — {week}", "## Execution", "## 1. Job Search", "## 2. Company Radar", "## 3. Remote / AI", "Weekly synthesis:", "Validation:"]
+          missing = [m for m in required if m not in text]
+          manual = bool(re.search(r"MANUAL\s+RECOVERY", text, re.I))
+          state = "INCOMPLETE" if missing else ("MANUAL_RECOVERY" if manual else "PRESENT_UNVERIFIED")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write(f"artifact_state={state}\nprovenance_state=NOT_VERIFIED\nstate={state}\n")
+          PY
+
+      - name: Open or reuse issue for missing/incomplete artifact
+        if: steps.verify.outputs.state == 'MISSING' || steps.verify.outputs.state == 'INCOMPLETE'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WEEK: ${{ steps.verify.outputs.week }}
+          REPORT: ${{ steps.verify.outputs.report }}
+          STATE: ${{ steps.verify.outputs.state }}
+        run: |
+          TITLE="Career weekly report ${STATE}: ${WEEK}"
+          EXISTING="$(gh issue list --state open --search "\"$TITLE\"" --json number --jq '.[0].number // empty')"
+          if [ -n "$EXISTING" ]; then exit 0; fi
+          gh issue create --title "$TITLE" --body "Independent Career persistence watchdog found **${STATE}** for ${WEEK} (Asia/Ho_Chi_Minh). Expected artifact: `${REPORT}`. This classifies repository artifact state only; it does not prove that the external Monday Career scheduler executed. Scheduler provenance remains **NOT_VERIFIED** unless independently verified from the scheduler's own execution record."
