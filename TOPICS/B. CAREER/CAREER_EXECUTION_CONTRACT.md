@@ -68,7 +68,7 @@ Every Career capability follows:
 7. Produce the declared output contract.
 8. Run the validation checklist.
 9. Escalate material uncertainty instead of inventing facts.
-10. On the weekly synthesis run, create a compact weekly run record under `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md`.
+10. On the weekly synthesis run, create/update the single compact weekly run record under `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md`. Weekly persistence is mandatory even if one or more search capabilities fail or are unavailable: continue the synthesis with the available evidence and mark affected streams `NOT_RUN` (or the applicable explicit fallback state) rather than aborting the weekly report.
 
 ### Tools
 
