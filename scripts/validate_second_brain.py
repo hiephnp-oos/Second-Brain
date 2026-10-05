@@ -492,6 +492,77 @@ def validate_architecture_boundaries(errors: list[str]) -> None:
             if fragment in text:
                 fail(f"Stale refactor path/semantic reference in {path.relative_to(ROOT)}: {fragment}", errors)
 
+
+def validate_rnd_capability_contract_structure(errors: list[str]) -> None:
+    """Fail closed on the shared R&D 15-field capability contract structure."""
+    baseline = ROOT / "TOPICS/E. RnD INNOVATION/1. CAPABILITIES/README.md"
+    if not baseline.exists():
+        fail("R&D capability baseline missing", errors)
+        return
+    text = read_text(baseline)
+    required_headings = [
+        "Identity and purpose", "Use cases", "Trigger / non-trigger",
+        "Inputs and preconditions", "Procedure", "Method selection",
+        "Tool boundary", "Evidence and uncertainty", "Output contract",
+        "Quality gates", "Handoffs", "Human gate", "Failure and stop conditions",
+        "Persistence boundary", "Examples and tests",
+    ]
+    for heading in required_headings:
+        if heading not in text:
+            fail(f"R&D capability baseline missing required field definition: {heading}", errors)
+    for name in [
+        "1.1 CLAW_DISCOVERY", "1.2 VERIFICATION", "1.3 DEEP_RESEARCH",
+        "1.4 EVALUATION", "1.5 KNOWLEDGE_PROMOTION", "1.6 SUPPLIER_KNOWLEDGE_INTAKE",
+    ]:
+        path = baseline.parent / name / "README.md"
+        if not path.exists():
+            continue
+        headings = [line[3:].strip() for line in read_text(path).splitlines() if line.startswith("## ")]
+        numbered = [h for h in headings if re.match(r"^\d+\.\s", h)]
+        if len(numbered) < 15:
+            fail(f"R&D capability contract has fewer than 15 numbered contract sections: {path.relative_to(ROOT)}", errors)
+
+def validate_critical_negative_paths(errors: list[str]) -> None:
+    """Protect repository states known to have caused real regressions."""
+    for rel in [
+        Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/staging"),
+        Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/batches"),
+        Path("TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/staging"),
+        Path("TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/batches"),
+        Path("TOPICS/B. CAREER/2. REPORTS/2.1 WEEKLY"),
+        Path("TOPICS/3. CONSTRUCTION"),
+    ]:
+        if (ROOT / rel).exists():
+            fail(f"Critical retired path must remain absent: {rel}", errors)
+
+def validate_validation_selftests(errors: list[str]) -> None:
+    """Ensure validator self-tests and dispatch guard exist."""
+    for rel in [Path("scripts/tests/test_validator_dispatch.py"), Path("scripts/tests/test_validator_contracts.py")]:
+        if not (ROOT / rel).exists():
+            fail(f"Validator self-test missing: {rel}", errors)
+
+def validate_authority_boundaries(errors: list[str]) -> None:
+    checks = {
+        Path("SYSTEM CORE/WORKFLOW.md"): [
+            "Canonical repository invariants are defined in `SYSTEM CORE/REPOSITORY_CONTRACT.md`.",
+            "Every GitHub mutation that changes repository content must follow:",
+            "Run the repository validator against the complete intended target state before publishing it.",
+        ],
+        Path("SYSTEM CORE/REPOSITORY_CONTRACT.md"): [
+            "This file defines the repository invariants",
+            "the operational mutation lifecycle and detailed execution procedure are defined by `SYSTEM CORE/WORKFLOW.md`",
+            "A repository mutation is complete only when:",
+        ],
+    }
+    for rel, phrases in checks.items():
+        path = ROOT / rel
+        if not path.exists():
+            continue
+        text = read_text(path)
+        for phrase in phrases:
+            if phrase not in text:
+                fail(f"Canonical authority boundary missing in {rel}: {phrase}", errors)
+
 def validate_future_rnd_references(errors: list[str]) -> None:
     for rel in [
         Path("TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/02_SoL-Pi Reference Architecture.md"),
