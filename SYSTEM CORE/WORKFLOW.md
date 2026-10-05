@@ -336,7 +336,16 @@ Synchronize README, registry, references, workflow, and other dependent layers. 
 
 ### PRE-FLIGHT
 
-Run the repository validator against the complete intended target state before publishing it. Do not publish a known-invalid intermediate state to `main`.
+Run the repository validator against the complete intended target state before publishing it. Before editing a contract, validator, workflow, or other structurally controlled artifact, inspect the validator rules that govern the affected paths/invariants and treat them as part of the target-state contract. Do not publish a known-invalid intermediate state to `main`.
+
+For structural changes, pre-flight must establish:
+1. the affected validator functions/rules;
+2. the exact required and forbidden states they enforce;
+3. the intended target state against those rules;
+4. the complete branch diff before PR creation;
+5. a validator run from the complete target state.
+
+A validator failure is a contract mismatch to investigate and fix before merge; it is not evidence that the validator can be ignored or that the intended change is invalid without inspection of the specific failing rule.
 
 ### ATOMIC CHANGE
 
