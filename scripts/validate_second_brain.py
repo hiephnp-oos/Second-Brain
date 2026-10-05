@@ -909,21 +909,6 @@ def main() -> int:
     return 0
 
 
-if __name__ == "__main__":
-    sys.exit(main())    for field in [
-        "Identity and purpose", "Use cases", "Trigger / non-trigger",
-        "Inputs and preconditions", "Procedure", "Method selection",
-        "Tool boundary", "Evidence and uncertainty", "Output contract",
-        "Quality gates", "Handoffs", "Human gate",
-        "Failure and stop conditions", "Persistence boundary", "Examples and tests",
-    ]:
-        if field not in baseline_text:
-            fail(f"R&D capability baseline missing contract field definition: {field}", errors)
-
-    for field in required_baseline_fields:
-        if field not in baseline_text:
-            fail(f"R&D capability baseline missing contract field definition: {field}", errors)
-
     capabilities = [
         "1.1 CLAW_DISCOVERY", "1.2 VERIFICATION", "1.3 DEEP_RESEARCH",
         "1.4 EVALUATION", "1.5 KNOWLEDGE_PROMOTION", "1.6 SUPPLIER_KNOWLEDGE_INTAKE",
