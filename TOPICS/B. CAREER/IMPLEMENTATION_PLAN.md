@@ -33,19 +33,19 @@ Every operational or business rule has one canonical owner. Other documents refe
 ## Summary Model
 2. REPORTS/CAREER_SUMMARY.md is mandatory historical decision memory. It contains three master tables, Explicit Exclusions, and Reusable Lessons. It is not an archive; Git history remains the archive.
 
-AI owns discovery, evidence, matching, Suggest Action, deduplication and proposed lessons. User owns Action / Decision, Reason, and authoritative baseline changes.
+AI owns discovery, evidence, matching, Suggest Action, deduplication and proposed lessons. User owns Decision, Reason, and authoritative baseline changes.
 
 Existing user decisions must survive automated merges unless the user explicitly changes them. Previously reviewed opportunities are not resurfaced unless material evidence or status changes.
 
 ## Output Contracts
 ### Job Search
-Job Title | Date Found | Week Found | Company | Location | Job URL | Salary | Matching Score | Status | Key Missing Skills | Suggest Action | Action | Reason
+Job Title | Date Found | Week Found | Company | Location | Job URL | Salary | Matching Score | Status | Key Missing Skills | Suggest Action | Decision | Reason
 
 ### Company Radar
-Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Action | Reason
+Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Decision | Reason
 
 ### Remote / AI
-Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Suggest Action | Action | Reason
+Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Suggest Action | Decision | Reason
 
 Rows must be decision-ready. Company Radar must never imply a vacancy without evidence.
 
