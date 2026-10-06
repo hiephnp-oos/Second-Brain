@@ -27,7 +27,7 @@ Existing user `Action` / `Reason` values must not be silently overwritten.
 `Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Decision | Reason`
 
 ### Remote / AI
-`Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Suggest Action | Decision | Reason`
+`Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Schedule Fit | Suggest Action | Decision | Reason`
 
 Use explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` when applicable.
 
