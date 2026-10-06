@@ -98,10 +98,10 @@ jobs:
           EXISTING="$(gh issue list --state open --search "\"$TITLE\"" --json number --jq '.[0].number // empty')"
           if [ -n "$EXISTING" ]; then exit 0; fi
           BODY=$(cat <<EOF
-Independent Career persistence watchdog found **${STATE}** for ${WEEK} (Asia/Ho_Chi_Minh).
-Expected artifact: ${REPORT}
-This classifies repository artifact state only; it does not prove that the external Monday Career scheduler executed.
-Scheduler provenance remains **NOT_VERIFIED** unless independently verified from the scheduler's own execution record.
-EOF
+          Independent Career persistence watchdog found **${STATE}** for ${WEEK} (Asia/Ho_Chi_Minh).
+          Expected artifact: ${REPORT}
+          This classifies repository artifact state only; it does not prove that the external Monday Career scheduler executed.
+          Scheduler provenance remains **NOT_VERIFIED** unless independently verified from the scheduler's own execution record.
+          EOF
           )
           gh issue create --title "$TITLE" --body "$BODY"
