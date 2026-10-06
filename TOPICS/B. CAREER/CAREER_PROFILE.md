@@ -94,6 +94,15 @@ These categories can change when new evidence appears.
 - Distinguish mandatory requirements from preferred requirements and unknowns.
 - Distinguish company opportunity signals from confirmed vacancies.
 - For remote side work, verify synchronous hours, timezone, expected weekly hours, and deliverable model.
+- Within local manufacturing searches, prioritize engineering-level Quality/NPI/Supplier/Project Quality roles over generic QC/QM roles when both are available.
+- Treat compensation below 20M VND/month as normally below the local manufacturing working floor for Da Nang/Quang Nam, unless exceptional conditions are explicit.
+- Treat unknown salary or incomplete JD as a verification state rather than an automatic rejection when core role fit is strong.
+- Treat manufacturing expansion signals as leading indicators for future Quality/Industrialization demand, not as implied vacancies.
+- Rank Company Radar signals by manufacturing relevance, scale/capex, hiring proximity and geography.
+- For remote/AI searches, prioritize engineering-domain AI evaluation, CAD SME and technical engineering review over generic AI annotation.
+- For remote side work, use approximately 6–12 h/week as the default workload target; higher workload requires sufficient value to justify the deviation.
+- Before prioritizing remote/AI work, verify Vietnam eligibility, weekly hours, timezone/synchronous requirements, and compensation/deliverable model.
+- **Historical Search Deduplication (mandatory):** Before every new Career search, read the latest `CAREER_SUMMARY.md` and the recent weekly reports/tracker. Do not resurface previously reviewed opportunities unless there is material new evidence or a status change (for example: a previously closed role becomes active, salary/JD changes materially, a repost has materially different requirements, or a prior VERIFY decision gains new evidence).
 
 ## Maintenance Rule
 
