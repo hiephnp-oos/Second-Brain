@@ -16,7 +16,8 @@
 
 - **Review date:** 2026-10-01 (user-confirmed)
 - **User decision:** PROCEED — selected for further work. ([decision source](https://github.com/hiephnp-oos/Second-Brain/blob/main/TOPICS/E.%20RnD%20INNOVATION/2.%20WORKSTREAMS/2.2%20IDEA_REVIEW/03-hiep-everglow-self-healing-finish/IDEA_REVIEW_2026-09-29.md))
-- **Discovery origin:** 2026-09-24, Tech Push; PERSONAL_RESEARCH daily record: 2026-09-24.md.
+- **Discovery origin:** 2026-09-24 C-02 — Self-Healing Shower Trim Surface; Tech Push; PERSONAL_RESEARCH daily record: 2026-09-24.md.
+- **User status:** **KEEP** — already advanced into IDEA_REVIEW; this is the retained candidate from the 2026-09-24 discovery record.
 - **Existing IDEA_REVIEW status:** VALID — KEEP (2026-09-29).
 - **Scope:** Idea validity only; feasibility was not assessed.
 - **Core concept:** Transfer self-healing polymer/topcoat technology to exposed faucet/handshower/accessory finishes to recover some minor surface damage and maintain premium appearance.
@@ -34,6 +35,15 @@
 - **Duplicate basis:** Both candidates target the same product outcome — indicating when a shower filter needs replacement/maintenance instead of relying only on a fixed replacement interval. C-30-01 adds flow/differential-pressure sensing and condition-based estimation, but this is an implementation refinement within the same candidate direction, not a sufficiently distinct product outcome or architecture to retain a separate idea.
 - **Scope:** Close C-30-01 as a separate candidate. Preserve the 2026-09-30 research record as supporting evidence for the broader filter-life/maintenance direction.
 - **Source:** 2.1 PERSONAL_RESEARCH/2026-09-30.md, RS-12 C-30-01; matched prior candidate: 2.1 PERSONAL_RESEARCH/2026-09-25.md, RS-12 C-04.
+
+### 2026-09-25 C-04 — Filter-Life Indicator
+
+- **Review date:** 2026-10-06 (user-confirmed status clarification)
+- **User decision:** **KEEP** — this idea has already entered the IDEA_REVIEW workstream and should remain the retained candidate rather than being treated as DROP.
+- **Discovery origin:** 2026-09-25 C-04 — Filter-Life Indicator; PERSONAL_RESEARCH daily record: 2026-09-25.md.
+- **IDEA_REVIEW record:** TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.2 IDEA_REVIEW/05-hiep-filter-heath-indicator/Followup_2026-10-05.md.
+- **Relation to C-30-01:** C-30-01 (2026-09-30) is **DUPLICATE** of this candidate. Its flow/differential-pressure condition-based approach remains supporting evidence for this retained direction.
+- **Scope:** KEEP refers to the human-reviewed candidate status; it does not by itself validate technical feasibility, IP or commercial success.
 
 ### C-01-01 — Tạm dừng vòi sen theo trạng thái đặt tay sen (PAUSA)
 
@@ -77,6 +87,7 @@
 - 2026-10-06: Added user-confirmed DROP decisions for C-33-01 (residual-drip/nozzle-pin retention; insufficient pain point and existing shut-off/drainage solutions) and C-34-01 (hydraulic-driven nozzle/pin descaling; same direction as 2026-09-25 C-03). Both retain direct provenance links to their daily research records.
 - 2026-10-06: Added user-confirmed DROP decisions for C-35-01, C-35-02, C-36-01 and C-36-02 with evidence-calibrated rationales. C-35-01/C-36-01 are closed because direct self-cleaning/remediation has clearer user value than added monitoring while consumer transfer/value remain unresolved; C-35-02 is closed as disproportionate QA/service complexity without a fitting-level consumer outcome; C-36-02 is closed specifically for insufficient DELTA, without claiming the serviceability landscape is fully saturated.
 - 2026-10-06: Reclassified **C-30-01** as **DUPLICATE** of **2026-09-25 C-04 — Filter-Life Indicator** after user review. C-30-01 remains useful as supporting evidence for the broader filter-life/maintenance direction, but is no longer treated as a separate candidate.
+- 2026-10-06: Clarified retained **KEEP** status for two candidates already advanced into IDEA_REVIEW: **2026-09-24 C-02 — Self-Healing Shower Trim Surface** (represented by C-24-02 / EverGlow) and **2026-09-25 C-04 — Filter-Life Indicator**. C-30-01 remains DUPLICATE of C-04.
 
 
 ### 2026-10-06 — Batch review: ADTD Claw candidates 2026-09-20 to 2026-09-28
