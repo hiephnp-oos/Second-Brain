@@ -35,7 +35,7 @@ Use `../../CAREER_PROFILE.md` as the single career baseline.
 
 Use the established compact table format:
 
-`Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Action | Reason`
+`Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Decision | Reason`
 
 ## Cadence
 
