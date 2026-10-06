@@ -101,7 +101,22 @@
 - **Next boundary:** evaluate self-retracting hose architecture as the primary variant rather than closing the broader hose-management problem.
 - **Source:** 2026-09-21.md, RS-12 C-01.
 
+### C-21-09-02 / C-23-09-02 — Pressure-Triggered Self-Backflushing Shower Inlet Screen
+
+- **Review date:** 2026-10-06 (user-confirmed status)
+- **User decision:** **COMBINE & WATCH** — merge the 2026-09-21 C-02 and 2026-09-23 C-02 into one retained direction.
+- **Discovery origins:** 2026-09-21 C-02 — Pressure-Triggered Self-Backflushing Shower Inlet Screen; 2026-09-23 C-02 — Pressure-Triggered Self-Cleaning Shower Inlet Screen.
+- **Combined concept:** an inlet screen/filter with a bypass or secondary flow path. As fouling increases the pressure differential across the screen, the ΔP condition triggers a passive cleaning path that redirects flow to create reverse-flow shear/pushing across the screen, dislodging accumulated debris. After ΔP falls, the system automatically returns to the normal filtration flow path.
+- **Retained elements from 2026-09-21:** bypass / secondary flow path; backflushing; automatic return to normal flow.
+- **Added emphasis from 2026-09-23:** ΔP as trigger; passive mechanism; no electronics; no user operation; cleaning path generates the force to push/cut debris from the screen.
+- **Problem:** inlet-screen fouling increases pressure loss and can reduce flow, requiring manual cleaning.
+- **Evidence boundary:** differential-pressure-triggered self-cleaning/backflush is evidenced in adjacent filtration applications; compact shower-scale implementation and actual effectiveness remain UNKNOWN.
+- **Key unknowns:** available shower ΔP/flow, trigger threshold, cleaning flow/pressure loss, debris discharge path, backflow/hygiene behavior, package size, sealing, durability and potable-water compliance.
+- **Next boundary:** retain as one WATCH candidate; do not treat the combined mechanism as technically validated or novel. Future work should focus on shower-scale transfer and measurable cleaning benefit.
+- **Source:** 2026-09-21.md and 2026-09-23.md, RS-12 C-02 / TP-02.
+
 ## Update log
+- 2026-10-06: Combined **2026-09-21 C-02** and **2026-09-23 C-02** into one **WATCH** candidate: Pressure-Triggered Self-Backflushing Shower Inlet Screen. Preserved the bypass/backflush/auto-return architecture and added ΔP-trigger/passive/no-electronics/no-user-action emphasis.
 - 2026-10-06: Added user-confirmed **WATCH** decisions for 2026-09-20 C-04 (Ultrasonic Anti-Fouling Shower Module; explore with AS/Solex change-face) and 2026-09-21 C-01 (Self-Centering Hose Parking Dock; explore self-retracting hose architecture).
 
 - 2026-10-01: Initial memory created from user's review of ADTD Claw outputs dated 2026-09-29, 2026-09-30 and 2026-10-01. Two candidates selected to proceed: C-24-02 and C-30-01. C-01-01 dropped after deep analysis; PR #75 not merged.
