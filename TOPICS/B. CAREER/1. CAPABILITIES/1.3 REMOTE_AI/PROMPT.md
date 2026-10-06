@@ -62,7 +62,7 @@ The score is a screening aid, not an automatic decision. Apply hard blockers sep
 
 Use:
 
-`Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Suggest Action | Action | Reason`
+`Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Suggest Action | Decision | Reason`
 
 Allowed `Verified`: `VERIFIED` | `PARTIAL` | `UNKNOWN`.
 
