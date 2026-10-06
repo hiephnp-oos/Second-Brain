@@ -115,7 +115,22 @@
 - **Next boundary:** retain as one WATCH candidate; do not treat the combined mechanism as technically validated or novel. Future work should focus on shower-scale transfer and measurable cleaning benefit.
 - **Source:** 2026-09-21.md and 2026-09-23.md, RS-12 C-02 / TP-02.
 
+### C-24-09-03 / C-26-09-01 — Pressure-Adaptive Coanda Spray Network
+
+- **Review date:** 2026-10-06 (user-confirmed status)
+- **User decision:** **COMBINE & WATCH** — merge 2026-09-24 C-03 Coanda Pressure-Adaptive Spray Routing with 2026-09-26 C-01 Low-Pressure Wide-Range Spray Network.
+- **Discovery origins:** 2026-09-24 C-03 and 2026-09-26 C-01.
+- **Combined concept:** a spray-distribution network using proposed Coanda-guided flow paths that can change routing as inlet pressure changes, with the objective of maintaining spray coverage and feel across a wider pressure range.
+- **Low-pressure concept behavior:** Coanda-guided flow remains attached to a surface and preferentially feeds spray paths that can sustain useful flow, aiming for broader distribution and maintained coverage rather than weak concentrated jets.
+- **High-pressure concept behavior:** flow reaches a proposed separation condition, changes path/zone and redistributes flow, aiming to avoid excessive spray intensity or uneven coverage.
+- **Problem:** low/variable pressure can produce weak spray and poor coverage; pressure changes can alter spray behavior and user-perceived consistency.
+- **Evidence boundary:** the low-pressure spray problem is a valid engineering/product target; the proposed Coanda-based pressure-dependent routing behavior and its stability over a practical shower pressure range remain UNKNOWN/PROPOSED.
+- **Key unknowns:** whether a stable passive Coanda/separation transition can be designed at shower scale; pressure threshold repeatability; flow-rate and pressure-loss impact; nozzle/geometry sensitivity; scale/contamination effects; manufacturing tolerance; spray quality and user-perceived benefit.
+- **Next boundary:** retain as one WATCH candidate. Validate the physical mechanism and measurable spray-performance DELTA before treating the architecture as a product-level solution.
+- **Source:** 2026-09-24 and 2026-09-26 daily research records; RS-12 convergence records.
+
 ## Update log
+- 2026-10-06: Combined **2026-09-24 C-03** and **2026-09-26 C-01** into one **WATCH** direction: Pressure-Adaptive Coanda Spray Network. The low-pressure coverage problem is retained; Coanda pressure-dependent routing remains PROPOSED/UNKNOWN pending physical validation.
 - 2026-10-06: Combined **2026-09-21 C-02** and **2026-09-23 C-02** into one **WATCH** candidate: Pressure-Triggered Self-Backflushing Shower Inlet Screen. Preserved the bypass/backflush/auto-return architecture and added ΔP-trigger/passive/no-electronics/no-user-action emphasis.
 - 2026-10-06: Added user-confirmed **WATCH** decisions for 2026-09-20 C-04 (Ultrasonic Anti-Fouling Shower Module; explore with AS/Solex change-face) and 2026-09-21 C-01 (Self-Centering Hose Parking Dock; explore self-retracting hose architecture).
 
