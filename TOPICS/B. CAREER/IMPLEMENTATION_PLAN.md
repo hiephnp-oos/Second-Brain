@@ -45,7 +45,7 @@ Job Title | Date Found | Week Found | Company | Location | Job URL | Salary | Ma
 Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Decision | Reason
 
 ### Remote / AI
-Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Suggest Action | Decision | Reason
+Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Schedule Fit | Suggest Action | Decision | Reason
 
 Rows must be decision-ready. Company Radar must never imply a vacancy without evidence.
 
@@ -80,7 +80,7 @@ Weekly persistence remains mandatory even if a capability fails; use NOT_RUN / f
 ### Phase 3 — Capability Contracts
 - Job Search: 13-column decision-ready table.
 - Company Radar: 10-column signal/decision table.
-- Remote / AI: 14-column decision-ready table.
+- Remote / AI: 15-column decision-ready table including Schedule Fit.
 - Remove obsolete schema references.
 
 ### Phase 4 — Execution Contract
