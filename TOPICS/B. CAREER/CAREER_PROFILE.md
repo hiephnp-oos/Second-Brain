@@ -102,6 +102,7 @@ These categories can change when new evidence appears.
 - For remote/AI searches, prioritize engineering-domain AI evaluation, CAD SME and technical engineering review over generic AI annotation.
 - For remote side work, use approximately 6–12 h/week as the default workload target; higher workload requires sufficient value to justify the deviation.
 - Before prioritizing remote/AI work, verify Vietnam eligibility, weekly hours, timezone/synchronous requirements, and compensation/deliverable model.
+- **Historical Search Deduplication (mandatory):** Before every new Career search, read the latest `CAREER_SUMMARY.md` and the recent weekly reports/tracker. Do not resurface previously reviewed opportunities unless there is material new evidence or a status change (for example: a previously closed role becomes active, salary/JD changes materially, a repost has materially different requirements, or a prior VERIFY decision gains new evidence).
 
 ## Maintenance Rule
 
