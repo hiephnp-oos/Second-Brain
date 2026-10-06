@@ -35,7 +35,7 @@ Use `../../CAREER_PROFILE.md` as the single career baseline.
 
 Use the established compact table format:
 
-`Priority | Company | Location | Signal | Signal Strength | Evidence / Source | Relevant Role Potential | Salary / Market Signal | Fit to Career Profile | Risk / Uncertainty | Recommended Action | Direct Link | Verified`
+`Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Action | Reason`
 
 ## Cadence
 
