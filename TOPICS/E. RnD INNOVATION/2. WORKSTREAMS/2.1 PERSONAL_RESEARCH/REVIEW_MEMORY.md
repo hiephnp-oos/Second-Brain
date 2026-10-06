@@ -27,14 +27,13 @@
 
 ### C-30-01 — Chỉ báo bảo dưỡng theo tình trạng cho bộ lọc xử lý nước vòi sen
 
-- **Review date:** 2026-10-01 (user-confirmed)
-- **User decision:** PROCEED — selected for further work. ([decision source](https://github.com/hiephnp-oos/Second-Brain/blob/main/TOPICS/E.%20RnD%20INNOVATION/2.%20WORKSTREAMS/2.1%20PERSONAL_RESEARCH/2026-09-30.md))
-- **Discovery disposition:** WATCH (2026-09-30); retain this status as the discovery/evidence status. User selection to proceed is a separate decision and does not validate feasibility.
-- **Core concept:** Use measured flow and differential pressure trends to estimate filter condition and indicate maintenance, rather than relying only on a fixed replacement interval.
-- **Meaningful DELTA to investigate:** Condition-based maintenance versus time-based replacement, with measurable improvement in replacement timing and/or avoidance of unexpected flow degradation.
-- **Key unknowns:** Sensor cost, calibration across filter media and water conditions, reliability, maintenance burden, transferability to target shower architecture, and whether user value justifies added complexity.
-- **Next boundary:** Targeted research/initial evaluation only; define target filter architecture and measurable comparison before any feasibility claim.
-- **Source:** 2.1 PERSONAL_RESEARCH/2026-09-30.md, RS-12 C-30-01.
+- **Review date:** 2026-10-06 (user-confirmed reclassification)
+- **User decision:** **DUPLICATE** — trùng với **2026-09-25 C-04 — Filter-Life Indicator**, đã được user review trước đó. ([decision source](https://github.com/hiephnp-oos/Second-Brain/blob/main/TOPICS/E.%20RnD%20INNOVATION/2.%20WORKSTREAMS/2.1%20PERSONAL_RESEARCH/2026-09-25.md))
+- **Discovery disposition:** WATCH (2026-09-30) remains the original discovery status; the human review decision is now DUPLICATE.
+- **Matched prior candidate:** **2026-09-25 C-04 — Filter-Life Indicator**.
+- **Duplicate basis:** Both candidates target the same product outcome — indicating when a shower filter needs replacement/maintenance instead of relying only on a fixed replacement interval. C-30-01 adds flow/differential-pressure sensing and condition-based estimation, but this is an implementation refinement within the same candidate direction, not a sufficiently distinct product outcome or architecture to retain a separate idea.
+- **Scope:** Close C-30-01 as a separate candidate. Preserve the 2026-09-30 research record as supporting evidence for the broader filter-life/maintenance direction.
+- **Source:** 2.1 PERSONAL_RESEARCH/2026-09-30.md, RS-12 C-30-01; matched prior candidate: 2.1 PERSONAL_RESEARCH/2026-09-25.md, RS-12 C-04.
 
 ### C-01-01 — Tạm dừng vòi sen theo trạng thái đặt tay sen (PAUSA)
 
@@ -77,6 +76,7 @@
 - 2026-10-06: C-32-01 changed to **DROP** after targeted commercial landscape research found direct precedents from Amphiro, Oras Hydractiva Digital and HANSA ACTIVEJET Digital. User-decision rows in the 2026-10-06 batch were updated to carry direct hyperlinks to their decision/source records.
 - 2026-10-06: Added user-confirmed DROP decisions for C-33-01 (residual-drip/nozzle-pin retention; insufficient pain point and existing shut-off/drainage solutions) and C-34-01 (hydraulic-driven nozzle/pin descaling; same direction as 2026-09-25 C-03). Both retain direct provenance links to their daily research records.
 - 2026-10-06: Added user-confirmed DROP decisions for C-35-01, C-35-02, C-36-01 and C-36-02 with evidence-calibrated rationales. C-35-01/C-36-01 are closed because direct self-cleaning/remediation has clearer user value than added monitoring while consumer transfer/value remain unresolved; C-35-02 is closed as disproportionate QA/service complexity without a fitting-level consumer outcome; C-36-02 is closed specifically for insufficient DELTA, without claiming the serviceability landscape is fully saturated.
+- 2026-10-06: Reclassified **C-30-01** as **DUPLICATE** of **2026-09-25 C-04 — Filter-Life Indicator** after user review. C-30-01 remains useful as supporting evidence for the broader filter-life/maintenance direction, but is no longer treated as a separate candidate.
 
 
 ### 2026-10-06 — Batch review: ADTD Claw candidates 2026-09-20 to 2026-09-28
