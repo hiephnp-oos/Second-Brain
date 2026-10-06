@@ -28,13 +28,14 @@ Detect companies with meaningful expansion, entry, facility, investment, hiring,
 3. Separate signal strength from confirmed vacancy.
 4. Estimate relevant role potential without inventing an opening.
 5. Apply explicit company exclusions.
-6. Produce the standard company-radar output table.
+6. Merge new/materially changed records into `CAREER_SUMMARY.md` while preserving existing user `Action` / `Reason`.
+7. Produce the standard company-radar output table.
 
 ## Output Contract
 
 Use these fields exactly:
 
-`Priority | Company | Location | Signal | Signal Strength | Evidence / Source | Relevant Role Potential | Salary / Market Signal | Fit to Career Profile | Risk / Uncertainty | Recommended Action | Direct Link | Verified`
+`Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Action | Reason`
 
 Allowed `Signal Strength`: `STRONG` | `MEDIUM` | `WEAK` | `UNKNOWN`.
 
