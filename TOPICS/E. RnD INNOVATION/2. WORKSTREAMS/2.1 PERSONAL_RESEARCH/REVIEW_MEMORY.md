@@ -79,7 +79,30 @@
 - **Sources:** [Amphiro](https://www.amphiro.com/about); [Oras Hydractiva Digital](https://www.oras.com/en/oras-hydractiva-digital); [Oras Digital Hand Shower App](https://www.oras.com/en/digital-hand-shower-app); [HANSA ACTIVEJET Digital](https://www.hansa.com/en/products/84310180/hand-shower-bluetooth); [HANSA Digital Hand Shower App](https://www.hansa.com/en/digital-hand-shower-app).
 
 
+### C-20-09-04 — Ultrasonic Anti-Fouling Shower Module
+
+- **Review date:** 2026-10-06 (user-confirmed status)
+- **User decision:** **WATCH** — retain the direction for further exploration, especially in combination with an **AS / Solex change-face** concept to open additional user/product benefits and differentiation from existing AS products.
+- **Discovery origin:** 2026-09-20 C-04 — Ultrasonic Anti-Fouling Shower Module.
+- **Core concept:** integrate an ultrasonic/piezoelectric anti-fouling module into the showerhead/spray face to generate high-frequency excitation around the nozzle area and potentially reduce mineral-scale/fouling adhesion.
+- **Current evidence boundary:** ultrasonic cleaning/fouling control is evidenced at adjacent/industrial applications; actual effectiveness against mineral scale under domestic shower conditions remains UNKNOWN.
+- **Key unknowns:** shower-scale effectiveness, power source, waterproofing, cost, durability and practical integration.
+- **Next boundary:** explore the combined change-face direction and its potential user benefits/differentiation before treating the ultrasonic mechanism as a validated product solution.
+- **Source:** 2026-09-20.md, RS-12 C-04.
+
+### C-21-09-01 — Self-Centering Hose Parking Dock
+
+- **Review date:** 2026-10-06 (user-confirmed status)
+- **User decision:** **WATCH** — retain the hose-management direction, with the preferred alternative architecture being a **Self-Retracting Handshower Hose Dock**.
+- **Discovery origin:** 2026-09-21 C-01 — Self-Centering Hose Parking Dock.
+- **Core concept:** control the parked/neutral hose path so the hose remains predictable and outside the user's body path.
+- **Preferred direction:** when the handshower is pulled out, the system releases only the required hose length; when the handshower is returned, excess hose retracts so only a short necessary section remains visible/loose.
+- **Current evidence boundary:** the hose interference/parking pain point is evidenced and the original self-centering architecture is proposed; the self-retracting architecture remains PROPOSED and requires mechanism, packaging, durability and user-operation validation.
+- **Next boundary:** evaluate self-retracting hose architecture as the primary variant rather than closing the broader hose-management problem.
+- **Source:** 2026-09-21.md, RS-12 C-01.
+
 ## Update log
+- 2026-10-06: Added user-confirmed **WATCH** decisions for 2026-09-20 C-04 (Ultrasonic Anti-Fouling Shower Module; explore with AS/Solex change-face) and 2026-09-21 C-01 (Self-Centering Hose Parking Dock; explore self-retracting hose architecture).
 
 - 2026-10-01: Initial memory created from user's review of ADTD Claw outputs dated 2026-09-29, 2026-09-30 and 2026-10-01. Two candidates selected to proceed: C-24-02 and C-30-01. C-01-01 dropped after deep analysis; PR #75 not merged.
 - 2026-10-02: Added user-confirmed WATCH decision for C-32-01. Preserved its discovery classification as a technical enabler, not a validated product idea; next step is limited targeted research only.
