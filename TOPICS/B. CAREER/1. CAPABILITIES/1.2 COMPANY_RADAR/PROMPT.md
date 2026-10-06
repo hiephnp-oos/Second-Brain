@@ -35,7 +35,7 @@ Detect companies with meaningful expansion, entry, facility, investment, hiring,
 
 Use these fields exactly:
 
-`Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Action | Reason`
+`Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Decision | Reason`
 
 Allowed `Signal Strength`: `STRONG` | `MEDIUM` | `WEAK` | `UNKNOWN`.
 
