@@ -70,6 +70,12 @@ After the three tables, include only:
 - ...
 ```
 
+## User Feedback
+
+Use the `## User Review` section at the end of each weekly report for user feedback on opportunities, priorities, false positives/negatives, duplicates, evidence quality, and recommended changes.
+
+Feedback is an input to the Career Feedback Loop. Repeated or material patterns follow `Observe → Identify Gap → Propose Change → Human Verify → Promote`; do not silently convert a single comment into a durable rule.
+
 ## Routing
 
 - State: **Operational**
