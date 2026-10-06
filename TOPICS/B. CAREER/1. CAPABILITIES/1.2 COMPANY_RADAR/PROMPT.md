@@ -28,7 +28,7 @@ Detect companies with meaningful expansion, entry, facility, investment, hiring,
 3. Separate signal strength from confirmed vacancy.
 4. Estimate relevant role potential without inventing an opening.
 5. Apply explicit company exclusions.
-6. Merge new/materially changed records into `CAREER_SUMMARY.md` while preserving existing user `Action` / `Reason`.
+6. Merge new/materially changed records into `CAREER_SUMMARY.md` while preserving existing user `Decision` / `Reason`.
 7. Produce the standard company-radar output table.
 
 ## Output Contract
