@@ -28,7 +28,8 @@ Discover and evaluate remote full-time and remote side-work opportunities using 
 2. Evaluate domain fit, AI leverage, deliverable fit, remote feasibility, engagement model, compensation, schedule, communication requirements, and bridgeable skill gaps.
 3. Distinguish side-work from full-time feasibility.
 4. Verify material opportunity details.
-5. Produce an actionable output while keeping transient records external.
+5. Merge new/materially changed records into `CAREER_SUMMARY.md` while preserving existing user `Decision` / `Reason`.
+6. Produce an actionable output while keeping transient records external.
 
 ## Search Categories
 
