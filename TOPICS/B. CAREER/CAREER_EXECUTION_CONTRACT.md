@@ -64,7 +64,7 @@ Every Career capability follows:
 3. Discover current external evidence.
 4. Apply workstream-specific matching/radar logic.
 5. Verify material claims.
-6. Deduplicate against `CAREER_SUMMARY.md` and preserve prior user `Action` / `Reason` unless explicitly changed.
+6. Deduplicate against `CAREER_SUMMARY.md` and preserve prior user `Decision` / `Reason` unless explicitly changed.
 7. Produce the declared current-cycle output contract.
 8. Merge new/materially changed records into `CAREER_SUMMARY.md` without overwriting user decisions.
 9. Run the validation checklist.
