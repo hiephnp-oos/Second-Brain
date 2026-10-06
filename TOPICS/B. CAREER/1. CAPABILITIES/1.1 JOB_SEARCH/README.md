@@ -55,7 +55,7 @@ A high match does not override a hard blocker. A missing preferred skill does no
 
 Use the established compact table format:
 
-`Priority | Matching (%) | Job Title | Job Group | Company | Location | Employment Type | Salary | Posted | Status | CV Fit / Evidence | Gaps / Risks | Location Fit | Recommended Action | Direct Link | Verified`
+`Job Title | Date Found | Week Found | Company | Location | Job URL | Salary | Matching Score | Status | Key Missing Skills | Suggest Action | Action | Reason`
 
 Keep the table decision-oriented. Avoid unnecessary narrative outside the fields needed to act.
 
