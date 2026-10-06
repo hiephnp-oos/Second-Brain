@@ -21,20 +21,20 @@ Existing user `Action` / `Reason` values must not be silently overwritten.
 
 ## Weekly Output Schemas
 ### Job Search
-`Job Title | Date Found | Week Found | Company | Location | Job URL | Salary | Matching Score | Status | Key Missing Skills | Suggest Action | Action | Reason`
+`Job Title | Date Found | Week Found | Company | Location | Job URL | Salary | Matching Score | Status | Key Missing Skills | Suggest Action | Decision | Reason`
 
 ### Company Radar
-`Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Action | Reason`
+`Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Decision | Reason`
 
 ### Remote / AI
-`Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Suggest Action | Action | Reason`
+`Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Suggest Action | Decision | Reason`
 
 Use explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` when applicable.
 
 ## Summary Contract
 `CAREER_SUMMARY.md` contains three master tables, `Explicit Exclusions`, and `Reusable Lessons`.
 
-User-owned: `Action` / `Decision`, `Reason`.
+User-owned: `Decision`, `Reason`.
 AI-owned: discovery, evidence, matching, `Suggest Action`, deduplication, proposed lessons.
 
 AI must not fabricate a user decision.
