@@ -8,7 +8,7 @@ Detect companies with meaningful expansion, entry, facility, investment, hiring,
 
 - Career Profile
 - Current company/market evidence
-- Prior radar state when available
++ `../../2. REPORTS/CAREER_SUMMARY.md` (mandatory historical decision memory)
 - Current user instruction
 
 ## Search Tool Routing
@@ -28,17 +28,16 @@ Detect companies with meaningful expansion, entry, facility, investment, hiring,
 3. Separate signal strength from confirmed vacancy.
 4. Estimate relevant role potential without inventing an opening.
 5. Apply explicit company exclusions.
-6. Produce the standard company-radar output table.
+6. Merge new/materially changed records into `CAREER_SUMMARY.md` while preserving existing user `Decision` / `Reason`.
+7. Produce the standard company-radar output table.
 
 ## Output Contract
 
 Use these fields exactly:
 
-`Priority | Company | Location | Signal | Signal Strength | Evidence / Source | Relevant Role Potential | Salary / Market Signal | Fit to Career Profile | Risk / Uncertainty | Recommended Action | Direct Link | Verified`
+`Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Decision | Reason`
 
-Allowed `Signal Strength`: `STRONG` | `MEDIUM` | `WEAK` | `UNKNOWN`.
 
-Allowed `Verified`: `VERIFIED` | `PARTIAL` | `UNKNOWN`.
 
 ## Rules
 

@@ -1,85 +1,58 @@
-# Career Summary — W39–W41
+# Career Summary
 
 ## Purpose
 
-Consolidate Career evidence from 2026-W39, W40 and W41 into one decision-oriented review. The objective is to identify reusable search rules rather than repeat weekly findings.
+Master historical decision memory for Career. This file is the canonical Summary artifact for the Career topic and is mandatory input before every new search. Every new search reads this file before discovery. New or materially changed results are merged after verification.
 
-Review streams:
-1. Job Search
-2. Company Radar
-3. Remote / AI
-
-Decision categories follow `CAREER_PROFILE.md`.
+This is not a job archive.
 
 ## 1. Job Search
 
-| Consolidated opportunity / pattern | W39–W41 evidence | Decision | Reason |
-|---|---|---|---|
-| LTD Material Fab — Quality Engineer | W39 REVIEW; W40 88% APPLY/PRIORITIZE; W41 88% APPLY/PRIORITIZE. Da Nang, manufacturing quality, PCS, 8D/5Why/PDCA, auditing, process risk. | **APPLY / PRIORITIZE** | Repeated strong fit across 3 weeks. Location is ideal. Salary is the main unresolved item, not a demonstrated fit blocker. |
-| Quốc Quang — Quality Engineer / QE | W40 84% CONSIDER/VERIFY; W41 86% APPLY/PRIORITIZE. NPI quality, customer quality, FMEA, problem solving; Da Nang/Quang Nam. | **APPLY / PRIORITIZE** | Strong and repeatedly confirmed alignment with Quality/NPI target. Chinese is not established as a mandatory blocker in the available evidence; verify before rejection. |
-| Cẩm Hà — Quality Management | W41 78% CONSIDER/VERIFY; local Quang Nam manufacturing. | **CONSIDER / VERIFY** | Relevant local signal, but full JD and engineer-level scope are not sufficiently verified. Do not prioritize until role scope is confirmed. |
-| CADIVI — Process Improvement | W39 REVIEW; 16–18M VND, below the >20M local working floor. | **REJECT / LOW PRIORITY** | Compensation is below the established manufacturing floor unless an exceptional condition changes the economics. |
-| Generic local QC/QM listings | Repeated lower-quality/local listings compared with LTD Material Fab and Quốc Quang. | **DEPRIORITIZE** | Search should favor engineering-level Quality/NPI/Project Quality roles over generic QC/QM roles when stronger matches exist. |
-
-### Job Search learning
-
-- Quality remains the strongest local search lane.
-- Manufacturing Quality, NPI Quality, Supplier Quality/SQE and Project Quality should be differentiated from generic QC/QM.
-- Salary below 20M VND is normally a hard economic filter for Da Nang/Quang Nam manufacturing roles unless the user explicitly changes the rule.
-- Unknown salary remains **VERIFY**, not automatic rejection, when role fit is strong.
-- Preferred skills should not become blockers unless explicitly mandatory.
+| Job Title | Date Found | Week Found | Company | Location | Job URL | Salary | Matching Score | Status | Key Missing Skills | Suggest Action | Decision | Reason |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Quality Engineer | 2026-09-17 | 2026-W39 | LTD Material Fab | Da Nang | https://vn.joboko.com/viec-lam-quality-engineer-xvi6711412 | Undisclosed | 88 | Active / deadline 2026-10-17 | Salary/details need confirmation | Verify and apply if still open | APPLY / PRIORITIZE | Repeated strong fit across W39–W41; location is ideal; salary is the main unresolved item. |
+| Kỹ Sư Chất Lượng QE | 2026-09-17 | 2026-W40 | Công ty TNHH Điện khí Quốc Quang | Da Nang / Quang Nam | https://realjobs.vn/student/candidatejobdetail/ky-su-chat-luong-qe-quality-engineer-nhan-viec-ngay/2878 | Thỏa thuận | 86 | Active / deadline 2026-10-17 | Salary and selection requirements need verification | Verify and prioritize application | APPLY / PRIORITIZE | Strong and repeatedly confirmed alignment with Quality/NPI target. |
+| Nhân Viên Quản Lý Chất Lượng | 2026-10-05 | 2026-W41 | Công ty Cổ phần Cẩm Hà | Quang Nam | https://vieclamnhamay.vn/tim-viec-dien-ban-tai-quang-nam-k7d507 | Undisclosed | 78 | Active / deadline 2026-10-09 | Full JD/salary need verification | Inspect JD; apply if engineer-level/relevant | CONSIDER / VERIFY | Relevant local signal, but full JD and engineer-level scope need confirmation. |
+| Chuyên Viên Tối Ưu Quy Trình | 2026-09-21 | 2026-W39 | CADIVI Miền Trung | Da Nang | — | 16–18M VND | — | Historical | Below local manufacturing floor | Verify only if compensation exception exists | REJECT / LOW PRIORITY | Compensation is below the established >20M VND local manufacturing floor. |
 
 ## 2. Company Radar
 
-| Company / signal | W39–W41 evidence | Decision | Reason |
-|---|---|---|---|
-| HS Hyosung Quang Nam / Da Nang | W39 medium signal; W40 and W41 strong signal. US$100M, 11 ha BCF yarn/carpet plant, phase 1 targeted Q4 2027, future manufacturing jobs expected. | **MONITOR / HIGH PRIORITY RADAR** | Strong manufacturing expansion directly aligned with Quality/Industrialization. It is a leading indicator, not a confirmed vacancy. |
-| Mingyang Smart Energy | W41 medium signal; wind-turbine nacelle manufacturing project under study, target ~180 units/year and >160 workers. | **MONITOR** | Relevant manufacturing/engineering signal, but project is still under study and hiring is not confirmed. |
-| Suntory PepsiCo / Điện Nam–Điện Ngọc | W39 strong expansion signal; new factory inaugurated, additional capacity planned. | **MONITOR** | Strong manufacturing footprint and relevant future Quality/Engineering demand, but no confirmed target vacancy in the reviewed evidence. |
-| Tam Anh Industrial Zone / Chu Lai Float Glass | W39 strong expansion signal. | **MONITOR / SECONDARY** | Relevant manufacturing expansion, but evidence-to-vacancy linkage is weaker than HS Hyosung. |
-| Mikazuki Phase 2 | W40 medium project-expansion signal. | **LOW PRIORITY** | Project-management relevance exists, but it is materially less aligned with the user's core manufacturing Quality/Industrialization lane. |
-
-### Company Radar learning
-
-- Radar should prioritize **manufacturing expansion → likely future Quality/Industrialization demand**, not generic company news.
-- Separate radar signals from vacancies; never convert a company signal into an implied open role.
-- Rank radar companies by: manufacturing relevance + scale/capex + hiring proximity + geography.
-- HS Hyosung is currently the clearest local leading indicator.
-- Construction/hospitality expansion should remain secondary unless it produces a role matching Project Management/Engineering strongly.
+| Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Decision | Reason |
+|---|---|---|---|---|---|---|---|---|---|
+| HS Hyosung Quang Nam / Da Nang | Manufacturing / A | US$100M plant groundbreaking — 2026-09-29 | 11 ha BCF yarn/carpet plant; phase 1 targeted Q4 2027 | Future Quality/Industrialization/Project Quality demand plausible; no vacancy confirmed | — | 2026-10-06 | Monitor hiring and prepare | MONITOR / HIGH PRIORITY RADAR | Strong manufacturing expansion directly aligned with Quality/Industrialization; leading indicator, not vacancy. |
+| Mingyang Smart Energy | Renewable manufacturing / A | Wind-turbine nacelle project under study — 2026-09-09 | Target ~180 units/year and >160 workers | Future engineering/manufacturing/quality demand plausible | — | 2026-10-06 | Monitor approval and hiring | MONITOR | Relevant manufacturing/engineering signal, but project and hiring are not confirmed. |
+| Suntory PepsiCo / Điện Nam–Điện Ngọc | Manufacturing / A | New factory / capacity expansion — W39 | New factory inaugurated; additional capacity planned | Future Quality/Engineering demand plausible | — | 2026-09-28 | Monitor hiring | MONITOR | Strong manufacturing footprint but no confirmed target vacancy in reviewed evidence. |
+| Tam Anh Industrial Zone / Chu Lai Float Glass | Manufacturing / B | Manufacturing expansion — W39 | Strong expansion signal | Future Quality/Engineering demand possible | — | 2026-09-28 | Monitor | MONITOR / SECONDARY | Relevant manufacturing expansion but weaker evidence-to-vacancy linkage than HS Hyosung. |
+| Mikazuki Phase 2 | Hospitality / B | Phase 2 project expansion — W40 | New hotel/villa project | Project-management/technical roles possible | — | 2026-10-05 | Monitor only | LOW PRIORITY | Less aligned with core manufacturing Quality/Industrialization lane. |
 
 ## 3. Remote / AI
 
-| Consolidated opportunity / pattern | W39–W41 evidence | Decision | Reason |
-|---|---|---|---|
-| OpenTrain AI — Mechanical Design AI Evaluation Engineer | W40 82%; W41 91%. US$40–90/hr, part-time, mechanical design/CAD/engineering reasoning. | **APPLY / PRIORITIZE — VERIFY TERMS** | Strongest recurring remote fit. It directly monetizes existing engineering/CAD expertise rather than requiring a career pivot. Verify Vietnam eligibility and actual weekly workload. |
-| RemoWork / RemoExperts — CAD Expert | W41 89%. US$80–150/hr, remote global contractor. | **APPLY / PRIORITIZE — VERIFY TERMS** | Very strong CAD/mechanical-design/DFM fit and attractive economics. Main uncertainty is eligibility/workload, not capability fit. |
-| YO AI Labs — AutoCAD Expert Remote | W40 86%. CAD + manufacturing + AI-evaluation overlap. | **CONSIDER / VERIFY** | Strong capability fit but listing/location mirrors create uncertainty about actual Vietnam eligibility and engagement terms. |
-| Recruitment Room — AI Evaluator / Shopping Assistant | W40 66%, Vietnam included, US$40/hr. | **SECONDARY / VERIFY** | Explicit geography and reasonable QA/evaluation fit, but weak domain alignment versus engineering/CAD AI evaluation. |
-| Generic AI evaluator / technical-writing opportunities | W39 evidence included several remote AI opportunities with unclear geography, scope or compensation. | **SECONDARY / FILTER HARD** | AI side work is useful only when it has credible terms and leverages engineering expertise; generic annotation should not displace stronger engineering-domain opportunities. |
+| Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Schedule Fit | Suggest Action | Decision | Reason |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Mechanical Design AI Evaluation Engineer | 2026-10-02 | 2026-W40 | AI evaluation / CAD SME | OpenTrain AI | Remote; Vietnam eligibility to confirm | https://www.opentrain.ai/jobs/mechanical-design-ai-evaluation-engineer--cmur9yaje000h06pb1accmche/ | US$40–90/hr | 91 | Active | Vietnam eligibility; ~15 h/week may exceed baseline | Above baseline / verify | Verify eligibility and workload | APPLY / PRIORITIZE — VERIFY TERMS | Strongest recurring remote fit; directly monetizes engineering/CAD expertise. |
+| CAD Expert | 2026-10-02 | 2026-W41 | AI training / CAD SME | RemoWork / RemoExperts | Remote Global | https://remowork.life/jobs/6abf9e68d2f3bde811bd7aa4/cad-expert | US$80–150/hr | 89 | Active | Eligibility/workload/application conditions | Unknown / verify | Verify eligibility and workload | APPLY / PRIORITIZE — VERIFY TERMS | Very strong CAD/mechanical-design/DFM fit; main uncertainty is eligibility/workload. |
+| AutoCAD Expert - Remote | 2026-10-02 | 2026-W40 | AI evaluation / CAD SME | YO AI Labs | Remote; Vietnam eligibility to confirm | https://remote.expertini.com/job/vn/autocad-expert-remote-hanoi-yo-ai-labs-637895875796600613/ | Undisclosed | 86 | Active | Vietnam eligibility; hours/terms | Unknown / verify | Verify eligibility, hours and compensation | CONSIDER / VERIFY | Strong capability fit but listing/location mirrors create uncertainty. |
+| AI Evaluator — Shopping Assistant | 2026-09-14 | 2026-W40 | AI evaluation / QA | Recruitment Room | Remote APAC; Vietnam included | https://jobs.pitchnhire.com/recruitmentroom.net/ai-evaluator-shopping-assistant-8CHjY-clone-jqhrU/019f603b-32ee-79e6-bce3-4519000feedd | US$40/hr | 66 | Active | Less engineering-domain specific; workload unknown | Unknown / verify | Verify workload and task availability | SECONDARY / VERIFY | Explicit Vietnam eligibility and reasonable QA fit, but weaker domain alignment than engineering/CAD AI evaluation. |
 
-### Remote / AI learning
+## Explicit Exclusions
 
-- Remote/AI is now a legitimate secondary career lane, specifically **engineering-domain AI evaluation / CAD SME work**.
-- Prioritize domain-specific AI evaluation over generic AI annotation.
-- Target side work should normally fit approximately **6–12 h/week** unless the opportunity is sufficiently valuable to justify more.
-- Verify four items before applying: Vietnam eligibility, weekly hours, timezone/synchronous requirements, and compensation/deliverable model.
-- High hourly rate alone is insufficient if workload or eligibility is unclear.
+- Premo Vietnam — exclude unless user explicitly changes the decision.
+- LIXIL Vietnam — exclude unless user explicitly changes the decision.
+- GGEC — exclude unless user explicitly changes the decision.
+- UAC — exclude unless user explicitly changes the decision.
 
-## Cross-Stream Decisions to Carry Forward
+This is a compact derived fast-read view; CAREER_PROFILE.md remains the canonical owner of stable exclusions.
 
-1. **Primary local lane:** Quality Engineering, especially Manufacturing Quality / NPI Quality / Supplier Quality / Project Quality.
-2. **Secondary local lane:** Project Management / Assistant PM / Engineering roles where manufacturing or technical context is credible.
-3. **Remote growth lane:** Engineering-domain AI evaluation, CAD SME and technical engineering review.
-4. **Economic filter:** Da Nang/Quang Nam manufacturing roles below 20M VND/month are normally rejected/deprioritized unless exceptional conditions are explicit.
-5. **Evidence filter:** Unknown salary or incomplete JD is a verification state, not an automatic rejection, when core fit is strong.
-6. **Company Radar:** Track manufacturing expansions as leading indicators; do not treat them as vacancies.
-7. **Remote verification:** Eligibility + workload + timezone + compensation must be verified before prioritization.
-8. **Search quality:** Prefer engineering-level roles over generic QC/annotation roles when both are available.
+## Reusable Lessons
 
-## Proposed CAREER_PROFILE.md Changes
+- Local manufacturing Quality / NPI / Supplier / Project Quality remains the strongest primary lane.
+- Engineering-level roles are preferred over generic QC/annotation roles when fit is comparable.
+- Unknown salary/incomplete JD is verification, not automatic rejection when core fit is strong.
+- Company Radar signals are leading indicators, not confirmed vacancies.
+- Remote AI evaluation is strongest when it directly leverages engineering/CAD/manufacturing expertise.
+- Remote opportunities require explicit verification of Vietnam eligibility, workload, timezone/synchronous requirements, and compensation/deliverable model.
+- Repeated user decisions should be promoted to Profile only after human review.
 
-The durable rules above should be incorporated into `CAREER_PROFILE.md`. Individual companies, job URLs, weekly statuses and transient market signals should remain in reports/tracker and should not be added to the canonical profile.
+## Maintenance
 
-## Review Scope
-
-Review these three sections and, specifically, the proposed decisions/reasons. If accepted, this PR becomes the consolidated learning input for future Career searches.
+Preserve user Decision / Reason unless explicitly changed. Do not silently promote one-off decisions into durable rules. Keep this file compact for fast pre-search reading.

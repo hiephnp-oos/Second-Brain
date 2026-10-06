@@ -51,11 +51,11 @@ Trading and manufacturing environments are both acceptable.
 
 ### Implementation Plan
 
-`TOPICS/B. CAREER/IMPLEMENTATION_PLAN.md` defines the business goal, target state, implementation phases, output contracts, matching principles, master-scheduler cadence, and database trigger.
+`TOPICS/B. CAREER/IMPLEMENTATION_PLAN.md` defines the Career flow-refactor target state, migration phases, ownership model, and acceptance criteria; it is not a production business-rule source.
 
 ### Weekly Run Records
 
-`TOPICS/B. CAREER/2. REPORTS/README.md` defines one weekly report file containing exactly three separate tables (Job Search, Company Radar, Remote / AI), each using its capability's output schema, followed by concise quality observations and user-review items. No per-capability weekly report files are created.
+`TOPICS/B. CAREER/2. REPORTS/README.md` defines weekly and Summary persistence. `CAREER_SUMMARY.md` is the master decision memory; weekly files are current-cycle review artifacts.
 
 ### Job Search
 
@@ -114,7 +114,7 @@ Use `CAREER_PROFILE.md` for cross-workstream criteria, `CAREER_EXECUTION_CONTRAC
 
 ## Next
 
-Run the master scheduler against real market data, capture output-quality failures, evaluate each capability using the shared validation model, and promote only repeated, material improvements. Review the database trigger only after real usage generates sufficient volume or query complexity.
+Complete the Career flow refactor, then synchronize the external master scheduler to the merged contract. Validate the next real cycle against Search → Deduplicate → Merge → User Review → Reuse.
 
 
 ## Child Folder Order

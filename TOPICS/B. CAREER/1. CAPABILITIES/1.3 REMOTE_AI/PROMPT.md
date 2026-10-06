@@ -9,7 +9,7 @@ Discover and evaluate remote full-time and remote side-work opportunities using 
 - Career Profile
 - Current remote/AI market evidence
 - User availability baseline when applicable
-- Prior cycle state when available
+- `../../2. REPORTS/CAREER_SUMMARY.md` (mandatory historical decision memory)
 - Current user instruction
 
 ## Search Tool Routing
@@ -28,7 +28,8 @@ Discover and evaluate remote full-time and remote side-work opportunities using 
 2. Evaluate domain fit, AI leverage, deliverable fit, remote feasibility, engagement model, compensation, schedule, communication requirements, and bridgeable skill gaps.
 3. Distinguish side-work from full-time feasibility.
 4. Verify material opportunity details.
-5. Produce an actionable output while keeping transient records external.
+5. Merge new/materially changed records into `CAREER_SUMMARY.md` while preserving existing user `Decision` / `Reason`.
+6. Produce an actionable output while keeping transient records external.
 
 ## Search Categories
 
@@ -62,9 +63,8 @@ The score is a screening aid, not an automatic decision. Apply hard blockers sep
 
 Use:
 
-`Priority | Matching (%) | Job / Project Title | Work Type | Platform / Company | Location / Remote Scope | Engagement | Budget / Salary | Posted | Status | CV / Capability Fit | Gaps / Risks | Schedule Fit | Recommended Action | Direct Link | Verified`
+`Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Schedule Fit | Suggest Action | Decision | Reason`
 
-Allowed `Verified`: `VERIFIED` | `PARTIAL` | `UNKNOWN`.
 
 ## Rules
 
@@ -89,7 +89,7 @@ Before output, check:
 - material compensation/eligibility claims are evidenced;
 - AI/domain fit is grounded in the Career Profile;
 - gaps are labelled rather than filled by inference;
-- every row follows the exact 16-column output contract shared with the README and weekly report;
+- every row follows the exact 15-column output contract shared with the README and weekly report;
 - verification state is explicit.
 
 If validation fails, correct the output or return the appropriate fallback state instead of reporting success.
