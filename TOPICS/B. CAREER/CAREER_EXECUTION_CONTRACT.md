@@ -52,10 +52,9 @@ Every Career capability follows:
 
 - `TOPICS/B. CAREER/CAREER_PROFILE.md`
 - Relevant workstream README.
-- `TOPICS/B. CAREER/IMPLEMENTATION_PLAN.md`
 - Current external market evidence.
-- Previous cycle output when available for freshness/deduplication.
-- `TOPICS/B. CAREER/2. REPORTS/CAREER_SUMMARY.md` — mandatory historical decision/learning input before every new Career search.
+- Previous cycle output only when needed for freshness/provenance.
+- `TOPICS/B. CAREER/2. REPORTS/CAREER_SUMMARY.md` — mandatory historical decision memory before every new Career search.
 - Current user instruction overrides older durable context.
 
 ### Process
@@ -65,9 +64,10 @@ Every Career capability follows:
 3. Discover current external evidence.
 4. Apply workstream-specific matching/radar logic.
 5. Verify material claims.
-6. Deduplicate against the available prior cycle state.
-7. Produce the declared output contract.
-8. Run the validation checklist.
+6. Deduplicate against `CAREER_SUMMARY.md` and preserve prior user `Action` / `Reason` unless explicitly changed.
+7. Produce the declared current-cycle output contract.
+8. Merge new/materially changed records into `CAREER_SUMMARY.md` without overwriting user decisions.
+9. Run the validation checklist.
 9. Escalate material uncertainty instead of inventing facts.
 10. On the weekly synthesis run, create/update the single compact weekly run record under `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md`. Weekly persistence is mandatory even if one or more search capabilities fail or are unavailable: continue the synthesis with the available evidence and mark affected streams `NOT_RUN` (or the applicable explicit fallback state) rather than aborting the weekly report.
 
