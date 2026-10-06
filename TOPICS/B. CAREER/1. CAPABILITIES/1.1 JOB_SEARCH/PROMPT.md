@@ -8,7 +8,7 @@ Discover and evaluate current local/full-time roles using the canonical Career P
 
 - Career Profile
 - Current web/job-market evidence
-- Prior cycle state when available
+- `../../2. REPORTS/CAREER_SUMMARY.md` (mandatory historical decision memory)
 - Current user instruction
 
 ## Search Tool Routing
@@ -34,7 +34,7 @@ Discover and evaluate current local/full-time roles using the canonical Career P
 
 Use these fields exactly:
 
-`Priority | Matching (%) | Job Title | Job Group | Company | Location | Employment Type | Salary | Posted | Status | CV Fit / Evidence | Gaps / Risks | Location Fit | Recommended Action | Direct Link | Verified`
+`Job Title | Date Found | Week Found | Company | Location | Job URL | Salary | Matching Score | Status | Key Missing Skills | Suggest Action | Action | Reason`
 
 Allowed `Verified` states: `VERIFIED` | `PARTIAL` | `UNKNOWN`.
 
