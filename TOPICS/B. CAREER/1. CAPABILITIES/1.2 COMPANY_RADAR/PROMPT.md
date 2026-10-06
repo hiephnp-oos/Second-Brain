@@ -8,7 +8,7 @@ Detect companies with meaningful expansion, entry, facility, investment, hiring,
 
 - Career Profile
 - Current company/market evidence
-- Prior radar state when available
++ `../../2. REPORTS/CAREER_SUMMARY.md` (mandatory historical decision memory)
 - Current user instruction
 
 ## Search Tool Routing
@@ -37,9 +37,7 @@ Use these fields exactly:
 
 `Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Decision | Reason`
 
-Allowed `Signal Strength`: `STRONG` | `MEDIUM` | `WEAK` | `UNKNOWN`.
 
-Allowed `Verified`: `VERIFIED` | `PARTIAL` | `UNKNOWN`.
 
 ## Rules
 
