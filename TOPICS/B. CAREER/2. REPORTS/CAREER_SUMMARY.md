@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Master historical decision memory for Career. Every new search reads this file before discovery. New or materially changed results are merged after verification.
+Master historical decision memory for Career. This file is the canonical Summary artifact for the Career topic and is mandatory input before every new search. Every new search reads this file before discovery. New or materially changed results are merged after verification.
 
 This is not a job archive.
 
