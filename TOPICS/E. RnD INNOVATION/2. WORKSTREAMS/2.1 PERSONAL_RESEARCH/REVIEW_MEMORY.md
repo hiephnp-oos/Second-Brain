@@ -15,7 +15,7 @@
 ### C-24-02 — EverGlow™ Self-Healing Finish
 
 - **Review date:** 2026-10-01 (user-confirmed)
-- **User decision:** PROCEED — selected for further work.
+- **User decision:** PROCEED — selected for further work. ([decision source](https://github.com/hiephnp-oos/Second-Brain/blob/main/TOPICS/E.%20RnD%20INNOVATION/2.%20WORKSTREAMS/2.2%20IDEA_REVIEW/03-hiep-everglow-self-healing-finish/IDEA_REVIEW_2026-09-29.md))
 - **Discovery origin:** 2026-09-24, Tech Push; PERSONAL_RESEARCH daily record: 2026-09-24.md.
 - **Existing IDEA_REVIEW status:** VALID — KEEP (2026-09-29).
 - **Scope:** Idea validity only; feasibility was not assessed.
@@ -28,7 +28,7 @@
 ### C-30-01 — Chỉ báo bảo dưỡng theo tình trạng cho bộ lọc xử lý nước vòi sen
 
 - **Review date:** 2026-10-01 (user-confirmed)
-- **User decision:** PROCEED — selected for further work.
+- **User decision:** PROCEED — selected for further work. ([decision source](https://github.com/hiephnp-oos/Second-Brain/blob/main/TOPICS/E.%20RnD%20INNOVATION/2.%20WORKSTREAMS/2.1%20PERSONAL_RESEARCH/2026-09-30.md))
 - **Discovery disposition:** WATCH (2026-09-30); retain this status as the discovery/evidence status. User selection to proceed is a separate decision and does not validate feasibility.
 - **Core concept:** Use measured flow and differential pressure trends to estimate filter condition and indicate maintenance, rather than relying only on a fixed replacement interval.
 - **Meaningful DELTA to investigate:** Condition-based maintenance versus time-based replacement, with measurable improvement in replacement timing and/or avoidance of unexpected flow degradation.
@@ -39,7 +39,7 @@
 ### C-01-01 — Tạm dừng vòi sen theo trạng thái đặt tay sen (PAUSA)
 
 - **Review date:** 2026-10-01 (user-confirmed)
-- **User decision:** DROP — deep analysis không tạo được khác biệt thực chất so với PAUSA và các tiền lệ gần.
+- **User decision:** DROP — deep analysis không tạo được khác biệt thực chất so với PAUSA và các tiền lệ gần. ([decision source](https://github.com/hiephnp-oos/Second-Brain/blob/main/TOPICS/E.%20RnD%20INNOVATION/2.%20WORKSTREAMS/2.1%20PERSONAL_RESEARCH/2026-10-01.md))
 - **Discovery disposition:** DROP as a standalone new product idea. Keep PAUSA and related prior art as reference baselines; do not reopen by superficial variation.
 - **Core rejected mechanism:** Docking/placing the handshower triggers automatic pause or flow reduction; removing it resumes flow.
 - **Deep-analysis finding:** Changing Hall sensing to a mechanical plunger, changing dock form, partial pause/trickle, or adding feedback/Eco behavior did not establish sufficient DELTA. The analysis also identified close cradle-actuated flow-control prior art.
@@ -53,7 +53,7 @@
 ### C-32-01 — Shower Thermal Energy Awareness
 
 - **Review date:** 2026-10-02 (user-confirmed)
-- **User decision:** WATCH — giữ lại để theo dõi/nghiên cứu có giới hạn; chưa đủ mạnh để trở thành product idea, nhưng cũng chưa đủ yếu để DROP.
+- **User decision:** WATCH — giữ lại để theo dõi/nghiên cứu có giới hạn; chưa đủ mạnh để trở thành product idea, nhưng cũng chưa đủ yếu để DROP. ([decision source](https://github.com/hiephnp-oos/Second-Brain/blob/main/TOPICS/E.%20RnD%20INNOVATION/2.%20WORKSTREAMS/2.1%20PERSONAL_RESEARCH/2026-10-02.md))
 - **Discovery disposition:** WATCH (2026-10-02); preserve this status. The user decision confirms WATCH, not product validation or approval to proceed to IDEA_REVIEW.
 - **Core concept:** Estimate thermal energy per shower session from flow and temperature measurements, then provide simple user feedback.
 - **Current classification:** TECHNICAL ENABLER / WATCH — not yet a validated product idea.
@@ -63,7 +63,7 @@
 - **Source:** 2.1 PERSONAL_RESEARCH/2026-10-02.md, RS-12 C-32-01; direct user review in conversation dated 2026-10-02.
 
 - **Review date:** 2026-10-06 (user-confirmed follow-up after targeted landscape research).
-- **User decision:** **DROP** — direct commercial precedents already provide per-shower water + energy feedback, integrated display/app/history/goals, so thermal-energy feedback itself is not a sufficient new-product DELTA.
+- **User decision:** **DROP** — direct commercial precedents already provide per-shower water + energy feedback, integrated display/app/history/goals, so thermal-energy feedback itself is not a sufficient new-product DELTA. ([decision source](https://github.com/hiephnp-oos/Second-Brain/blob/main/TOPICS/E.%20RnD%20INNOVATION/2.%20WORKSTREAMS/2.1%20PERSONAL_RESEARCH/2026-10-02.md))
 - **Landscape evidence:** [Amphiro](https://www.amphiro.com/about) established real-time shower water/energy feedback and is now part of Oras Group; [Oras Hydractiva Digital](https://www.oras.com/en/oras-hydractiva-digital) provides real-time water and energy feedback, integrated display, app, goals/history and water-flow power; [HANSA ACTIVEJET Digital](https://www.hansa.com/en/products/84310180/hand-shower-bluetooth) provides the same core capability with integrated display, real-time water/energy data and app connectivity.
 - **Meaningful DELTA assessment:** The proposed chain flow + temperature sensing → thermal-energy calculation → per-session display is therefore an established commercial capability. No material DELTA was identified in the current framing.
 - **Re-entry condition:** Reopen only with a materially different user outcome, behavior mechanism or product architecture beyond “show thermal energy per shower”; examples such as actionable optimization, cost/energy personalization or deeper fitting integration remain PROPOSED and require a fresh landscape check.
