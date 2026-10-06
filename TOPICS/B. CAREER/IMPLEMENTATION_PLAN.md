@@ -58,7 +58,7 @@ Rows must be decision-ready. Company Radar must never imply a vacancy without ev
 6. Produce current-cycle output.
 7. Merge new/materially changed records into Summary while preserving user decisions.
 8. Write one ISO weekly report for the current cycle.
-9. User reviews Summary and fills/updates Action / Reason.
+9. User reviews Summary and fills/updates Decision / Reason.
 10. Future searches reuse those decisions.
 11. Promote repeated cross-stream patterns to Profile only after human approval.
 
@@ -86,7 +86,7 @@ Weekly persistence remains mandatory even if a capability fails; use NOT_RUN / f
 ### Phase 4 — Execution Contract
 - Summary is mandatory historical input.
 - Merge-to-Summary is part of normal execution.
-- Preserve Action/Reason.
+- Preserve Decision/Reason.
 - Keep weekly persistence/failure handling.
 - Remove Implementation Plan as an execution dependency.
 
