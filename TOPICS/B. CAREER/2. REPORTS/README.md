@@ -14,10 +14,10 @@ Weekly reports record current-cycle findings. `CAREER_SUMMARY.md` is the histori
 4. Merge new/materially changed records into Summary.
 5. Write the weekly report.
 6. Re-read and validate the exact path.
-7. User reviews Summary and records `Action` / `Reason`.
+7. User reviews Summary and records `Decision` / `Reason`.
 8. Future searches reuse those decisions.
 
-Existing user `Action` / `Reason` values must not be silently overwritten.
+Existing user `Decision` / `Reason` values must not be silently overwritten.
 
 ## Weekly Output Schemas
 ### Job Search
