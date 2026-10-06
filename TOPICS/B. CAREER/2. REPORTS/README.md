@@ -1,82 +1,61 @@
-# Career Weekly Review
+# Career Reports and Decision Memory
 
 ## Purpose
+Weekly reports record current-cycle findings. `CAREER_SUMMARY.md` is the historical decision memory reused by every future search. Neither is a high-volume database.
 
-Provide one weekly review artifact for the user to review the three independent Career streams. This is a review surface, not a job database or a duplicate archive.
+## Canonical Artifacts
+- `CAREER_SUMMARY.md` — master historical decision memory.
+- `YYYY-W##.md` — one current-cycle review artifact per ISO week.
 
-## Record
+## Weekly Lifecycle
+1. Search current evidence.
+2. Read `CAREER_SUMMARY.md` before discovery.
+3. Deduplicate and verify.
+4. Merge new/materially changed records into Summary.
+5. Write the weekly report.
+6. Re-read and validate the exact path.
+7. User reviews Summary and records `Action` / `Reason`.
+8. Future searches reuse those decisions.
 
-Create or update one file per ISO week: `YYYY-W##.md`, after Monday Weekly Career Synthesis.
+Existing user `Action` / `Reason` values must not be silently overwritten.
 
-## Required Review Format
+## Weekly Output Schemas
+### Job Search
+`Job Title | Date Found | Week Found | Company | Location | Job URL | Salary | Matching Score | Status | Key Missing Skills | Suggest Action | Action | Reason`
 
-Create exactly **one weekly report file per ISO week**. That single report must contain exactly three primary result tables, in this order:
+### Company Radar
+`Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Action | Reason`
 
-1. **Job Search** — use the exact 16-column schema in `1. CAPABILITIES/1.1 JOB_SEARCH/README.md`.
-2. **Company Radar** — use the exact 13-column schema in `1. CAPABILITIES/1.2 COMPANY_RADAR/README.md`.
-3. **Remote / AI** — use the exact 16-column schema in `1. CAPABILITIES/1.3 REMOTE_AI/README.md`.
+### Remote / AI
+`Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Suggest Action | Action | Reason`
 
-Copy only opportunities/signals that were actually found and reviewed in the reporting period. Preserve evidence, direct links, uncertainty and verification state. Do not compress multiple opportunities into narrative bullets or merge the three streams into one table.
+Use explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` when applicable.
 
-If a stream has no qualifying result, include one explicit status row in that stream's table (for example, `NO_MATCH` or `NO_SIGNAL`) and leave non-applicable cells as `—`. If a stream did not execute, state `NOT_RUN`; never present it as an empty successful search.
+## Summary Contract
+`CAREER_SUMMARY.md` contains three master tables, `Explicit Exclusions`, and `Reusable Lessons`.
 
-## Report Metadata and Review Notes
+User-owned: `Action` / `Decision`, `Reason`.
+AI-owned: discovery, evidence, matching, `Suggest Action`, deduplication, proposed lessons.
 
-Before the tables, include week/date range, execution dates, which streams ran, synthesis status, and report validation status.
+AI must not fabricate a user decision.
 
-After the three tables, include only:
-- Cross-stream quality observations (duplicates, evidence gaps, false accepts/rejects, stale results).
-- Proposed reusable improvements (not automatically promoted).
-- Questions requiring the user's review.
+## Historical Reports
+W39–W41 remain historical recovery evidence and are not rewritten solely for schema cosmetics. New/current reports use the refactored schema.
 
-## Persistence Rules
-
-- Keep the report concise; the three tables are the primary review artifact.
-- Create only one `YYYY-W##.md` file per ISO week. Do not create separate weekly files for individual capabilities.
-- Do not store the full search archive or duplicate the external tracker.
-- Record only evidence actually produced by the run.
-- Do not silently modify `CAREER_PROFILE.md`, capability contracts, or scheduler rules.
-- Proposed changes require human review before becoming authoritative.
-- Validate table headers against the capability README schemas before writing the weekly file.
-
-## Template
-
-```markdown
-# Career Weekly Review — YYYY-W##
-
-## Execution
-- Week:
-- Search cycles completed:
-- Job Search / Company Radar / Remote-AI status:
-- Weekly synthesis:
-- Validation:
-
-## 1. Job Search
-| [exact 16 columns from Job Search README] |
-
-## 2. Company Radar
-| [exact 13 columns from Company Radar README] |
-
-## 3. Remote / AI
-| [exact 16 columns from Remote / AI README] |
-
-## Cross-Stream Quality Observations
-- ...
-
-## Proposed Improvements
-- ...
-
-## User Review
-- ...
-```
-
-## User Feedback
-
-Use the `## User Review` section at the end of each weekly report for user feedback on opportunities, priorities, false positives/negatives, duplicates, evidence quality, and recommended changes.
-
-Feedback is an input to the Career Feedback Loop. Repeated or material patterns follow `Observe → Identify Gap → Propose Change → Human Verify → Promote`; do not silently convert a single comment into a durable rule.
+## Validation
+- Summary exists at the canonical path.
+- Weekly report exists at the expected path.
+- Declared schemas are respected.
+- Existing user decisions are preserved.
+- Exclusions are consistent with Profile.
+- No obsolete Summary path remains.
+- Missing stream execution is explicit.
+- Exact paths are re-read after write.
 
 ## Routing
-
-- State: **Operational**
-- Routing: Career master scheduler → three independent capability outputs → one weekly report containing three tables → user review → approved reusable improvement.
+Profile → stable baseline
+Execution Contract → shared lifecycle
+Capability README/PROMPT → capability logic
+CAREER_SUMMARY → historical decisions/lessons
+YYYY-W## → current-cycle evidence
+Implementation Plan → refactor roadmap only
