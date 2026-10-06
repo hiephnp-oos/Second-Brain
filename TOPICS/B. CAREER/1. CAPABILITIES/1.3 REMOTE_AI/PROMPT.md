@@ -64,7 +64,6 @@ Use:
 
 `Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Schedule Fit | Suggest Action | Decision | Reason`
 
-Allowed `Verified`: `VERIFIED` | `PARTIAL` | `UNKNOWN`.
 
 ## Rules
 
@@ -89,7 +88,7 @@ Before output, check:
 - material compensation/eligibility claims are evidenced;
 - AI/domain fit is grounded in the Career Profile;
 - gaps are labelled rather than filled by inference;
-- every row follows the exact 16-column output contract shared with the README and weekly report;
+- every row follows the exact 15-column output contract shared with the README and weekly report;
 - verification state is explicit.
 
 If validation fails, correct the output or return the appropriate fallback state instead of reporting success.
