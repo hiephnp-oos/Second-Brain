@@ -67,3 +67,50 @@
 
 - 2026-10-01: Initial memory created from user's review of ADTD Claw outputs dated 2026-09-29, 2026-09-30 and 2026-10-01. Two candidates selected to proceed: C-24-02 and C-30-01. C-01-01 dropped after deep analysis; PR #75 not merged.
 - 2026-10-02: Added user-confirmed WATCH decision for C-32-01. Preserved its discovery classification as a technical enabler, not a validated product idea; next step is limited targeted research only.
+
+
+### 2026-10-06 — Batch review: ADTD Claw candidates 2026-09-20 to 2026-09-28
+
+- **Review date:** 2026-10-06 (user-confirmed).
+- **Scope:** User-reviewed DROP decisions from the Claw candidates listed below. These decisions are reusable filters for future Claw discovery; they do not automatically reject an entire problem domain or mechanism family unless the recorded scope says so.
+
+#### User decisions
+
+| Discovery date | Candidate | User decision / lesson |
+|---|---|---|
+| 2026-09-20 | C-01 | **DROP** — magnetic dock architecture does not create sufficient differentiation versus the existing landscape to qualify as a new product. |
+| 2026-09-20 | C-02 | **DROP** — technical approach is not attractive versus simpler landscape solutions. A mechanical pin/nozzle element that protrudes/retracts to clear scale is a simpler precedent. |
+| 2026-09-20 | C-03 | **DROP** — surface/wettability design alone is insufficient differentiation to qualify as a new technology/product. |
+| 2026-09-21 | C-03 | **DROP** — no clear user pain point. |
+| 2026-09-22 | C-01 | **DROP** — low-effort snap selector does not create sufficient new-product differentiation. |
+| 2026-09-22 | C-02 | **DROP** — pressure-decoupled selector does not create sufficient new-product differentiation. |
+| 2026-09-22 | C-03 | **DROP** — self-draining/vacuum-break concept overlaps with existing cold-water/drain technologies in the landscape; Solex iDrain is a knowledge-beta reference. |
+| 2026-09-23 | C-01 | **DROP** — pressure-isolated outlet switching does not create a sufficiently differentiated new product. |
+| 2026-09-23 | C-03 | **DROP** — capillary/wettability-based drainage is not sufficiently differentiated. |
+| 2026-09-24 | C-01 | **DROP** — outside the target product scope: water-system technology rather than faucet/shower product technology. |
+| 2026-09-25 | C-01 | **DROP** — low-loss isolated outlet selector does not create sufficient differentiation. |
+| 2026-09-25 | C-02 | **DROP** — pressure-adaptive spray/nozzle is considered a spray variation, not sufficient new-product differentiation. |
+| 2026-09-26 | C-02 | **DROP** — low-aerosol is an automatic drop direction unless a materially new product architecture/outcome is identified. |
+| 2026-09-26 | C-03 | **DROP** — cold-water drainage already has multiple market technologies; Solex iDrain is a knowledge-beta reference. |
+| 2026-09-27 | C-01 | **DROP** — combining low-aerosol and low-retention is still not sufficiently differentiated; low-aerosol direction is an automatic drop unless a materially new DELTA is demonstrated. |
+| 2026-09-27 | C-02 | **DROP** — water-system application rather than the target faucet/shower product scope; C27-01 is retained only as a test/reference report. |
+| 2026-09-27 | C-03 | **DROP** — direct low-aerosol outlet is not sufficiently differentiated; low-aerosol direction is an automatic drop unless a materially new DELTA is demonstrated. |
+| 2026-09-28 | C-01 | **DROP** — uniform large-droplet spray is not sufficiently differentiated. |
+| 2026-09-28 | C-02 | **DROP** — safe-temperature delivery interface is not sufficiently differentiated. |
+| 2026-09-28 | C-03 | **DROP** — pressure-regulated droplet energy/spray behavior is not sufficiently differentiated. |
+| 2026-10-01 | C-01-01 | **DROP** — already recorded above; PAUSA/manual pause landscape resolves the pain point better, and predictive temperature restart is not sufficiently feasible. |
+
+#### Reusable lessons for future Claw discovery
+
+1. **New-product differentiation is a primary gate.** A technically interesting mechanism is not enough. If the concept remains only a different geometry, spray pattern, surface treatment, operating-force reduction, or minor valve architecture without a materially different user outcome/product architecture, prefer DROP.
+2. **Pain-point existence is a hard gate.** If a candidate has no concrete user/product pain point, DROP rather than generating a technology-first idea around it.
+3. **Check landscape before elevating a mechanism to product idea.** If the same user outcome is already solved by a simpler, more robust or more direct commercial mechanism, the candidate needs a genuine DELTA to survive.
+4. **Prefer product-domain relevance.** Water-system technologies outside the faucet/shower product boundary should be filtered out unless the project scope explicitly expands.
+5. **Treat low-aerosol as a low-value default direction.** Do not continue low-aerosol concepts as independent product ideas unless a materially new architecture, user outcome or application-specific DELTA is demonstrated.
+6. **Do not overvalue technical novelty without user value.** A new way of producing a spray, controlling pressure, changing droplet behavior, or draining water is not automatically a new product.
+7. **Before revisiting a DROP, require a material DELTA.** The DELTA should be in user outcome, physical capability, product architecture, or application; superficial geometry/material/sensor/name changes do not reopen the candidate.
+8. **Landscape simplicity matters.** When a candidate requires a complex active mechanism but a simple passive/mechanical solution already addresses the same pain point, the complex concept should normally be dropped unless it provides a clearly superior outcome.
+9. **Knowledge references can close a direction.** Existing knowledge such as Solex iDrain can be used as a baseline precedent; absence of a new DELTA is sufficient to stop further discovery in that direction.
+
+- **Source:** User review supplied on 2026-10-06; pasted review table attached to the conversation.
+- **Next boundary:** Future RS-12/Claw convergence should read these lessons before proposing or re-proposing candidates. Do not automatically suppress an entire technology family when a future candidate demonstrates a material DELTA.
