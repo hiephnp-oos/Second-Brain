@@ -1,267 +1,134 @@
-# Career Orchestrator Implementation Plan
+# Career Flow Refactor — Implementation Plan
 
-## Business Goal
+## Objective
+Refactor Career into one simple lifecycle without a new database, runtime, or rule layer:
+SEARCH → DEDUPLICATE / VERIFY → WEEKLY OUTPUT → MERGE INTO CAREER_SUMMARY → USER REVIEW → DECISION + REASON → REUSE
 
-Build a recurring Career Opportunity System that discovers, evaluates, tracks, and learns from three parallel opportunity streams:
+## Problems Being Fixed
+- Weekly search, historical state and user review are not one lifecycle.
+- CAREER_SUMMARY.md is referenced but absent.
+- Rules and schemas are repeated across Profile, Contract, capability READMEs/PROMPTs and Implementation Plan.
+- Weekly tables do not directly optimize the user decision.
+- Historical decisions are not in one compact master decision memory.
+- Company Radar is a signal workflow; Job Search and Remote / AI are opportunity workflows.
+- Durable rules, decisions, exclusions and transient results are mixed.
+- External scheduler can drift if it owns duplicated business rules.
 
-1. `JOB_SEARCH` — local/full-time roles.
-2. `COMPANY_RADAR` — companies entering, expanding, or hiring in the target geography.
-3. `REMOTE_AI` — remote/full-time and remote contract, part-time, freelance, or AI-enabled opportunities.
+## Target Ownership
+| Layer | Owns | Does not own |
+|---|---|---|
+| CAREER_PROFILE.md | Stable user baseline, priorities, constraints, durable exclusions | Search procedure/schema |
+| CAREER_EXECUTION_CONTRACT.md | Shared lifecycle, invariants, validation, escalation | Role-specific rules |
+| Capability README | Capability scope, business rules, output contract | Full execution prompt |
+| Capability PROMPT | Execution procedure | Repository-wide rules |
+| 2. REPORTS/README.md | Weekly/Summary persistence contract | Matching logic |
+| CAREER_SUMMARY.md | Historical records, user decisions, reasons, exclusions fast-read, lessons | Search procedure/profile |
+| IMPLEMENTATION_PLAN.md | Architecture, migration, acceptance, status | Production business rules |
+| SYSTEM CORE | Repository-wide mechanics | Career rules |
+| External scheduler | Trigger | Career business logic |
 
-Second-Brain stores durable profile, rules, decisions, exclusions, workflow context, and lightweight weekly run records. High-volume opportunity records remain external until scale demonstrates that a searchable database is required.
+### Single Owner Rule
+Every operational or business rule has one canonical owner. Other documents reference it rather than redefining it. Any fast-read derived view is explicitly non-authoritative.
 
-## Target State
+## Summary Model
+2. REPORTS/CAREER_SUMMARY.md is mandatory historical decision memory. It contains three master tables, Explicit Exclusions, and Reusable Lessons. It is not an archive; Git history remains the archive.
 
-```text
-                         CAREER PROFILE
-                               │
-              ┌────────────────┼────────────────┐
-              ▼                ▼                ▼
-         JOB SEARCH      COMPANY RADAR       REMOTE / AI
-              │                │                │
-              └────────────────┼────────────────┘
-                               ▼
-                     DISCOVERY + EVIDENCE
-                               ▼
-                      MATCHING + DECISION
-                               ▼
-                       EXTERNAL TRACKING
-                               ▼
-                         USER DECISION
-                               ▼
-                       FEEDBACK / LEARNING
-                               └──────► PROFILE / RULES
-```
+AI owns discovery, evidence, matching, Suggest Action, deduplication and proposed lessons. User owns Action / Decision, Reason, and authoritative baseline changes.
 
-The three workstreams remain logically independent. Scheduling is an execution layer only.
+Existing user decisions must survive automated merges unless the user explicitly changes them. Previously reviewed opportunities are not resurfaced unless material evidence or status changes.
 
-## Capability / Skill Pilot Layer
+## Output Contracts
+### Job Search
+Job Title | Date Found | Week Found | Company | Location | Job URL | Salary | Matching Score | Status | Key Missing Skills | Suggest Action | Action | Reason
 
-Career is the first pilot for the Second-Brain Capability/Skill execution pattern.
+### Company Radar
+Company | Industry / Tier | Signal / Date | Evidence | Hiring Outlook | Decision Maker | Last Verified | Next Action | Action | Reason
 
-Each capability is defined by a separate execution contract:
-- `JOB_SEARCH/PROMPT.md`
-- `COMPANY_RADAR/PROMPT.md`
-- `REMOTE_AI/PROMPT.md`
+### Remote / AI
+Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Suggest Action | Action | Reason
 
-The shared execution and evaluation rules are defined in `CAREER_EXECUTION_CONTRACT.md`.
+Rows must be decision-ready. Company Radar must never imply a vacancy without evidence.
 
-The master scheduler triggers capabilities; it does not contain their business logic.
+## Weekly Lifecycle
+1. Load Profile.
+2. Load Summary before discovery.
+3. Load recent weekly evidence only when needed.
+4. Execute capability.
+5. Deduplicate and verify.
+6. Produce current-cycle output.
+7. Merge new/materially changed records into Summary while preserving user decisions.
+8. Write one ISO weekly report for the current cycle.
+9. User reviews Summary and fills/updates Action / Reason.
+10. Future searches reuse those decisions.
+11. Promote repeated cross-stream patterns to Profile only after human approval.
 
-### Production Prompt Reliability Layer
-
-The Career pilot also validates a production-oriented prompt pattern for future Second-Brain Skills:
-
-- Keep capability instructions modular; the scheduler remains orchestration only.
-- Use concrete operational rules instead of generic personas.
-- Define explicit input/context and output contracts.
-- Use explicit enums/status states where structured output benefits from them.
-- Define explicit fallback states for no-match and insufficient-evidence conditions.
-- Re-inject critical invariants before high-impact actions in multi-turn execution.
-- Perform a compact self-validation before reporting output.
-- Treat self-validation as an execution guard, not as a replacement for deterministic repository validation or human approval.
-- Prefer positive output invariants over long negative-prohibition lists.
-- Do not promote empirical prompt heuristics such as a universal four-constraint ceiling, mandatory XML delimiters, or always placing format instructions at the end into global architecture rules.
-
-The pilot should record recurring prompt failures and convert only repeated, material failures into reusable contract improvements.
-
-## Pilot Success Criteria
-
-The pilot is considered technically validated when:
-1. the three capabilities execute independently under one scheduler;
-2. each capability has a stable input/process/output contract;
-3. current evidence and explicit exclusions are applied consistently;
-4. outputs can be validated without changing the capability definition;
-5. repeated failures can be converted into reusable rule improvements;
-6. authoritative baseline changes remain human-approved;
-7. no generic runtime or database is required to operate the pilot.
-
-### Pilot Evaluation Loop
-
-`Run → Validate → Record Failure Pattern → Propose Rule Change → Human Verify → Update GitHub`
-
-Do not promote isolated misses into permanent rules.
+Weekly persistence remains mandatory even if a capability fails; use NOT_RUN / fallback state rather than disappearing.
 
 ## Implementation Phases
+### Phase 1 — Source-of-truth model
+- Establish Single Owner Rule.
+- Define Summary vs weekly semantics.
+- Make Implementation Plan roadmap/acceptance only.
 
-| # | Phase | Status | Purpose |
-|---|---|---|---|
-| 1 | Career Foundation | COMPLETE | Canonical profile + three workstreams. |
-| 2 | Search Specification | COMPLETE | Lock role, geography, salary, exclusions, evidence and output rules. |
-| 3 | Job Search Capability | PILOT | Execute through the released capability contract; validate discovery, matching, deduplication and result output. |
-| 4 | Company Radar Capability | PILOT | Execute through the released capability contract; validate signal discovery, evidence thresholds and output. |
-| 5 | Remote / AI Capability | PILOT | Execute the separate remote/AI matching model and validate schedule/compensation/deliverable fit. |
-| 6 | Master Scheduling | COMPLETE | One daily scheduler orchestrates the three search workstreams and weekly synthesis within platform task limits. |
-| 7 | Weekly Run Record | COMPLETE | Persist one compact weekly execution/synthesis record for observability and learning without storing the full job archive. |
-| 8 | External Tracking | NEXT | Use Google Sheets/external tools for opportunity records and application history. |
-| 9 | Weekly Synthesis | COMPLETE | Weekly consolidated view is included in the master scheduler and runs on the weekly cadence. |
-| 10 | Feedback Loop | ACTIVE | Convert repeated user decisions and real failure patterns into durable rules instead of ad-hoc rule additions. |
-| 11 | Capability Quality Review | ACTIVE | Measure relevance, false rejects, false accepts, duplicates, evidence quality, signal quality and usefulness. |
-| 12 | Career Database Trigger | FUTURE | Introduce only when volume/query/history requirements demonstrate the current model is insufficient. |
-| 13 | Career Database | FUTURE | If justified, support searchable job/company/opportunity history and cross-search analysis similar to the R&D Innovation Knowledge Sheet pattern. |
+### Phase 2 — Summary
+- Create 2. REPORTS/CAREER_SUMMARY.md.
+- Seed relevant W39–W41 opportunities/signals.
+- Use PENDING_REVIEW where no explicit user decision exists.
+- Add compact Explicit Exclusions and Reusable Lessons.
+- Never fabricate decisions.
 
-## Search Priority
+### Phase 3 — Capability Contracts
+- Job Search: 13-column decision-ready table.
+- Company Radar: 10-column signal/decision table.
+- Remote / AI: 14-column decision-ready table.
+- Remove obsolete schema references.
 
-### Job Search
+### Phase 4 — Execution Contract
+- Summary is mandatory historical input.
+- Merge-to-Summary is part of normal execution.
+- Preserve Action/Reason.
+- Keep weekly persistence/failure handling.
+- Remove Implementation Plan as an execution dependency.
 
-1. Quality / Supplier Quality (SQE) / Project Quality
-2. Project Manager / Project Management
-3. Assistant / Assistant Project Manager
-4. R&D / Engineering
+### Phase 5 — Topic/Report Documentation
+- Update routing and ownership.
+- Define weekly reports as current-cycle evidence.
+- Define Summary as durable decision memory.
+- Keep exclusions/lessons compact.
 
-Trading and manufacturing are both acceptable environments.
+### Phase 6 — Historical Compatibility
+- Do not rewrite W39–W41 solely for schema cosmetics.
+- New/current weekly reports use the new schema.
 
-### Geography
+### Phase 7 — Validation
+- Canonical Summary exists.
+- References resolve.
+- No obsolete schemas remain in active capability contracts.
+- Summary and weekly contracts do not conflict.
+- Implementation Plan has no hidden production rule.
+- Exclusions are consistent with Profile.
+- Repository validator passes.
 
-Priority order: Da Nang → Quang Nam → Hue → Quang Tri.
+### Phase 8 — Scheduler Sync After Merge
+- Update external Career scheduler to point to the merged contract.
+- Remove duplicated Career business rules from scheduler prompt.
+- Preserve existing cadence.
+- Verify weekly persistence and Summary merge.
+- Do not create another schedule.
 
-For locations farther from Da Nang, compensation should increase enough to justify the additional distance/relocation burden. Remote is acceptable when role matching is strong and compensation is high.
+## Acceptance Criteria
+- Search → Deduplicate → Merge → User Review → Reuse is one coherent lifecycle.
+- Summary is mandatory historical input.
+- Weekly output is current-cycle evidence.
+- Summary contains three master tables plus Explicit Exclusions and Reusable Lessons.
+- Job Search and Remote/AI rows are directly actionable.
+- Company Radar separates signal from vacancy.
+- User Action/Reason are preserved.
+- Every production rule has one canonical owner.
+- Implementation Plan is roadmap/acceptance only.
+- No new database/runtime/memory layer is introduced.
+- Repository validation passes.
+- Scheduler is synchronized only after repository merge.
 
-### Compensation
-
-Default target: `> USD 1,000/month` using `26,500 VND/USD` for screening calculations.
-
-For manufacturing roles in Da Nang/Quang Nam, compensation may be below USD 1,000 when local market level is lower, but the working floor is `> 20,000,000 VND/month`.
-
-Unknown salary is not an automatic rejection; label it as unknown and assess the other evidence.
-
-### Explicit Exclusions
-
-Do not return or prioritize opportunities from:
-
-- Premo Vietnam
-- LIXIL Vietnam
-- GGEC
-- UAC
-
-These exclusions are user decisions and apply across relevant search workstreams unless the user explicitly changes them.
-
-## Search Tool Routing
-
-All three capabilities use the shared routing contract in `CAREER_EXECUTION_CONTRACT.md`. Parallel Search and ChatGPT Native Search provide broad discovery/fallback; Exa adds semantic discovery where useful; Tavily is targeted gap resolution; Firecrawl is selective extraction of known pages. Tool use is availability-driven and evidence-driven, not a fixed five-tool sequence. The weekly report records actual tool states without changing opportunity table schemas.
-
-## Standard Job / Company Output
-
-Job Search and Company Radar should produce a compact table matching the established working format, with enough fields to support action without creating a duplicate database inside Second-Brain.
-
-### Job Search minimum fields
-
-`Priority | Matching (%) | Job Title | Job Group | Company | Location | Employment Type | Salary | Posted | Status | CV Fit / Evidence | Gaps / Risks | Location Fit | Recommended Action | Direct Link | Verified`
-
-### Company Radar minimum fields
-
-`Priority | Company | Location | Signal | Signal Strength | Evidence / Source | Relevant Role Potential | Salary / Market Signal | Fit to Career Profile | Risk / Uncertainty | Recommended Action | Direct Link | Verified`
-
-## Matching Principles
-
-- Current explicit user requirements override older memory.
-- Use the actual JD/company evidence before deciding.
-- Separate mandatory requirements, preferred requirements, transferable capability, and unknowns.
-- Do not fabricate missing experience, skills, metrics, salary, or achievements.
-- Do not reject borderline opportunities solely because one preferred skill is missing; test transferable evidence first.
-- A company expansion signal is not proof that a suitable vacancy exists.
-- Deduplicate repeated opportunities and preserve the latest verified state.
-- Do not confuse search freshness with decision certainty.
-
-## Remote / AI Model
-
-Remote / AI is a separate matching model, not a copy of traditional ATS scoring.
-
-Evaluate:
-
-- Engineering / manufacturing / quality domain fit
-- AI capability leverage
-- Deliverable fit
-- Evidence from the resume and demonstrated work
-- Remote feasibility
-- Engagement type
-- Compensation
-- Schedule compatibility
-- Communication / English requirement
-- Skill-gap bridgeability
-
-Search categories should include:
-
-1. AI training / evaluation / technical SME using engineering or manufacturing knowledge.
-2. Technical documentation / technical writing / SOP / quality-document work.
-3. CAD / engineering drawing / DFM documentation.
-4. Quality / ISO / PPAP / PFMEA / Control Plan / 8D documentation or consulting work where remote delivery is realistic.
-5. Project coordination / technical project support / operations documentation.
-6. AI-assisted engineering, research, data, workflow, automation, or process-improvement work.
-7. Remote full-time engineering/quality/project roles when matching and compensation are strong.
-
-For side work alongside the current 9–5, use the reference availability from the supplied Remote Job Matching material: approximately `21:00–00:00 ICT`, `2–4 days/week`, around `6–12 hours/week`. This is a working baseline and should be verified if it changes.
-
-Remote work requiring substantial synchronous daytime availability is a constraint for side work but not for a remote full-time opportunity.
-
-## Operating Cadence and Master Scheduler
-
-The intended recurring model is implemented through **one daily master schedule** because the platform limits the number of independent scheduled tasks.
-
-### Master scheduler
-
-- Runs daily at approximately 09:00 ICT.
-- Uses `SEARCH_ANCHOR = 2026-09-20` as the current search-cycle anchor.
-- On a search day, when `(current_date - SEARCH_ANCHOR) mod 3 = 0`, execute all three search workstreams:
-  - Job Search
-  - Company Radar
-  - Remote / AI
-- On non-search days, do not perform the three search cycles merely because the master schedule ran.
-- Every Monday, execute Weekly Career Synthesis using the latest available outputs/state from all three workstreams.
-- Weekly synthesis/report persistence is mandatory and independent of search-tool success. If a search capability fails or is unavailable, continue the synthesis and record `NOT_RUN` (or the applicable explicit fallback state) for that stream instead of aborting the weekly report.
-- Every Monday, after synthesis and validation, write/update exactly one compact weekly run record at `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md`; a scheduler run without a verified weekly file is incomplete.
-- The weekly run record is an observability/learning artifact, not a job archive.
-- Weekly synthesis is independent of whether Monday is a search day; if both conditions are true in the future, perform the search cycle and then synthesis in the same master run.
-
-Consolidation changes only the scheduler. It must not merge the workstream prompts, matching models, evidence requirements, exclusions, or output contracts.
-
-### Execution order on a search day
-
-1. Read the current Career context and workstream READMEs.
-2. Run Job Search and Company Radar as independent workstreams.
-3. Run Remote / AI using its separate matching model.
-4. Keep outputs separated according to each workstream's output contract.
-5. If Monday, synthesize the meaningful changes after the search outputs are available.
-6. Validate the synthesis against actual outputs/state.
-7. If Monday, write/update the compact weekly run record in `TOPICS/B. CAREER/2. REPORTS/`.
-8. Do not create a high-volume job database or write transient search results into Second-Brain.
-
-### Cadence invariants
-
-- Job Search: every 3 days.
-- Company Radar: every 3 days.
-- Remote / AI: every 3 days.
-- Weekly synthesis: once per week.
-- Weekly run record: once per week, after weekly synthesis.
-- One scheduler does not imply one shared matching model.
-
-Scheduling must respect the available automation/task capacity.
-
-## Scheduled Execution Provenance
-
-Career scheduled execution uses the canonical artifact/provenance states defined in `SYSTEM CORE/REPOSITORY_CONTRACT.md`; this plan must not introduce a second scheduler-state enum.
-
-Artifact state is `MISSING`, `INCOMPLETE`, `PRESENT_UNVERIFIED`, or `MANUAL_RECOVERY`. External scheduler provenance is `NOT_VERIFIED` unless independently matched to the scheduler's own execution record.
-
-A persisted or recovered weekly report is evidence of repository artifact state, not proof of scheduled execution.
-
-## Weekly Run Record Contract
-
-Create exactly one `TOPICS/B. CAREER/2. REPORTS/YYYY-W##.md` file per ISO week. This single file is the user's weekly review artifact and must contain exactly three primary tables, in this order: Job Search, Company Radar, Remote / AI. Do not create separate report files for the three capabilities. Each table uses the exact column schema declared in its capability README. Include actual results for the review period; use explicit `NO_MATCH`, `NO_SIGNAL`, or `NOT_RUN` status when applicable. Do not merge the streams or replace tables with narrative bullets.
-
-Before the tables, record week/date range, actual execution coverage, synthesis status, and validation status. After the tables, include concise cross-stream quality observations, proposed improvements, and user-review items. Keep individual opportunity history in the external tracker; the weekly tables are a review snapshot, not the archive.
-
-## Completion Definition
-
-The Career Orchestrator is considered operational when:
-
-1. The three workstreams use the current Career Profile.
-2. Each workstream can discover and evaluate opportunities independently.
-3. Job Search and Company Radar return the established table format.
-4. Remote / AI uses its separate matching logic.
-5. Explicit exclusions are applied consistently.
-6. Results can be copied into the external tracker without Second-Brain becoming a job database.
-7. Recurring execution is configured within platform limits.
-8. User feedback can improve durable rules without creating a new rule after every individual failure.
-
-A future database is an evidence-triggered architecture change, not part of the initial implementation.
+## Stop Rule
+Stop when the acceptance criteria are met and the next real Career run demonstrates the lifecycle end-to-end. Do not add infrastructure unless real usage proves the Markdown model insufficient.
