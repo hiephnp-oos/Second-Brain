@@ -28,15 +28,14 @@ Discover and evaluate current local/full-time roles using the canonical Career P
 4. Separate mandatory, preferred, transferable, and unknown requirements.
 5. Verify material listing details.
 6. Deduplicate repeated listings where possible.
-7. Produce the standard job output table.
+7. Merge new/materially changed records into `CAREER_SUMMARY.md` while preserving existing user `Decision` / `Reason`.
+8. Produce the standard job output table.
 
 ## Output Contract
 
 Use these fields exactly:
 
 `Job Title | Date Found | Week Found | Company | Location | Job URL | Salary | Matching Score | Status | Key Missing Skills | Suggest Action | Decision | Reason`
-
-Allowed `Verified` states: `VERIFIED` | `PARTIAL` | `UNKNOWN`.
 
 Allowed `Status` values should use the current external tracker vocabulary when one exists; do not invent a new status merely for one run.
 
