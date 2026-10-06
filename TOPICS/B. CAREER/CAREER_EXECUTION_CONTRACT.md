@@ -55,6 +55,7 @@ Every Career capability follows:
 - `TOPICS/B. CAREER/IMPLEMENTATION_PLAN.md`
 - Current external market evidence.
 - Previous cycle output when available for freshness/deduplication.
+- `TOPICS/B. CAREER/2. REPORTS/CAREER_SUMMARY.md` — mandatory historical decision/learning input before every new Career search.
 - Current user instruction overrides older durable context.
 
 ### Process
