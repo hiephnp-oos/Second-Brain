@@ -50,7 +50,7 @@ The supplied remote-matching reference demonstrates that AI contractor/technical
 
 Use the established decision-oriented format:
 
-`Priority | Matching (%) | Job / Project Title | Work Type | Platform / Company | Location / Remote Scope | Engagement | Budget / Salary | Posted | Status | CV / Capability Fit | Gaps / Risks | Schedule Fit | Recommended Action | Direct Link | Verified`
+`Job / Project Title | Date Found | Week Found | Work Type | Company / Platform | Remote Scope | Job URL | Compensation | Matching Score | Status | Key Missing Skills | Suggest Action | Action | Reason`
 
 For side work, explicitly show `Schedule Fit`. For remote full-time, explicitly show remote scope and compensation.
 
