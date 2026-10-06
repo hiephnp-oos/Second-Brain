@@ -34,7 +34,7 @@ Discover and evaluate current local/full-time roles using the canonical Career P
 
 Use these fields exactly:
 
-`Job Title | Date Found | Week Found | Company | Location | Job URL | Salary | Matching Score | Status | Key Missing Skills | Suggest Action | Action | Reason`
+`Job Title | Date Found | Week Found | Company | Location | Job URL | Salary | Matching Score | Status | Key Missing Skills | Suggest Action | Decision | Reason`
 
 Allowed `Verified` states: `VERIFIED` | `PARTIAL` | `UNKNOWN`.
 
