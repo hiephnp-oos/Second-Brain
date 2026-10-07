@@ -20,7 +20,7 @@
 |---|---|---|---|---|
 | 01 | 01 - Thinking Strategically.pdf | 01 - Thinking Strategically.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed for knowledge extraction; raw Markdown still contains extraction artifacts, but title/author identity, major chapter sequence, reading order, and representative strategic-game content are traceable to the PDF. |
 | 02 | 02 - The Art of Strategy.pdf | 02 - The Art of Strategy.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed; 550-page PDF and Markdown preserve the same 14-chapter structure and representative content coverage. Raw Markdown remains an extraction aid, not canonical source text. |
-| 03 | 03 - A Course in Game Theory.pdf | 03 - A Course in Game Theory.md | REVIEWED — NORMALIZATION REQUIRED | 144 escaped headings and 562 pipe-bearing lines; mathematical/table structure needs source-aware normalization; hierarchy must preserve numbered sections and results. |
+| 03 | 03 - A Course in Game Theory.pdf | 03 - A Course in Game Theory.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed across the 368-page source; all 15 chapters and numbered section hierarchy are traceable, and representative definitions, results, game tables, equations, and game-tree material were source-checked. Raw Markdown remains a retrieval aid. |
 | 04 | 04 - The Strategy of Conflict.pdf | 04 - The Strategy of Conflict.md | REVIEWED — NORMALIZATION REQUIRED | 46 escaped headings; TOC/subheading hierarchy needs recovery; 82 pipe-bearing lines and OCR/fragment artifacts require validation. |
 | 05 | 05 - The Evolution of Cooperation.pdf | 05 - The Evolution of Cooperation.md | REVIEWED — NORMALIZATION REQUIRED | 48 escaped headings; 267 pipe-bearing lines; chapter/part hierarchy and table/figure handling require source comparison. |
 | 06 | 06 - Thinking in Systems.pdf | 06 - Thinking in Systems.md | REVIEWED — NORMALIZATION REQUIRED | 134 escaped headings; 205 pipe-bearing lines; part/chapter hierarchy and systems diagrams/tables need source-aware reconstruction. |
@@ -62,6 +62,21 @@ A book is `REVIEWED — NORMALIZATION REQUIRED` when the source can be understoo
 - Mathematical notation, equations, R/Stan code, figures, diagrams, and game trees require special handling rather than generic Markdown cleanup.
 - Source wording and ordering must be preserved. Structural cleanup must not become summarization or interpretation.
 
+## Book 03 review notes — A Course in Game Theory
+
+The PDF is the canonical source. The Markdown was reviewed only as an extraction/retrieval representation against the PDF.
+
+Observed and validated:
+
+- The PDF is 368 pages and identifies *A Course in Game Theory* by Martin J. Osborne and Ariel Rubinstein.
+- The PDF contents contain 15 chapters across four major parts: Strategic Games; Extensive Games with Perfect Information; Extensive Games with Imperfect Information; and Coalitional Games.
+- The Markdown preserves the same chapter sequence and numbered section structure, including the transition from Nash equilibrium through repeated games, implementation, sequential equilibrium, coalitional games, and the Nash solution.
+- Representative mathematical material was source-checked rather than accepted from Markdown alone, including the strategic-game definition, information-function conditions, extensive-game/subgame structure, repeated-game material, sequential-equilibrium definitions, core conditions, and bargaining/Nash-solution definitions.
+- Game tables, equations, symbols, page markers, and result labels contain extraction artifacts. They remain usable only as retrieval aids with the PDF as authority.
+- PDF extraction contains materially more token volume than Markdown because mathematical/table formatting is represented differently; word volume was therefore not used as an acceptance criterion for this book.
+
+Validation decision: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction. The raw Markdown is not a canonical transcription; PDF wins whenever representations differ.
+
 ## Book 02 review notes — The Art of Strategy
 
 The PDF is the canonical source. The Markdown was reviewed only as an extraction/retrieval representation against the PDF.
@@ -94,7 +109,7 @@ Validation decision: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction
 
 ## Pilot implication
 
-Books 01–02 have now passed the full PDF↔Markdown validation gate. Their raw Markdown remains an extraction aid rather than canonical transcription. Knowledge distillation is allowed only for these accepted sources; Books 03–16 remain blocked until their own validation gates pass.
+Books 01–03 have now passed the source-aware PDF↔Markdown validation gate. Their raw Markdown remains an extraction aid rather than canonical transcription. Knowledge distillation is allowed only for accepted sources; Books 04–16 remain blocked until their own validation gates pass.
 
 ## Architecture reconciliation
 
@@ -145,8 +160,8 @@ Required checks:
 - 17 PDFs and 17 Markdown parts were found in the supplied \`BOOK.zip\`.
 - All 16 book identities are present. The source inventory contains 17 PDFs and 17 Markdown parts because Statistical Rethinking is split into two PDF/Markdown parts.
 - A safe mechanical normalization baseline was generated privately for all 17 Markdown parts; escaped heading markers were activated where present without rewriting source wording.
-- Book 01 and Book 02 have now passed their source-aware PDF↔Markdown validation gates and are `STRUCTURALLY ACCEPTED` for controlled knowledge extraction.
-- Books 03–16 remain `REVIEWED — NORMALIZATION REQUIRED` and remain blocked from distillation.
+- Book 01, Book 02, and Book 03 have now passed their source-aware PDF↔Markdown validation gates and are `STRUCTURALLY ACCEPTED` for controlled knowledge extraction.
+- Books 04–16 remain `REVIEWED — NORMALIZATION REQUIRED` and remain blocked from distillation.
 - No full PDF or full extracted book text is committed to this public repository.
 
 The next promotion gate is source-aware structural normalization followed by the validation checks above. Knowledge distillation remains blocked until that gate passes.
