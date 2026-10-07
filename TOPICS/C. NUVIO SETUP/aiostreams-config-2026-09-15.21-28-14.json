@@ -530,6 +530,7 @@
     "groupings": [
       {
         "addons": [
+          "cd5",
           "add",
           "e35",
           "bb9"
@@ -869,6 +870,18 @@
     }
   ],
   "presets": [
+    {
+      "type": "seadex",
+      "instanceId": "cd5",
+      "enabled": true,
+      "options": {
+        "name": "SeaDex",
+        "timeout": 5000,
+        "mediaTypes": [
+          "anime"
+        ]
+      }
+    },
     {
       "type": "meteor",
       "instanceId": "064",
