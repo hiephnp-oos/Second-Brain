@@ -142,3 +142,23 @@ For a proposed allocation, test whether any coalition can deviate and make all o
 
 ### 25. Bargaining solution design
 Separate the feasible agreement set and disagreement point from the rule used to select the final agreement. Different bargaining procedures can be connected to the same bargaining problem through different solution concepts.
+
+## GT-04 incremental applications from *The Strategy of Conflict*
+
+### 26. Coordination without communication
+When two actors must choose the same action without communicating, search for a salient and mutually recognizable outcome rather than treating all options as equally likely.
+
+### 27. Tacit bargaining
+When interests conflict but coordination is necessary, a focal outcome can serve as an implicit bargain. The party for whom it is less favorable may still accept it because failure to coordinate is worse.
+
+### 28. Strategic communication control
+Treat the ability to send, receive, withhold, or destroy information as part of the bargaining structure.
+
+### 29. Delegation and mediation
+Change the game by changing who makes the decision or by inserting a mediator whose role changes the feasible strategic responses.
+
+### 30. Randomized threat or promise
+Use controlled uncertainty as part of a commitment when complete control over the final consequence would otherwise make the threat non-credible.
+
+### 31. Mutual deterrence and surprise attack
+Model how each side's fear of being attacked first can create pressure for preemption, even when both sides would prefer a stable outcome.
