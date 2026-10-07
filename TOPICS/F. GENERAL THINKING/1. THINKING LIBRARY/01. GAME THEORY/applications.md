@@ -74,3 +74,36 @@ Use contracts, mandates, delegated authority, external rules or constrained proc
 
 ## GT-APP-25 — Noise-aware reciprocity
 In repeated collaboration, distinguish intentional defection from measurement/error noise and define a recovery path so one error does not trigger permanent retaliation.
+
+## GT-APP-26 — Brinkmanship risk audit
+If using escalation risk as leverage, define the recognizable risk, the range in which it remains effective, the mechanism that could make it escape control, and the concrete compliance path that reduces the risk.
+
+## GT-APP-27 — Coordination externality check
+Before accepting an equilibrium outcome, compare individual incentives with the group optimum. Look for congestion, spillovers, overcompetition and wrong proportions.
+
+## GT-APP-28 — Path-dependence / lock-in review
+When a convention or technology persists, test whether positive feedback or switching costs are sustaining it despite changed circumstances.
+
+## GT-APP-29 — Voting-rule audit
+Before using a voting procedure, test pairwise cycles, agenda control, sequencing, thresholds, strategic voting incentives and whether the rule selects the intended outcome.
+
+## GT-APP-30 — Voting-tree backward review
+For sequential nominations or decisions, map the decision tree and solve backward. Check whether strategic foresight creates an outcome that differs from the group's ex-ante preference.
+
+## GT-APP-31 — Bargaining power audit
+Compare each side's outside option, cost of waiting, patience and control of procedure. Focus on relative bargaining position, not only absolute resources.
+
+## GT-APP-32 — Multi-issue bargaining package
+Map each party's relative valuation of every issue and search for trades that improve both sides versus splitting one aggregate amount.
+
+## GT-APP-33 — Bargaining procedure audit
+Check who makes offers, who can reject, what delay costs, whether the horizon is finite, and whether the procedure itself changes the settlement.
+
+## GT-APP-34 — Hidden-effort incentive design
+Identify unobservable effort, observable proxies, outcome noise and risk allocation. Reward the desired behavior without assuming the outcome perfectly measures effort.
+
+## GT-APP-35 — Joint-venture hold-up review
+Before creating mutual dependence, define enforceable terms for future renegotiation, exit and penalties so sunk investments do not become leverage against one party.
+
+## GT-APP-36 — Auction mechanism review
+Before bidding, identify the auction rule, private versus common value, information revealed by winning, and whether the mechanism makes truthful reporting or strategic shading optimal.
