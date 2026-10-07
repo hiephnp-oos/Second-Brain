@@ -4,7 +4,9 @@
 
 - Intake method: Firecrawl PDF Inspector.
 - Primary source files: user-provided PDF files in the private BOOK intake.
-- Extracted files: user-provided Markdown files generated from the PDF Inspector output.
+- Source authority: the PDF is the canonical source for review, validation, interpretation, and knowledge extraction.
+- Extracted files: user-provided Markdown files generated from the PDF Inspector output and used only as retrieval/extraction aids.
+- Conflict rule: if PDF and Markdown differ, the PDF wins.
 - Repository boundary: full PDF files and full extracted book text are not committed to this public repository.
 - Evidence state: source text is source material; it is not automatically verified knowledge.
 - Current gate: structural QA before downstream distillation.
