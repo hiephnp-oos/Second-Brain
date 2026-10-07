@@ -57,7 +57,10 @@
     "SDR"
   ],
   "preferredAudioTags": [],
-  "preferredStreamTypes": [],
+  "preferredStreamTypes": [
+    "debrid",
+    "p2p"
+  ],
   "preferredEncodes": [],
   "preferredRegexPatterns": [],
   "syncedRankedRegexUrls": [
@@ -71,8 +74,12 @@
   ],
   "digitalReleaseFilter": {
     "enabled": true,
-    "tolerance": 0,
-    "requestTypes": [],
+    "tolerance": 1,
+    "requestTypes": [
+      "movie",
+      "series",
+      "anime"
+    ],
     "addons": []
   },
   "enableSeadex": true,
@@ -722,75 +729,165 @@
       }
     },
     {
-      "type": "stremthruTorz",
-      "instanceId": "99f",
-      "enabled": true,
-      "options": {
-        "name": "StremThru Torz",
-        "timeout": 5000,
-        "resources": [
-          "stream"
-        ],
-        "mediaTypes": [],
-        "includeP2P": false,
-        "useMultipleInstances": false
-      }
-    },
-    {
       "type": "meteor",
-      "instanceId": "d74",
+      "instanceId": "064",
       "enabled": true,
       "options": {
         "name": "Meteor",
-        "timeout": 5000,
+        "timeout": 8000,
         "resources": [
           "stream"
         ],
-        "includeP2P": false,
+        "includeP2P": true,
         "removeTrash": true,
         "useMultipleInstances": false,
-        "mediaTypes": [],
-        "usenet": {
-          "enabled": false,
-          "customSearchEngines": false
-        },
-        "yourMedia": {
-          "enabled": false,
-          "legacyMode": false,
-          "sources": [
-            "torrent"
-          ],
-          "showStreams": true
-        }
-      }
+        "mediaTypes": []
+      },
+      "category": "P2P"
     },
     {
       "type": "comet",
-      "instanceId": "0cd",
+      "instanceId": "b0f",
       "enabled": true,
       "options": {
         "name": "Comet",
-        "timeout": 5000,
+        "timeout": 8000,
         "resources": [
           "stream"
         ],
-        "includeP2P": false,
+        "includeP2P": true,
         "removeTrash": true,
-        "scrapeDebridAccountTorrents": false,
+        "mediaTypes": [],
+        "url": ""
+      },
+      "category": "P2P"
+    },
+    {
+      "type": "stremthruTorz",
+      "instanceId": "bb9",
+      "enabled": true,
+      "options": {
+        "name": "StremThru Torz",
+        "timeout": 6000,
+        "resources": [
+          "stream"
+        ],
+        "mediaTypes": [],
+        "includeP2P": true,
         "useMultipleInstances": false,
-        "mediaTypes": []
-      }
+        "url": ""
+      },
+      "category": "P2P"
+    },
+    {
+      "type": "mediafusion",
+      "instanceId": "276",
+      "enabled": true,
+      "options": {
+        "name": "MediaFusion",
+        "timeout": 6000,
+        "resources": [
+          "stream"
+        ],
+        "useCachedResultsOnly": false,
+        "enableWatchlistCatalogs": false,
+        "downloadViaBrowser": false,
+        "contributorStreams": false,
+        "certificationLevelsFilter": [],
+        "nudityFilter": [],
+        "mediaTypes": [],
+        "url": "",
+        "includeP2P": true
+      },
+      "category": "P2P"
+    },
+    {
+      "type": "torrents-db",
+      "instanceId": "a15",
+      "enabled": true,
+      "options": {
+        "name": "TorrentsDB",
+        "timeout": 8000,
+        "resources": [
+          "stream"
+        ],
+        "mediaTypes": [],
+        "providers": [
+          "yts",
+          "1337x",
+          "torrentcsv",
+          "1lou",
+          "nyaa",
+          "sktorrent",
+          "1tamilblasters",
+          "limetorrent",
+          "1tamilmv",
+          "rargb",
+          "knaben",
+          "thepiratebay",
+          "kickasstorrents",
+          "animetosho",
+          "extremlymtorrents",
+          "yggtorrent",
+          "tokyotosho",
+          "rutor",
+          "rutracker",
+          "torrent9",
+          "ilcorsaronero",
+          "manual"
+        ],
+        "includeP2P": true,
+        "useMultipleInstances": false
+      },
+      "category": "P2P"
+    },
+    {
+      "type": "peerflix",
+      "instanceId": "8b6",
+      "enabled": true,
+      "options": {
+        "name": "Peerflix",
+        "timeout": 6000,
+        "resources": [
+          "stream"
+        ],
+        "mediaTypes": [],
+        "useMultipleInstances": false,
+        "showTorrentLinks": true
+      },
+      "category": "P2P"
+    },
+    {
+      "type": "torrentio",
+      "instanceId": "add",
+      "enabled": true,
+      "options": {
+        "name": "Torrentio",
+        "timeout": 8000,
+        "resources": [
+          "stream"
+        ],
+        "mediaTypes": [],
+        "useMultipleInstances": false,
+        "providers": []
+      },
+      "category": "P2P"
     },
     {
       "type": "knaben",
-      "instanceId": "88f",
+      "instanceId": "e35",
       "enabled": true,
       "options": {
         "name": "Knaben",
-        "timeout": 5000,
-        "mediaTypes": [],
+        "timeout": 6000,
+        "mediaTypes": [
+          "movie",
+          "series",
+          "anime"
+        ],
         "useMultipleInstances": false
-      }
+      },
+      "category": "P2P"
     }
   ],
   "catalogModifications": [],
@@ -810,20 +907,33 @@
       {
         "addons": [
           "cd5",
-          "99f",
-          "88f"
+          "add",
+          "e35",
+          "bb9"
         ],
         "condition": "true"
       },
       {
         "addons": [
-          "d74",
-          "0cd"
+          "064",
+          "b0f",
+          "a15"
         ],
         "condition": "count(previousStreams) < 5 or count(resolution(previousStreams, '2160p')) == 0"
+      },
+      {
+        "addons": [
+          "276",
+          "8b6"
+        ],
+        "condition": "count(totalStreams) < 8 or count(resolution(totalStreams, '2160p')) == 0"
       }
     ],
     "behaviour": "sequential",
     "onConditionFailure": "stop"
+  },
+  "resultLimits": {
+    "resolution": 15,
+    "mode": "conjunctive"
   }
 }
