@@ -100,7 +100,7 @@ A retaliation rule that never repairs accidental breakdowns can destroy cooperat
 A strategic move is not merely a statement of intent. It changes the response rule before the other actor chooses.
 
 ## GT-MM-34 — Distinguish threat, promise, warning and assurance
-Threats and promises alter incentives; warnings and assurances primarily convey information about an unchanged response.
+Threats and promises alter incentives; warnings and assurances primarily convey information about an unchanged response. Keep threats and promises no larger than necessary: excessive commitments can be incredible, costly, counterproductive and reputation-damaging.
 
 ## GT-MM-35 — Observability is part of credibility
 A commitment cannot influence behavior if the opponent cannot observe or infer it; a threat cannot be enforced if the relevant behavior cannot be observed.
