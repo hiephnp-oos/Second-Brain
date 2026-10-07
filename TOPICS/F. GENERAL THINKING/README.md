@@ -36,16 +36,17 @@ The repository stores durable structure, source metadata, extraction status, and
 - [FRAMEWORK_INDEX.md](FRAMEWORK_INDEX.md)
 - [CORE_READING_SET.md](CORE_READING_SET.md)
 - [SOURCE_INTAKE_MANIFEST.md](SOURCE_INTAKE_MANIFEST.md)
+- [ARCHITECTURE_PROPOSAL_V2.md](ARCHITECTURE_PROPOSAL_V2.md)
 - [1. THINKING LIBRARY/README.md](1. THINKING LIBRARY/README.md)
 
 ## Decisions
 
 - General Thinking is a new topic-level thinking layer, not a replacement for domain topics.
-- The 16-book set is treated as a source intake set; raw full-text books are kept outside this public repository.
+- The 16-book set is treated as a current source selection, not as the architecture. Books are routed to primary/supporting frameworks through the Thinking Map and Framework Index; raw full-text books are kept outside this public repository.
 - Firecrawl PDF Inspector is the selected primary extraction tool for this intake.
 - Source extraction must pass structural QA before durable knowledge is distilled from it.
 - Source text, distilled knowledge, and user-applied lessons remain separate layers.
-- Physical subfolders are created only when real content justifies them.
+- Physical framework subfolders are created only when real content justifies them; Decision Frameworks and Strategic Thinking remain cross-cutting synthesis lenses until that threshold is reached.
 
 ## Lessons
 
@@ -63,7 +64,7 @@ The repository stores durable structure, source metadata, extraction status, and
 
 ## Next
 
-1. Complete structural QA of the 16 Firecrawl Markdown outputs.
-2. Normalize extraction artifacts without rewriting source meaning.
-3. Distill the first pilot source, Thinking Strategically, into reusable concepts and mental models.
-4. Use the pilot to define the minimum durable knowledge format before scaling to the remaining books.
+1. Apply the V2 architecture and source-normalization contract.
+2. Complete PDF↔Markdown validation and keep all full source text outside the public repository.
+3. Mark a source `STRUCTURALLY ACCEPTED` only after normalization and validation pass.
+4. Distill the first pilot source, Thinking Strategically, only after that gate passes.
