@@ -67,7 +67,7 @@ A known final round can destroy the incentive to cooperate throughout a repeated
 Future interaction is the economic foundation of many self-enforcing cooperation mechanisms.
 
 ## GT-L-23
-Reciprocity is stronger when retaliation is paired with a route back to cooperation after mistakes.
+Reciprocity is stronger when retaliation is paired with a route back to cooperation after mistakes; history-sensitive forgiveness can outperform automatic retaliation when observation is noisy.
 
 ## GT-L-24
 A strategic move works by changing the opponent's expected response before the opponent acts.
