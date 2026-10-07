@@ -58,10 +58,13 @@ These are the currently recognized work areas, not an exhaustive list of everyth
 | C. Nuvio Setup | Frozen | `TOPICS/C. NUVIO SETUP/README.md` |
 | D. R&D Database | Maintenance | `TOPICS/D. RnD DATABASE/README.md` |
 | E. R&D Innovation | Active | `TOPICS/E. RnD INNOVATION/README.md` |
+| F. General Thinking | Building | `TOPICS/F. GENERAL THINKING/README.md` |
 
 Status describes the topic lifecycle, not whether every item inside it is being worked on. Allowed values are `Building`, `Active`, `Maintenance`, `Frozen`, `Paused`, and `Archived`. The topic README is the authoritative place for the current status summary and direction; the registry mirrors only the lifecycle state for fast routing.
 
 R&D Innovation is intentionally organized as a parent topic folder with dedicated workstream subfolders. New recurring R&D workstreams may be added there without changing the overall memory architecture.
+
+General Thinking is a reusable thinking layer for theories, mental models, decisions, human interaction, self-improvement, and reflection. It is intentionally separate from domain knowledge and stores distilled knowledge rather than full source books.
 
 R&D Database is a migrated project source folder. Its project files are stored directly inside `TOPICS/D. RnD DATABASE/`; it is not a routing link to the old repository. The current project architecture is explicitly separated into `1_Frontend_UI`, `2_Library_Core`, and `3_Backend_Scanner`.
 
@@ -96,6 +99,7 @@ A topic should be added only when recurring work creates enough durable context 
 - Memory quality, retrieval/routing, Handoff, and repository mutation lifecycle are operating rules within `SYSTEM CORE/WORKFLOW.md`; there is no separate required phase document.
 - Periodic review is a quality check and derived report; it should not silently modify authoritative memory.
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
+- General Thinking uses a source → concepts → mental models → applications → lessons → principles layering; raw copyrighted books remain outside the public repository.
 - R&D Database V4 is maintained inside Second-Brain as a complete project source, organized into Bound Script frontend, standalone Library Core (`LibDNF`), and standalone Backend Scanner. The topic README is the architecture/deployment entry point; the code files are the detailed project source.
 - Repository integrity is checked automatically by `scripts/validate_second_brain.py` through `.github/workflows/validate.yml`.
 - All repository mutations use a dedicated task branch and PR to `main`; review the diff and applicable checks before merging. Risk changes review depth, not the requirement to use a PR. If branch/PR or validation is unavailable, do not fall back to direct-main writes; report the blocker.
