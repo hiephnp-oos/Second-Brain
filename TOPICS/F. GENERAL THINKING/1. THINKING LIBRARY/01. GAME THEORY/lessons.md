@@ -105,3 +105,18 @@ A commitment can gain force when the actor deliberately reduces control over the
 
 ## GT-L-30 — Deterrence must account for the opponent's fear of surprise
 A strategy that looks defensive from one side can appear threatening from the other if each side anticipates the possibility of preemption.
+
+## GT-L-31 — The shadow of the future can sustain cooperation
+Cooperation becomes more defensible when future interaction is sufficiently likely and valuable to outweigh the immediate gain from defection.
+
+## GT-L-32 — Establishment and persistence are different problems
+Ask separately how a strategy gains an initial foothold and how it protects itself after becoming common.
+
+## GT-L-33 — Local interaction can change evolutionary outcomes
+A strategy's performance depends not only on its rule but also on whom it interacts with and how interactions are structured.
+
+## GT-L-34 — Reciprocity must be robust to observation error
+If defection can be misread, a rigid retaliatory response can create unnecessary cycles of mutual defection.
+
+## GT-L-35 — Self-interest can support cooperative outcomes
+The source's evolutionary framing shows that cooperation need not depend on altruistic motives or central authority when reciprocity and repeated interaction provide the necessary incentives.
