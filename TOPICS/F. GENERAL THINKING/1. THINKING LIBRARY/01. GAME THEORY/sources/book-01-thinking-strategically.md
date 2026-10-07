@@ -71,7 +71,7 @@ Part I is treated as **covered only when its durable reasoning content is repres
 | 8. Mix Your Plays | Predictable behavior can be exploited; appropriate mixing/randomization prevents systematic counterstrategy. |
 | 9. Never Give a Sucker an Even Bet | A counterparty's willingness to trade can reveal private information; observed actions are strategic evidence. |
 | 10. Game Theory Can Be Dangerous to Your Health | Bargaining outcomes depend on timing, alternatives and human irrationality; do not assume purely mechanical rationality. |
-| 11. The Shape of Things to Come | Synthesizes reaction, intransigence, coordination, cumulative decisions, leader/follower dynamics and unpredictability into a transition toward systematic strategic analysis. |
+| 11. The Shape of Things to Come | Synthesizes reaction, intransigence, coordination, cumulative decisions, leader/follower dynamics and unpredictability into a transition toward systematic strategic analysis. |\n| Case Study #1: Red I Win, Black You Lose | The later move can dominate when it observes the first move; copying a forced bet can guarantee the lead, showing why second-mover position can be strategically stronger. |
 
 ### Chapter 2 — Anticipating Your Rival's Response
 
