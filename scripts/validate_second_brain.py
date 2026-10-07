@@ -901,7 +901,7 @@ def validate_general_thinking_contract(errors: list[str]) -> None:
     if reading.exists():
         text = read_text(reading)
         for book_id in [f"{i:02d}" for i in range(1, 17)]:
-            if not re.search(rf"^\\|\\s*{book_id}\\s*\\|", text, re.MULTILINE):
+            if not re.search(rf"^\|\s*{book_id}\s*\|", text, re.MULTILINE):
                 fail(f"General Thinking Core Reading Set missing book ID {book_id}", errors)
     manifest = root / "SOURCE_INTAKE_MANIFEST.md"
     if manifest.exists():
