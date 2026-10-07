@@ -50,8 +50,7 @@
   "excludedSubtitles": [],
   "preferredSubtitles": [],
   "excludedVisualTags": [
-    "3D",
-    "AI"
+    "3D"
   ],
   "preferredVisualTags": [
     "SDR"
@@ -69,9 +68,7 @@
   "syncedRankedStreamExpressionUrls": [
     "https://raw.githubusercontent.com/Vidhin05/Releases-Regex/main/English/expressions.json"
   ],
-  "ageRangeTypes": [
-    "usenet"
-  ],
+  "ageRangeTypes": [],
   "digitalReleaseFilter": {
     "enabled": true,
     "tolerance": 1,
@@ -92,10 +89,6 @@
   "excludedStreamExpressions": [
     {
       "expression": "isAnime and count(resolution(rseMatched(streams,'SeaDex Best','SeaDex Alt','Remux T1','Remux T2','Remux T3','BD T1','BD T2','BD T3','BD T4','BD T5','BD T6','BD T7','BD T8','Web T1','Web T2','Web T3','Web T4','Web T5','Web T6'),'2160p'))==0 ? resolution(streams,'2160p') : []",
-      "enabled": true
-    },
-    {
-      "expression": "uncached(type(streams, 'debrid'))",
       "enabled": true
     },
     {
@@ -415,13 +408,7 @@
       "enabled": true
     }
   ],
-  "rankedRegexPatterns": [
-    {
-      "pattern": "/^(?!𝚅𝚒𝚍𝚑𝚒𝚗'𝚜 𝙴𝚗𝚐𝚕𝚒𝚜𝚑 𝚁𝚊𝚗𝚔𝚎𝚍 𝚁𝚎𝚐𝚎𝚡𝚎𝚜 (𝚜𝚢𝚗𝚌𝚎𝚍))𝚅𝚒𝚍𝚑𝚒𝚗'𝚜 𝙴𝚗𝚐𝚕𝚒𝚜𝚑 𝚁𝚊𝚗𝚔𝚎𝚍 𝚁𝚎𝚐𝚎𝚡𝚎𝚜 (𝚜𝚢𝚗𝚌𝚎𝚍)$/",
-      "name": "𝚅𝚒𝚍𝚑𝚒𝚗'𝚜 𝙴𝚗𝚐𝚕𝚒𝚜𝚑 𝚁𝚊𝚗𝚔𝚎𝚍 𝚁𝚎𝚐𝚎𝚡𝚎𝚜 (𝚜𝚢𝚗𝚌𝚎𝚍)",
-      "score": 0
-    }
-  ],
+  "rankedRegexPatterns": [],
   "regexOverrides": [],
   "sortCriteria": {
     "global": [
@@ -515,7 +502,11 @@
     }
   },
   "hideErrors": true,
-  "hideErrorsForResources": [],
+  "hideErrorsForResources": [
+    "addon_catalog",
+    "catalog",
+    "subtitles"
+  ],
   "yearMatching": {
     "enabled": true,
     "tolerance": 1,
@@ -609,8 +600,6 @@
     }
   },
   "autoPlay": {
-    "enabled": true,
-    "method": "matchingFile",
     "attributes": [
       "resolution",
       "quality",
@@ -621,7 +610,8 @@
   "precacheSelector": "count(cached(streams)) == 0 ? uncached(streams) : []",
   "precacheSingleStream": true,
   "preloadStreams": {
-    "enabled": false
+    "enabled": false,
+    "selector": "count(cached(streams)) == 0 ? uncached(streams) : []"
   },
   "services": [
     {
