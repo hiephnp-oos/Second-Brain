@@ -82,6 +82,33 @@ Credibility means the opponent expects the strategic move to be carried out even
 ### Chapter 7 — Unpredictability
 When both sides can anticipate and exploit systematic behavior, equilibrium may require mixing actions. The correct mixture is determined by the payoff structure, not necessarily 50:50. The randomization must itself be unpredictable; a fixed pattern with the correct long-run proportions remains exploitable. A player's best mix can change when the opponent's skills/payoffs change. Randomization also has limits: some situations are genuinely unique, information may make the opponent's action predictable, and strategic deception/surprise must be distinguished from routine mixed play.
 
+
+## Part II incremental foundations from GT-02
+
+### Chapter 5 — Choice and Chance
+- Randomization can be strategically necessary when predictable play is exploitable and no stable pure-strategy equilibrium exists.
+- The equilibrium mixture is determined by the payoff structure; it is not automatically 50:50.
+- In equilibrium, the chosen probabilities make the opponent indifferent among the actions used.
+- Correct long-run proportions are insufficient if individual actions follow a predictable pattern.
+- A deviation to a pure action can change the opponent's incentive to maintain the original mix.
+- A skill or payoff change by one player can change both players' equilibrium mixtures.
+- Strategic randomization is deliberately designed from the game, rather than simply leaving the decision to uncontrolled chance.
+
+### Chapter 6 — Strategic Moves
+- A strategic move is preemptive: the action or response rule must be established before the opponent moves.
+- Unconditional moves fix an action; conditional moves prescribe a response.
+- Threats and promises deliberately change the response rule to influence the opponent; warnings and assurances mainly communicate what would happen anyway.
+- Strategic moves transform the analysis into a sequential game because they change expectations before the opponent acts.
+- Threats and promises can be deterrent or compellent depending on whether they preserve or change the status quo.
+- The strategic move and its credibility are separate analytical layers.
+
+### Chapter 7 — Making Strategies Credible
+- Credibility means the opponent expects the commitment to be carried out even when reversal would later be attractive.
+- The eightfold path uses three mechanisms: change payoffs; limit the ability to back out; use others to support commitment.
+- The eight devices are reputation, contracts, cutting off communication, burning bridges, leaving the outcome to chance, moving in small steps, teamwork, and mandated negotiating agents.
+- The common mechanism is to make reversal more costly, impossible, externally constrained, progressively costly, or delegated.
+- Chance can be a commitment device when retaining control would otherwise undermine credibility.
+
 ## Part III foundations from GT-01
 
 Part III applies the earlier framework to risk, coordination, voting, bargaining and incentive design.
