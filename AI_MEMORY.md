@@ -58,6 +58,7 @@ These are the currently recognized work areas, not an exhaustive list of everyth
 | C. Nuvio Setup | Frozen | `TOPICS/C. NUVIO SETUP/README.md` |
 | D. R&D Database | Maintenance | `TOPICS/D. RnD DATABASE/README.md` |
 | E. R&D Innovation | Active | `TOPICS/E. RnD INNOVATION/README.md` |
+| F. General Thinking | Active | `TOPICS/F. GENERAL THINKING/README.md` |
 
 Status describes the topic lifecycle, not whether every item inside it is being worked on. Allowed values are `Building`, `Active`, `Maintenance`, `Frozen`, `Paused`, and `Archived`. The topic README is the authoritative place for the current status summary and direction; the registry mirrors only the lifecycle state for fast routing.
 
@@ -188,7 +189,7 @@ Ordered topic folders and routed child workstream folders use numeric prefixes t
 
 Current topic order:
 
-`A. AI GENERAL → B. CAREER → C. NUVIO SETUP → D. RnD DATABASE → E. RnD INNOVATION`
+`A. AI GENERAL → B. CAREER → C. NUVIO SETUP → D. RnD DATABASE → E. RnD INNOVATION → F. GENERAL THINKING`
 
 ## R&D Capability baseline
 
