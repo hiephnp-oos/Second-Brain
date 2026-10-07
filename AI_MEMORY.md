@@ -108,7 +108,7 @@ A topic should be added only when recurring work creates enough durable context 
 - Conflicting authoritative information is flagged and investigated rather than silently overwritten.
 - Health/lint controls target demonstrated failure modes before broader metrics infrastructure.
 - R&D Innovation now has a lightweight regression/evaluation layer under `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.3 PROJECT_IMPROVEMENT/Regression/` for real capability outputs; it is an evaluation aid, not a second workflow or scoring engine. Future-improvement references remain dormant unless recurring material evidence justifies activation through the Project Improvement gate.
-- Current recurring external schedules are the Career master scheduler and R&D Claw Discovery daily scheduler; AI General, Nuvio Setup, and R&D Database have no ChatGPT scheduled execution in the current operating model.
+- Current recurring external schedules are the Career master scheduler, the R&D Claw Discovery daily executor, and an independent R&D Claw persistence watchdog. The watchdog is a fallback/recovery trigger: it checks the durable daily artifact after the primary run and executes the current repository-defined Claw workflow only when the artifact is missing or incomplete. AI General, Nuvio Setup, and R&D Database have no ChatGPT scheduled execution in the current operating model.
 
 ## 9. HOW A NEW AI SHOULD ONBOARD
 
