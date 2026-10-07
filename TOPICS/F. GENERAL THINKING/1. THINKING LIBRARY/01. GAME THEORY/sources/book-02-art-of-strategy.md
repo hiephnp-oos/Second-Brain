@@ -60,6 +60,19 @@ Validation evidence:
 - The Markdown contains extraction artifacts such as escaped headings and formatting fragments. These are not treated as canonical source text.
 - The PDF remains authoritative whenever PDF and Markdown representations differ.
 
+## Part I traceability — controlled review map
+
+Part I was reviewed as an incremental extension of GT-01, not as a second copy of the same material.
+
+| Chapter | Durable reasoning retained | Incremental GT-02 contribution | Status |
+|---|---|---|---|
+| Ch. 1 — Ten Tales of Strategy | strategic interaction, anticipation, commitment, unpredictability, cooperation/conflict | infer objectives from the structure of the game; strategic sacrifice; explicit attention to human motives and meta-game reasoning | COVERED |
+| Ch. 2 — Games Solvable by Backward Reasoning | sequential moves, game trees, backward induction | solvability boundary conditions; behavioral limits of backward reasoning; distinction between normative strategy and observed behavior; complex-tree limits | COVERED |
+| Ch. 3 — Prisoners' Dilemmas and How to Resolve Them | dominant incentives, defection/cooperation, repeated interaction, enforcement | broader cross-domain framing of the dilemma; explicit resolution conditions and monitoring/enforcement logic | COVERED |
+| Ch. 4 — A Beautiful Equilibrium | Nash equilibrium, best responses, coordination | multiple equilibria, focal-point selection, Battle of the Sexes, Chicken, and the distinction between equilibrium existence and equilibrium selection | COVERED |
+
+Acceptance rule for Part I: every chapter must leave at least one durable reasoning mechanism, one operational model or application, and source traceability. Narrative examples are not duplicated as separate models when the underlying mechanism is already represented.
+
 ## Acceptance decision
 
 Status: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction.
