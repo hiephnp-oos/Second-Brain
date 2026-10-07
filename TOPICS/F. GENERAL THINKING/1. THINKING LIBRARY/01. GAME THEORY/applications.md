@@ -162,3 +162,26 @@ Use controlled uncertainty as part of a commitment when complete control over th
 
 ### 31. Mutual deterrence and surprise attack
 Model how each side's fear of being attacked first can create pressure for preemption, even when both sides would prefer a stable outcome.
+
+## GT-05 incremental applications from *The Evolution of Cooperation*
+
+### 32. Iterated Prisoner's Dilemma
+Model the history of interaction, not only the current round. A current cooperative move can be valuable because it affects future responses.
+
+### 33. TIT FOR TAT as reciprocal response
+Start cooperatively and then respond to the other's previous move. The source uses this as a simple baseline for studying how reciprocity can emerge and persist.
+
+### 34. Shadow-of-the-future test
+Before expecting cooperation, assess whether the same parties are likely to interact again and whether future consequences are large enough to matter.
+
+### 35. Strategy selection versus strategy stability
+Use tournament/ecological analysis to ask which strategies perform well in a mixed environment, then use collective-stability analysis to ask which strategies resist invasion after establishment.
+
+### 36. Clustered cooperation
+When interactions are local, cooperative strategies can benefit from repeated interaction with nearby reciprocators. Evaluate the network structure before assuming that population-wide averages describe local dynamics.
+
+### 37. Reciprocity under imperfect observation
+Introduce the possibility of mistaken observations and test whether a reciprocal rule remains cooperative rather than escalating into repeated retaliation.
+
+### 38. Reputation and repeated relationships
+When actors recognize prior partners and remember previous behavior, reputation can become an enforcement mechanism even without centralized authority.
