@@ -94,7 +94,7 @@ If everyone knows exactly when repeated interaction ends, reason backward from t
 Cooperation is easier when future gains are sufficiently valuable relative to the one-time gain from cheating.
 
 ## GT-MM-32 — Reciprocity needs forgiveness
-A retaliation rule that never repairs accidental breakdowns can destroy cooperation. Separate deliberate defection from noise and allow restoration when appropriate.
+A retaliation rule that never repairs accidental breakdowns can destroy cooperation. Separate deliberate defection from noise and use short-, medium- and long-term history to distinguish an exception from a pattern before escalating punishment.
 
 ## GT-MM-33 — Strategic move = preemptive response shaping
 A strategic move is not merely a statement of intent. It changes the response rule before the other actor chooses.
