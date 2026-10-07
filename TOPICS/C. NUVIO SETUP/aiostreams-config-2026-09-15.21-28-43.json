@@ -925,5 +925,19 @@
   "resultLimits": {
     "resolution": 15,
     "mode": "conjunctive"
+  },
+  "failover": {
+    "enabled": true,
+    "contentTypes": [
+      "usenet",
+      "debrid"
+    ],
+    "allowCrossType": true,
+    "maxAttempts": 5,
+    "parallel": 2,
+    "position": "beforeLimiting",
+    "precacheFailover": false,
+    "includeExternalFailover": true,
+    "sameReleaseLimit": 2
   }
 }
