@@ -200,3 +200,54 @@ Contracts, cut-off communication, burned bridges, incremental steps, teams, or m
 
 ## GT-MM-67 — Chance can be a commitment device
 Delegating the outcome to chance can make a commitment credible when retaining control would otherwise create an incentive to back down.
+
+## GT-MM-68 — Actions are information
+In asymmetric-information games, treat observable actions as evidence about hidden type, ability, intentions or information. Also model how the actor anticipates that inference.
+
+## GT-MM-69 — A credible signal must separate types
+A signal is strategically informative when it is sufficiently costly or unattractive for the wrong type to mimic. Cheap talk alone may not separate types.
+
+## GT-MM-70 — Screening makes types self-select
+An uninformed party can design a test, menu or choice set so different hidden types choose differently and thereby reveal information.
+
+## GT-MM-71 — Signal jamming can hide useful information
+When revealing information is harmful, an informed actor may deliberately choose behavior that makes inference harder. Interpret apparent noise or mimicry as potentially strategic.
+
+## GT-MM-72 — Externalities can make equilibrium inefficient
+When an individual's action imposes costs on others that are not privately priced, the Nash equilibrium can be worse for the group than a coordinated allocation.
+
+## GT-MM-73 — Price the external cost to align incentives
+A toll, fee or rule that makes an actor bear the marginal harm imposed on others can move decentralized behavior toward the collective optimum.
+
+## GT-MM-74 — Network effects create path dependence
+When the value of an option rises with adoption, an early advantage can become self-reinforcing and preserve an inferior equilibrium.
+
+## GT-MM-75 — Common-value winning can be bad news
+In common-value contests, being the winner can itself be evidence that your estimate was too optimistic. Condition your valuation on the information contained in winning.
+
+## GT-MM-76 — Mechanism design can reduce the need for strategic play
+A well-designed rule can make the desired action dominant or otherwise incentive-compatible, shifting strategic effort from playing the game to designing the game.
+
+## GT-MM-77 — Revenue equivalence has boundary conditions
+Different auction formats can have equivalent expected revenue only under their relevant assumptions. Do not generalize revenue equivalence to settings with different information, asymmetry or rules.
+
+## GT-MM-78 — Bargaining pie is value over BATNAs
+The surplus available for bargaining is what agreement creates relative to what each side gets without agreement. Divide that surplus only after establishing the outside options.
+
+## GT-MM-79 — Procedure is part of bargaining power
+Offer order, response rights, delay costs and deadlines change the bargaining game. Do not treat procedure as neutral.
+
+## GT-MM-80 — Voting power is pivotality
+A vote has strategic value when it can change the decisive outcome. Count coalition/tie structure rather than assuming every vote has equal influence.
+
+## GT-MM-81 — Incentives trade off motivation and risk
+When performance is noisy, stronger outcome-based incentives motivate effort but transfer more risk to the agent. Optimal design balances both effects.
+
+## GT-MM-82 — Relative performance can filter common shocks
+Comparing agents exposed to similar noise can reveal effort better than evaluating raw outcomes, provided the comparison structure does not invite collusion.
+
+## GT-MM-83 — Multiple principals can cancel incentives
+When several principals impose conflicting reward structures, each can offset the others and weaken the agent's total incentive to act.
+
+## GT-MM-84 — Intrinsic and extrinsic incentives can interact
+Adding a monetary incentive is not automatically beneficial. The size and framing of an external reward can alter the intrinsic motivation that was already present.
