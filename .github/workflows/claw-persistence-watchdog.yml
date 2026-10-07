@@ -41,13 +41,13 @@ jobs:
           path, run_date = pathlib.Path(sys.argv[1]), sys.argv[2]
           text = path.read_text(encoding="utf-8")
           required = {
-              "RUN_DATE": f"**RUN_DATE:** {run_date}",
-              "RUN_SLOT": "**RUN_SLOT:** 01",
-              "RS-10": "RS-10",
-              "RS-11": "RS-11",
-              "RS-12": "RS-12",
+              "RUN_DATE": re.compile(rf"^\\s*[-*]?\\s*\\*\\*RUN_DATE:\\*\\*\\s+\\*?\\*?{re.escape(run_date)}\\*?\\*?\\s*$", re.MULTILINE),
+              "RUN_SLOT": re.compile(r"^\\s*[-*]?\\s*\\*\\*RUN_SLOT:\\*\\*\\s+\\*?\\*?01\\*?\\*?\\s*$", re.MULTILINE),
+              "RS-10": re.compile(r"RS-10"),
+              "RS-11": re.compile(r"RS-11"),
+              "RS-12": re.compile(r"RS-12"),
           }
-          missing = [name for name, marker in required.items() if marker not in text]
+          missing = [name for name, pattern in required.items() if not pattern.search(text)]
           manual = bool(re.search(r"MANUAL\s+RECOVERY", text, re.IGNORECASE))
           # Artifact text cannot prove its own scheduler provenance. This watchdog
           # observes main only; it does not have a verified link to the external task.
