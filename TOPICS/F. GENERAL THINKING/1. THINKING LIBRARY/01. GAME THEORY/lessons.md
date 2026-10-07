@@ -1,87 +1,70 @@
 # Game Theory — Reusable Lessons
 
-Source: *Thinking Strategically* — Dixit & Nalebuff (GT-01)
+Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02)
 
 ## GT-L-01 — The opponent is part of the problem definition
-
-A strategic decision cannot be evaluated independently when another purposeful actor can respond.
-
-Reusable lesson:
-> Define the other actor and their likely response before optimizing your own move.
+Define the other actor and their likely response before optimizing your own move.
 
 ## GT-L-02 — Rules can matter more than intentions
-
-People may act differently because the structure of the interaction changes their incentives, available options, or expectations.
-
-Reusable lesson:
-> When behavior is undesirable, inspect the game structure before assuming the actor simply needs better instructions.
+When behavior is undesirable, inspect the game structure before assuming the actor simply needs better instructions.
 
 ## GT-L-03 — Credibility is an engineering problem
-
-A threat or promise does not become credible because it is stated strongly.
-
-Reusable lesson:
-> If the desired response depends on a future action, design the commitment mechanism that makes that future action believable.
+If the desired response depends on a future action, design the commitment mechanism that makes that action believable.
 
 ## GT-L-04 — More freedom can reduce strategic power
-
-Keeping every option open can make the other side expect that you will eventually back down.
-
-Reusable lesson:
-> Evaluate the strategic value of deliberately removing your own options.
+Evaluate the strategic value of deliberately removing your own options.
 
 ## GT-L-05 — Sequential thinking changes decisions
-
-The correct question is often not "What should I do now?" but "What will happen after I do it, and what will they do then?"
-
-Reusable lesson:
-> Look forward to the opponent's future response and reason backward.
+Look forward to the opponent's future response and reason backward.
 
 ## GT-L-06 — Cooperation needs enforcement conditions
-
-A cooperative agreement can fail even when everyone prefers the cooperative outcome.
-
-Reusable lesson:
-> For cooperation to persist, examine detection, attribution, punishment, and future incentives.
+For cooperation to persist, examine detection, attribution, punishment, and future incentives.
 
 ## GT-L-07 — Noisy evidence changes punishment strategy
-
-If observations can be wrong, immediate retaliation can create self-reinforcing failure.
-
-Reusable lesson:
-> Under uncertainty, distinguish isolated evidence from persistent behavior before escalating.
+Under uncertainty, distinguish isolated evidence from persistent behavior before escalating.
 
 ## GT-L-08 — Stability and quality are different dimensions
-
-A stable strategic outcome can still be collectively poor.
-
-Reusable lesson:
-> After finding an equilibrium, separately ask whether the equilibrium is desirable and whether another mechanism could produce a better outcome.
+After finding an equilibrium, separately ask whether it is desirable and whether another mechanism could produce a better outcome.
 
 ## GT-L-09 — Procedure is a strategic variable
-
-Who moves first, what happens after rejection, and how choices are sequenced can change the result.
-
-Reusable lesson:
-> Treat process design as part of the strategy, not as neutral administration.
+Treat process design as part of the strategy, not as neutral administration.
 
 ## GT-L-10 — Unpredictability can be a resource
-
-Predictability can allow an opponent to exploit your next move.
-
-Reusable lesson:
-> Where the opponent can profit from prediction, consider whether controlled randomization or uncertainty is strategically useful.
+Where the opponent can profit from prediction, consider whether controlled randomization is strategically useful.
 
 ## GT-L-11 — Do not overgeneralize a model
+Use Game Theory as a lens for structuring an interaction, not as a single automatic answer generator.
 
-The authors explicitly frame the book as principles rather than recipes. Real situations differ and may require combining several principles.
+## GT-L-12 — Information is part of the game
+Who knows what, who knows that the other knows it, and what can be inferred from behavior can change the strategic outcome.
 
-Reusable lesson:
-> Use Game Theory as a lens for structuring an interaction, not as a single automatic answer generator.
+## GT-L-13 — Actions can reveal hidden information
+Treat observable choices as evidence about private type, knowledge, or incentives.
+
+## GT-L-14 — Good mechanism design can simplify behavior
+A well-designed rule can make desirable behavior individually optimal instead of requiring every participant to be strategically sophisticated.
+
+## GT-L-15 — Winning can be bad news
+When the underlying value is uncertain, winning a competitive process may indicate that your estimate was unusually optimistic.
+
+## GT-L-16 — Strategic sophistication includes knowing when not to play
+A player should sometimes avoid a game whose rules or information structure create a systematically bad position.
+
+## GT-L-17 — Conflict and cooperation can coexist
+Many real games contain both common interests and conflicting interests. Look for ways to create value before arguing only about its division.
+
+## GT-L-18 — Information problems can often be redesigned
+When information cannot be observed directly, use signaling, screening, contracts, or incentives to make useful information or behavior emerge indirectly.
+
+## GT-L-19 — Sequence changes the value of risk
+When a later failure would eliminate remaining options, an appropriate risk taken earlier can preserve recovery paths.
 
 ## Book-level synthesis
 
-The central pattern of GT-01 is:
+GT-01 establishes the core strategic lens:
 
-`Model the players → map incentives → anticipate responses → account for sequence → change the game when useful → make commitments credible → evaluate the resulting outcome separately from its stability.`
+`Model players → map incentives → anticipate responses → account for sequence → change the game → make commitments credible.`
 
+GT-02 extends it:
+
+`Model players + information → infer what actions reveal → anticipate responses → design rules/mechanisms → create cooperation or truthful revelation → evaluate both value creation and value division.`
