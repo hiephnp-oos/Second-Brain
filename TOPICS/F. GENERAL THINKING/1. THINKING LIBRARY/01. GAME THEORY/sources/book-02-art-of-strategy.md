@@ -73,6 +73,18 @@ Part I was reviewed as an incremental extension of GT-01, not as a second copy o
 
 Acceptance rule for Part I: every chapter must leave at least one durable reasoning mechanism, one operational model or application, and source traceability. Narrative examples are not duplicated as separate models when the underlying mechanism is already represented.
 
+
+## Part II traceability — controlled review map
+
+| Chapter | Durable reasoning retained | Incremental GT-02 contribution | Status |
+|---|---|---|---|
+| Ch. 5 — Choice and Chance | mixed strategies and unpredictability | payoff-derived mixing, indifference condition, individual-action unpredictability, skill-change effects, deliberate chance | COVERED |
+| Ch. 6 — Strategic Moves | unconditional moves, threats, promises, warnings, assurances | preemptive response rules, deterrent vs compellent distinction, timing transformation, move vs credibility separation | COVERED |
+| Ch. 7 — Making Strategies Credible | commitment, credibility, reputation, contracts, delegation | eightfold path, three underlying mechanisms, chance as commitment, incremental commitment, mandated agents | COVERED |
+| Epilogue to Part II | historical development and further-reading context | retained as context, not promoted as reusable mental models | COVERED AS CONTEXT |
+
+Acceptance rule for Part II: every substantive chapter must leave a durable reasoning mechanism, an operational model or application, and source traceability. Historical/further-reading material is retained only as context.
+
 ## Acceptance decision
 
 Status: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction.
