@@ -16,13 +16,13 @@
 
 | ID | Source PDF | Extracted Markdown | Review status | Key finding |
 |---|---|---|---|---|
-| 01 | 01 - Thinking Strategically.pdf | 01 - Thinking Strategically.md | REVIEWED — NORMALIZATION REQUIRED | 468 escaped headings; fragmented title/contents hierarchy; OCR artifacts; malformed table/prose blocks; footnote/page-marker and game-tree handling require cleanup. |
+| 01 | 01 - Thinking Strategically.pdf | 01 - Thinking Strategically.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed for knowledge extraction; raw Markdown still contains extraction artifacts, but title/author identity, major chapter sequence, reading order, and representative strategic-game content are traceable to the PDF. |
 | 02 | 02 - The Art of Strategy.pdf | 02 - The Art of Strategy.md | REVIEWED — NORMALIZATION REQUIRED | 323 escaped headings; title/contents hierarchy fragmented; chapter headings split/over-nested; source has 550 pages and the extraction needs hierarchy/reading-order validation. |
 | 03 | 03 - A Course in Game Theory.pdf | 03 - A Course in Game Theory.md | REVIEWED — NORMALIZATION REQUIRED | 144 escaped headings and 562 pipe-bearing lines; mathematical/table structure needs source-aware normalization; hierarchy must preserve numbered sections and results. |
 | 04 | 04 - The Strategy of Conflict.pdf | 04 - The Strategy of Conflict.md | REVIEWED — NORMALIZATION REQUIRED | 46 escaped headings; TOC/subheading hierarchy needs recovery; 82 pipe-bearing lines and OCR/fragment artifacts require validation. |
 | 05 | 05 - The Evolution of Cooperation.pdf | 05 - The Evolution of Cooperation.md | REVIEWED — NORMALIZATION REQUIRED | 48 escaped headings; 267 pipe-bearing lines; chapter/part hierarchy and table/figure handling require source comparison. |
 | 06 | 06 - Thinking in Systems.pdf | 06 - Thinking in Systems.md | REVIEWED — NORMALIZATION REQUIRED | 134 escaped headings; 205 pipe-bearing lines; part/chapter hierarchy and systems diagrams/tables need source-aware reconstruction. |
-| 07 | 07 - Statistical Rethinking.pdf | 07 - Statistical Rethinking_01.md + 07 - Statistical Rethinking_02.md | REVIEWED — NORMALIZATION REQUIRED | Part 01 has 141 escaped headings and 1,998 pipe-bearing lines; Part 02 has active headings but 2,016 pipe-bearing lines. Mathematical notation, equations, R/Stan code, tables, and chapter hierarchy need careful validation across the split. |
+| 07 | 07 - Statistical Rethinking_01.pdf + 07 - Statistical Rethinking_02.pdf | 07 - Statistical Rethinking_01.md + 07 - Statistical Rethinking_02.md | REVIEWED — NORMALIZATION REQUIRED | Part 01 has 141 escaped headings and 1,998 pipe-bearing lines; Part 02 has active headings but 2,016 pipe-bearing lines. Mathematical notation, equations, R/Stan code, tables, and chapter hierarchy need careful validation across the split. |
 | 08 | 08 - Superforecasting.pdf | 08 - Superforecasting.md | REVIEWED — NORMALIZATION REQUIRED | 107 escaped headings; title/section hierarchy is extraction-driven rather than source-faithful and needs recovery. |
 | 09 | 09 - The Scout Mindset.pdf | 09 - The Scout Mindset.md | REVIEWED — NORMALIZATION REQUIRED | 107 escaped headings in a short 64-page source; title/front-matter and section hierarchy require normalization and source traceability checks. |
 | 10 | 10 - Thinking, Fast and Slow.pdf | 10 - Thinking, Fast and Slow.md | REVIEWED — NORMALIZATION REQUIRED | 276 escaped headings; 275 pipe-bearing lines; contents/appendix structure and table/footnote handling need normalization. |
@@ -62,7 +62,7 @@ A book is `REVIEWED — NORMALIZATION REQUIRED` when the source can be understoo
 
 ## Book 01 review notes — Thinking Strategically
 
-The source PDF and extracted Markdown are traceable to the same title and chapter structure, but the Markdown is not structurally clean.
+The source PDF and extracted Markdown are traceable to the same title and chapter structure. The Markdown is not structurally clean enough to be treated as a canonical transcription, but it is sufficient as a retrieval aid after PDF validation.
 
 Observed issues:
 
@@ -74,11 +74,11 @@ Observed issues:
 - Strategic-game tables and diagrams/game trees are not represented as faithful structural objects and require source-aware reconstruction or explicit placeholders.
 - Reading order is broadly recoverable, so the file is usable as source material but not yet suitable as a clean canonical source.
 
-Decision: `REVIEWED — NORMALIZATION REQUIRED`. Do not distill knowledge from this file until structural normalization and PDF↔Markdown validation are complete.
+Validation decision: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction. Do not promote the raw Markdown itself as canonical source text.
 
 ## Pilot implication
 
-All 16 books have now passed the same review gate inside PR #134. The next phase is to define/apply the normalization contract and validate the normalized source set before any knowledge distillation. No separate PR per book is required.
+Book 01 is the first source promoted through the full PDF↔Markdown validation gate. Its raw Markdown remains an extraction aid rather than a canonical transcription. Knowledge distillation is now allowed for Book 01 only; Books 02–16 remain blocked until their own validation gates pass.
 
 ## Architecture reconciliation
 
@@ -127,7 +127,7 @@ Required checks:
 ### Current private validation result
 
 - 16 PDFs and 17 Markdown parts were found in the supplied \`BOOK.zip\`.
-- All 16 book identities and the split Statistical Rethinking pair are present.
+- All 16 book identities are present. The source inventory contains 17 PDFs and 17 Markdown parts because Statistical Rethinking is split into two PDF/Markdown parts.
 - A safe mechanical normalization baseline was generated privately for all 17 Markdown parts; escaped heading markers were activated where present without rewriting source wording.
 - The baseline is **not** considered structurally accepted. Several books still require source-aware hierarchy, table/equation/code/figure handling identified in the review notes.
 - Therefore all 16 books remain \`REVIEWED — NORMALIZATION REQUIRED\`.
