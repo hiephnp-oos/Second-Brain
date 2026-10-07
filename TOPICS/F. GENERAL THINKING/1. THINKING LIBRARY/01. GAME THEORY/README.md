@@ -11,19 +11,28 @@ It is not a copy of source books. Source material remains private; this folder s
 Use Game Theory when:
 - multiple actors can affect one another's outcomes;
 - another actor's response materially changes the value of your action;
-- incentives, commitments, threats, promises, cooperation, competition, or sequencing matter;
+- incentives, commitments, threats, promises, cooperation, competition, sequencing, or information asymmetry matter;
 - the situation is better understood as an interaction than as an isolated decision.
 
 Do not use it as the default lens for a problem that has no meaningful strategic interaction.
 
-## Current source
+## Accepted sources
 
-Primary pilot source:
+### GT-01 — Thinking Strategically
 
 - *Thinking Strategically* — Avinash K. Dixit & Barry J. Nalebuff
-- Source ID: GT-01
-- Intake status: STRUCTURALLY ACCEPTED for knowledge extraction
+- Intake status: STRUCTURALLY ACCEPTED
 - Private source pair: `01 - Thinking Strategically.pdf` + `01 - Thinking Strategically.md`
+- Role: foundational source for strategic interaction, equilibrium, commitment, cooperation, bargaining, and incentives.
+
+### GT-02 — The Art of Strategy
+
+- *The Art of Strategy: A Game Theorist's Guide to Success in Business and Life* — Avinash K. Dixit & Barry J. Nalebuff
+- Intake status: STRUCTURALLY ACCEPTED
+- Private source pair: `02 - The Art of Strategy.pdf` + `02 - The Art of Strategy.md`
+- Role: extends the foundation with information asymmetry, signaling/screening, auctions, richer bargaining/voting/incentive examples, and a broader treatment of cooperation and strategic reasoning.
+
+The PDF is the source authority for both accepted sources. Markdown is a retrieval/extraction aid and is never treated as the canonical source text.
 
 ## Knowledge layers
 
@@ -31,4 +40,5 @@ Primary pilot source:
 - [Mental Models](mental-models.md)
 - [Applications](applications.md)
 - [Lessons](lessons.md)
-- [Source Traceability](sources/book-01-thinking-strategically.md)
+- [Source Traceability — Book 01](sources/book-01-thinking-strategically.md)
+- [Source Traceability — Book 02](sources/book-02-art-of-strategy.md)
