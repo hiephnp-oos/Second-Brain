@@ -125,3 +125,15 @@ Joint dependence creates hold-up risk; contracts should address future renegotia
 
 ## GT-L-42
 Auction outcomes depend on the mechanism and information structure; winning can itself be evidence that your estimate was unusually optimistic.
+
+## GT-L-43
+The visible move is not the full game. Infer the actor's objective and constraints before evaluating whether the move is rational.
+
+## GT-L-44
+A temporary loss can be strategically optimal when it improves the future state or changes who remains in the game.
+
+## GT-L-45
+Backward induction is a reasoning tool with boundary conditions. Hidden information, uncertain motives, simultaneous moves, or excessive tree complexity require additional models.
+
+## GT-L-46
+An equilibrium is a stability condition, not a prediction by itself. When multiple equilibria exist, explain the equilibrium-selection mechanism.
