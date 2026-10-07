@@ -939,5 +939,8 @@
     "precacheFailover": false,
     "includeExternalFailover": true,
     "sameReleaseLimit": 2
+  },
+  "remuxDb": {
+    "enabled": true
   }
 }
