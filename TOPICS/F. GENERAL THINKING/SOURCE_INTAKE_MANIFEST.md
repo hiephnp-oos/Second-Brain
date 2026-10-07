@@ -17,7 +17,7 @@
 | ID | Source PDF | Extracted Markdown | Review status | Key finding |
 |---|---|---|---|---|
 | 01 | 01 - Thinking Strategically.pdf | 01 - Thinking Strategically.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed for knowledge extraction; raw Markdown still contains extraction artifacts, but title/author identity, major chapter sequence, reading order, and representative strategic-game content are traceable to the PDF. |
-| 02 | 02 - The Art of Strategy.pdf | 02 - The Art of Strategy.md | REVIEWED — NORMALIZATION REQUIRED | 323 escaped headings; title/contents hierarchy fragmented; chapter headings split/over-nested; source has 550 pages and the extraction needs hierarchy/reading-order validation. |
+| 02 | 02 - The Art of Strategy.pdf | 02 - The Art of Strategy.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed; 550-page PDF and Markdown preserve the same 14-chapter structure and representative content coverage. Raw Markdown remains an extraction aid, not canonical source text. |
 | 03 | 03 - A Course in Game Theory.pdf | 03 - A Course in Game Theory.md | REVIEWED — NORMALIZATION REQUIRED | 144 escaped headings and 562 pipe-bearing lines; mathematical/table structure needs source-aware normalization; hierarchy must preserve numbered sections and results. |
 | 04 | 04 - The Strategy of Conflict.pdf | 04 - The Strategy of Conflict.md | REVIEWED — NORMALIZATION REQUIRED | 46 escaped headings; TOC/subheading hierarchy needs recovery; 82 pipe-bearing lines and OCR/fragment artifacts require validation. |
 | 05 | 05 - The Evolution of Cooperation.pdf | 05 - The Evolution of Cooperation.md | REVIEWED — NORMALIZATION REQUIRED | 48 escaped headings; 267 pipe-bearing lines; chapter/part hierarchy and table/figure handling require source comparison. |
@@ -60,6 +60,20 @@ A book is `REVIEWED — NORMALIZATION REQUIRED` when the source can be understoo
 - Mathematical notation, equations, R/Stan code, figures, diagrams, and game trees require special handling rather than generic Markdown cleanup.
 - Source wording and ordering must be preserved. Structural cleanup must not become summarization or interpretation.
 
+## Book 02 review notes — The Art of Strategy
+
+The PDF is the canonical source. The Markdown was reviewed only as an extraction/retrieval representation against the PDF.
+
+Observed and validated:
+
+- PDF metadata identifies *The Art of Strategy* by Avinash K. Dixit and Barry J. Nalebuff and reports 550 pages.
+- PDF and Markdown contain the same 14-chapter sequence across Parts I–III, plus the Part II Nobel-history epilogue, Further Reading, Workouts, and Notes.
+- Representative sections across backward reasoning, mixed strategies, commitment, information asymmetry, signaling/screening, auctions, cooperation, bargaining, voting, and incentives are traceable in both representations.
+- The Markdown contains escaped headings and extraction-format artifacts, so it is not promoted as canonical source text.
+- PDF and Markdown word volumes are within approximately 0.1%; this supports broad coverage but is not treated as proof of semantic identity.
+
+Validation decision: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction. PDF remains authoritative whenever the two representations differ.
+
 ## Book 01 review notes — Thinking Strategically
 
 The source PDF and extracted Markdown are traceable to the same title and chapter structure. The Markdown is not structurally clean enough to be treated as a canonical transcription, but it is sufficient as a retrieval aid after PDF validation.
@@ -78,7 +92,7 @@ Validation decision: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction
 
 ## Pilot implication
 
-Book 01 is the first source promoted through the full PDF↔Markdown validation gate. Its raw Markdown remains an extraction aid rather than a canonical transcription. Knowledge distillation is now allowed for Book 01 only; Books 02–16 remain blocked until their own validation gates pass.
+Books 01–02 have now passed the full PDF↔Markdown validation gate. Their raw Markdown remains an extraction aid rather than canonical transcription. Knowledge distillation is allowed only for these accepted sources; Books 03–16 remain blocked until their own validation gates pass.
 
 ## Architecture reconciliation
 
@@ -126,11 +140,11 @@ Required checks:
 
 ### Current private validation result
 
-- 16 PDFs and 17 Markdown parts were found in the supplied \`BOOK.zip\`.
+- 17 PDFs and 17 Markdown parts were found in the supplied \`BOOK.zip\`.
 - All 16 book identities are present. The source inventory contains 17 PDFs and 17 Markdown parts because Statistical Rethinking is split into two PDF/Markdown parts.
 - A safe mechanical normalization baseline was generated privately for all 17 Markdown parts; escaped heading markers were activated where present without rewriting source wording.
-- The baseline is **not** considered structurally accepted. Several books still require source-aware hierarchy, table/equation/code/figure handling identified in the review notes.
-- Therefore all 16 books remain \`REVIEWED — NORMALIZATION REQUIRED\`.
+- Book 01 and Book 02 have now passed their source-aware PDF↔Markdown validation gates and are `STRUCTURALLY ACCEPTED` for controlled knowledge extraction.
+- Books 03–16 remain `REVIEWED — NORMALIZATION REQUIRED` and remain blocked from distillation.
 - No full PDF or full extracted book text is committed to this public repository.
 
 The next promotion gate is source-aware structural normalization followed by the validation checks above. Knowledge distillation remains blocked until that gate passes.
