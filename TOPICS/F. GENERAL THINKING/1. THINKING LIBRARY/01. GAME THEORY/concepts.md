@@ -165,3 +165,56 @@ Part III applies the earlier framework to risk, coordination, voting, bargaining
 3. Voting procedures and bargaining procedures are themselves strategic mechanisms; changing the procedure can change the outcome without changing preferences.
 4. Bargaining power comes partly from relative outside options, patience and control over procedure.
 5. Incentive systems must be designed around observability, risk allocation, hold-up and the strategic response to the mechanism.
+
+## Part III incremental foundations from GT-02
+
+### Chapter 8 — Interpreting and Manipulating Information
+- Actions can reveal private information; strategic actors therefore choose actions partly for their information content, not only for their direct payoff.
+- Signaling is information revelation by the informed side; screening is information elicitation by the uninformed side through a menu, test or choice structure.
+- A credible signal must be harder or more costly for an unsuitable type to mimic; cheap statements alone may not separate types.
+- Signal jamming can deliberately reduce the information that others can infer from an action.
+- Information is strategic at multiple levels: infer what an action reveals, then anticipate how the actor may have chosen the action knowing that it will be interpreted.
+- Private information can create adverse-selection problems; mechanism design can reduce them by inducing useful revelation or self-selection.
+
+### Chapter 9 — Cooperation and Coordination
+- Individual optimization can produce a stable equilibrium that is inferior to coordinated action when actions impose external costs on others.
+- Pricing or charging for the external cost can sometimes align private incentives with the collective optimum.
+- Network effects and bandwagon effects can make an inferior convention self-reinforcing; history can determine which equilibrium persists.
+- Coordination can require a threshold-crossing intervention because small individual deviations may be unattractive until enough others move together.
+- Collective action can be self-enforcing when detection and sanctions are feasible, but an outside rule or institution can sometimes enforce a mutually beneficial constraint more effectively.
+- A coordination device can change expectations and move the system from one equilibrium to another without changing individual preferences.
+
+### Chapter 10 — Auctions, Bidding, and Contests
+- Distinguish private value from common value before choosing a bidding strategy.
+- In common-value settings, winning can reveal that your estimate was unusually optimistic; this is the winner's curse.
+- Auction format changes the information revealed and the strategic incentives: English/Japanese, Vickrey, Dutch and sealed-bid formats need not be strategically equivalent in every information environment.
+- In a Vickrey auction with private values, truthful bidding is a dominant strategy; mechanism design can make players less strategically burdened by changing the rules.
+- Revenue equivalence shows that different auction rules can produce the same expected seller revenue under the relevant assumptions; changing rules does not automatically change behavior in the intended direction because bidders adapt.
+- In multi-stage or linked auctions, strategy can span multiple games; a bid in one contest can affect incentives in another.
+
+### Chapter 11 — Bargaining
+- Measure the bargaining pie from the value created relative to the parties' BATNAs, not from superficial costs or shares.
+- Bargaining power is affected by patience and by the relative quality of outside options; both parties can be made worse off by a strategic move that damages the opponent more.
+- Finite bargaining can be solved by backward reasoning from the final period; indefinite bargaining depends on discounting and patience.
+- Bargaining procedure itself is strategic: who makes offers, when counteroffers occur, and how delay is structured can change the settlement.
+- Multiple issues allow logrolling: trade issues according to differences in relative valuation rather than splitting every issue equally.
+
+### Chapter 12 — Voting
+- Majority preferences can cycle; there may be no stable Condorcet winner when preferences over three or more alternatives are intransitive at the group level.
+- Agenda control can exploit the order of pairwise votes; the procedure can determine the outcome even when preferences are unchanged.
+- Sequential voting invites backward reasoning and strategic voting rather than sincere voting.
+- A voter's power depends on pivotality: a vote matters when it changes or breaks the decisive coalition or tie.
+- Voting rules are mechanisms with incentives; changing ballot format or procedure can change strategic behavior and the resulting collective choice.
+
+### Chapter 13 — Incentives
+- When effort is hidden, contracts must reward observable outcomes or proxies correlated with effort.
+- Incentive design trades off motivation against risk borne by the agent; imperfect performance measures create a cost of risk allocation.
+- Relative-performance evaluation can filter common shocks and improve inference about effort, but information about peers must be designed to avoid collusion.
+- Intrinsic motivation can interact with monetary incentives; small or poorly designed rewards can weaken rather than strengthen performance.
+- Multiple principals can offset one another's incentives, weakening the aggregate incentive system.
+- Contracts can also allocate risk and solve hold-up or joint-venture incentive problems; the mechanism must be evaluated from each party's strategic response.
+
+### Chapter 14 — Case Studies
+- Treat the 14 case studies as application tests of the preceding mechanisms, not as 14 additional mental models.
+- Cases cover information inference, coordination/externalities, strategic timing, auctions/contests, bargaining, voting, and incentives.
+- Durable extraction should preserve the mechanism demonstrated by each case and avoid duplicating the narrative.
