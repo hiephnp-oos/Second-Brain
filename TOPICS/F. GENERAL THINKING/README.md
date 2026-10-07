@@ -36,7 +36,7 @@ The repository stores durable structure, source metadata, extraction status, and
 - [FRAMEWORK_INDEX.md](FRAMEWORK_INDEX.md)
 - [CORE_READING_SET.md](CORE_READING_SET.md)
 - [SOURCE_INTAKE_MANIFEST.md](SOURCE_INTAKE_MANIFEST.md)
-- [1. THINKING LIBRARY/README.md](1. THINKING%20LIBRARY/README.md)
+- [1. THINKING LIBRARY/README.md](1. THINKING LIBRARY/README.md)
 
 ## Decisions
 
