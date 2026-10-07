@@ -18,11 +18,11 @@ Source PDFs/full extracted books remain outside the public repository when they 
 
 When a framework has enough material to justify its own folder, use:
 
-- `README.md{B} — scope, when to use, when not to use.
-- `concepts.md{B} — distilled foundational concepts.
-- `mental-models.md{B} — practical reasoning models/checklists.
-- `applications.md{B} — real applications and cases.
-- `lessons.md{B} — reusable lessons.
-- `sources/{B} — source metadata and traceability, not full copyrighted book text.
+- ``README.md` — scope, when to use, when not to use.
+- ``concepts.md` — distilled foundational concepts.
+- ``mental-models.md` — practical reasoning models/checklists.
+- ``applications.md` — real applications and cases.
+- ``lessons.md` — reusable lessons.
+- ``sources/` — source metadata and traceability, not full copyrighted book text.
 
 Do not create every possible theory folder in advance. Create a framework folder when real content justifies it.
