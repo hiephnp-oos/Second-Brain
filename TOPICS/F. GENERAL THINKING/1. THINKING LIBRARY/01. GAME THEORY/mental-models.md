@@ -117,3 +117,18 @@ For cooperative problems, ask whether any coalition can obtain a better outcome 
 
 ## GT-MM-30 — Separate bargaining outcome from bargaining procedure
 A bargaining solution depends on the feasible agreements, disagreement outcome, preferences, and the solution principles used to select among them.
+
+## GT-MM-31 — Look for the focal point when coordination is the problem
+When communication is unavailable, ask which outcome is uniquely salient, prominent, or mutually recognizable rather than assuming players must randomize.
+
+## GT-MM-32 — Expectations can coordinate behavior without commands
+If each player expects the other to recognize the same signal, the shared expectation can become self-reinforcing.
+
+## GT-MM-33 — Communication can be an instrument or a constraint
+Ask not only what information a message conveys, but also who can send, receive, block, destroy, or selectively reveal it.
+
+## GT-MM-34 — Delegate when changing the decision-maker changes credibility
+An agent or mediator can change the strategic game by altering incentives, information, or the ability to reverse a commitment.
+
+## GT-MM-35 — Deliberate uncertainty can strengthen a commitment
+A commitment can become more credible when the actor gives up some control over whether the costly consequence occurs.
