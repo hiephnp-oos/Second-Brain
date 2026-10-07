@@ -274,7 +274,7 @@ Do not add another prompt/runtime layer unless subsequent regression evidence de
 Capability contracts are connected to the recurring trigger. Scheduling is an execution trigger, not the workflow source of truth.
 
 
-The current Claw cadence is three scheduled executions per day. Each execution runs the repository-defined RS-10 → RS-11 → RS-12 discovery flow and appends its results to the same date-specific daily record under PERSONAL_RESEARCH/. The user reviews the daily record directly. There is no active staging workflow, three-day consolidation, RS-13 prompt, or batch output. Existing staging/batch artifacts are historical records and are not used by new executions.
+The current Claw cadence is one primary scheduled execution per local date at 05:00 Asia/Ho_Chi_Minh, writing RUN_SLOT 01 to the date-specific daily record under PERSONAL_RESEARCH/. An independent fallback watchdog runs after the primary window and checks that durable artifact; when it is missing or incomplete, the watchdog executes the current repository-defined RS-10 → RS-11 → RS-12 workflow as recovery. The user reviews the daily record directly. There is no active staging workflow, three-day consolidation, RS-13 prompt, or batch output. Existing staging/batch artifacts are historical records and are not used by new executions.
 
 Keep the scheduler lightweight. The external scheduler now triggers the current GitHub-defined capability contract and does not contain a second copy of the business rules.
 

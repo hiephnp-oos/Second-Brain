@@ -101,6 +101,8 @@ A scheduled Capability must document trigger, cadence, timezone/date semantics w
 
 Scheduled-output reliability is a contract, not a best-effort behavior: when a required durable artifact is missing, the execution is incomplete even if discovery, search, synthesis, or another upstream step succeeded. Capability contracts for scheduled outputs must therefore make persistence and final-state verification explicit enough for deterministic contract checks to protect against regression.
 
+For a high-value external scheduled Capability where a missed run materially breaks the workflow, use an independent fallback watchdog when practical. The watchdog must observe the durable output, not self-reported scheduler state; if the expected artifact is missing or incomplete after the primary run window, it may execute the same current repository-defined Capability as bounded recovery. It must never overwrite a complete artifact, alter baseline rules, or treat recovery as proof that the primary scheduler executed.
+
 ## GitHub platform layers
 
 ### GitHub Projects
