@@ -212,7 +212,8 @@ The topic folders use numeric prefixes in canonical workflow/navigation order:
 3. `TOPICS/C. NUVIO SETUP/`
 4. `TOPICS/D. RnD DATABASE/`
 5. `TOPICS/E. RnD INNOVATION/`
-6. `SYSTEM CORE/`
+6. `TOPICS/F. GENERAL THINKING/`
+7. `SYSTEM CORE/`
 
 Ordered child workstream folders use the same convention when their routing/workflow sequence is meaningful. Supporting artifact folders remain unnumbered.
 
