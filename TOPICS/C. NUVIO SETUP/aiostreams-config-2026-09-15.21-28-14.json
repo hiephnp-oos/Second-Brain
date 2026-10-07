@@ -27,14 +27,6 @@
   "addonName": "Primary",
   "addonLogo": "https://cdn.xperience-app.com/avatars/hbo-max/paul.webp",
   "addonDescription": "TorBox-first. Curated streams, intelligent ranking, clean results. AIOStreams × TorBox, with P2P/HTTP fallback. Vietnamese subs included.\n\nCredit: HiepHoang",
-  "appliedTemplates": [
-    {
-      "id": "tamtaro.complete",
-      "version": "3.2.5",
-      "url": "https://raw.githubusercontent.com/Tam-Taro/SEL-Filtering-and-Sorting/refs/heads/main/Tamtaro-All-Templates-for-AIOStreams.json",
-      "dismissedVersion": "3.2.6"
-    }
-  ],
   "excludedResolutions": [
     "720p",
     "576p",
@@ -1177,5 +1169,8 @@
   "serviceWrap": {
     "enabled": false,
     "reconfigureService": false
+  },
+  "remuxDb": {
+    "enabled": true
   }
 }
