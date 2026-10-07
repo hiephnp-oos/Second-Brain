@@ -59,6 +59,24 @@ When information cannot be observed directly, use signaling, screening, contract
 ## GT-L-19 — Sequence changes the value of risk
 When a later failure would eliminate remaining options, an appropriate risk taken earlier can preserve recovery paths.
 
+## GT-L-20 — Information assumptions are part of the model
+Do not treat private information, beliefs, or common knowledge as background details. They can change which strategies and equilibria are possible.
+
+## GT-L-21 — A sequential equilibrium must survive future decisions
+A plan is not credible merely because it forms a Nash equilibrium at the start. Check the behavior prescribed after every relevant history.
+
+## GT-L-22 — Repetition changes the game, not just the number of rounds
+When future interaction matters, history-dependent strategies and credible punishments can alter current incentives.
+
+## GT-L-23 — Desired outcomes may require mechanism design
+If an outcome is not stable under the current rules, redesign the game so that the target behavior is supported by equilibrium incentives.
+
+## GT-L-24 — Coalition deviations are a separate stability test
+An outcome can be stable against individual deviations yet vulnerable to coordinated deviation by a group.
+
+## GT-L-25 — Bargaining solutions encode selection principles
+When several feasible agreements exist, the selected outcome depends on the disagreement point, preferences, feasible set, and the principles imposed by the solution concept.
+
 ## Book-level synthesis
 
 GT-01 establishes the core strategic lens:
@@ -68,3 +86,7 @@ GT-01 establishes the core strategic lens:
 GT-02 extends it:
 
 `Model players + information → infer what actions reveal → anticipate responses → design rules/mechanisms → create cooperation or truthful revelation → evaluate both value creation and value division.`
+
+GT-03 formalizes the model:
+
+`Specify actions + information → identify rationalizable behavior → solve sequential/repeated interaction → account for beliefs → test subgame/sequential credibility → test coalition stability → design or select the desired outcome.`
