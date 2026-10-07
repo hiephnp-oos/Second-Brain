@@ -113,7 +113,7 @@ The Part I synthesis retained in the knowledge layer is:
 
 Status: **PART I COVERED FOR KNOWLEDGE EXTRACTION**
 
-This means the durable strategic reasoning of Chapters 1–3 and the Part I synthesis is represented in `concepts.md`, `mental-models.md`, `applications.md`, and `lessons.md), with this file providing the source-to-knowledge coverage map.
+This means the durable strategic reasoning of Chapters 1–3 and the Part I synthesis is represented in `concepts.md`, `mental-models.md`, `applications.md`, and `lessons.md`, with this file providing the source-to-knowledge coverage map.
 
 It does not mean every example, historical detail, citation, case-study fact, diagram or wording from Part I is reproduced.
 
