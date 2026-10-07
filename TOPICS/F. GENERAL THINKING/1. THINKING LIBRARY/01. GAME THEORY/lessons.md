@@ -92,3 +92,36 @@ Correct long-run frequencies do not make a strategy unpredictable if the sequenc
 
 ## GT-L-31
 Randomization and brinkmanship are different mechanisms: one hides the next action; the other creates controlled risk.
+
+## GT-L-32
+Brinkmanship is useful only when the opponent recognizes the risk and can escape it by complying; otherwise the risk may be ineffective or simply dangerous.
+
+## GT-L-33
+A deterrent mechanism should be judged by the outcome probabilities it creates, not by the apparent severity of the action itself.
+
+## GT-L-34
+A stable equilibrium can still be socially wasteful when individuals impose congestion or spillovers on one another.
+
+## GT-L-35
+Path dependence means an established convention can survive because changing it requires coordinated movement, not because it remains objectively best.
+
+## GT-L-36
+Higher-order expectations can dominate intrinsic value when each player is trying to predict what other players will predict.
+
+## GT-L-37
+Voting rules are incentive mechanisms: agenda order and ballot constraints can change outcomes even when preferences stay fixed.
+
+## GT-L-38
+A bargaining advantage often comes from having a better relative outside option or lower cost of waiting, not from having a larger absolute resource base.
+
+## GT-L-39
+Multi-issue bargaining can create mutual gains when parties value the issues differently.
+
+## GT-L-40
+When effort is hidden, incentive design must pay for observable outcomes or signals while accounting for noise and risk.
+
+## GT-L-41
+Joint dependence creates hold-up risk; contracts should address future renegotiation before investments become sunk.
+
+## GT-L-42
+Auction outcomes depend on the mechanism and information structure; winning can itself be evidence that your estimate was unusually optimistic.
