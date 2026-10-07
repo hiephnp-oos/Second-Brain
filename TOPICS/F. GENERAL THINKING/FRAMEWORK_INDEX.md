@@ -16,3 +16,12 @@ Create a physical library when durable concepts, reusable mental models, recurri
 
 ## Ownership
 One durable concept should have one owner. Supporting frameworks cross-link rather than copy near-identical definitions.
+
+## Cross-framework retrieval
+Use 2. SYNTHESIS when the problem requires a stable combination of two or more framework owners. Do not move framework-local knowledge into Synthesis.
+
+## Experience retrieval
+Use 3. REFLECTION when the question is about what happened after applying a framework in a real situation. Reflection is evidence about application, not a replacement for the framework.
+
+## Personal-rule retrieval
+Use 4. PERSONAL PRINCIPLES only for validated user-owned rules derived from reflection. Do not treat book recommendations as personal principles.
