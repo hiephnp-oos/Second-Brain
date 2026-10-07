@@ -107,3 +107,32 @@ Before creating mutual dependence, define enforceable terms for future renegotia
 
 ## GT-APP-36 — Auction mechanism review
 Before bidding, identify the auction rule, private versus common value, information revealed by winning, and whether the mechanism makes truthful reporting or strategic shading optimal.
+
+## GT-APP-37 — Meta-game / objective inference
+When a decision looks surprising, model the objective of the actor designing or controlling the interaction before judging the move itself.
+
+Application pattern:
+- identify the visible decision;
+- identify the actor's actual objective and constraints;
+- ask what outcome the actor wants the other side to choose;
+- reassess the apparent move as part of that larger game.
+
+## GT-APP-38 — Strategic sacrifice review
+When a move appears locally losing, test whether it improves the future game state.
+
+Application pattern:
+- compare immediate payoff with downstream state;
+- identify which rival, option, or constraint changes after the sacrifice;
+- evaluate the eventual payoff rather than the local score alone.
+
+## GT-APP-39 — Backward-reasoning solvability audit
+Before using a game tree as if it were fully solvable, check whether the state, action history, objectives, and subsequent choices are sufficiently observable and predictable.
+
+If uncertainty remains, mark which uncertainty is natural chance, hidden information, behavioral uncertainty, or simultaneous choice, then use the appropriate model instead of forcing pure backward induction.
+
+## GT-APP-40 — Multiple-equilibrium selection audit
+When the analysis produces more than one Nash equilibrium:
+- list the equilibria;
+- identify the coordination problem;
+- test focal points, conventions, communication, commitment, and move order;
+- explain why one outcome should be selected rather than stopping at "Nash equilibrium exists."
