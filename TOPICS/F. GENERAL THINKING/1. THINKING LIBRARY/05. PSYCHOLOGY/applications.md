@@ -1,7 +1,16 @@
 # Psychology — Applications
 
-- PSY-APP-01: persuasive proposal → identify cue, then assess substance independently.
-- PSY-APP-02: concession → check reciprocity pressure and actual exchange.
-- PSY-APP-03: expert advice → separate relevant authority from status.
-- PSY-APP-04: urgency → verify scarcity.
-- PSY-APP-05: consensus → check whether the observed group is independent and comparable.
+## PSY-APP-01 — Meeting influence
+Separate authority/consensus cues from actual evidence.
+
+## PSY-APP-02 — Supplier concession
+Recognize reciprocity pressure and evaluate the resulting commitment independently.
+
+## PSY-APP-03 — Procurement scarcity
+Verify limited stock, deadlines or exclusivity before accepting urgency.
+
+## PSY-APP-04 — Change adoption
+Use social proof and commitment transparently while preserving questioning.
+
+## PSY-APP-05 — Negotiation defense
+Identify labels, authority, urgency or concession effects, then return to interests, alternatives and criteria.

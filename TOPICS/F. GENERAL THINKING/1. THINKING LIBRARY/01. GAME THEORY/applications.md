@@ -1,187 +1,25 @@
-# Game Theory — Source Applications
+# Game Theory — Applications
 
-Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02)
+## GT-APP-01 — Process change
+Map actors affected by a change, their incentives and likely responses. Test whether the process creates cooperation or shifts costs.
 
-These are source-derived application patterns, not claims about the user's own experience.
+## GT-APP-02 — Supplier/customer negotiation
+Model alternatives, information asymmetry, move order, commitments and credible responses.
 
-## GT-01 applications retained from Book 01
+## GT-APP-03 — Stakeholder alignment
+Identify who can block, delay or reshape a decision. Separate stated positions from incentives and information.
 
-### 1. Competitive pricing
-Map best responses and identify candidate equilibrium; separately evaluate desirability.
+## GT-APP-04 — Repeated collaboration
+Define observable behavior, response rules and how mistakes are handled.
 
-### 2. High-definition television competition
-Use an unconditional move or commitment to alter the opponent's expected response.
+## GT-APP-05 — Incentive/process design
+If undesirable behavior repeats, model the game created by current rules before increasing supervision.
 
-### 3. Nuclear deterrence
-Test whether the announced response remains credible after the opponent moves.
+## GT-APP-06 — Competitive bidding
+Treat winning as information and update valuation after observing other bids.
 
-### 4. Prisoners' dilemma and repeated cooperation
-Model detection, punishment, future interaction, and noisy observation.
+## GT-APP-07 — Strategic communication
+Ask what a message reveals, what response it invites and whether the signal is credible.
 
-### 5. Bargaining
-Model offer sequence, delay, disagreement outcome, and backward induction.
-
-### 6. Voting and agenda control
-Treat the order of alternatives as a strategic variable.
-
-## GT-02 incremental applications from *The Art of Strategy*
-
-### 7. Investment under weak contract enforcement
-The Charlie/Fredo game shows that an attractive agreement can fail when the later party has an incentive to renege and the earlier party anticipates this.
-
-Application pattern:
-- model the later action first;
-- identify whether the promise is credible;
-- if not, search for a larger game or commitment mechanism that changes the incentives.
-
-### 8. Information asymmetry and screening
-Used-book markets, credit-card offers, and related cases show that a contract or offer can attract different types of participants selectively.
-
-Application pattern:
-- identify hidden types;
-- identify what each type would prefer;
-- design an offer whose attractiveness differs across types;
-- infer type from the observed choice.
-
-### 9. Signaling
-Education, employment, and other costly actions can function as signals when their cost differs across types.
-
-Application pattern:
-- identify the hidden characteristic;
-- identify the observable action;
-- ask whether the action is differentially costly or beneficial across types;
-- determine what a rational observer can infer.
-
-### 10. Winner's curse in auctions
-The book uses auctions to show that winning can be bad news when bidders are estimating an uncertain common value.
-
-Application pattern:
-- estimate the value;
-- model the information held by competing bidders;
-- condition the estimate on the fact that you won;
-- avoid treating the winning bid as independent evidence.
-
-### 11. Vickrey / second-price auction
-A sealed-bid auction in which the highest bidder pays the second-highest bid can make truthful bidding a dominant strategy under the book's private-value assumptions.
-
-Application pattern:
-- identify the desired behavior;
-- change the payment rule so that truthful reporting is individually optimal;
-- reduce the need for strategic prediction of other bidders.
-
-### 12. Cooperation through institutional design
-The book repeatedly shows cases where individually rational behavior can conflict with group outcomes.
-
-Application pattern:
-- identify the individually optimal behavior;
-- identify the collective consequence;
-- design rules, contracts, subsidies, penalties, or information structures that align incentives.
-
-### 13. Information manipulation
-The book treats concealment, revelation, interpretation, signaling, and screening as strategic actions.
-
-Application pattern:
-- map who knows what;
-- identify who benefits from revealing or concealing information;
-- identify what actions can credibly reveal information;
-- model the observer's inference.
-
-### 14. Bargaining and delay
-Alternating offers, disagreement outcomes, and delay costs determine bargaining leverage.
-
-Application pattern:
-- map the sequence;
-- calculate what each side can credibly obtain after rejection;
-- account for the changing value of delay;
-- reason backward.
-
-### 15. Voting
-The book's voting analysis treats agenda control and voting rules as part of the game rather than neutral procedures.
-
-Application pattern:
-- identify preferences;
-- identify the voting procedure;
-- identify agenda-setting power;
-- determine how intermediate votes constrain later choices.
-
-### 16. Incentive contracts
-When one party cannot directly observe another's effort or information, a contract can be designed to induce useful behavior or revelation.
-
-Application pattern:
-- identify the hidden action/information;
-- identify observable outcomes;
-- connect payment to outcomes in a way that changes the other party's incentives;
-- test unintended responses.
-
-
-## GT-03 incremental applications from *A Course in Game Theory*
-
-### 17. Private-information interaction
-Model players with different information rather than forcing all uncertainty into a single payoff table. Identify types, information, beliefs, and actions before solving for equilibrium.
-
-### 18. Rationalizability screening
-Use iterated reasoning to remove actions that cannot be rationalized by any consistent belief about opponents' behavior.
-
-### 19. Common-knowledge coordination
-When everyone appears to know the same fact, test whether it is actually common knowledge. A shared fact without shared knowledge about that fact can support different strategic behavior.
-
-### 20. Sequential decision trees
-Represent the order of moves explicitly, solve later decisions first, and test the resulting strategy in every subgame.
-
-### 21. Repeated cooperation and punishment
-Model the full history-dependent strategy rather than only the current action. Test whether future rewards or punishments are strong enough to change present incentives.
-
-### 22. Mechanism implementation
-Start from the desired social outcome, then ask what game or mechanism would make that outcome emerge in equilibrium rather than assuming participants will simply choose it.
-
-### 23. Imperfect-information decision nodes
-At an information set, separate the action rule from the belief about which underlying state or node has been reached.
-
-### 24. Coalition stability
-For a proposed allocation, test whether any coalition can deviate and make all of its members better off. If so, the allocation is vulnerable to coalition blocking.
-
-### 25. Bargaining solution design
-Separate the feasible agreement set and disagreement point from the rule used to select the final agreement. Different bargaining procedures can be connected to the same bargaining problem through different solution concepts.
-
-## GT-04 incremental applications from *The Strategy of Conflict*
-
-### 26. Coordination without communication
-When two actors must choose the same action without communicating, search for a salient and mutually recognizable outcome rather than treating all options as equally likely.
-
-### 27. Tacit bargaining
-When interests conflict but coordination is necessary, a focal outcome can serve as an implicit bargain. The party for whom it is less favorable may still accept it because failure to coordinate is worse.
-
-### 28. Strategic communication control
-Treat the ability to send, receive, withhold, or destroy information as part of the bargaining structure.
-
-### 29. Delegation and mediation
-Change the game by changing who makes the decision or by inserting a mediator whose role changes the feasible strategic responses.
-
-### 30. Randomized threat or promise
-Use controlled uncertainty as part of a commitment when complete control over the final consequence would otherwise make the threat non-credible.
-
-### 31. Mutual deterrence and surprise attack
-Model how each side's fear of being attacked first can create pressure for preemption, even when both sides would prefer a stable outcome.
-
-## GT-05 incremental applications from *The Evolution of Cooperation*
-
-### 32. Iterated Prisoner's Dilemma
-Model the history of interaction, not only the current round. A current cooperative move can be valuable because it affects future responses.
-
-### 33. TIT FOR TAT as reciprocal response
-Start cooperatively and then respond to the other's previous move. The source uses this as a simple baseline for studying how reciprocity can emerge and persist.
-
-### 34. Shadow-of-the-future test
-Before expecting cooperation, assess whether the same parties are likely to interact again and whether future consequences are large enough to matter.
-
-### 35. Strategy selection versus strategy stability
-Use tournament/ecological analysis to ask which strategies perform well in a mixed environment, then use collective-stability analysis to ask which strategies resist invasion after establishment.
-
-### 36. Clustered cooperation
-When interactions are local, cooperative strategies can benefit from repeated interaction with nearby reciprocators. Evaluate the network structure before assuming that population-wide averages describe local dynamics.
-
-### 37. Reciprocity under imperfect observation
-Introduce the possibility of mistaken observations and test whether a reciprocal rule remains cooperative rather than escalating into repeated retaliation.
-
-### 38. Reputation and repeated relationships
-When actors recognize prior partners and remember previous behavior, reputation can become an enforcement mechanism even without centralized authority.
+## GT-APP-08 — Commitment
+Use contracts, deadlines, delegated authority or public commitments when future reversal is predictable.
