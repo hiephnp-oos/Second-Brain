@@ -44,3 +44,33 @@ Treat quotes, bids, refusals, willingness to take a position and other costly ac
 
 ## GT-APP-15 — Coordination / collective action
 When everyone benefits from joint action but no one wants to move first, identify the coordination mechanism: visible leadership, communication, simultaneous commitment, enforcement or an external rule.
+
+## GT-APP-16 — Repeated-cooperation design
+For a recurring relationship, define observable behavior, detection latency, attribution quality, response rule, punishment severity and forgiveness/recovery before relying on cooperation.
+
+## GT-APP-17 — Finite-horizon risk review
+If a relationship or project has a known end date, test whether backward induction destroys the cooperative incentive before the final period.
+
+## GT-APP-18 — Strategic-move classification
+Before using a commitment, classify it as unconditional move, threat, promise, warning or assurance. Then identify the opponent's response that the move is intended to change.
+
+## GT-APP-19 — Credibility audit
+For every threat, promise or public commitment, ask: what makes reversal costly or impossible; can the counterpart observe/infer the commitment; and does the commitment actually change their incentives?
+
+## GT-APP-20 — Enforcement mechanism review
+When designing a policy or contract, test whether the enforcement device that appears competitive could instead reduce competition or stabilize undesirable coordination.
+
+## GT-APP-21 — Mixed-strategy decision
+If the other side can observe and exploit a predictable choice pattern, calculate whether a mixed strategy is required and determine the proportions from the payoff structure.
+
+## GT-APP-22 — Randomization quality check
+Do not implement a deterministic cycle and call it random. Check whether each individual action is sufficiently unpredictable to the relevant opponent.
+
+## GT-APP-23 — Commitment ladder
+When a large commitment is not credible, break it into observable steps, each with a smaller reversal cost and a clear next decision point.
+
+## GT-APP-24 — Delegation as commitment
+Use contracts, mandates, delegated authority, external rules or constrained processes when personal future discretion would otherwise undermine the commitment.
+
+## GT-APP-25 — Noise-aware reciprocity
+In repeated collaboration, distinguish intentional defection from measurement/error noise and define a recovery path so one error does not trigger permanent retaliation.
