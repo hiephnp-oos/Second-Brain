@@ -64,7 +64,7 @@ Status describes the topic lifecycle, not whether every item inside it is being 
 
 R&D Innovation is intentionally organized as a parent topic folder with dedicated workstream subfolders. New recurring R&D workstreams may be added there without changing the overall memory architecture.
 
-General Thinking is a reusable thinking layer for theories, mental models, decisions, human interaction, self-improvement, and reflection. It is intentionally separate from domain knowledge and stores distilled knowledge rather than full source books.
+General Thinking is a reusable thinking layer for theories, mental models, decisions, human interaction, self-improvement, and reflection. It is intentionally separate from domain knowledge and stores distilled knowledge rather than full source books. Its V2 architecture separates six initial Thinking Library domains from cross-cutting Decision Frameworks and Strategic Thinking lenses; the architecture is defined in `TOPICS/F. GENERAL THINKING/ARCHITECTURE_PROPOSAL_V2.md`.
 
 R&D Database is a migrated project source folder. Its project files are stored directly inside `TOPICS/D. RnD DATABASE/`; it is not a routing link to the old repository. The current project architecture is explicitly separated into `1_Frontend_UI`, `2_Library_Core`, and `3_Backend_Scanner`.
 
@@ -99,7 +99,7 @@ A topic should be added only when recurring work creates enough durable context 
 - Memory quality, retrieval/routing, Handoff, and repository mutation lifecycle are operating rules within `SYSTEM CORE/WORKFLOW.md`; there is no separate required phase document.
 - Periodic review is a quality check and derived report; it should not silently modify authoritative memory.
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
-- General Thinking uses a source → concepts → mental models → applications → lessons → principles layering; raw copyrighted books remain outside the public repository.
+- General Thinking uses the V2 source → structural normalization → PDF↔Markdown validation → concepts → mental models → applications → reflection → lessons → principles lifecycle; raw copyrighted books remain outside the public repository. The Core Reading Set is a changeable source selection, not the permanent framework taxonomy.
 - R&D Database V4 is maintained inside Second-Brain as a complete project source, organized into Bound Script frontend, standalone Library Core (`LibDNF`), and standalone Backend Scanner. The topic README is the architecture/deployment entry point; the code files are the detailed project source.
 - Repository integrity is checked automatically by `scripts/validate_second_brain.py` through `.github/workflows/validate.yml`.
 - All repository mutations use a dedicated task branch and PR to `main`; review the diff and applicable checks before merging. Risk changes review depth, not the requirement to use a PR. If branch/PR or validation is unavailable, do not fall back to direct-main writes; report the blocker.
@@ -192,7 +192,7 @@ Ordered topic folders and routed child workstream folders use numeric prefixes t
 
 Current topic order:
 
-`A. AI GENERAL → B. CAREER → C. NUVIO SETUP → D. RnD DATABASE → E. RnD INNOVATION`
+`A. AI GENERAL → B. CAREER → C. NUVIO SETUP → D. RnD DATABASE → E. RnD INNOVATION → F. GENERAL THINKING`
 
 ## R&D Capability baseline
 
