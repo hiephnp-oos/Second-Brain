@@ -159,7 +159,7 @@ Part II is treated as covered when its durable mechanisms—not every historical
 | A Choice of Punishment | Effective punishment should be simple, clear, credible/certain, sufficiently strong and designed to limit the cost of mistakes. |
 | TIT-FOR-TAT | Conditional cooperation: cooperate first, reciprocate defection, and retain a route back to cooperation. |
 | An Alternative to TIT-FOR-TAT | Cooperation can be sustained through alternative reciprocal/enforcement structures; the mechanism matters more than the label. |
-| Case Study #4 | Application of repeated strategic interaction to institutional policy and incentives. |
+| Case Study #4 | Congress–Federal Reserve is a prisoners' dilemma: each institution has a dominant strategy that produces an outcome both would prefer to avoid; lack of credible promises blocks the jointly preferred outcome, while institutional independence changes the commitment structure. |
 
 Additional Part II mechanisms retained: known finite horizons can unravel cooperation by backward induction; uncertain or indefinite continuation preserves the value of future cooperation; discounting and the relative timing of gains/losses affect sustainability.
 
@@ -174,21 +174,21 @@ Additional Part II mechanisms retained: known finite horizons can unravel cooper
 | Strategies of the Times | A strategic move can alter the response structure of a sequential interaction and exploit commitment to a response rule. |
 | More Strategic Moves | Strategic structure can deliberately give the other side initiative, wait for a threat, or use intermediate moves. |
 | A Sledgehammer to Crack a Nut? | Strategic moves can solve one problem while creating another; proportionality and side effects matter. |
-| Case Study #5 | Application of strategic commitment and response shaping in competitive strategy. |
+| Case Study #5 | Airbus entry shows that a protectionist commitment can make entry viable; the U.S. can respond with its own commitment to protection, illustrating strategic commitment, retaliation and the value of moving before the rival enters. |
 
 ### Chapter 6 — Credible Commitments
 
-The source presents an eightfold path to credibility. Durable devices retained are:
-1. change payoffs;
-2. build reputation;
-3. use contracts;
-4. cut off communication;
-5. burn bridges;
-6. leave the outcome beyond your control;
-7. move in small steps;
-8. use teamwork/mandated negotiating agents.
+The source presents an eightfold path to credibility. The eight named devices are:
+1. establish and use a reputation;
+2. write contracts;
+3. cut off communication;
+4. burn bridges behind you;
+5. leave the outcome to chance / beyond your control;
+6. move in small steps;
+7. develop credibility through teamwork;
+8. employ mandated negotiating agents.
 
-The common principle is to prevent or penalize future reversal, making the committed behavior believable when the time to act arrives. Observability also matters: a commitment that cannot be observed or inferred cannot shape expectations.
+The source also gives three underlying principles: change the payoffs so following through is in your interest; limit the ability to back out by changing the game; and use others to help maintain commitment. Observability matters: a commitment that cannot be observed or inferred cannot shape expectations. The source also warns that excessively large threats can be incredible, costly, counterproductive and reputation-damaging; the objective is the smallest appropriate threat that does the job.
 
 ### Chapter 7 — Unpredictability
 
@@ -204,7 +204,7 @@ The common principle is to prevent or penalize future reversal, making the commi
 | Bodyguard of Lies | Strategic deception can exploit an opponent's inference process; it is distinct from merely mixing actions. |
 | Surprise | Unpredictability can create tactical surprise when the opponent benefits from correctly anticipating your action. |
 | Catch as Catch Can | Strategic uncertainty must be analyzed through the actual information and response structure. |
-| Case Study #7 | Application of randomized strategy to operational/military planning. |
+| Case Study #7 | Operation Overlord illustrates a zero-sum location game with no useful pure-strategy equilibrium; the source calculates mixed strategies from the payoff table and compares them with the historical Normandy/Calais outcome. |
 
 ### Part II synthesis
 
