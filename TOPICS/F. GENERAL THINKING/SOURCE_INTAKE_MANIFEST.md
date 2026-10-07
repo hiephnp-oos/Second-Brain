@@ -9,33 +9,33 @@
 - Evidence state: source text is source material; it is not automatically verified knowledge.
 - Current gate: structural QA before downstream distillation.
 - Review mode: all 16 books are reviewed one-by-one in PR #134 before the PR is merged.
-- Review order: 01 → 16. Each book is assessed against the same structural QA gate before moving to the next book.
+- Review order: 01 → 16. Each book is assessed against the same structural QA gate.
 - Review scope: source fidelity and extraction structure only; no summarization, interpretation, or knowledge distillation during this gate.
 
 ## Inventory and review status
 
-| ID | Source PDF | Extracted Markdown | Review status | Initial finding |
+| ID | Source PDF | Extracted Markdown | Review status | Key finding |
 |---|---|---|---|---|
-| 01 | 01 - Thinking Strategically.pdf | 01 - Thinking Strategically.md | REVIEWED — NORMALIZATION REQUIRED | Title-page hierarchy, heading levels, OCR artifacts, malformed tables/code blocks, footnote/page-marker handling, and diagram/game-tree representation require structural cleanup. |
-| 02 | 02 - The Art of Strategy.pdf | 02 - The Art of Strategy.md | PENDING | — |
-| 03 | 03 - A Course in Game Theory.pdf | 03 - A Course in Game Theory.md | PENDING | — |
-| 04 | 04 - The Strategy of Conflict.pdf | 04 - The Strategy of Conflict.md | PENDING | — |
-| 05 | 05 - The Evolution of Cooperation.pdf | 05 - The Evolution of Cooperation.md | PENDING | — |
-| 06 | 06 - Thinking in Systems.pdf | 06 - Thinking in Systems.md | PENDING | — |
-| 07 | 07 - Statistical Rethinking.pdf | 07 - Statistical Rethinking_01.md + 07 - Statistical Rethinking_02.md | PENDING | — |
-| 08 | 08 - Superforecasting.pdf | 08 - Superforecasting.md | PENDING | — |
-| 09 | 09 - The Scout Mindset.pdf | 09 - The Scout Mindset.md | PENDING | — |
-| 10 | 10 - Thinking, Fast and Slow.pdf | 10 - Thinking, Fast and Slow.md | PENDING | — |
-| 11 | 11 - Influence.pdf | 11 - Influence.md | PENDING | — |
-| 12 | 12 - Getting to Yes.pdf | 12 - Getting to Yes.md | PENDING | — |
-| 13 | 13 - Never Split the Difference.pdf | 13 - Never Split the Difference.md | PENDING | — |
-| 14 | 14 - Thinking in Bets.pdf | 14 - Thinking in Bets.md | PENDING | — |
-| 15 | 15 - Good Strategy, Bad Strategy.pdf | 15 - Good Strategy, Bad Strategy.md | PENDING | — |
-| 16 | 16 - The Checklist Manifesto.pdf | 16 - The Checklist Manifesto.md | PENDING | — |
+| 01 | 01 - Thinking Strategically.pdf | 01 - Thinking Strategically.md | REVIEWED — NORMALIZATION REQUIRED | 468 escaped headings; fragmented title/contents hierarchy; OCR artifacts; malformed table/prose blocks; footnote/page-marker and game-tree handling require cleanup. |
+| 02 | 02 - The Art of Strategy.pdf | 02 - The Art of Strategy.md | REVIEWED — NORMALIZATION REQUIRED | 323 escaped headings; title/contents hierarchy fragmented; chapter headings split/over-nested; source has 550 pages and the extraction needs hierarchy/reading-order validation. |
+| 03 | 03 - A Course in Game Theory.pdf | 03 - A Course in Game Theory.md | REVIEWED — NORMALIZATION REQUIRED | 144 escaped headings and 562 pipe-bearing lines; mathematical/table structure needs source-aware normalization; hierarchy must preserve numbered sections and results. |
+| 04 | 04 - The Strategy of Conflict.pdf | 04 - The Strategy of Conflict.md | REVIEWED — NORMALIZATION REQUIRED | 46 escaped headings; TOC/subheading hierarchy needs recovery; 82 pipe-bearing lines and OCR/fragment artifacts require validation. |
+| 05 | 05 - The Evolution of Cooperation.pdf | 05 - The Evolution of Cooperation.md | REVIEWED — NORMALIZATION REQUIRED | 48 escaped headings; 267 pipe-bearing lines; chapter/part hierarchy and table/figure handling require source comparison. |
+| 06 | 06 - Thinking in Systems.pdf | 06 - Thinking in Systems.md | REVIEWED — NORMALIZATION REQUIRED | 134 escaped headings; 205 pipe-bearing lines; part/chapter hierarchy and systems diagrams/tables need source-aware reconstruction. |
+| 07 | 07 - Statistical Rethinking.pdf | 07 - Statistical Rethinking_01.md + 07 - Statistical Rethinking_02.md | REVIEWED — NORMALIZATION REQUIRED | Part 01 has 141 escaped headings and 1,998 pipe-bearing lines; Part 02 has active headings but 2,016 pipe-bearing lines. Mathematical notation, equations, R/Stan code, tables, and chapter hierarchy need careful validation across the split. |
+| 08 | 08 - Superforecasting.pdf | 08 - Superforecasting.md | REVIEWED — NORMALIZATION REQUIRED | 107 escaped headings; title/section hierarchy is extraction-driven rather than source-faithful and needs recovery. |
+| 09 | 09 - The Scout Mindset.pdf | 09 - The Scout Mindset.md | REVIEWED — NORMALIZATION REQUIRED | 107 escaped headings in a short 64-page source; title/front-matter and section hierarchy require normalization and source traceability checks. |
+| 10 | 10 - Thinking, Fast and Slow.pdf | 10 - Thinking, Fast and Slow.md | REVIEWED — NORMALIZATION REQUIRED | 276 escaped headings; 275 pipe-bearing lines; contents/appendix structure and table/footnote handling need normalization. |
+| 11 | 11 - Influence.pdf | 11 - Influence.md | REVIEWED — NORMALIZATION REQUIRED | 140 escaped headings; title/front matter and chapter hierarchy require recovery; source has 279 pages and extraction structure is not canonical. |
+| 12 | 12 - Getting to Yes.pdf | 12 - Getting to Yes.md | REVIEWED — NORMALIZATION REQUIRED | 107 escaped headings; 190 pipe-bearing lines; title/contents hierarchy and list/table boundaries require validation. |
+| 13 | 13 - Never Split the Difference.pdf | 13 - Never Split the Difference.md | REVIEWED — NORMALIZATION REQUIRED | 206 escaped headings; chapter headings are fragmented/over-nested; contents and chapter/subheading hierarchy need recovery. |
+| 14 | 14 - Thinking in Bets.pdf | 14 - Thinking in Bets.md | REVIEWED — NORMALIZATION REQUIRED | 91 escaped headings; heading levels are extraction artifacts and must be normalized against the 247-page source. |
+| 15 | 15 - Good Strategy, Bad Strategy.pdf | 15 - Good Strategy, Bad Strategy.md | REVIEWED — NORMALIZATION REQUIRED | 174 escaped headings; title/front matter and chapter hierarchy require recovery before distillation. |
+| 16 | 16 - The Checklist Manifesto.pdf | 16 - The Checklist Manifesto.md | REVIEWED — NORMALIZATION REQUIRED | 21 escaped headings, 30 code-fence lines, and 5 pipe-bearing lines; front matter and prose/code boundary require cleanup. |
 
 ## Review protocol
 
-For each book, compare the supplied Markdown against the source PDF and record only structural/extraction findings:
+For each book, compare the supplied Markdown against the supplied source PDF and record only structural/extraction findings:
 
 1. Title/author metadata is coherent.
 2. Contents/chapter hierarchy is structurally recoverable.
@@ -50,15 +50,15 @@ For each book, compare the supplied Markdown against the source PDF and record o
 
 A book is `REVIEWED — NORMALIZATION REQUIRED` when the source can be understood and traced, but the extracted Markdown is not yet safe for downstream knowledge extraction. It becomes `STRUCTURALLY ACCEPTED` only after normalization and validation.
 
-## Structural QA findings from the supplied extraction
+## Cross-book findings
 
-The current batch contains extraction artifacts that require document-aware review.
-
-- Heading syntax/levels are not reliable indicators of the source hierarchy.
-- Title pages and contents can be fragmented into multiple Markdown headings.
-- Tables, code blocks, figures, footnotes, equations, and page markers require document-aware review before structural normalization.
-- OCR artifacts can alter names, words, punctuation, or hyphenation and must be corrected only when the PDF evidence supports the correction.
-- The extraction layer must preserve the author's wording and ordering. Structural cleanup must not become summarization or interpretation.
+- 15 of the 16 Markdown files use escaped heading markers rather than active Markdown headings. Statistical Rethinking_02.md is the exception.
+- Heading levels are not reliable source hierarchy indicators and must be reconstructed from the PDF/contents.
+- Tables and pipe-heavy regions need document-aware inspection; pipe characters alone must not be assumed to represent valid Markdown tables.
+- Code fences can represent extraction artifacts rather than source code and must be classified before normalization.
+- OCR artifacts occur in several sources and must be corrected only when the PDF evidence supports the correction.
+- Mathematical notation, equations, R/Stan code, figures, diagrams, and game trees require special handling rather than generic Markdown cleanup.
+- Source wording and ordering must be preserved. Structural cleanup must not become summarization or interpretation.
 
 ## Book 01 review notes — Thinking Strategically
 
@@ -66,11 +66,10 @@ The source PDF and extracted Markdown are traceable to the same title and chapte
 
 Observed issues:
 
-- Title-page content is fragmented into incorrect heading levels and OCR-corrupted text (for example the author line is malformed).
+- Title-page content is fragmented into incorrect heading levels and OCR-corrupted text.
 - Contents hierarchy is distorted: parts and chapters do not consistently map to semantic heading levels.
 - Chapter headings are sometimes character-split or otherwise corrupted.
-- Some ordinary prose is emitted as fenced code blocks.
-- Some prose is emitted as malformed one-column Markdown tables.
+- Some prose regions are emitted as malformed structural blocks rather than ordinary paragraphs.
 - Footnote markers/page artifacts are mixed into body text and require separation.
 - Strategic-game tables and diagrams/game trees are not represented as faithful structural objects and require source-aware reconstruction or explicit placeholders.
 - Reading order is broadly recoverable, so the file is usable as source material but not yet suitable as a clean canonical source.
@@ -79,4 +78,4 @@ Decision: `REVIEWED — NORMALIZATION REQUIRED`. Do not distill knowledge from t
 
 ## Pilot implication
 
-Book 01 remains the reference case for defining the normalization contract, but the same review gate is now applied sequentially to all 16 books inside PR #134. After all 16 are reviewed, normalization/distillation can proceed using the evidence collected in this PR rather than opening a separate intake PR for each book.
+All 16 books have now passed the same review gate inside PR #134. The next phase is to define/apply the normalization contract and validate the normalized source set before any knowledge distillation. No separate PR per book is required.
