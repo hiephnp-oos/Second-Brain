@@ -137,3 +137,21 @@ Backward induction is a reasoning tool with boundary conditions. Hidden informat
 
 ## GT-L-46
 An equilibrium is a stability condition, not a prediction by itself. When multiple equilibria exist, explain the equilibrium-selection mechanism.
+
+## GT-L-47
+Randomization is strategic when predictability can be exploited; the equilibrium mix must be derived from payoffs rather than chosen arbitrarily.
+
+## GT-L-48
+A correct long-run ratio is not enough. Strategic randomness must also make individual actions difficult to predict.
+
+## GT-L-49
+Improving one side's skill can change the equilibrium behavior of both sides. Re-solve the interaction after material capability changes.
+
+## GT-L-50
+A strategic move works by changing expectations before the opponent acts; classify whether the move is unconditional, a threat, a promise, a warning, or an assurance.
+
+## GT-L-51
+Credibility is a separate layer from commitment intent. The supporting device must change the incentive or ability to reverse the commitment.
+
+## GT-L-52
+Chance can sometimes strengthen commitment precisely because it removes the decision-maker's future control.
