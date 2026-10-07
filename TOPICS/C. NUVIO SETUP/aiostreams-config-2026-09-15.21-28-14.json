@@ -21,18 +21,6 @@
       "script": "# Nuvio P2P Instant Variant. Inserts p2p-only scrapers, switches to \"Tamtaro (Nuvio P2P Instant)\" formatter, strips debrid/usenet/http services and addons, and disables seeder-specific filter & sorting.\n\nset addonName = \"AIOStreams (Instant)\"\nuse formatter \"Tamtaro (Nuvio P2P Instant)\"\nset excludedStreamTypes = [\"usenet\",\"stremio-usenet\",\"http\",\"live\"]\ndisable excludedStreamExpressions[expression*=\"P2P Backup\"]\ndisable services[*]\nremove sortCriteria.global[key=seeders]\nremove sortCriteria.cached[key=seeders]\nremove sortCriteria.uncached[key=seeders]\nadd selOverrides {\"expression\": \"[]\", \"exprNames\": [\"Low Seeders\"], \"disabled\": true}\ndisable presets[type=library]\ndisable presets[type=stremthruStore]\ndisable presets[type=neko-bt]\ndisable presets[type=anime-tosho-new]\ndisable presets[type=animetosho]\ndisable presets[type=torznab]\ndisable presets[type=newznab]\ndisable presets[type=knaben]\ndisable presets[type=zilean]\ndisable presets[type=seadex]\ndisable presets[type=knaben]\ndisable presets[type=debridio]\ndisable presets[type=easynews-search]\ndisable presets[type=easynews]\ndisable presets[type=easynewsPlus]\ndisable presets[type=easynewsPlusPlus]\ndisable presets[type=nzbhydra]\ndisable presets[type=usenet-streamer]\ndisable presets[type=streamnzb]\ndisable presets[type=davex]\ndisable presets[type=sootio]\ndisable presets[type=webstreamr]\ndisable presets[type=yastream]\ndisable presets[type=stremthruStore]\ndisable presets[type=torrentio]\ndisable presets[type=meteor]\ndisable presets[type=comet]\ndisable presets[type=stremthruTorz]\ndisable presets[type=mediafusion]\ndisable presets[type=torrents-db]\ndisable presets[type=peerflix]\ndisable presets[type=sootio]\nremove presets[*].options.httpProviders\ndisable presets[type=yastream]\ndisable presets[type=hdhub]\ndisable presets[type=webstreamr]\nprepend presets\n  { \"type\": \"meteor\", \"instanceId\": \"064p2p\", \"enabled\": true, \"options\": { \"name\": \"Meteor\", \"timeout\": 5000, \"resources\": [\"stream\"], \"removeTrash\": false, \"useMultipleInstances\": false, \"mediaTypes\": [] }, \"category\": \"P2P\" },\n  { \"type\": \"comet\", \"instanceId\": \"b0fp2p\", \"enabled\": true, \"options\": { \"name\": \"Comet\", \"timeout\": 5000, \"resources\": [\"stream\"], \"removeTrash\": false, \"mediaTypes\": [], \"url\": \"\" }, \"category\": \"P2P\" },\n  { \"type\": \"stremthruTorz\", \"instanceId\": \"bb9p2p\", \"enabled\": true, \"options\": { \"name\": \"STorz\", \"timeout\": 5000, \"resources\": [\"stream\"], \"mediaTypes\": [], \"includeP2P\": true, \"useMultipleInstances\": false, \"url\": \"\" }, \"category\": \"P2P\" },\n  { \"type\": \"torrentio\", \"instanceId\": \"4efp2p\", \"enabled\": true, \"options\": { \"name\": \"Torrentio\", \"timeout\": 5000, \"resources\": [\"stream\"], \"providers\": [], \"useMultipleInstances\": false }, \"category\": \"P2P\" },\n  { \"type\": \"mediafusion\", \"instanceId\": \"276p2p\", \"enabled\": true, \"options\": { \"name\": \"MediaFusion\", \"timeout\": 5000, \"resources\": [\"stream\"], \"useCachedResultsOnly\": true, \"enableWatchlistCatalogs\": false, \"downloadViaBrowser\": false, \"contributorStreams\": false, \"certificationLevelsFilter\": [], \"nudityFilter\": [], \"mediaTypes\": [], \"url\": \"\" }, \"category\": \"P2P\" },\n  { \"type\": \"torrents-db\", \"instanceId\": \"a15p2p\", \"enabled\": true, \"options\": { \"name\": \"TorrentsDB\", \"timeout\": 5000, \"resources\": [\"stream\"], \"mediaTypes\": [], \"providers\": [], \"includeP2P\": true, \"useMultipleInstances\": false }, \"category\": \"P2P\" },\n  { \"type\": \"peerflix\", \"instanceId\": \"8b6p2p\", \"enabled\": true, \"options\": { \"name\": \"Peerflix\", \"timeout\": 5000, \"resources\": [\"stream\"], \"mediaTypes\": [], \"useMultipleInstances\": false, \"showTorrentLinks\": true }, \"category\": \"P2P\" }"
     }
   ],
-  "healthChecks": [
-    {
-      "id": "torrentio-up",
-      "name": "Torrentio",
-      "url": "https://uptime.ibbylabs.dev/v1/health/torrentio",
-      "expect": {
-        "status": "200",
-        "jsonPath": "up",
-        "jsonValue": true
-      }
-    }
-  ],
   "trusted": false,
   "showChanges": true,
   "manifestNotice": "never",
@@ -202,12 +190,7 @@
   "excludeUncachedFromServices": [],
   "excludeUncachedFromStreamTypes": [],
   "excludeUncachedMode": "or",
-  "excludedStreamExpressions": [
-    {
-      "expression": "not health('torrentio-up') ? addon(streams, 'Torrentio') : []",
-      "enabled": true
-    }
-  ],
+  "excludedStreamExpressions": [],
   "requiredStreamExpressions": [],
   "preferredStreamExpressions": [],
   "includedStreamExpressions": [],
