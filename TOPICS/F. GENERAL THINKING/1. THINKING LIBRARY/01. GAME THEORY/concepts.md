@@ -1,6 +1,6 @@
 # Game Theory — Concepts
 
-Source: *Thinking Strategically* — Dixit & Nalebuff (GT-01)
+Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02)
 
 ## 1. Strategic behavior
 
@@ -25,7 +25,7 @@ The same action can have different value depending on what another player does.
 
 A strategy is dominant when it remains the better choice regardless of the other player's available action.
 
-The book uses dominant strategies as an early simplification rule: identify actions that are best independently of the opponent's move before attempting more complex analysis.
+The books use dominant strategies as an early simplification rule: identify actions that are best independently of the opponent's move before attempting more complex analysis.
 
 ## 4. Dominated strategy
 
@@ -43,34 +43,28 @@ Strategic reasoning often consists of mapping how each player's best response ch
 
 A Nash equilibrium is a combination of strategies in which each player's action is a best response to the other's.
 
-The book presents equilibrium as a way to stabilize the circular reasoning of "I think that he thinks..." in simultaneous-move games.
-
 An equilibrium is not automatically the best outcome for every player or for society. Stability and desirability are separate questions.
 
 ## 7. Sequential games and backward reasoning
 
 When actions occur in sequence, analyze future responses before choosing the current action.
 
-The practical pattern is:
+Practical pattern:
 1. look forward to possible later outcomes;
 2. evaluate those outcomes;
 3. reason backward to determine the current best action.
-
-For complex games, explicit backward reasoning is combined with experience-based valuation of intermediate positions.
 
 ## 8. Strategic moves
 
 A strategic move deliberately changes another actor's expectations by changing the rules or timing of interaction.
 
-The book distinguishes:
+The books distinguish:
 - unconditional moves: act first and fix the action;
 - conditional moves: commit in advance to a response rule.
 
 A strategic move purposefully limits freedom of action because reduced freedom can change the opponent's behavior.
 
 ## 9. Threats, promises, warnings, assurances
-
-The book distinguishes strategic response rules from information:
 
 - Threat: a response rule intended to punish non-cooperation.
 - Promise: a response rule intended to reward cooperation.
@@ -83,17 +77,17 @@ Threats and promises require credibility because they can prescribe actions that
 
 A commitment makes a strategic move believable by changing incentives, limiting the ability to reverse course, or using external mechanisms/agents.
 
-The book's eight commitment devices are:
-1. establish and use a reputation;
-2. write contracts;
-3. cut off communication;
-4. burn bridges;
-5. leave the outcome to chance;
-6. move in small steps;
-7. develop credibility through teamwork;
-8. employ mandated negotiating agents.
+The first book identifies eight commitment devices:
+1. reputation;
+2. contracts;
+3. cutting off communication;
+4. burning bridges;
+5. leaving the outcome to chance;
+6. moving in small steps;
+7. teamwork;
+8. mandated negotiating agents.
 
-The underlying mechanisms are to change payoffs, restrict the ability to back out, or use others to sustain the commitment.
+The second book expands the same problem through additional cases and mechanisms for making strategic moves credible.
 
 ## 11. Prisoners' dilemma
 
@@ -101,61 +95,108 @@ A prisoners' dilemma occurs when each player's individually rational dominant st
 
 The strategic problem is not merely recognizing the cooperative outcome. It is designing a mechanism that makes cooperation sustainable despite the incentive to defect.
 
-The book highlights detection of cheating and credible punishment as central enforcement problems.
-
 ## 12. Repeated interaction and cooperation
 
 Repeated interaction can change the strategic environment because future consequences can discipline present behavior.
 
-Cooperation depends on factors including:
-- ability to detect defection;
-- ability to attribute defection correctly;
-- credible punishment;
-- sufficient value placed on future interactions.
-
-The book also shows that noisy observation creates a trade-off: excessive punishment can cause retaliation cycles, while excessive forgiveness can invite exploitation.
+Cooperation depends on detection, attribution, credible punishment, and the value placed on future interactions.
 
 ## 13. Mixed strategies and unpredictability
 
 When predictability can be exploited, randomization can have strategic value.
 
-The purpose is not randomness for its own sake. It is to prevent an opponent from reliably predicting and exploiting the next action.
+The purpose is to prevent an opponent from reliably predicting and exploiting the next action.
 
 ## 14. Brinkmanship
 
 Brinkmanship creates a risk of an undesirable outcome by moving the interaction toward a situation that can get out of control.
 
-It differs from ordinary randomization:
-- randomization mixes actions because the actor is indifferent among them in the appropriate proportions;
-- brinkmanship creates risk before the event while remaining unwilling to carry out the disastrous outcome.
+It differs from ordinary randomization: randomization varies actions; brinkmanship deliberately introduces uncontrolled risk.
 
-Credibility often comes from making the final outcome partly outside the actor's control.
+## 15. Information asymmetry
 
-## 15. Bargaining
+A strategic interaction changes when players do not have the same information.
 
-Bargaining outcomes depend on the rules of the interaction, including:
+The relevant questions become:
+- who knows what;
+- what each player knows about the other's information;
+- what can be observed;
+- what can be credibly inferred;
+- whether information is common knowledge.
+
+Private information can change the game even when the underlying preferences and actions are unchanged.
+
+## 16. Common knowledge
+
+Information is common knowledge when the relevant fact is known by all players, each knows that the others know it, and this chain of mutual knowledge continues.
+
+Lack of common knowledge can itself be strategically important. Two players can know the same fact but reach different strategic conclusions if they do not share the same knowledge about what the other knows.
+
+## 17. Signaling
+
+A better-informed player can take an observable action intended to communicate private information.
+
+A useful signal must be interpreted relative to its cost or incentive structure. If the action is equally attractive to every type, it may reveal little.
+
+## 18. Screening
+
+A less-informed player can design choices, offers, contracts, or tests that cause different types of people to select different options.
+
+The objective is not necessarily to ask for the hidden information directly. It is to structure choices so that behavior reveals useful information.
+
+## 19. Winner's curse
+
+In a common-value or uncertain-value auction, winning can itself provide information: the winner may have been the bidder with the most optimistic estimate.
+
+Therefore the event "I won" can be evidence that the initial valuation was too high.
+
+## 20. Auction mechanism design
+
+Different auction rules create different strategic incentives.
+
+The Vickrey/second-price auction is a central example: the highest bidder wins but pays the second-highest bid, making truthful bidding a dominant strategy under the private-value assumptions used in the book.
+
+The broader design principle is:
+
+> Design the rules so that the desired behavior is strategically simple or dominant.
+
+## 21. Bargaining
+
+Bargaining outcomes depend on:
 - who moves first;
 - who can make offers;
 - what happens after rejection;
-- how the value of the deal changes with delay.
+- how delay changes value;
+- what each side's alternatives are.
 
-The book emphasizes that time can shrink the total value available for agreement. Therefore sequencing and delay are strategic variables, not administrative details.
+Procedure and timing are strategic variables.
 
-## 16. Incentives
-
-Strategic outcomes are shaped by the incentives created by the rules of the game.
-
-Changing incentives can change behavior without changing the actors themselves.
-
-The book repeatedly uses this principle to explain why:
-- commitments can work;
-- cooperation can fail;
-- institutional rules can produce unintended behavior;
-- changing the structure of a game can change its equilibrium.
-
-## 17. Voting and agenda control
+## 22. Voting and agenda control
 
 Voting is not simply preference aggregation. The order in which alternatives are presented and the rules governing choices can affect the final outcome.
 
 Agenda control can therefore be a strategic resource.
+
+## 23. Incentive design
+
+Strategic outcomes are shaped by the incentives created by the rules of the game.
+
+A principal who cannot directly observe or control another actor's behavior can sometimes use contracts or payments to induce behavior or information revelation.
+
+## 24. Games need not be zero-sum
+
+The second book explicitly emphasizes that many real interactions combine conflict and common interests.
+
+A strategic game can produce:
+- win-lose outcomes;
+- lose-lose outcomes;
+- win-win outcomes.
+
+Strategic analysis should therefore identify both conflict and opportunities for joint gain.
+
+## 25. Risk and option value
+
+When failure at a later stage would eliminate remaining options, taking an appropriate risk earlier can preserve the possibility of recovery.
+
+This is a sequencing principle, not a blanket recommendation to take more risk.
 
