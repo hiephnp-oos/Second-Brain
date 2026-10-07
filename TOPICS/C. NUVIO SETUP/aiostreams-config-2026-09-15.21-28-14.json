@@ -184,7 +184,7 @@
   "preferredKeywords": [],
   "ageRangeTypes": [],
   "digitalReleaseFilter": {
-    "enabled": false,
+    "enabled": true,
     "tolerance": 1,
     "requestTypes": [
       "movie",
