@@ -871,67 +871,74 @@ def validate_target_structure(errors: list[str]) -> None:
         if not (ROOT / rel).exists():
             fail(f"Missing System Core artifact: {rel}", errors)
 
-def main() -> int:
-    errors: list[str] = []
-    validate_root(errors)
-    validate_target_structure(errors)
-    active, registry_states = extract_topic_registry(errors)
-    validate_topics(active, registry_states, errors)
-    validate_forbidden_files(errors)
-    validate_removed_platform_controls(errors)
-    validate_local_references(errors)
-    validate_workstream_readmes(errors)
-    validate_csv_shape(errors)
-    validate_capabilities(errors)
-    validate_architecture_boundaries(errors)
-    validate_future_rnd_references(errors)
-    validate_rnd_capability_contract_structure(errors)
-    validate_critical_negative_paths(errors)
-    validate_validation_selftests(errors)
-    validate_authority_boundaries(errors)
-    validate_career_scheduled_provenance(errors)
-    validate_claw_watchdog_contract(errors)
-    validate_career_weekly_watchdog_contract(errors)
-    validate_career_weekly_report_contract(errors)
-    validate_scheduled_capability_contracts(errors)
-    validate_rnd_knowledge_sheet(errors)
-    validate_prompt_duplicate_rules(errors)
-    validate_removed_topic(errors)
-    validate_platform_layers(errors)
-    validate_control_reference_consistency(errors)
-    validate_rnd_regression_contract(errors)
-    validate_high_level_controls(errors)
-    if errors:
-        print("Second-Brain validation: FAIL")
-        for error in errors:
-            print(f"- {error}")
-        return 1
-    print("Second-Brain validation: PASS")
-    return 0
-
-
-    capabilities = [
-        "1.1 CLAW_DISCOVERY", "1.2 VERIFICATION", "1.3 DEEP_RESEARCH",
-        "1.4 EVALUATION", "1.5 KNOWLEDGE_PROMOTION", "1.6 SUPPLIER_KNOWLEDGE_INTAKE",
+def validate_general_thinking_contract(errors: list[str]) -> None:
+    """Validate the General Thinking architecture, source gate, and physical libraries."""
+    root = ROOT / "TOPICS/F. GENERAL THINKING"
+    required = [
+        root / "README.md",
+        root / "THINKING_MAP.md",
+        root / "FRAMEWORK_INDEX.md",
+        root / "CORE_READING_SET.md",
+        root / "SOURCE_INTAKE_MANIFEST.md",
+        root / "ARCHITECTURE_PROPOSAL_V2.md",
+        root / "BOOK_AUDIT_01-15.md",
+        root / "1. THINKING LIBRARY/README.md",
     ]
-    expected_numbers = {str(i) for i in range(1, 16)}
-    for name in capabilities:
-        path = baseline.parent / name / "README.md"
+    for path in required:
         if not path.exists():
-            fail(f"R&D capability missing: {path.relative_to(ROOT)}", errors)
+            fail(f"General Thinking artifact missing: {path.relative_to(ROOT)}", errors)
+
+    index = root / "FRAMEWORK_INDEX.md"
+    if index.exists():
+        text = read_text(index)
+        for framework in [
+            "Game Theory", "Systems Thinking", "Bayesian Thinking", "Critical Thinking",
+            "Psychology", "Negotiation", "Decision Theory / Decision Frameworks",
+            "Strategic Thinking",
+        ]:
+            if framework not in text:
+                fail(f"General Thinking framework index missing '{framework}'", errors)
+
+    reading = root / "CORE_READING_SET.md"
+    if reading.exists():
+        text = read_text(reading)
+        for book_id in [f"{i:02d}" for i in range(1, 17)]:
+            if not re.search(rf"^\|{book_id}\|", text, re.MULTILINE):
+                fail(f"General Thinking Core Reading Set missing book ID {book_id}", errors)
+
+    manifest = root / "SOURCE_INTAKE_MANIFEST.md"
+    if manifest.exists():
+        text = read_text(manifest)
+        for phrase in [
+            "Book PDF is canonical",
+            "PDF↔Markdown validation gate",
+            "STRUCTURALLY ACCEPTED",
+            "REVIEWED — NORMALIZATION REQUIRED",
+        ]:
+            if phrase not in text:
+                fail(f"General Thinking intake manifest missing '{phrase}'", errors)
+
+    library = root / "1. THINKING LIBRARY"
+    required_libraries = [
+        "01. GAME THEORY", "02. SYSTEMS THINKING", "03. BAYESIAN THINKING",
+        "04. CRITICAL THINKING", "05. PSYCHOLOGY", "06. NEGOTIATION",
+        "07. DECISION FRAMEWORKS", "08. STRATEGIC THINKING",
+    ]
+    for name in required_libraries:
+        path = library / name
+        if not path.exists():
+            fail(f"General Thinking library missing: {name}", errors)
             continue
-        numbered = {}
-        for line in read_text(path).splitlines():
-            match = re.match(r"^## (\d+)\.\s+(.+)$", line.strip())
-            if match:
-                numbered[match.group(1)] = match.group(2).strip()
-        actual_numbers = set(numbered)
-        missing = sorted(expected_numbers - actual_numbers, key=int)
-        extra = sorted(actual_numbers - expected_numbers, key=int)
-        if missing:
-            fail(f"R&D capability contract missing numbered sections {missing}: {path.relative_to(ROOT)}", errors)
-        if extra:
-            fail(f"R&D capability contract has unexpected numbered sections {extra}: {path.relative_to(ROOT)}", errors)
+        for filename in ["README.md", "concepts.md", "mental-models.md", "applications.md", "lessons.md"]:
+            if not (path / filename).exists():
+                fail(f"General Thinking library artifact missing: {path.relative_to(ROOT)}/{filename}", errors)
+
+    topic_readme = root / "README.md"
+    if topic_readme.exists():
+        text = read_text(topic_readme)
+        for phrase in ["Physical framework libraries", "Book PDF", "BOOK_AUDIT_01-15.md"]:
+            if phrase not in text:
+                fail(f"General Thinking README missing '{phrase}'", errors)
 
 def main() -> int:
     errors: list[str] = []
@@ -963,6 +970,7 @@ def main() -> int:
     validate_control_reference_consistency(errors)
     validate_rnd_regression_contract(errors)
     validate_high_level_controls(errors)
+    validate_general_thinking_contract(errors)
     if errors:
         print("Second-Brain validation: FAIL")
         for error in errors:
@@ -970,7 +978,5 @@ def main() -> int:
         return 1
     print("Second-Brain validation: PASS")
     return 0
-
-
 if __name__ == "__main__":
     sys.exit(main())

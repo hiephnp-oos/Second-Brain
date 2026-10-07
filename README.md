@@ -120,17 +120,14 @@ TOPICS/
 ├── C. NUVIO SETUP/                   ← Nuvio configuration context
 ├── D. RnD DATABASE/                  ← migrated R&D database source
 ├── E. RnD INNOVATION/                ← capabilities + workstreams + knowledge
-└── F. GENERAL THINKING/              ← distilled thinking frameworks + book knowledge
-```
-└── N. <topic>/
-    └── ...
+└── F. GENERAL THINKING/              ← theories + mental models + reasoning
 .github/
-├── workflows/                ← automated validation
-└── ISSUE_TEMPLATE/           ← structured change requests
-scripts/                      ← validation tooling
+├── workflows/                        ← automated validation
+└── ISSUE_TEMPLATE/                   ← structured change requests
+scripts/                              ← validation tooling
 ```
 
-The topic registry and lifecycle state are maintained in `AI_MEMORY.md`; each topic README carries the detailed status summary and direction. `F. GENERAL THINKING` is a durable knowledge topic, not an active execution Capability domain. The root README does not duplicate the topic registry.
+The topic registry and lifecycle state are maintained in `AI_MEMORY.md`; each topic README carries the detailed status summary and direction. The root README does not duplicate the topic registry.
 
 ## Standard topic README
 

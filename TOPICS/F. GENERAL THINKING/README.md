@@ -5,6 +5,8 @@ A compact, reusable thinking layer distilled from the 15-book core reading set. 
 
 The books are source material. This topic contains distilled operational knowledge, not conversation transcripts or copies of the books.
 
+Physical libraries now contain eight stable domains: Game Theory, Systems Thinking, Bayesian Thinking, Critical Thinking, Psychology, Negotiation, Decision Frameworks, and Strategic Thinking. Decision Frameworks and Strategic Thinking were materialized after Books 14–15 met the materialization rule.
+
 ## Current Context
 The supplied `BOOK.zip` contains paired PDF and MD sources for Books 01–16. This topic currently covers Books 01–15. Book 16 remains outside this completed set.
 
@@ -17,6 +19,13 @@ The PDF is the source of truth for each review. The paired MD is an extraction/w
 - Last reviewed: 2026-10-07
 
 ## Working Principles
+
+- **Book PDF is canonical.** Markdown is a retrieval aid and never overrides the PDF.
+- Physical framework libraries are materialized only when durable content and recurring routing justify them.
+
+## Physical framework libraries
+
+Game Theory, Systems Thinking, Bayesian Thinking, Critical Thinking, Psychology, Negotiation, Decision Frameworks, Strategic Thinking.
 - Route by problem before retrieving a framework.
 - Use the smallest useful model set; do not load all 15 books for routine decisions.
 - Distinguish evidence, inference, assumption, and recommendation.
@@ -29,7 +38,8 @@ The PDF is the source of truth for each review. The paired MD is an extraction/w
 - `BOOK_AUDIT_01-15.md` — full-set audit and duplicate-control decisions.
 - `THINKING_MAP.md` — problem → framework routing.
 - `FRAMEWORK_INDEX.md` — reusable mental-model index.
-- `BOOKS/` — book-level distilled knowledge.
+- `1. THINKING LIBRARY/` — promoted framework knowledge.
+- `BOOKS/16` remains only as a pending migration input; Books 01–15 migration notes are retired.
 
 ## Decisions
 - Books 01–05 remain separate because they cover practical game reasoning, formal game theory, conflict/commitment, and repeated cooperation.
@@ -47,13 +57,14 @@ The PDF is the source of truth for each review. The paired MD is an extraction/w
 ## Routing
 - Strategic interaction → Books 01–05
 - Systems → Book 06
-- Bayesian/statistical reasoning → Book 07
+- Bayesian/statistical reasoning → Bayesian Thinking / Book 07
+- Decision quality → Decision Frameworks / Book 14
 - Forecasting → Book 08
 - Epistemic discipline → Books 09, 10, 14
-- Influence → Book 11
-- Principled negotiation → Book 12
-- Tactical negotiation → Book 13
-- Strategy formation → Book 15
+- Influence → Psychology / Book 11
+- Principled negotiation → Negotiation / Book 12
+- Tactical negotiation → Negotiation / Book 13
+- Strategy formation → Strategic Thinking / Book 15
 
 ## Next
 - Use this set in real decisions and capture only durable lessons that materially improve future reasoning.

@@ -70,6 +70,8 @@ Career is organized as a parent topic with shared career-profile context and thr
 
 R&D Innovation is an active operational Capability domain. Six active reusable capabilities live under `1. CAPABILITIES/`: CLAW_DISCOVERY, VERIFICATION, DEEP_RESEARCH, EVALUATION, KNOWLEDGE_PROMOTION, and SUPPLIER_KNOWLEDGE_INTAKE. Three workstreams live under `2. WORKSTREAMS/`; the Knowledge Sheet is the authoritative structured knowledge layer. Scheduled Claw Discovery output is owned by `PERSONAL_RESEARCH/` as a date-specific daily record for direct user review; Knowledge promotion still requires its applicable gates.
 
+General Thinking is a reusable thinking layer for theories, mental models, decisions, human interaction, self-improvement, and reflection. It is intentionally separate from domain knowledge and stores distilled knowledge rather than full source books. Its V2 architecture now uses eight physical Thinking Library domains: Game Theory, Systems Thinking, Bayesian Thinking, Critical Thinking, Psychology, Negotiation, Decision Frameworks, and Strategic Thinking; the architecture is defined in `TOPICS/F. GENERAL THINKING/ARCHITECTURE_PROPOSAL_V2.md`.
+
 A topic should be added only when recurring work creates enough durable context to justify a dedicated folder.
 
 ## 7. GLOBAL LESSONS
@@ -98,6 +100,7 @@ A topic should be added only when recurring work creates enough durable context 
 - Periodic review is a quality check and derived report; it should not silently modify authoritative memory.
 - No Obsidian, knowledge graph, vector database, RAG layer, or automatic ingestion of every conversation is required at the current stage.
 - R&D Database V4 is maintained inside Second-Brain as a complete project source, organized into Bound Script frontend, standalone Library Core (`LibDNF`), and standalone Backend Scanner. The topic README is the architecture/deployment entry point; the code files are the detailed project source.
+General Thinking uses the V2 source → structural normalization → PDF↔Markdown validation → concepts → mental models → applications → reflection → lessons → principles lifecycle; raw copyrighted books remain outside the public repository. The Core Reading Set is a changeable source selection, not the permanent framework taxonomy.
 - Repository integrity is checked automatically by `scripts/validate_second_brain.py` through `.github/workflows/validate.yml`.
 - All repository mutations use a dedicated task branch and PR to `main`; review the diff and applicable checks before merging. Risk changes review depth, not the requirement to use a PR. If branch/PR or validation is unavailable, do not fall back to direct-main writes; report the blocker.
 - Build the complete target state on the task branch and keep one logical change in one coherent commit whenever practical. GitHub Actions validates the PR before merge.

@@ -1,99 +1,18 @@
 # Framework Index
 
-## Core reusable models
+| Framework | Type | Use when | Core question |
+|---|---|---|---|
+| Game Theory | Thinking Library | Other intelligent actors can react | What will they do next? |
+| Systems Thinking | Thinking Library | Outcomes emerge from feedback/interactions | What structure drives behavior? |
+| Bayesian Thinking | Thinking Library | Evidence is incomplete and beliefs update | How much should belief change? |
+| Critical Thinking | Thinking Library | Claims/reasoning may be weak | What is supported and falsifiable? |
+| Psychology | Thinking Library | Human behavior/influence is causal | What mechanism drives behavior? |
+| Negotiation | Thinking Library | Parties must reach agreement | What are interests, alternatives and constraints? |
+| Decision Theory / Decision Frameworks | Thinking Library | Decisions involve uncertainty/trade-offs | Which action is robust? |
+| Strategic Thinking | Thinking Library | Diagnosis/leverage/competitive position matter | Where is the leverage? |
 
-### Strategic interaction
-- Payoff matrix and best response
-- Dominance
-- Nash equilibrium
-- Mixed strategies
-- Sequential games and backward induction
-- Credible commitment
-- Signaling
-- Threats and promises
-- Repeated games
-- Tit-for-tat / conditional cooperation
-- Reputation
+## Materialization rule
+Create a physical library when durable concepts, reusable mental models, recurring routing or multiple sources/applications justify a stable boundary. Books 14 and 15 met that threshold.
 
-### Systems
-- Stocks and flows
-- Reinforcing and balancing feedback
-- Delays
-- Nonlinearity
-- System boundaries
-- Information flows
-- Rules and incentives
-- Leverage points
-- System traps
-
-### Bayesian / statistical
-- Prior → likelihood → posterior
-- Generative model
-- Causal DAG
-- Confounding
-- Collider bias
-- Regularization / partial pooling
-- Posterior predictive checking
-- Model comparison
-- Uncertainty intervals
-- Base rates
-
-### Forecasting / epistemics
-- Outside view
-- Decomposition
-- Calibration
-- Brier-style scoring
-- Bayesian updating
-- Reference classes
-- Falsification / disconfirmation
-- Premortem / backcasting
-- Resulting avoidance
-
-### Decision and cognition
-- System 1 / System 2
-- Anchoring
-- Availability
-- Representativeness
-- Framing
-- Loss aversion
-- Regression to the mean
-- Planning fallacy
-- Overconfidence
-- Hindsight bias
-
-### Influence
-- Reciprocity
-- Commitment/consistency
-- Social proof
-- Liking
-- Authority
-- Scarcity
-- Contrast / automatic response cues
-
-### Negotiation
-- Interests vs positions
-- BATNA
-- Objective criteria
-- Mutual-gain options
-- People/problem separation
-- Tactical empathy
-- Mirroring
-- Labeling
-- Calibrated questions
-- Accusation audit
-- Black swans
-
-### Strategy
-- Diagnosis
-- Guiding policy
-- Coherent action
-- Leverage
-- Proximate objectives
-- Focus
-- Advantage
-- Design
-- Dynamics
-- Inertia / entropy
-
-## Retrieval rule
-Do not retrieve the whole framework set by default. Start with the problem signal, then retrieve the smallest relevant model set.
+## Ownership
+One durable concept should have one owner. Supporting frameworks cross-link rather than copy near-identical definitions.
