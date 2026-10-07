@@ -90,3 +90,30 @@ Ask separately:
 - how is the existing value divided?
 - can the players create additional value through cooperation?
 
+
+## GT-MM-22 — Model the information structure before solving the game
+If players have private information, identify types, information sets, beliefs, and what is common knowledge before applying an equilibrium concept.
+
+## GT-MM-23 — Eliminate what cannot survive rational reasoning
+Remove actions that cannot be justified as a best response to any rationally consistent belief before solving the remaining game.
+
+## GT-MM-24 — Test future behavior for credibility
+In sequential games, do not stop at the first equilibrium. Check whether the proposed behavior remains optimal inside every relevant subgame.
+
+## GT-MM-25 — A strategy is a contingent plan, not just a move
+For sequential and repeated games, distinguish the action taken now from the complete plan specifying how behavior changes after different histories.
+
+## GT-MM-26 — Repetition matters through the value of future interaction
+A repeated relationship changes incentives when future outcomes are sufficiently valuable relative to immediate gains from deviation.
+
+## GT-MM-27 — Design the mechanism, not only the desired outcome
+If the target outcome is not stable under current rules, ask whether a different game can implement it.
+
+## GT-MM-28 — Beliefs are part of sequential reasoning
+When actions do not reveal all relevant information, equilibrium analysis must specify what players believe at information sets and whether those beliefs are consistent with the strategy profile.
+
+## GT-MM-29 — Test an allocation against coalition deviations
+For cooperative problems, ask whether any coalition can obtain a better outcome for all of its members than the proposed allocation.
+
+## GT-MM-30 — Separate bargaining outcome from bargaining procedure
+A bargaining solution depends on the feasible agreements, disagreement outcome, preferences, and the solution principles used to select among them.
