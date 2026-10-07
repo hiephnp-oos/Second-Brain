@@ -148,3 +148,36 @@ Classify the move as unconditional move, threat, promise, warning, or assurance.
 
 ## GT-APP-44 — Credibility-device audit
 For a commitment, identify the supporting mechanism: payoff change, reputation/contract, removal of communication or retreat, chance, incremental steps, teamwork, or delegated agent. Reject commitments whose supporting device does not materially change the future reversal incentive.
+
+## GT-APP-45 — Signaling/screening audit
+Identify who knows what, who benefits from revelation or concealment, and whether the observed action is costly to mimic. For screening, design the choice set so hidden types have different optimal responses.
+
+## GT-APP-46 — Signal-jamming review
+When an actor has reason to conceal type, intention or information, test whether apparent noise, mimicry or inconsistent behavior reduces inferential power.
+
+## GT-APP-47 — Externality pricing review
+Map the private cost, external cost and collective cost of an action. Test whether a fee, toll, quota or rule can make the actor internalize the harm imposed on others.
+
+## GT-APP-48 — Coordination threshold review
+When an inferior equilibrium persists, identify the adoption threshold and the intervention capable of moving enough actors together to reach the better equilibrium.
+
+## GT-APP-49 — Auction information audit
+Classify the value as private/common/mixed, identify what winning reveals, identify what bids reveal, and condition the bid on the information structure rather than valuation alone.
+
+## GT-APP-50 — Mechanism adaptation audit
+After changing an auction, voting rule, contract or incentive scheme, predict how participants will adapt. Reject the assumption that the old behavior remains fixed under new rules.
+
+## GT-APP-51 — BATNA/pie calculation
+Calculate each party's outcome without agreement, then measure the incremental surplus created by agreement. Only then evaluate how the surplus should be divided.
+
+## GT-APP-52 — Bargaining procedure audit v2
+Model offer rights, deadlines, delay costs, patience, counteroffer sequence and the ability to influence the opponent's outside option before evaluating the settlement.
+
+## GT-APP-53 — Pivotality audit
+For a voting rule, identify the decisive coalition and determine when an individual vote can change the result. Compare this with formal voting power created by agenda control or tie-breaking rights.
+
+## GT-APP-54 — Incentive risk-design audit
+Map hidden effort, observable outcomes, outcome noise, agent risk tolerance, relative-performance signals and principal objectives. Choose the strongest incentive that does not impose unnecessary risk.
+
+## GT-APP-55 — Multiple-principal incentive audit
+List each principal's objective and reward/punishment scheme. Test whether incentives reinforce, partially offset or fully cancel one another.
