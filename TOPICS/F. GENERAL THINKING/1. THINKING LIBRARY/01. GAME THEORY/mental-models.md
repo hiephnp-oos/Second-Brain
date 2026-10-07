@@ -85,7 +85,7 @@ Good rules can make desired behavior easier than perfect reasoning.
 Before relying on reciprocal cooperation, ask what behavior is observable, how cheating is detected, and whether the responsible actor can be identified.
 
 ## GT-MM-29 — Design the punishment, not just the rule
-A cooperation rule is incomplete without a credible response to defection. Prefer punishment that is simple, certain and sufficiently strong; avoid unnecessary severity that makes detection errors costly.
+A cooperation rule is incomplete without a credible response to defection. Prefer punishment that is simple, certain, prompt and sufficiently strong; avoid unnecessary severity that makes detection errors costly.
 
 ## GT-MM-30 — Finite horizons can unravel cooperation
 If everyone knows exactly when repeated interaction ends, reason backward from the final round. Cooperation may disappear all the way to the first round.
