@@ -119,14 +119,12 @@ TOPICS/
 ├── B. CAREER/                        ← career capabilities + reports
 ├── C. NUVIO SETUP/                   ← Nuvio configuration context
 ├── D. RnD DATABASE/                  ← migrated R&D database source
-└── E. RnD INNOVATION/                ← capabilities + workstreams + knowledge
-```
-└── N. <topic>/
-    └── ...
+├── E. RnD INNOVATION/                ← capabilities + workstreams + knowledge
+└── F. GENERAL THINKING/              ← theories + mental models + reasoning
 .github/
-├── workflows/                ← automated validation
-└── ISSUE_TEMPLATE/           ← structured change requests
-scripts/                      ← validation tooling
+├── workflows/                        ← automated validation
+└── ISSUE_TEMPLATE/                   ← structured change requests
+scripts/                              ← validation tooling
 ```
 
 The topic registry and lifecycle state are maintained in `AI_MEMORY.md`; each topic README carries the detailed status summary and direction. The root README does not duplicate the topic registry.
