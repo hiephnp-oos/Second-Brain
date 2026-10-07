@@ -13,12 +13,19 @@ The supplied `BOOK.zip` contains paired PDF and MD sources for Books 01–16. Th
 The PDF is the source of truth for each review. The paired MD is an extraction/working representation used for search and cross-checking.
 
 ## Status
-- State: Active — Books 01–15 complete; Book 16 pending
+- State: Active
 - Summary: Books 01–15 have been reviewed as one coherent thinking set.
 - Direction: Use problem-driven retrieval and keep the distilled layer smaller than the source library.
 - Last reviewed: 2026-10-07
 
 ## Working Principles
+
+- **Book PDF is canonical.** Markdown is a retrieval aid and never overrides the PDF.
+- Physical framework libraries are materialized only when durable content and recurring routing justify them.
+
+## Physical framework libraries
+
+Game Theory, Systems Thinking, Bayesian Thinking, Critical Thinking, Psychology, Negotiation, Decision Frameworks, Strategic Thinking.
 - Route by problem before retrieving a framework.
 - Use the smallest useful model set; do not load all 15 books for routine decisions.
 - Distinguish evidence, inference, assumption, and recommendation.
