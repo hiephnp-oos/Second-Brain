@@ -176,3 +176,27 @@ When multiple equilibria exist and communication is limited, look for a salient 
 
 ## GT-MM-59 — Mutually destructive outcomes require coordination or credible restraint
 In Chicken-like games, each side may prefer the other to yield while both prefer avoiding mutual disaster. Analyze whether commitment, communication, or a focal convention can prevent the bad equilibrium.
+
+## GT-MM-60 — Equilibrium mixing must make the opponent indifferent
+When a mixed strategy is required, choose probabilities that remove the opponent's incentive to switch among the actions used in equilibrium.
+
+## GT-MM-61 — Correct proportions are not enough; randomness must be unpredictable
+A sequence can have the right long-run frequencies and still be exploitable if the opponent can predict individual actions.
+
+## GT-MM-62 — Your improvement can change the opponent's strategy
+A change in one player's skill or payoff can alter both players' equilibrium mixtures. Re-solve the interaction after material capability changes.
+
+## GT-MM-63 — A strategic move is preemptive
+An action or response rule has strategic effect only when established before the opponent acts, because its purpose is to change expectations about the future response.
+
+## GT-MM-64 — Threat/promise differs from warning/assurance
+A threat or promise intentionally commits to a response that would not otherwise be optimal in order to influence the opponent. A warning or assurance communicates an unchanged incentive-compatible response.
+
+## GT-MM-65 — Credibility requires changing the reversal incentive
+A commitment is credible when the future choice has been changed so that carrying it out is sufficiently attractive, constrained, costly to reverse, or delegated.
+
+## GT-MM-66 — Commitment can be built by removing discretion
+Contracts, cut-off communication, burned bridges, incremental steps, teams, or mandated agents work by reducing the ability or incentive to reverse the announced position.
+
+## GT-MM-67 — Chance can be a commitment device
+Delegating the outcome to chance can make a commitment credible when retaining control would otherwise create an incentive to back down.
