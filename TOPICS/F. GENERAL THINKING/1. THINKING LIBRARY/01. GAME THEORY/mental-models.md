@@ -132,3 +132,18 @@ An agent or mediator can change the strategic game by altering incentives, infor
 
 ## GT-MM-35 — Deliberate uncertainty can strengthen a commitment
 A commitment can become more credible when the actor gives up some control over whether the costly consequence occurs.
+
+## GT-MM-36 — Ask whether the future is valuable enough to discipline the present
+Before relying on reciprocity, test the frequency of future interaction and the effective value assigned to future outcomes.
+
+## GT-MM-37 — Separate establishment from stability
+A strategy that cannot be invaded once established is not necessarily a strategy that will become established. Analyze entry and persistence separately.
+
+## GT-MM-38 — Evaluate cooperation at the level of the interaction network
+When interactions are local or clustered, a cooperative strategy may perform differently from the same strategy in a fully mixed population.
+
+## GT-MM-39 — Design reciprocity to tolerate mistakes
+If observations can be wrong, distinguish accidental misperception from deliberate defection so that one error does not automatically create a long retaliation cycle.
+
+## GT-MM-40 — Cooperation does not require altruistic motives
+A reciprocal pattern can sustain mutually beneficial behavior even when each participant is primarily pursuing individual advantage, provided the interaction structure supports reciprocity.
