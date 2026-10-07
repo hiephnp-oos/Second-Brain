@@ -182,19 +182,6 @@
   "includedKeywords": [],
   "excludedKeywords": [],
   "preferredKeywords": [],
-  "excludeSeederRange": [
-    0,
-    1000
-  ],
-  "includeSeederRange": [
-    0,
-    1000
-  ],
-  "requiredSeederRange": [
-    0,
-    1000
-  ],
-  "seederRangeTypes": [],
   "ageRangeTypes": [],
   "digitalReleaseFilter": {
     "enabled": false,
@@ -617,10 +604,6 @@
       {
         "key": "bitrate",
         "direction": "desc"
-      },
-      {
-        "key": "seeders",
-        "direction": "desc"
       }
     ],
     "movies": [],
@@ -643,14 +626,6 @@
         "description": "{?{stream.filename}?}\n{stream.subtitles::exists[\"{stream.subtitleEmojis::join(' ')}\"||\"\"]}"
       }
     }
-  },
-  "proxy": {
-    "enabled": false,
-    "id": "builtin",
-    "proxiedAddons": [],
-    "proxiedServices": [
-      "torbox"
-    ]
   },
   "resultLimits": {
     "resolution": 15,
@@ -705,16 +680,6 @@
     "catalog",
     "subtitles"
   ],
-  "statistics": {
-    "enabled": true,
-    "position": "bottom",
-    "statsToShow": [
-      "addon",
-      "filter",
-      "timing"
-    ],
-    "showFilterStatsOnNoStreams": false
-  },
   "yearMatching": {
     "enabled": true,
     "tolerance": 1,
