@@ -90,3 +90,18 @@ GT-02 extends it:
 GT-03 formalizes the model:
 
 `Specify actions + information → identify rationalizable behavior → solve sequential/repeated interaction → account for beliefs → test subgame/sequential credibility → test coalition stability → design or select the desired outcome.`
+
+## GT-L-26 — Salience can substitute for communication
+When players need to coordinate but cannot communicate, a mutually recognizable focal outcome can solve part of the coordination problem.
+
+## GT-L-27 — Communication rights are strategic assets
+The ability to send, receive, block, or destroy information can change bargaining power and the set of feasible commitments.
+
+## GT-L-28 — Delegation can change the game
+Changing who acts can change incentives and credibility; delegation is therefore a strategic move, not merely an organizational detail.
+
+## GT-L-29 — Controlled uncertainty can create credibility
+A commitment can gain force when the actor deliberately reduces control over the final consequence.
+
+## GT-L-30 — Deterrence must account for the opponent's fear of surprise
+A strategy that looks defensive from one side can appear threatening from the other if each side anticipates the possibility of preemption.
