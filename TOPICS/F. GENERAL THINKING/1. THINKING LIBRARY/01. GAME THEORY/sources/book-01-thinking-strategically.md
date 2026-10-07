@@ -224,3 +224,102 @@ The source also gives three underlying principles: change the payoffs so followi
 Status: **PART II COVERED FOR KNOWLEDGE EXTRACTION**
 
 The durable reasoning of Chapters 4–7 is represented in concepts.md, mental-models.md, applications.md, and lessons.md, with this source file providing the coverage map. The repository intentionally does not reproduce the full source, all examples, historical details, tables, diagrams or case-study narratives.
+
+
+## Part III knowledge coverage
+
+Part III is treated as covered when the durable strategic mechanisms of Chapters 8–13 are represented in the knowledge layer. The goal is not to reproduce the book's examples or 23 case-study narratives.
+
+### Chapter 8 — Brinkmanship
+
+| Source section | Durable strategic content retained |
+|---|---|
+| Why Uncertainty? | A drastic certain threat can be incredible; controlled uncertainty can make deterrence more believable. |
+| The Mechanism of Risk | Brinkmanship uses a slippery, partly uncontrolled risk rather than a privately controlled random draw; the opponent must believe the risk can escalate. |
+| The Control of Risk | Effective brinkmanship requires enough control over the risk to keep it within an effective range. |
+| Getting Off the Brink | Compliance must give the threatened side a credible route to reduce the risk, ideally to zero. |
+| Falling Off the Brink | The mechanism can fail catastrophically; deterrence benefit must be weighed against escalation risk. |
+| Nuclear Brinkmanship | Nuclear deterrence illustrates the trade-off between deterrence value and accepting some risk of mutual destruction; incremental aggression can test the credibility of a response threshold. |
+| Case Study #8 | The Atlantic case demonstrates that increasing escalation risk can alter incentives but does not automatically improve outcomes; evaluate the resulting probabilities, not the policy label. |
+
+### Chapter 9 — Cooperation and Coordination
+
+| Source section | Durable strategic content retained |
+|---|---|
+| For Whom the Bell Curve Tolls | Relative-performance competition can waste resources when individuals improve effort only to preserve rank. |
+| The Route Less Traveled | Congestion creates a gap between individual route choice and the socially efficient allocation. |
+| Catch-22? | Positive feedback and path dependence can lock in an inferior technology or convention. |
+| Faster Than a Speeding Ticket | Multiple equilibria can persist when people reinforce one another's behavior; enforcement or social convention can select among them. |
+| Why Did They Leave? | Locally tolerant preferences can still produce segregated equilibria through self-reinforcing responses. |
+| It Can Be Lonely at the Top | Individual improvement of a threshold can create collective outcomes that differ from the group's initial intention. |
+| Politicians and Apple Cider | Sequential competition can pull political positions toward the median. |
+| The Stock Market and Beauty Contests | Higher-order expectations can dominate intrinsic valuation when players predict what others will predict. |
+| Recapitulation | Coordination failures include overcompetition, wrong proportions, multiple equilibria, path dependence, excessive homogeneity and unstable outcomes. |
+| Case Study #9 | Dentist allocation applies congestion/externality reasoning to the location of professionals and asks whether decentralized choices produce the socially desirable allocation. |
+
+### Chapter 10 — The Strategy of Voting
+
+| Source section | Durable strategic content retained |
+|---|---|
+| The Tie of Power | A rarely used tie-breaking vote can still matter when it changes pivotal outcomes. |
+| The Median Voter | In one-dimensional majority competition, the median position can become the strategic center of competition. |
+| Naive Voting | Majority rule can cycle, so there may be no stable social choice without an agenda. |
+| Order in the Court | Changing the order of decisions can change the outcome even when the alternatives and preferences are unchanged. |
+| The Sophisticates | Strategic voters can reason backward through a sequential agenda, yet collective foresight can produce surprising outcomes. |
+| All-Time Greats | Ballot constraints can make voters care about electability rather than only merit; alternative voting rules change incentives. |
+| “Love a Loath’d Enemy” | A first mover can strategically distort apparent preferences to influence the later allocation. |
+| Case Study #10 | The line-item-veto case asks whether changing the voting/approval procedure can improve collective choice by separating acceptable bundles from individually unattractive items. |
+
+### Chapter 11 — Bargaining
+
+| Source section | Durable strategic content retained |
+|---|---|
+| The Handicap System in Negotiations | Each side's cost of waiting and outside opportunity affect its bargaining share. |
+| “This Will Hurt You More Than It Hurts Me” | Relative outside options matter; a threat that harms both sides can improve one's position if it damages the rival more. |
+| Brinkmanship and Strikes | Bargaining can fail before the deadline because of misperception, impatience, mistrust and uncertainty; waiting itself has strategic cost. |
+| Simultaneous Bargaining over Many Issues | Different relative valuations create gains from package trades across issues. |
+| Case Study #11 | Changing who can make offers changes the bargaining outcome and illustrates the strategic importance of procedure and backward induction. |
+| Appendix: Patience Is Its Own Reward | In ongoing bargaining, impatience/discounting affects the division; the more patient side has greater leverage. |
+
+### Chapter 12 — Incentives
+
+| Source section | Durable strategic content retained |
+|---|---|
+| How to Reward Work Effort | When effort is hidden, incentives must rely on observable outcomes/signals; outcome risk creates a trade-off between motivation and risk-bearing. |
+| How to Organize a Joint Venture | Sunk investments create hold-up incentives; initial enforceable agreements can prevent later exploitation. |
+| The Strategy of Auctions | Auction rules shape strategic bidding; the optimal bid depends on costs, information and the mechanism rather than simple truthful reporting. |
+| Case Study #12 | Vickrey-style payment uncertainty introduces risk into bidding; mechanism design must consider how risk changes participation and bids. |
+
+### Chapter 13 — Case Studies
+
+Chapter 13 contains 23 cases that apply the preceding mechanisms rather than introducing a separate new theory. Coverage is therefore assessed by mechanism family:
+
+| Case family represented in the 23 cases | Durable mechanism retained |
+|---|---|
+| Information and valuation | Other players' choices reveal information; winning can signal over-optimism in common-value settings. |
+| Timing and sequencing | Last-mover/first-mover effects and backward reasoning change outcomes. |
+| Unpredictability and strategic response | Multi-player and sequential conflict can require mixed or contingent strategies. |
+| Commitment and deterrence | Credibility can be created through sunk costs, teamwork, rules, or constrained future options. |
+| Repeated cooperation / collective action | Cartel, public-goods and multi-person dilemmas require incentive-compatible enforcement. |
+| Externalities and coordination | Commons, congestion and group incentives can make individually rational choices collectively inefficient. |
+| Bargaining and patience | Relative outside options, delay costs, procedure and discounting determine division and timing. |
+| Incentive and mechanism design | Rules should change private incentives rather than rely on voluntary compliance. |
+
+Representative cases include the Alcoa capacity commitment, parental punishment credibility, gun-control commitment, public-goods fundraising, tragedy-of-the-commons, and strategic market-entry/deterrence problems. These are retained as mechanism illustrations rather than copied as narratives.
+
+### Part III synthesis
+
+1. Brinkmanship converts uncertainty about escalation into strategic leverage, but requires recognizable risk and an escape path.
+2. Coordination problems often arise from externalities, congestion, multiple equilibria, path dependence and higher-order expectations.
+3. Voting and bargaining procedures are strategic variables, not neutral containers for preferences.
+4. Bargaining power depends on relative outside options, patience, delay costs and control of procedure.
+5. Incentive design must account for observability, risk allocation, hold-up and the strategic response induced by the mechanism.
+6. Chapter 13 is an application layer over the mechanisms above; its 23 cases do not require 23 new permanent mental models.
+
+## Part III acceptance decision
+
+Status: **PART III COVERED FOR KNOWLEDGE EXTRACTION**
+
+The durable reasoning of Chapters 8–13 is represented in `concepts.md`, `mental-models.md`, `applications.md`, and `lessons.md`, with this source file providing the chapter/section/case-family coverage map.
+
+This acceptance does not mean every example, numerical table, historical detail, case narrative or citation is reproduced. It means the reusable strategic mechanisms needed for retrieval and application are represented.
