@@ -143,3 +143,84 @@ Supporting lens: Decision Frameworks
 ## Coverage note
 
 The knowledge layer intentionally compresses the source into reusable reasoning structures. It is not intended to preserve every example, historical detail, citation, or case-study fact from the book.
+
+## Part II knowledge coverage
+
+Part II is treated as covered when its durable mechanisms—not every historical example or case-study detail—are represented in the knowledge layer.
+
+### Chapter 4 — Resolving the Prisoners' Dilemma
+
+| Source section | Durable strategic content retained |
+|---|---|
+| How to Achieve Cooperation | Cooperation requires changing the incentive to cheat; detection and punishment are central. |
+| Detection of Cheating | Enforcement depends on observability and attribution; imperfect signals create false positives and can shift competition toward less observable dimensions. |
+| Punishment of Cheaters | Punishment can be external or arise from loss of future cooperation in repeated interaction. |
+| The Punishment Is Guaranteed | Rules that appear pro-competitive can mechanically punish deviations and thereby stabilize collusion. |
+| A Choice of Punishment | Effective punishment should be simple, clear, credible/certain, sufficiently strong and designed to limit the cost of mistakes. |
+| TIT-FOR-TAT | Conditional cooperation: cooperate first, reciprocate defection, and retain a route back to cooperation. |
+| An Alternative to TIT-FOR-TAT | Cooperation can be sustained through alternative reciprocal/enforcement structures; the mechanism matters more than the label. |
+| Case Study #4 | Application of repeated strategic interaction to institutional policy and incentives. |
+
+Additional Part II mechanisms retained: known finite horizons can unravel cooperation by backward induction; uncertain or indefinite continuation preserves the value of future cooperation; discounting and the relative timing of gains/losses affect sustainability.
+
+### Chapter 5 — Strategic Moves
+
+| Source section | Durable strategic content retained |
+|---|---|
+| Unconditional Moves | Moving first and fixing an action can change the opponent's response; strategic advantage depends on credibility. |
+| Threats and Promises | A threat punishes a specified response; a promise rewards one. Both are precommitted response rules. |
+| Warnings and Assurances | These primarily communicate information about an unchanged response rather than strategically changing incentives. |
+| Nuclear Deterrence | Threats work by changing the opponent's expected payoff before action; observability is necessary. |
+| Strategies of the Times | A strategic move can alter the response structure of a sequential interaction and exploit commitment to a response rule. |
+| More Strategic Moves | Strategic structure can deliberately give the other side initiative, wait for a threat, or use intermediate moves. |
+| A Sledgehammer to Crack a Nut? | Strategic moves can solve one problem while creating another; proportionality and side effects matter. |
+| Case Study #5 | Application of strategic commitment and response shaping in competitive strategy. |
+
+### Chapter 6 — Credible Commitments
+
+The source presents an eightfold path to credibility. Durable devices retained are:
+1. change payoffs;
+2. build reputation;
+3. use contracts;
+4. cut off communication;
+5. burn bridges;
+6. leave the outcome beyond your control;
+7. move in small steps;
+8. use teamwork/mandated negotiating agents.
+
+The common principle is to prevent or penalize future reversal, making the committed behavior believable when the time to act arrives. Observability also matters: a commitment that cannot be observed or inferred cannot shape expectations.
+
+### Chapter 7 — Unpredictability
+
+| Source section | Durable strategic content retained |
+|---|---|
+| How to Even the Odds | Some simultaneous games have no useful pure-strategy solution; equilibrium may require mixing. |
+| Anyone for Tennis? | The correct mix depends on relative payoffs/skills, not necessarily equal probabilities. |
+| Why You Should Choose the Right Mix | Use the equilibrium mixture so the opponent cannot gain by exploiting a systematic deviation. |
+| Why Not Rely on the Other Player's Randomization? | Both sides need their own best mix; otherwise the opponent has an incentive to change. |
+| How Your Best Mix Changes as Your Skills Change | Changing skills/payoffs changes the equilibrium mixture and expected performance. |
+| How to Act Randomly | Correct proportions are insufficient if the sequence is predictable; individual actions must remain unpredictable. |
+| Unique Situations | Not every decision benefits from randomization; distinguish repeated strategic games from genuinely one-off situations. |
+| Bodyguard of Lies | Strategic deception can exploit an opponent's inference process; it is distinct from merely mixing actions. |
+| Surprise | Unpredictability can create tactical surprise when the opponent benefits from correctly anticipating your action. |
+| Catch as Catch Can | Strategic uncertainty must be analyzed through the actual information and response structure. |
+| Case Study #7 | Application of randomized strategy to operational/military planning. |
+
+### Part II synthesis
+
+1. Cooperation requires an enforcement mechanism, not just an agreement.
+2. Detection, attribution and punishment are distinct design problems.
+3. Repetition creates a future value that can support cooperation.
+4. A known endpoint can unravel cooperation through backward induction.
+5. Strategic moves shape the opponent's response before it occurs.
+6. Threats/promises differ from warnings/assurances because they alter response rules.
+7. Credibility requires solving the future reversal problem.
+8. Commitment can be created by changing payoffs, restricting options, delegation, contracts, reputation or control.
+9. Unpredictability must be calibrated to the payoff structure and must be unpredictable at the action level.
+10. Randomization and brinkmanship are different strategic mechanisms.
+
+## Part II acceptance decision
+
+Status: **PART II COVERED FOR KNOWLEDGE EXTRACTION**
+
+The durable reasoning of Chapters 4–7 is represented in concepts.md, mental-models.md, applications.md, and lessons.md, with this source file providing the coverage map. The repository intentionally does not reproduce the full source, all examples, historical details, tables, diagrams or case-study narratives.
