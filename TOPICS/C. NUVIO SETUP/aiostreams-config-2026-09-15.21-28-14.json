@@ -661,19 +661,6 @@
       }
     }
   },
-  "bitrate": {
-    "useMetadataRuntime": true,
-    "global": {
-      "movies": [
-        0,
-        250000000
-      ],
-      "series": [
-        0,
-        250000000
-      ]
-    }
-  },
   "hideErrors": true,
   "hideErrorsForResources": [
     "addon_catalog",
@@ -1170,13 +1157,13 @@
   "mergedCatalogs": [],
   "externalDownloads": false,
   "cacheAndPlay": {
-    "enabled": false,
+    "enabled": true,
     "streamTypes": [
       "usenet"
     ]
   },
   "autoRemoveDownloads": false,
-  "checkOwned": false,
+  "checkOwned": true,
   "failover": {
     "enabled": true,
     "contentTypes": [
