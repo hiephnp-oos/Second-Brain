@@ -113,3 +113,32 @@ Application pattern:
 - connect payment to outcomes in a way that changes the other party's incentives;
 - test unintended responses.
 
+
+## GT-03 incremental applications from *A Course in Game Theory*
+
+### 17. Private-information interaction
+Model players with different information rather than forcing all uncertainty into a single payoff table. Identify types, information, beliefs, and actions before solving for equilibrium.
+
+### 18. Rationalizability screening
+Use iterated reasoning to remove actions that cannot be rationalized by any consistent belief about opponents' behavior.
+
+### 19. Common-knowledge coordination
+When everyone appears to know the same fact, test whether it is actually common knowledge. A shared fact without shared knowledge about that fact can support different strategic behavior.
+
+### 20. Sequential decision trees
+Represent the order of moves explicitly, solve later decisions first, and test the resulting strategy in every subgame.
+
+### 21. Repeated cooperation and punishment
+Model the full history-dependent strategy rather than only the current action. Test whether future rewards or punishments are strong enough to change present incentives.
+
+### 22. Mechanism implementation
+Start from the desired social outcome, then ask what game or mechanism would make that outcome emerge in equilibrium rather than assuming participants will simply choose it.
+
+### 23. Imperfect-information decision nodes
+At an information set, separate the action rule from the belief about which underlying state or node has been reached.
+
+### 24. Coalition stability
+For a proposed allocation, test whether any coalition can deviate and make all of its members better off. If so, the allocation is vulnerable to coalition blocking.
+
+### 25. Bargaining solution design
+Separate the feasible agreement set and disagreement point from the rule used to select the final agreement. Different bargaining procedures can be connected to the same bargaining problem through different solution concepts.
