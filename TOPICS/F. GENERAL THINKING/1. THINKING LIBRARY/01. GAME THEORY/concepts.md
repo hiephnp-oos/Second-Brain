@@ -244,3 +244,31 @@ The Shapley value assigns each player a payoff based on the player's average mar
 ## 36. Nash bargaining solution
 
 The Nash solution selects an agreement for a two-person bargaining problem using the bargaining set, disagreement outcome, and players' preferences. The book characterizes the solution axiomatically and connects it to alternating-offer bargaining.
+
+## 37. Focal point
+
+A focal point is a salient outcome that helps players coordinate expectations when explicit communication or prior agreement is unavailable. Its effectiveness depends on shared recognition of what makes the outcome prominent or unique in the situation.
+
+## 38. Tacit coordination
+
+Players can coordinate without explicit communication when each can infer the same salient action and expects the other to recognize it as well. The coordination comes from mutually consistent expectations rather than from an explicit message.
+
+## 39. Tacit bargaining
+
+When interests diverge but communication is absent, a salient coordinated outcome can function as an implicit bargaining point. The outcome may favor one party while still being selected because both sides need their expectations to converge.
+
+## 40. Strategic communication
+
+Communication is itself a strategic resource. Sending, receiving, destroying, withholding, or controlling communication can change the structure of a game and the bargaining possibilities available to the players.
+
+## 41. Delegation and mediation as strategic moves
+
+A player can alter an interaction by assigning decisions to an agent or introducing a mediator. The strategic effect comes from changing who acts, what information is available, or which responses become credible.
+
+## 42. Randomized commitment
+
+A commitment can deliberately leave part of the final outcome to chance. The resulting uncertainty can make a threat or promise more credible because the actor no longer has complete control over whether the undesirable or costly consequence occurs.
+
+## 43. Reciprocal fear and surprise attack
+
+In mutual-deterrence situations, each side's fear of being surprised can create incentives to act preemptively. Strategic stability therefore depends not only on offensive capability but also on expectations about the other's incentives and the timing of possible moves.
