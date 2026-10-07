@@ -272,3 +272,35 @@ A commitment can deliberately leave part of the final outcome to chance. The res
 ## 43. Reciprocal fear and surprise attack
 
 In mutual-deterrence situations, each side's fear of being surprised can create incentives to act preemptively. Strategic stability therefore depends not only on offensive capability but also on expectations about the other's incentives and the timing of possible moves.
+
+## 44. Iterated Prisoner's Dilemma
+
+The iterated Prisoner's Dilemma repeats a cooperation problem so that current choices affect the future interaction. This creates room for reciprocity, punishment, forgiveness, and reputation to influence present behavior.
+
+## 45. TIT FOR TAT
+
+TIT FOR TAT begins by cooperating and then responds by doing what the other player did on the previous move. The book studies it as a simple reciprocal strategy that can perform well across repeated interactions and can support cooperation under suitable conditions.
+
+## 46. Shadow of the future
+
+The value of future interaction affects whether present defection is attractive. A sufficiently important future can make reciprocal cooperation sustainable because a short-term gain from defection carries future consequences.
+
+## 47. Collective stability
+
+A strategy is collectively stable when, once established in a population, it cannot be profitably invaded by alternative strategies under the relevant conditions. Stability answers what can persist after establishment, not necessarily what will become established.
+
+## 48. Evolutionary and ecological selection
+
+Strategies can spread because successful strategies are reproduced, imitated, or otherwise become more common. Tournament, ecological, and territorial analyses study different parts of this selection process.
+
+## 49. Local clusters of cooperation
+
+Cooperation can gain a foothold when reciprocating strategies form clusters that interact sufficiently with one another to protect their cooperative behavior from exploitation.
+
+## 50. Reciprocity under noise
+
+When players can misperceive the other's previous move, a reciprocal strategy must be robust enough to avoid turning isolated errors into persistent retaliation. The book tests this robustness directly in noisy tournament conditions.
+
+## 51. Social structure and reputation
+
+The structure of interactions affects whether reciprocity can work. Recognition, repeated contact, reputation, and the ability to respond to prior behavior can support cooperation even without central authority.
