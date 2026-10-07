@@ -79,3 +79,62 @@ Decision: `REVIEWED — NORMALIZATION REQUIRED`. Do not distill knowledge from t
 ## Pilot implication
 
 All 16 books have now passed the same review gate inside PR #134. The next phase is to define/apply the normalization contract and validate the normalized source set before any knowledge distillation. No separate PR per book is required.
+
+## Architecture reconciliation
+
+The source intake is governed by \`ARCHITECTURE_PROPOSAL_V2.md\`.
+
+The Core Reading Set is a source selection and is deliberately decoupled from the permanent framework taxonomy. The initial Thinking Library has six physical-library candidates: Game Theory, Systems Thinking, Bayesian Thinking, Critical Thinking, Psychology, and Negotiation. Decision Frameworks and Strategic Thinking remain cross-cutting synthesis lenses until real content justifies physical folders.
+
+## Source normalization contract
+
+Normalization is a source-fidelity operation, not summarization.
+
+Allowed:
+- activate escaped Markdown heading markers when the source structure supports the change;
+- restore heading hierarchy from the PDF contents and page structure;
+- normalize paragraph, list, table, footnote, equation, code, and figure boundaries;
+- correct OCR only when the source PDF provides direct evidence;
+- preserve wording, ordering, numbers, examples, citations, and source/page traceability;
+- represent diagrams/game trees with faithful placeholders or structural representations when the original visual cannot be embedded.
+
+Forbidden:
+- summarizing or paraphrasing the author;
+- adding interpretation or modern examples;
+- deleting substantive repetition because it appears redundant;
+- inventing missing text;
+- silently correcting claims using outside knowledge;
+- turning normalization into knowledge distillation.
+
+A normalized source is accepted only when the normalized Markdown can be traced back to the PDF without material semantic loss.
+
+## PDF↔Markdown validation gate
+
+Validation is performed against the supplied private PDF/Markdown pair before any source is promoted to \`STRUCTURALLY ACCEPTED\`.
+
+Required checks:
+1. PDF and Markdown pairing is complete.
+2. Title/author identity is consistent.
+3. Page/reading order is recoverable.
+4. Major contents/chapter hierarchy is recoverable.
+5. Paragraph/list/table/equation/code boundaries are materially preserved.
+6. Footnotes/page markers are distinguishable from body text.
+7. Figures/diagrams/game trees are identified.
+8. OCR repairs are source-supported.
+9. No full source text is added to the public repository.
+10. The normalized artifact remains traceable to its private source.
+
+### Current private validation result
+
+- 16 PDFs and 17 Markdown parts were found in the supplied \`BOOK.zip\`.
+- All 16 book identities and the split Statistical Rethinking pair are present.
+- A safe mechanical normalization baseline was generated privately for all 17 Markdown parts; escaped heading markers were activated where present without rewriting source wording.
+- The baseline is **not** considered structurally accepted. Several books still require source-aware hierarchy, table/equation/code/figure handling identified in the review notes.
+- Therefore all 16 books remain \`REVIEWED — NORMALIZATION REQUIRED\`.
+- No full PDF or full extracted book text is committed to this public repository.
+
+The next promotion gate is source-aware structural normalization followed by the validation checks above. Knowledge distillation remains blocked until that gate passes.
+
+## Architecture decision
+
+The V2 architecture is now the target state for the remainder of this intake. Do not create future empty framework/application/reflection folders merely for symmetry.
