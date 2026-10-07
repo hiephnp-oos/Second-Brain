@@ -53,3 +53,42 @@ Repeated interaction means today's move changes tomorrow's incentives.
 
 ## GT-L-18
 The strongest strategic question is often what structure would make the desired behavior rational.
+
+## GT-L-19
+Cooperation requires not only mutual benefit but a credible way to detect, attribute and respond to defection.
+
+## GT-L-20
+A punishment that is too severe can make imperfect detection more damaging than the cheating it was meant to deter.
+
+## GT-L-21
+A known final round can destroy the incentive to cooperate throughout a repeated relationship.
+
+## GT-L-22
+Future interaction is the economic foundation of many self-enforcing cooperation mechanisms.
+
+## GT-L-23
+Reciprocity is stronger when retaliation is paired with a route back to cooperation after mistakes.
+
+## GT-L-24
+A strategic move works by changing the opponent's expected response before the opponent acts.
+
+## GT-L-25
+Threats and promises are strategic because they deliberately commit to responses that may not be optimal later; warnings and assurances are primarily informational.
+
+## GT-L-26
+A commitment is credible only when the future reversal problem has been addressed.
+
+## GT-L-27
+The most useful commitment device often removes or constrains the decision-maker's future discretion.
+
+## GT-L-28
+Small, observable commitments can be more credible than one large promise.
+
+## GT-L-29
+The right mixed strategy is determined by payoffs, not by an arbitrary 50:50 rule.
+
+## GT-L-30
+Correct long-run frequencies do not make a strategy unpredictable if the sequence is systematic.
+
+## GT-L-31
+Randomization and brinkmanship are different mechanisms: one hides the next action; the other creates controlled risk.
