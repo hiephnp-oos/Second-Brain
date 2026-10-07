@@ -20,6 +20,20 @@ Part I establishes several distinctions before the later formal machinery:
 - **Information from behavior:** another player's action or willingness to trade can reveal information about what they know or believe.
 - **Human behavior:** pride, irrationality and imperfect credibility can materially change strategic outcomes and should not be silently assumed away.
 
+## Part I incremental foundations from GT-02
+
+GT-02 revisits the Part I foundations with a stronger emphasis on what the strategic examples add beyond the core GT-01 framework:
+
+- **Infer the objective behind the move:** strategic analysis may require reasoning about what the other actor, institution, or test designer is trying to achieve, not only the visible action.
+- **Strategic sacrifice can improve the future position:** a locally costly outcome can be optimal when it changes the next state, removes a stronger rival, or preserves a better eventual payoff.
+- **Backward reasoning has boundary conditions:** full backward solution is cleanest when the state, previous actions, objectives, and subsequent choices are sufficiently known; uncertainty about chance, hidden actions, or motives requires additional reasoning rather than blind backward induction.
+- **Behavioral assumptions matter:** observed behavior can differ from the pure-self-interest prediction because of fairness, altruism, fear of rejection, learning, or social norms. The strategic model should make those assumptions explicit.
+- **Equilibrium can be multiple:** a game may have several stable mutual-best-response outcomes. Finding an equilibrium is therefore not the same as explaining which equilibrium will be selected.
+- **Coordination games need an equilibrium-selection mechanism:** focal points, conventions, communication, or credible commitments can help actors converge on one equilibrium when several are available.
+- **Conflict games can contain mutually destructive equilibria:** in Chicken-like situations, avoiding the worst outcome may require credible restraint, commitment, or a convention that coordinates expectations.
+
+These are incremental GT-02 foundations; they do not replace the more detailed GT-01 concepts already retained above.
+
 ## Solution concepts
 Dominant/dominated strategies simplify analysis. Best responses map conditional optimal actions. Nash equilibrium describes mutual best responses; it is not automatically desirable. Rationalizability removes behavior inconsistent with rational best-response reasoning. Subgame perfection tests credibility in every relevant subgame. Sequential equilibrium combines sequential rationality with consistent beliefs.
 
