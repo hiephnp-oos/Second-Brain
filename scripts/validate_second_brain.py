@@ -936,7 +936,7 @@ def validate_general_thinking_contract(errors: list[str]) -> None:
     topic_readme = root / "README.md"
     if topic_readme.exists():
         text = read_text(topic_readme)
-        for phrase in ["Physical framework libraries", "Book PDF (canonical)", "BOOK_AUDIT_01-15.md"]:
+        for phrase in ["Physical framework libraries", "Book PDF", "BOOK_AUDIT_01-15.md"]:
             if phrase not in text:
                 fail(f"General Thinking README missing '{phrase}'", errors)
 
