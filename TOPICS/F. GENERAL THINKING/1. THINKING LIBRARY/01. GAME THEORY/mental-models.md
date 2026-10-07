@@ -125,3 +125,36 @@ Changes in skills, payoffs or opponent behavior can change the equilibrium mixtu
 
 ## GT-MM-42 — Separate randomization from brinkmanship
 Randomization makes an action unpredictable to the opponent; brinkmanship creates a risk that an outcome may occur beyond either side's full control. They solve different strategic problems.
+
+## GT-MM-43 — Brinkmanship needs an escape path
+A threat based on escalating risk works only when the threatened side can reduce the risk by complying. If compliance does not lower the danger, the threat loses its strategic function.
+
+## GT-MM-44 — Recognizable risk is the commitment
+Brinkmanship is not a hidden lottery. The opponent must understand the risk and believe the process may escape the actor's full control.
+
+## GT-MM-45 — Coordination can be socially inefficient at equilibrium
+A stable individual response can produce congestion, overcompetition or another outcome worse than a coordinated allocation.
+
+## GT-MM-46 — Path dependence can preserve an inferior equilibrium
+Positive feedback can make an established convention or technology persist after a different option becomes objectively better.
+
+## GT-MM-47 — Higher-order expectations are strategic inputs
+In markets, contests and political settings, optimize against what others expect others to do, not only against intrinsic fundamentals.
+
+## GT-MM-48 — Voting procedure is part of the game
+Agenda order, pairwise sequencing, thresholds and ballot rules can change the outcome without changing voter preferences.
+
+## GT-MM-49 — Bargaining power is relative
+Outside options, waiting costs and patience matter relative to the opponent. Improving your relative position can matter more than improving your absolute position.
+
+## GT-MM-50 — Multi-issue bargaining creates trade opportunities
+When parties value issues differently, package trades can create gains that a single-issue split cannot capture.
+
+## GT-MM-51 — Hidden effort requires observable proxies
+If effort cannot be monitored directly, incentives must use outcomes or signals correlated with effort while accounting for noise and risk.
+
+## GT-MM-52 — Mechanism rules create the incentives they measure
+Do not ask only whether participants are rational. Ask what behavior the rule itself makes privately optimal.
+
+## GT-MM-53 — Winning can be a warning
+In uncertain common-value settings, winning may mean that your estimate was unusually optimistic. Evaluate the information content of the win before treating it as success.
