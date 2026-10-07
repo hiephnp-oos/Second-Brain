@@ -58,7 +58,7 @@ The strongest strategic question is often what structure would make the desired 
 Cooperation requires not only mutual benefit but a credible way to detect, attribute and respond to defection.
 
 ## GT-L-20
-A punishment that is too severe can make imperfect detection more damaging than the cheating it was meant to deter.
+A punishment that is too severe can make imperfect detection more damaging than the cheating it was meant to deter. Minimal effective deterrence is generally safer than gratuitous severity.
 
 ## GT-L-21
 A known final round can destroy the incentive to cooperate throughout a repeated relationship.
