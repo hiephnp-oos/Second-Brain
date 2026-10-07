@@ -119,7 +119,8 @@ TOPICS/
 ├── B. CAREER/                        ← career capabilities + reports
 ├── C. NUVIO SETUP/                   ← Nuvio configuration context
 ├── D. RnD DATABASE/                  ← migrated R&D database source
-└── E. RnD INNOVATION/                ← capabilities + workstreams + knowledge
+├── E. RnD INNOVATION/                ← capabilities + workstreams + knowledge
+└── F. GENERAL THINKING/              ← distilled thinking frameworks + book knowledge
 ```
 └── N. <topic>/
     └── ...
@@ -129,7 +130,7 @@ TOPICS/
 scripts/                      ← validation tooling
 ```
 
-The topic registry and lifecycle state are maintained in `AI_MEMORY.md`; each topic README carries the detailed status summary and direction. The root README does not duplicate the topic registry.
+The topic registry and lifecycle state are maintained in `AI_MEMORY.md`; each topic README carries the detailed status summary and direction. `F. GENERAL THINKING` is a durable knowledge topic, not an active execution Capability domain. The root README does not duplicate the topic registry.
 
 ## Standard topic README
 
@@ -212,7 +213,8 @@ The topic folders use numeric prefixes in canonical workflow/navigation order:
 3. `TOPICS/C. NUVIO SETUP/`
 4. `TOPICS/D. RnD DATABASE/`
 5. `TOPICS/E. RnD INNOVATION/`
-6. `SYSTEM CORE/`
+6. `TOPICS/F. GENERAL THINKING/`
+7. `SYSTEM CORE/`
 
 Ordered child workstream folders use the same convention when their routing/workflow sequence is meaningful. Supporting artifact folders remain unnumbered.
 
