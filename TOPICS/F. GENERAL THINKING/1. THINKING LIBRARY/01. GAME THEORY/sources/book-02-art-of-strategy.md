@@ -85,6 +85,21 @@ Acceptance rule for Part I: every chapter must leave at least one durable reason
 
 Acceptance rule for Part II: every substantive chapter must leave a durable reasoning mechanism, an operational model or application, and source traceability. Historical/further-reading material is retained only as context.
 
+
+## Part III traceability — controlled review map
+
+| Chapter | Durable reasoning retained | Incremental GT-02 contribution | Status |
+|---|---|---|---|
+| Ch. 8 — Interpreting and Manipulating Information | information asymmetry, signaling, screening | signal cost/separation, screening by self-selection, signal jamming, strategic inference, adverse selection | COVERED |
+| Ch. 9 — Cooperation and Coordination | cooperation, coordination, externalities | externality pricing, network/bandwagon effects, path dependence, threshold coordination, institutional enforcement | COVERED |
+| Ch. 10 — Auctions, Bidding, and Contests | auction mechanism and winner's curse | private vs common value, Vickrey mechanism, revenue equivalence boundary conditions, strategic adaptation, linked games | COVERED |
+| Ch. 11 — Bargaining | bargaining power, outside options, patience, multi-issue trade | BATNA-based pie measurement, procedure as strategic variable, influencing relative BATNAs | COVERED |
+| Ch. 12 — Voting | strategic voting, agenda control, pivotality | voting cycles, procedural choice, sequential voting, contextual voting power | COVERED |
+| Ch. 13 — Incentives | hidden effort, risk, hold-up | relative performance, intrinsic motivation, multiple principals, stronger contract design | COVERED |
+| Ch. 14 — Case Studies | applications of preceding mechanisms | cases retained by mechanism family rather than duplicated into separate models | COVERED AS APPLICATION LAYER |
+
+Acceptance rule for Part III: every substantive chapter must leave at least one durable reasoning mechanism, one operational model or application, and source traceability. Chapter 14 is accepted as an application layer and is not expected to create fourteen additional mental models.
+
 ## Acceptance decision
 
 Status: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction.
