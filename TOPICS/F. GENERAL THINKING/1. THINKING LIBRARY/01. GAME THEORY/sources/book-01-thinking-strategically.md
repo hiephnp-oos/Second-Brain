@@ -53,11 +53,69 @@ Validation basis:
 
 Known extraction artifacts remain in the Markdown, including malformed heading levels, OCR/formatting artifacts, and flattened tables/diagrams. These are not used as the repository's source of truth. Knowledge entries were distilled against the PDF with the Markdown used as a retrieval aid.
 
+## Part I knowledge coverage
+
+Part I is treated as **covered only when its durable reasoning content is represented in the knowledge layer**, not when every story detail is copied.
+
+### Chapter 1 — Ten Tales of Strategy
+
+| Source tale | Durable strategic content retained |
+|---|---|
+| 1. The Hot Hand | Actions trigger reactions; individual performance must be evaluated together with opponent adaptation and teammate effects. |
+| 2. To Lead or Not to Lead | First-mover advantage depends on the payoff structure; leaders may imitate followers, while followers can exploit revealed strategy. |
+| 3. Go Directly to Jail | Individual incentives can defeat jointly preferred outcomes; conflict and common interest can coexist. |
+| 4. Here I Stand | Intransigence can create bargaining power by removing counteroffers, but rigidity has long-run and failure costs. |
+| 5. Belling the Cat | Collective action fails when each person bears the cost of moving first; coordination and enforcement solve the first-mover problem. |
+| 6. The Thin End of the Wedge | Case-by-case decisions can accumulate into an undesirable aggregate outcome; evaluate the full sequence. |
+| 7. Look Before You Leap | Entering a relationship, technology or commitment can create switching costs and weaken future bargaining power; negotiate before lock-in. |
+| 8. Mix Your Plays | Predictable behavior can be exploited; appropriate mixing/randomization prevents systematic counterstrategy. |
+| 9. Never Give a Sucker an Even Bet | A counterparty's willingness to trade can reveal private information; observed actions are strategic evidence. |
+| 10. Game Theory Can Be Dangerous to Your Health | Bargaining outcomes depend on timing, alternatives and human irrationality; do not assume purely mechanical rationality. |
+| 11. The Shape of Things to Come | Synthesizes reaction, intransigence, coordination, cumulative decisions, leader/follower dynamics and unpredictability into a transition toward systematic strategic analysis. |
+
+### Chapter 2 — Anticipating Your Rival's Response
+
+The knowledge layer now explicitly retains:
+- distinguish sequential from simultaneous interaction;
+- forecast the rival's strategically determined response rather than treating it as weather-like uncertainty;
+- **look ahead and reason backward**;
+- solve later decisions first and propagate their consequences backward;
+- compare alternative current actions through their eventual endpoints;
+- recognize that move order can make a second mover stronger;
+- use case-specific strategic judgment rather than universal recipes.
+
+### Chapter 3 — Seeing through Your Rival's Strategy
+
+The knowledge layer now explicitly retains:
+- simultaneous moves require reasoning about mutually dependent choices;
+- distinguish **seeing through** a strategy from simply putting yourself in the opponent's shoes;
+- recognize recursive reasoning of the form “I think that he thinks that I think...”;
+- use dominant strategies where one action is best regardless of the opponent's action;
+- use best responses and equilibrium to solve mutual expectations;
+- distinguish equilibrium/stability from desirability;
+- recognize that some games require mixed strategies because deterministic play is exploitable.
+
+### Epilogue to Part I — durable synthesis
+
+The Part I synthesis retained in the knowledge layer is:
+1. Every strategic action can induce a reaction.
+2. Strategy is not decision-making in a vacuum.
+3. Move order matters and first move is not inherently superior.
+4. Commitment/inflexibility can create leverage but also create risk.
+5. Coordination problems require solving the cost of acting first.
+6. Local decisions must be evaluated for aggregate path effects.
+7. Lock-in should be anticipated before commitment.
+8. Unpredictability can protect against exploitation.
+9. Other players' actions reveal information.
+10. Sequential games require backward reasoning; simultaneous games require mutual-best-response reasoning.
+
 ## Acceptance decision
 
-Status: STRUCTURALLY ACCEPTED FOR KNOWLEDGE EXTRACTION
+Status: **PART I COVERED FOR KNOWLEDGE EXTRACTION**
 
-This acceptance means the pair is sufficiently traceable for controlled knowledge distillation. It does not mean the raw Markdown extraction is a clean canonical transcription.
+This means the durable strategic reasoning of Chapters 1–3 and the Part I synthesis is represented in `concepts.md`, `mental-models.md`, `applications.md`, and `lessons.md), with this file providing the source-to-knowledge coverage map.
+
+It does not mean every example, historical detail, citation, case-study fact, diagram or wording from Part I is reproduced.
 
 ## Distillation boundary
 
