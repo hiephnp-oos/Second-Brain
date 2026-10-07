@@ -871,6 +871,50 @@ def validate_target_structure(errors: list[str]) -> None:
         if not (ROOT / rel).exists():
             fail(f"Missing System Core artifact: {rel}", errors)
 
+def validate_general_thinking_contract(errors: list[str]) -> None:
+    """Validate the staged General Thinking architecture and intake contract."""
+    root = ROOT / "TOPICS/F. GENERAL THINKING"
+    required = [
+        root / "README.md", root / "THINKING_MAP.md", root / "FRAMEWORK_INDEX.md",
+        root / "CORE_READING_SET.md", root / "SOURCE_INTAKE_MANIFEST.md",
+        root / "ARCHITECTURE_PROPOSAL_V2.md", root / "1. THINKING LIBRARY/README.md",
+    ]
+    for path in required:
+        if not path.exists():
+            fail(f"General Thinking artifact missing: {path.relative_to(ROOT)}", errors)
+    proposal = root / "ARCHITECTURE_PROPOSAL_V2.md"
+    if proposal.exists():
+        text = read_text(proposal)
+        for phrase in ["Architecture model", "Thinking Library", "Cross-cutting synthesis", "Core Reading Set relationship", "Intake and promotion gates", "Materialization rule", "Source-of-truth rules", "Migration from the previous proposal"]:
+            if phrase not in text:
+                fail(f"General Thinking architecture proposal missing '{phrase}'", errors)
+    index = root / "FRAMEWORK_INDEX.md"
+    if index.exists():
+        text = read_text(index)
+        for framework in ["Game Theory", "Systems Thinking", "Bayesian Thinking", "Critical Thinking", "Psychology", "Negotiation", "Decision Theory / Decision Frameworks", "Strategic Thinking"]:
+            if framework not in text:
+                fail(f"General Thinking framework index missing '{framework}'", errors)
+        if "Cross-cutting synthesis" not in text:
+            fail("General Thinking framework index missing cross-cutting classification", errors)
+    reading = root / "CORE_READING_SET.md"
+    if reading.exists():
+        text = read_text(reading)
+        for book_id in [f"{i:02d}" for i in range(1, 17)]:
+            if not re.search(rf"^\|\s*{book_id}\s*\|", text, re.MULTILINE):
+                fail(f"General Thinking Core Reading Set missing book ID {book_id}", errors)
+    manifest = root / "SOURCE_INTAKE_MANIFEST.md"
+    if manifest.exists():
+        text = read_text(manifest)
+        for phrase in ["Source normalization contract", "PDF↔Markdown validation gate", "STRUCTURALLY ACCEPTED", "No full PDF or full extracted book text is committed", "REVIEWED — NORMALIZATION REQUIRED"]:
+            if phrase not in text:
+                fail(f"General Thinking intake manifest missing '{phrase}'", errors)
+    topic_readme = root / "README.md"
+    if topic_readme.exists():
+        text = read_text(topic_readme)
+        for phrase in ["ARCHITECTURE_PROPOSAL_V2.md", "Physical framework subfolders", "PDF↔Markdown validation"]:
+            if phrase not in text:
+                fail(f"General Thinking README missing '{phrase}'", errors)
+
 def main() -> int:
     errors: list[str] = []
     validate_root(errors)
@@ -901,6 +945,7 @@ def main() -> int:
     validate_control_reference_consistency(errors)
     validate_rnd_regression_contract(errors)
     validate_high_level_controls(errors)
+    validate_general_thinking_contract(errors)
     if errors:
         print("Second-Brain validation: FAIL")
         for error in errors:

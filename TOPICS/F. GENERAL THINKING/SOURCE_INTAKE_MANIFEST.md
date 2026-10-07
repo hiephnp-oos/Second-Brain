@@ -1,0 +1,201 @@
+# Core Reading Source Intake Manifest
+
+## Intake contract
+
+- Intake method: Firecrawl PDF Inspector.
+- Primary source files: user-provided PDF files in the private BOOK intake.
+- Source authority: the PDF is the canonical source for review, validation, interpretation, and knowledge extraction.
+- Extracted files: user-provided Markdown files generated from the PDF Inspector output and used only as retrieval/extraction aids.
+- Conflict rule: if PDF and Markdown differ, the PDF wins.
+- Repository boundary: full PDF files and full extracted book text are not committed to this public repository.
+- Evidence state: source text is source material; it is not automatically verified knowledge.
+- Current gate: structural QA before downstream distillation.
+- Review mode: all 16 books are reviewed one-by-one in PR #134 before the PR is merged.
+- Review order: 01 → 16. Each book is assessed against the same structural QA gate.
+- Review scope: source fidelity and extraction structure only; no summarization, interpretation, or knowledge distillation during this gate.
+
+## Inventory and review status
+
+| ID | Source PDF | Extracted Markdown | Review status | Key finding |
+|---|---|---|---|---|
+| 01 | 01 - Thinking Strategically.pdf | 01 - Thinking Strategically.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed for knowledge extraction; raw Markdown still contains extraction artifacts, but title/author identity, major chapter sequence, reading order, and representative strategic-game content are traceable to the PDF. |
+| 02 | 02 - The Art of Strategy.pdf | 02 - The Art of Strategy.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed; 550-page PDF and Markdown preserve the same 14-chapter structure and representative content coverage. Raw Markdown remains an extraction aid, not canonical source text. |
+| 03 | 03 - A Course in Game Theory.pdf | 03 - A Course in Game Theory.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed across the 368-page source; all 15 chapters and numbered section hierarchy are traceable, and representative definitions, results, game tables, equations, and game-tree material were source-checked. Raw Markdown remains a retrieval aid. |
+| 04 | 04 - The Strategy of Conflict.pdf | 04 - The Strategy of Conflict.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed across the 394-page source; the four-part structure, 10 chapters, appendices, and representative bargaining/coordination/strategic-move/randomization/deterrence material are traceable. Raw Markdown remains a retrieval aid. |
+| 05 | 05 - The Evolution of Cooperation.pdf | 05 - The Evolution of Cooperation.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed across the 243-page source; five parts, nine chapters, appendices, notes, bibliography, and representative tournament/reciprocity/evolution material are traceable. Raw Markdown remains a retrieval aid. |
+| 06 | 06 - Thinking in Systems.pdf | 06 - Thinking in Systems.md | REVIEWED — NORMALIZATION REQUIRED | 134 escaped headings; 205 pipe-bearing lines; part/chapter hierarchy and systems diagrams/tables need source-aware reconstruction. |
+| 07 | 07 - Statistical Rethinking_01.pdf + 07 - Statistical Rethinking_02.pdf | 07 - Statistical Rethinking_01.md + 07 - Statistical Rethinking_02.md | REVIEWED — NORMALIZATION REQUIRED | Part 01 has 141 escaped headings and 1,998 pipe-bearing lines; Part 02 has active headings but 2,016 pipe-bearing lines. Mathematical notation, equations, R/Stan code, tables, and chapter hierarchy need careful validation across the split. |
+| 08 | 08 - Superforecasting.pdf | 08 - Superforecasting.md | REVIEWED — NORMALIZATION REQUIRED | 107 escaped headings; title/section hierarchy is extraction-driven rather than source-faithful and needs recovery. |
+| 09 | 09 - The Scout Mindset.pdf | 09 - The Scout Mindset.md | REVIEWED — NORMALIZATION REQUIRED | 107 escaped headings in a short 64-page source; title/front-matter and section hierarchy require normalization and source traceability checks. |
+| 10 | 10 - Thinking, Fast and Slow.pdf | 10 - Thinking, Fast and Slow.md | REVIEWED — NORMALIZATION REQUIRED | 276 escaped headings; 275 pipe-bearing lines; contents/appendix structure and table/footnote handling need normalization. |
+| 11 | 11 - Influence.pdf | 11 - Influence.md | REVIEWED — NORMALIZATION REQUIRED | 140 escaped headings; title/front matter and chapter hierarchy require recovery; source has 279 pages and extraction structure is not canonical. |
+| 12 | 12 - Getting to Yes.pdf | 12 - Getting to Yes.md | REVIEWED — NORMALIZATION REQUIRED | 107 escaped headings; 190 pipe-bearing lines; title/contents hierarchy and list/table boundaries require validation. |
+| 13 | 13 - Never Split the Difference.pdf | 13 - Never Split the Difference.md | REVIEWED — NORMALIZATION REQUIRED | 206 escaped headings; chapter headings are fragmented/over-nested; contents and chapter/subheading hierarchy need recovery. |
+| 14 | 14 - Thinking in Bets.pdf | 14 - Thinking in Bets.md | REVIEWED — NORMALIZATION REQUIRED | 91 escaped headings; heading levels are extraction artifacts and must be normalized against the 247-page source. |
+| 15 | 15 - Good Strategy, Bad Strategy.pdf | 15 - Good Strategy, Bad Strategy.md | REVIEWED — NORMALIZATION REQUIRED | 174 escaped headings; title/front matter and chapter hierarchy require recovery before distillation. |
+| 16 | 16 - The Checklist Manifesto.pdf | 16 - The Checklist Manifesto.md | REVIEWED — NORMALIZATION REQUIRED | 21 escaped headings, 30 code-fence lines, and 5 pipe-bearing lines; front matter and prose/code boundary require cleanup. |
+
+## Review protocol
+
+For each book, compare the supplied Markdown against the supplied source PDF and record only structural/extraction findings:
+
+1. Title/author metadata is coherent.
+2. Contents/chapter hierarchy is structurally recoverable.
+3. Reading order is coherent.
+4. Paragraph boundaries are intact.
+5. Lists/tables/equations are not materially corrupted.
+6. Footnotes and page markers can be distinguished from body text.
+7. Figures/diagrams are identified and their logical role is preserved.
+8. Extraction artifacts are removed without changing meaning.
+9. Source/page traceability remains possible.
+10. No interpretation or summary has been silently introduced.
+
+A book is `REVIEWED — NORMALIZATION REQUIRED` when the source can be understood and traced, but the extracted Markdown is not yet safe for downstream knowledge extraction. It becomes `STRUCTURALLY ACCEPTED` only after normalization and validation.
+
+## Cross-book findings
+
+- 15 of the 16 Markdown files use escaped heading markers rather than active Markdown headings. Statistical Rethinking_02.md is the exception.
+- Heading levels are not reliable source hierarchy indicators and must be reconstructed from the PDF/contents.
+- Tables and pipe-heavy regions need document-aware inspection; pipe characters alone must not be assumed to represent valid Markdown tables.
+- Code fences can represent extraction artifacts rather than source code and must be classified before normalization.
+- OCR artifacts occur in several sources and must be corrected only when the PDF evidence supports the correction.
+- Mathematical notation, equations, R/Stan code, figures, diagrams, and game trees require special handling rather than generic Markdown cleanup.
+- Source wording and ordering must be preserved. Structural cleanup must not become summarization or interpretation.
+
+## Book 05 review notes — The Evolution of Cooperation
+
+The PDF is the canonical source. The Markdown was reviewed only as an extraction/retrieval representation against the PDF.
+
+Observed and validated:
+
+- The PDF is 243 pages and identifies *The Evolution of Cooperation* by Robert Axelrod.
+- The PDF contents preserve five parts, nine chapters, Appendix A, Appendix B, notes, bibliography, and index.
+- The Markdown preserves the same chapter sequence and major reading order.
+- Representative material was source-checked for the iterated Prisoner's Dilemma, TIT FOR TAT, tournament/ecological analysis, the shadow of the future, advice for participants and reformers, social structure/reputation, collective stability, clusters, and robustness under misperception.
+- Tables, figures, formulas, and some OCR/heading artifacts require source-aware reading; the PDF remains authoritative.
+- PDF and Markdown word volumes are close enough to support broad coverage checking, but volume matching is not treated as semantic proof.
+
+Validation decision: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction. The raw Markdown is not a canonical transcription; PDF wins whenever representations differ.
+
+## Book 04 review notes — The Strategy of Conflict
+
+The PDF is the canonical source. The Markdown was reviewed only as an extraction/retrieval representation against the PDF.
+
+Observed and validated:
+
+- The PDF is 394 pages and identifies *The Strategy of Conflict* by Thomas C. Schelling.
+- The PDF contents preserve four major parts, 10 chapters, and three appendices.
+- The Markdown preserves the same major reading order and chapter sequence; headings are extraction-fragmented but recoverable against the PDF contents.
+- Representative sections were source-checked for tacit coordination/focal points, tacit bargaining, threats and promises, strategic moves, delegation/mediation, randomization, threats that leave outcomes to chance, and reciprocal fear/surprise attack.
+- Tables, formulas, footnotes, and some headings contain extraction artifacts; the PDF remains authoritative for exact wording and structure.
+- PDF and Markdown word volumes are close, but volume matching was used only as a broad coverage signal, not as proof of semantic identity.
+
+Validation decision: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction. The raw Markdown is not a canonical transcription; PDF wins whenever representations differ.
+
+## Book 03 review notes — A Course in Game Theory
+
+The PDF is the canonical source. The Markdown was reviewed only as an extraction/retrieval representation against the PDF.
+
+Observed and validated:
+
+- The PDF is 368 pages and identifies *A Course in Game Theory* by Martin J. Osborne and Ariel Rubinstein.
+- The PDF contents contain 15 chapters across four major parts: Strategic Games; Extensive Games with Perfect Information; Extensive Games with Imperfect Information; and Coalitional Games.
+- The Markdown preserves the same chapter sequence and numbered section structure, including the transition from Nash equilibrium through repeated games, implementation, sequential equilibrium, coalitional games, and the Nash solution.
+- Representative mathematical material was source-checked rather than accepted from Markdown alone, including the strategic-game definition, information-function conditions, extensive-game/subgame structure, repeated-game material, sequential-equilibrium definitions, core conditions, and bargaining/Nash-solution definitions.
+- Game tables, equations, symbols, page markers, and result labels contain extraction artifacts. They remain usable only as retrieval aids with the PDF as authority.
+- PDF extraction contains materially more token volume than Markdown because mathematical/table formatting is represented differently; word volume was therefore not used as an acceptance criterion for this book.
+
+Validation decision: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction. The raw Markdown is not a canonical transcription; PDF wins whenever representations differ.
+
+## Book 02 review notes — The Art of Strategy
+
+The PDF is the canonical source. The Markdown was reviewed only as an extraction/retrieval representation against the PDF.
+
+Observed and validated:
+
+- PDF metadata identifies *The Art of Strategy* by Avinash K. Dixit and Barry J. Nalebuff and reports 550 pages.
+- PDF and Markdown contain the same 14-chapter sequence across Parts I–III, plus the Part II Nobel-history epilogue, Further Reading, Workouts, and Notes.
+- Representative sections across backward reasoning, mixed strategies, commitment, information asymmetry, signaling/screening, auctions, cooperation, bargaining, voting, and incentives are traceable in both representations.
+- The Markdown contains escaped headings and extraction-format artifacts, so it is not promoted as canonical source text.
+- PDF and Markdown word volumes are within approximately 0.1%; this supports broad coverage but is not treated as proof of semantic identity.
+
+Validation decision: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction. PDF remains authoritative whenever the two representations differ.
+
+## Book 01 review notes — Thinking Strategically
+
+The source PDF and extracted Markdown are traceable to the same title and chapter structure. The Markdown is not structurally clean enough to be treated as a canonical transcription, but it is sufficient as a retrieval aid after PDF validation.
+
+Observed issues:
+
+- Title-page content is fragmented into incorrect heading levels and OCR-corrupted text.
+- Contents hierarchy is distorted: parts and chapters do not consistently map to semantic heading levels.
+- Chapter headings are sometimes character-split or otherwise corrupted.
+- Some prose regions are emitted as malformed structural blocks rather than ordinary paragraphs.
+- Footnote markers/page artifacts are mixed into body text and require separation.
+- Strategic-game tables and diagrams/game trees are not represented as faithful structural objects and require source-aware reconstruction or explicit placeholders.
+- Reading order is broadly recoverable, so the file is usable as source material but not yet suitable as a clean canonical source.
+
+Validation decision: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction. Do not promote the raw Markdown itself as canonical source text.
+
+## Pilot implication
+
+Books 01–05 have now passed the source-aware PDF↔Markdown validation gate. Their raw Markdown remains an extraction aid rather than canonical transcription. Knowledge distillation is allowed only for accepted sources; Books 06–16 remain blocked until their own validation gates pass.
+
+## Architecture reconciliation
+
+The source intake is governed by \`ARCHITECTURE_PROPOSAL_V2.md\`.
+
+The Core Reading Set is a source selection and is deliberately decoupled from the permanent framework taxonomy. The initial Thinking Library has six physical-library candidates: Game Theory, Systems Thinking, Bayesian Thinking, Critical Thinking, Psychology, and Negotiation. Decision Frameworks and Strategic Thinking remain cross-cutting synthesis lenses until real content justifies physical folders.
+
+## Source normalization contract
+
+Normalization is a source-fidelity operation, not summarization.
+
+Allowed:
+- activate escaped Markdown heading markers when the source structure supports the change;
+- restore heading hierarchy from the PDF contents and page structure;
+- normalize paragraph, list, table, footnote, equation, code, and figure boundaries;
+- correct OCR only when the source PDF provides direct evidence;
+- preserve wording, ordering, numbers, examples, citations, and source/page traceability;
+- represent diagrams/game trees with faithful placeholders or structural representations when the original visual cannot be embedded.
+
+Forbidden:
+- summarizing or paraphrasing the author;
+- adding interpretation or modern examples;
+- deleting substantive repetition because it appears redundant;
+- inventing missing text;
+- silently correcting claims using outside knowledge;
+- turning normalization into knowledge distillation.
+
+A normalized source is accepted only when the normalized Markdown can be traced back to the PDF without material semantic loss.
+
+## PDF↔Markdown validation gate
+
+Validation is performed against the supplied private PDF/Markdown pair before any source is promoted to \`STRUCTURALLY ACCEPTED\`.
+
+Required checks:
+1. PDF and Markdown pairing is complete.
+2. Title/author identity is consistent.
+3. Page/reading order is recoverable.
+4. Major contents/chapter hierarchy is recoverable.
+5. Paragraph/list/table/equation/code boundaries are materially preserved.
+6. Footnotes/page markers are distinguishable from body text.
+7. Figures/diagrams/game trees are identified.
+8. OCR repairs are source-supported.
+9. No full source text is added to the public repository.
+10. The normalized artifact remains traceable to its private source.
+
+### Current private validation result
+
+- 17 PDFs and 17 Markdown parts were found in the supplied \`BOOK.zip\`.
+- All 16 book identities are present. The source inventory contains 17 PDFs and 17 Markdown parts because Statistical Rethinking is split into two PDF/Markdown parts.
+- A safe mechanical normalization baseline was generated privately for all 17 Markdown parts; escaped heading markers were activated where present without rewriting source wording.
+- Book 01, Book 02, Book 03, Book 04, and Book 05 have now passed their source-aware PDF↔Markdown validation gates and are `STRUCTURALLY ACCEPTED` for controlled knowledge extraction.
+- Books 06–16 remain `REVIEWED — NORMALIZATION REQUIRED` and remain blocked from distillation.
+- No full PDF or full extracted book text is committed to this public repository.
+
+The next promotion gate is source-aware structural normalization followed by the validation checks above. Knowledge distillation remains blocked until that gate passes.
+
+## Architecture decision
+
+The V2 architecture is now the target state for the remainder of this intake. Do not create future empty framework/application/reflection folders merely for symmetry.

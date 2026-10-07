@@ -1,99 +1,22 @@
 # Framework Index
 
-## Core reusable models
+| Framework | Type | Use when | Core question |
+|---|---|---|---|
+| Game Theory | Thinking Library | Other intelligent actors can react to your choices | What will they do next, and how does that change my best move? |
+| Systems Thinking | Thinking Library | Outcomes emerge from interacting parts and feedback | What structure is producing the observed behavior? |
+| Bayesian Thinking | Thinking Library | Evidence is incomplete and beliefs should update | How much should this evidence change my belief? |
+| Critical Thinking | Thinking Library | Claims, assumptions, or reasoning may be weak | What exactly is supported, and what would falsify it? |
+| Psychology | Thinking Library | Behavior, bias, motivation, or social influence matters | What human mechanism is driving the behavior? |
+| Negotiation | Thinking Library | Parties have partially aligned and conflicting interests | How can interests, alternatives, and commitments change the outcome? |
+| Decision Theory / Decision Frameworks | Cross-cutting synthesis | A choice must be made under uncertainty/trade-offs | Which action is most robust given decision-relevant value? |
+| Strategic Thinking | Cross-cutting synthesis | Competitive or interactive choices shape outcomes | Where is the leverage, and what response will it induce? |
 
-### Strategic interaction
-- Payoff matrix and best response
-- Dominance
-- Nash equilibrium
-- Mixed strategies
-- Sequential games and backward induction
-- Credible commitment
-- Signaling
-- Threats and promises
-- Repeated games
-- Tit-for-tat / conditional cooperation
-- Reputation
+## Materialization rule
 
-### Systems
-- Stocks and flows
-- Reinforcing and balancing feedback
-- Delays
-- Nonlinearity
-- System boundaries
-- Information flows
-- Rules and incentives
-- Leverage points
-- System traps
+The six Thinking Library domains are the initial physical-library candidates.
 
-### Bayesian / statistical
-- Prior → likelihood → posterior
-- Generative model
-- Causal DAG
-- Confounding
-- Collider bias
-- Regularization / partial pooling
-- Posterior predictive checking
-- Model comparison
-- Uncertainty intervals
-- Base rates
+Decision Theory / Decision Frameworks and Strategic Thinking remain conceptual routing/synthesis lenses until real durable content justifies dedicated folders.
 
-### Forecasting / epistemics
-- Outside view
-- Decomposition
-- Calibration
-- Brier-style scoring
-- Bayesian updating
-- Reference classes
-- Falsification / disconfirmation
-- Premortem / backcasting
-- Resulting avoidance
+A framework folder should be created only when it has durable concepts, reusable mental models, recurring routing demand, or multiple sources/applications that justify a stable knowledge boundary.
 
-### Decision and cognition
-- System 1 / System 2
-- Anchoring
-- Availability
-- Representativeness
-- Framing
-- Loss aversion
-- Regression to the mean
-- Planning fallacy
-- Overconfidence
-- Hindsight bias
-
-### Influence
-- Reciprocity
-- Commitment/consistency
-- Social proof
-- Liking
-- Authority
-- Scarcity
-- Contrast / automatic response cues
-
-### Negotiation
-- Interests vs positions
-- BATNA
-- Objective criteria
-- Mutual-gain options
-- People/problem separation
-- Tactical empathy
-- Mirroring
-- Labeling
-- Calibrated questions
-- Accusation audit
-- Black swans
-
-### Strategy
-- Diagnosis
-- Guiding policy
-- Coherent action
-- Leverage
-- Proximate objectives
-- Focus
-- Advantage
-- Design
-- Dynamics
-- Inertia / entropy
-
-## Retrieval rule
-Do not retrieve the whole framework set by default. Start with the problem signal, then retrieve the smallest relevant model set.
+The index is a routing contract. Detailed knowledge belongs under the relevant library folder only after promotion.

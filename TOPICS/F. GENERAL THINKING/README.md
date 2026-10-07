@@ -1,60 +1,72 @@
 # F. GENERAL THINKING
 
 ## Scope
-A compact, reusable thinking layer distilled from the 15-book core reading set. It supports decision-making, strategy, systems reasoning, uncertainty, critical thinking, influence, negotiation, and execution.
 
-The books are source material. This topic contains distilled operational knowledge, not conversation transcripts or copies of the books.
+A reusable thinking layer for understanding theories, mental models, decision frameworks, human interaction, self-improvement, and reflection. It is the default workspace for thinking/research topics that are not clearly owned by another Second-Brain topic.
+
+The topic is a thinking layer, not a second knowledge-management system. Detailed domain knowledge remains in its owning topic.
 
 ## Current Context
-The supplied `BOOK.zip` contains paired PDF and MD sources for Books 01–16. This topic currently covers Books 01–15. Book 16 remains outside this completed set.
 
-The PDF is the source of truth for each review. The paired MD is an extraction/working representation used for search and cross-checking.
+The initial intake is the 16-book Core Reading Set supplied by the user. The raw PDF/Markdown source files remain in the user's private Library/BOOK intake and are not copied into this public repository. The repository also contains `BOOKS/` notes from the earlier Books 01–15 knowledge-set work; those notes are retained as migration inputs and are not a substitute for the PDF-first source-acceptance gate.
+
+The repository stores durable structure, source metadata, extraction status, and later distilled knowledge. Full copyrighted book text is not treated as repository knowledge.
 
 ## Status
-- State: Active
-- Summary: Books 01–15 have been reviewed as one coherent thinking set.
-- Direction: Use problem-driven retrieval and keep the distilled layer smaller than the source library.
+
+- State: Building
+- Summary: The V2 General Thinking architecture is being established and reconciled with the existing Books 01–15 knowledge set.
+- Direction: Use PDF-first validation as the authority gate, preserve the existing Books 01–15 work as non-canonical migration input, and promote validated knowledge into the appropriate Thinking Library without duplicating source text.
 - Last reviewed: 2026-10-07
 
 ## Working Principles
-- Route by problem before retrieving a framework.
-- Use the smallest useful model set; do not load all 15 books for routine decisions.
-- Distinguish evidence, inference, assumption, and recommendation.
-- Preserve limitations and source-quality caveats.
-- Prefer UPDATE over duplicate knowledge when concepts overlap.
-- PDF wins when PDF and MD disagree.
-- A partial/secondary source must remain explicitly marked as partial.
+
+- Prefer understanding → analysis → insight → practical application.
+- Use theories as reasoning tools, not labels added after the fact.
+- Challenge assumptions and distinguish evidence, inference, assumption, and proposal.
+- Keep source material separate from user interpretation and reusable lessons.
+- Do not turn every discussion into a new system, workflow, or project.
+- Do not duplicate detailed knowledge owned by Career, R&D Innovation, or another topic.
+- A source being present does not make its claims authoritative; preserve source attribution and uncertainty.
+- Promote only durable, reusable knowledge.
 
 ## Active Projects / References
-- `BOOK_AUDIT_01-15.md` — full-set audit and duplicate-control decisions.
-- `THINKING_MAP.md` — problem → framework routing.
-- `FRAMEWORK_INDEX.md` — reusable mental-model index.
-- `BOOKS/` — book-level distilled knowledge.
+
+- [THINKING_MAP.md](THINKING_MAP.md)
+- [FRAMEWORK_INDEX.md](FRAMEWORK_INDEX.md)
+- [CORE_READING_SET.md](CORE_READING_SET.md)
+- [SOURCE_INTAKE_MANIFEST.md](SOURCE_INTAKE_MANIFEST.md)
+- [ARCHITECTURE_PROPOSAL_V2.md](ARCHITECTURE_PROPOSAL_V2.md)
+- [1. THINKING LIBRARY/README.md](1. THINKING LIBRARY/README.md)
+- `BOOK_AUDIT_01-15.md` — prior full-set audit retained for reconciliation.
+- `BOOKS/` — prior book-level distilled notes retained as non-canonical migration input.
 
 ## Decisions
-- Books 01–05 remain separate because they cover practical game reasoning, formal game theory, conflict/commitment, and repeated cooperation.
-- Books 07–08 remain separate: statistical/Bayesian modeling versus applied forecasting.
-- Books 09–10–14 remain separate: epistemic attitude, cognitive mechanisms, and decision-quality discipline.
-- Books 11–13 remain separate: influence, principled negotiation, and tactical negotiation.
-- Book 09 is explicitly partial because the supplied PDF/MD is a summary source rather than the complete book.
-- No generic “all concepts” duplicate file is created; `FRAMEWORK_INDEX.md` is the retrieval index.
+
+- General Thinking is a new topic-level thinking layer, not a replacement for domain topics.
+- The 16-book set is treated as a current source selection, not as the architecture. Books are routed to primary/supporting frameworks through the Thinking Map and Framework Index; raw full-text books are kept outside this public repository.
+- Source extraction must pass structural QA before durable knowledge is distilled from it.
+- Source text, distilled knowledge, and user-applied lessons remain separate layers.
+- Physical framework subfolders are created only when real content justifies them; Decision Frameworks and Strategic Thinking remain cross-cutting synthesis lenses until that threshold is reached.
+- Existing `BOOKS/` notes do not bypass source validation. PDF is canonical; Markdown is a retrieval aid.
 
 ## Lessons
-- A 15-book library becomes more useful when each source has a distinct retrieval role.
-- Cross-book duplication should be handled through routing and indexing, not by deleting useful source-specific distinctions.
-- Frameworks are tools, not universal laws. Context and evidence determine applicability.
+
+- Extraction quality must be validated on the actual source set, not selected only from generic benchmarks.
+- Markdown that visually resembles headings but contains escaped heading syntax is not ready for downstream knowledge extraction.
+- Large source collections should be inventoried once and then processed incrementally rather than creating a second parallel knowledge database.
 
 ## Routing
-- Strategic interaction → Books 01–05
-- Systems → Book 06
-- Bayesian/statistical reasoning → Book 07
-- Forecasting → Book 08
-- Epistemic discipline → Books 09, 10, 14
-- Influence → Book 11
-- Principled negotiation → Book 12
-- Tactical negotiation → Book 13
-- Strategy formation → Book 15
+
+- Theory / mental model / reasoning framework → this topic.
+- Decision or problem-solving method not owned by a domain topic → this topic.
+- Human interaction / negotiation reasoning → this topic unless the work is clearly domain-owned.
+- Application to a specific Career or R&D problem → use this topic for the thinking model and the owning topic for domain execution.
+- Durable domain fact → route to the owning topic instead of duplicating it here.
 
 ## Next
-- Use this set in real decisions and capture only durable lessons that materially improve future reasoning.
-- Add Book 16 only after the 01–15 layer has demonstrated a real retrieval gap.
+
+1. Continue the V2 architecture and source-normalization contract.
+2. Complete PDF↔Markdown validation for each remaining book and keep all full source text outside the public repository.
+3. Mark a source `STRUCTURALLY ACCEPTED` only after normalization and validation pass.
+4. Continue promoting validated books into the Thinking Library; do not treat prior `BOOKS/` notes as source-acceptance evidence.

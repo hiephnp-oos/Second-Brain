@@ -1,43 +1,29 @@
 # Thinking Map
 
-Use the problem type to select the smallest useful thinking tool.
+This is a routing map, not a second source of truth.
 
-| Problem signal | Primary lens | Useful books | First question |
+| Situation | Primary lens | Supporting lenses | Main question |
 |---|---|---|---|
-| Multiple actors with conflicting incentives | Game theory | 1–5 | What does each actor want, know, and expect? |
-| Repeated interaction | Cooperation / repeated games | 5 | What happens after today's move? |
-| Conflict with commitment or uncertainty | Strategic conflict | 4 | What commitments, signals, or credible threats change the game? |
-| Complex or persistent behavior | Systems thinking | 6 | What feedback, stocks, flows, delays, and rules generate the behavior? |
-| Uncertain quantity / causal claim | Bayesian reasoning | 7 | What prior information and likelihood update the belief? |
-| Future event with incomplete information | Forecasting | 8 | What is the base rate and what evidence would move the probability? |
-| Belief defended because it is desirable | Scout mindset | 9 | What evidence would change my mind? |
-| Fast intuitive judgment | Cognitive-bias lens | 10 | What heuristic, framing, or reference point may be distorting judgment? |
-| Persuasion / compliance | Influence | 11 | Which social shortcut is being activated, and is it legitimate? |
-| Negotiation | Principled negotiation | 12 | What are interests, options, objective criteria, and my BATNA? |
-| Difficult/high-pressure negotiation | Tactical negotiation | 13 | How do I create safety, reveal constraints, and preserve leverage? |
-| Decision under uncertainty | Decision quality | 14 | Am I judging the decision or merely its outcome? |
-| Strategy | Strategy kernel | 15 | What is the diagnosis, guiding policy, and coherent action? |
+| Multiple actors respond to each other | Game Theory | Negotiation, Psychology | How will other actors respond to my action? |
+| Complex interacting system | Systems Thinking | Strategic Thinking, Root Cause | What feedback loops and interactions drive the outcome? |
+| Uncertainty / incomplete information | Bayesian Thinking | Decision Frameworks, Forecasting | How should belief change with evidence? |
+| Ambiguous or biased reasoning | Critical Thinking | Bayesian Thinking, Psychology | What evidence would change the conclusion? |
+| Human behavior / influence | Psychology | Game Theory, Communication | What human mechanism is driving the behavior? |
+| Negotiation | Negotiation | Game Theory, Psychology | What are interests, alternatives, constraints, and credible moves? |
+| Important decision | Decision Frameworks | Bayesian, Game Theory, Systems | What decision is robust given uncertainty and trade-offs? |
+| Strategy / competitive position | Strategic Thinking | Game Theory, Systems Thinking | Where is the leverage and what response will it create? |
 
-## Cross-cutting sequence
+## Taxonomy rule
 
-```text
-Problem
-  ↓
-Who/what interacts?
-  ├─ Actors/incentives → Game Theory
-  ├─ Feedback/structure → Systems Thinking
-  ├─ Uncertainty/evidence → Bayesian + Forecasting
-  ├─ Belief distortion → Scout + Cognitive Biases
-  ├─ Influence/negotiation → Cialdini + Fisher/Ury + Voss
-  └─ Strategic choice → Rumelt
-  ↓
-Decision
-  ↓
-Action
-  ↓
-Observe outcome
-  ↓
-Update model
-```
+The first six lenses are the initial Thinking Library domains:
 
-No framework is automatically correct. Select the lens that matches the structure of the problem.
+1. Game Theory
+2. Systems Thinking
+3. Bayesian Thinking
+4. Critical Thinking
+5. Psychology
+6. Negotiation
+
+Decision Frameworks and Strategic Thinking are cross-cutting synthesis lenses for now. They do not require physical library folders until durable content justifies them.
+
+Use the narrowest useful lens first. Combine lenses only when they materially change the analysis.
