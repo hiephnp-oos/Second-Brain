@@ -200,3 +200,47 @@ When failure at a later stage would eliminate remaining options, taking an appro
 
 This is a sequencing principle, not a blanket recommendation to take more risk.
 
+
+## 26. Strategic games as simultaneous plans
+
+A strategic game models players choosing plans of action once and for all, with preferences defined over the resulting action profiles. The abstraction is useful because it separates the strategic structure from the application domain.
+
+## 27. Bayesian games and private information
+
+When players have private information, the game must represent both actions and information about types or states. Strategic reasoning therefore depends not only on what players want and can do, but also on what they know and what they believe about others' information.
+
+## 28. Rationalizability
+
+An action is rationalizable when it can be justified as a best response to some beliefs about the other players' behavior that are themselves consistent with rational choice. Iterated elimination removes actions that cannot survive this reasoning process.
+
+## 29. Common knowledge as a strategic condition
+
+Common knowledge is stronger than everyone knowing a fact. It requires the relevant fact to be known, known to be known, and so on through the players. The book uses this structure to connect information assumptions with solution concepts.
+
+## 30. Subgame perfect equilibrium
+
+In an extensive game with perfect information, subgame perfection requires the strategy profile to form a Nash equilibrium in every subgame. It therefore rules out plans that rely on non-credible behavior in later decision nodes.
+
+## 31. Repeated-game strategies
+
+In repeated games, a strategy specifies behavior as a function of the history of previous play. Future interaction can therefore change current incentives, and trigger or punishment strategies can sustain outcomes that are not sustainable in a one-shot game.
+
+## 32. Implementation theory
+
+Implementation theory asks whether a mechanism can be designed so that its equilibrium outcomes produce a desired social choice or outcome. The focus shifts from analyzing a given game to designing a game that induces a target outcome.
+
+## 33. Sequential equilibrium
+
+In extensive games with imperfect information, equilibrium analysis must account for both strategies and beliefs at information sets. Sequential equilibrium combines sequential rationality with consistency of beliefs.
+
+## 34. Coalitional game and the core
+
+A coalitional game evaluates what groups of players can achieve together. An allocation is in the core when no coalition can obtain an outcome that all its members prefer to the proposed allocation.
+
+## 35. Shapley value
+
+The Shapley value assigns each player a payoff based on the player's average marginal contribution across possible orders in which a coalition can form. It is a value concept for distributing cooperative surplus according to marginal contributions.
+
+## 36. Nash bargaining solution
+
+The Nash solution selects an agreement for a two-person bargaining problem using the bargaining set, disagreement outcome, and players' preferences. The book characterizes the solution axiomatically and connects it to alternating-offer bargaining.
