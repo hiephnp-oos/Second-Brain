@@ -46,6 +46,13 @@ Do not use it as the default lens for a problem that has no meaningful strategic
 - Private source pair: `04 - The Strategy of Conflict.pdf` + `04 - The Strategy of Conflict.md`
 - Role: extends strategic reasoning with focal points, tacit coordination/bargaining, communication and its strategic value, strategic moves, randomized commitments, and deterrence/surprise-attack problems.
 
+### GT-05 — The Evolution of Cooperation
+
+- *The Evolution of Cooperation* — Robert Axelrod
+- Intake status: STRUCTURALLY ACCEPTED
+- Private source pair: `05 - The Evolution of Cooperation.pdf` + `05 - The Evolution of Cooperation.md`
+- Role: extends repeated-game reasoning with reciprocity, TIT FOR TAT, evolutionary/ecological selection, the shadow of the future, collective stability, local clusters, and robustness under imperfect observation.
+
 The PDF is the source authority for all accepted sources. Markdown is a retrieval/extraction aid and is never treated as the canonical source text.
 
 ## Knowledge layers
@@ -58,3 +65,4 @@ The PDF is the source authority for all accepted sources. Markdown is a retrieva
 - [Source Traceability — Book 02](sources/book-02-art-of-strategy.md)
 - [Source Traceability — Book 03](sources/book-03-course-in-game-theory.md)
 - [Source Traceability — Book 04](sources/book-04-strategy-of-conflict.md)
+- [Source Traceability — Book 05](sources/book-05-evolution-of-cooperation.md)
