@@ -158,3 +158,21 @@ Do not ask only whether participants are rational. Ask what behavior the rule it
 
 ## GT-MM-53 — Winning can be a warning
 In uncertain common-value settings, winning may mean that your estimate was unusually optimistic. Evaluate the information content of the win before treating it as success.
+
+## GT-MM-54 — Infer the objective behind the move
+Before predicting an action, ask what objective or incentive structure makes that action rational. The visible move is evidence about the underlying game, not the whole game.
+
+## GT-MM-55 — A strategic loss can improve the final position
+Do not optimize the immediate result when a temporary loss changes the future state, removes a stronger rival, or improves the eventual payoff.
+
+## GT-MM-56 — Check whether backward reasoning is actually solvable
+Use backward reasoning directly when the game state, move history, objectives, and subsequent actions are sufficiently known. If uncertainty or hidden information matters, switch to an appropriate information or belief model.
+
+## GT-MM-57 — Equilibrium does not imply unique outcome
+Finding one Nash equilibrium does not explain which equilibrium will occur when several stable outcomes exist. Add an equilibrium-selection explanation.
+
+## GT-MM-58 — Focal points can select among equilibria
+When multiple equilibria exist and communication is limited, look for a salient convention, shared history, symmetry, or other feature that can coordinate expectations.
+
+## GT-MM-59 — Mutually destructive outcomes require coordination or credible restraint
+In Chicken-like games, each side may prefer the other to yield while both prefer avoiding mutual disaster. Analyze whether commitment, communication, or a focal convention can prevent the bad equilibrium.
