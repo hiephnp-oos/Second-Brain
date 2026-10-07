@@ -2,7 +2,7 @@
   "trusted": false,
   "addonName": "Secondary",
   "addonLogo": "https://cdn.xperience-app.com/avatars/hbo-max/stilgar.webp",
-  "addonDescription": "TorBox-first. SDR-only fallback, curated streams, clean results. AIOStreams × TorBox for reliable playback. Vietnamese subs included.\n\nCredit: HiepHoang",
+  "addonDescription": "TorBox-first. SDR-only fallback, curated streams, clean results. AIOStreams × TorBox for reliable playback.\n\nCredit: HiepHoang",
   "excludedResolutions": [
     "720p",
     "576p",
@@ -18,35 +18,34 @@
     "1080p"
   ],
   "excludedQualities": [
-    "CAM",
-    "TS",
+    "Unknown",
+    "SCR",
     "TC",
-    "SCR"
+    "TS",
+    "CAM",
+    "HDTV",
+    "DVDRip",
+    "DVD REMUX",
+    "HC HD-Rip",
+    "HDRip"
   ],
   "preferredQualities": [
     "BluRay REMUX",
     "BluRay",
     "WEB-DL",
-    "WEBRip",
-    "HDRip",
-    "HC HD-Rip",
-    "DVDRip",
-    "HDTV",
-    "CAM",
-    "TS",
-    "TC",
-    "SCR",
-    "Unknown"
+    "WEBRip"
   ],
   "excludedLanguages": [],
   "includedLanguages": [],
-  "requiredLanguages": [],
+  "requiredLanguages": [
+    "English",
+    "Original",
+    "Multi"
+  ],
   "preferredLanguages": [
     "English",
-    "Dual Audio",
-    "Multi",
-    "Dubbed",
-    "Unknown"
+    "Original",
+    "Multi"
   ],
   "excludedSubtitles": [],
   "preferredSubtitles": [],
@@ -54,7 +53,9 @@
     "3D",
     "AI"
   ],
-  "preferredVisualTags": [],
+  "preferredVisualTags": [
+    "SDR"
+  ],
   "preferredAudioTags": [],
   "preferredStreamTypes": [],
   "preferredEncodes": [],
@@ -96,10 +97,6 @@
     },
     {
       "expression": "visualTag(streams, 'HDR+DV', 'HDR Only', 'HDR10+', 'HDR10', 'HDR', 'DV Only')",
-      "enabled": true
-    },
-    {
-      "expression": "size(streams, 50000000000)",
       "enabled": true
     }
   ],
@@ -450,11 +447,11 @@
         "direction": "desc"
       },
       {
-        "key": "bitrate",
+        "key": "language",
         "direction": "desc"
       },
       {
-        "key": "language",
+        "key": "bitrate",
         "direction": "desc"
       }
     ],
@@ -480,11 +477,6 @@
       }
     }
   },
-  "proxy": {
-    "id": "mediaflow",
-    "proxiedAddons": [],
-    "proxiedServices": []
-  },
   "size": {
     "global": {
       "movies": [
@@ -499,45 +491,69 @@
         0,
         100000000000
       ]
+    },
+    "resolution": {
+      "2160p": {
+        "movies": [
+          0,
+          100000000000
+        ]
+      },
+      "480p": {
+        "movies": [
+          0,
+          100000000000
+        ]
+      }
     }
   },
   "hideErrors": true,
   "hideErrorsForResources": [],
-  "statistics": {
-    "enabled": false,
-    "position": "bottom",
-    "statsToShow": [
-      "addon",
-      "filter",
-      "timing"
-    ],
-    "showFilterStatsOnNoStreams": false
-  },
   "yearMatching": {
     "enabled": true,
-    "tolerance": 0,
-    "strict": true,
+    "tolerance": 1,
+    "strict": false,
     "strictTypes": [
       "movie"
     ],
-    "requestTypes": [],
+    "useInitialAirDate": true,
+    "requestTypes": [
+      "movie",
+      "series",
+      "anime"
+    ],
     "addons": []
   },
   "titleMatching": {
     "mode": "exact",
-    "similarityThreshold": 0.95,
-    "enabled": true,
-    "requestTypes": [],
+    "similarityThreshold": 1,
+    "enabled": false,
+    "ambiguousResults": "discard",
+    "requestTypes": [
+      "movie",
+      "series",
+      "anime"
+    ],
     "addons": []
   },
   "seasonEpisodeMatching": {
     "enabled": true,
-    "strict": true,
-    "requestTypes": [],
+    "strict": false,
+    "requestTypes": [
+      "movie",
+      "series",
+      "anime"
+    ],
     "addons": []
   },
   "episodeTitleMatching": {
-    "requestTypes": [],
+    "enabled": false,
+    "similarityThreshold": 0.85,
+    "requestTypes": [
+      "movie",
+      "series",
+      "anime"
+    ],
     "addons": []
   },
   "languageInference": {
@@ -549,15 +565,13 @@
     "multiGroupBehaviour": "aggressive",
     "keys": [
       "filename",
-      "infoHash"
+      "infoHash",
+      "smartDetect"
     ],
     "cached": "single_result",
     "uncached": "single_result",
     "p2p": "single_result",
-    "http": "disabled",
-    "live": "disabled",
-    "youtube": "disabled",
-    "external": "disabled",
+    "http": "per_addon",
     "smartDetectAttributes": [
       "size",
       "resolution",
@@ -569,10 +583,23 @@
       "encode",
       "edition",
       "network",
-      "remastered"
+      "remastered",
+      "bitrate",
+      "releaseGroup"
     ],
     "smartDetectRounding": 10,
-    "libraryBehaviour": "ignore"
+    "libraryBehaviour": "prefer",
+    "merge": {
+      "enabled": true,
+      "failoverVariants": false,
+      "fields": [
+        "sizes",
+        "seadex",
+        "library",
+        "subtitles",
+        "languages"
+      ]
+    }
   },
   "autoPlay": {
     "enabled": true,
@@ -764,18 +791,6 @@
         "mediaTypes": [],
         "useMultipleInstances": false
       }
-    },
-    {
-      "type": "opensubtitles",
-      "instanceId": "b50",
-      "enabled": true,
-      "options": {
-        "name": "OpenSubtitles",
-        "timeout": 5000,
-        "resources": [
-          "subtitles"
-        ]
-      }
     }
   ],
   "catalogModifications": [],
@@ -785,5 +800,30 @@
       "usenet"
     ]
   },
-  "checkOwned": true
+  "checkOwned": true,
+  "includedQualities": [],
+  "requiredQualities": [],
+  "includedSubtitles": [],
+  "groups": {
+    "enabled": true,
+    "groupings": [
+      {
+        "addons": [
+          "cd5",
+          "99f",
+          "88f"
+        ],
+        "condition": "true"
+      },
+      {
+        "addons": [
+          "d74",
+          "0cd"
+        ],
+        "condition": "count(previousStreams) < 5 or count(resolution(previousStreams, '2160p')) == 0"
+      }
+    ],
+    "behaviour": "sequential",
+    "onConditionFailure": "stop"
+  }
 }
