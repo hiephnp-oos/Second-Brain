@@ -847,7 +847,7 @@ def validate_high_level_controls(errors: list[str]) -> None:
                 fail(f"README.md missing platform capability: {phrase}", errors)
 
 def validate_target_structure(errors: list[str]) -> None:
-    expected = {"A. AI GENERAL","B. CAREER","C. NUVIO SETUP","D. RnD DATABASE","E. RnD INNOVATION"}
+    expected = {"A. AI GENERAL","B. CAREER","C. NUVIO SETUP","D. RnD DATABASE","E. RnD INNOVATION","F. GENERAL THINKING"}
     actual = {p.name for p in (ROOT / "TOPICS").iterdir() if p.is_dir()} if (ROOT / "TOPICS").exists() else set()
     if actual != expected:
         fail(f"Topic structure mismatch: expected {sorted(expected)}, got {sorted(actual)}", errors)
