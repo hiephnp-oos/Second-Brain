@@ -155,3 +155,45 @@ Credibility is a separate layer from commitment intent. The supporting device mu
 
 ## GT-L-52
 Chance can sometimes strengthen commitment precisely because it removes the decision-maker's future control.
+
+## GT-L-53
+Actions are data. In strategic settings, what someone does can reveal private information, and the actor may choose the action precisely because it will be interpreted.
+
+## GT-L-54
+A signal is credible only when the wrong type cannot cheaply mimic it. Evaluate the cost structure, not the stated message.
+
+## GT-L-55
+Screening works by designing choices so hidden types reveal themselves through self-selection.
+
+## GT-L-56
+An equilibrium can be privately rational and collectively inefficient when actions impose unpriced external costs.
+
+## GT-L-57
+Network effects can lock a system into an inferior convention; changing the equilibrium often requires coordinated movement, not merely better individual choices.
+
+## GT-L-58
+In a common-value auction, winning is information. Update the estimate after conditioning on the fact that you won.
+
+## GT-L-59
+Changing rules does not guarantee changing outcomes. Strategic players adapt to the new mechanism.
+
+## GT-L-60
+A bargaining claim should start with BATNAs and the value created by agreement, not with arbitrary percentage splits.
+
+## GT-L-61
+Procedure is part of the bargaining game. Offer rights, timing and delay costs can redistribute the same underlying surplus.
+
+## GT-L-62
+Voting power is contextual and often depends on pivotality, agenda control and tie-breaking rather than simply having a vote.
+
+## GT-L-63
+Good incentive design balances motivation against the risk transferred to the agent.
+
+## GT-L-64
+Relative performance can improve incentive measurement when agents share common shocks, but the comparison mechanism must prevent collusion.
+
+## GT-L-65
+Conflicting principals can neutralize each other's incentives. Optimize the whole incentive system, not each reward in isolation.
+
+## GT-L-66
+Do not assume monetary incentives always add motivation; poorly sized extrinsic rewards can undermine intrinsic motivation.
