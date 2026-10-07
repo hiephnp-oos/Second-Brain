@@ -80,3 +80,48 @@ Look for salient outcomes when explicit communication is unavailable.
 
 ## GT-MM-27 — Design mechanisms, not just participants
 Good rules can make desired behavior easier than perfect reasoning.
+
+## GT-MM-28 — Cooperation requires observability
+Before relying on reciprocal cooperation, ask what behavior is observable, how cheating is detected, and whether the responsible actor can be identified.
+
+## GT-MM-29 — Design the punishment, not just the rule
+A cooperation rule is incomplete without a credible response to defection. Prefer punishment that is simple, certain and sufficiently strong; avoid unnecessary severity that makes detection errors costly.
+
+## GT-MM-30 — Finite horizons can unravel cooperation
+If everyone knows exactly when repeated interaction ends, reason backward from the final round. Cooperation may disappear all the way to the first round.
+
+## GT-MM-31 — Future value sustains cooperation
+Cooperation is easier when future gains are sufficiently valuable relative to the one-time gain from cheating.
+
+## GT-MM-32 — Reciprocity needs forgiveness
+A retaliation rule that never repairs accidental breakdowns can destroy cooperation. Separate deliberate defection from noise and allow restoration when appropriate.
+
+## GT-MM-33 — Strategic move = preemptive response shaping
+A strategic move is not merely a statement of intent. It changes the response rule before the other actor chooses.
+
+## GT-MM-34 — Distinguish threat, promise, warning and assurance
+Threats and promises alter incentives; warnings and assurances primarily convey information about an unchanged response.
+
+## GT-MM-35 — Observability is part of credibility
+A commitment cannot influence behavior if the opponent cannot observe or infer it; a threat cannot be enforced if the relevant behavior cannot be observed.
+
+## GT-MM-36 — Credibility requires changing the future choice
+Ask what prevents you from reversing the commitment later: changed payoffs, contracts, reputation, loss of options, delegation, external control or incremental steps.
+
+## GT-MM-37 — Commit by reducing future discretion
+Burning bridges, cutting communication or delegating authority can create leverage precisely because they remove options.
+
+## GT-MM-38 — Small steps can make commitment credible
+A large irreversible promise may be unbelievable. A sequence of smaller commitments can make each next step easier to believe and control.
+
+## GT-MM-39 — Mix at equilibrium proportions
+Randomization should make the opponent indifferent among relevant responses when the game requires mixing. Correct proportions depend on payoffs and skills.
+
+## GT-MM-40 — Random proportions are not enough
+A predictable sequence with the correct long-run ratio remains exploitable. Randomize individual actions, not merely aggregate frequencies.
+
+## GT-MM-41 — Adapt the mix when the game changes
+Changes in skills, payoffs or opponent behavior can change the equilibrium mixture and expected performance.
+
+## GT-MM-42 — Separate randomization from brinkmanship
+Randomization makes an action unpredictable to the opponent; brinkmanship creates a risk that an outcome may occur beyond either side's full control. They solve different strategic problems.
