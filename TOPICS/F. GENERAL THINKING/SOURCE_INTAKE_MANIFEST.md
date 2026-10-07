@@ -21,7 +21,7 @@
 | 01 | 01 - Thinking Strategically.pdf | 01 - Thinking Strategically.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed for knowledge extraction; raw Markdown still contains extraction artifacts, but title/author identity, major chapter sequence, reading order, and representative strategic-game content are traceable to the PDF. |
 | 02 | 02 - The Art of Strategy.pdf | 02 - The Art of Strategy.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed; 550-page PDF and Markdown preserve the same 14-chapter structure and representative content coverage. Raw Markdown remains an extraction aid, not canonical source text. |
 | 03 | 03 - A Course in Game Theory.pdf | 03 - A Course in Game Theory.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed across the 368-page source; all 15 chapters and numbered section hierarchy are traceable, and representative definitions, results, game tables, equations, and game-tree material were source-checked. Raw Markdown remains a retrieval aid. |
-| 04 | 04 - The Strategy of Conflict.pdf | 04 - The Strategy of Conflict.md | REVIEWED — NORMALIZATION REQUIRED | 46 escaped headings; TOC/subheading hierarchy needs recovery; 82 pipe-bearing lines and OCR/fragment artifacts require validation. |
+| 04 | 04 - The Strategy of Conflict.pdf | 04 - The Strategy of Conflict.md | STRUCTURALLY ACCEPTED | PDF↔Markdown validation completed across the 394-page source; the four-part structure, 10 chapters, appendices, and representative bargaining/coordination/strategic-move/randomization/deterrence material are traceable. Raw Markdown remains a retrieval aid. |
 | 05 | 05 - The Evolution of Cooperation.pdf | 05 - The Evolution of Cooperation.md | REVIEWED — NORMALIZATION REQUIRED | 48 escaped headings; 267 pipe-bearing lines; chapter/part hierarchy and table/figure handling require source comparison. |
 | 06 | 06 - Thinking in Systems.pdf | 06 - Thinking in Systems.md | REVIEWED — NORMALIZATION REQUIRED | 134 escaped headings; 205 pipe-bearing lines; part/chapter hierarchy and systems diagrams/tables need source-aware reconstruction. |
 | 07 | 07 - Statistical Rethinking_01.pdf + 07 - Statistical Rethinking_02.pdf | 07 - Statistical Rethinking_01.md + 07 - Statistical Rethinking_02.md | REVIEWED — NORMALIZATION REQUIRED | Part 01 has 141 escaped headings and 1,998 pipe-bearing lines; Part 02 has active headings but 2,016 pipe-bearing lines. Mathematical notation, equations, R/Stan code, tables, and chapter hierarchy need careful validation across the split. |
@@ -61,6 +61,21 @@ A book is `REVIEWED — NORMALIZATION REQUIRED` when the source can be understoo
 - OCR artifacts occur in several sources and must be corrected only when the PDF evidence supports the correction.
 - Mathematical notation, equations, R/Stan code, figures, diagrams, and game trees require special handling rather than generic Markdown cleanup.
 - Source wording and ordering must be preserved. Structural cleanup must not become summarization or interpretation.
+
+## Book 04 review notes — The Strategy of Conflict
+
+The PDF is the canonical source. The Markdown was reviewed only as an extraction/retrieval representation against the PDF.
+
+Observed and validated:
+
+- The PDF is 394 pages and identifies *The Strategy of Conflict* by Thomas C. Schelling.
+- The PDF contents preserve four major parts, 10 chapters, and three appendices.
+- The Markdown preserves the same major reading order and chapter sequence; headings are extraction-fragmented but recoverable against the PDF contents.
+- Representative sections were source-checked for tacit coordination/focal points, tacit bargaining, threats and promises, strategic moves, delegation/mediation, randomization, threats that leave outcomes to chance, and reciprocal fear/surprise attack.
+- Tables, formulas, footnotes, and some headings contain extraction artifacts; the PDF remains authoritative for exact wording and structure.
+- PDF and Markdown word volumes are close, but volume matching was used only as a broad coverage signal, not as proof of semantic identity.
+
+Validation decision: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction. The raw Markdown is not a canonical transcription; PDF wins whenever representations differ.
 
 ## Book 03 review notes — A Course in Game Theory
 
@@ -109,7 +124,7 @@ Validation decision: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction
 
 ## Pilot implication
 
-Books 01–03 have now passed the source-aware PDF↔Markdown validation gate. Their raw Markdown remains an extraction aid rather than canonical transcription. Knowledge distillation is allowed only for accepted sources; Books 04–16 remain blocked until their own validation gates pass.
+Books 01–04 have now passed the source-aware PDF↔Markdown validation gate. Their raw Markdown remains an extraction aid rather than canonical transcription. Knowledge distillation is allowed only for accepted sources; Books 05–16 remain blocked until their own validation gates pass.
 
 ## Architecture reconciliation
 
@@ -160,8 +175,8 @@ Required checks:
 - 17 PDFs and 17 Markdown parts were found in the supplied \`BOOK.zip\`.
 - All 16 book identities are present. The source inventory contains 17 PDFs and 17 Markdown parts because Statistical Rethinking is split into two PDF/Markdown parts.
 - A safe mechanical normalization baseline was generated privately for all 17 Markdown parts; escaped heading markers were activated where present without rewriting source wording.
-- Book 01, Book 02, and Book 03 have now passed their source-aware PDF↔Markdown validation gates and are `STRUCTURALLY ACCEPTED` for controlled knowledge extraction.
-- Books 04–16 remain `REVIEWED — NORMALIZATION REQUIRED` and remain blocked from distillation.
+- Book 01, Book 02, Book 03, and Book 04 have now passed their source-aware PDF↔Markdown validation gates and are `STRUCTURALLY ACCEPTED` for controlled knowledge extraction.
+- Books 05–16 remain `REVIEWED — NORMALIZATION REQUIRED` and remain blocked from distillation.
 - No full PDF or full extracted book text is committed to this public repository.
 
 The next promotion gate is source-aware structural normalization followed by the validation checks above. Knowledge distillation remains blocked until that gate passes.
