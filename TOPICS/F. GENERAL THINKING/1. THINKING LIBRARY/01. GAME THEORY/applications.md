@@ -136,3 +136,15 @@ When the analysis produces more than one Nash equilibrium:
 - identify the coordination problem;
 - test focal points, conventions, communication, commitment, and move order;
 - explain why one outcome should be selected rather than stopping at "Nash equilibrium exists."
+
+## GT-APP-41 — Mixed-strategy calibration
+Identify exploitable predictability, derive the payoff-dependent mixture, test the indifference condition, and verify that individual actions are not mechanically predictable.
+
+## GT-APP-42 — Skill-change equilibrium review
+After a capability or payoff change, recompute the strategic response of both sides rather than only increasing the frequency of the improved action.
+
+## GT-APP-43 — Strategic-move classification
+Classify the move as unconditional move, threat, promise, warning, or assurance. Then test whether it was established before the opponent's action and whether it changes the opponent's expected response.
+
+## GT-APP-44 — Credibility-device audit
+For a commitment, identify the supporting mechanism: payoff change, reputation/contract, removal of communication or retreat, chance, incremental steps, teamwork, or delegated agent. Reject commitments whose supporting device does not materially change the future reversal incentive.
