@@ -385,3 +385,36 @@ Test whether teaching or spreading effective reciprocal strategies improves both
 ### 105. Recognition-system audit
 Check whether participants can reliably identify counterparties, retain relevant history, and distinguish repeated partners from strangers.
 
+
+
+## GT-05 Part V — Incremental applications
+
+### 106. Interaction-network audit
+Map repeated counterpart relationships, clustering, and local interaction density before deciding whether a cooperation mechanism is viable.
+
+### 107. Label-risk audit
+Identify observable categories that may be used as strategic shortcuts and test whether they create cooperation, discrimination, or self-confirming stereotypes.
+
+### 108. Reputation-impact assessment
+For a consequential action, evaluate both the immediate payoff and the effect on how future counterparties will predict your behavior.
+
+### 109. Regulation-loop design
+Model a regulator and regulated party as a repeated interaction and calibrate standards, enforcement, and compliance incentives together.
+
+### 110. Territorial-cooperation design
+When interactions are geographically or structurally local, test whether reciprocal clusters can support cooperation that would not survive random matching.
+
+### 111. Stability-versus-emergence check
+Do not treat evolutionary stability as evidence that a strategy will arise naturally; analyze establishment, mutation, imitation, or learning separately.
+
+### 112. Strategy-population audit
+Track how successful strategies change the composition of the population and reassess performance against the new environment.
+
+### 113. Provocability calibration
+Set detection and response timing so that exploitation is discouraged before it becomes entrenched while avoiding unnecessary escalation.
+
+### 114. Limited-retaliation design
+Define a bounded response to violations so that deterrence is credible without creating an uncontrolled escalation loop.
+
+### 115. Foresight-based cooperation intervention
+Where trial-and-error would be too slow or costly, use known reciprocity conditions to redesign relationships, incentives, and response rules proactively.
