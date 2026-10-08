@@ -107,3 +107,16 @@ The incremental knowledge promoted here is:
 - Sections: mixed strategy Nash equilibrium; interpretations; correlated equilibrium; evolutionary equilibrium.
 - Promoted: mixed-strategy interpretation, correlated coordination, and evolutionary selection.
 - Operational links: GT-MM-90 through GT-MM-92; GT-APP-59; GT-L-72 and GT-L-73.
+
+### Chapter 4 — Rationalizability and Iterated Elimination of Dominated Actions
+- Sections: rationalizability; iterated strict dominance; iterated weak dominance.
+- Promoted: rationalizability boundary, strict-dominance simplification, and weak-dominance order dependence.
+- Operational links: GT-MM-93 through GT-MM-95; GT-APP-60; GT-L-74 and GT-L-75.
+
+### Chapter 5 — Knowledge and Equilibrium
+- Sections: model of knowledge; common knowledge; posterior disagreement; knowledge and solution concepts; Electronic Mail Game.
+- Promoted: state-space information, common knowledge, epistemic assumptions behind solution concepts, and the fragility of coordination under almost-common knowledge.
+- Operational links: GT-MM-96 through GT-MM-100; GT-APP-61 and GT-APP-63; GT-L-76 through GT-L-79.
+
+### Acceptance rule
+Part I is accepted when each substantive section leaves a durable reasoning distinction or operational model, while formal proofs and equations remain source-level material. Chapter 5 is retained as a reasoning boundary rather than a full formal epistemic-game-theory treatment.
