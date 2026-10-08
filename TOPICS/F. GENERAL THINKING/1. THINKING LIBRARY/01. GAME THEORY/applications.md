@@ -216,3 +216,36 @@ Translate an informal strategic move into an explicit action, information change
 
 ### 49. Perception-versus-incentive test
 Separate behavior predicted directly by the formal game from behavior that depends on labels, framing, norms, or shared interpretation; use experimental evidence where the latter is decisive.
+
+
+## GT-04 Part III — Incremental applications
+
+### 50. Threat calibration under failure risk
+For a threat that may fail, compare certainty, severity, and probability. Identify the minimum probabilistic force that changes the opponent's choice while keeping failure exposure acceptable.
+
+### 51. Inadvertent-fulfillment audit
+For any threat or automated commitment, identify whether the consequence can occur before compliance, after compliance, or through an accidental trigger. Add those pathways to the risk assessment.
+
+### 52. Randomized-commitment audit
+Verify that the probability is fixed before the opponent responds and that the actor cannot cheaply override the random mechanism after observing the opponent's choice.
+
+### 53. External-risk-source mapping
+Map which part of the threatened outcome is controlled by the actor and which part depends on chance, third parties, delegated authority, technical systems, or institutional processes.
+
+### 54. Escalation-risk audit for limited actions
+For a limited conflict or coercive action, map the intended endpoint, possible escalation paths, probability drivers, and consequences if the interaction leaves the intended scope.
+
+### 55. Resolve-through-risk test
+When a threat seems non-credible because the certain consequence is too extreme, test whether a smaller but credible probability of that consequence changes the opponent's expected payoff.
+
+### 56. Brinkmanship applicability test
+Use brinkmanship analysis only when both parties recognize a mutually undesirable risk, the risk can increase through observable steps, and the opponent can reduce it by changing behavior.
+
+### 57. Slippery-slope mapping
+Map each escalation step, the new risk introduced by that step, the actor's control over the next step, and the point at which either side is likely to pull back.
+
+### 58. Decision-system fragility audit
+Identify multiple decision-makers, delegated authority, communication delays, false alarms, procedural ambiguity, and other imperfections that can alter the probability of unintended escalation.
+
+### 59. Risk-boundary decision rule
+Before using a risk-based strategic move, compare the opponent's tolerance for the risk with your own. Do not assume the other side will retreat first.
