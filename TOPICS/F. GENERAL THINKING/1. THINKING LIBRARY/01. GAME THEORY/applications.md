@@ -1,293 +1,218 @@
-# Game Theory — Applications
+# Game Theory — Source Applications
 
-## GT-APP-01 — Process change
-Map actors affected by a change, their incentives and likely responses. Test whether the process creates cooperation or shifts costs.
+Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02)
 
-## GT-APP-02 — Supplier/customer negotiation
-Model alternatives, information asymmetry, move order, commitments and credible responses.
+These are source-derived application patterns, not claims about the user's own experience.
 
-## GT-APP-03 — Stakeholder alignment
-Identify who can block, delay or reshape a decision. Separate stated positions from incentives and information.
+## GT-01 applications retained from Book 01
 
-## GT-APP-04 — Repeated collaboration
-Define observable behavior, response rules and how mistakes are handled.
+### 1. Competitive pricing
+Map best responses and identify candidate equilibrium; separately evaluate desirability.
 
-## GT-APP-05 — Incentive/process design
-If undesirable behavior repeats, model the game created by current rules before increasing supervision.
+### 2. High-definition television competition
+Use an unconditional move or commitment to alter the opponent's expected response.
 
-## GT-APP-06 — Competitive bidding
-Treat winning as information and update valuation after observing other bids.
+### 3. Nuclear deterrence
+Test whether the announced response remains credible after the opponent moves.
 
-## GT-APP-07 — Strategic communication
-Ask what a message reveals, what response it invites and whether the signal is credible.
+### 4. Prisoners' dilemma and repeated cooperation
+Model detection, punishment, future interaction, and noisy observation.
 
-## GT-APP-08 — Commitment
-Use contracts, deadlines, delegated authority or public commitments when future reversal is predictable.
+### 5. Bargaining
+Model offer sequence, delay, disagreement outcome, and backward induction.
 
-## GT-APP-09 — Sequential decision review
-Before approving a step, map the likely response to that step, then continue the chain until the consequential endpoint. Decide backward from that endpoint rather than optimizing only the immediate move.
+### 6. Voting and agenda control
+Treat the order of alternatives as a strategic variable.
 
-## GT-APP-10 — First-mover vs second-mover check
-For any competitive move, ask whether acting first creates leverage or merely reveals information that the other side can exploit.
+## GT-02 incremental applications from *The Art of Strategy*
 
-## GT-APP-11 — Escalating policy / change requests
-Evaluate a sequence of individually reasonable concessions as a portfolio. Define the acceptable aggregate boundary before negotiating each item separately.
-
-## GT-APP-12 — Lock-in negotiation
-Negotiate price, service, compatibility, exit and switching terms before creating dependence on a supplier, platform, employer, technology or relationship.
-
-## GT-APP-13 — Unpredictable operational decisions
-Where an opponent can adapt to a pattern, use a defensible mixed strategy rather than a fixed schedule. Randomization should follow the actual payoff structure, not merely appear random.
-
-## GT-APP-14 — Information from counterpart behavior
-Treat quotes, bids, refusals, willingness to take a position and other costly actions as evidence about the counterpart's private information. Update beliefs before acting.
-
-## GT-APP-15 — Coordination / collective action
-When everyone benefits from joint action but no one wants to move first, identify the coordination mechanism: visible leadership, communication, simultaneous commitment, enforcement or an external rule.
-
-## GT-APP-16 — Repeated-cooperation design
-For a recurring relationship, define observable behavior, detection latency, attribution quality, response rule, punishment severity and forgiveness/recovery before relying on cooperation.
-
-## GT-APP-17 — Finite-horizon risk review
-If a relationship or project has a known end date, test whether backward induction destroys the cooperative incentive before the final period.
-
-## GT-APP-18 — Strategic-move classification
-Before using a commitment, classify it as unconditional move, threat, promise, warning or assurance. Then identify the opponent's response that the move is intended to change.
-
-## GT-APP-19 — Credibility audit
-For every threat, promise or public commitment, ask: what makes reversal costly or impossible; can the counterpart observe/infer the commitment; and does the commitment actually change their incentives?
-
-## GT-APP-20 — Enforcement mechanism review
-When designing a policy or contract, test whether the enforcement device that appears competitive could instead reduce competition or stabilize undesirable coordination.
-
-## GT-APP-21 — Mixed-strategy decision
-If the other side can observe and exploit a predictable choice pattern, calculate whether a mixed strategy is required and determine the proportions from the payoff structure.
-
-## GT-APP-22 — Randomization quality check
-Do not implement a deterministic cycle and call it random. Check whether each individual action is sufficiently unpredictable to the relevant opponent.
-
-## GT-APP-23 — Commitment ladder
-When a large commitment is not credible, break it into observable steps, each with a smaller reversal cost and a clear next decision point.
-
-## GT-APP-24 — Delegation as commitment
-Use contracts, mandates, delegated authority, external rules or constrained processes when personal future discretion would otherwise undermine the commitment.
-
-## GT-APP-25 — Noise-aware reciprocity
-In repeated collaboration, distinguish intentional defection from measurement/error noise and define a recovery path so one error does not trigger permanent retaliation.
-
-## GT-APP-26 — Brinkmanship risk audit
-If using escalation risk as leverage, define the recognizable risk, the range in which it remains effective, the mechanism that could make it escape control, and the concrete compliance path that reduces the risk.
-
-## GT-APP-27 — Coordination externality check
-Before accepting an equilibrium outcome, compare individual incentives with the group optimum. Look for congestion, spillovers, overcompetition and wrong proportions.
-
-## GT-APP-28 — Path-dependence / lock-in review
-When a convention or technology persists, test whether positive feedback or switching costs are sustaining it despite changed circumstances.
-
-## GT-APP-29 — Voting-rule audit
-Before using a voting procedure, test pairwise cycles, agenda control, sequencing, thresholds, strategic voting incentives and whether the rule selects the intended outcome.
-
-## GT-APP-30 — Voting-tree backward review
-For sequential nominations or decisions, map the decision tree and solve backward. Check whether strategic foresight creates an outcome that differs from the group's ex-ante preference.
-
-## GT-APP-31 — Bargaining power audit
-Compare each side's outside option, cost of waiting, patience and control of procedure. Focus on relative bargaining position, not only absolute resources.
-
-## GT-APP-32 — Multi-issue bargaining package
-Map each party's relative valuation of every issue and search for trades that improve both sides versus splitting one aggregate amount.
-
-## GT-APP-33 — Bargaining procedure audit
-Check who makes offers, who can reject, what delay costs, whether the horizon is finite, and whether the procedure itself changes the settlement.
-
-## GT-APP-34 — Hidden-effort incentive design
-Identify unobservable effort, observable proxies, outcome noise and risk allocation. Reward the desired behavior without assuming the outcome perfectly measures effort.
-
-## GT-APP-35 — Joint-venture hold-up review
-Before creating mutual dependence, define enforceable terms for future renegotiation, exit and penalties so sunk investments do not become leverage against one party.
-
-## GT-APP-36 — Auction mechanism review
-Before bidding, identify the auction rule, private versus common value, information revealed by winning, and whether the mechanism makes truthful reporting or strategic shading optimal.
-
-## GT-APP-37 — Meta-game / objective inference
-When a decision looks surprising, model the objective of the actor designing or controlling the interaction before judging the move itself.
+### 7. Investment under weak contract enforcement
+The Charlie/Fredo game shows that an attractive agreement can fail when the later party has an incentive to renege and the earlier party anticipates this.
 
 Application pattern:
-- identify the visible decision;
-- identify the actor's actual objective and constraints;
-- ask what outcome the actor wants the other side to choose;
-- reassess the apparent move as part of that larger game.
+- model the later action first;
+- identify whether the promise is credible;
+- if not, search for a larger game or commitment mechanism that changes the incentives.
 
-## GT-APP-38 — Strategic sacrifice review
-When a move appears locally losing, test whether it improves the future game state.
+### 8. Information asymmetry and screening
+Used-book markets, credit-card offers, and related cases show that a contract or offer can attract different types of participants selectively.
 
 Application pattern:
-- compare immediate payoff with downstream state;
-- identify which rival, option, or constraint changes after the sacrifice;
-- evaluate the eventual payoff rather than the local score alone.
+- identify hidden types;
+- identify what each type would prefer;
+- design an offer whose attractiveness differs across types;
+- infer type from the observed choice.
 
-## GT-APP-39 — Backward-reasoning solvability audit
-Before using a game tree as if it were fully solvable, check whether the state, action history, objectives, and subsequent choices are sufficiently observable and predictable.
+### 9. Signaling
+Education, employment, and other costly actions can function as signals when their cost differs across types.
 
-If uncertainty remains, mark which uncertainty is natural chance, hidden information, behavioral uncertainty, or simultaneous choice, then use the appropriate model instead of forcing pure backward induction.
+Application pattern:
+- identify the hidden characteristic;
+- identify the observable action;
+- ask whether the action is differentially costly or beneficial across types;
+- determine what a rational observer can infer.
 
-## GT-APP-40 — Multiple-equilibrium selection audit
-When the analysis produces more than one Nash equilibrium:
-- list the equilibria;
-- identify the coordination problem;
-- test focal points, conventions, communication, commitment, and move order;
-- explain why one outcome should be selected rather than stopping at "Nash equilibrium exists."
+### 10. Winner's curse in auctions
+The book uses auctions to show that winning can be bad news when bidders are estimating an uncertain common value.
 
-## GT-APP-41 — Mixed-strategy calibration
-Identify exploitable predictability, derive the payoff-dependent mixture, test the indifference condition, and verify that individual actions are not mechanically predictable.
+Application pattern:
+- estimate the value;
+- model the information held by competing bidders;
+- condition the estimate on the fact that you won;
+- avoid treating the winning bid as independent evidence.
 
-## GT-APP-42 — Skill-change equilibrium review
-After a capability or payoff change, recompute the strategic response of both sides rather than only increasing the frequency of the improved action.
+### 11. Vickrey / second-price auction
+A sealed-bid auction in which the highest bidder pays the second-highest bid can make truthful bidding a dominant strategy under the book's private-value assumptions.
 
-## GT-APP-43 — Strategic-move classification
-Classify the move as unconditional move, threat, promise, warning, or assurance. Then test whether it was established before the opponent's action and whether it changes the opponent's expected response.
+Application pattern:
+- identify the desired behavior;
+- change the payment rule so that truthful reporting is individually optimal;
+- reduce the need for strategic prediction of other bidders.
 
-## GT-APP-44 — Credibility-device audit
-For a commitment, identify the supporting mechanism: payoff change, reputation/contract, removal of communication or retreat, chance, incremental steps, teamwork, or delegated agent. Reject commitments whose supporting device does not materially change the future reversal incentive.
+### 12. Cooperation through institutional design
+The book repeatedly shows cases where individually rational behavior can conflict with group outcomes.
 
-## GT-APP-45 — Signaling/screening audit
-Identify who knows what, who benefits from revelation or concealment, and whether the observed action is costly to mimic. For screening, design the choice set so hidden types have different optimal responses.
+Application pattern:
+- identify the individually optimal behavior;
+- identify the collective consequence;
+- design rules, contracts, subsidies, penalties, or information structures that align incentives.
 
-## GT-APP-46 — Signal-jamming review
-When an actor has reason to conceal type, intention or information, test whether apparent noise, mimicry or inconsistent behavior reduces inferential power.
+### 13. Information manipulation
+The book treats concealment, revelation, interpretation, signaling, and screening as strategic actions.
 
-## GT-APP-47 — Externality pricing review
-Map the private cost, external cost and collective cost of an action. Test whether a fee, toll, quota or rule can make the actor internalize the harm imposed on others.
+Application pattern:
+- map who knows what;
+- identify who benefits from revealing or concealing information;
+- identify what actions can credibly reveal information;
+- model the observer's inference.
 
-## GT-APP-48 — Coordination threshold review
-When an inferior equilibrium persists, identify the adoption threshold and the intervention capable of moving enough actors together to reach the better equilibrium.
+### 14. Bargaining and delay
+Alternating offers, disagreement outcomes, and delay costs determine bargaining leverage.
 
-## GT-APP-49 — Auction information audit
-Classify the value as private/common/mixed, identify what winning reveals, identify what bids reveal, and condition the bid on the information structure rather than valuation alone.
+Application pattern:
+- map the sequence;
+- calculate what each side can credibly obtain after rejection;
+- account for the changing value of delay;
+- reason backward.
 
-## GT-APP-50 — Mechanism adaptation audit
-After changing an auction, voting rule, contract or incentive scheme, predict how participants will adapt. Reject the assumption that the old behavior remains fixed under new rules.
+### 15. Voting
+The book's voting analysis treats agenda control and voting rules as part of the game rather than neutral procedures.
 
-## GT-APP-51 — BATNA/pie calculation
-Calculate each party's outcome without agreement, then measure the incremental surplus created by agreement. Only then evaluate how the surplus should be divided.
+Application pattern:
+- identify preferences;
+- identify the voting procedure;
+- identify agenda-setting power;
+- determine how intermediate votes constrain later choices.
 
-## GT-APP-52 — Bargaining procedure audit v2
-Model offer rights, deadlines, delay costs, patience, counteroffer sequence and the ability to influence the opponent's outside option before evaluating the settlement.
+### 16. Incentive contracts
+When one party cannot directly observe another's effort or information, a contract can be designed to induce useful behavior or revelation.
 
-## GT-APP-53 — Pivotality audit
-For a voting rule, identify the decisive coalition and determine when an individual vote can change the result. Compare this with formal voting power created by agenda control or tie-breaking rights.
-
-## GT-APP-54 — Incentive risk-design audit
-Map hidden effort, observable outcomes, outcome noise, agent risk tolerance, relative-performance signals and principal objectives. Choose the strongest incentive that does not impose unnecessary risk.
-
-## GT-APP-55 — Multiple-principal incentive audit
-List each principal's objective and reward/punishment scheme. Test whether incentives reinforce, partially offset or fully cancel one another.
-
-
-## GT-APP-56 — Strategic-game specification audit
-Before solving a simultaneous interaction, write down players, feasible actions, preferences/payoffs, information and timing. Flag any missing element that could change the solution concept or equilibrium.
-
-## GT-APP-57 — Nash-equilibrium audit
-For each candidate outcome, test every player's unilateral deviation. Then separately test efficiency, uniqueness and equilibrium-selection mechanisms; do not report “Nash equilibrium” as if those questions were answered automatically.
-
-## GT-APP-58 — Type-contingent decision audit
-When information is private, list the possible types/signals and require a strategy for each one. Check beliefs and posterior-dependent incentives before evaluating the aggregate action profile.
-
-## GT-APP-59 — Equilibrium-concept selection audit
-Classify the problem as deterministic equilibrium, mixed randomization, correlated coordination, evolutionary selection, rationalizability, or an epistemic/knowledge problem before choosing the analytical tool.
-
-## GT-APP-60 — Rationalizability / dominance audit
-First remove strictly dominated actions when justified. Then test which remaining actions are rationalizable. If weak dominance is used, record the elimination order and check whether the conclusion changes under another valid order.
-
-## GT-APP-61 — Common-knowledge coordination audit
-For coordination failures, distinguish “everyone knows” from common knowledge. Map the relevant higher-order uncertainty and identify whether the coordination mechanism depends on a shared understanding of that fact.
-
-## GT-APP-62 — Bayesian information audit
-Map state/type, signal, prior, posterior and type-contingent strategy. Test whether the actor's action should change after receiving different information rather than using a single average-case response.
-
-## GT-APP-63 — Almost-common-knowledge risk review
-When a protocol relies on repeated confirmation, escalation, acknowledgements or shared awareness, test the last unresolved level of uncertainty. Do not assume that many confirmations create the same coordination property as common knowledge.
+Application pattern:
+- identify the hidden action/information;
+- identify observable outcomes;
+- connect payment to outcomes in a way that changes the other party's incentives;
+- test unintended responses.
 
 
-## GT-APP-64 — Extensive-game sequence audit
-Map every decision node, information available at that node, player to move, feasible actions, and terminal outcome before solving a sequential interaction.
+## GT-03 incremental applications from *A Course in Game Theory*
 
-## GT-APP-65 — Subgame-perfect credibility audit
-For each proposed sequential strategy, test optimality after every proper subgame. Reject future threats or promises that would not be carried out when the time comes.
+### 17. Private-information interaction
+Model players with different information rather than forcing all uncertainty into a single payoff table. Identify types, information, beliefs, and actions before solving for equilibrium.
 
-## GT-APP-66 — One-deviation verification
-For a finite-horizon perfect-information game, test whether changing only the current action at each history improves the player's outcome. Use this as the operational SPE check.
+### 18. Rationalizability screening
+Use iterated reasoning to remove actions that cannot be rationalized by any consistent belief about opponents' behavior.
 
-## GT-APP-67 — Forward-induction review
-When an observed action seems surprising, ask what earlier strategy choices remain rational if that action was intentional. Use weak-dominance elimination only with explicit attention to elimination order.
+### 19. Common-knowledge coordination
+When everyone appears to know the same fact, test whether it is actually common knowledge. A shared fact without shared knowledge about that fact can support different strategic behavior.
 
-## GT-APP-68 — Chain-store / centipede assumption audit
-If backward induction predicts immediate entry, stopping, or defection against a cooperative intuition, identify which assumptions about rationality, information, commitment, reputation, or horizon generate the divergence.
+### 20. Sequential decision trees
+Represent the order of moves explicitly, solve later decisions first, and test the resulting strategy in every subgame.
 
+### 21. Repeated cooperation and punishment
+Model the full history-dependent strategy rather than only the current action. Test whether future rewards or punishments are strong enough to change present incentives.
 
-## GT-APP-69 — Bargaining-procedure audit v3
-Specify proposer order, response rights, rejection consequence, time cost, outside options, horizon, and agreement set before evaluating bargaining power or settlement.
+### 22. Mechanism implementation
+Start from the desired social outcome, then ask what game or mechanism would make that outcome emerge in equilibrium rather than assuming participants will simply choose it.
 
-## GT-APP-70 — Patience / outside-option audit
-Compare each side's continuation value after rejection and cost of waiting. Test how changing either variable shifts the equilibrium acceptance threshold.
+### 23. Imperfect-information decision nodes
+At an information set, separate the action rule from the belief about which underlying state or node has been reached.
 
-## GT-APP-71 — Repeated-cooperation feasibility audit
-Calculate the one-shot deviation gain, continuation loss, minmax payoff, and future-value weight. Accept a cooperation strategy only when the deviation is not profitable.
+### 24. Coalition stability
+For a proposed allocation, test whether any coalition can deviate and make all of its members better off. If so, the allocation is vulnerable to coalition blocking.
 
-## GT-APP-72 — Trigger-credibility audit
-After defining a trigger strategy, solve the punishment phase as a separate continuation game. A punishment that is not itself optimal cannot support an SPE claim.
+### 25. Bargaining solution design
+Separate the feasible agreement set and disagreement point from the rule used to select the final agreement. Different bargaining procedures can be connected to the same bargaining problem through different solution concepts.
 
-## GT-APP-73 — Finite-vs-infinite horizon audit
-Record whether the interaction has a known endpoint. If finite, solve the terminal stage first and test whether the conclusion propagates backward before importing an infinite-horizon cooperation argument.
+## GT-04 incremental applications from *The Strategy of Conflict*
 
+### 26. Coordination without communication
+When two actors must choose the same action without communicating, search for a salient and mutually recognizable outcome rather than treating all options as equally likely.
 
-## GT-APP-74 — Strategy-complexity audit
-Represent the operational strategy as a finite-state machine when relevant. Compare payoff generated with state count or another defensible implementation-cost measure.
+### 27. Tacit bargaining
+When interests conflict but coordination is necessary, a focal outcome can serve as an implicit bargain. The party for whom it is less favorable may still accept it because failure to coordinate is worse.
 
-## GT-APP-75 — Mechanism-design direction check
-If the desired outcome is known in advance, stop optimizing participant behavior and formulate the implementation problem: choice rule, feasible outcomes, game form, and solution concept.
+### 28. Strategic communication control
+Treat the ability to send, receive, withhold, or destroy information as part of the bargaining structure.
 
-## GT-APP-76 — Dominant-strategy implementation audit
-Check whether truthful or desired behavior is dominant against every action profile of the other participants. If preferences are unrestricted and outcomes are numerous, test for the Gibbard-Satterthwaite boundary before designing further complexity.
+### 29. Delegation and mediation
+Change the game by changing who makes the decision or by inserting a mediator whose role changes the feasible strategic responses.
 
-## GT-APP-77 — Nash-implementation condition audit
-For a proposed choice rule, test monotonicity and no-veto power before assuming that a Nash mechanism exists.
+### 30. Randomized threat or promise
+Use controlled uncertainty as part of a commitment when complete control over the final consequence would otherwise make the threat non-credible.
 
-## GT-APP-78 — Exact-vs-virtual implementation audit
-State whether the mechanism must guarantee the target outcome exactly or only with arbitrarily high probability. Do not treat virtual implementation as exact implementation.
-\n\n## GT-APP-79 — Imperfect-information game audit\nList every information set, the histories it contains, the player who acts there, and what that player remembers. Reject any strategy specification that requires distinguishing histories inside one information set.\n\n## GT-APP-80 — Perfect-recall assumption audit\nFor each player, check whether relevant past actions and information are remembered. Flag results that rely on perfect recall when the real interaction permits forgetting.\n\n## GT-APP-81 — Extensive-game equivalence audit\nWhen two game trees appear different, test whether the difference is only redundant moves, information, or representation. Identify the strategic form objects actually preserved before declaring the games equivalent.\n\n## GT-APP-82 — Framing-effect risk review\nIf two formally equivalent representations produce different human behavior, separate the normative game model from the behavioral framing effect instead of silently changing the game.\n\n## GT-APP-83 — Mixed-vs-behavioral strategy check\nFor finite perfect-recall games, determine whether randomization over complete plans or local randomization at information sets is the clearer operational representation. Verify that the equivalence conditions hold.\n\n## GT-APP-84 — Assessment completeness audit\nFor an imperfect-information equilibrium claim, record both behavioral strategies and beliefs at every information set. Treat missing off-path beliefs as an incomplete analysis.\n\n## GT-APP-85 — Sequential-rationality audit\nAt every information set, calculate the best continuation action given the stated belief and continuation strategy. Include information sets that are not reached on the proposed equilibrium path.\n\n## GT-APP-86 — Belief-consistency audit\nCheck whether each off-path belief can be generated by Bayes' rule from a sequence of completely mixed strategies converging to the candidate strategy profile.\n\n## GT-APP-87 — Refinement-selection audit\nState the exact implausible belief or deviation interpretation that motivates a refinement. Do not use a stronger equilibrium concept merely because it sounds more realistic.\n\n## GT-APP-88 — Trembling-robustness audit\nPerturb zero-probability actions with small positive probabilities and test whether the candidate behavior survives. Distinguish strategic-form perfection from the extensive-form/agent-form construction.\n
- 
-## GT-APP-89 — Coalition-blocking audit
-For a proposed allocation, enumerate relevant coalitions and test whether each can deviate to a feasible outcome that improves every member's payoff.
+### 31. Mutual deterrence and surprise attack
+Model how each side's fear of being attacked first can create pressure for preemption, even when both sides would prefer a stable outcome.
 
-## GT-APP-90 — TU-vs-NTU modeling audit
-Check whether coalition surplus can actually be transferred. If not, replace scalar coalition worth with a feasible payoff set.
+### 32. Bargaining through self-commitment
+Identify which side can credibly restrict its own future choices and whether that restriction changes the opponent's expectations or willingness to concede.
 
-## GT-APP-91 — Core-nonemptiness audit
-Before claiming coalition stability, test whether at least one allocation survives every blocking coalition.
+### 33. Negotiation-structure audit
+Before comparing offers, map move order, alternatives, decision rights, commitment opportunities, information channels, and institutional constraints.
 
-## GT-APP-92 — Market-core consistency audit
-When using a competitive-market/core equivalence, list the market and transfer assumptions and verify that the economic environment satisfies them.
+### 34. Threat/promise credibility audit
+For every threat or promise, identify the conditional response, then test whether the actor would actually prefer to carry it out after the triggering event.
 
-## GT-APP-93 — Stable-set solution audit
-Identify the dominance relation, internal stability requirement, and external stability requirement before treating a von Neumann-Morgenstern stable set as a solution.
+### 35. Limited-conflict bargaining
+Treat a limited action not only as an attempt to gain a material advantage but also as a possible signal of resolve, a test, or a bargaining move.
 
-## GT-APP-94 — Coalition-objection audit
-For a bargaining-set claim, identify the objecting coalition, its proposed improvement, and whether a credible counter-objection exists.
+### 36. Tacit coordination without communication
+Identify candidate focal outcomes and test whether each side has reason to recognize the same outcome without an explicit message.
 
-## GT-APP-95 — Kernel/nucleolus excess audit
-Calculate or compare coalition excesses under the chosen solution concept. Do not substitute the Shapley value or core criterion for the intended excess-based test.
+### 37. Tacit bargaining under divergent interests
+Separate the parties' conflicting preferences from their common need to coordinate. Test whether a focal arrangement is mutually preferable to failed coordination.
 
-## GT-APP-96 — Shapley allocation audit
-Compute each player's marginal contribution across coalition orderings and average it according to the Shapley rule. Separate the resulting allocation from any claim of core stability.
+### 38. Prior-arrangement design
+Move important commitments or coordination rules earlier in time when doing so can reduce later uncertainty or strategic pressure.
 
-## GT-APP-97 — Bargaining-problem specification audit
-Record feasible agreements, disagreement point, and utility representation before applying the Nash solution.
+### 39. Communication-control audit
+Map who can send, receive, block, delay, or destroy information and how those rights change bargaining leverage or coordination.
 
-## GT-APP-98 — Nash-solution audit
-Maximize the product of gains over disagreement within the feasible set, subject to the bargaining problem's assumptions. Verify that the solution is not being confused with Nash equilibrium.
+### 40. Conflict–coordination classification
+Classify whether the situation is pure conflict, pure coordination, or mixed motive. Identify where interests align and where they diverge.
 
-## GT-APP-99 — Bargaining-procedure vs axiomatic audit
-When an alternating-offers process produces a Nash bargaining outcome, document the strategic assumptions separately from the axioms used to characterize the Nash solution.
+### 41. Mutual-expectation mapping
+For a coordination problem, map what each side expects the other to choose and whether those expectations reinforce one another.
 
-## GT-APP-100 — Exact-implementation audit
-State the desired solution correspondence and test whether the proposed game form induces it exactly for the relevant domain and solution concept.
+### 42. Focal-cue audit
+List salient features—symmetry, conventions, labels, physical landmarks, prior patterns, or shared context—and test whether they provide a common basis for selecting one outcome.
+
+### 43. Strategic-move audit
+For a proposed threat, promise, commitment, delegation, or communication change, identify exactly which part of the opponent's decision problem is being changed.
+
+### 44. Enforcement audit
+Check whether a conditional response can actually be implemented, whether it remains credible after the trigger, and what mechanism supports it.
+
+### 45. Initiative-transfer audit
+Test whether giving the other side the next move can improve the outcome by shifting responsibility or making your own position more credible.
+
+### 46. Delegation/mediation design
+Compare the game with and without the added decision-maker or mediator. Identify changes in incentives, information, communication, and credible responses.
+
+### 47. Communication-channel resilience
+Map the channels required for coordination or bargaining and identify how blocking, destroying, delaying, or selectively controlling them changes the game.
+
+### 48. Strategic-move formalization
+Translate an informal strategic move into an explicit action, information change, timing rule, or payoff consequence before evaluating it.
+
+### 49. Perception-versus-incentive test
+Separate behavior predicted directly by the formal game from behavior that depends on labels, framing, norms, or shared interpretation; use experimental evidence where the latter is decisive.
