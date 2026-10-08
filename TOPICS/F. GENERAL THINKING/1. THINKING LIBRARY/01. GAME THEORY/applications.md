@@ -249,3 +249,48 @@ Identify multiple decision-makers, delegated authority, communication delays, fa
 
 ### 59. Risk-boundary decision rule
 Before using a risk-based strategic move, compare the opponent's tolerance for the risk with your own. Do not assume the other side will retreat first.
+
+
+## GT-04 Part IV — Incremental applications
+
+### 60. Reciprocal-fear feedback audit
+Map each side's fear estimate, defensive response, observed signal, revised estimate, and next action.
+
+### 61. Endogenous-probability model
+When attack probability depends on behavior, represent it as a function of strategic responses rather than a fixed assumption.
+
+### 62. Sequential-preemption audit
+Compare simultaneous movement with a structure in which one side can move first and the other responds.
+
+### 63. Assumption-sensitivity audit
+Change warning quality, timing, information, or response rules and check whether the strategic conclusion changes.
+
+### 64. Warning-system error audit
+List false positives, false negatives, detection delays, and ambiguous signals and assess their strategic effects.
+
+### 65. Dynamic-adjustment model
+Track how observed risk, system parameters, or beliefs change behavior over repeated decision points.
+
+### 66. Tacit-game mapping
+Identify stable reciprocal behavior that does not depend on explicit agreement and determine which expectations sustain it.
+
+### 67. Catastrophe-avoidance bargaining
+Identify whether adversaries have a shared interest in avoiding the worst outcome and whether that common interest supports bargaining.
+
+### 68. Multi-player extension
+Add third-party actions, information, alliances, and incentives before generalizing a bilateral model.
+
+### 69. Disarmament game audit
+Compare weapon reduction with changes in vulnerability, warning, verification, retaliation capability, and incentives for preemption.
+
+### 70. Misapprehension/escalation audit
+For each ambiguous event, map intended action, observed signal, interpreted meaning, response, and escalation feedback.
+
+### 71. Limited-war ambiguity audit
+Identify actions that can be misread during limited conflict and what response each interpretation triggers.
+
+### 72. Reciprocal-misapprehension loop
+Test whether A can rationally interpret B's defense as offense while B makes the same inference about A.
+
+### 73. Surveillance/overbuilding audit
+Evaluate whether additional monitoring or defensive capacity reduces uncertainty more than it increases perceived threat or instability.
