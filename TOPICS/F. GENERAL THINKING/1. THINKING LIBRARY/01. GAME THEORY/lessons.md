@@ -1,329 +1,164 @@
-# Game Theory — Lessons
+# Game Theory — Reusable Lessons
 
-## GT-L-01
-When another actor can react, optimizing your action in isolation is incomplete.
+Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02)
 
-## GT-L-02
-A reaction can reverse the apparent value of an action; evaluate the interaction, not the isolated move.
+## GT-L-01 — The opponent is part of the problem definition
+Define the other actor and their likely response before optimizing your own move.
 
-## GT-L-03
-Sequential and simultaneous games require different reasoning procedures.
+## GT-L-02 — Rules can matter more than intentions
+When behavior is undesirable, inspect the game structure before assuming the actor simply needs better instructions.
 
-## GT-L-04
-Moving first is not automatically an advantage. Revealing your choice can strengthen the second mover.
+## GT-L-03 — Credibility is an engineering problem
+If the desired response depends on a future action, design the commitment mechanism that makes that action believable.
 
-## GT-L-05
-A credible fixed position can create bargaining power, but inflexibility can become a liability when the environment changes.
+## GT-L-04 — More freedom can reduce strategic power
+Evaluate the strategic value of deliberately removing your own options.
 
-## GT-L-06
-Collective outcomes can fail even when everyone prefers cooperation because individual incentives and first-mover costs point elsewhere.
+## GT-L-05 — Sequential thinking changes decisions
+Look forward to the opponent's future response and reason backward.
 
-## GT-L-07
-A sequence of individually rational decisions can create an irrational aggregate outcome.
+## GT-L-06 — Cooperation needs enforcement conditions
+For cooperation to persist, examine detection, attribution, punishment, and future incentives.
 
-## GT-L-08
-The time to protect bargaining power is often before switching becomes costly.
+## GT-L-07 — Noisy evidence changes punishment strategy
+Under uncertainty, distinguish isolated evidence from persistent behavior before escalating.
 
-## GT-L-09
-Unpredictability is useful only when it prevents exploitation; the right mixture depends on payoffs.
+## GT-L-08 — Stability and quality are different dimensions
+After finding an equilibrium, separately ask whether it is desirable and whether another mechanism could produce a better outcome.
 
-## GT-L-10
-Another player's willingness to take a side is information about what that player may know.
+## GT-L-09 — Procedure is a strategic variable
+Treat process design as part of the strategy, not as neutral administration.
 
-## GT-L-11
-Strategic models must leave room for pride, irrationality and credibility failures when those behaviors affect the response.
+## GT-L-10 — Unpredictability can be a resource
+Where the opponent can profit from prediction, consider whether controlled randomization is strategically useful.
 
-## GT-L-12
-Credible commitment can outperform argument by changing expected payoffs.
+## GT-L-11 — Do not overgeneralize a model
+Use Game Theory as a lens for structuring an interaction, not as a single automatic answer generator.
 
-## GT-L-13
-Repeated unwanted behavior is often a reason to inspect the game created by the rules.
+## GT-L-12 — Information is part of the game
+Who knows what, who knows that the other knows it, and what can be inferred from behavior can change the strategic outcome.
 
-## GT-L-14
-Cooperation is easier when future interaction is valuable, behavior observable and responses credible.
+## GT-L-13 — Actions can reveal hidden information
+Treat observable choices as evidence about private type, knowledge, or incentives.
 
-## GT-L-15
-Information asymmetry changes strategy even when preferences and actions do not.
+## GT-L-14 — Good mechanism design can simplify behavior
+A well-designed rule can make desirable behavior individually optimal instead of requiring every participant to be strategically sophisticated.
 
-## GT-L-16
-A stable outcome is not automatically a desirable outcome.
+## GT-L-15 — Winning can be bad news
+When the underlying value is uncertain, winning a competitive process may indicate that your estimate was unusually optimistic.
 
-## GT-L-17
-Repeated interaction means today's move changes tomorrow's incentives.
+## GT-L-16 — Strategic sophistication includes knowing when not to play
+A player should sometimes avoid a game whose rules or information structure create a systematically bad position.
 
-## GT-L-18
-The strongest strategic question is often what structure would make the desired behavior rational.
+## GT-L-17 — Conflict and cooperation can coexist
+Many real games contain both common interests and conflicting interests. Look for ways to create value before arguing only about its division.
 
-## GT-L-19
-Cooperation requires not only mutual benefit but a credible way to detect, attribute and respond to defection.
+## GT-L-18 — Information problems can often be redesigned
+When information cannot be observed directly, use signaling, screening, contracts, or incentives to make useful information or behavior emerge indirectly.
 
-## GT-L-20
-A punishment that is too severe can make imperfect detection more damaging than the cheating it was meant to deter. Minimal effective deterrence is generally safer than gratuitous severity.
+## GT-L-19 — Sequence changes the value of risk
+When a later failure would eliminate remaining options, an appropriate risk taken earlier can preserve recovery paths.
 
-## GT-L-21
-A known final round can destroy the incentive to cooperate throughout a repeated relationship.
+## GT-L-20 — Information assumptions are part of the model
+Do not treat private information, beliefs, or common knowledge as background details. They can change which strategies and equilibria are possible.
 
-## GT-L-22
-Future interaction is the economic foundation of many self-enforcing cooperation mechanisms.
+## GT-L-21 — A sequential equilibrium must survive future decisions
+A plan is not credible merely because it forms a Nash equilibrium at the start. Check the behavior prescribed after every relevant history.
 
-## GT-L-23
-Reciprocity is stronger when retaliation is paired with a route back to cooperation after mistakes; history-sensitive forgiveness can outperform automatic retaliation when observation is noisy.
+## GT-L-22 — Repetition changes the game, not just the number of rounds
+When future interaction matters, history-dependent strategies and credible punishments can alter current incentives.
 
-## GT-L-24
-A strategic move works by changing the opponent's expected response before the opponent acts.
+## GT-L-23 — Desired outcomes may require mechanism design
+If an outcome is not stable under the current rules, redesign the game so that the target behavior is supported by equilibrium incentives.
 
-## GT-L-25
-Threats and promises are strategic because they deliberately commit to responses that may not be optimal later; warnings and assurances are primarily informational.
+## GT-L-24 — Coalition deviations are a separate stability test
+An outcome can be stable against individual deviations yet vulnerable to coordinated deviation by a group.
 
-## GT-L-26
-A commitment is credible only when the future reversal problem has been addressed.
+## GT-L-25 — Bargaining solutions encode selection principles
+When several feasible agreements exist, the selected outcome depends on the disagreement point, preferences, feasible set, and the principles imposed by the solution concept.
 
-## GT-L-27
-The most useful commitment device often removes or constrains the decision-maker's future discretion.
+## Book-level synthesis
 
-## GT-L-28
-Small, observable commitments can be more credible than one large promise.
+GT-01 establishes the core strategic lens:
 
-## GT-L-29
-The right mixed strategy is determined by payoffs, not by an arbitrary 50:50 rule.
+`Model players → map incentives → anticipate responses → account for sequence → change the game → make commitments credible.`
 
-## GT-L-30
-Correct long-run frequencies do not make a strategy unpredictable if the sequence is systematic.
+GT-02 extends it:
 
-## GT-L-31
-Randomization and brinkmanship are different mechanisms: one hides the next action; the other creates controlled risk.
+`Model players + information → infer what actions reveal → anticipate responses → design rules/mechanisms → create cooperation or truthful revelation → evaluate both value creation and value division.`
 
-## GT-L-32
-Brinkmanship is useful only when the opponent recognizes the risk and can escape it by complying; otherwise the risk may be ineffective or simply dangerous.
+GT-03 formalizes the model:
 
-## GT-L-33
-A deterrent mechanism should be judged by the outcome probabilities it creates, not by the apparent severity of the action itself.
+`Specify actions + information → identify rationalizable behavior → solve sequential/repeated interaction → account for beliefs → test subgame/sequential credibility → test coalition stability → design or select the desired outcome.`
 
-## GT-L-34
-A stable equilibrium can still be socially wasteful when individuals impose congestion or spillovers on one another.
+## GT-L-26 — Salience can substitute for communication
+When players need to coordinate but cannot communicate, a mutually recognizable focal outcome can solve part of the coordination problem.
 
-## GT-L-35
-Path dependence means an established convention can survive because changing it requires coordinated movement, not because it remains objectively best.
+## GT-L-27 — Communication rights are strategic assets
+The ability to send, receive, block, or destroy information can change bargaining power and the set of feasible commitments.
 
-## GT-L-36
-Higher-order expectations can dominate intrinsic value when each player is trying to predict what other players will predict.
+## GT-L-28 — Delegation can change the game
+Changing who acts can change incentives and credibility; delegation is therefore a strategic move, not merely an organizational detail.
 
-## GT-L-37
-Voting rules are incentive mechanisms: agenda order and ballot constraints can change outcomes even when preferences stay fixed.
+## GT-L-29 — Controlled uncertainty can create credibility
+A commitment can gain force when the actor deliberately reduces control over the final consequence.
 
-## GT-L-38
-A bargaining advantage often comes from having a better relative outside option or lower cost of waiting, not from having a larger absolute resource base.
+## GT-L-30 — Deterrence must account for the opponent's fear of surprise
+A strategy that looks defensive from one side can appear threatening from the other if each side anticipates the possibility of preemption.
 
-## GT-L-39
-Multi-issue bargaining can create mutual gains when parties value the issues differently.
+## GT-L-31 — Self-restraint can be a source of power
+A constraint is strategically valuable when it changes what the other side expects you to do.
 
-## GT-L-40
-When effort is hidden, incentive design must pay for observable outcomes or signals while accounting for noise and risk.
+## GT-L-32 — Bargaining power depends on structure, not only preferences
+Move order, alternatives, commitments, information, and institutional rules can change the outcome even when the parties' preferences stay the same.
 
-## GT-L-41
-Joint dependence creates hold-up risk; contracts should address future renegotiation before investments become sunk.
+## GT-L-33 — Credibility must be designed
+Threats and promises become strategically useful only when the surrounding structure makes the conditional action believable.
 
-## GT-L-42
-Auction outcomes depend on the mechanism and information structure; winning can itself be evidence that your estimate was unusually optimistic.
+## GT-L-34 — Conflict can communicate
+A limited action can simultaneously change material outcomes and convey information about resolve or willingness to escalate.
 
-## GT-L-43
-The visible move is not the full game. Infer the actor's objective and constraints before evaluating whether the move is rational.
+## GT-L-35 — Coordination can precede agreement
+When communication is impossible, mutual recognition of a focal outcome can substitute for an explicit agreement.
 
-## GT-L-44
-A temporary loss can be strategically optimal when it improves the future state or changes who remains in the game.
+## GT-L-36 — Tacit bargaining still requires a shared expectation
+A focal outcome is not self-enforcing merely because it is salient to one side; both sides must have reason to expect the same interpretation.
 
-## GT-L-45
-Backward induction is a reasoning tool with boundary conditions. Hidden information, uncertain motives, simultaneous moves, or excessive tree complexity require additional models.
+## GT-L-37 — Earlier arrangements can reduce later strategic friction
+If a commitment or coordination rule can be established before uncertainty peaks, it may prevent later bargaining from becoming more difficult.
 
-## GT-L-46
-An equilibrium is a stability condition, not a prediction by itself. When multiple equilibria exist, explain the equilibrium-selection mechanism.
+## GT-L-38 — Communication channels are strategic infrastructure
+Control over communication can create or remove bargaining options, so communication architecture belongs inside the game model.
 
-## GT-L-47
-Randomization is strategic when predictability can be exploited; the equilibrium mix must be derived from payoffs rather than chosen arbitrarily.
+## GT-L-39 — Strategic problems are reciprocal expectation problems
+When actions depend on expectations about others, analyzing only your own incentives is incomplete.
 
-## GT-L-48
-A correct long-run ratio is not enough. Strategic randomness must also make individual actions difficult to predict.
+## GT-L-40 — Mixed-motive games require both conflict and coordination analysis
+Do not force a situation into a win-lose model when players also depend on one another to avoid mutual loss or create joint gains.
 
-## GT-L-49
-Improving one side's skill can change the equilibrium behavior of both sides. Re-solve the interaction after material capability changes.
+## GT-L-41 — Coordination failure is not necessarily incentive failure
+Players may want compatible outcomes and still fail because they do not converge on the same expectations.
 
-## GT-L-50
-A strategic move works by changing expectations before the opponent acts; classify whether the move is unconditional, a threat, a promise, a warning, or an assurance.
+## GT-L-42 — Salience can be strategically causal
+A feature that helps both players recognize the same outcome can change behavior even when it does not change material payoffs.
 
-## GT-L-51
-Credibility is a separate layer from commitment intent. The supporting device must change the incentive or ability to reverse the commitment.
+## GT-L-43 — A strategic move works through the opponent's decision process
+Evaluate the change in expectations, options, incentives, or information—not merely the direct action.
 
-## GT-L-52
-Chance can sometimes strengthen commitment precisely because it removes the decision-maker's future control.
+## GT-L-44 — Enforcement turns conditional intentions into strategic forces
+A threat or promise without a credible enforcement path may have little strategic effect.
 
-## GT-L-53
-Actions are data. In strategic settings, what someone does can reveal private information, and the actor may choose the action precisely because it will be interpreted.
+## GT-L-45 — Initiative can be a liability
+Having the next move is not automatically advantageous if the ability to choose freely weakens your commitment.
 
-## GT-L-54
-A signal is credible only when the wrong type cannot cheaply mimic it. Evaluate the cost structure, not the stated message.
+## GT-L-46 — Delegation and mediation are mechanism design
+Changing who decides or how information passes can create a different game with different credible outcomes.
 
-## GT-L-55
-Screening works by designing choices so hidden types reveal themselves through self-selection.
+## GT-L-47 — Communication failure is itself a strategic state
+When communication is blocked or destroyed, players may need different coordination and commitment mechanisms.
 
-## GT-L-56
-An equilibrium can be privately rational and collectively inefficient when actions impose unpriced external costs.
+## GT-L-48 — Formalize strategic moves before applying equilibrium analysis
+An informal claim that a move creates leverage is incomplete until its effect on actions, information, timing, or payoffs is represented.
 
-## GT-L-57
-Network effects can lock a system into an inferior convention; changing the equilibrium often requires coordinated movement, not merely better individual choices.
-
-## GT-L-58
-In a common-value auction, winning is information. Update the estimate after conditioning on the fact that you won.
-
-## GT-L-59
-Changing rules does not guarantee changing outcomes. Strategic players adapt to the new mechanism.
-
-## GT-L-60
-A bargaining claim should start with BATNAs and the value created by agreement, not with arbitrary percentage splits.
-
-## GT-L-61
-Procedure is part of the bargaining game. Offer rights, timing and delay costs can redistribute the same underlying surplus.
-
-## GT-L-62
-Voting power is contextual and often depends on pivotality, agenda control and tie-breaking rather than simply having a vote.
-
-## GT-L-63
-Good incentive design balances motivation against the risk transferred to the agent.
-
-## GT-L-64
-Relative performance can improve incentive measurement when agents share common shocks, but the comparison mechanism must prevent collusion.
-
-## GT-L-65
-Conflicting principals can neutralize each other's incentives. Optimize the whole incentive system, not each reward in isolation.
-
-## GT-L-66
-Do not assume monetary incentives always add motivation; poorly sized extrinsic rewards can undermine intrinsic motivation.
-
-
-## GT-L-67
-A formal model is useful only when its information, timing and behavioral assumptions match the real interaction.
-
-## GT-L-68
-Nash equilibrium is a consistency benchmark, not a quality certificate. After finding an equilibrium, separately ask whether it is efficient, fair, unique and selected in practice.
-
-## GT-L-69
-An existence theorem does not imply a pure-strategy solution. Check the domain and the strategy class before relying on the result.
-
-
-## GT-L-70
-Strictly competitive reasoning is powerful precisely because the conflict structure is special. Do not use zero-sum intuition for games with meaningful common interests.
-
-## GT-L-71
-Private information changes the strategy itself: an informed actor should condition behavior on type or signal rather than use an average-case action.
-
-## GT-L-72
-Correlated equilibrium shows that coordination can be created by information or recommendations, not only by independent randomization.
-
-## GT-L-73
-Evolutionary stability answers a population-selection question, not necessarily a conscious decision-making question.
-
-## GT-L-74
-Rationalizability asks what can survive coherent beliefs about rational opponents; it is deliberately weaker than requiring a mutually correct equilibrium belief.
-
-
-## GT-L-75
-Strict dominance is a robust simplification; weak dominance is more fragile and can make the result depend on the elimination path.
-
-## GT-L-76
-Knowledge is not binary. What matters strategically is which states a player considers possible and how that information changes beliefs about others.
-
-## GT-L-77
-Common knowledge is stronger than shared knowledge because coordination can depend on every level of mutual awareness.
-
-
-## GT-L-78
-When two rational actors appear to hold different posterior beliefs, inspect the prior and information assumptions before treating the disagreement as a stable strategic fact.
-
-## GT-L-79
-A long chain of confirmations is not automatically common knowledge. Very high but finite mutual awareness can still leave coordination fragile.
-
-
-## GT-L-80
-A sequential game cannot be reduced to a payoff matrix without losing information about when choices are made and what players observe.
-
-## GT-L-81
-Subgame perfection turns credibility into a testable requirement: a plan must remain optimal after every relevant history.
-
-## GT-L-82
-For finite perfect-information games, one-deviation checking gives a practical way to validate backward-induction solutions.
-
-## GT-L-83
-Forward induction asks what earlier action history is consistent with the unexpected action now observed; it is different from simply predicting the next best response.
-
-## GT-L-84
-Chain-store and centipede results are useful precisely because they expose the assumptions behind backward induction and the limits of treating formal rationality as a complete behavioral model.
-
-## GT-L-85
-Bargaining power is partly procedural. Changing who proposes, who can reject, how long delay lasts, or what outside option exists can change the equilibrium without changing the pie.
-
-## GT-L-86
-Patience has economic value in bargaining because waiting preserves the ability to reject a poor offer and make the other side bear delay costs.
-
-## GT-L-87
-In repeated interaction, the future is an enforcement asset. Cooperation is sustainable only when the future loss from deviation is large enough.
-
-## GT-L-88
-A punishment is part of the strategy, not a rhetorical threat. If carrying it out is not optimal after deviation, it cannot support subgame-perfect cooperation.
-
-## GT-L-89
-The folk theorem is a conditional result, not a claim that repeated interaction automatically produces cooperation. Feasibility, enforceability, patience, and the solution concept matter.
-
-
-## GT-L-90
-A finite known endpoint can destroy cooperation through backward induction, but multiple constituent-game equilibria can restore credible punishment in some long finite repetitions.
-
-## GT-L-91
-A strategy's operational complexity is itself a strategic variable when players care about memory, implementation effort, or simplicity.
-
-## GT-L-92
-Implementation theory changes the question from predicting behavior to engineering the rules that generate the desired behavior under a specified solution concept.
-
-## GT-L-93
-Dominant-strategy implementation faces strong impossibility constraints under unrestricted preferences; mechanism design often requires restricting the preference domain or weakening the solution requirement.
-
-## GT-L-94
-Nash implementation is not guaranteed merely because a desirable choice rule exists. Structural conditions such as monotonicity and no-veto power determine whether the rule can be induced by a mechanism.
-
-## GT-L-95
-Exact and virtual implementation are different engineering targets. If exact implementation is impossible or too restrictive, arbitrarily high probability may still be achievable under a stronger game form.
-\n\n## GT-L-96\nAn information set is not just a diagram convention: it restricts which histories a player can condition on and therefore changes the feasible strategy itself.\n\n## GT-L-97\nPerfect recall is a prerequisite for several clean equivalence results. If players can forget their own relevant history, do not import perfect-recall conclusions unchanged.\n\n## GT-L-98\nEquivalent extensive-game representations preserve specific strategic objects, not necessarily every behavioral implication. Always identify what the equivalence claim actually preserves.\n\n## GT-L-99\nFraming can matter behaviorally even when two formal game representations are strategically equivalent. Keep the formal model and the empirical behavior model separate.\n\n## GT-L-100\nUnder perfect recall, behavioral strategies can reproduce the strategic consequences of mixed strategies. This is an operational simplification, not permission to ignore information-set constraints.\n\n## GT-L-101\nIn imperfect-information games, an equilibrium claim without a belief system is incomplete whenever off-path information sets matter.\n\n## GT-L-102\nSequential rationality requires optimal continuation behavior at every information set, not only on the equilibrium path.\n\n## GT-L-103\nOff-path beliefs must be constrained by consistency; arbitrary beliefs can manufacture equilibria that have no nearby fully mixed interpretation.\n\n## GT-L-104\nPerfect Bayesian and sequential equilibrium are refinements with different belief restrictions. Choose between them by the application and the belief problem being solved.\n\n## GT-L-105\nTrembling-hand perfection tests whether an equilibrium survives small mistakes. It is a robustness refinement, not a replacement for specifying the underlying information structure.\n
- 
-## GT-L-106
-Coalitional stability requires testing group deviations, not only unilateral best responses.
-
-## GT-L-107
-Transferable payoff is not a harmless notation choice. It determines whether coalition value can be redistributed and therefore which solution concepts are available.
-
-## GT-L-108
-The core is a blocking test: an allocation survives only when no feasible coalition can make all its members better off.
-
-## GT-L-109
-A nonempty core is a substantive existence property. Some games simply have no allocation immune to coalition blocking.
-
-## GT-L-110
-Market-core relationships depend on the economic and transfer assumptions under which the equivalence is derived.
-
-## GT-L-111
-Stable sets, bargaining sets, kernel, nucleolus, and Shapley value are different solution concepts answering different allocation or stability questions.
-
-## GT-L-112
-Coalition objections should be evaluated together with possible counter-objections rather than treated as unilateral deviations.
-
-## GT-L-113
-The Shapley value rewards marginal contribution; it does not by itself certify that the resulting allocation is in the core.
-
-## GT-L-114
-Bargaining analysis is incomplete without the disagreement point because the value of agreement is defined relative to what happens without agreement.
-
-## GT-L-115
-The Nash bargaining solution is not the Nash equilibrium concept from strategic games. One is an axiomatic bargaining solution; the other is a strategic-game equilibrium.
-
-## GT-L-116
-An alternating-offers process can provide a strategic foundation for the Nash bargaining outcome, but only under the assumptions that connect the two models.
-
-## GT-L-117
-Exact implementation is a stronger engineering claim than merely characterizing or selecting a desired outcome.
+## GT-L-49 — Some game-theoretic predictions require empirical validation
+When mutual perception, framing, norms, or focal recognition matters, formal deduction alone may not determine behavior.
