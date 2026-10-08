@@ -206,3 +206,19 @@ Map state/type, signal, prior, posterior and type-contingent strategy. Test whet
 
 ## GT-APP-63 — Almost-common-knowledge risk review
 When a protocol relies on repeated confirmation, escalation, acknowledgements or shared awareness, test the last unresolved level of uncertainty. Do not assume that many confirmations create the same coordination property as common knowledge.
+
+
+## GT-APP-64 — Extensive-game sequence audit
+Map every decision node, information available at that node, player to move, feasible actions, and terminal outcome before solving a sequential interaction.
+
+## GT-APP-65 — Subgame-perfect credibility audit
+For each proposed sequential strategy, test optimality after every proper subgame. Reject future threats or promises that would not be carried out when the time comes.
+
+## GT-APP-66 — One-deviation verification
+For a finite-horizon perfect-information game, test whether changing only the current action at each history improves the player's outcome. Use this as the operational SPE check.
+
+## GT-APP-67 — Forward-induction review
+When an observed action seems surprising, ask what earlier strategy choices remain rational if that action was intentional. Use weak-dominance elimination only with explicit attention to elimination order.
+
+## GT-APP-68 — Chain-store / centipede assumption audit
+If backward induction predicts immediate entry, stopping, or defection against a cooperative intuition, identify which assumptions about rationality, information, commitment, reputation, or horizon generate the divergence.
