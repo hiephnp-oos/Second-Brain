@@ -337,3 +337,37 @@ A cooperative pattern can persist because selection favors it even when individu
 
 ### GT-MM-103 — Extend the repeated-game lens across biological systems
 When organisms or symbionts repeatedly interact, test whether reciprocity and exploitation can be represented with the same strategic structure.
+
+
+## GT-05 Part IV — Mental models
+
+### GT-MM-104 — Audit relative-payoff sensitivity
+Check whether actors care about doing well absolutely or about outperforming the counterpart; relative-payoff concerns can destabilize otherwise beneficial cooperation.
+
+### GT-MM-105 — Protect the opening move
+Test the consequences of initiating cooperation versus initiating defection before assuming that defensive behavior is safer.
+
+### GT-MM-106 — Require two-sided reciprocity
+A reciprocal mechanism should distinguish cooperative behavior from exploitation and respond appropriately to both.
+
+### GT-MM-107 — Prefer interpretable strategies when interaction is strategic
+A strategy is more useful when the counterpart can understand what behavior will produce cooperation or retaliation.
+
+### GT-MM-108 — Increase the shadow of the future
+When cooperation is valuable, look for ways to increase duration, frequency, or continuity of interaction.
+
+### GT-MM-109 — Decompose high-stakes interactions
+Break large commitments into smaller stages when repeated feedback can make reciprocity more effective.
+
+### GT-MM-110 — Change incentives before demanding better behavior
+If defection remains materially dominant, redesign payoffs or enforcement rather than relying on exhortation.
+
+### GT-MM-111 — Distinguish motive from institutional mechanism
+Altruism can help cooperation, but laws, incentives, norms, and reciprocal strategies can also change behavior without changing preferences.
+
+### GT-MM-112 — Treat strategy diffusion as system design
+Teaching or spreading reciprocal strategies changes the population of interacting strategies and therefore the equilibrium environment.
+
+### GT-MM-113 — Build recognition infrastructure
+Cooperation requires enough identity and history information for actors to condition future behavior on past interaction.
+
