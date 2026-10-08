@@ -132,3 +132,29 @@ An agent or mediator can change the strategic game by altering incentives, infor
 
 ## GT-MM-35 — Deliberate uncertainty can strengthen a commitment
 A commitment can become more credible when the actor gives up some control over whether the costly consequence occurs.
+
+## GT-04 Part I — Mental models
+
+## GT-MM-36 — Self-binding can create bargaining power
+Reducing your own future freedom can make your position more credible and change the other side's bargaining calculation.
+
+## GT-MM-37 — Negotiation structure is a strategic variable
+Before evaluating a deal, inspect who moves, what alternatives exist, what commitments are possible, and how information flows.
+
+## GT-MM-38 — A threat and a promise are conditional moves
+Analyze both as response rules: what happens if the other side chooses one action versus another, and whether the prescribed response remains credible.
+
+## GT-MM-39 — Limited conflict can function as communication
+An action taken during conflict may change the bargaining game by revealing resolve, testing reactions, or altering expectations.
+
+## GT-MM-40 — Tacit coordination requires mutual recognition
+A salient solution helps only when each side expects the other side to recognize it as salient too.
+
+## GT-MM-41 — Tacit bargaining is not the same as agreement
+A mutually recognized outcome can coordinate divergent interests without an explicit bargain, but its stability depends on the cost of failing to coordinate.
+
+## GT-MM-42 — Prior arrangements move bargaining earlier in time
+If critical choices can be constrained before uncertainty or conflict arises, some bargaining can be completed before the strategic pressure peaks.
+
+## GT-MM-43 — Communication rights are part of bargaining power
+Control over sending, receiving, withholding, or destroying communication can change what commitments and coordination outcomes are feasible.
