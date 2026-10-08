@@ -293,3 +293,36 @@ Reciprocity should weaken when the expected duration or value of future interact
 
 ### GT-L-95 — Evolution can produce strategic behavior without foresight
 A cooperative outcome can be selected for without requiring participants to understand the long-run game they are playing.
+
+
+## GT-05 Part IV — Lessons
+
+### GT-L-96 — Relative success can be a hidden source of defection
+A player may reject a mutually beneficial outcome simply because the other player receives more.
+
+### GT-L-97 — Being first to defect can destroy the environment you need
+Short-term protection through initial defection may trigger retaliation and eliminate the future cooperation that makes the relationship valuable.
+
+### GT-L-98 — Reciprocity needs both reward and response
+Cooperation is sustainable when cooperative behavior is met with cooperation and exploitation produces a credible response.
+
+### GT-L-99 — Simplicity is a strategic advantage
+A strategy that others can understand and anticipate may outperform a more complex strategy that is difficult to interpret.
+
+### GT-L-100 — Reform the interaction when individual advice is insufficient
+When the existing game systematically rewards defection, changing the structure can be more effective than asking participants to behave differently.
+
+### GT-L-101 — Smaller repeated steps can outperform one large commitment
+Decomposition creates more opportunities for feedback and reciprocal adjustment.
+
+### GT-L-102 — Change payoffs, not only preferences
+Institutions can promote cooperation by making cooperative behavior individually attractive or defection costly.
+
+### GT-L-103 — Altruism is one mechanism, not the only mechanism
+Cooperation can be supported by preferences, incentives, norms, laws, reciprocity, or recognition infrastructure.
+
+### GT-L-104 — Teaching reciprocity changes future interactions
+A population with more effective reciprocal strategies becomes harder for exploitative strategies to dominate.
+
+### GT-L-105 — Recognition is strategic infrastructure
+Without reliable recognition and memory, reciprocal cooperation cannot be targeted effectively.
