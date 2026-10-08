@@ -86,3 +86,36 @@ Part I contains 11 substantive TOC units: Chapter 1 plus five named sections in 
 - The coverage unit is the named substantive TOC section, not page count or theorem count.
 - Historical examples and detailed military/political cases remain source-level unless they produce a reusable reasoning pattern.
 - Formal source calculations and full case narratives are not duplicated in the repository.
+
+## Part II traceability matrix
+
+Part II contains 15 substantive TOC units: three in Chapter 4, eleven in Chapter 5, and Chapter 6 as one substantive chapter-level unit. The coverage unit is the named substantive TOC unit, not page count or theorem count.
+
+| Source section | Promoted knowledge | Mental models | Applications | Lessons |
+|---|---|---|---|---|
+| Ch4 — Toward a Theory of Interdependent Decision | interdependent decision; mixed conflict and mutual dependence; reciprocal expectations | GT-MM-44, GT-MM-45 | GT-APP-40, GT-APP-41 | GT-L-39, GT-L-40 |
+| Ch4 — A Reclassification of Games | continuum from pure conflict through mixed-motive to pure coordination | GT-MM-45 | GT-APP-40 | GT-L-40 |
+| Ch4 — Games of Coordination | coordination as a distinct strategic problem; compatible interests can still fail through expectation mismatch | GT-MM-46 | GT-APP-41 | GT-L-41 |
+| Ch4 — Suggestion and Mutual Perception in the Mixed-Motive Game | salience, suggestion, context, mutual perception, and expectation convergence | GT-MM-47 | GT-APP-42 | GT-L-42 |
+| Ch5 — Enforcement, Communication, and Strategic Moves | strategic moves as changes to the opponent's decision problem; enforcement and communication | GT-MM-48–49 | GT-APP-43–44 | GT-L-43–44 |
+| Ch5 — An Illustrative Move | concrete strategic-move mechanism and its effect on expectations | GT-MM-48 | GT-APP-43 | GT-L-43 |
+| Ch5 — Threats | conditional response backed by enforcement/credibility | GT-MM-49 | GT-APP-44 | GT-L-44 |
+| Ch5 — Promises | conditional response intended to induce cooperation or restraint | GT-MM-49 | GT-APP-44 | GT-L-44 |
+| Ch5 — Relinquishing the Initiative | surrendering control can create leverage or credibility | GT-MM-50 | GT-APP-45 | GT-L-45 |
+| Ch5 — Identification | self-identification with a position as a commitment device | GT-MM-51 | GT-APP-43 | GT-L-43 |
+| Ch5 — Delegation | changing the decision-maker to alter incentives, information, or credibility | GT-MM-52 | GT-APP-46 | GT-L-46 |
+| Ch5 — Mediation | inserting a third party to change communication, interpretation, enforcement, or incentives | GT-MM-53 | GT-APP-46 | GT-L-46 |
+| Ch5 — Communication and Its Destruction | communication capacity as a strategic resource; blocking/destruction changes the game | GT-MM-54 | GT-APP-47 | GT-L-47 |
+| Ch5 — Incorporation of Moves in a Game Matrix | formalizing strategic moves through actions, sequence, information, or payoffs | GT-MM-55 | GT-APP-48 | GT-L-48 |
+| Ch5 — The Paradox of Strategic Advantage | initiative, information, or freedom can reduce strategic leverage | GT-MM-56 | GT-APP-45 | GT-L-45 |
+| Ch5 — “Strategic Moves” | integrated strategic-move framework: alter expectations, options, information, timing, or enforcement | GT-MM-48–56 | GT-APP-43–48 | GT-L-43–48 |
+| Ch6 — Game Theory and Experimental Research | empirical testing of perception, norms, communication, labels, and coordination behavior | GT-MM-57 | GT-APP-49 | GT-L-49 |
+
+### Part II acceptance
+
+- All 15 substantive Part II TOC units are explicitly traceable.
+- Chapter 4 adds the conceptual reorientation toward interdependent decision and mixed-motive games.
+- Chapter 5 adds strategic moves as mechanisms that alter the opponent's decision problem, including enforcement, delegation, mediation, and communication control.
+- Chapter 6 adds the empirical boundary: perception-, framing-, norm-, and focal-point effects cannot always be established by formal deduction alone.
+- Existing GT-04 Part I knowledge was not counted as Part II coverage unless the Part II section adds a distinct reasoning layer.
+- Formal source calculations, experimental protocols, and full historical cases remain source-level.
