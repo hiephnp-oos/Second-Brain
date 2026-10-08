@@ -223,3 +223,13 @@ Evolutionary stability answers a population-selection question, not necessarily 
 
 ## GT-L-74
 Rationalizability asks what can survive coherent beliefs about rational opponents; it is deliberately weaker than requiring a mutually correct equilibrium belief.
+
+
+## GT-L-75
+Strict dominance is a robust simplification; weak dominance is more fragile and can make the result depend on the elimination path.
+
+## GT-L-76
+Knowledge is not binary. What matters strategically is which states a player considers possible and how that information changes beliefs about others.
+
+## GT-L-77
+Common knowledge is stronger than shared knowledge because coordination can depend on every level of mutual awareness.
