@@ -272,3 +272,39 @@ A commitment can deliberately leave part of the final outcome to chance. The res
 ## 43. Reciprocal fear and surprise attack
 
 In mutual-deterrence situations, each side's fear of being surprised can create incentives to act preemptively. Strategic stability therefore depends not only on offensive capability but also on expectations about the other's incentives and the timing of possible moves.
+
+## GT-04 Part I — Incremental foundations from *The Strategy of Conflict*
+
+Part I adds a strategic layer centered on bargaining power as self-binding, negotiation structure, focal/tacit coordination, communication, limited war, and prior arrangements.
+
+### 44. Bargaining power through self-binding
+
+Bargaining power can come from the ability to bind oneself to a course of action. A constraint can alter the opponent's expectations and therefore the feasible bargaining outcome.
+
+### 45. Negotiation structure is part of the bargaining problem
+
+Institutional and structural features of a negotiation—who moves, what options exist, what commitments are possible, and what information can be exchanged—can change bargaining power independently of the stated preferences.
+
+### 46. Threats and promises are strategic instruments
+
+A threat changes behavior by making an unfavorable response conditional on the other's action; a promise does so by making a favorable response conditional on cooperation. Their strategic force depends on credibility and the structure that supports it.
+
+### 47. Limited conflict can carry bargaining information
+
+When explicit agreement is unavailable, controlled actions or limited conflict can communicate resolve, test expectations, or alter the bargaining situation. The action must therefore be analyzed as both behavior and communication.
+
+### 48. Tacit coordination depends on mutual recognition
+
+Coordination without explicit communication requires more than choosing a reasonable action. Each side must expect the other side to recognize the same salient solution.
+
+### 49. Tacit bargaining is coordination under divergent interests
+
+When interests are not identical, a focal outcome can serve as an implicit bargaining point because both sides benefit from converging on a mutually recognizable arrangement rather than failing to coordinate.
+
+### 50. Prior arrangements can substitute for real-time negotiation
+
+An arrangement established before conflict or uncertainty can constrain later choices and reduce the need for explicit bargaining at the critical moment.
+
+### 51. Communication changes the game itself
+
+Communication is not merely information transfer. The ability to communicate, withhold communication, or destroy communication can alter expectations, commitments, and the set of strategically available outcomes.
