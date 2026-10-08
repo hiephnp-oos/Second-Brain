@@ -125,29 +125,48 @@ Part I is accepted when each substantive section leaves a durable reasoning dist
 ## Part II traceability matrix
 
 ### Chapter 6 — Extensive Games with Perfect Information
-- Sections: extensive-game model; subgame perfect equilibrium; chance/simultaneous extensions; interpretation of strategy; Chain-Store and Centipede; iterated weak-dominance elimination and forward induction.
-- Promoted: sequential structure, SPE credibility, one-deviation property, backward induction, model-extension boundaries, off-path strategy interpretation, forward induction.
-- Operational links: GT-MM-101 through GT-MM-107; GT-APP-64 through GT-APP-68; GT-L-80 through GT-L-84.
+- 6.1 Extensive Games with Perfect Information → extensive-game model and perfect-information sequence.
+- 6.2 Subgame Perfect Equilibrium → SPE credibility and one-deviation verification.
+- 6.3 Two Extensions of the Definition of a Game → chance/simultaneous extensions and solution-boundary conditions.
+- 6.4 The Interpretation of a Strategy → complete contingent strategy and off-path actions.
+- 6.5 Two Notable Finite Horizon Games → Chain-Store and Centipede as backward-induction boundary cases.
+- 6.6 Iterated Elimination of Weakly Dominated Strategies → forward-induction connection and elimination-order caution.
+- Promoted: GT-MM-101 through GT-MM-107; GT-APP-64 through GT-APP-68; GT-L-80 through GT-L-84.
 
 ### Chapter 7 — Bargaining Games
-- Sections: bargaining model; alternating offers; SPE characterization; variations/extensions.
-- Promoted: procedure dependence, impatience, efficient agreement, acceptance thresholds, outside options.
-- Operational links: GT-MM-108 through GT-MM-111; GT-APP-69 and GT-APP-70; GT-L-85 and GT-L-86.
+- 7.1 Bargaining and Game Theory → bargaining as an extensive strategic interaction.
+- 7.2 A Bargaining Game of Alternating Offers → proposer/respondent sequence and acceptance thresholds.
+- 7.3 Subgame Perfect Equilibrium → backward solution and credible continuation behavior.
+- 7.4 Variations and Extensions → impatience, outside options, and procedure dependence.
+- Promoted: GT-MM-108 through GT-MM-111; GT-APP-69 and GT-APP-70; GT-L-85 and GT-L-86.
 
 ### Chapter 8 — Repeated Games
-- Sections: basic idea; finite versus infinite repetition; definitions; strategies as machines; trigger strategies; Nash/perfect folk theorems under multiple payoff criteria; SPE structure; finitely repeated games.
-- Promoted: enforceability/minmax boundary, trigger strategies, credible punishment, patience, Nash versus perfect folk theorems, finite-horizon boundary, and machine representation.
-- Operational links: GT-MM-112 through GT-MM-114; GT-APP-71 through GT-APP-73; GT-L-87 through GT-L-90.
+- 8.1 The Basic Idea → shadow of the future.
+- 8.2 Infinitely Repeated Games vs. Finitely Repeated Games → horizon boundary.
+- 8.3 Infinitely Repeated Games: Definitions → feasible/enforceable payoff structure.
+- 8.4 Strategies as Machines → finite-state strategy representation.
+- 8.5 Trigger Strategies: Nash Folk Theorems → trigger-based cooperation and patience.
+- 8.6 Punishing for a Limited Length of Time → finite punishment under the limit-of-means criterion.
+- 8.7 Punishing the Punisher → perfect folk-theorem structure under overtaking.
+- 8.8 Rewarding Players Who Punish → perfect folk-theorem structure under discounting.
+- 8.9 The Structure of Subgame Perfect Equilibria Under the Discounting Criterion → SPE structure.
+- 8.10 Finitely Repeated Games → finite-horizon cooperation boundary and constituent-game equilibria.
+- Promoted: GT-MM-112 through GT-MM-114; GT-APP-71 through GT-APP-73; GT-L-87 through GT-L-90.
 
 ### Chapter 9 — Complexity Considerations in Repeated Games
-- Sections: complexity; machine game; equilibrium structure; lexicographic preferences.
-- Promoted: finite-state strategy representation, payoff/complexity tradeoff, introductory/cycling phases, and sensitivity to the complexity criterion.
-- Operational links: GT-MM-115 and GT-MM-116; GT-APP-74; GT-L-91.
+- 9.1 Introduction → complexity as an explicit strategic consideration.
+- 9.2 Complexity and the Machine Game → finite-state implementation cost.
+- 9.3 The Structure of the Equilibria of a Machine Game → equilibrium-machine structure.
+- 9.4 The Case of Lexicographic Preferences → payoff-first/complexity-second preference structure.
+- Promoted: GT-MM-115 and GT-MM-116; GT-APP-74; GT-L-91.
 
 ### Chapter 10 — Implementation Theory
-- Sections: implementation problem; dominant-strategy implementation; Nash implementation; SPE implementation.
-- Promoted: inverse mechanism-design framing, Gibbard-Satterthwaite boundary, Groves mechanisms under restricted domains, Nash monotonicity/no-veto conditions, and virtual SPE implementation.
-- Operational links: GT-MM-117 through GT-MM-121; GT-APP-75 through GT-APP-78; GT-L-92 through GT-L-95.
+- 10.1 Introduction → implementation as inverse mechanism design.
+- 10.2 The Implementation Problem → choice rule versus mechanism/game form.
+- 10.3 Implementation in Dominant Strategies → Gibbard-Satterthwaite boundary and restricted-domain mechanisms.
+- 10.4 Nash Implementation → monotonicity and no-veto conditions.
+- 10.5 Subgame Perfect Equilibrium Implementation → virtual SPE implementation and certainty/probability distinction.
+- Promoted: GT-MM-117 through GT-MM-121; GT-APP-75 through GT-APP-78; GT-L-92 through GT-L-95.
 
-### Acceptance rule
-Part II is accepted when each chapter leaves a durable sequential/mechanism-design reasoning layer and the major formal boundary conditions are retained, while proofs, theorem derivations, and game-tree arithmetic remain source-level material.
+### Part II acceptance result
+All **29 substantive numbered sections** in the Part II bookmark are explicitly traceable to durable knowledge objects. Formal proofs, theorem derivations, and game-tree arithmetic remain source-level material rather than duplicated repository content.
