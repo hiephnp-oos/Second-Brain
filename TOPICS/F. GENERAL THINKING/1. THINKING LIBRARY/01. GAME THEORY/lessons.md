@@ -193,3 +193,46 @@ Decision errors, delegated authority, communication failures, and procedural fri
 
 ## GT-L-59 — Never assume the opponent blinks first
 A risk-based strategy is only viable if the opponent's tolerance, incentives, and ability to control escalation are favorable relative to your own.
+
+
+## GT-L-60 — Strategic probabilities can be endogenous
+When each side's behavior changes the other's fear, probabilities are part of the game rather than fixed background parameters.
+
+## GT-L-61 — Reciprocal fear can create instability without hostile intent
+Both sides can rationally act defensively and still produce a collectively dangerous trajectory.
+
+## GT-L-62 — Sequence matters when preemption is possible
+The ability to move first can change incentives even when underlying preferences remain unchanged.
+
+## GT-L-63 — Strategic conclusions are assumption-sensitive
+If warning quality, timing, or information changes, the equilibrium or behavioral prediction can change with it.
+
+## GT-L-64 — Technical reliability can become strategic reliability
+False alarms and missed detection can alter behavior, not merely system performance metrics.
+
+## GT-L-65 — Beliefs can adjust over time
+A strategic model should allow players to revise behavior as perceived risk or system parameters change.
+
+## GT-L-66 — Tacit coordination can be stable without explicit agreement
+Reciprocal expectations can sustain a strategic pattern even when no formal agreement exists.
+
+## GT-L-67 — Shared catastrophic risk can create bargaining space
+Opposing interests do not eliminate cooperation when both sides strongly prefer avoiding the worst outcome.
+
+## GT-L-68 — Bilateral results may not survive additional actors
+A third player can change the information and incentive structure enough to invalidate a two-player conclusion.
+
+## GT-L-69 — Disarmament must be evaluated as incentive redesign
+Weapon reduction is strategically meaningful only when resulting incentives and vulnerabilities are also considered.
+
+## GT-L-70 — Misinterpretation can be causally consequential
+What an actor believes happened can matter as much as what actually happened.
+
+## GT-L-71 — Limited conflict amplifies ambiguity
+When the baseline state is hostile, ambiguous actions are more likely to trigger costly interpretations.
+
+## GT-L-72 — Mutual misinterpretation can create an escalation trap
+If each side's defensive response becomes evidence of the other's offensive intent, escalation can become self-reinforcing.
+
+## GT-L-73 — More surveillance or defense is not automatically more stability
+Additional information or capacity can improve security while simultaneously increasing perceived threat and instability.
