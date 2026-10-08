@@ -1,345 +1,374 @@
 # Game Theory — Concepts
 
-Sources: GT-01 *Thinking Strategically*; GT-02 *The Art of Strategy*; GT-03 *A Course in Game Theory*; GT-04 *The Strategy of Conflict*; GT-05 *The Evolution of Cooperation*.
-
-## Strategic structure
-Strategic interaction exists when another purposeful actor can change the value of your action. Model players, strategies, information, timing, preferences/payoffs and outcomes.
-
-## Part I foundations from GT-01
-Part I establishes several distinctions before the later formal machinery:
-
-- **Reaction:** an action changes the opponent's response; the response can change the value of the original action.
-- **Sequential interaction:** players move in sequence, so later responses must be anticipated and reasoned backward.
-- **Simultaneous interaction:** players choose without observing the other's current choice; reasoning must solve mutual expectations rather than a visible move sequence.
-- **Move order:** first mover advantage is not universal; revealing a choice can help the second mover.
-- **Commitment/intransigence:** reducing one's own flexibility can change the opponent's feasible responses, but only when the position is sufficiently credible and the long-run cost is acceptable.
-- **Coordination:** jointly beneficial action can fail when each individual bears the cost of moving first or acting alone.
-- **Path dependence:** individually acceptable sequential decisions can produce an undesirable aggregate result.
-- **Lock-in:** once switching becomes costly, the other side can capture bargaining power.
-- **Mixed strategies:** unpredictability can prevent an opponent from systematically exploiting a predictable action pattern.
-- **Information from behavior:** another player's action or willingness to trade can reveal information about what they know or believe.
-- **Human behavior:** pride, irrationality and imperfect credibility can materially change strategic outcomes and should not be silently assumed away.
-
-## Part I incremental foundations from GT-02
-
-GT-02 revisits the Part I foundations with a stronger emphasis on what the strategic examples add beyond the core GT-01 framework:
-
-- **Infer the objective behind the move:** strategic analysis may require reasoning about what the other actor, institution, or test designer is trying to achieve, not only the visible action.
-- **Strategic sacrifice can improve the future position:** a locally costly outcome can be optimal when it changes the next state, removes a stronger rival, or preserves a better eventual payoff.
-- **Backward reasoning has boundary conditions:** full backward solution is cleanest when the state, previous actions, objectives, and subsequent choices are sufficiently known; uncertainty about chance, hidden actions, or motives requires additional reasoning rather than blind backward induction.
-- **Behavioral assumptions matter:** observed behavior can differ from the pure-self-interest prediction because of fairness, altruism, fear of rejection, learning, or social norms. The strategic model should make those assumptions explicit.
-- **Equilibrium can be multiple:** a game may have several stable mutual-best-response outcomes. Finding an equilibrium is therefore not the same as explaining which equilibrium will be selected.
-- **Coordination games need an equilibrium-selection mechanism:** focal points, conventions, communication, or credible commitments can help actors converge on one equilibrium when several are available.
-- **Conflict games can contain mutually destructive equilibria:** in Chicken-like situations, avoiding the worst outcome may require credible restraint, commitment, or a convention that coordinates expectations.
-
-These are incremental GT-02 foundations; they do not replace the more detailed GT-01 concepts already retained above.
-
-## Solution concepts
-Dominant/dominated strategies simplify analysis. Best responses map conditional optimal actions. Nash equilibrium describes mutual best responses; it is not automatically desirable. Rationalizability removes behavior inconsistent with rational best-response reasoning. Subgame perfection tests credibility in every relevant subgame. Sequential equilibrium combines sequential rationality with consistent beliefs.
-
-## Information
-Bayesian games represent private types. Common knowledge is stronger than shared knowledge. Signaling reveals information through observable actions; screening structures choices so hidden types reveal themselves.
-
-## Commitment and conflict
-Threats, promises, warnings, assurances and commitments alter expectations. Credibility comes from changed incentives, constraints, contracts, reputation, delegation, timing or deliberate loss of control. Schelling adds focal points, tacit coordination/bargaining, strategic communication and randomized commitment.
-
-## Repetition and cooperation
-Repeated games create a shadow of the future. Reciprocity, punishment, forgiveness, reputation and detectability can sustain cooperation. Axelrod adds evolutionary selection, local clusters, collective stability and robustness under noise.
-
-## Mechanism and allocation
-Implementation asks how to design a game that induces a desired outcome. Auction rules, voting procedures and incentive systems shape behavior. Coalitional games study group outcomes; the core tests coalition deviations; the Shapley value distributes by marginal contribution; Nash bargaining selects agreements relative to feasible outcomes and disagreement.
-
-## Practical synthesis
-Model interaction → identify information/timing → predict reactions → reason backward for sequential moves or solve mutual best responses for simultaneous moves → inspect move order and commitment → account for coordination, lock-in, mixed strategies and information revealed by behavior → test credibility → ask whether changing rules beats optimizing within them.
-
-## Part II foundations from GT-01
-
-Part II turns the Part I strategic foundations into explicit mechanisms for cooperation, strategic moves, credibility and unpredictability.
-
-### Chapter 4 — Resolving the Prisoners' Dilemma
-- Cooperation requires a way to detect cheating and identify the cheater.
-- Detection can be imperfect; false positives and attribution problems affect enforcement design.
-- Punishment can be external or generated from repeated interaction through loss of future cooperation.
-- A known finite horizon can unravel cooperation by backward induction; an indefinite or uncertain horizon preserves the value of future cooperation.
-- The value of cooperation depends on how strongly future payoffs matter relative to immediate cheating gains.
-- Punishment design should consider simplicity, clarity, certainty, speed and sufficient—not gratuitous—severity.
-- **TIT FOR TAT** illustrates conditional cooperation: start cooperatively, respond to defection, and restore cooperation when the other side does.
-- Effective reciprocity must distinguish retaliation from forgiveness and remain robust to accidental errors.
-- Cooperation mechanisms can be exploited or redirected; an apparently pro-competitive rule can also enforce a cartel.
-- Multiple dimensions of competition can cause evasion to move from observable to opaque dimensions.
-
-### Chapter 5 — Strategic Moves
-A strategic move is a preemptive commitment that changes the other player's response. The book distinguishes:
-- **unconditional moves**: act first and fix the action;
-- **threats**: commit to a response that punishes a specified action;
-- **promises**: commit to a response that rewards a specified action;
-- **warnings/assurances**: informational statements that do not strategically change the response rule.
-Strategic moves work only if the other side can observe or infer the move and can be influenced before acting. They transform an otherwise simultaneous interaction into a sequential one. More complex strategic moves can deliberately let the other side move first, wait for a threat, or create an intermediate commitment.
-
-### Chapter 6 — Credible Commitments
-Credibility means the opponent expects the strategic move to be carried out even when carrying it out later would otherwise be unattractive. The source's eightfold path uses devices including changing payoffs, reputation, contracts, cutting off communication, burning bridges, leaving outcomes beyond one's control, moving in small steps, teamwork and mandated negotiating agents. The common mechanism is to make reversal costly, impossible, externally constrained or strategically unappealing.
-
-### Chapter 7 — Unpredictability
-When both sides can anticipate and exploit systematic behavior, equilibrium may require mixing actions. The correct mixture is determined by the payoff structure, not necessarily 50:50. The randomization must itself be unpredictable; a fixed pattern with the correct long-run proportions remains exploitable. A player's best mix can change when the opponent's skills/payoffs change. Randomization also has limits: some situations are genuinely unique, information may make the opponent's action predictable, and strategic deception/surprise must be distinguished from routine mixed play.
-
-
-## Part II incremental foundations from GT-02
-
-### Chapter 5 — Choice and Chance
-- Randomization can be strategically necessary when predictable play is exploitable and no stable pure-strategy equilibrium exists.
-- The equilibrium mixture is determined by the payoff structure; it is not automatically 50:50.
-- In equilibrium, the chosen probabilities make the opponent indifferent among the actions used.
-- Correct long-run proportions are insufficient if individual actions follow a predictable pattern.
-- A deviation to a pure action can change the opponent's incentive to maintain the original mix.
-- A skill or payoff change by one player can change both players' equilibrium mixtures.
-- Strategic randomization is deliberately designed from the game, rather than simply leaving the decision to uncontrolled chance.
-
-### Chapter 6 — Strategic Moves
-- A strategic move is preemptive: the action or response rule must be established before the opponent moves.
-- Unconditional moves fix an action; conditional moves prescribe a response.
-- Threats and promises deliberately change the response rule to influence the opponent; warnings and assurances mainly communicate what would happen anyway.
-- Strategic moves transform the analysis into a sequential game because they change expectations before the opponent acts.
-- Threats and promises can be deterrent or compellent depending on whether they preserve or change the status quo.
-- The strategic move and its credibility are separate analytical layers.
-
-### Chapter 7 — Making Strategies Credible
-- Credibility means the opponent expects the commitment to be carried out even when reversal would later be attractive.
-- The eightfold path uses three mechanisms: change payoffs; limit the ability to back out; use others to support commitment.
-- The eight devices are reputation, contracts, cutting off communication, burning bridges, leaving the outcome to chance, moving in small steps, teamwork, and mandated negotiating agents.
-- The common mechanism is to make reversal more costly, impossible, externally constrained, progressively costly, or delegated.
-- Chance can be a commitment device when retaining control would otherwise undermine credibility.
-
-## Part III foundations from GT-01
-
-Part III applies the earlier framework to risk, coordination, voting, bargaining and incentive design.
-
-### Chapter 8 — Brinkmanship
-- Brinkmanship is deliberate creation of a recognizable risk that is not fully controlled, used to induce the other side to back down.
-- It differs from ordinary mixed-strategy randomization: the uncertainty is about whether a deteriorating process crosses the bad-outcome threshold, not a private random choice that remains under the actor's control.
-- Credible brinkmanship needs a controllable risk range: the opponent must be able to reduce the risk, ideally toward zero, by complying with the demanded terms.
-- The mechanism can fail when the actor cannot control the risk at the required level, making the threat either ineffective or too dangerous.
-- Brinkmanship always carries a falling-off-the-brink risk; successful deterrence and catastrophic escalation are two possible outcomes of the same mechanism.
-- Nuclear deterrence illustrates the trade-off between the deterrent value of risk and the cost of leaving outcomes partly to chance.
-- Small incremental aggression can test whether a threat line is credible; deterrence can be weakened when each individual step seems too small to justify a drastic response.
-
-### Chapter 9 — Cooperation and Coordination
-- Individually rational choices can produce socially poor equilibria when actions impose externalities on others.
-- Congestion games can have a stable equilibrium that is worse than a coordinated allocation; the private incentive need not match the social optimum.
-- Path dependence and positive feedback can lock a group into an inferior convention or technology even after circumstances change.
-- Multiple equilibria require coordination, conventions, penalties or other mechanisms when the group needs one equilibrium selected over another.
-- Local responses can generate segregation or polarization even when individuals do not have extreme preferences.
-- In location/competition games, strategic interaction can pull choices toward the center and produce imitation rather than differentiated outcomes.
-- Higher-order expectations matter in markets and contests: agents may act on what they expect others to expect, rather than on intrinsic value alone.
-- The chapter's synthesis is that coordination problems can generate too much competition, wrong proportions, lock-in, excessive homogeneity, or unstable outcomes.
-
-### Chapter 10 — The Strategy of Voting
-- Majority voting need not produce a stable overall winner; pairwise preferences can cycle.
-- Agenda control is strategic because changing the order of pairwise votes can change the final outcome.
-- Decision procedures are part of the game: changing what is decided first can change the eventual result even with unchanged preferences.
-- Sophisticated voters can reason backward through a voting tree, but collective strategic foresight can still produce an outcome that the group would not prefer ex ante.
-- Voting rules create incentives to vote strategically rather than report true preferences, especially when voters face viability thresholds or limited ballots.
-- Approval voting is presented as one alternative intended to let voters support all options they genuinely find acceptable rather than forcing them to rank only a limited number.
-- Moving first can strategically distort one's apparent preference to induce a favorable response from others.
-- A voting mechanism should therefore be evaluated as an incentive system, not merely as a neutral method for counting preferences.
-
-### Chapter 11 — Bargaining
-- Bargaining outcomes depend on each side's cost of waiting and outside opportunities, not only on the size of the pie.
-- Relative outside options matter: reducing the rival's outside option more than one's own can improve one's bargaining position even when both sides are worse off in absolute terms.
-- Brinkmanship in bargaining can create urgency, but delay also creates risks from misperception, mistrust and breakdown.
-- With multiple issues, differences in relative valuations create opportunities for mutually beneficial trades that are missed by bargaining over a single aggregate number.
-- Procedure matters: who makes offers, when offers can be rejected, and whether delay destroys surplus all change the equilibrium.
-- In finite bargaining, backward induction can determine both the timing and division of the settlement.
-- With ongoing bargaining, patience is valuable: the side with lower impatience/waiting cost generally has greater bargaining leverage.
-
-### Chapter 12 — Incentives
-- Incentive design must account for hidden effort: when effort is unobservable, compensation must be tied to observable outcomes or other signals that correlate with effort.
-- Outcome-based incentives create a trade-off between rewarding desired effort and exposing the worker to risk from factors outside the worker's control.
-- Joint ventures create a hold-up problem when parties become mutually dependent after investment; enforceable initial contracts can reduce later renegotiation incentives.
-- Auction rules change strategic bidding incentives. Under a first-price sealed-bid setting, bidders may profit from shading or inflating relative to truthful cost reporting depending on the mechanism and information structure.
-- The value of winning must be evaluated together with the information revealed by winning; a winner can be the party with the most optimistic estimate in an uncertain common-value setting.
-- Good mechanism design aligns private incentives with the desired outcome instead of assuming participants will voluntarily choose the socially efficient action.
-
-## Part III cross-chapter synthesis
-1. Risk can be used strategically, but only when the risk is recognizable, bounded enough to influence behavior, and escapable through compliance.
-2. Coordination failures often come from externalities, multiple equilibria, path dependence and higher-order expectations.
-3. Voting procedures and bargaining procedures are themselves strategic mechanisms; changing the procedure can change the outcome without changing preferences.
-4. Bargaining power comes partly from relative outside options, patience and control over procedure.
-5. Incentive systems must be designed around observability, risk allocation, hold-up and the strategic response to the mechanism.
-
-## Part III incremental foundations from GT-02
-
-### Chapter 8 — Interpreting and Manipulating Information
-- Actions can reveal private information; strategic actors therefore choose actions partly for their information content, not only for their direct payoff.
-- Signaling is information revelation by the informed side; screening is information elicitation by the uninformed side through a menu, test or choice structure.
-- A credible signal must be harder or more costly for an unsuitable type to mimic; cheap statements alone may not separate types.
-- Signal jamming can deliberately reduce the information that others can infer from an action.
-- Information is strategic at multiple levels: infer what an action reveals, then anticipate how the actor may have chosen the action knowing that it will be interpreted.
-- Private information can create adverse-selection problems; mechanism design can reduce them by inducing useful revelation or self-selection.
-
-### Chapter 9 — Cooperation and Coordination
-- Individual optimization can produce a stable equilibrium that is inferior to coordinated action when actions impose external costs on others.
-- Pricing or charging for the external cost can sometimes align private incentives with the collective optimum.
-- Network effects and bandwagon effects can make an inferior convention self-reinforcing; history can determine which equilibrium persists.
-- Coordination can require a threshold-crossing intervention because small individual deviations may be unattractive until enough others move together.
-- Collective action can be self-enforcing when detection and sanctions are feasible, but an outside rule or institution can sometimes enforce a mutually beneficial constraint more effectively.
-- A coordination device can change expectations and move the system from one equilibrium to another without changing individual preferences.
-
-### Chapter 10 — Auctions, Bidding, and Contests
-- Distinguish private value from common value before choosing a bidding strategy.
-- In common-value settings, winning can reveal that your estimate was unusually optimistic; this is the winner's curse.
-- Auction format changes the information revealed and the strategic incentives: English/Japanese, Vickrey, Dutch and sealed-bid formats need not be strategically equivalent in every information environment.
-- In a Vickrey auction with private values, truthful bidding is a dominant strategy; mechanism design can make players less strategically burdened by changing the rules.
-- Revenue equivalence shows that different auction rules can produce the same expected seller revenue under the relevant assumptions; changing rules does not automatically change behavior in the intended direction because bidders adapt.
-- In multi-stage or linked auctions, strategy can span multiple games; a bid in one contest can affect incentives in another.
-
-### Chapter 11 — Bargaining
-- Measure the bargaining pie from the value created relative to the parties' BATNAs, not from superficial costs or shares.
-- Bargaining power is affected by patience and by the relative quality of outside options; both parties can be made worse off by a strategic move that damages the opponent more.
-- Finite bargaining can be solved by backward reasoning from the final period; indefinite bargaining depends on discounting and patience.
-- Bargaining procedure itself is strategic: who makes offers, when counteroffers occur, and how delay is structured can change the settlement.
-- Multiple issues allow logrolling: trade issues according to differences in relative valuation rather than splitting every issue equally.
-
-### Chapter 12 — Voting
-- Majority preferences can cycle; there may be no stable Condorcet winner when preferences over three or more alternatives are intransitive at the group level.
-- Agenda control can exploit the order of pairwise votes; the procedure can determine the outcome even when preferences are unchanged.
-- Sequential voting invites backward reasoning and strategic voting rather than sincere voting.
-- A voter's power depends on pivotality: a vote matters when it changes or breaks the decisive coalition or tie.
-- Voting rules are mechanisms with incentives; changing ballot format or procedure can change strategic behavior and the resulting collective choice.
-
-### Chapter 13 — Incentives
-- When effort is hidden, contracts must reward observable outcomes or proxies correlated with effort.
-- Incentive design trades off motivation against risk borne by the agent; imperfect performance measures create a cost of risk allocation.
-- Relative-performance evaluation can filter common shocks and improve inference about effort, but information about peers must be designed to avoid collusion.
-- Intrinsic motivation can interact with monetary incentives; small or poorly designed rewards can weaken rather than strengthen performance.
-- Multiple principals can offset one another's incentives, weakening the aggregate incentive system.
-- Contracts can also allocate risk and solve hold-up or joint-venture incentive problems; the mechanism must be evaluated from each party's strategic response.
-
-### Chapter 14 — Case Studies
-- Treat the 14 case studies as application tests of the preceding mechanisms, not as 14 additional mental models.
-- Cases cover information inference, coordination/externalities, strategic timing, auctions/contests, bargaining, voting, and incentives.
-- Durable extraction should preserve the mechanism demonstrated by each case and avoid duplicating the narrative.
-
-
-## Part I incremental foundations from GT-03
-
-GT-03 adds formal structure to the earlier strategic intuition. The useful incremental layer is the distinction between different interpretations and solution concepts, the explicit treatment of private information and beliefs, and the epistemic conditions behind equilibrium reasoning.
-
-### Introduction — formal scope and interpretation
-- Game theory models interactive decision-making in which each player's outcome depends on the choices of other purposeful actors.
-- A **game** specifies the strategic environment; a **solution concept** selects or restricts the outcomes/strategies regarded as consistent with the model.
-- Competitive equilibrium and strategic-game analysis answer related but different questions: a market equilibrium can abstract individual strategic interaction through prices, whereas game theory explicitly models strategic responses.
-- Rational behavior means choosing optimally relative to preferences, feasible actions and beliefs; rationality does not imply that players know the equilibrium or that the equilibrium is unique.
-- The book distinguishes a **steady-state interpretation** of equilibrium from a **deductive interpretation**: equilibrium can be treated either as a regularity learned from repeated experience or as a restriction inferred from rationality in a one-shot situation.
-- **Bounded rationality** is an explicit modeling boundary: a formal equilibrium is a benchmark and should not automatically be treated as a literal description of how people reason.
-
-### Chapter 2 — Nash Equilibrium
-- A **strategic game** represents simultaneous choice through players, action sets and preferences over action profiles; the abstraction is deliberately different from a sequential game tree.
-- A **Nash equilibrium** is a profile in which each player's action is a best response to the others' actions. It is a mutual consistency condition, not a claim that the outcome is socially optimal or uniquely predicted.
-- Existence is model-dependent: finite games have a Nash equilibrium when mixed strategies are allowed, while a pure-strategy equilibrium may fail to exist.
-- **Strictly competitive games** have opposed preference orderings and admit stronger value/minimax structure than general-sum games; conclusions that rely on this structure should not be generalized to ordinary coordination or bargaining games.
-- A **Bayesian game** makes private information explicit through states/types, signals, beliefs and actions. A player's strategy must specify what to do for each type or signal, not merely one action for the average case.
-- Bayesian Nash equilibrium is therefore a Nash equilibrium of the induced type-contingent strategic interaction: each type chooses optimally given its information and beliefs about other types' behavior.
-
-### Chapter 3 — Mixed, Correlated, and Evolutionary Equilibrium
-- A **mixed-strategy Nash equilibrium** assigns probabilities to actions and requires optimality against the resulting distribution, extending equilibrium beyond deterministic action profiles.
-- Mixed strategies have multiple interpretations: deliberate randomization, a steady-state distribution of play, or a representation of aggregate uncertainty. The interpretation must match the application rather than being assumed automatically.
-- A **correlated equilibrium** allows players' actions to be statistically coordinated through a recommendation/information device while preserving incentive compatibility. Correlation is not the same as independent randomization.
-- An **evolutionary equilibrium** asks whether a strategy is stable against profitable invasion/mutation in a population, adding a selection interpretation that is different from deliberate rational choice.
-- Equilibrium concepts therefore differ in what they assume about information, coordination, learning or selection; choosing the concept is part of modeling the problem.
-
-### Chapter 4 — Rationalizability and dominated actions
-- **Rationalizability** asks which actions remain optimal under some belief about opponents that is itself consistent with common belief in rationality; it does not require beliefs to be correct about an equilibrium.
-- Iterated elimination of strictly dominated actions removes choices that cannot be optimal against any belief consistent with the remaining actions and gives a disciplined simplification procedure.
-- Strict dominance and rationalizability are related but not identical: dominance is a direct payoff comparison, while rationalizability asks whether an action can survive a coherent belief about opponents.
-- Iterated elimination of weakly dominated actions is more fragile: a weakly dominated action can still be a best response to some belief, and the surviving set can depend on the order of elimination.
-- Do not treat “eliminated” as “irrational in every model”; the reason for elimination and the solution concept being used matter.
-
-### Chapter 5 — Knowledge and equilibrium
-- A formal model of knowledge represents what each player can distinguish between states; information is therefore about the set of states a player considers possible, not simply a binary “knows/doesn't know” label.
-- **Common knowledge** is stronger than everyone knowing the same fact: everyone knows it, everyone knows that everyone knows it, and so on without bound.
-- Under the book's common-prior/partitional conditions, players cannot have different posterior beliefs about the same event and have that disagreement be common knowledge. Apparent agreement-to-disagree therefore requires examining which epistemic assumption fails.
-- Solution concepts carry epistemic assumptions. Rationalizability is tied to layers of belief in rationality; equilibrium reasoning adds stronger consistency about beliefs and behavior.
-- The **Electronic Mail Game** shows that extremely high but finite levels of higher-order knowledge can still fail to create the coordination needed for a desirable equilibrium; “almost common knowledge” is not automatically equivalent to common knowledge.
-
-The durable Part I boundary is therefore:
-
-**Model the game → choose the appropriate solution concept → make information/types/beliefs explicit → distinguish equilibrium consistency from rationalizability and knowledge assumptions → check whether the interpretation matches the real decision environment.**
-
-
-## Part II incremental foundations from GT-03
-
-GT-03 Part II moves from static strategic games to sequential interaction, then asks how bargaining, repetition, bounded strategic complexity, and mechanism design change the solution problem.
-
-### Chapter 6 — Extensive Games with Perfect Information
-- An **extensive game** makes the sequence of decisions explicit. Perfect information means each player observes all relevant previous events when acting.
-- **Subgame perfect equilibrium (SPE)** requires optimality after every history/subgame, eliminating Nash equilibria sustained by non-credible future actions.
-- In finite-horizon perfect-information games, the **one-deviation property** reduces SPE verification to checking profitable one-step deviations at each decision history.
-- **Backward induction** is both a constructive solution procedure and an existence result for finite perfect-information games; it does not imply that every finite-horizon or infinite game is solvable by the same procedure.
-- Chance moves and simultaneous moves can be incorporated into the extensive-game model, but the solution properties change; in particular, the existence result for ordinary finite perfect-information games does not automatically extend to simultaneous-move variants.
-- A formal strategy is a complete contingent specification, including actions after histories that the strategy itself may make unreachable. Those off-path components can also be interpreted as beliefs held by other players about how the actor would behave after deviations.
-- The Chain-Store and Centipede games expose a boundary of backward-induction reasoning: the formal solution may conflict with intuitive expectations about reputation, learning, or willingness to continue a mutually beneficial sequence.
-- Iterated elimination of weakly dominated strategies can encode **forward induction** in some extensive games, but the elimination order matters and can destroy SPE outcomes in other orders.
-
-### Chapter 7 — Bargaining Games
-- Alternating-offer bargaining is an extensive game in which the **procedure itself** determines who proposes, who responds, when agreement occurs, and what happens after rejection.
-- With stationary preferences and a valuable passage of time, the SPE outcome is characterized by each player's proposal/acceptance threshold relative to what the other can secure by rejecting and making the next offer.
-- Greater impatience weakens a player's bargaining position; the party that discounts delay less can obtain a larger share of the surplus under the model's assumptions.
-- The model separates **efficient agreement** from the division of the surplus: delay can destroy value even when the eventual agreement is efficient.
-- Variations such as outside options show that an alternative available during bargaining can shift the equilibrium outcome; bargaining power is therefore endogenous to the procedure and fallback opportunities.
-
-### Chapter 8 — Repeated Games
-- Repetition creates a **shadow of the future**: a short-run profitable deviation can be unattractive when it causes sufficiently valuable future cooperation to be lost.
-- The relevant feasible equilibrium payoffs are constrained by both feasibility and **enforceability**: a player must be able to guarantee at least his minmax payoff.
-- **Trigger strategies** support cooperation by conditioning future play on observed deviation. The punishment must itself be credible if SPE, rather than only Nash equilibrium, is required.
-- The Nash folk theorem shows that, under the relevant conditions, sufficiently patient players can sustain a broad set of feasible enforceable payoffs; the perfect folk theorems strengthen this to subgame-perfect outcomes under additional conditions.
-- Punishment need not be permanent. Under suitable payoff criteria, finite punishment followed by restoration of the cooperative path can be enough to deter deviation and avoids making punishers suffer indefinitely.
-- Finitely repeated games are not equivalent to infinitely repeated games. With a known finite endpoint, backward induction can force the final-period equilibrium and can radically restrict cooperation; however, multiple constituent-game equilibria can create credible punishment structures in sufficiently long finite repetitions.
-
-### Chapter 9 — Complexity Considerations in Repeated Games
-- A repeated-game strategy can be represented by a finite-state **machine**. The machine's state space captures the memory/complexity required to implement the strategy.
-- Once complexity is included in preferences, maximizing payoff is no longer the whole objective: a player trades off the payoff generated by the repeated interaction against the cost of maintaining a complex strategy.
-- Equilibrium machines have structural constraints: equilibrium paths have an introductory phase followed by a cycling phase, with finite-state repetition creating predictable structural limits.
-- A strategy that is an equilibrium when complexity is ignored may cease to be optimal when an equally effective but simpler machine exists.
-- Under lexicographic preferences, payoff is primary and complexity secondary; this changes which repeated-game paths survive relative to the standard folk-theorem model.
-
-### Chapter 10 — Implementation Theory
-- Implementation reverses the usual question. Instead of fixing the game and asking which outcomes arise, the planner fixes the desired **choice rule** and designs a game form whose solution outcomes realize it.
-- The implementation problem separates the **outcome rule** from the **mechanism** that induces participants to produce that outcome. The planner may know less than participants and may be able to control rules without directly imposing outcomes.
-- Dominant-strategy implementation is powerful but highly restrictive. With at least three outcomes and unrestricted preferences, the Gibbard–Satterthwaite theorem implies that any onto choice rule that is DSE-implementable is dictatorial.
-- Restricted preference domains can permit non-dictatorial dominant-strategy mechanisms. Groves mechanisms illustrate how payments can make truthful revelation a dominant strategy for certain valuation environments.
-- Nash implementation is less restrictive than dominant-strategy implementation. **Monotonicity** and **no-veto power**, with at least three players, are sufficient for Nash implementation in the model developed in the book.
-- Subgame-perfect implementation extends mechanism design to extensive game forms. Under suitable conditions the book obtains **virtual SPE implementation**, where the desired outcome can be made arbitrarily likely rather than necessarily certain.
-
-The durable Part II boundary is therefore:
-
-**Model the decision sequence → require credible behavior after every relevant history → account for bargaining procedure and fallback options → use repetition to create future incentives → account for the complexity cost of strategies → when the desired outcome is fixed, design the game that makes that outcome emerge.**
-\n\n## Part III incremental foundations from GT-03\n\nGT-03 Part III extends the sequential-game framework to imperfect information. The durable layer is the distinction between information sets, equivalent game representations, mixed versus behavioral strategies, and belief-supported sequential rationality.\n\n### Chapter 11 — Extensive Games with Imperfect Information\n- An **extensive game with imperfect information** represents situations in which a player may not know the exact history when choosing an action. Information sets define the histories the player cannot distinguish.\n- **Perfect recall** matters because the equivalence between mixed and behavioral strategies, and several later equilibrium results, rely on players remembering their own past information and actions.\n- Different extensive-game representations can encode the same strategic situation. The book's equivalence principles preserve the reduced strategic form, so transformations that only change redundant representation should not be mistaken for substantive strategic changes.\n- **Framing effects** are a boundary of purely formal equivalence: two games can be strategically equivalent under the book's rationality principles yet produce different behavior if the framing of the decision problem affects how people act.\n- In finite games with perfect recall, **mixed and behavioral strategies are strategically equivalent** in the sense relevant to Kuhn's theorem; behavioral strategies can therefore represent the same outcome distributions without requiring a player to randomize over complete contingent plans at the start.\n- Nash equilibrium in an extensive game remains a mutual best-response condition, but imperfect information makes the specification of strategies and beliefs about unreached information sets essential for stronger refinements.\n\n### Chapter 12 — Sequential Equilibrium\n- An **assessment** combines a behavioral strategy profile with a belief system assigning beliefs to histories at every information set.\n- **Sequential rationality** requires each player's continuation strategy to be optimal at every information set given the beliefs there, including information sets that are not reached on the equilibrium path.\n- **Consistency** links beliefs to strategies through limits of completely mixed strategy profiles and Bayes' rule; this prevents arbitrary off-path beliefs that cannot be generated by nearby fully supported behavior.\n- A **sequential equilibrium** is an assessment that is both consistent and sequentially rational. It refines Nash equilibrium by making off-path beliefs and continuation behavior part of the solution.\n- With observable actions, **Perfect Bayesian Equilibrium** provides a more application-oriented belief/optimality framework, while still requiring sequential rationality and appropriate Bayesian updating; its restrictions can differ from full sequential consistency.\n- Refinements of sequential equilibrium impose additional restrictions on beliefs at unreached information sets. The purpose is not to add complexity for its own sake, but to eliminate equilibria supported by implausible interpretations of deviations.\n- **Trembling-hand perfect equilibrium** uses the idea that players assign positive probability to small mistakes and asks whether the candidate behavior remains optimal under such perturbations. In extensive games, the relevant construction is tied to the agent strategic form; under perfect recall, trembling-hand perfection is closely related to sequential equilibrium but is not simply interchangeable with it.\n\nThe durable Part III boundary is therefore:\n\n**Model what players know → distinguish representation from framing → use behavioral strategies under perfect recall → attach beliefs to every information set → require sequential rationality and consistency → apply refinements only when the off-path belief problem requires them.**\n
- 
-## Part IV incremental foundations from GT-03
-
-GT-03 Part IV extends game theory from individual strategic behavior to coalition-level feasibility, stability, allocation, and bargaining.
-
-### Chapter 13 — The Core
-- A **coalitional game with transferable payoff (TU)** assigns each coalition the total payoff it can secure, allowing utility to be redistributed among coalition members.
-- The **core** consists of feasible allocations that no coalition can improve upon by leaving and reallocating what it can obtain on its own. It is a coalition-stability concept, not a prediction of the negotiation process.
-- **Nonemptiness of the core** is a substantive property. A game can have no allocation immune to every coalition deviation.
-- In **markets with transferable payoff**, coalition feasibility can connect competitive allocations with core stability under the relevant assumptions.
-- **Non-transferable payoff (NTU)** games cannot summarize coalition outcomes by a single transferable scalar. The feasible payoff set of each coalition must be represented directly.
-- **Exchange economies** provide an economic setting in which coalition feasibility and allocations can be related to market structure.
-
-### Chapter 14 — Stable Sets, the Bargaining Set, and the Shapley Value
-- **Stable sets of von Neumann and Morgenstern** use internal and external stability to describe sets of outcomes that resist specified dominance relations.
-- The **bargaining set, kernel, and nucleolus** provide different ways to evaluate objections, coalition excesses, and how disagreement power is distributed across coalitions.
-- The **Shapley value** allocates the worth of a TU game according to each player's expected marginal contribution across coalition orderings. It is an allocation rule, not a stability test.
-- These solution concepts answer different questions: coalition stability, objection credibility, bargaining power, and marginal contribution should not be treated as interchangeable.
-
-### Chapter 15 — The Nash Solution
-- A **bargaining problem** specifies feasible agreements and a disagreement point. The disagreement point matters because gains are evaluated relative to what happens without agreement.
-- The **Nash solution** selects the feasible agreement maximizing the product of players' gains over disagreement, subject to the bargaining-problem assumptions.
-- The axiomatic treatment separates the solution's properties from any particular bargaining procedure.
-- The alternating-offers model connects the Nash bargaining solution to a strategic bargaining process under appropriate assumptions.
-- **Exact implementation** asks whether a strategic mechanism can generate the Nash solution exactly, rather than merely approximate it.
-
-The durable Part IV boundary is:
-
-**Model coalition feasibility → test core stability → distinguish TU from NTU → choose the appropriate coalition solution concept → model bargaining relative to disagreement → separate axiomatic selection from strategic implementation.**
+Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02)
+
+## 1. Strategic behavior
+
+A decision is strategic when other purposeful decision-makers can respond to the decision and their response affects the outcome.
+
+The key distinction is between:
+- a neutral environment, where the environment does not deliberately respond; and
+- an interactive environment, where other actors have objectives and choices.
+
+Strategic thinking therefore requires considering both your action and the likely response to it.
+
+## 2. Players, strategies, and payoffs
+
+A game can be represented through:
+- players: the decision-makers;
+- strategies: the available courses of action;
+- payoffs/outcomes: how each player values the resulting situation.
+
+The same action can have different value depending on what another player does.
+
+## 3. Dominant strategy
+
+A strategy is dominant when it remains the better choice regardless of the other player's available action.
+
+The books use dominant strategies as an early simplification rule: identify actions that are best independently of the opponent's move before attempting more complex analysis.
+
+## 4. Dominated strategy
+
+A dominated strategy can be ruled out because another available strategy performs better against every relevant action of the opponent.
+
+Eliminating dominated strategies reduces the strategic problem before deeper equilibrium analysis.
+
+## 5. Best response
+
+A player's best response is the action that gives that player the best outcome given the other player's action.
+
+Strategic reasoning often consists of mapping how each player's best response changes as the other's action changes.
+
+## 6. Nash equilibrium
+
+A Nash equilibrium is a combination of strategies in which each player's action is a best response to the other's.
+
+An equilibrium is not automatically the best outcome for every player or for society. Stability and desirability are separate questions.
+
+## 7. Sequential games and backward reasoning
+
+When actions occur in sequence, analyze future responses before choosing the current action.
+
+Practical pattern:
+1. look forward to possible later outcomes;
+2. evaluate those outcomes;
+3. reason backward to determine the current best action.
+
+## 8. Strategic moves
+
+A strategic move deliberately changes another actor's expectations by changing the rules or timing of interaction.
+
+The books distinguish:
+- unconditional moves: act first and fix the action;
+- conditional moves: commit in advance to a response rule.
+
+A strategic move purposefully limits freedom of action because reduced freedom can change the opponent's behavior.
+
+## 9. Threats, promises, warnings, assurances
+
+- Threat: a response rule intended to punish non-cooperation.
+- Promise: a response rule intended to reward cooperation.
+- Warning: information about an action that is already in the actor's interest to take.
+- Assurance: information about an action that is already in the actor's interest to take.
+
+Threats and promises require credibility because they can prescribe actions that would not be optimal after the opponent has already moved.
+
+## 10. Credible commitment
+
+A commitment makes a strategic move believable by changing incentives, limiting the ability to reverse course, or using external mechanisms/agents.
+
+The first book identifies eight commitment devices:
+1. reputation;
+2. contracts;
+3. cutting off communication;
+4. burning bridges;
+5. leaving the outcome to chance;
+6. moving in small steps;
+7. teamwork;
+8. mandated negotiating agents.
+
+The second book expands the same problem through additional cases and mechanisms for making strategic moves credible.
+
+## 11. Prisoners' dilemma
+
+A prisoners' dilemma occurs when each player's individually rational dominant strategy leads to an outcome that is jointly worse than the cooperative outcome.
+
+The strategic problem is not merely recognizing the cooperative outcome. It is designing a mechanism that makes cooperation sustainable despite the incentive to defect.
+
+## 12. Repeated interaction and cooperation
+
+Repeated interaction can change the strategic environment because future consequences can discipline present behavior.
+
+Cooperation depends on detection, attribution, credible punishment, and the value placed on future interactions.
+
+## 13. Mixed strategies and unpredictability
+
+When predictability can be exploited, randomization can have strategic value.
+
+The purpose is to prevent an opponent from reliably predicting and exploiting the next action.
+
+## 14. Brinkmanship
+
+Brinkmanship creates a risk of an undesirable outcome by moving the interaction toward a situation that can get out of control.
+
+It differs from ordinary randomization: randomization varies actions; brinkmanship deliberately introduces uncontrolled risk.
+
+## 15. Information asymmetry
+
+A strategic interaction changes when players do not have the same information.
+
+The relevant questions become:
+- who knows what;
+- what each player knows about the other's information;
+- what can be observed;
+- what can be credibly inferred;
+- whether information is common knowledge.
+
+Private information can change the game even when the underlying preferences and actions are unchanged.
+
+## 16. Common knowledge
+
+Information is common knowledge when the relevant fact is known by all players, each knows that the others know it, and this chain of mutual knowledge continues.
+
+Lack of common knowledge can itself be strategically important. Two players can know the same fact but reach different strategic conclusions if they do not share the same knowledge about what the other knows.
+
+## 17. Signaling
+
+A better-informed player can take an observable action intended to communicate private information.
+
+A useful signal must be interpreted relative to its cost or incentive structure. If the action is equally attractive to every type, it may reveal little.
+
+## 18. Screening
+
+A less-informed player can design choices, offers, contracts, or tests that cause different types of people to select different options.
+
+The objective is not necessarily to ask for the hidden information directly. It is to structure choices so that behavior reveals useful information.
+
+## 19. Winner's curse
+
+In a common-value or uncertain-value auction, winning can itself provide information: the winner may have been the bidder with the most optimistic estimate.
+
+Therefore the event "I won" can be evidence that the initial valuation was too high.
+
+## 20. Auction mechanism design
+
+Different auction rules create different strategic incentives.
+
+The Vickrey/second-price auction is a central example: the highest bidder wins but pays the second-highest bid, making truthful bidding a dominant strategy under the private-value assumptions used in the book.
+
+The broader design principle is:
+
+> Design the rules so that the desired behavior is strategically simple or dominant.
+
+## 21. Bargaining
+
+Bargaining outcomes depend on:
+- who moves first;
+- who can make offers;
+- what happens after rejection;
+- how delay changes value;
+- what each side's alternatives are.
+
+Procedure and timing are strategic variables.
+
+## 22. Voting and agenda control
+
+Voting is not simply preference aggregation. The order in which alternatives are presented and the rules governing choices can affect the final outcome.
+
+Agenda control can therefore be a strategic resource.
+
+## 23. Incentive design
+
+Strategic outcomes are shaped by the incentives created by the rules of the game.
+
+A principal who cannot directly observe or control another actor's behavior can sometimes use contracts or payments to induce behavior or information revelation.
+
+## 24. Games need not be zero-sum
+
+The second book explicitly emphasizes that many real interactions combine conflict and common interests.
+
+A strategic game can produce:
+- win-lose outcomes;
+- lose-lose outcomes;
+- win-win outcomes.
+
+Strategic analysis should therefore identify both conflict and opportunities for joint gain.
+
+## 25. Risk and option value
+
+When failure at a later stage would eliminate remaining options, taking an appropriate risk earlier can preserve the possibility of recovery.
+
+This is a sequencing principle, not a blanket recommendation to take more risk.
+
+
+## 26. Strategic games as simultaneous plans
+
+A strategic game models players choosing plans of action once and for all, with preferences defined over the resulting action profiles. The abstraction is useful because it separates the strategic structure from the application domain.
+
+## 27. Bayesian games and private information
+
+When players have private information, the game must represent both actions and information about types or states. Strategic reasoning therefore depends not only on what players want and can do, but also on what they know and what they believe about others' information.
+
+## 28. Rationalizability
+
+An action is rationalizable when it can be justified as a best response to some beliefs about the other players' behavior that are themselves consistent with rational choice. Iterated elimination removes actions that cannot survive this reasoning process.
+
+## 29. Common knowledge as a strategic condition
+
+Common knowledge is stronger than everyone knowing a fact. It requires the relevant fact to be known, known to be known, and so on through the players. The book uses this structure to connect information assumptions with solution concepts.
+
+## 30. Subgame perfect equilibrium
+
+In an extensive game with perfect information, subgame perfection requires the strategy profile to form a Nash equilibrium in every subgame. It therefore rules out plans that rely on non-credible behavior in later decision nodes.
+
+## 31. Repeated-game strategies
+
+In repeated games, a strategy specifies behavior as a function of the history of previous play. Future interaction can therefore change current incentives, and trigger or punishment strategies can sustain outcomes that are not sustainable in a one-shot game.
+
+## 32. Implementation theory
+
+Implementation theory asks whether a mechanism can be designed so that its equilibrium outcomes produce a desired social choice or outcome. The focus shifts from analyzing a given game to designing a game that induces a target outcome.
+
+## 33. Sequential equilibrium
+
+In extensive games with imperfect information, equilibrium analysis must account for both strategies and beliefs at information sets. Sequential equilibrium combines sequential rationality with consistency of beliefs.
+
+## 34. Coalitional game and the core
+
+A coalitional game evaluates what groups of players can achieve together. An allocation is in the core when no coalition can obtain an outcome that all its members prefer to the proposed allocation.
+
+## 35. Shapley value
+
+The Shapley value assigns each player a payoff based on the player's average marginal contribution across possible orders in which a coalition can form. It is a value concept for distributing cooperative surplus according to marginal contributions.
+
+## 36. Nash bargaining solution
+
+The Nash solution selects an agreement for a two-person bargaining problem using the bargaining set, disagreement outcome, and players' preferences. The book characterizes the solution axiomatically and connects it to alternating-offer bargaining.
+
+## 37. Focal point
+
+A focal point is a salient outcome that helps players coordinate expectations when explicit communication or prior agreement is unavailable. Its effectiveness depends on shared recognition of what makes the outcome prominent or unique in the situation.
+
+## 38. Tacit coordination
+
+Players can coordinate without explicit communication when each can infer the same salient action and expects the other to recognize it as well. The coordination comes from mutually consistent expectations rather than from an explicit message.
+
+## 39. Tacit bargaining
+
+When interests diverge but communication is absent, a salient coordinated outcome can function as an implicit bargaining point. The outcome may favor one party while still being selected because both sides need their expectations to converge.
+
+## 40. Strategic communication
+
+Communication is itself a strategic resource. Sending, receiving, destroying, withholding, or controlling communication can change the structure of a game and the bargaining possibilities available to the players.
+
+## 41. Delegation and mediation as strategic moves
+
+A player can alter an interaction by assigning decisions to an agent or introducing a mediator. The strategic effect comes from changing who acts, what information is available, or which responses become credible.
+
+## 42. Randomized commitment
+
+A commitment can deliberately leave part of the final outcome to chance. The resulting uncertainty can make a threat or promise more credible because the actor no longer has complete control over whether the undesirable or costly consequence occurs.
+
+## 43. Reciprocal fear and surprise attack
+
+In mutual-deterrence situations, each side's fear of being surprised can create incentives to act preemptively. Strategic stability therefore depends not only on offensive capability but also on expectations about the other's incentives and the timing of possible moves.
+
+## GT-04 Part I — Incremental foundations from *The Strategy of Conflict*
+
+Part I adds a strategic layer centered on bargaining power as self-binding, negotiation structure, focal/tacit coordination, communication, limited war, and prior arrangements.
+
+### 44. Bargaining power through self-binding
+
+Bargaining power can come from the ability to bind oneself to a course of action. A constraint can alter the opponent's expectations and therefore the feasible bargaining outcome.
+
+### 45. Negotiation structure is part of the bargaining problem
+
+Institutional and structural features of a negotiation—who moves, what options exist, what commitments are possible, and what information can be exchanged—can change bargaining power independently of the stated preferences.
+
+### 46. Threats and promises are strategic instruments
+
+A threat changes behavior by making an unfavorable response conditional on the other's action; a promise does so by making a favorable response conditional on cooperation. Their strategic force depends on credibility and the structure that supports it.
+
+### 47. Limited conflict can carry bargaining information
+
+When explicit agreement is unavailable, controlled actions or limited conflict can communicate resolve, test expectations, or alter the bargaining situation. The action must therefore be analyzed as both behavior and communication.
+
+### 48. Tacit coordination depends on mutual recognition
+
+Coordination without explicit communication requires more than choosing a reasonable action. Each side must expect the other side to recognize the same salient solution.
+
+### 49. Tacit bargaining is coordination under divergent interests
+
+When interests are not identical, a focal outcome can serve as an implicit bargaining point because both sides benefit from converging on a mutually recognizable arrangement rather than failing to coordinate.
+
+### 50. Prior arrangements can substitute for real-time negotiation
+
+An arrangement established before conflict or uncertainty can constrain later choices and reduce the need for explicit bargaining at the critical moment.
+
+### 51. Communication changes the game itself
+
+Communication is not merely information transfer. The ability to communicate, withhold communication, or destroy communication can alter expectations, commitments, and the set of strategically available outcomes.
+
+## GT-04 Part II — Incremental foundations from *The Strategy of Conflict*
+
+Part II reorients the framework from pure-conflict analysis toward interdependent decision, mixed-motive/coordination games, strategic moves, communication and enforcement, and empirical testing of strategic behavior.
+
+### 52. Interdependent decision as the core strategic problem
+
+In mixed-motive situations, an actor's best action depends on expectations about what another actor will do and what that actor expects in return. Strategic analysis therefore includes reciprocal expectations, not only unilateral optimization.
+
+### 53. Reclassifying games by conflict and common interest
+
+Zero-sum conflict and pure coordination are limiting cases. Mixed-motive games combine conflict over some outcomes with mutual dependence over others, making bargaining and coordination central to the analysis.
+
+### 54. Coordination is a distinct strategic structure
+
+A coordination game can be difficult even when the players' interests are aligned because the players must converge on the same expectation or action. The central problem is coordination, not unilateral incentive optimization.
+
+### 55. Suggestion and mutual perception can focus expectations
+
+Labels, context, conventions, symmetry, salient features, and other perceptual cues can influence which outcome players expect one another to select. These cues matter when they help expectations converge.
+
+### 56. Strategic moves change the structure of the interaction
+
+A strategic move is an action taken to alter another player's expectations or available responses rather than merely to improve the actor's immediate payoff.
+
+### 57. Enforcement makes conditional behavior consequential
+
+Threats and promises affect the game only when the relevant response can be carried out or otherwise enforced. Enforcement therefore belongs inside the strategic model.
+
+### 58. Relinquishing initiative can be strategically useful
+
+Having fewer choices or giving the other side initiative can sometimes improve a player's position by making commitments more credible or transferring responsibility for a costly decision.
+
+### 59. Identification can constrain future choices
+
+Identifying oneself with a particular action, position, role, or commitment can reduce later flexibility and thereby alter the opponent's expectations.
+
+### 60. Delegation changes the decision-maker's incentives
+
+Delegating a decision can alter credibility, information, and the set of responses available to the principal. The strategic effect depends on how the delegate's incentives differ from the principal's.
+
+### 61. Mediation inserts a strategic third party
+
+A mediator can change communication, interpretation, enforcement, or coordination. Mediation should therefore be modeled as a change in the game rather than as neutral assistance.
+
+### 62. Communication can be created, restricted, or destroyed
+
+The ability to communicate is itself a strategic resource. A player can gain or lose leverage by changing who can communicate, what can be communicated, or whether communication remains possible.
+
+### 63. Strategic moves can be represented inside the game
+
+A strategic move can be incorporated into the formal game by expanding the action space, sequence, information structure, or payoff consequences. This makes the move analyzable as part of the game rather than as an external commentary.
+
+### 64. Strategic advantage can be paradoxical
+
+An apparent advantage—such as initiative, information, or freedom of action—can reduce bargaining power when the other side can exploit that flexibility or when the advantage makes a commitment less credible.
+
+### 65. Experimental research is part of strategic theory
+
+Some strategic phenomena, especially perception, norms, communication through actions, and focal coordination, cannot be fully derived from formal structure alone. Experimental evidence can test how participants actually interpret and coordinate within a game.
+
+### 66. Game labels and context can become causal variables
+
+When a non-zero-sum game depends on mutual interpretation, the description, symbols, background story, or framing of the game can influence the expectations that guide play. Such contextual effects are part of the empirical strategic problem rather than automatically irrelevant noise.
