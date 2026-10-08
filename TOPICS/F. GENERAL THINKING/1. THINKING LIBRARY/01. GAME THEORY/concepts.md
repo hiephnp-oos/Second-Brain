@@ -531,3 +531,39 @@ Selection can favor reciprocal interaction patterns even when individual organis
 
 ### 108. Reciprocity can operate across biological levels
 The same strategic logic can describe cooperation or exploitation among organisms, symbionts, or other interacting biological entities when repeated interaction affects payoffs.
+
+
+## GT-05 Part IV — Advice for Participants and Reformers
+
+### 109. Envy can undermine mutually beneficial cooperation
+Comparing one's payoff with the partner's rather than the absolute payoff can create unnecessary defection even when both are gaining.
+
+### 110. Initial cooperation can be strategically valuable
+Defecting first can trigger retaliation and destroy the cooperative environment before reciprocal trust is established.
+
+### 111. Reciprocity should respond to both cooperation and defection
+A stable reciprocal strategy needs to reward cooperation and impose a response to exploitation.
+
+### 112. Strategic simplicity can improve performance
+In repeated interaction, a rule that is clear and predictable can outperform more sophisticated rules because opponents can understand and respond to it.
+
+### 113. Cooperation is easier when the future matters more
+Increasing the expected duration or frequency of future interaction strengthens the incentive to protect current cooperation.
+
+### 114. Decomposing large interactions strengthens reciprocity
+Breaking a large transaction into repeated smaller stages increases opportunities for reciprocal response and reduces the relative gain from one-shot defection.
+
+### 115. Payoff redesign can convert incentives
+Changing rewards, penalties, laws, or institutional constraints can transform a Prisoner's Dilemma so that cooperation becomes individually attractive.
+
+### 116. Altruistic preferences can support cooperation
+When another player's welfare enters an actor's utility function, cooperative behavior can become easier to sustain.
+
+### 117. Teaching reciprocity changes the strategic population
+If more participants adopt effective reciprocal rules, the environment becomes less hospitable to exploitative strategies.
+
+### 118. Recognition is an enabling condition for reciprocity
+The ability to identify counterparties and remember relevant history allows cooperation to be targeted rather than indiscriminate.
+
+### 119. Reform can operate on the game rather than the player
+Cooperation can be promoted by changing interaction frequency, payoffs, preferences, strategy norms, or recognition infrastructure rather than merely persuading individuals.
