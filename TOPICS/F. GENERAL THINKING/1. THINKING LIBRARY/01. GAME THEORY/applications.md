@@ -162,3 +162,27 @@ Use controlled uncertainty as part of a commitment when complete control over th
 
 ### 31. Mutual deterrence and surprise attack
 Model how each side's fear of being attacked first can create pressure for preemption, even when both sides would prefer a stable outcome.
+
+### 32. Bargaining through self-commitment
+Identify which side can credibly restrict its own future choices and whether that restriction changes the opponent's expectations or willingness to concede.
+
+### 33. Negotiation-structure audit
+Before comparing offers, map move order, alternatives, decision rights, commitment opportunities, information channels, and institutional constraints.
+
+### 34. Threat/promise credibility audit
+For every threat or promise, identify the conditional response, then test whether the actor would actually prefer to carry it out after the triggering event.
+
+### 35. Limited-conflict bargaining
+Treat a limited action not only as an attempt to gain a material advantage but also as a possible signal of resolve, a test, or a bargaining move.
+
+### 36. Tacit coordination without communication
+Identify candidate focal outcomes and test whether each side has reason to recognize the same outcome without an explicit message.
+
+### 37. Tacit bargaining under divergent interests
+Separate the parties' conflicting preferences from their common need to coordinate. Test whether a focal arrangement is mutually preferable to failed coordination.
+
+### 38. Prior-arrangement design
+Move important commitments or coordination rules earlier in time when doing so can reduce later uncertainty or strategic pressure.
+
+### 39. Communication-control audit
+Map who can send, receive, block, delay, or destroy information and how those rights change bargaining leverage or coordination.
