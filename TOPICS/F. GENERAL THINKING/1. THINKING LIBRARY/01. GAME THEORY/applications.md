@@ -181,3 +181,28 @@ Map hidden effort, observable outcomes, outcome noise, agent risk tolerance, rel
 
 ## GT-APP-55 — Multiple-principal incentive audit
 List each principal's objective and reward/punishment scheme. Test whether incentives reinforce, partially offset or fully cancel one another.
+
+
+## GT-APP-56 — Strategic-game specification audit
+Before solving a simultaneous interaction, write down players, feasible actions, preferences/payoffs, information and timing. Flag any missing element that could change the solution concept or equilibrium.
+
+## GT-APP-57 — Nash-equilibrium audit
+For each candidate outcome, test every player's unilateral deviation. Then separately test efficiency, uniqueness and equilibrium-selection mechanisms; do not report “Nash equilibrium” as if those questions were answered automatically.
+
+## GT-APP-58 — Type-contingent decision audit
+When information is private, list the possible types/signals and require a strategy for each one. Check beliefs and posterior-dependent incentives before evaluating the aggregate action profile.
+
+## GT-APP-59 — Equilibrium-concept selection audit
+Classify the problem as deterministic equilibrium, mixed randomization, correlated coordination, evolutionary selection, rationalizability, or an epistemic/knowledge problem before choosing the analytical tool.
+
+## GT-APP-60 — Rationalizability / dominance audit
+First remove strictly dominated actions when justified. Then test which remaining actions are rationalizable. If weak dominance is used, record the elimination order and check whether the conclusion changes under another valid order.
+
+## GT-APP-61 — Common-knowledge coordination audit
+For coordination failures, distinguish “everyone knows” from common knowledge. Map the relevant higher-order uncertainty and identify whether the coordination mechanism depends on a shared understanding of that fact.
+
+## GT-APP-62 — Bayesian information audit
+Map state/type, signal, prior, posterior and type-contingent strategy. Test whether the actor's action should change after receiving different information rather than using a single average-case response.
+
+## GT-APP-63 — Almost-common-knowledge risk review
+When a protocol relies on repeated confirmation, escalation, acknowledgements or shared awareness, test the last unresolved level of uncertainty. Do not assume that many confirmations create the same coordination property as common knowledge.
