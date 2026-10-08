@@ -158,3 +158,47 @@ If critical choices can be constrained before uncertainty or conflict arises, so
 
 ## GT-MM-43 — Communication rights are part of bargaining power
 Control over sending, receiving, withholding, or destroying communication can change what commitments and coordination outcomes are feasible.
+
+## GT-04 Part II — Mental models
+
+## GT-MM-44 — Model reciprocal expectations, not just reciprocal actions
+Ask what each player expects the other to do and what each expects the other to expect.
+
+## GT-MM-45 — Locate the game between pure conflict and pure coordination
+Before choosing an analytical tool, identify where the interaction lies on the conflict–common-interest spectrum.
+
+## GT-MM-46 — Coordination failure can occur without conflicting interests
+If players want compatible outcomes but cannot identify the same action, the problem is expectation alignment rather than motivation.
+
+## GT-MM-47 — Search for expectation-focusing cues
+When several outcomes are possible, inspect salience, symmetry, labels, conventions, physical structure, and shared context for cues that could make one outcome mutually recognizable.
+
+## GT-MM-48 — A strategic move changes the opponent's decision problem
+Do not evaluate a move only by its direct payoff. Ask how it changes the other player's expectations, options, incentives, or information.
+
+## GT-MM-49 — Enforcement is part of the threat/promise mechanism
+A conditional response has strategic force only if the surrounding structure makes implementation possible or credible.
+
+## GT-MM-50 — Giving up initiative can improve leverage
+Ask whether controlling the next move is actually useful, or whether transferring the decision can make your position more credible.
+
+## GT-MM-51 — Identification is a form of commitment
+Publicly tying yourself to a position can change the opponent's expectations by reducing your apparent ability to reverse course.
+
+## GT-MM-52 — Delegation is useful when the decision-maker changes the game
+Analyze whether changing the decision-maker changes incentives, information, or constraints.
+
+## GT-MM-53 — A mediator is a game-changing mechanism
+Evaluate what the mediator changes: information, communication, enforcement, interpretation, or incentives.
+
+## GT-MM-54 — Communication channels are strategic infrastructure
+Map who can communicate with whom, what can be withheld, and what happens when communication is blocked or destroyed.
+
+## GT-MM-55 — Formalize the strategic move before judging it
+Add the move to the action sequence, information structure, or payoffs and then re-evaluate equilibrium and credibility.
+
+## GT-MM-56 — More strategic freedom is not always an advantage
+A player may prefer fewer options when flexibility weakens commitment or makes the opponent less willing to trust a stated position.
+
+## GT-MM-57 — Test perception-dependent theory empirically
+When outcomes depend on salience, framing, norms, or mutual recognition, distinguish what follows from formal incentives from what requires behavioral evidence.
