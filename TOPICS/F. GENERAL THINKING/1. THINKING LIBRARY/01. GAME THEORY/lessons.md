@@ -291,3 +291,39 @@ Nash implementation is not guaranteed merely because a desirable choice rule exi
 ## GT-L-95
 Exact and virtual implementation are different engineering targets. If exact implementation is impossible or too restrictive, arbitrarily high probability may still be achievable under a stronger game form.
 \n\n## GT-L-96\nAn information set is not just a diagram convention: it restricts which histories a player can condition on and therefore changes the feasible strategy itself.\n\n## GT-L-97\nPerfect recall is a prerequisite for several clean equivalence results. If players can forget their own relevant history, do not import perfect-recall conclusions unchanged.\n\n## GT-L-98\nEquivalent extensive-game representations preserve specific strategic objects, not necessarily every behavioral implication. Always identify what the equivalence claim actually preserves.\n\n## GT-L-99\nFraming can matter behaviorally even when two formal game representations are strategically equivalent. Keep the formal model and the empirical behavior model separate.\n\n## GT-L-100\nUnder perfect recall, behavioral strategies can reproduce the strategic consequences of mixed strategies. This is an operational simplification, not permission to ignore information-set constraints.\n\n## GT-L-101\nIn imperfect-information games, an equilibrium claim without a belief system is incomplete whenever off-path information sets matter.\n\n## GT-L-102\nSequential rationality requires optimal continuation behavior at every information set, not only on the equilibrium path.\n\n## GT-L-103\nOff-path beliefs must be constrained by consistency; arbitrary beliefs can manufacture equilibria that have no nearby fully mixed interpretation.\n\n## GT-L-104\nPerfect Bayesian and sequential equilibrium are refinements with different belief restrictions. Choose between them by the application and the belief problem being solved.\n\n## GT-L-105\nTrembling-hand perfection tests whether an equilibrium survives small mistakes. It is a robustness refinement, not a replacement for specifying the underlying information structure.\n
+ 
+## GT-L-106
+Coalitional stability requires testing group deviations, not only unilateral best responses.
+
+## GT-L-107
+Transferable payoff is not a harmless notation choice. It determines whether coalition value can be redistributed and therefore which solution concepts are available.
+
+## GT-L-108
+The core is a blocking test: an allocation survives only when no feasible coalition can make all its members better off.
+
+## GT-L-109
+A nonempty core is a substantive existence property. Some games simply have no allocation immune to coalition blocking.
+
+## GT-L-110
+Market-core relationships depend on the economic and transfer assumptions under which the equivalence is derived.
+
+## GT-L-111
+Stable sets, bargaining sets, kernel, nucleolus, and Shapley value are different solution concepts answering different allocation or stability questions.
+
+## GT-L-112
+Coalition objections should be evaluated together with possible counter-objections rather than treated as unilateral deviations.
+
+## GT-L-113
+The Shapley value rewards marginal contribution; it does not by itself certify that the resulting allocation is in the core.
+
+## GT-L-114
+Bargaining analysis is incomplete without the disagreement point because the value of agreement is defined relative to what happens without agreement.
+
+## GT-L-115
+The Nash bargaining solution is not the Nash equilibrium concept from strategic games. One is an axiomatic bargaining solution; the other is a strategic-game equilibrium.
+
+## GT-L-116
+An alternating-offers process can provide a strategic foundation for the Nash bargaining outcome, but only under the assumptions that connect the two models.
+
+## GT-L-117
+Exact implementation is a stronger engineering claim than merely characterizing or selecting a desired outcome.
