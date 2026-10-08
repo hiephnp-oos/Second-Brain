@@ -218,3 +218,49 @@ Part III applies the earlier framework to risk, coordination, voting, bargaining
 - Treat the 14 case studies as application tests of the preceding mechanisms, not as 14 additional mental models.
 - Cases cover information inference, coordination/externalities, strategic timing, auctions/contests, bargaining, voting, and incentives.
 - Durable extraction should preserve the mechanism demonstrated by each case and avoid duplicating the narrative.
+
+
+## Part I incremental foundations from GT-03
+
+GT-03 adds formal structure to the earlier strategic intuition. The useful incremental layer is the distinction between different interpretations and solution concepts, the explicit treatment of private information and beliefs, and the epistemic conditions behind equilibrium reasoning.
+
+### Introduction — formal scope and interpretation
+- Game theory models interactive decision-making in which each player's outcome depends on the choices of other purposeful actors.
+- A **game** specifies the strategic environment; a **solution concept** selects or restricts the outcomes/strategies regarded as consistent with the model.
+- Competitive equilibrium and strategic-game analysis answer related but different questions: a market equilibrium can abstract individual strategic interaction through prices, whereas game theory explicitly models strategic responses.
+- Rational behavior means choosing optimally relative to preferences, feasible actions and beliefs; rationality does not imply that players know the equilibrium or that the equilibrium is unique.
+- The book distinguishes a **steady-state interpretation** of equilibrium from a **deductive interpretation**: equilibrium can be treated either as a regularity learned from repeated experience or as a restriction inferred from rationality in a one-shot situation.
+- **Bounded rationality** is an explicit modeling boundary: a formal equilibrium is a benchmark and should not automatically be treated as a literal description of how people reason.
+
+### Chapter 2 — Nash Equilibrium
+- A **strategic game** represents simultaneous choice through players, action sets and preferences over action profiles; the abstraction is deliberately different from a sequential game tree.
+- A **Nash equilibrium** is a profile in which each player's action is a best response to the others' actions. It is a mutual consistency condition, not a claim that the outcome is socially optimal or uniquely predicted.
+- Existence is model-dependent: finite games have a Nash equilibrium when mixed strategies are allowed, while a pure-strategy equilibrium may fail to exist.
+- **Strictly competitive games** have opposed preference orderings and admit stronger value/minimax structure than general-sum games; conclusions that rely on this structure should not be generalized to ordinary coordination or bargaining games.
+- A **Bayesian game** makes private information explicit through states/types, signals, beliefs and actions. A player's strategy must specify what to do for each type or signal, not merely one action for the average case.
+- Bayesian Nash equilibrium is therefore a Nash equilibrium of the induced type-contingent strategic interaction: each type chooses optimally given its information and beliefs about other types' behavior.
+
+### Chapter 3 — Mixed, Correlated, and Evolutionary Equilibrium
+- A **mixed-strategy Nash equilibrium** assigns probabilities to actions and requires optimality against the resulting distribution, extending equilibrium beyond deterministic action profiles.
+- Mixed strategies have multiple interpretations: deliberate randomization, a steady-state distribution of play, or a representation of aggregate uncertainty. The interpretation must match the application rather than being assumed automatically.
+- A **correlated equilibrium** allows players' actions to be statistically coordinated through a recommendation/information device while preserving incentive compatibility. Correlation is not the same as independent randomization.
+- An **evolutionary equilibrium** asks whether a strategy is stable against profitable invasion/mutation in a population, adding a selection interpretation that is different from deliberate rational choice.
+- Equilibrium concepts therefore differ in what they assume about information, coordination, learning or selection; choosing the concept is part of modeling the problem.
+
+### Chapter 4 — Rationalizability and dominated actions
+- **Rationalizability** asks which actions remain optimal under some belief about opponents that is itself consistent with common belief in rationality; it does not require beliefs to be correct about an equilibrium.
+- Iterated elimination of strictly dominated actions removes choices that cannot be optimal against any belief consistent with the remaining actions and gives a disciplined simplification procedure.
+- Strict dominance and rationalizability are related but not identical: dominance is a direct payoff comparison, while rationalizability asks whether an action can survive a coherent belief about opponents.
+- Iterated elimination of weakly dominated actions is more fragile: a weakly dominated action can still be a best response to some belief, and the surviving set can depend on the order of elimination.
+- Do not treat “eliminated” as “irrational in every model”; the reason for elimination and the solution concept being used matter.
+
+### Chapter 5 — Knowledge and equilibrium
+- A formal model of knowledge represents what each player can distinguish between states; information is therefore about the set of states a player considers possible, not simply a binary “knows/doesn't know” label.
+- **Common knowledge** is stronger than everyone knowing the same fact: everyone knows it, everyone knows that everyone knows it, and so on without bound.
+- Under the book's common-prior/partitional conditions, players cannot have different posterior beliefs about the same event and have that disagreement be common knowledge. Apparent agreement-to-disagree therefore requires examining which epistemic assumption fails.
+- Solution concepts carry epistemic assumptions. Rationalizability is tied to layers of belief in rationality; equilibrium reasoning adds stronger consistency about beliefs and behavior.
+- The **Electronic Mail Game** shows that extremely high but finite levels of higher-order knowledge can still fail to create the coordination needed for a desirable equilibrium; “almost common knowledge” is not automatically equivalent to common knowledge.
+
+The durable Part I boundary is therefore:
+
+**Model the game → choose the appropriate solution concept → make information/types/beliefs explicit → distinguish equilibrium consistency from rationalizability and knowledge assumptions → check whether the interpretation matches the real decision environment.**
