@@ -466,3 +466,35 @@ Reducing weapons or defensive capacity changes vulnerability, incentives, warnin
 ### 83. Surveillance can stabilize or destabilize
 Monitoring can reduce uncertainty while persistent surveillance or defensive overbuilding can also alter expectations and create strategic pressure.
 \n\n## GT-05 Part I — Incremental foundations from *The Evolution of Cooperation*\n\n### 84. Cooperation can emerge without central authority\nCooperation does not require altruistic motives or an external enforcer when the interaction structure creates incentives for mutually beneficial behavior.\n\n### 85. The Prisoner's Dilemma isolates the cooperation problem\nThe core cooperation problem occurs when individual defection is attractive regardless of the other player's action, while mutual cooperation is better for both than mutual defection.\n\n### 86. Self-interest does not eliminate cooperation\nAssuming self-interested actors does not imply universal defection; repeated interaction can make cooperative behavior individually rational.\n\n### 87. Future interaction creates a shadow over current action\nThe possibility of meeting again makes today's behavior affect future responses, changing the effective payoff of cooperation and defection.\n\n### 88. Cooperation depends on interaction continuity\nThe emergence of reciprocity requires a sufficiently meaningful chance of future interaction; when relationships are too short-lived or uncertain, current incentives dominate.\n
+
+## GT-05 Part II — The Emergence of Cooperation
+
+### 89. Strategy performance is environment-dependent
+A strategy cannot be evaluated in isolation; its performance depends on the strategies it encounters and the distribution of those strategies.
+
+### 90. History is an input to repeated-game choice
+Effective reciprocal strategies use the history of interaction to condition current action.
+
+### 91. TIT FOR TAT combines cooperation and reciprocity
+Starting cooperatively and then matching the opponent's previous move creates a simple rule that can sustain mutual cooperation while responding to defection.
+
+### 92. Robustness matters beyond one tournament population
+A strategy's success is more meaningful when it persists across materially different distributions of competing strategies.
+
+### 93. Selection can amplify successful strategies
+When successful strategies become more common and unsuccessful ones less common, repeated selection changes the environment in which strategies compete.
+
+### 94. Collective stability is resistance to invasion
+A strategy can remain established when no alternative strategy can obtain a higher payoff against it than incumbents obtain among themselves.
+
+### 95. Cooperation requires both viability and stability
+A cooperative strategy must first obtain a foothold and then survive competition from alternative strategies.
+
+### 96. Initial footholds can arise through small clusters
+Cooperation may emerge from a small connected group even when isolated cooperative individuals cannot protect themselves.
+
+### 97. Nice strategies can be protected by reciprocity
+Strategies that do not defect first can support one another when they are sufficiently responsive to exploitation.
+
+### 98. Provocability and forgiveness are distinct design dimensions
+A cooperative strategy needs a credible response to exploitation, but excessive retaliation can destroy the cooperation it is meant to protect.
