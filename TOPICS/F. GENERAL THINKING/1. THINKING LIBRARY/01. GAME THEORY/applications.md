@@ -222,3 +222,19 @@ When an observed action seems surprising, ask what earlier strategy choices rema
 
 ## GT-APP-68 — Chain-store / centipede assumption audit
 If backward induction predicts immediate entry, stopping, or defection against a cooperative intuition, identify which assumptions about rationality, information, commitment, reputation, or horizon generate the divergence.
+
+
+## GT-APP-69 — Bargaining-procedure audit v3
+Specify proposer order, response rights, rejection consequence, time cost, outside options, horizon, and agreement set before evaluating bargaining power or settlement.
+
+## GT-APP-70 — Patience / outside-option audit
+Compare each side's continuation value after rejection and cost of waiting. Test how changing either variable shifts the equilibrium acceptance threshold.
+
+## GT-APP-71 — Repeated-cooperation feasibility audit
+Calculate the one-shot deviation gain, continuation loss, minmax payoff, and future-value weight. Accept a cooperation strategy only when the deviation is not profitable.
+
+## GT-APP-72 — Trigger-credibility audit
+After defining a trigger strategy, solve the punishment phase as a separate continuation game. A punishment that is not itself optimal cannot support an SPE claim.
+
+## GT-APP-73 — Finite-vs-infinite horizon audit
+Record whether the interaction has a known endpoint. If finite, solve the terminal stage first and test whether the conclusion propagates backward before importing an infinite-horizon cooperation argument.
