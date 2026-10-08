@@ -110,3 +110,33 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
 - User TOC positions verified against PDF: Chapter 2 at physical page 35 and Chapter 3 at physical page 63; the printed book pagination is offset by 8 pages at these chapter starts.
 - Representative chapter evidence was read directly from the supplied PDF, not inferred from repository summaries.
 - Markdown was used only as retrieval aid; PDF remains source authority.
+
+
+## Part III traceability matrix — verified against supplied BOOK.zip
+
+### Chapter 4 — The Live-and-Let-Live System in Trench Warfare in World War I
+- User TOC page: **79**.
+- Supplied BOOK.zip Markdown places the chapter at printed page **73**; the user's page is the **physical/PDF position**, giving the established **+6 page front-matter offset** for this source package at this chapter boundary.
+- Direct source evidence checked: the local trench interaction is modeled as an iterated Prisoner's Dilemma; repeated encounters between the same small units support reciprocal restraint; cooperation emerged through recurring routines, timing, weather, and other coordination cues; direct fraternization/truces were vulnerable to suppression by higher command; local incentives differed from the national-level attrition game.
+- Covered knowledge: GT-05 #99–103; GT-MM-96–99; GT-APP-88–91; GT-L-88–91.
+- Coverage: **1/1 chapter unit = 100%**.
+
+### Chapter 5 — The Evolution of Cooperation in Biological Systems (with William D. Hamilton)
+- User TOC page: **94**.
+- Supplied BOOK.zip Markdown places the chapter at printed page **88**; the user's page is the physical/PDF position, again giving the **+6 page front-matter offset**.
+- Direct source evidence checked: reciprocal cooperation without conscious foresight; recognition and repeated association; fixed meeting places/territoriality as substitutes for extensive recognition; mutualisms under persistent association; free-mixing/transitory interaction increasing exploitation; the stability threshold for the relative value of future interaction; biological transitions between mutualism and parasitism; extension of the iterated Prisoner's Dilemma to biological systems.
+- Covered knowledge: GT-05 #103–108; GT-MM-99–103; GT-APP-91–95; GT-L-92–95.
+- Coverage: **1/1 chapter unit = 100%**.
+
+### Part III acceptance result
+**2/2 substantive chapter units = 100% source-verified.**
+
+### BOOK.zip evidence — Part III
+- BOOK.zip was directly opened and inspected.
+- Exact source pair confirmed: 05 - The Evolution of Cooperation.pdf + 05 - The Evolution of Cooperation.md.
+- PDF confirmed at **243 pages**.
+- The supplied Contents confirms Part III consists exactly of Chapters **4–5**.
+- Chapter 4 source heading and body were checked directly.
+- Chapter 5 source heading and body were checked directly.
+- PDF remains canonical; Markdown was used to retrieve and inspect the chapter text.
+- The repository traceability matrix records the chapter-level acceptance and the promoted knowledge IDs.
