@@ -97,3 +97,13 @@ The incremental knowledge promoted here is:
 ### Preface / Introduction
 - Source scope: game theory, games versus solution concepts, rational behavior, steady-state versus deductive interpretations, and bounded rationality.
 - Promoted: formal modeling boundary and interpretation boundary.
+
+### Chapter 2 — Nash Equilibrium
+- Sections: strategic games; Nash equilibrium; examples; existence; strictly competitive games; Bayesian games.
+- Promoted: strategic-game representation, mutual best response, existence scope, strictly competitive structure, and type/signal/belief representation.
+- Operational links: GT-MM-85 through GT-MM-89; GT-APP-56 through GT-APP-58 and GT-APP-62; GT-L-67 through GT-L-71.
+
+### Chapter 3 — Mixed, Correlated, and Evolutionary Equilibrium
+- Sections: mixed strategy Nash equilibrium; interpretations; correlated equilibrium; evolutionary equilibrium.
+- Promoted: mixed-strategy interpretation, correlated coordination, and evolutionary selection.
+- Operational links: GT-MM-90 through GT-MM-92; GT-APP-59; GT-L-72 and GT-L-73.
