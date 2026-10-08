@@ -441,3 +441,27 @@ Reducing weapons or defensive capacity changes vulnerability, incentives, warnin
 
 ### 83. Surveillance can stabilize or destabilize
 Longer-term surveillance can reduce uncertainty, but persistent monitoring and defensive overbuilding can also alter the opponent's expectations and create new strategic pressures.
+
+
+## GT-04 Part IV — Incremental foundations
+
+### 77. Reciprocal fear can generate endogenous attack probability
+Each side's defensive response can change the other's estimate and behavior, so attack probability is part of the interaction rather than a fixed input.
+
+### 78. Misapprehension can become a strategic cause
+An event can have strategic consequences because it is interpreted as an attack even when it was not intended as one.
+
+### 79. Imperfect warning systems convert technical error into strategic behavior
+False alarms, missed signals, and uncertain detection can alter estimated attack probability and rational behavior.
+
+### 80. Reciprocal misapprehension can be self-reinforcing
+Each side can interpret the other's defensive preparation as evidence of offensive intent, causing further preparation and increasing escalation risk.
+
+### 81. Multi-player surprise-attack problems are not simple bilateral games
+Adding actors changes incentives, information, and expectations.
+
+### 82. Disarmament changes the strategic problem, not just the weapons count
+Reducing weapons or defensive capacity changes vulnerability, incentives, warning requirements, and expectations.
+
+### 83. Surveillance can stabilize or destabilize
+Monitoring can reduce uncertainty while persistent surveillance or defensive overbuilding can also alter expectations and create strategic pressure.
