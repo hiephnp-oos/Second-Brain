@@ -225,3 +225,59 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
 | **Parts I–V** | **19/19** | **100%** |
 
 Appendices A–B remain outside the current substantive Part I–V acceptance scope and have **not** been promoted into the knowledge layer yet.
+
+## Back matter verification — Appendices, Notes, Bibliography, Index
+
+### Appendix A — Tournament Results
+- User TOC page: **194**; supplied PDF physical page **194** begins Appendix A.
+- Source role: **supporting empirical evidence**, not a separate conceptual chapter.
+- Direct PDF evidence checked across physical pages **194–207**: detailed first- and second-round tournament tables; pairwise score matrices; compressed score coding; hypothetical tournament variants; altered constituency/population tests; and the finding that TIT FOR TAT won five of six major variants and ranked second in the remaining variant.
+- Decision: **included in source verification, not promoted as a duplicate table/data layer**.
+- Existing Part II knowledge already captures the reusable conclusions; Appendix A strengthens the evidence for robustness and population-dependence rather than requiring another parallel knowledge set.
+- Traceability: supports GT-05 #89–93 and GT-MM-87–95 / GT-APP-79–87 / GT-L-79–87.
+- Coverage: **1/1 supporting appendix = verified**.
+
+### Appendix B — Proofs of the Theoretical Propositions
+- User TOC page: **208**; supplied PDF physical page **208** begins Appendix B.
+- Source role: **formal proof/validation appendix**, not a separate conceptual chapter.
+- Direct PDF evidence checked across physical pages **208–217**: propositions 1–8, including the no-single-best-strategy result, TIT FOR TAT collective stability threshold, invasion by ALL D, conditions for nice-strategy stability, collective stability of ALL D, strategies capable of invading ALL D, and the relationship between collective and territorial stability.
+- Decision: **included in source verification, but proofs are not copied into the knowledge layer**.
+- Existing concepts and lessons already capture the reusable theoretical propositions; the appendix is retained as formal source traceability and validation rather than duplicated derivation.
+- Traceability: supports GT-05 #84–88, #89–95, #103–108, and #126–129 where the corresponding propositions are used.
+- Coverage: **1/1 supporting appendix = verified**.
+
+### Notes
+- User TOC pages: **218–224**.
+- All chapter note sections were verified as present for Chapters 1–9, followed by notes for Appendix A and Appendix B.
+- Notes are treated as **source annotation and evidence**, not independent knowledge units.
+- Decision: **verified for completeness; not promoted into concepts/mental-models/applications/lessons**.
+- Reason: promoting notes independently would duplicate chapter-level content and citation context rather than improve retrieval.
+- Coverage: **11/11 note sections = verified as supporting apparatus**.
+
+### Bibliography
+- User TOC page: **225**.
+- Direct PDF boundary verified: bibliography begins at physical page **225** and continues before the Index.
+- Decision: **included as source provenance/reference apparatus; no knowledge promotion**.
+- The bibliography identifies the external literature underlying the book and should remain represented by the book's source boundary rather than copied into the Game Theory knowledge layer.
+- Coverage: **bibliographic section present and verified**.
+
+### Index
+- User TOC page: **232**.
+- Direct PDF boundary verified: Index begins at physical page **232** and runs through the back matter before the final publisher page.
+- Decision: **verified as retrieval/navigation apparatus; no knowledge promotion**.
+- Coverage: **index present and verified**.
+
+## Book 5 final acceptance
+
+| Scope | Coverage | Treatment |
+|---|---:|---|
+| Parts I–V substantive content | **19/19 = 100%** | Distilled into knowledge layer + source traceability |
+| Appendix A | **1/1 = verified** | Evidence source; no duplicate tables |
+| Appendix B | **1/1 = verified** | Formal proof source; no duplicate derivations |
+| Notes | **11/11 = verified** | Supporting annotations only |
+| Bibliography | **1/1 = verified** | Provenance/reference apparatus |
+| Index | **1/1 = verified** | Navigation apparatus |
+| **Book 5 controlled extraction scope** | **Complete** | **Accepted** |
+
+### Final source-boundary decision
+Book 5 is now **structurally complete for controlled knowledge extraction**. The substantive knowledge layer covers Parts I–V. Appendices A–B are retained as evidence/proof traceability. Notes, Bibliography, and Index are verified as supporting back matter and are intentionally not promoted as independent knowledge units.
