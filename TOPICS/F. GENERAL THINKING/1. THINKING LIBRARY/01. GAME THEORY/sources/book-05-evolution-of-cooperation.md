@@ -74,7 +74,7 @@ GT-05 is treated as an extension of the repeated-game and cooperation foundation
 - User TOC page: 12; PDF physical page position corresponds to the supplied source package. The printed book page numbering begins at 3 for Chapter 1.
 - Coverage unit: the chapter-level substantive unit, because the supplied TOC does not expose numbered subsections inside Chapter 1.
 - Promoted: cooperation without central authority; Prisoner's Dilemma as the canonical cooperation problem; self-interest versus collective outcome; repeated interaction; the shadow of the future; continuity/probability of future encounters; cooperation without requiring altruism or friendship.
-- Operational links: GT-04 #84–88; GT-MM-82–86; GT-APP-74–78; GT-L-74–78.
+- Operational links: GT-05 #84–88; GT-MM-82–86; GT-APP-74–78; GT-L-74–78.
 
 ### Part I acceptance result
 **1/1 substantive chapter unit = 100% source-verified.**
