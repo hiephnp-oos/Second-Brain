@@ -351,3 +351,37 @@ Map organisms, symbionts, or competing biological agents into repeated-game role
 
 ### 95. Cooperation-without-foresight test
 Check whether the observed cooperative pattern can be explained by selection and repeated interaction without assuming conscious planning or altruistic intent.
+
+
+## GT-05 Part IV — Incremental applications
+
+### 96. Relative-payoff audit
+Check whether perceived unfairness comes from absolute losses or from the partner earning more; use the distinction to diagnose unnecessary competitive behavior.
+
+### 97. First-move risk audit
+Compare the expected long-run consequences of cooperating first versus defecting first in a repeated relationship.
+
+### 98. Reciprocity rule audit
+Test whether a cooperation mechanism both rewards cooperation and reliably responds to defection.
+
+### 99. Strategy-complexity audit
+Assess whether participants can understand, execute, and predict a proposed strategy well enough for it to function in repeated interaction.
+
+### 100. Future-shadow intervention
+Identify practical ways to increase relationship duration, encounter frequency, or continuity when cooperation is strategically valuable.
+
+### 101. Interaction-decomposition design
+Convert a large transaction or commitment into smaller sequential stages where performance can be observed and reciprocal response remains possible.
+
+### 102. Incentive-redesign audit
+Identify whether laws, contracts, rewards, penalties, or institutional rules can change the payoff structure enough to make cooperation sustainable.
+
+### 103. Preference-design audit
+Assess whether education, norms, or socialization can increase concern for others' welfare and thereby support cooperative behavior.
+
+### 104. Reciprocity-diffusion intervention
+Test whether teaching or spreading effective reciprocal strategies improves both individual outcomes and the surrounding strategic population.
+
+### 105. Recognition-system audit
+Check whether participants can reliably identify counterparties, retain relevant history, and distinguish repeated partners from strangers.
+
