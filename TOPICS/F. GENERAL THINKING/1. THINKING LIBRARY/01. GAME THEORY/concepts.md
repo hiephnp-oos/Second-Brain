@@ -417,3 +417,27 @@ Brinkmanship deliberately creates a recognizable risk of an undesirable outcome 
 ### 76. Imperfect decision processes can generate strategic uncertainty
 
 Crisis decisions are made through imperfect systems involving multiple decision-makers, delegation, incomplete information, procedural friction, and possible error. These imperfections can become part of the strategic environment rather than being treated as irrelevant noise.
+
+
+## GT-04 Part IV — Incremental foundations from The Strategy of Conflict
+
+### 77. Reciprocal fear can generate endogenous attack probability
+When each side fears that the other may attack first, attack probability is not simply an external parameter. Each side's defensive response can change the other's estimate and behavior.
+
+### 78. Misapprehension can become a strategic cause
+An event can have strategic consequences because it is interpreted as an attack even when it was not intended as one.
+
+### 79. Imperfect warning systems convert technical error into strategic behavior
+False alarms, missed signals, and uncertain detection can alter estimated attack probability and rational behavior.
+
+### 80. Reciprocal misapprehension can be self-reinforcing
+Each side can interpret the other's defensive preparation as evidence of offensive intent, causing further preparation and increasing escalation risk.
+
+### 81. Multi-player surprise-attack problems are not simple bilateral games
+Adding actors changes incentives, information, and expectations because each decision depends on a wider network of possible actions and interpretations.
+
+### 82. Disarmament changes the strategic problem, not just the weapons count
+Reducing weapons or defensive capacity changes vulnerability, incentives, warning requirements, and expectations.
+
+### 83. Surveillance can stabilize or destabilize
+Longer-term surveillance can reduce uncertainty, but persistent monitoring and defensive overbuilding can also alter the opponent's expectations and create new strategic pressures.
