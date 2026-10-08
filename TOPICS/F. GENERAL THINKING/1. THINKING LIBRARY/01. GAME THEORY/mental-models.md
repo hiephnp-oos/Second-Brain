@@ -310,3 +310,30 @@ If cooperative behavior cannot survive as isolated individuals, test whether loc
 
 ### GT-MM-95 — Balance niceness with provocability
 Cooperation benefits from not defecting first, but sustainability requires an ability to respond to exploitation.
+
+
+## GT-05 Part III — Mental models
+
+### GT-MM-96 — Separate local game from system-level game
+Model the incentives of the actors actually interacting before importing incentives from the larger organization.
+
+### GT-MM-97 — Look for repetition hidden inside stable structure
+When the same actors or locations repeatedly meet, test whether a one-shot dilemma has become an iterated game.
+
+### GT-MM-98 — Search for low-cost coordination signals
+Identify routines, timing, environmental cues, or reciprocal restraint that can initiate cooperation without a formal agreement.
+
+### GT-MM-99 — Audit recognition requirements
+Ask whether actors can identify counterpart behavior well enough to condition future responses.
+
+### GT-MM-100 — Use structure as a substitute for cognition
+When recognition is difficult, test whether fixed pairing, location, or territorial boundaries provide the needed continuity.
+
+### GT-MM-101 — Treat future-interaction value as dynamic
+Do not assume the shadow of the future is constant; changes in health, age, mobility, or relationship continuity can alter cooperation incentives.
+
+### GT-MM-102 — Distinguish foresight from selection
+A cooperative pattern can persist because selection favors it even when individual participants do not consciously anticipate future benefits.
+
+### GT-MM-103 — Extend the repeated-game lens across biological systems
+When organisms or symbionts repeatedly interact, test whether reciprocity and exploitation can be represented with the same strategic structure.
