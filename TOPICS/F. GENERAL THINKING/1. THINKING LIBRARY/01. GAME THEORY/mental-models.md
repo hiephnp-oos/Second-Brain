@@ -251,3 +251,52 @@ When several principals impose conflicting reward structures, each can offset th
 
 ## GT-MM-84 — Intrinsic and extrinsic incentives can interact
 Adding a monetary incentive is not automatically beneficial. The size and framing of an external reward can alter the intrinsic motivation that was already present.
+
+
+## GT-MM-85 — Formalize before solving
+Before applying a solution concept, specify players, actions, preferences/payoffs, information and timing. If the model is underspecified, the apparent equilibrium may be an artifact of the missing assumptions.
+
+## GT-MM-86 — Nash equilibrium is mutual consistency, not desirability
+A Nash equilibrium means no player wants to deviate unilaterally given the others' actions. It does not imply efficiency, fairness, uniqueness, or social desirability.
+
+## GT-MM-87 — Check the existence claim's domain
+Do not infer that a pure equilibrium exists because a Nash equilibrium exists. Existence results depend on the strategy space and whether mixed strategies are admitted.
+
+## GT-MM-88 — Strict competition is a special structure
+Minimax/value-style conclusions from strictly competitive games should not be exported to general-sum games where players can have both conflict and common interest.
+
+## GT-MM-89 — Strategy must condition on private type
+When a player has private information, the relevant strategy specifies behavior for each type/signal. Do not replace a type-contingent decision with one action based on an average case.
+
+## GT-MM-90 — Mixed, correlated, and evolutionary equilibrium answer different questions
+Mixed equilibrium models randomized behavior, correlated equilibrium models incentive-compatible coordination through information/recommendations, and evolutionary equilibrium models population stability. Choose the interpretation before using the result.
+
+## GT-MM-91 — Correlation can coordinate without independent randomization
+A common recommendation or signal can coordinate players' actions while each player still has no incentive to deviate after conditioning on the recommendation.
+
+## GT-MM-92 — Evolutionary stability is not deliberate rationality
+A strategy can be selected for population stability without assuming that each participant consciously computes an equilibrium. Separate strategic optimization from evolutionary selection.
+
+## GT-MM-93 — Rationalizability is weaker than Nash equilibrium
+An action can be rationalizable because it is a best response to some coherent belief about others, even when that belief does not correspond to a mutual best-response equilibrium.
+
+## GT-MM-94 — Strict dominance is a safe simplification layer
+An action that is strictly dominated cannot be optimal against any belief over the opponent's remaining actions. Iterated strict-dominance elimination is therefore a stronger simplification than merely guessing an opponent's behavior.
+
+## GT-MM-95 — Weak dominance requires procedural caution
+Weakly dominated actions can still be best responses to some beliefs, and iterated elimination can depend on the order in which actions are removed. Record the elimination path before treating the survivor set as a robust prediction.
+
+## GT-MM-96 — Knowledge is a state-space restriction
+Ask which states each player considers possible. “Information” changes the feasible belief set and therefore changes strategic behavior even when payoffs and actions are unchanged.
+
+## GT-MM-97 — Common knowledge is an infinite hierarchy
+A fact being known by everyone is not enough for common knowledge. Coordination may depend on arbitrarily high orders of “I know that you know...”.
+
+## GT-MM-98 — Agreement requires an epistemic audit
+If two rational actors appear to disagree about the same probability, check the common-prior, information and common-knowledge assumptions before concluding that they have found a stable disagreement.
+
+## GT-MM-99 — Solution concepts encode belief assumptions
+Nash, rationalizability and later refinements differ partly in what they assume players know about the game, each other's rationality, and each other's beliefs. Do not compare solution concepts as if they were interchangeable labels.
+
+## GT-MM-100 — Almost common knowledge can be strategically insufficient
+A very high but finite chain of mutual knowledge may fail to coordinate behavior when the equilibrium depends on the chain being common knowledge. Test the terminal uncertainty rather than assuming that “nearly certain” is operationally equivalent to common knowledge.
