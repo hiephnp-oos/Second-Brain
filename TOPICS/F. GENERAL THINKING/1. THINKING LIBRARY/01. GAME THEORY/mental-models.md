@@ -235,3 +235,48 @@ In escalation problems, identify incremental moves that progressively increase r
 
 ### GT-MM-67 — Model the decision system itself
 When outcomes depend on imperfect institutional or human decision processes, include delegation, procedural delays, multiple decision-makers, false alarms, and error as strategic variables.
+
+
+## GT-04 Part IV — Mental models
+
+### GT-MM-68 — Make probabilities endogenous
+If one side's behavior changes the other's fear, model attack probability as an output of the interaction rather than a fixed input.
+
+### GT-MM-69 — Solve reciprocal fear as a feedback loop
+Map fear -> defensive action -> observed signal -> revised fear -> further action.
+
+### GT-MM-70 — Timing can change preemption incentives
+Compare simultaneous and sequential structures before assuming the same equilibrium applies.
+
+### GT-MM-71 — Re-test the model after changing an assumption
+When a strategic paradox appears, identify which information, timing, probability, or behavior assumption produces it.
+
+### GT-MM-72 — Treat warning-system errors as strategic variables
+False alarms and missed detection can alter rational behavior when the stakes of surprise attack are high.
+
+### GT-MM-73 — Model parameter adjustment over time
+When beliefs or system characteristics change, analyze how behavior adjusts rather than treating the initial equilibrium as permanent.
+
+### GT-MM-74 — Tacit structure can emerge without agreement
+A stable reciprocal pattern can exist even when players never explicitly coordinate.
+
+### GT-MM-75 — Search for bargaining inside catastrophic conflict
+Even adversarial interactions can contain a shared interest in avoiding a mutually destructive outcome.
+
+### GT-MM-76 — Add players before generalizing a bilateral result
+A two-player result may change materially when a third actor alters information, incentives, or timing.
+
+### GT-MM-77 — Evaluate disarmament as a game transformation
+Compare vulnerability, incentives, verification, warning, and reciprocal expectations, not weapon counts alone.
+
+### GT-MM-78 — Separate event from interpretation
+Model both what happened and what each player believes happened.
+
+### GT-MM-79 — Audit ambiguity during limited conflict
+Ask which actions can plausibly be interpreted as attack, preparation, accident, or defense.
+
+### GT-MM-80 — Look for reciprocal misinterpretation
+If each side can interpret the other's defensive move as offensive, escalation can become self-reinforcing.
+
+### GT-MM-81 — Surveillance has second-order strategic effects
+Information collection may reduce uncertainty while simultaneously changing the behavior being observed.
