@@ -222,3 +222,69 @@ All **10 substantive numbered sections** in the Part III bookmark are explicitly
 
 ### Part IV acceptance result
 All **15 substantive numbered sections** in the Part IV bookmark are explicitly traceable to durable knowledge objects. Formal proofs, coalition-value calculations, and theorem derivations remain source-level material.
+
+
+## Source provenance — re-verified from supplied BOOK.zip
+
+This full-book re-verification uses the user-supplied intake pair:
+- `03 - A Course in Game Theory.pdf`
+- `03 - A Course in Game Theory.md`
+
+The supplied PDF contains 368 pages and the supplied Markdown identifies the same 1994 MIT Press work by Martin J. Osborne and Ariel Rubinstein (2011-01-19 electronic version). The PDF is the source authority; Markdown is only an extraction/retrieval aid.
+
+The user-supplied TOC was reconciled with the supplied PDF. The user page numbers are the physical/PDF page positions; the printed book page numbers in the PDF contents are offset because the front matter is unnumbered/roman-numbered. The section hierarchy and reading order match.
+
+No web-hosted PDF was used as source authority for this re-verification.
+
+## Full-book re-verification matrix
+
+The coverage unit is each named substantive numbered section. Preface, Notes, part headings, List of Results, References, and Index are structural/support material and are not counted as substantive coverage units.
+
+| Part | Chapters | Substantive sections | Before source re-verification | After source re-verification |
+|---|---|---:|---:|---:|
+| Introduction | Ch1 | 7 | 0/7 = 0% | **7/7 = 100%** |
+| I Strategic Games | Ch2–5 | 18 | 0/18 = 0% | **18/18 = 100%** |
+| II Extensive Games with Perfect Information | Ch6–10 | 29 | 0/29 = 0% | **29/29 = 100%** |
+| III Extensive Games with Imperfect Information | Ch11–12 | 10 | 0/10 = 0% | **10/10 = 100%** |
+| IV Coalitional Games | Ch13–15 | 15 | 0/15 = 0% | **15/15 = 100%** |
+| **Total** | **Ch1–15** | **79** | **0/79 = 0%** | **79/79 = 100%** |
+
+### Section-level verification
+
+- Ch1: 1.1–1.7 → **7/7**.
+- Ch2: 2.1–2.6 → **6/6**.
+- Ch3: 3.1–3.4 → **4/4**.
+- Ch4: 4.1–4.3 → **3/3**.
+- Ch5: 5.1–5.5 → **5/5**.
+- Ch6: 6.1–6.6 → **6/6**.
+- Ch7: 7.1–7.4 → **4/4**.
+- Ch8: 8.1–8.10 → **10/10**.
+- Ch9: 9.1–9.4 → **4/4**.
+- Ch10: 10.1–10.5 → **5/5**.
+- Ch11: 11.1–11.5 → **5/5**.
+- Ch12: 12.1–12.5 → **5/5**.
+- Ch13: 13.1–13.6 → **6/6**.
+- Ch14: 14.1–14.4 → **4/4**.
+- Ch15: 15.1–15.5 → **5/5**.
+
+### Content validation boundary
+
+The verification checks that each substantive section has a durable source-derived reasoning distinction and an operational mapping in the existing GT-03 knowledge layer. Formal proofs, theorem derivations, payoff arithmetic, game trees, and long mathematical examples remain source-level material rather than duplicated repository content.
+
+The supplied PDF was also checked for the representative formal structures already claimed by the source matrix: strategic games and Nash equilibrium; mixed/correlated/evolutionary equilibrium; rationalizability and dominance elimination; knowledge/common knowledge; extensive games and subgame perfection; bargaining and repeated games; complexity and implementation; imperfect-information games and sequential equilibrium; the core and cooperative solution concepts; and the Nash bargaining solution.
+
+### Acceptance result — BOOK.zip re-verification
+
+**Introduction: 7/7 = 100%**
+
+**Part I: 18/18 = 100%**
+
+**Part II: 29/29 = 100%**
+
+**Part III: 10/10 = 100%**
+
+**Part IV: 15/15 = 100%**
+
+**Book 3 total: 79/79 = 100%**
+
+The previous structural acceptance remains valid, but this entry supersedes its source-validation status: Book 3 is now explicitly re-verified against the user-supplied `BOOK.zip` source pair.
