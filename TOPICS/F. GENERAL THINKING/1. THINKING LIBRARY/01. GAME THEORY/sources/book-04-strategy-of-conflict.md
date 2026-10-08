@@ -119,3 +119,31 @@ Part II contains 15 substantive TOC units: three in Chapter 4, eleven in Chapter
 - Chapter 6 adds the empirical boundary: perception-, framing-, norm-, and focal-point effects cannot always be established by formal deduction alone.
 - Existing GT-04 Part I knowledge was not counted as Part II coverage unless the Part II section adds a distinct reasoning layer.
 - Formal source calculations, experimental protocols, and full historical cases remain source-level.
+
+
+## Part III traceability matrix
+
+Part III contains 10 substantive TOC units: three in Chapter 7 and seven in Chapter 8. The coverage unit is the named substantive TOC unit, not page count or theorem count.
+
+| Source section | Promoted knowledge | Mental models | Applications | Lessons |
+|---|---|---|---|---|
+| Ch7 — Randomization of Promises and Threats | randomization in nonzero-sum strategy can scale or reshape commitments rather than merely hide actions | GT-MM-58 | GT-APP-50 | GT-L-50 |
+| Ch7 — The Risk of Failure | moderate/probabilistic threats can reduce the cost of threat failure while preserving deterrent effect | GT-MM-59, GT-MM-64 | GT-APP-50 | GT-L-50 |
+| Ch7 — The Risk of Inadvertent Fulfillment | accidental or premature fulfillment is a separate cost that can justify moderating a threat | GT-MM-59, GT-MM-63 | GT-APP-51 | GT-L-51 |
+| Ch7 — Randomized Commitments | commitment to a lottery can create an intermediate strategic outcome, but only if the random mechanism is credible before the opponent responds | GT-MM-60 | GT-APP-52 | GT-L-52 |
+| Ch8 — The Threat That Leaves Something to Chance | uncertainty outside the threatener's complete control can make a probabilistic threat credible | GT-MM-61, GT-MM-64 | GT-APP-53, GT-APP-55 | GT-L-53, GT-L-55 |
+| Ch8 — The Threat of Inadvertent War | accidental escalation, false alarms, misinterpretation, and imperfect control can become strategic risk | GT-MM-62, GT-MM-63 | GT-APP-54, GT-APP-58 | GT-L-54, GT-L-58 |
+| Ch8 — Limited War as a Generator of Risk | limited conflict can generate a nonzero escalation risk that affects strategic behavior | GT-MM-62 | GT-APP-54 | GT-L-54 |
+| Ch8 — Risky Behavior in Limited War | deliberate acceptance of bounded risk can communicate resolve and influence the opponent | GT-MM-64 | GT-APP-55 | GT-L-55 |
+| Ch8 — Reprisal and Harassment | incremental or reciprocal actions can increase exposure to shared risk and alter the opponent's expected consequences | GT-MM-65, GT-MM-66 | GT-APP-57 | GT-L-56, GT-L-57 |
+| Ch8 — Risky Behavior and “Compellent” Threats | compellent threats can use risk to induce a change in the opponent's behavior rather than merely deter a future action | GT-MM-64, GT-MM-65 | GT-APP-55, GT-APP-56 | GT-L-55, GT-L-56 |
+| Ch8 — Brinkmanship | deliberate creation of recognizable shared risk can induce accommodation while preserving a path to pull back | GT-MM-65, GT-MM-66 | GT-APP-56, GT-APP-57 | GT-L-56, GT-L-57 |
+| Ch8 — The Imperfect Process of Decision | multiple decision-makers, delegation, procedural limits, false alarms, and error can create uncontrollable strategic uncertainty | GT-MM-67 | GT-APP-58 | GT-L-58 |
+
+### Part III acceptance
+
+- All 10 substantive Part III TOC units are explicitly traceable.
+- Existing GT-04 #42 (randomized commitment) and #14/GT-MM-11 (brinkmanship) were not treated as sufficient by themselves; Part III adds the source-specific layers for threat calibration, inadvertent fulfillment, external risk generation, escalation, compellent use, and imperfect decision processes.
+- The coverage unit is the named substantive TOC section, not page count or theorem count.
+- Historical nuclear/military cases and formal payoff calculations remain source-level unless they produce a reusable reasoning pattern.
+- The source PDF remains authoritative where extraction wording or hierarchy differs.
