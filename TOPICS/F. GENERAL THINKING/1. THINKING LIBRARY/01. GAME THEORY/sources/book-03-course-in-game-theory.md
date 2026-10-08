@@ -170,3 +170,25 @@ Part I is accepted when each substantive section leaves a durable reasoning dist
 
 ### Part II acceptance result
 All **29 substantive numbered sections** in the Part II bookmark are explicitly traceable to durable knowledge objects. Formal proofs, theorem derivations, and game-tree arithmetic remain source-level material rather than duplicated repository content.
+
+
+## Part III traceability matrix
+
+### Chapter 11 — Extensive Games with Imperfect Information
+- 11.1 Extensive Games with Imperfect Information → information sets, imperfect information, and perfect recall.
+- 11.2 Principles for the Equivalence of Extensive Games → representation-equivalence principles and preservation of reduced strategic form.
+- 11.3 Framing Effects and the Equivalence of Extensive Games → boundary between formal strategic equivalence and behavior affected by framing.
+- 11.4 Mixed and Behavioral Strategies → mixed/behavioral equivalence under perfect recall.
+- 11.5 Nash Equilibrium → Nash equilibrium in extensive games with imperfect information.
+- Promoted: GT-MM-122 through GT-MM-126; GT-APP-79 through GT-APP-83; GT-L-96 through GT-L-100.
+
+### Chapter 12 — Sequential Equilibrium
+- 12.1 Strategies and Beliefs → assessments, belief systems, structural consistency, and sequential rationality.
+- 12.2 Sequential Equilibrium → consistency plus sequential rationality.
+- 12.3 Games with Observable Actions: Perfect Bayesian Equilibrium → Bayesian updating and application-oriented equilibrium refinement.
+- 12.4 Refinements of Sequential Equilibrium → additional restrictions on off-path beliefs and deviation interpretation.
+- 12.5 Trembling Hand Perfect Equilibrium → robustness to small mistakes and the agent strategic-form construction.
+- Promoted: GT-MM-127 through GT-MM-131; GT-APP-84 through GT-APP-88; GT-L-101 through GT-L-105.
+
+### Part III acceptance result
+All **10 substantive numbered sections** in the Part III bookmark are explicitly traceable to durable knowledge objects. Formal belief calculations, equilibrium proofs, and theorem derivations remain source-level material.
