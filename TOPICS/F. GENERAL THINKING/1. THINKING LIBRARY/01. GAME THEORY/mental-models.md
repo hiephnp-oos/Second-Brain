@@ -344,3 +344,25 @@ A punishment supports only the outcomes that players are willing to carry out af
 
 ## GT-MM-114 — Finite and infinite horizons are different models
 Do not import an infinite-horizon cooperation result into a known finite interaction. The terminal period can propagate backward through the entire game.
+
+
+## GT-MM-115 — Complexity is a strategic cost
+When strategies require memory or operational machinery, compare payoff gains with the cost of implementing and maintaining the strategy.
+
+## GT-MM-116 — Simpler machines can dominate equivalent complex strategies
+If two machines generate the same payoff path, a complexity-sensitive player prefers the one with fewer states. Re-evaluate equilibrium after introducing implementation cost.
+
+## GT-MM-117 — Implementation reverses the analysis direction
+Instead of asking “what outcome does this game produce?”, ask “what game form makes the desired outcome emerge under the chosen solution concept?”
+
+## GT-MM-118 — Dominant-strategy implementation has an impossibility boundary
+With unrestricted preferences and at least three outcomes, onto DSE implementation collapses to dictatorship. Relax the domain or the solution requirement if a non-dictatorial mechanism is needed.
+
+## GT-MM-119 — Restricted domains enable truthful mechanisms
+Groves-type mechanisms can make truthful reporting dominant when preferences have the required valuation structure and transfers are available.
+
+## GT-MM-120 — Nash implementation needs robustness conditions
+Monotonicity and no-veto power are sufficient conditions in the book's setting, showing that implementability depends on the choice rule's structure, not merely on mechanism complexity.
+
+## GT-MM-121 — Virtual implementation can trade certainty for feasibility
+An outcome may be made arbitrarily likely under SPE even when exact implementation is unavailable. Distinguish exact from approximate or virtual implementation.
