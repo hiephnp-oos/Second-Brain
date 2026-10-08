@@ -197,3 +197,13 @@ Conflicting principals can neutralize each other's incentives. Optimize the whol
 
 ## GT-L-66
 Do not assume monetary incentives always add motivation; poorly sized extrinsic rewards can undermine intrinsic motivation.
+
+
+## GT-L-67
+A formal model is useful only when its information, timing and behavioral assumptions match the real interaction.
+
+## GT-L-68
+Nash equilibrium is a consistency benchmark, not a quality certificate. After finding an equilibrium, separately ask whether it is efficient, fair, unique and selected in practice.
+
+## GT-L-69
+An existence theorem does not imply a pure-strategy solution. Check the domain and the strategy class before relying on the result.
