@@ -237,3 +237,32 @@ If each side's defensive response becomes evidence of the other's offensive inte
 ## GT-L-73 — More surveillance or defense is not automatically more stability
 Additional information or capacity can improve security while simultaneously increasing perceived threat and instability.
 \n\n## GT-05 Part I — Incremental lessons\n\n### GT-L-74 — Cooperation is a design problem, not an assumption\nWhen self-interest creates a collectively poor outcome, the useful question is what interaction conditions can make cooperation sustainable.\n\n### GT-L-75 — A cooperation dilemma is defined by incentives, not by labels\nUse the payoff structure to determine whether the problem is genuinely Prisoner's-Dilemma-like rather than assuming every conflict is the same.\n\n### GT-L-76 — Repeated interaction can change individually rational behavior\nThe possibility of future consequences can make present cooperation strategically valuable even when one-shot incentives favor defection.\n\n### GT-L-77 — The shadow of the future has a limit\nFuture interaction matters only to the extent that it is sufficiently likely, valuable, and durable relative to immediate incentives.\n\n### GT-L-78 — Do not confuse cooperation with altruism\nCooperation can be sustained by self-interested reciprocal incentives without requiring participants to become more generous or public-spirited.\n
+
+## GT-05 Part II — Lessons
+
+### GT-L-79 — Strategy quality is relational
+A strategy that performs well against one population may perform poorly against another; evaluate strategies in context.
+
+### GT-L-80 — History can be an asset
+In repeated interaction, remembering prior behavior can convert a one-shot dilemma into a reciprocal relationship.
+
+### GT-L-81 — Simplicity can be strategically powerful
+A simple rule can outperform elaborate rules when it is easy to execute, recognize, and adapt to the opponent's behavior.
+
+### GT-L-82 — Robustness is stronger evidence than a single win
+A strategy result becomes more credible when it survives changes in the population of competing strategies.
+
+### GT-L-83 — Selection changes the game environment
+When successful strategies become more prevalent, future strategic performance must be assessed against the changed population.
+
+### GT-L-84 — Stability requires resistance to invasion
+A cooperative equilibrium is fragile if a small population of alternative strategies can systematically exploit it.
+
+### GT-L-85 — Getting started and staying stable are different problems
+A cooperation mechanism may need one set of conditions to emerge and another set to remain stable.
+
+### GT-L-86 — Local structure can enable global cooperation
+Small clusters of reciprocal actors can create a protected environment in which cooperation can take hold.
+
+### GT-L-87 — Cooperation needs conditionality
+Being cooperative first is useful, but sustainable reciprocity also needs a response to exploitation.
