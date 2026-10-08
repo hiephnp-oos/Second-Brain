@@ -129,3 +129,36 @@ If a commitment or coordination rule can be established before uncertainty peaks
 
 ## GT-L-38 — Communication channels are strategic infrastructure
 Control over communication can create or remove bargaining options, so communication architecture belongs inside the game model.
+
+## GT-L-39 — Strategic problems are reciprocal expectation problems
+When actions depend on expectations about others, analyzing only your own incentives is incomplete.
+
+## GT-L-40 — Mixed-motive games require both conflict and coordination analysis
+Do not force a situation into a win-lose model when players also depend on one another to avoid mutual loss or create joint gains.
+
+## GT-L-41 — Coordination failure is not necessarily incentive failure
+Players may want compatible outcomes and still fail because they do not converge on the same expectations.
+
+## GT-L-42 — Salience can be strategically causal
+A feature that helps both players recognize the same outcome can change behavior even when it does not change material payoffs.
+
+## GT-L-43 — A strategic move works through the opponent's decision process
+Evaluate the change in expectations, options, incentives, or information—not merely the direct action.
+
+## GT-L-44 — Enforcement turns conditional intentions into strategic forces
+A threat or promise without a credible enforcement path may have little strategic effect.
+
+## GT-L-45 — Initiative can be a liability
+Having the next move is not automatically advantageous if the ability to choose freely weakens your commitment.
+
+## GT-L-46 — Delegation and mediation are mechanism design
+Changing who decides or how information passes can create a different game with different credible outcomes.
+
+## GT-L-47 — Communication failure is itself a strategic state
+When communication is blocked or destroyed, players may need different coordination and commitment mechanisms.
+
+## GT-L-48 — Formalize strategic moves before applying equilibrium analysis
+An informal claim that a move creates leverage is incomplete until its effect on actions, information, timing, or payoffs is represented.
+
+## GT-L-49 — Some game-theoretic predictions require empirical validation
+When mutual perception, framing, norms, or focal recognition matters, formal deduction alone may not determine behavior.
