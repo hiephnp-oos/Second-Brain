@@ -192,3 +192,33 @@ All **29 substantive numbered sections** in the Part II bookmark are explicitly 
 
 ### Part III acceptance result
 All **10 substantive numbered sections** in the Part III bookmark are explicitly traceable to durable knowledge objects. Formal belief calculations, equilibrium proofs, and theorem derivations remain source-level material.
+
+ 
+## Part IV traceability matrix
+
+### Chapter 13 — The Core
+- 13.1 Coalitional Games with Transferable Payoff → TU coalition value and redistribution.
+- 13.2 The Core → blocking coalitions and coalition-stable allocations.
+- 13.3 Nonemptiness of the Core → existence boundary for stable allocations.
+- 13.4 Markets with Transferable Payoff → market/core relationship under the relevant assumptions.
+- 13.5 Coalitional Games without Transferable Payoff → NTU coalition feasible sets.
+- 13.6 Exchange Economies → coalition feasibility in exchange-economy settings.
+- Promoted: GT-MM-132 through GT-MM-136; GT-APP-89 through GT-APP-92; GT-L-106 through GT-L-110.
+
+### Chapter 14 — Stable Sets, the Bargaining Set, and the Shapley Value
+- 14.1 Two Approaches → alternative coalition-solution approaches.
+- 14.2 The Stable Sets of von Neumann and Morgenstern → internal and external stability.
+- 14.3 The Bargaining Set, Kernel, and Nucleolus → objections, counter-objections, and coalition excess criteria.
+- 14.4 The Shapley Value → marginal-contribution allocation.
+- Promoted: GT-MM-137 through GT-MM-140; GT-APP-93 through GT-APP-96; GT-L-111 through GT-L-113.
+
+### Chapter 15 — The Nash Solution
+- 15.1 Bargaining Problems → feasible set and disagreement point.
+- 15.2 The Nash Solution: Definition and Characterization → Nash bargaining product and characterization.
+- 15.3 An Axiomatic Definition → axiomatic properties of the solution.
+- 15.4 The Nash Solution and the Bargaining Game of Alternating Offers → strategic foundation under appropriate assumptions.
+- 15.5 An Exact Implementation of the Nash Solution → exact mechanism/implementation target.
+- Promoted: GT-MM-141 through GT-MM-144; GT-APP-97 through GT-APP-100; GT-L-114 through GT-L-117.
+
+### Part IV acceptance result
+All **15 substantive numbered sections** in the Part IV bookmark are explicitly traceable to durable knowledge objects. Formal proofs, coalition-value calculations, and theorem derivations remain source-level material.
