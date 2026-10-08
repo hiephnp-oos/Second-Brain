@@ -264,3 +264,52 @@ GT-03 adds formal structure to the earlier strategic intuition. The useful incre
 The durable Part I boundary is therefore:
 
 **Model the game → choose the appropriate solution concept → make information/types/beliefs explicit → distinguish equilibrium consistency from rationalizability and knowledge assumptions → check whether the interpretation matches the real decision environment.**
+
+
+## Part II incremental foundations from GT-03
+
+GT-03 Part II moves from static strategic games to sequential interaction, then asks how bargaining, repetition, bounded strategic complexity, and mechanism design change the solution problem.
+
+### Chapter 6 — Extensive Games with Perfect Information
+- An **extensive game** makes the sequence of decisions explicit. Perfect information means each player observes all relevant previous events when acting.
+- **Subgame perfect equilibrium (SPE)** requires optimality after every history/subgame, eliminating Nash equilibria sustained by non-credible future actions.
+- In finite-horizon perfect-information games, the **one-deviation property** reduces SPE verification to checking profitable one-step deviations at each decision history.
+- **Backward induction** is both a constructive solution procedure and an existence result for finite perfect-information games; it does not imply that every finite-horizon or infinite game is solvable by the same procedure.
+- Chance moves and simultaneous moves can be incorporated into the extensive-game model, but the solution properties change; in particular, the existence result for ordinary finite perfect-information games does not automatically extend to simultaneous-move variants.
+- A formal strategy is a complete contingent specification, including actions after histories that the strategy itself may make unreachable. Those off-path components can also be interpreted as beliefs held by other players about how the actor would behave after deviations.
+- The Chain-Store and Centipede games expose a boundary of backward-induction reasoning: the formal solution may conflict with intuitive expectations about reputation, learning, or willingness to continue a mutually beneficial sequence.
+- Iterated elimination of weakly dominated strategies can encode **forward induction** in some extensive games, but the elimination order matters and can destroy SPE outcomes in other orders.
+
+### Chapter 7 — Bargaining Games
+- Alternating-offer bargaining is an extensive game in which the **procedure itself** determines who proposes, who responds, when agreement occurs, and what happens after rejection.
+- With stationary preferences and a valuable passage of time, the SPE outcome is characterized by each player's proposal/acceptance threshold relative to what the other can secure by rejecting and making the next offer.
+- Greater impatience weakens a player's bargaining position; the party that discounts delay less can obtain a larger share of the surplus under the model's assumptions.
+- The model separates **efficient agreement** from the division of the surplus: delay can destroy value even when the eventual agreement is efficient.
+- Variations such as outside options show that an alternative available during bargaining can shift the equilibrium outcome; bargaining power is therefore endogenous to the procedure and fallback opportunities.
+
+### Chapter 8 — Repeated Games
+- Repetition creates a **shadow of the future**: a short-run profitable deviation can be unattractive when it causes sufficiently valuable future cooperation to be lost.
+- The relevant feasible equilibrium payoffs are constrained by both feasibility and **enforceability**: a player must be able to guarantee at least his minmax payoff.
+- **Trigger strategies** support cooperation by conditioning future play on observed deviation. The punishment must itself be credible if SPE, rather than only Nash equilibrium, is required.
+- The Nash folk theorem shows that, under the relevant conditions, sufficiently patient players can sustain a broad set of feasible enforceable payoffs; the perfect folk theorems strengthen this to subgame-perfect outcomes under additional conditions.
+- Punishment need not be permanent. Under suitable payoff criteria, finite punishment followed by restoration of the cooperative path can be enough to deter deviation and avoids making punishers suffer indefinitely.
+- Finitely repeated games are not equivalent to infinitely repeated games. With a known finite endpoint, backward induction can force the final-period equilibrium and can radically restrict cooperation; however, multiple constituent-game equilibria can create credible punishment structures in sufficiently long finite repetitions.
+
+### Chapter 9 — Complexity Considerations in Repeated Games
+- A repeated-game strategy can be represented by a finite-state **machine**. The machine's state space captures the memory/complexity required to implement the strategy.
+- Once complexity is included in preferences, maximizing payoff is no longer the whole objective: a player trades off the payoff generated by the repeated interaction against the cost of maintaining a complex strategy.
+- Equilibrium machines have structural constraints: equilibrium paths have an introductory phase followed by a cycling phase, with finite-state repetition creating predictable structural limits.
+- A strategy that is an equilibrium when complexity is ignored may cease to be optimal when an equally effective but simpler machine exists.
+- Under lexicographic preferences, payoff is primary and complexity secondary; this changes which repeated-game paths survive relative to the standard folk-theorem model.
+
+### Chapter 10 — Implementation Theory
+- Implementation reverses the usual question. Instead of fixing the game and asking which outcomes arise, the planner fixes the desired **choice rule** and designs a game form whose solution outcomes realize it.
+- The implementation problem separates the **outcome rule** from the **mechanism** that induces participants to produce that outcome. The planner may know less than participants and may be able to control rules without directly imposing outcomes.
+- Dominant-strategy implementation is powerful but highly restrictive. With at least three outcomes and unrestricted preferences, the Gibbard–Satterthwaite theorem implies that any onto choice rule that is DSE-implementable is dictatorial.
+- Restricted preference domains can permit non-dictatorial dominant-strategy mechanisms. Groves mechanisms illustrate how payments can make truthful revelation a dominant strategy for certain valuation environments.
+- Nash implementation is less restrictive than dominant-strategy implementation. **Monotonicity** and **no-veto power**, with at least three players, are sufficient for Nash implementation in the model developed in the book.
+- Subgame-perfect implementation extends mechanism design to extensive game forms. Under suitable conditions the book obtains **virtual SPE implementation**, where the desired outcome can be made arbitrarily likely rather than necessarily certain.
+
+The durable Part II boundary is therefore:
+
+**Model the decision sequence → require credible behavior after every relevant history → account for bargaining procedure and fallback options → use repetition to create future incentives → account for the complexity cost of strategies → when the desired outcome is fixed, design the game that makes that outcome emerge.**
