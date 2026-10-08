@@ -308,3 +308,67 @@ An arrangement established before conflict or uncertainty can constrain later ch
 ### 51. Communication changes the game itself
 
 Communication is not merely information transfer. The ability to communicate, withhold communication, or destroy communication can alter expectations, commitments, and the set of strategically available outcomes.
+
+## GT-04 Part II — Incremental foundations from *The Strategy of Conflict*
+
+Part II reorients the framework from pure-conflict analysis toward interdependent decision, mixed-motive/coordination games, strategic moves, communication and enforcement, and empirical testing of strategic behavior.
+
+### 52. Interdependent decision as the core strategic problem
+
+In mixed-motive situations, an actor's best action depends on expectations about what another actor will do and what that actor expects in return. Strategic analysis therefore includes reciprocal expectations, not only unilateral optimization.
+
+### 53. Reclassifying games by conflict and common interest
+
+Zero-sum conflict and pure coordination are limiting cases. Mixed-motive games combine conflict over some outcomes with mutual dependence over others, making bargaining and coordination central to the analysis.
+
+### 54. Coordination is a distinct strategic structure
+
+A coordination game can be difficult even when the players' interests are aligned because the players must converge on the same expectation or action. The central problem is coordination, not unilateral incentive optimization.
+
+### 55. Suggestion and mutual perception can focus expectations
+
+Labels, context, conventions, symmetry, salient features, and other perceptual cues can influence which outcome players expect one another to select. These cues matter when they help expectations converge.
+
+### 56. Strategic moves change the structure of the interaction
+
+A strategic move is an action taken to alter another player's expectations or available responses rather than merely to improve the actor's immediate payoff.
+
+### 57. Enforcement makes conditional behavior consequential
+
+Threats and promises affect the game only when the relevant response can be carried out or otherwise enforced. Enforcement therefore belongs inside the strategic model.
+
+### 58. Relinquishing initiative can be strategically useful
+
+Having fewer choices or giving the other side initiative can sometimes improve a player's position by making commitments more credible or transferring responsibility for a costly decision.
+
+### 59. Identification can constrain future choices
+
+Identifying oneself with a particular action, position, role, or commitment can reduce later flexibility and thereby alter the opponent's expectations.
+
+### 60. Delegation changes the decision-maker's incentives
+
+Delegating a decision can alter credibility, information, and the set of responses available to the principal. The strategic effect depends on how the delegate's incentives differ from the principal's.
+
+### 61. Mediation inserts a strategic third party
+
+A mediator can change communication, interpretation, enforcement, or coordination. Mediation should therefore be modeled as a change in the game rather than as neutral assistance.
+
+### 62. Communication can be created, restricted, or destroyed
+
+The ability to communicate is itself a strategic resource. A player can gain or lose leverage by changing who can communicate, what can be communicated, or whether communication remains possible.
+
+### 63. Strategic moves can be represented inside the game
+
+A strategic move can be incorporated into the formal game by expanding the action space, sequence, information structure, or payoff consequences. This makes the move analyzable as part of the game rather than as an external commentary.
+
+### 64. Strategic advantage can be paradoxical
+
+An apparent advantage—such as initiative, information, or freedom of action—can reduce bargaining power when the other side can exploit that flexibility or when the advantage makes a commitment less credible.
+
+### 65. Experimental research is part of strategic theory
+
+Some strategic phenomena, especially perception, norms, communication through actions, and focal coordination, cannot be fully derived from formal structure alone. Experimental evidence can test how participants actually interpret and coordinate within a game.
+
+### 66. Game labels and context can become causal variables
+
+When a non-zero-sum game depends on mutual interpretation, the description, symbols, background story, or framing of the game can influence the expectations that guide play. Such contextual effects are part of the empirical strategic problem rather than automatically irrelevant noise.
