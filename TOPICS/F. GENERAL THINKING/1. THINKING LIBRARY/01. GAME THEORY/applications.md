@@ -238,3 +238,19 @@ After defining a trigger strategy, solve the punishment phase as a separate cont
 
 ## GT-APP-73 — Finite-vs-infinite horizon audit
 Record whether the interaction has a known endpoint. If finite, solve the terminal stage first and test whether the conclusion propagates backward before importing an infinite-horizon cooperation argument.
+
+
+## GT-APP-74 — Strategy-complexity audit
+Represent the operational strategy as a finite-state machine when relevant. Compare payoff generated with state count or another defensible implementation-cost measure.
+
+## GT-APP-75 — Mechanism-design direction check
+If the desired outcome is known in advance, stop optimizing participant behavior and formulate the implementation problem: choice rule, feasible outcomes, game form, and solution concept.
+
+## GT-APP-76 — Dominant-strategy implementation audit
+Check whether truthful or desired behavior is dominant against every action profile of the other participants. If preferences are unrestricted and outcomes are numerous, test for the Gibbard-Satterthwaite boundary before designing further complexity.
+
+## GT-APP-77 — Nash-implementation condition audit
+For a proposed choice rule, test monotonicity and no-veto power before assuming that a Nash mechanism exists.
+
+## GT-APP-78 — Exact-vs-virtual implementation audit
+State whether the mechanism must guarantee the target outcome exactly or only with arbitrarily high probability. Do not treat virtual implementation as exact implementation.
