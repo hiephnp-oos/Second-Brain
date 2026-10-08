@@ -324,3 +324,30 @@ Check whether a minimum level of local interaction among cooperators is sufficie
 
 ### 87. Reciprocity design audit
 Test whether a strategy is simultaneously cooperative enough to attract cooperation and responsive enough to deter persistent exploitation.
+
+
+## GT-05 Part III — Incremental applications
+
+### 88. Local-versus-system incentive audit
+Compare the incentives of directly interacting actors with the incentives of the wider organization to detect cooperation that the system-level objective would not predict.
+
+### 89. Hidden-repetition test
+Identify persistent counterparties, locations, or routines that convert an apparently one-shot conflict into repeated interaction.
+
+### 90. Cooperation-start mechanism audit
+List the observable cues or environmental events that could initiate reciprocal restraint without requiring a formal agreement.
+
+### 91. Recognition feasibility test
+Check whether participants can identify counterpart actions accurately enough for conditional reciprocity to work.
+
+### 92. Structural-recognition substitute test
+Where individual recognition is weak, test whether fixed locations, stable pairings, or territorial boundaries provide equivalent continuity.
+
+### 93. Future-value threshold audit
+Estimate whether the expected value of future interaction remains above the threshold needed for reciprocal cooperation.
+
+### 94. Biological reciprocity mapping
+Map organisms, symbionts, or competing biological agents into repeated-game roles and identify the conditions supporting mutualism versus exploitation.
+
+### 95. Cooperation-without-foresight test
+Check whether the observed cooperative pattern can be explained by selection and repeated interaction without assuming conscious planning or altruistic intent.
