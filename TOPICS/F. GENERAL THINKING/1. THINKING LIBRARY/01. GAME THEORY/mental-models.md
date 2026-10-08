@@ -367,3 +367,42 @@ Monotonicity and no-veto power are sufficient conditions in the book's setting, 
 ## GT-MM-121 — Virtual implementation can trade certainty for feasibility
 An outcome may be made arbitrarily likely under SPE even when exact implementation is unavailable. Distinguish exact from approximate or virtual implementation.
 \n\n## GT-MM-122 — Information sets are strategic constraints\nA player choosing at an information set must use one action rule across the histories she cannot distinguish. Model the information restriction before solving the game.\n\n## GT-MM-123 — Perfect recall is a structural assumption\nCheck whether a player remembers her own relevant past actions and information before applying results that rely on perfect recall, especially mixed/behavioral strategy equivalence.\n\n## GT-MM-124 — Equivalent game forms can preserve strategy while changing presentation\nUse equivalence principles to remove redundant representation, but verify which strategic objects are actually preserved before treating two extensive games as interchangeable.\n\n## GT-MM-125 — Strategic equivalence does not erase framing effects\nTwo formally equivalent games can generate different observed behavior when participants respond to how the decision is framed. Separate normative game equivalence from behavioral prediction.\n\n## GT-MM-126 — Behavioral strategies localize randomization\nUnder perfect recall, randomization at each information set can reproduce the strategic consequences of randomizing over complete contingent plans. Prefer the representation that matches the operational decision process.\n\n## GT-MM-127 — An assessment is strategy plus beliefs\nIn imperfect-information games, a strategy profile alone is incomplete for sequential reasoning. Record beliefs at every information set as part of the object being evaluated.\n\n## GT-MM-128 — Sequential rationality applies off path\nAn action must be optimal at an information set even when the equilibrium strategy makes that information set unreached, provided beliefs there are specified.\n\n## GT-MM-129 — Consistency constrains off-path beliefs\nDo not assign arbitrary beliefs after an unexpected history. Test whether the beliefs can arise as limits of Bayes-updated beliefs from nearby completely mixed strategies.\n\n## GT-MM-130 — Refinements should target a specific belief problem\nUse Perfect Bayesian, sequential, or stronger refinements only when you can identify which implausible off-path belief or continuation the refinement is intended to remove.\n\n## GT-MM-131 — Trembles test robustness to small mistakes\nA candidate that depends on exact zero-probability behavior may fail when every action has a small chance of being chosen. Treat trembling-hand analysis as a robustness test, not as a synonym for Nash equilibrium.\n
+ 
+## GT-MM-132 — Coalition stability is different from individual equilibrium
+A coalition can block an allocation even when no individual player has a profitable unilateral deviation. Check group deviations explicitly.
+
+## GT-MM-133 — Transferable payoff is a modeling assumption
+TU games allow coalition surplus to be redistributed. If utility cannot be transferred, model the coalition's feasible payoff set instead of forcing a scalar worth function.
+
+## GT-MM-134 — Core means no blocking coalition
+An allocation is in the core only if no coalition can obtain an outcome that all its members prefer to the proposed allocation while remaining jointly feasible.
+
+## GT-MM-135 — Core nonemptiness is a real result
+Do not assume that a stable allocation exists. First determine whether the game's coalition structure admits any unblocked allocation.
+
+## GT-MM-136 — Market competition can generate coalition stability
+In the appropriate transferable-payoff market setting, competitive allocations and core allocations can be tightly related. Treat the equivalence as assumption-dependent, not universal.
+
+## GT-MM-137 — Stable sets and the core answer different questions
+The core checks whether an allocation is blocked. A stable set evaluates a set of outcomes through internal and external stability.
+
+## GT-MM-138 — Objections must be analyzed as coalition claims
+Bargaining-set reasoning asks whether a coalition's objection is justified and whether another coalition can counter it. Do not reduce every objection to a unilateral deviation.
+
+## GT-MM-139 — Kernel and nucleolus measure coalition excess differently
+These solution concepts refine how coalition complaints or excesses are balanced. The choice changes the allocation criterion.
+
+## GT-MM-140 — Shapley value is marginal-contribution allocation
+The Shapley value distributes TU worth by averaging a player's marginal contribution over coalition orderings. It is an allocation rule, not a proof of coalition stability.
+
+## GT-MM-141 — Bargaining starts from disagreement
+A bargaining solution is defined relative to what each party receives if agreement fails. Ignore the disagreement point and the bargaining problem is mis-specified.
+
+## GT-MM-142 — Nash bargaining is an axiomatic selection rule
+The Nash solution identifies an agreement by its properties and optimization criterion; it should not be confused with the Nash equilibrium of a strategic game.
+
+## GT-MM-143 — Strategic bargaining and Nash bargaining are connected, not identical
+An alternating-offers game can generate the Nash bargaining outcome under appropriate assumptions, but the strategic procedure and the axiomatic solution remain distinct analytical objects.
+
+## GT-MM-144 — Exact implementation is stronger than selection
+Showing that a solution exists is different from constructing a game or mechanism that induces it exactly. State the implementation target explicitly.
