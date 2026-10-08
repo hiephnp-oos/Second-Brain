@@ -186,3 +186,33 @@ Move important commitments or coordination rules earlier in time when doing so c
 
 ### 39. Communication-control audit
 Map who can send, receive, block, delay, or destroy information and how those rights change bargaining leverage or coordination.
+
+### 40. Conflict–coordination classification
+Classify whether the situation is pure conflict, pure coordination, or mixed motive. Identify where interests align and where they diverge.
+
+### 41. Mutual-expectation mapping
+For a coordination problem, map what each side expects the other to choose and whether those expectations reinforce one another.
+
+### 42. Focal-cue audit
+List salient features—symmetry, conventions, labels, physical landmarks, prior patterns, or shared context—and test whether they provide a common basis for selecting one outcome.
+
+### 43. Strategic-move audit
+For a proposed threat, promise, commitment, delegation, or communication change, identify exactly which part of the opponent's decision problem is being changed.
+
+### 44. Enforcement audit
+Check whether a conditional response can actually be implemented, whether it remains credible after the trigger, and what mechanism supports it.
+
+### 45. Initiative-transfer audit
+Test whether giving the other side the next move can improve the outcome by shifting responsibility or making your own position more credible.
+
+### 46. Delegation/mediation design
+Compare the game with and without the added decision-maker or mediator. Identify changes in incentives, information, communication, and credible responses.
+
+### 47. Communication-channel resilience
+Map the channels required for coordination or bargaining and identify how blocking, destroying, delaying, or selectively controlling them changes the game.
+
+### 48. Strategic-move formalization
+Translate an informal strategic move into an explicit action, information change, timing rule, or payoff consequence before evaluating it.
+
+### 49. Perception-versus-incentive test
+Separate behavior predicted directly by the formal game from behavior that depends on labels, framing, norms, or shared interpretation; use experimental evidence where the latter is decisive.
