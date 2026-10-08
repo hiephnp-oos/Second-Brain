@@ -84,3 +84,29 @@ The chapter's formal payoff matrix and mathematical discounting details remain s
 ## BOOK.zip provenance note
 
 Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No web-hosted PDF was used as source authority. The supplied PDF is canonical; the supplied Markdown is an extraction/retrieval aid.
+
+
+## Part II traceability matrix — verified against supplied BOOK.zip
+
+### Chapter 2 — The Success of TIT FOR TAT in Computer Tournaments
+- User TOC page: 35; supplied PDF physical page 35 begins the chapter, while the printed book page is 27.
+- Evidence checked in supplied PDF: tournament design, history-dependent decision rules, round-robin comparison, TIT FOR TAT winning both rounds, robustness tests under altered strategy distributions, and evolutionary/selection interpretation.
+- Covered knowledge: GT-05 #89–93; GT-MM-87–91; GT-APP-79–83; GT-L-79–83.
+- Coverage: **1/1 chapter unit = 100%**.
+
+### Chapter 3 — The Chronology of Cooperation
+- User TOC page: 63; supplied PDF physical page 63 begins the chapter, while the printed book page is 55.
+- Evidence checked in supplied PDF: collective stability/invasion, conditions for TIT FOR TAT to resist invasion, emergence from clusters, and the distinction between isolated cooperation and clustered reciprocal cooperation.
+- Covered knowledge: GT-05 #94–98; GT-MM-92–95; GT-APP-84–87; GT-L-84–87.
+- Coverage: **1/1 chapter unit = 100%**.
+
+### Part II acceptance result
+**2/2 substantive chapter units = 100% source-verified.**
+
+### BOOK.zip evidence boundary
+- Source package checked: `BOOK.zip` containing `05 - The Evolution of Cooperation.pdf` and `05 - The Evolution of Cooperation.md`.
+- PDF length verified: **243 physical pages**.
+- Supplied PDF Contents verified: Part II contains exactly Chapters 2–3.
+- User TOC positions verified against PDF: Chapter 2 at physical page 35 and Chapter 3 at physical page 63; the printed book pagination is offset by 8 pages at these chapter starts.
+- Representative chapter evidence was read directly from the supplied PDF, not inferred from repository summaries.
+- Markdown was used only as retrieval aid; PDF remains source authority.
