@@ -326,3 +326,36 @@ A population with more effective reciprocal strategies becomes harder for exploi
 
 ### GT-L-105 — Recognition is strategic infrastructure
 Without reliable recognition and memory, reciprocal cooperation cannot be targeted effectively.
+
+
+## GT-05 Part V — Lessons
+
+### GT-L-106 — Network structure can be part of the cooperation mechanism
+Do not evaluate reciprocity without considering who meets whom and how often; interaction structure can determine whether cooperation can survive.
+
+### GT-L-107 — Labels can create the behavior they appear to describe
+A label may become strategically causal when expectations based on it change how people interact.
+
+### GT-L-108 — Reputation makes current behavior an investment in future interactions
+An action can be rational partly because of how it changes what future counterparties expect.
+
+### GT-L-109 — Regulation must manage incentives on both sides
+Deterrence alone is insufficient when stable compliance depends on a repeated relationship between regulator and regulated party.
+
+### GT-L-110 — Local clustering can protect cooperation
+A cooperative strategy may need a sufficiently favorable interaction neighborhood rather than universal success against strangers.
+
+### GT-L-111 — Stability is not the same as origin
+A strategy can be stable after establishment while remaining unlikely to emerge without a mechanism that creates or spreads it.
+
+### GT-L-112 — Evolutionary change needs both selection and variation
+Successful strategies become more prevalent only when the environment also permits alternative strategies to appear, spread, or be imitated.
+
+### GT-L-113 — Cooperation needs timely feedback
+If defection is detected too late, the exploiter may learn that defection pays before retaliation can restore the incentive to cooperate.
+
+### GT-L-114 — Retaliation should be bounded
+The response that deters exploitation can itself destroy cooperation if it creates an escalating chain of reciprocal defections.
+
+### GT-L-115 — Foresight can compress the learning cycle
+When humans understand the conditions that support reciprocity, they can deliberately create those conditions instead of waiting for costly trial and error.
