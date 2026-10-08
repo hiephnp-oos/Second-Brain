@@ -65,3 +65,22 @@ Cross-cutting lenses:
 ## Relationship to GT-01 through GT-04
 
 GT-05 is treated as an extension of the repeated-game and cooperation foundation, not a duplicate. Its incremental contribution is the empirical/evolutionary treatment of reciprocity: TIT FOR TAT, tournament selection, shadow of the future, collective stability, local clusters, social structure, and robustness to misperception.
+
+
+## Part I traceability matrix — re-verified from supplied BOOK.zip
+
+### Chapter 1 — The Problem of Cooperation
+- Source: supplied `05 - The Evolution of Cooperation.pdf` and matching `05 - The Evolution of Cooperation.md`.
+- User TOC page: 12; PDF physical page position corresponds to the supplied source package. The printed book page numbering begins at 3 for Chapter 1.
+- Coverage unit: the chapter-level substantive unit, because the supplied TOC does not expose numbered subsections inside Chapter 1.
+- Promoted: cooperation without central authority; Prisoner's Dilemma as the canonical cooperation problem; self-interest versus collective outcome; repeated interaction; the shadow of the future; continuity/probability of future encounters; cooperation without requiring altruism or friendship.
+- Operational links: GT-04 #84–88; GT-MM-82–86; GT-APP-74–78; GT-L-74–78.
+
+### Part I acceptance result
+**1/1 substantive chapter unit = 100% source-verified.**
+
+The chapter's formal payoff matrix and mathematical discounting details remain source-level material. The repository retains the reusable strategic distinctions rather than duplicating the chapter.
+
+## BOOK.zip provenance note
+
+Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No web-hosted PDF was used as source authority. The supplied PDF is canonical; the supplied Markdown is an extraction/retrieval aid.
