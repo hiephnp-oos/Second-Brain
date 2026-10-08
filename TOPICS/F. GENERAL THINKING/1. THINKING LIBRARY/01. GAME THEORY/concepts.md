@@ -498,3 +498,36 @@ Strategies that do not defect first can support one another when they are suffic
 
 ### 98. Provocability and forgiveness are distinct design dimensions
 A cooperative strategy needs a credible response to exploitation, but excessive retaliation can destroy the cooperation it is meant to protect.
+
+
+## GT-05 Part III — Cooperation Without Friendship or Foresight
+
+### 99. Cooperation can emerge under hostility
+Repeated interaction can generate restraint even when participants strongly dislike or oppose one another.
+
+### 100. Local interaction can differ from system-level incentives
+Actors at a local interaction boundary may benefit from cooperation even when the larger organization or system has conflicting incentives.
+
+### 101. Stable repetition can transform a one-shot dilemma
+Persistent pairing or recurring encounters can turn individually tempting defection into a setting where reciprocal restraint is viable.
+
+### 102. Cooperation can be initiated by coordination cues
+Shared routines, timing, signals, environmental conditions, or observable restraint can provide a low-cost starting point for reciprocal behavior.
+
+### 103. Recognition supports reciprocal cooperation
+Cooperation is easier to stabilize when actors can identify who they interacted with and condition future behavior accordingly.
+
+### 104. Fixed association can substitute for sophisticated recognition
+Stable locations or persistent pairings can make reciprocal cooperation possible even when individual recognition is limited.
+
+### 105. Territorial structure changes the probability of future interaction
+Territoriality creates high-probability repeated interaction with neighbors and lower-probability interaction with strangers.
+
+### 106. Future-interaction value is a stability parameter
+Reciprocal cooperation becomes less attractive when the expected value of continued interaction falls below the stability threshold.
+
+### 107. Biological cooperation can arise without conscious foresight
+Selection can favor reciprocal interaction patterns even when individual organisms do not consciously plan for future encounters.
+
+### 108. Reciprocity can operate across biological levels
+The same strategic logic can describe cooperation or exploitation among organisms, symbionts, or other interacting biological entities when repeated interaction affects payoffs.
