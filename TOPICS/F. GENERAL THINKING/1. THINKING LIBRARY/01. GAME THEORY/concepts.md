@@ -372,3 +372,48 @@ Some strategic phenomena, especially perception, norms, communication through ac
 ### 66. Game labels and context can become causal variables
 
 When a non-zero-sum game depends on mutual interpretation, the description, symbols, background story, or framing of the game can influence the expectations that guide play. Such contextual effects are part of the empirical strategic problem rather than automatically irrelevant noise.
+
+
+## GT-04 Part III — Incremental foundations from *The Strategy of Conflict*
+
+Part III extends GT-04 from deliberate commitment into strategic uncertainty: randomization can scale threats and promises, reduce the cost of failure or inadvertent fulfillment, and create commitments whose uncertainty is not fully controlled by the threatener.
+
+### 67. Randomization can scale a threat or promise
+
+A probabilistic commitment can create an intermediate level of strategic force when a certain threat or promise is too costly, too strong, or otherwise unsuitable. The probability becomes part of the commitment structure rather than merely noise.
+
+### 68. Risk of failure changes optimal threat size
+
+When a threat may fail for reasons outside the actor's control, an excessively severe threat can make failure too costly. A randomized or moderated threat can preserve deterrent effect while reducing the downside of failure.
+
+### 69. Risk of inadvertent fulfillment is a separate cost
+
+A threat can impose costs on its creator even when the opponent complies, if the threatened consequence can occur accidentally or prematurely. Threat design must therefore account for both failure to deter and accidental fulfillment.
+
+### 70. Randomized commitment requires commitment to the lottery
+
+The strategic value of randomization depends on fixing the probability before the opponent acts. If the actor retains full discretion to choose the realized outcome after observing the opponent, the apparent randomization may not be credible.
+
+### 71. Strategic uncertainty can come from outside the actor's control
+
+A threat that leaves something to chance becomes more credible when the uncertainty arises from accident, delegated authority, imperfect machinery, third-party influence, or another process that the threatener cannot completely control.
+
+### 72. Inadvertent war can become a strategic risk
+
+The possibility of accidental escalation, false alarms, misinterpretation, or uncontrolled reactions can influence an opponent even when neither side intends the final destructive outcome.
+
+### 73. Limited war can generate escalation risk
+
+A limited conflict can carry a nonzero risk of escalation beyond the intended scope. That risk can affect the opponent's choices and therefore becomes part of the strategic meaning of the limited action.
+
+### 74. Risky behavior can communicate resolve
+
+Deliberately accepting some risk can make a threat more credible when certainty would be implausible or excessively costly. The relevant strategic variable is the opponent's perception of the risk and its consequences.
+
+### 75. Brinkmanship is a strategic move based on shared risk
+
+Brinkmanship deliberately creates a recognizable risk of an undesirable outcome that neither side fully controls. The purpose is to make the risk sufficiently intolerable that the opponent accommodates or pulls back.
+
+### 76. Imperfect decision processes can generate strategic uncertainty
+
+Crisis decisions are made through imperfect systems involving multiple decision-makers, delegation, incomplete information, procedural friction, and possible error. These imperfections can become part of the strategic environment rather than being treated as irrelevant noise.
