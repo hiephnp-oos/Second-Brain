@@ -140,3 +140,42 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
 - Chapter 5 source heading and body were checked directly.
 - PDF remains canonical; Markdown was used to retrieve and inspect the chapter text.
 - The repository traceability matrix records the chapter-level acceptance and the promoted knowledge IDs.
+
+
+## Part IV traceability matrix — verified against supplied BOOK.zip
+
+### Chapter 6 — How to Choose Effectively
+- User TOC page: **113**; supplied PDF physical page 113 begins the chapter.
+- Internal source structure checked directly: four explicit numbered advice units:
+  1. Don't be envious.
+  2. Don't be the first to defect.
+  3. Reciprocate both cooperation and defection.
+  4. Don't be too clever.
+- Direct PDF evidence checked across physical pages 113–127: relative-payoff/envious behavior; risk of initiating defection; conditions for TIT FOR TAT stability; balance of retaliation and forgiveness; ecological consequences of non-nice strategies; clarity/predictability of reciprocal strategies; contrast between zero-sum and non-zero-sum strategic reasoning.
+- Covered knowledge: GT-05 #109–112; GT-MM-104–107; GT-APP-96–99; GT-L-96–99.
+- Coverage: **4/4 substantive advice units = 100%**.
+
+### Chapter 7 — How to Promote Cooperation
+- User TOC page: **128**; supplied PDF physical page 128 begins the chapter.
+- Internal source structure checked directly: five explicit numbered reform mechanisms:
+  1. Enlarge the shadow of the future.
+  2. Change the payoffs.
+  3. Teach people to care about each other.
+  4. Teach reciprocity.
+  5. Improve recognition abilities.
+- Direct PDF evidence checked across physical pages 128–145: durability/frequency of interaction; decomposition into smaller stages; institutional/payoff changes; altruistic preferences; teaching reciprocity; recognition and memory; transforming the strategic setting rather than merely persuading individuals.
+- Covered knowledge: GT-05 #113–119; GT-MM-108–113; GT-APP-100–105; GT-L-100–105.
+- Coverage: **5/5 substantive reform units = 100%**.
+
+### Part IV acceptance result
+**9/9 substantive internal units = 100% source-verified.**
+
+### BOOK.zip evidence — Part IV
+- BOOK.zip directly inspected; exact Book 5 PDF confirmed.
+- PDF page count: **243**.
+- User TOC positions verified: Ch6 physical page **113**, Ch7 physical page **128**.
+- Chapter 6 internal numbered structure verified as **4 units**.
+- Chapter 7 internal numbered structure verified as **5 units**.
+- PDF body text was read directly for the chapter spans, not inferred solely from repository summaries.
+- PDF remains source authority; Markdown remains retrieval aid.
+- Source traceability matrix records all 9 internal units and their knowledge mappings.
