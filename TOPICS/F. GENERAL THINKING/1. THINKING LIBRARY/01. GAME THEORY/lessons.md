@@ -162,3 +162,34 @@ An informal claim that a move creates leverage is incomplete until its effect on
 
 ## GT-L-49 — Some game-theoretic predictions require empirical validation
 When mutual perception, framing, norms, or focal recognition matters, formal deduction alone may not determine behavior.
+
+
+## GT-L-50 — Threat strength must be calibrated
+A stronger threat is not automatically better. When failure is costly, the useful threat may be the minimum probabilistic force that changes the opponent's behavior.
+
+## GT-L-51 — Accidental fulfillment is a distinct failure mode
+A commitment can create harm even when the opponent would otherwise comply. Test accidental, premature, and uncontrolled execution separately from ordinary threat failure.
+
+## GT-L-52 — Randomization is credible only when the random mechanism is credible
+If the actor can override the outcome after observing the opponent's response, the probability may have little strategic force.
+
+## GT-L-53 — Uncontrolled uncertainty can create commitment power
+Chance, delegation, technical imperfection, or institutional processes can make an outcome less controllable and therefore more believable.
+
+## GT-L-54 — Limited conflict carries escalation value
+A limited action may influence behavior partly because of the risk that events move beyond the intended limit.
+
+## GT-L-55 — Credibility can come from accepting risk
+When certainty is implausible, willingness to expose oneself to a bounded risk can make a threat believable.
+
+## GT-L-56 — Brinkmanship manipulates shared risk
+The objective is not to maximize danger. It is to create enough mutually recognized risk to induce accommodation before the undesirable outcome occurs.
+
+## GT-L-57 — Escalation is usually a process, not a binary jump
+Analyze how incremental moves change the probability of an undesirable outcome rather than treating escalation as simply on or off.
+
+## GT-L-58 — Imperfect institutions are part of strategic reality
+Decision errors, delegated authority, communication failures, and procedural friction can affect strategic outcomes and should not automatically be abstracted away.
+
+## GT-L-59 — Never assume the opponent blinks first
+A risk-based strategy is only viable if the opponent's tolerance, incentives, and ability to control escalation are favorable relative to your own.
