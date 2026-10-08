@@ -567,3 +567,36 @@ The ability to identify counterparties and remember relevant history allows coop
 
 ### 119. Reform can operate on the game rather than the player
 Cooperation can be promoted by changing interaction frequency, payoffs, preferences, strategy norms, or recognition infrastructure rather than merely persuading individuals.
+
+
+## GT-05 Part V — Social Structure and Robust Reciprocity
+
+### 120. Social structure can enable cooperation
+Cooperation that cannot emerge under random interaction can become viable when interaction patterns create clusters, persistent relationships, or other structure that lets reciprocal actors meet often enough.
+
+### 121. Labels change strategic expectations before interaction
+An observable label can act as prior information about a counterpart's likely behavior, even when the label itself does not causally determine that behavior.
+
+### 122. Self-confirming stereotypes can become strategically stable
+If expectations based on labels change behavior, the resulting behavior can reinforce the original expectation and make an inefficient pattern persist.
+
+### 123. Reputation extends a player's strategy beyond the current interaction
+When third parties observe behavior, a current action can affect future opportunities by changing what others expect the player to do.
+
+### 124. Regulation is a repeated strategic relationship
+Effective regulation depends not only on punishment capacity but also on sustained expectations of compliance, enforcement, and future interaction between the regulator and the regulated.
+
+### 125. Territorial structure changes invasion dynamics
+When players interact mainly with nearby counterparts, strategies can survive or spread through local clusters even when they would fail under random matching.
+
+### 126. Collective stability does not fully determine establishment
+A strategy can be resistant to invasion once common without being the strategy most likely to arise from the initial population or learning process.
+
+### 127. Reciprocity is robust across different mechanisms of social learning
+Cooperation can persist through natural selection, imitation, deliberate strategy design, or other processes when successful reciprocal patterns are preferentially retained.
+
+### 128. Provocability protects cooperation against exploitation
+A cooperative strategy must make defection unattractive by responding sufficiently quickly and credibly to exploitation.
+
+### 129. Limited retaliation can prevent reciprocal escalation
+A response to defection must be strong enough to deter exploitation but bounded enough to avoid turning one violation into an indefinite sequence of mutual defection.
