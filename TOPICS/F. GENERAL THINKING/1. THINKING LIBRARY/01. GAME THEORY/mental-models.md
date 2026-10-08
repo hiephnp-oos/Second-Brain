@@ -300,3 +300,25 @@ Nash, rationalizability and later refinements differ partly in what they assume 
 
 ## GT-MM-100 — Almost common knowledge can be strategically insufficient
 A very high but finite chain of mutual knowledge may fail to coordinate behavior when the equilibrium depends on the chain being common knowledge. Test the terminal uncertainty rather than assuming that “nearly certain” is operationally equivalent to common knowledge.
+
+
+## GT-MM-101 — Model the sequence, not just the payoffs
+When timing changes who observes what before acting, convert the interaction to an extensive game before applying a static equilibrium concept.
+
+## GT-MM-102 — SPE tests every relevant future
+A Nash equilibrium supported by an action that would not be optimal after a later history is not a credible sequential solution. Test the continuation games.
+
+## GT-MM-103 — One-deviation property simplifies finite sequential games
+For finite-horizon perfect-information games, verify SPE by checking whether the player to move can profit from changing only the current action at each history.
+
+## GT-MM-104 — Backward induction has a domain
+Backward induction is reliable for finite perfect-information games, but chance, simultaneous moves, infinite horizons, or strategic uncertainty require the corresponding extended model.
+
+## GT-MM-105 — A strategy contains off-path contingencies
+A formal strategy specifies behavior after histories that may never occur. Treat those components as contingent beliefs/plans, not as observed actions.
+
+## GT-MM-106 — Forward induction uses what must have happened
+After an unexpected action, infer what earlier choice could have made that action rational. Weak-dominance elimination can encode this reasoning in some extensive games.
+
+## GT-MM-107 — Chain-store and centipede expose model boundaries
+Backward-induction solutions can conflict with intuitive reputation or cooperation stories. Treat the discrepancy as evidence about assumptions, not as a reason to silently override the formal model.
