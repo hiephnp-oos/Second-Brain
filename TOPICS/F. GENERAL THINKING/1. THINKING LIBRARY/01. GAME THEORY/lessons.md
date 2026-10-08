@@ -266,3 +266,30 @@ Small clusters of reciprocal actors can create a protected environment in which 
 
 ### GT-L-87 — Cooperation needs conditionality
 Being cooperative first is useful, but sustainable reciprocity also needs a response to exploitation.
+
+
+## GT-05 Part III — Lessons
+
+### GT-L-88 — Cooperation does not require friendship
+Persistent interaction and reciprocal incentives can generate restraint among hostile actors.
+
+### GT-L-89 — Analyze the players who actually interact
+System-level objectives can hide locally stable cooperation among the actors directly exposed to repeated consequences.
+
+### GT-L-90 — Stable repetition is strategically important
+The same opposing actors meeting repeatedly can change the strategic problem even when the underlying one-shot incentives remain unchanged.
+
+### GT-L-91 — Cooperation can start without a contract
+Observable routines, environmental conditions, and reciprocal restraint can create an initial pattern that later becomes self-sustaining.
+
+### GT-L-92 — Recognition is infrastructure for reciprocity
+If actors cannot reliably identify counterpart behavior, reciprocal strategies become difficult to sustain.
+
+### GT-L-93 — Structure can compensate for limited recognition
+Fixed locations and persistent associations can create the continuity needed for cooperation even without sophisticated individual recognition.
+
+### GT-L-94 — The value of the future can decline
+Reciprocity should weaken when the expected duration or value of future interaction falls sufficiently.
+
+### GT-L-95 — Evolution can produce strategic behavior without foresight
+A cooperative outcome can be selected for without requiring participants to understand the long-run game they are playing.
