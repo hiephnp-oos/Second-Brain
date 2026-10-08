@@ -240,3 +240,34 @@ When two rational actors appear to hold different posterior beliefs, inspect the
 
 ## GT-L-79
 A long chain of confirmations is not automatically common knowledge. Very high but finite mutual awareness can still leave coordination fragile.
+
+
+## GT-L-80
+A sequential game cannot be reduced to a payoff matrix without losing information about when choices are made and what players observe.
+
+## GT-L-81
+Subgame perfection turns credibility into a testable requirement: a plan must remain optimal after every relevant history.
+
+## GT-L-82
+For finite perfect-information games, one-deviation checking gives a practical way to validate backward-induction solutions.
+
+## GT-L-83
+Forward induction asks what earlier action history is consistent with the unexpected action now observed; it is different from simply predicting the next best response.
+
+## GT-L-84
+Chain-store and centipede results are useful precisely because they expose the assumptions behind backward induction and the limits of treating formal rationality as a complete behavioral model.
+
+## GT-L-85
+Bargaining power is partly procedural. Changing who proposes, who can reject, how long delay lasts, or what outside option exists can change the equilibrium without changing the pie.
+
+## GT-L-86
+Patience has economic value in bargaining because waiting preserves the ability to reject a poor offer and make the other side bear delay costs.
+
+## GT-L-87
+In repeated interaction, the future is an enforcement asset. Cooperation is sustainable only when the future loss from deviation is large enough.
+
+## GT-L-88
+A punishment is part of the strategy, not a rhetorical threat. If carrying it out is not optimal after deviation, it cannot support subgame-perfect cooperation.
+
+## GT-L-89
+The folk theorem is a conditional result, not a claim that repeated interaction automatically produces cooperation. Feasibility, enforceability, patience, and the solution concept matter.
