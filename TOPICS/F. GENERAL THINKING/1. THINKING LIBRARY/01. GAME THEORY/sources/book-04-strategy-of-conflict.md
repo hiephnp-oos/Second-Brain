@@ -123,16 +123,14 @@ Part II contains 15 substantive TOC units: three in Chapter 4, eleven in Chapter
 
 ## Part III traceability matrix
 
-Part III contains 10 substantive TOC units: three in Chapter 7 and seven in Chapter 8. The coverage unit is the named substantive TOC unit, not page count or theorem count.
+Part III contains 10 substantive TOC units: three named sections in Chapter 7 and seven named sections in Chapter 8. Chapter titles are structural headings and are not counted separately. The coverage unit is the named substantive TOC section, not page count or theorem count.
 
 | Source section | Promoted knowledge | Mental models | Applications | Lessons |
 |---|---|---|---|---|
-| Ch7 — Randomization of Promises and Threats | randomization in nonzero-sum strategy can scale or reshape commitments rather than merely hide actions | GT-MM-58 | GT-APP-50 | GT-L-50 |
-| Ch7 — The Risk of Failure | moderate/probabilistic threats can reduce the cost of threat failure while preserving deterrent effect | GT-MM-59, GT-MM-64 | GT-APP-50 | GT-L-50 |
+| Ch7 — The Risk of Failure | moderate/probabilistic threats can reduce the cost of threat failure while preserving deterrent effect | GT-MM-58, GT-MM-64 | GT-APP-50 | GT-L-50 |
 | Ch7 — The Risk of Inadvertent Fulfillment | accidental or premature fulfillment is a separate cost that can justify moderating a threat | GT-MM-59, GT-MM-63 | GT-APP-51 | GT-L-51 |
 | Ch7 — Randomized Commitments | commitment to a lottery can create an intermediate strategic outcome, but only if the random mechanism is credible before the opponent responds | GT-MM-60 | GT-APP-52 | GT-L-52 |
-| Ch8 — The Threat That Leaves Something to Chance | uncertainty outside the threatener's complete control can make a probabilistic threat credible | GT-MM-61, GT-MM-64 | GT-APP-53, GT-APP-55 | GT-L-53, GT-L-55 |
-| Ch8 — The Threat of Inadvertent War | accidental escalation, false alarms, misinterpretation, and imperfect control can become strategic risk | GT-MM-62, GT-MM-63 | GT-APP-54, GT-APP-58 | GT-L-54, GT-L-58 |
+| Ch8 — The Threat of Inadvertent War | accidental escalation, false alarms, misinterpretation, and imperfect control can become strategic risk | GT-MM-61, GT-MM-62, GT-MM-63 | GT-APP-53, GT-APP-54, GT-APP-58 | GT-L-53, GT-L-54, GT-L-58 |
 | Ch8 — Limited War as a Generator of Risk | limited conflict can generate a nonzero escalation risk that affects strategic behavior | GT-MM-62 | GT-APP-54 | GT-L-54 |
 | Ch8 — Risky Behavior in Limited War | deliberate acceptance of bounded risk can communicate resolve and influence the opponent | GT-MM-64 | GT-APP-55 | GT-L-55 |
 | Ch8 — Reprisal and Harassment | incremental or reciprocal actions can increase exposure to shared risk and alter the opponent's expected consequences | GT-MM-65, GT-MM-66 | GT-APP-57 | GT-L-56, GT-L-57 |
