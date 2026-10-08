@@ -202,3 +202,36 @@ A player may prefer fewer options when flexibility weakens commitment or makes t
 
 ## GT-MM-57 — Test perception-dependent theory empirically
 When outcomes depend on salience, framing, norms, or mutual recognition, distinguish what follows from formal incentives from what requires behavioral evidence.
+
+
+## GT-04 Part III — Mental models
+
+### GT-MM-58 — Calibrate the probability, not only the severity
+When a threat is too severe to be credible, ask whether a controlled probability of the severe outcome can create the required incentive at lower expected cost.
+
+### GT-MM-59 — Price both failure and accidental fulfillment
+Evaluate a threat against two downside modes: it fails to deter, or it succeeds/occurs unintentionally when the opponent would otherwise comply.
+
+### GT-MM-60 — Commit to the random mechanism before the response
+A randomized commitment is credible only when the opponent cannot assume the actor will simply choose the favorable realization after observing the response.
+
+### GT-MM-61 — Look for an external source of uncertainty
+Ask what process determines whether the threatened outcome occurs and whether that process remains outside the threatener's complete control.
+
+### GT-MM-62 — Treat escalation risk as part of the game
+A limited action can change behavior because of the probability that it escalates beyond the actor's intended endpoint.
+
+### GT-MM-63 — Separate intentional action from uncontrolled consequence
+Model what the actor chooses deliberately and what can happen through accident, error, delegation, or interaction effects.
+
+### GT-MM-64 — Risk can substitute for an implausible certainty
+When a certain extreme response would not be believed, a smaller but credible risk may produce stronger strategic influence.
+
+### GT-MM-65 — Brinkmanship is shared exposure to an undesirable outcome
+The mechanism is not simply unpredictability. It is deliberately increasing a risk that both parties dislike until the opponent has an incentive to reduce it by accommodating.
+
+### GT-MM-66 — Find the brink's slope, not only the endpoint
+In escalation problems, identify incremental moves that progressively increase risk rather than modeling only a safe state and catastrophic state.
+
+### GT-MM-67 — Model the decision system itself
+When outcomes depend on imperfect institutional or human decision processes, include delegation, procedural delays, multiple decision-makers, false alarms, and error as strategic variables.
