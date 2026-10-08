@@ -295,3 +295,32 @@ Test whether A can rationally interpret B's defense as offense while B makes the
 ### 73. Surveillance/overbuilding audit
 Evaluate whether additional monitoring or defensive capacity reduces uncertainty more than it increases perceived threat or instability.
 \n\n## GT-05 Part I — Incremental applications\n\n### 74. Cooperation-problem diagnosis\nMap whether individually attractive actions produce a collectively worse outcome, then identify the incentive conflict before proposing a cooperation mechanism.\n\n### 75. Prisoner's Dilemma structure test\nCheck the payoff ordering and whether unilateral defection dominates cooperation. Use the result to distinguish a genuine cooperation dilemma from a generic conflict.\n\n### 76. Future-interaction audit\nEstimate the probability, duration, and value of future interaction and determine how strongly they should affect current behavior.\n\n### 77. Reciprocity viability test\nBefore relying on reciprocal behavior, verify that participants can recognize each other's actions, expect meaningful future interaction, and have enough continuity for responses to matter.\n\n### 78. Motive-versus-mechanism audit\nSeparate explanations based on altruism, friendship, or authority from explanations based on repeated interaction and reciprocal incentives.\n
+
+## GT-05 Part II — Incremental applications
+
+### 79. Strategy-environment audit
+Evaluate a strategy against the actual or hypothesized distribution of counterpart strategies instead of using an environment-free ranking.
+
+### 80. Interaction-history design audit
+Identify what history a repeated-interaction strategy observes and how that history changes the next action.
+
+### 81. Reciprocal-strategy test
+Test whether a simple cooperate-first/match-last behavior can sustain cooperation while responding to exploitation.
+
+### 82. Robustness stress test
+Repeat a strategic comparison across substantially different opponent populations and check whether the ranking survives.
+
+### 83. Selection-dynamics audit
+Model how success changes strategy frequencies and then re-evaluate strategy performance under the new population mix.
+
+### 84. Invasion-resistance test
+Introduce a small alternative strategy into an incumbent population and compare its payoff with the incumbent's resident payoff.
+
+### 85. Emergence-versus-stability audit
+Analyze separately whether cooperation can obtain an initial foothold and whether it can resist later invasion.
+
+### 86. Cluster-threshold test
+Check whether a minimum level of local interaction among cooperators is sufficient to overcome exploitation by defectors.
+
+### 87. Reciprocity design audit
+Test whether a strategy is simultaneously cooperative enough to attract cooperation and responsive enough to deter persistent exploitation.
