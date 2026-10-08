@@ -322,3 +322,25 @@ After an unexpected action, infer what earlier choice could have made that actio
 
 ## GT-MM-107 — Chain-store and centipede expose model boundaries
 Backward-induction solutions can conflict with intuitive reputation or cooperation stories. Treat the discrepancy as evidence about assumptions, not as a reason to silently override the formal model.
+
+
+## GT-MM-108 — Bargaining procedure is part of the game
+Offer rights, rejection rights, timing, deadlines and outside options alter the equilibrium even when the feasible agreement set is unchanged.
+
+## GT-MM-109 — Patience is bargaining power
+Holding the other side's alternatives fixed, the player who values delay less has weaker bargaining leverage; the player who can wait more can demand more.
+
+## GT-MM-110 — Separate efficient agreement from surplus division
+First identify whether delay or disagreement destroys value; then analyze how the remaining surplus is divided by the bargaining procedure.
+
+## GT-MM-111 — Outside options reshape bargaining thresholds
+An alternative available after rejection changes the minimum acceptable continuation payoff and can shift the equilibrium agreement.
+
+## GT-MM-112 — Repetition converts future value into discipline
+Cooperation can be sustained when the value of future interaction is large enough to outweigh the one-shot gain from deviation.
+
+## GT-MM-113 — Punishment must be credible, not merely severe
+A punishment supports only the outcomes that players are willing to carry out after deviation. Check the continuation game before using a trigger strategy.
+
+## GT-MM-114 — Finite and infinite horizons are different models
+Do not import an infinite-horizon cooperation result into a known finite interaction. The terminal period can propagate backward through the entire game.
