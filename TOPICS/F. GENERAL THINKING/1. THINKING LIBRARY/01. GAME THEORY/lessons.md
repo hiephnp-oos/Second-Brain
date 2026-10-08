@@ -233,3 +233,10 @@ Knowledge is not binary. What matters strategically is which states a player con
 
 ## GT-L-77
 Common knowledge is stronger than shared knowledge because coordination can depend on every level of mutual awareness.
+
+
+## GT-L-78
+When two rational actors appear to hold different posterior beliefs, inspect the prior and information assumptions before treating the disagreement as a stable strategic fact.
+
+## GT-L-79
+A long chain of confirmations is not automatically common knowledge. Very high but finite mutual awareness can still leave coordination fragile.
