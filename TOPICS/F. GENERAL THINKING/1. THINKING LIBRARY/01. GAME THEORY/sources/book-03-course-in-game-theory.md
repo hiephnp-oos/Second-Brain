@@ -120,3 +120,34 @@ The incremental knowledge promoted here is:
 
 ### Acceptance rule
 Part I is accepted when each substantive section leaves a durable reasoning distinction or operational model, while formal proofs and equations remain source-level material. Chapter 5 is retained as a reasoning boundary rather than a full formal epistemic-game-theory treatment.
+
+
+## Part II traceability matrix
+
+### Chapter 6 — Extensive Games with Perfect Information
+- Sections: extensive-game model; subgame perfect equilibrium; chance/simultaneous extensions; interpretation of strategy; Chain-Store and Centipede; iterated weak-dominance elimination and forward induction.
+- Promoted: sequential structure, SPE credibility, one-deviation property, backward induction, model-extension boundaries, off-path strategy interpretation, forward induction.
+- Operational links: GT-MM-101 through GT-MM-107; GT-APP-64 through GT-APP-68; GT-L-80 through GT-L-84.
+
+### Chapter 7 — Bargaining Games
+- Sections: bargaining model; alternating offers; SPE characterization; variations/extensions.
+- Promoted: procedure dependence, impatience, efficient agreement, acceptance thresholds, outside options.
+- Operational links: GT-MM-108 through GT-MM-111; GT-APP-69 and GT-APP-70; GT-L-85 and GT-L-86.
+
+### Chapter 8 — Repeated Games
+- Sections: basic idea; finite versus infinite repetition; definitions; strategies as machines; trigger strategies; Nash/perfect folk theorems under multiple payoff criteria; SPE structure; finitely repeated games.
+- Promoted: enforceability/minmax boundary, trigger strategies, credible punishment, patience, Nash versus perfect folk theorems, finite-horizon boundary, and machine representation.
+- Operational links: GT-MM-112 through GT-MM-114; GT-APP-71 through GT-APP-73; GT-L-87 through GT-L-90.
+
+### Chapter 9 — Complexity Considerations in Repeated Games
+- Sections: complexity; machine game; equilibrium structure; lexicographic preferences.
+- Promoted: finite-state strategy representation, payoff/complexity tradeoff, introductory/cycling phases, and sensitivity to the complexity criterion.
+- Operational links: GT-MM-115 and GT-MM-116; GT-APP-74; GT-L-91.
+
+### Chapter 10 — Implementation Theory
+- Sections: implementation problem; dominant-strategy implementation; Nash implementation; SPE implementation.
+- Promoted: inverse mechanism-design framing, Gibbard-Satterthwaite boundary, Groves mechanisms under restricted domains, Nash monotonicity/no-veto conditions, and virtual SPE implementation.
+- Operational links: GT-MM-117 through GT-MM-121; GT-APP-75 through GT-APP-78; GT-L-92 through GT-L-95.
+
+### Acceptance rule
+Part II is accepted when each chapter leaves a durable sequential/mechanism-design reasoning layer and the major formal boundary conditions are retained, while proofs, theorem derivations, and game-tree arithmetic remain source-level material.
