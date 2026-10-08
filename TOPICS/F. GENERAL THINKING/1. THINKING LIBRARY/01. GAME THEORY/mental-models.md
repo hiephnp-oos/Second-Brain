@@ -1,408 +1,204 @@
 # Game Theory — Mental Models
 
-## GT-MM-01 — Model the interaction
-Identify actors, incentives, actions, information, timing and responses.
+Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02)
 
-## GT-MM-02 — Look forward, reason backward
-Solve likely later responses before deciding the current action.
+These are operational reasoning models distilled from the sources. They are not universal laws; they are prompts for analysis.
 
-## GT-MM-03 — Simultaneous ≠ sequential reasoning
-For sequential games, reason along the move sequence. For simultaneous games, solve the interdependence of players' choices without assuming either move is observed first.
+## GT-MM-01 — Model the interaction, not just your decision
+Identify players, objectives, actions, information, likely responses, and resulting payoffs.
 
-## GT-MM-04 — Strategic action changes the reaction
-Do not optimize a move while holding the opponent's behavior fixed. Ask how the opponent will adapt and how that adaptation changes your payoff.
+## GT-MM-02 — Look forward, then reason backward
+For sequential situations, determine later rational responses first and propagate them backward to the current decision.
 
-## GT-MM-05 — Lead/follow depends on the payoff structure
-Moving first is not inherently advantageous. A follower can exploit revealed information, while a leader may benefit when initiative changes the later response.
+## GT-MM-03 — Simplify before solving
+Remove dominated strategies, identify dominant strategies, map best responses, then look for equilibrium before using more elaborate analysis.
 
-## GT-MM-06 — Simplify before solving
-Remove dominated choices and map best responses.
+## GT-MM-04 — Stability is not desirability
+Separate "What outcome is strategically stable?" from "Is that outcome desirable?"
 
-## GT-MM-07 — Stability ≠ desirability
-Evaluate strategic stability separately from value.
+## GT-MM-05 — Change the game, not just the argument
+If the desired behavior will not emerge under current rules, change incentives, timing, information, options, or response rules.
 
-## GT-MM-08 — Intransigence can create bargaining power
-A genuinely fixed position can remove the opponent's ability to counteroffer, but rigidity has long-run and failure costs.
+## GT-MM-06 — A threat has value only if it is credible
+Ask whether the threatened action would still be in your interest after the other side moves. If not, identify the mechanism that makes it credible.
 
-## GT-MM-09 — Coordination requires a first-mover solution
-When everyone benefits from joint action but each individual bears the cost of moving first, identify how leadership, communication, or enforcement solves the coordination problem.
+## GT-MM-07 — Commitment can create strategic value by removing options
+Deliberately reducing your own future freedom can change the other side's expectations and therefore their action.
 
-## GT-MM-10 — Sequential concessions can create an accordion effect
-A series of individually acceptable concessions can produce an unacceptable aggregate outcome. Evaluate the whole sequence before accepting the next local step.
+## GT-MM-08 — Detectability and punishment determine cooperation
+For cooperation problems, inspect observation, attribution, punishment credibility, proportionality, and the value of future interaction.
 
-## GT-MM-11 — Protect bargaining power before commitment
-Once switching or exit becomes costly, the other side may exploit that dependence. Negotiate important terms before becoming locked in.
+## GT-MM-09 — Forgiveness is a strategic parameter under noisy observation
+Avoid both automatic retaliation and unconditional forgiveness when observations can be wrong.
 
-## GT-MM-12 — Mix actions to prevent exploitation
-If the opponent can profit from predicting your pattern, use an appropriately randomized or mixed strategy rather than a predictable cycle.
+## GT-MM-10 — Randomize when predictability is exploitable
+Use controlled randomization when the opponent can profitably predict a systematic action.
 
-## GT-MM-13 — Others' actions contain information
-A counterparty's willingness to take one side of a zero-sum trade can reveal private information. Treat observed behavior as evidence, not noise.
+## GT-MM-11 — Separate randomization from brinkmanship
+Randomization makes actions hard to predict; brinkmanship creates risk by reducing control over the final outcome.
 
-## GT-MM-14 — Rationality is an input, not a guarantee
-Strategic models must account for pride, irrationality, mistakes and limited credibility when these materially affect the opponent's response.
+## GT-MM-12 — Bargaining is a game with rules
+Model move order, rejection, delay, alternatives, and procedure before evaluating the substance of the deal.
 
-## GT-MM-15 — Procedure is strategic
-Move order, rejection, delay, alternatives and agenda control matter.
+## GT-MM-13 — Ask what incentive the rule creates
+If every actor optimizes locally under the rules, predict the resulting behavior and compare it with the system's intended outcome.
 
-## GT-MM-16 — Credibility is the test
-A threat or promise matters only if it remains believable when executed.
+## GT-MM-14 — Model the information structure
+Before acting, ask:
+1. What do I know?
+2. What does the other side know?
+3. What do I know about what they know?
+4. What do they know about what I know?
+5. Which facts are common knowledge?
 
-## GT-MM-17 — Commitment can remove options strategically
-Reduced freedom can change another actor's expectations.
+Information structure can change the game even when the payoff structure stays the same.
 
-## GT-MM-18 — Information is part of the game
-Ask who knows what and what is common knowledge.
+## GT-MM-15 — Treat actions as evidence
+An action by another player is not only a move; it may reveal information about their private knowledge, type, or incentives.
 
-## GT-MM-19 — Actions can signal information
-Behavior may reveal private type or incentives.
+Update your view of the situation based on what their action implies, not only on what they say.
 
-## GT-MM-20 — Screen through choice architecture
-Design options that induce hidden types to select differently.
+## GT-MM-16 — Screen by changing the choice architecture
+When you cannot directly observe a hidden type or preference, design options so that different types have different incentives to choose them.
 
-## GT-MM-21 — Winning can be evidence
-Winning can indicate an unusually optimistic valuation in uncertain common-value settings.
+A useful screen extracts information through behavior rather than interrogation.
 
-## GT-MM-22 — Cooperation needs enforcement structure
-Inspect detection, attribution, punishment, forgiveness, reputation and future value.
+## GT-MM-17 — Winning can be evidence that your estimate was too optimistic
+In an auction or competitive selection, ask what the fact that you won tells you about the information held by everyone who lost.
 
-## GT-MM-23 — Noise changes reciprocity
-Robust cooperation needs tolerance for accidental errors.
+Do not evaluate the prize only from the perspective of the winning bid.
 
-## GT-MM-24 — Separate establishment from stability
-A strategy can be stable once established without being likely to become established.
+## GT-MM-18 — Design the game so players do not need to outsmart it
+A strong mechanism can make the desired behavior a dominant or otherwise straightforward strategy.
 
-## GT-MM-25 — Preserve future interaction value
-Today's move changes tomorrow's incentives.
+The designer's job is often to improve the rules rather than demand greater strategic sophistication from every participant.
 
-## GT-MM-26 — Focal points coordinate expectations
-Look for salient outcomes when explicit communication is unavailable.
+## GT-MM-19 — Separate private value from common value
+If the true value is common but uncertain, other players' estimates contain information about the underlying value.
 
-## GT-MM-27 — Design mechanisms, not just participants
-Good rules can make desired behavior easier than perfect reasoning.
+Winning or losing can therefore update your estimate.
 
-## GT-MM-28 — Cooperation requires observability
-Before relying on reciprocal cooperation, ask what behavior is observable, how cheating is detected, and whether the responsible actor can be identified.
+## GT-MM-20 — Take costly uncertainty while options remain
+When a later failure would eliminate recovery options, consider whether an appropriate risk should be taken earlier while alternatives remain.
 
-## GT-MM-29 — Design the punishment, not just the rule
-A cooperation rule is incomplete without a credible response to defection. Prefer punishment that is simple, certain, prompt and sufficiently strong; avoid unnecessary severity that makes detection errors costly.
+This is a sequencing principle, not a general preference for risk.
 
-## GT-MM-30 — Finite horizons can unravel cooperation
-If everyone knows exactly when repeated interaction ends, reason backward from the final round. Cooperation may disappear all the way to the first round.
+## GT-MM-21 — Distinguish conflict from total-value creation
+Do not assume every strategic interaction is zero-sum.
 
-## GT-MM-31 — Future value sustains cooperation
-Cooperation is easier when future gains are sufficiently valuable relative to the one-time gain from cheating.
+Ask separately:
+- how is the existing value divided?
+- can the players create additional value through cooperation?
 
-## GT-MM-32 — Reciprocity needs forgiveness
-A retaliation rule that never repairs accidental breakdowns can destroy cooperation. Separate deliberate defection from noise and use short-, medium- and long-term history to distinguish an exception from a pattern before escalating punishment.
 
-## GT-MM-33 — Strategic move = preemptive response shaping
-A strategic move is not merely a statement of intent. It changes the response rule before the other actor chooses.
+## GT-MM-22 — Model the information structure before solving the game
+If players have private information, identify types, information sets, beliefs, and what is common knowledge before applying an equilibrium concept.
 
-## GT-MM-34 — Distinguish threat, promise, warning and assurance
-Threats and promises alter incentives; warnings and assurances primarily convey information about an unchanged response. Keep threats and promises no larger than necessary: excessive commitments can be incredible, costly, counterproductive and reputation-damaging.
+## GT-MM-23 — Eliminate what cannot survive rational reasoning
+Remove actions that cannot be justified as a best response to any rationally consistent belief before solving the remaining game.
 
-## GT-MM-35 — Observability is part of credibility
-A commitment cannot influence behavior if the opponent cannot observe or infer it; a threat cannot be enforced if the relevant behavior cannot be observed.
+## GT-MM-24 — Test future behavior for credibility
+In sequential games, do not stop at the first equilibrium. Check whether the proposed behavior remains optimal inside every relevant subgame.
 
-## GT-MM-36 — Credibility requires changing the future choice
-Ask what prevents you from reversing the commitment later: changed payoffs, contracts, reputation, loss of options, delegation, external control or incremental steps.
+## GT-MM-25 — A strategy is a contingent plan, not just a move
+For sequential and repeated games, distinguish the action taken now from the complete plan specifying how behavior changes after different histories.
 
-## GT-MM-37 — Commit by reducing future discretion
-Burning bridges, cutting communication or delegating authority can create leverage precisely because they remove options.
+## GT-MM-26 — Repetition matters through the value of future interaction
+A repeated relationship changes incentives when future outcomes are sufficiently valuable relative to immediate gains from deviation.
 
-## GT-MM-38 — Small steps can make commitment credible
-A large irreversible promise may be unbelievable. A sequence of smaller commitments can make each next step easier to believe and control.
+## GT-MM-27 — Design the mechanism, not only the desired outcome
+If the target outcome is not stable under current rules, ask whether a different game can implement it.
 
-## GT-MM-39 — Mix at equilibrium proportions
-Randomization should make the opponent indifferent among relevant responses when the game requires mixing. Correct proportions depend on payoffs and skills.
+## GT-MM-28 — Beliefs are part of sequential reasoning
+When actions do not reveal all relevant information, equilibrium analysis must specify what players believe at information sets and whether those beliefs are consistent with the strategy profile.
 
-## GT-MM-40 — Random proportions are not enough
-A predictable sequence with the correct long-run ratio remains exploitable. Randomize individual actions, not merely aggregate frequencies.
+## GT-MM-29 — Test an allocation against coalition deviations
+For cooperative problems, ask whether any coalition can obtain a better outcome for all of its members than the proposed allocation.
 
-## GT-MM-41 — Adapt the mix when the game changes
-Changes in skills, payoffs or opponent behavior can change the equilibrium mixture and expected performance.
+## GT-MM-30 — Separate bargaining outcome from bargaining procedure
+A bargaining solution depends on the feasible agreements, disagreement outcome, preferences, and the solution principles used to select among them.
 
-## GT-MM-42 — Separate randomization from brinkmanship
-Randomization makes an action unpredictable to the opponent; brinkmanship creates a risk that an outcome may occur beyond either side's full control. They solve different strategic problems.
+## GT-MM-31 — Look for the focal point when coordination is the problem
+When communication is unavailable, ask which outcome is uniquely salient, prominent, or mutually recognizable rather than assuming players must randomize.
 
-## GT-MM-43 — Brinkmanship needs an escape path
-A threat based on escalating risk works only when the threatened side can reduce the risk by complying. If compliance does not lower the danger, the threat loses its strategic function.
+## GT-MM-32 — Expectations can coordinate behavior without commands
+If each player expects the other to recognize the same signal, the shared expectation can become self-reinforcing.
 
-## GT-MM-44 — Recognizable risk is the commitment
-Brinkmanship is not a hidden lottery. The opponent must understand the risk and believe the process may escape the actor's full control.
+## GT-MM-33 — Communication can be an instrument or a constraint
+Ask not only what information a message conveys, but also who can send, receive, block, destroy, or selectively reveal it.
 
-## GT-MM-45 — Coordination can be socially inefficient at equilibrium
-A stable individual response can produce congestion, overcompetition or another outcome worse than a coordinated allocation.
+## GT-MM-34 — Delegate when changing the decision-maker changes credibility
+An agent or mediator can change the strategic game by altering incentives, information, or the ability to reverse a commitment.
 
-## GT-MM-46 — Path dependence can preserve an inferior equilibrium
-Positive feedback can make an established convention or technology persist after a different option becomes objectively better.
+## GT-MM-35 — Deliberate uncertainty can strengthen a commitment
+A commitment can become more credible when the actor gives up some control over whether the costly consequence occurs.
 
-## GT-MM-47 — Higher-order expectations are strategic inputs
-In markets, contests and political settings, optimize against what others expect others to do, not only against intrinsic fundamentals.
+## GT-04 Part I — Mental models
 
-## GT-MM-48 — Voting procedure is part of the game
-Agenda order, pairwise sequencing, thresholds and ballot rules can change the outcome without changing voter preferences.
+## GT-MM-36 — Self-binding can create bargaining power
+Reducing your own future freedom can make your position more credible and change the other side's bargaining calculation.
 
-## GT-MM-49 — Bargaining power is relative
-Outside options, waiting costs and patience matter relative to the opponent. Improving your relative position can matter more than improving your absolute position.
+## GT-MM-37 — Negotiation structure is a strategic variable
+Before evaluating a deal, inspect who moves, what alternatives exist, what commitments are possible, and how information flows.
 
-## GT-MM-50 — Multi-issue bargaining creates trade opportunities
-When parties value issues differently, package trades can create gains that a single-issue split cannot capture.
+## GT-MM-38 — A threat and a promise are conditional moves
+Analyze both as response rules: what happens if the other side chooses one action versus another, and whether the prescribed response remains credible.
 
-## GT-MM-51 — Hidden effort requires observable proxies
-If effort cannot be monitored directly, incentives must use outcomes or signals correlated with effort while accounting for noise and risk.
+## GT-MM-39 — Limited conflict can function as communication
+An action taken during conflict may change the bargaining game by revealing resolve, testing reactions, or altering expectations.
 
-## GT-MM-52 — Mechanism rules create the incentives they measure
-Do not ask only whether participants are rational. Ask what behavior the rule itself makes privately optimal.
+## GT-MM-40 — Tacit coordination requires mutual recognition
+A salient solution helps only when each side expects the other side to recognize it as salient too.
 
-## GT-MM-53 — Winning can be a warning
-In uncertain common-value settings, winning may mean that your estimate was unusually optimistic. Evaluate the information content of the win before treating it as success.
+## GT-MM-41 — Tacit bargaining is not the same as agreement
+A mutually recognized outcome can coordinate divergent interests without an explicit bargain, but its stability depends on the cost of failing to coordinate.
 
-## GT-MM-54 — Infer the objective behind the move
-Before predicting an action, ask what objective or incentive structure makes that action rational. The visible move is evidence about the underlying game, not the whole game.
+## GT-MM-42 — Prior arrangements move bargaining earlier in time
+If critical choices can be constrained before uncertainty or conflict arises, some bargaining can be completed before the strategic pressure peaks.
 
-## GT-MM-55 — A strategic loss can improve the final position
-Do not optimize the immediate result when a temporary loss changes the future state, removes a stronger rival, or improves the eventual payoff.
+## GT-MM-43 — Communication rights are part of bargaining power
+Control over sending, receiving, withholding, or destroying communication can change what commitments and coordination outcomes are feasible.
 
-## GT-MM-56 — Check whether backward reasoning is actually solvable
-Use backward reasoning directly when the game state, move history, objectives, and subsequent actions are sufficiently known. If uncertainty or hidden information matters, switch to an appropriate information or belief model.
+## GT-04 Part II — Mental models
 
-## GT-MM-57 — Equilibrium does not imply unique outcome
-Finding one Nash equilibrium does not explain which equilibrium will occur when several stable outcomes exist. Add an equilibrium-selection explanation.
+## GT-MM-44 — Model reciprocal expectations, not just reciprocal actions
+Ask what each player expects the other to do and what each expects the other to expect.
 
-## GT-MM-58 — Focal points can select among equilibria
-When multiple equilibria exist and communication is limited, look for a salient convention, shared history, symmetry, or other feature that can coordinate expectations.
+## GT-MM-45 — Locate the game between pure conflict and pure coordination
+Before choosing an analytical tool, identify where the interaction lies on the conflict–common-interest spectrum.
 
-## GT-MM-59 — Mutually destructive outcomes require coordination or credible restraint
-In Chicken-like games, each side may prefer the other to yield while both prefer avoiding mutual disaster. Analyze whether commitment, communication, or a focal convention can prevent the bad equilibrium.
+## GT-MM-46 — Coordination failure can occur without conflicting interests
+If players want compatible outcomes but cannot identify the same action, the problem is expectation alignment rather than motivation.
 
-## GT-MM-60 — Equilibrium mixing must make the opponent indifferent
-When a mixed strategy is required, choose probabilities that remove the opponent's incentive to switch among the actions used in equilibrium.
+## GT-MM-47 — Search for expectation-focusing cues
+When several outcomes are possible, inspect salience, symmetry, labels, conventions, physical structure, and shared context for cues that could make one outcome mutually recognizable.
 
-## GT-MM-61 — Correct proportions are not enough; randomness must be unpredictable
-A sequence can have the right long-run frequencies and still be exploitable if the opponent can predict individual actions.
+## GT-MM-48 — A strategic move changes the opponent's decision problem
+Do not evaluate a move only by its direct payoff. Ask how it changes the other player's expectations, options, incentives, or information.
 
-## GT-MM-62 — Your improvement can change the opponent's strategy
-A change in one player's skill or payoff can alter both players' equilibrium mixtures. Re-solve the interaction after material capability changes.
+## GT-MM-49 — Enforcement is part of the threat/promise mechanism
+A conditional response has strategic force only if the surrounding structure makes implementation possible or credible.
 
-## GT-MM-63 — A strategic move is preemptive
-An action or response rule has strategic effect only when established before the opponent acts, because its purpose is to change expectations about the future response.
+## GT-MM-50 — Giving up initiative can improve leverage
+Ask whether controlling the next move is actually useful, or whether transferring the decision can make your position more credible.
 
-## GT-MM-64 — Threat/promise differs from warning/assurance
-A threat or promise intentionally commits to a response that would not otherwise be optimal in order to influence the opponent. A warning or assurance communicates an unchanged incentive-compatible response.
+## GT-MM-51 — Identification is a form of commitment
+Publicly tying yourself to a position can change the opponent's expectations by reducing your apparent ability to reverse course.
 
-## GT-MM-65 — Credibility requires changing the reversal incentive
-A commitment is credible when the future choice has been changed so that carrying it out is sufficiently attractive, constrained, costly to reverse, or delegated.
+## GT-MM-52 — Delegation is useful when the decision-maker changes the game
+Analyze whether changing the decision-maker changes incentives, information, or constraints.
 
-## GT-MM-66 — Commitment can be built by removing discretion
-Contracts, cut-off communication, burned bridges, incremental steps, teams, or mandated agents work by reducing the ability or incentive to reverse the announced position.
+## GT-MM-53 — A mediator is a game-changing mechanism
+Evaluate what the mediator changes: information, communication, enforcement, interpretation, or incentives.
 
-## GT-MM-67 — Chance can be a commitment device
-Delegating the outcome to chance can make a commitment credible when retaining control would otherwise create an incentive to back down.
+## GT-MM-54 — Communication channels are strategic infrastructure
+Map who can communicate with whom, what can be withheld, and what happens when communication is blocked or destroyed.
 
-## GT-MM-68 — Actions are information
-In asymmetric-information games, treat observable actions as evidence about hidden type, ability, intentions or information. Also model how the actor anticipates that inference.
+## GT-MM-55 — Formalize the strategic move before judging it
+Add the move to the action sequence, information structure, or payoffs and then re-evaluate equilibrium and credibility.
 
-## GT-MM-69 — A credible signal must separate types
-A signal is strategically informative when it is sufficiently costly or unattractive for the wrong type to mimic. Cheap talk alone may not separate types.
+## GT-MM-56 — More strategic freedom is not always an advantage
+A player may prefer fewer options when flexibility weakens commitment or makes the opponent less willing to trust a stated position.
 
-## GT-MM-70 — Screening makes types self-select
-An uninformed party can design a test, menu or choice set so different hidden types choose differently and thereby reveal information.
-
-## GT-MM-71 — Signal jamming can hide useful information
-When revealing information is harmful, an informed actor may deliberately choose behavior that makes inference harder. Interpret apparent noise or mimicry as potentially strategic.
-
-## GT-MM-72 — Externalities can make equilibrium inefficient
-When an individual's action imposes costs on others that are not privately priced, the Nash equilibrium can be worse for the group than a coordinated allocation.
-
-## GT-MM-73 — Price the external cost to align incentives
-A toll, fee or rule that makes an actor bear the marginal harm imposed on others can move decentralized behavior toward the collective optimum.
-
-## GT-MM-74 — Network effects create path dependence
-When the value of an option rises with adoption, an early advantage can become self-reinforcing and preserve an inferior equilibrium.
-
-## GT-MM-75 — Common-value winning can be bad news
-In common-value contests, being the winner can itself be evidence that your estimate was too optimistic. Condition your valuation on the information contained in winning.
-
-## GT-MM-76 — Mechanism design can reduce the need for strategic play
-A well-designed rule can make the desired action dominant or otherwise incentive-compatible, shifting strategic effort from playing the game to designing the game.
-
-## GT-MM-77 — Revenue equivalence has boundary conditions
-Different auction formats can have equivalent expected revenue only under their relevant assumptions. Do not generalize revenue equivalence to settings with different information, asymmetry or rules.
-
-## GT-MM-78 — Bargaining pie is value over BATNAs
-The surplus available for bargaining is what agreement creates relative to what each side gets without agreement. Divide that surplus only after establishing the outside options.
-
-## GT-MM-79 — Procedure is part of bargaining power
-Offer order, response rights, delay costs and deadlines change the bargaining game. Do not treat procedure as neutral.
-
-## GT-MM-80 — Voting power is pivotality
-A vote has strategic value when it can change the decisive outcome. Count coalition/tie structure rather than assuming every vote has equal influence.
-
-## GT-MM-81 — Incentives trade off motivation and risk
-When performance is noisy, stronger outcome-based incentives motivate effort but transfer more risk to the agent. Optimal design balances both effects.
-
-## GT-MM-82 — Relative performance can filter common shocks
-Comparing agents exposed to similar noise can reveal effort better than evaluating raw outcomes, provided the comparison structure does not invite collusion.
-
-## GT-MM-83 — Multiple principals can cancel incentives
-When several principals impose conflicting reward structures, each can offset the others and weaken the agent's total incentive to act.
-
-## GT-MM-84 — Intrinsic and extrinsic incentives can interact
-Adding a monetary incentive is not automatically beneficial. The size and framing of an external reward can alter the intrinsic motivation that was already present.
-
-
-## GT-MM-85 — Formalize before solving
-Before applying a solution concept, specify players, actions, preferences/payoffs, information and timing. If the model is underspecified, the apparent equilibrium may be an artifact of the missing assumptions.
-
-## GT-MM-86 — Nash equilibrium is mutual consistency, not desirability
-A Nash equilibrium means no player wants to deviate unilaterally given the others' actions. It does not imply efficiency, fairness, uniqueness, or social desirability.
-
-## GT-MM-87 — Check the existence claim's domain
-Do not infer that a pure equilibrium exists because a Nash equilibrium exists. Existence results depend on the strategy space and whether mixed strategies are admitted.
-
-## GT-MM-88 — Strict competition is a special structure
-Minimax/value-style conclusions from strictly competitive games should not be exported to general-sum games where players can have both conflict and common interest.
-
-## GT-MM-89 — Strategy must condition on private type
-When a player has private information, the relevant strategy specifies behavior for each type/signal. Do not replace a type-contingent decision with one action based on an average case.
-
-## GT-MM-90 — Mixed, correlated, and evolutionary equilibrium answer different questions
-Mixed equilibrium models randomized behavior, correlated equilibrium models incentive-compatible coordination through information/recommendations, and evolutionary equilibrium models population stability. Choose the interpretation before using the result.
-
-## GT-MM-91 — Correlation can coordinate without independent randomization
-A common recommendation or signal can coordinate players' actions while each player still has no incentive to deviate after conditioning on the recommendation.
-
-## GT-MM-92 — Evolutionary stability is not deliberate rationality
-A strategy can be selected for population stability without assuming that each participant consciously computes an equilibrium. Separate strategic optimization from evolutionary selection.
-
-## GT-MM-93 — Rationalizability is weaker than Nash equilibrium
-An action can be rationalizable because it is a best response to some coherent belief about others, even when that belief does not correspond to a mutual best-response equilibrium.
-
-## GT-MM-94 — Strict dominance is a safe simplification layer
-An action that is strictly dominated cannot be optimal against any belief over the opponent's remaining actions. Iterated strict-dominance elimination is therefore a stronger simplification than merely guessing an opponent's behavior.
-
-## GT-MM-95 — Weak dominance requires procedural caution
-Weakly dominated actions can still be best responses to some beliefs, and iterated elimination can depend on the order in which actions are removed. Record the elimination path before treating the survivor set as a robust prediction.
-
-## GT-MM-96 — Knowledge is a state-space restriction
-Ask which states each player considers possible. “Information” changes the feasible belief set and therefore changes strategic behavior even when payoffs and actions are unchanged.
-
-## GT-MM-97 — Common knowledge is an infinite hierarchy
-A fact being known by everyone is not enough for common knowledge. Coordination may depend on arbitrarily high orders of “I know that you know...”.
-
-## GT-MM-98 — Agreement requires an epistemic audit
-If two rational actors appear to disagree about the same probability, check the common-prior, information and common-knowledge assumptions before concluding that they have found a stable disagreement.
-
-## GT-MM-99 — Solution concepts encode belief assumptions
-Nash, rationalizability and later refinements differ partly in what they assume players know about the game, each other's rationality, and each other's beliefs. Do not compare solution concepts as if they were interchangeable labels.
-
-## GT-MM-100 — Almost common knowledge can be strategically insufficient
-A very high but finite chain of mutual knowledge may fail to coordinate behavior when the equilibrium depends on the chain being common knowledge. Test the terminal uncertainty rather than assuming that “nearly certain” is operationally equivalent to common knowledge.
-
-
-## GT-MM-101 — Model the sequence, not just the payoffs
-When timing changes who observes what before acting, convert the interaction to an extensive game before applying a static equilibrium concept.
-
-## GT-MM-102 — SPE tests every relevant future
-A Nash equilibrium supported by an action that would not be optimal after a later history is not a credible sequential solution. Test the continuation games.
-
-## GT-MM-103 — One-deviation property simplifies finite sequential games
-For finite-horizon perfect-information games, verify SPE by checking whether the player to move can profit from changing only the current action at each history.
-
-## GT-MM-104 — Backward induction has a domain
-Backward induction is reliable for finite perfect-information games, but chance, simultaneous moves, infinite horizons, or strategic uncertainty require the corresponding extended model.
-
-## GT-MM-105 — A strategy contains off-path contingencies
-A formal strategy specifies behavior after histories that may never occur. Treat those components as contingent beliefs/plans, not as observed actions.
-
-## GT-MM-106 — Forward induction uses what must have happened
-After an unexpected action, infer what earlier choice could have made that action rational. Weak-dominance elimination can encode this reasoning in some extensive games.
-
-## GT-MM-107 — Chain-store and centipede expose model boundaries
-Backward-induction solutions can conflict with intuitive reputation or cooperation stories. Treat the discrepancy as evidence about assumptions, not as a reason to silently override the formal model.
-
-
-## GT-MM-108 — Bargaining procedure is part of the game
-Offer rights, rejection rights, timing, deadlines and outside options alter the equilibrium even when the feasible agreement set is unchanged.
-
-## GT-MM-109 — Patience is bargaining power
-Holding the other side's alternatives fixed, the player who values delay less has weaker bargaining leverage; the player who can wait more can demand more.
-
-## GT-MM-110 — Separate efficient agreement from surplus division
-First identify whether delay or disagreement destroys value; then analyze how the remaining surplus is divided by the bargaining procedure.
-
-## GT-MM-111 — Outside options reshape bargaining thresholds
-An alternative available after rejection changes the minimum acceptable continuation payoff and can shift the equilibrium agreement.
-
-## GT-MM-112 — Repetition converts future value into discipline
-Cooperation can be sustained when the value of future interaction is large enough to outweigh the one-shot gain from deviation.
-
-## GT-MM-113 — Punishment must be credible, not merely severe
-A punishment supports only the outcomes that players are willing to carry out after deviation. Check the continuation game before using a trigger strategy.
-
-## GT-MM-114 — Finite and infinite horizons are different models
-Do not import an infinite-horizon cooperation result into a known finite interaction. The terminal period can propagate backward through the entire game.
-
-
-## GT-MM-115 — Complexity is a strategic cost
-When strategies require memory or operational machinery, compare payoff gains with the cost of implementing and maintaining the strategy.
-
-## GT-MM-116 — Simpler machines can dominate equivalent complex strategies
-If two machines generate the same payoff path, a complexity-sensitive player prefers the one with fewer states. Re-evaluate equilibrium after introducing implementation cost.
-
-## GT-MM-117 — Implementation reverses the analysis direction
-Instead of asking “what outcome does this game produce?”, ask “what game form makes the desired outcome emerge under the chosen solution concept?”
-
-## GT-MM-118 — Dominant-strategy implementation has an impossibility boundary
-With unrestricted preferences and at least three outcomes, onto DSE implementation collapses to dictatorship. Relax the domain or the solution requirement if a non-dictatorial mechanism is needed.
-
-## GT-MM-119 — Restricted domains enable truthful mechanisms
-Groves-type mechanisms can make truthful reporting dominant when preferences have the required valuation structure and transfers are available.
-
-## GT-MM-120 — Nash implementation needs robustness conditions
-Monotonicity and no-veto power are sufficient conditions in the book's setting, showing that implementability depends on the choice rule's structure, not merely on mechanism complexity.
-
-## GT-MM-121 — Virtual implementation can trade certainty for feasibility
-An outcome may be made arbitrarily likely under SPE even when exact implementation is unavailable. Distinguish exact from approximate or virtual implementation.
-\n\n## GT-MM-122 — Information sets are strategic constraints\nA player choosing at an information set must use one action rule across the histories she cannot distinguish. Model the information restriction before solving the game.\n\n## GT-MM-123 — Perfect recall is a structural assumption\nCheck whether a player remembers her own relevant past actions and information before applying results that rely on perfect recall, especially mixed/behavioral strategy equivalence.\n\n## GT-MM-124 — Equivalent game forms can preserve strategy while changing presentation\nUse equivalence principles to remove redundant representation, but verify which strategic objects are actually preserved before treating two extensive games as interchangeable.\n\n## GT-MM-125 — Strategic equivalence does not erase framing effects\nTwo formally equivalent games can generate different observed behavior when participants respond to how the decision is framed. Separate normative game equivalence from behavioral prediction.\n\n## GT-MM-126 — Behavioral strategies localize randomization\nUnder perfect recall, randomization at each information set can reproduce the strategic consequences of randomizing over complete contingent plans. Prefer the representation that matches the operational decision process.\n\n## GT-MM-127 — An assessment is strategy plus beliefs\nIn imperfect-information games, a strategy profile alone is incomplete for sequential reasoning. Record beliefs at every information set as part of the object being evaluated.\n\n## GT-MM-128 — Sequential rationality applies off path\nAn action must be optimal at an information set even when the equilibrium strategy makes that information set unreached, provided beliefs there are specified.\n\n## GT-MM-129 — Consistency constrains off-path beliefs\nDo not assign arbitrary beliefs after an unexpected history. Test whether the beliefs can arise as limits of Bayes-updated beliefs from nearby completely mixed strategies.\n\n## GT-MM-130 — Refinements should target a specific belief problem\nUse Perfect Bayesian, sequential, or stronger refinements only when you can identify which implausible off-path belief or continuation the refinement is intended to remove.\n\n## GT-MM-131 — Trembles test robustness to small mistakes\nA candidate that depends on exact zero-probability behavior may fail when every action has a small chance of being chosen. Treat trembling-hand analysis as a robustness test, not as a synonym for Nash equilibrium.\n
- 
-## GT-MM-132 — Coalition stability is different from individual equilibrium
-A coalition can block an allocation even when no individual player has a profitable unilateral deviation. Check group deviations explicitly.
-
-## GT-MM-133 — Transferable payoff is a modeling assumption
-TU games allow coalition surplus to be redistributed. If utility cannot be transferred, model the coalition's feasible payoff set instead of forcing a scalar worth function.
-
-## GT-MM-134 — Core means no blocking coalition
-An allocation is in the core only if no coalition can obtain an outcome that all its members prefer to the proposed allocation while remaining jointly feasible.
-
-## GT-MM-135 — Core nonemptiness is a real result
-Do not assume that a stable allocation exists. First determine whether the game's coalition structure admits any unblocked allocation.
-
-## GT-MM-136 — Market competition can generate coalition stability
-In the appropriate transferable-payoff market setting, competitive allocations and core allocations can be tightly related. Treat the equivalence as assumption-dependent, not universal.
-
-## GT-MM-137 — Stable sets and the core answer different questions
-The core checks whether an allocation is blocked. A stable set evaluates a set of outcomes through internal and external stability.
-
-## GT-MM-138 — Objections must be analyzed as coalition claims
-Bargaining-set reasoning asks whether a coalition's objection is justified and whether another coalition can counter it. Do not reduce every objection to a unilateral deviation.
-
-## GT-MM-139 — Kernel and nucleolus measure coalition excess differently
-These solution concepts refine how coalition complaints or excesses are balanced. The choice changes the allocation criterion.
-
-## GT-MM-140 — Shapley value is marginal-contribution allocation
-The Shapley value distributes TU worth by averaging a player's marginal contribution over coalition orderings. It is an allocation rule, not a proof of coalition stability.
-
-## GT-MM-141 — Bargaining starts from disagreement
-A bargaining solution is defined relative to what each party receives if agreement fails. Ignore the disagreement point and the bargaining problem is mis-specified.
-
-## GT-MM-142 — Nash bargaining is an axiomatic selection rule
-The Nash solution identifies an agreement by its properties and optimization criterion; it should not be confused with the Nash equilibrium of a strategic game.
-
-## GT-MM-143 — Strategic bargaining and Nash bargaining are connected, not identical
-An alternating-offers game can generate the Nash bargaining outcome under appropriate assumptions, but the strategic procedure and the axiomatic solution remain distinct analytical objects.
-
-## GT-MM-144 — Exact implementation is stronger than selection
-Showing that a solution exists is different from constructing a game or mechanism that induces it exactly. State the implementation target explicitly.
+## GT-MM-57 — Test perception-dependent theory empirically
+When outcomes depend on salience, framing, norms, or mutual recognition, distinguish what follows from formal incentives from what requires behavioral evidence.
