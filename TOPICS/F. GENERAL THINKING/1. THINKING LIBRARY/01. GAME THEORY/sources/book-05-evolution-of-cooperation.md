@@ -179,3 +179,49 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
 - PDF body text was read directly for the chapter spans, not inferred solely from repository summaries.
 - PDF remains source authority; Markdown remains retrieval aid.
 - Source traceability matrix records all 9 internal units and their knowledge mappings.
+
+
+## Part V traceability matrix — verified against supplied BOOK.zip
+
+### Chapter 8 — The Social Structure of Cooperation
+- User TOC page: **147**; supplied PDF physical page **147** begins the chapter.
+- Coverage definition: the chapter explicitly develops four major social-structure mechanisms: **labels, reputation, regulation, and territoriality**. These are the substantive units used for Part V coverage.
+- Direct PDF evidence checked across physical pages **147–170**:
+  - labels provide observable cues that shape expectations before interaction and can support stereotypes or status hierarchies;
+  - reputation records behavior observed by others and changes the future strategic environment through expectations and deterrence;
+  - regulation is a repeated strategic relationship in which compliance depends on enforcement credibility, standards, and future interaction;
+  - territoriality/local interaction structure changes invasion and stability by concentrating interactions among neighbors and allowing clusters of strategies to persist or spread.
+- Covered knowledge: GT-05 #120–125; GT-MM-114–119; GT-APP-106–110; GT-L-106–110.
+- Coverage: **4/4 substantive mechanisms = 100%**.
+
+### Chapter 9 — The Robustness of Reciprocity
+- User TOC page: **171**; supplied PDF physical page **171** begins the chapter.
+- Coverage definition: the supplied TOC does not expose numbered subsections inside Chapter 9, so the chapter is treated as one substantive unit.
+- Direct PDF evidence checked across physical pages **171–193**: distinction between stability and establishment; evolutionary selection plus sources of strategic variation; ecological and territorial robustness; reciprocity in real repeated relationships; importance of the shadow of the future; robustness under 1% perception error; timely provocability; bounded retaliation; durability rather than friendship as a condition for cooperation; and human foresight as a way to accelerate otherwise slow trial-and-error learning.
+- Covered knowledge: GT-05 #126–129; GT-MM-120–123; GT-APP-111–115; GT-L-111–115.
+- Coverage: **1/1 substantive chapter unit = 100%**.
+
+### Part V acceptance result
+**5/5 substantive source units = 100% source-verified.**
+
+### BOOK.zip evidence — Part V
+- BOOK.zip was directly opened and inspected; exact source pair confirmed: `05 - The Evolution of Cooperation.pdf` + `05 - The Evolution of Cooperation.md`.
+- PDF length verified: **243 physical pages**.
+- Supplied Contents verified: Part V contains exactly **Chapter 8 (page 147)** and **Chapter 9 (page 171)**, followed by Appendix A at page 194 and Appendix B at page 208.
+- Direct PDF chapter boundaries verified: Chapter 8 starts at physical page **147** and Chapter 9 starts at physical page **171**.
+- Appendix boundaries verified: Appendix A starts at physical page **194**; Appendix B starts at physical page **208**.
+- The PDF body was read directly for the Part V evidence above; the Markdown was used only as a retrieval aid.
+- PDF remains source authority; no web-hosted PDF was used.
+
+## Book 5 cumulative acceptance — Parts I–V
+
+| Part | Coverage | Result |
+|---|---:|---:|
+| Part I | 1/1 | 100% |
+| Part II | 2/2 | 100% |
+| Part III | 2/2 | 100% |
+| Part IV | 9/9 | 100% |
+| Part V | 5/5 | 100% |
+| **Parts I–V** | **19/19** | **100%** |
+
+Appendices A–B remain outside the current substantive Part I–V acceptance scope and have **not** been promoted into the knowledge layer yet.
