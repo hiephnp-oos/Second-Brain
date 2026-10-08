@@ -90,3 +90,10 @@ The incremental knowledge promoted here is:
 - coalitional stability and the core;
 - Shapley value and other cooperative solution concepts;
 - formal Nash bargaining solution.
+
+
+## Part I traceability matrix
+
+### Preface / Introduction
+- Source scope: game theory, games versus solution concepts, rational behavior, steady-state versus deductive interpretations, and bounded rationality.
+- Promoted: formal modeling boundary and interpretation boundary.
