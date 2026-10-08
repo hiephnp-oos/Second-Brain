@@ -271,3 +271,22 @@ A punishment is part of the strategy, not a rhetorical threat. If carrying it ou
 
 ## GT-L-89
 The folk theorem is a conditional result, not a claim that repeated interaction automatically produces cooperation. Feasibility, enforceability, patience, and the solution concept matter.
+
+
+## GT-L-90
+A finite known endpoint can destroy cooperation through backward induction, but multiple constituent-game equilibria can restore credible punishment in some long finite repetitions.
+
+## GT-L-91
+A strategy's operational complexity is itself a strategic variable when players care about memory, implementation effort, or simplicity.
+
+## GT-L-92
+Implementation theory changes the question from predicting behavior to engineering the rules that generate the desired behavior under a specified solution concept.
+
+## GT-L-93
+Dominant-strategy implementation faces strong impossibility constraints under unrestricted preferences; mechanism design often requires restricting the preference domain or weakening the solution requirement.
+
+## GT-L-94
+Nash implementation is not guaranteed merely because a desirable choice rule exists. Structural conditions such as monotonicity and no-veto power determine whether the rule can be induced by a mechanism.
+
+## GT-L-95
+Exact and virtual implementation are different engineering targets. If exact implementation is impossible or too restrictive, arbitrarily high probability may still be achievable under a stronger game form.
