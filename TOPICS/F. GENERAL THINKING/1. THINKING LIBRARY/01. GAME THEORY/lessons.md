@@ -105,3 +105,27 @@ A commitment can gain force when the actor deliberately reduces control over the
 
 ## GT-L-30 — Deterrence must account for the opponent's fear of surprise
 A strategy that looks defensive from one side can appear threatening from the other if each side anticipates the possibility of preemption.
+
+## GT-L-31 — Self-restraint can be a source of power
+A constraint is strategically valuable when it changes what the other side expects you to do.
+
+## GT-L-32 — Bargaining power depends on structure, not only preferences
+Move order, alternatives, commitments, information, and institutional rules can change the outcome even when the parties' preferences stay the same.
+
+## GT-L-33 — Credibility must be designed
+Threats and promises become strategically useful only when the surrounding structure makes the conditional action believable.
+
+## GT-L-34 — Conflict can communicate
+A limited action can simultaneously change material outcomes and convey information about resolve or willingness to escalate.
+
+## GT-L-35 — Coordination can precede agreement
+When communication is impossible, mutual recognition of a focal outcome can substitute for an explicit agreement.
+
+## GT-L-36 — Tacit bargaining still requires a shared expectation
+A focal outcome is not self-enforcing merely because it is salient to one side; both sides must have reason to expect the same interpretation.
+
+## GT-L-37 — Earlier arrangements can reduce later strategic friction
+If a commitment or coordination rule can be established before uncertainty peaks, it may prevent later bargaining from becoming more difficult.
+
+## GT-L-38 — Communication channels are strategic infrastructure
+Control over communication can create or remove bargaining options, so communication architecture belongs inside the game model.
