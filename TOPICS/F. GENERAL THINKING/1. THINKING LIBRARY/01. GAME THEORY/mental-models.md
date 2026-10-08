@@ -281,3 +281,32 @@ If each side can interpret the other's defensive move as offensive, escalation c
 ### GT-MM-81 — Surveillance has second-order strategic effects
 Information collection may reduce uncertainty while simultaneously changing the behavior being observed.
 \n\n## GT-05 Part I — Mental models\n\n### GT-MM-82 — Diagnose the cooperation problem before prescribing cooperation\nAsk whether individually rational behavior creates a collectively inferior outcome, and identify the mechanism producing the conflict.\n\n### GT-MM-83 — Use the Prisoner's Dilemma as a structural test\nCheck whether unilateral defection dominates cooperation while mutual cooperation beats mutual defection. If so, the interaction has the core cooperation dilemma.\n\n### GT-MM-84 — Treat the future as part of today's incentive structure\nEstimate how the value and probability of future interaction alter the attractiveness of current cooperation.\n\n### GT-MM-85 — Cooperation needs a sufficiently long shadow of the future\nIf players have little reason to expect future interaction, reciprocal cooperation has less leverage over present behavior.\n\n### GT-MM-86 — Separate motives from interaction structure\nDo not infer that cooperation requires friendship or altruism; first test whether the repeated interaction itself creates cooperative incentives.\n
+
+## GT-05 Part II — Mental models
+
+### GT-MM-87 — Evaluate a strategy against its environment
+Never rank a repeated-game strategy without specifying what other strategies and frequencies it encounters.
+
+### GT-MM-88 — Treat interaction history as state
+For repeated interactions, current action should be analyzed as a function of the accumulated interaction history.
+
+### GT-MM-89 — Separate simple rule from simple outcome
+A simple strategy can generate complex population-level outcomes when interacting repeatedly with heterogeneous opponents.
+
+### GT-MM-90 — Test robustness by changing the environment
+Re-run a strategy comparison under materially different opponent distributions before treating a result as general.
+
+### GT-MM-91 — Model selection as a changing environment
+Successful strategies alter the future population composition, which in turn changes the strategic environment.
+
+### GT-MM-92 — Use invasion resistance as a stability test
+Ask whether a small introduction of an alternative strategy can outperform the incumbent strategy in its own environment.
+
+### GT-MM-93 — Separate emergence from maintenance
+The mechanism that lets cooperation get started may differ from the mechanism that keeps cooperation stable.
+
+### GT-MM-94 — Look for clusters when isolated cooperation fails
+If cooperative behavior cannot survive as isolated individuals, test whether local interaction among cooperators changes the payoff structure.
+
+### GT-MM-95 — Balance niceness with provocability
+Cooperation benefits from not defecting first, but sustainability requires an ability to respond to exploitation.
