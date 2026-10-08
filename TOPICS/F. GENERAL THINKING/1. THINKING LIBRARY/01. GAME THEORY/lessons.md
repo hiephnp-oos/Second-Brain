@@ -207,3 +207,19 @@ Nash equilibrium is a consistency benchmark, not a quality certificate. After fi
 
 ## GT-L-69
 An existence theorem does not imply a pure-strategy solution. Check the domain and the strategy class before relying on the result.
+
+
+## GT-L-70
+Strictly competitive reasoning is powerful precisely because the conflict structure is special. Do not use zero-sum intuition for games with meaningful common interests.
+
+## GT-L-71
+Private information changes the strategy itself: an informed actor should condition behavior on type or signal rather than use an average-case action.
+
+## GT-L-72
+Correlated equilibrium shows that coordination can be created by information or recommendations, not only by independent randomization.
+
+## GT-L-73
+Evolutionary stability answers a population-selection question, not necessarily a conscious decision-making question.
+
+## GT-L-74
+Rationalizability asks what can survive coherent beliefs about rational opponents; it is deliberately weaker than requiring a mutually correct equilibrium belief.
