@@ -371,3 +371,36 @@ Teaching or spreading reciprocal strategies changes the population of interactin
 ### GT-MM-113 — Build recognition infrastructure
 Cooperation requires enough identity and history information for actors to condition future behavior on past interaction.
 
+
+
+## GT-05 Part V — Mental models
+
+### GT-MM-114 — Model the interaction network
+Before evaluating a cooperation strategy, check who repeatedly interacts with whom; clustering and persistent relationships can change strategic stability.
+
+### GT-MM-115 — Separate labels from behavior
+Treat labels as information that shapes expectations, not as proof that a player actually follows the behavior associated with the label.
+
+### GT-MM-116 — Test for self-fulfilling expectations
+When a belief about a group changes how people treat that group, check whether the resulting behavior is reinforcing the original belief.
+
+### GT-MM-117 — Price reputation effects into current actions
+When others observe behavior, include the effect on future expectations and future interactions in the payoff analysis.
+
+### GT-MM-118 — Analyze regulation as a repeated game
+Evaluate the regulator's enforcement credibility, the regulated party's incentives, and the durability of their relationship rather than treating compliance as a one-time choice.
+
+### GT-MM-119 — Distinguish random matching from local matching
+A strategy that fails in a randomly mixed population may succeed when reciprocal actors interact disproportionately with one another.
+
+### GT-MM-120 — Separate stability from emergence
+Ask two different questions: can a strategy resist invasion once established, and what process would cause it to become established?
+
+### GT-MM-121 — Model the source of strategic variation
+When studying evolution or learning, specify where new strategies come from and how successful strategies become more prevalent.
+
+### GT-MM-122 — Calibrate provocability
+Respond to exploitation early enough to preserve deterrence, but limit the response enough to avoid an uncontrolled retaliation loop.
+
+### GT-MM-123 — Use foresight to accelerate slow adaptation
+If trial-and-error learning is costly or too slow, use known conditions for reciprocity to redesign the interaction before waiting for blind selection to discover them.
