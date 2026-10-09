@@ -11,6 +11,16 @@ Private source pair: 06 - Thinking in Systems.pdf + 06 - Thinking in Systems.md.
 - Markdown contains escaped headings and extraction artifacts. It is not authoritative where formatting or page references differ.
 - Full copyrighted source text is not stored in the public repository.
 
+## Introduction — The Systems Lens
+
+| Substantive unit | PDF evidence / source section | Repository mapping | Result |
+|---|---|---|---|
+| The Systems Lens | Introduction, printed pp. 1–10 | Core structure; event → behavior → structure; observe system patterns before intervention | VERIFIED — mapped to existing framework concepts without creating a duplicate introduction summary |
+
+### Introduction coverage and limitations
+- Introduction mapping after full-book recheck: 1/1 substantive unit.
+- The Author's Note and Editor's Note are front matter, not part of the substantive-chapter denominator; their presence is registered in the closure audit below.
+
 ## Part One — section-level verification
 Scope: Part One, *System Structure and Behavior*, comprising Chapter One and Chapter Two. The Introduction is outside the substantive Part One denominator.
 
@@ -28,7 +38,7 @@ Scope: Part One, *System Structure and Behavior*, comprising Chapter One and Cha
 ### Part One coverage and limitations
 - Part One substantive coverage for the prior audit: 8/8 units verified against the supplied PDF and cross-checked against the paired Markdown.
 - Repository structural mapping was incomplete before the Part One audit: One-Stock Systems and Two-Stock Systems lacked explicit mappings.
-- This was a Part One structural/content mapping audit, not a full-book line-by-line semantic audit.
+- The initial Part One pass established section-level mapping. The full-book recheck treats these eight units as a defined coverage denominator; it does not claim a paragraph-by-paragraph paraphrase or independent simulation of every model.
 - Appendix, notes, bibliography and index are supporting apparatus and excluded from the Part One substantive denominator.
 
 ## Part Two — Systems and Us
@@ -58,17 +68,17 @@ Scope: Chapter Three, Chapter Four and Chapter Five. The embedded PDF contents p
 - Before this audit, 7/17 units had a meaningful existing structural mapping: resilience; event/behavior/structure; nonlinearity; boundaries; delays; policy resistance; and goal/indicator design. Several were only general mappings and lacked explicit traceability.
 - Source verification for Part Two was 0/17 in this audit before direct inspection; previous representative checks were not counted as direct verification of these units.
 - After this audit, 17/17 units have direct structural/content verification against the PDF and cross-checks against the paired Markdown.
-- This is a Part Two structural/content mapping audit, not a full-book line-by-line semantic audit.
+- The initial Part Two pass established section-level mapping. The full-book recheck confirms these 17 units against the PDF's chapter structure and the framework knowledge layer; it does not claim a paragraph-by-paragraph paraphrase.
 - The chapter headings are in the embedded PDF contents page; internal section headings and trap archetypes are verified from the chapter body. Appendices, notes, bibliography and index are supporting apparatus, excluded from the Part Two substantive denominator.
 
 ## Coverage definitions
 - Repository structural coverage: how many of the 17 Part Two units were represented by a meaningful mapping before the audit and how many are mapped after it.
 - Source-verification coverage: how many units were directly checked against the supplied PDF during this Part Two audit, with Markdown used only as a cross-check.
-- Substantive source coverage: how many actual Part Two units are mapped to the framework knowledge layer. These metrics are Part Two-specific and do not mean the whole book is complete.
+- Substantive source coverage: how many defined units in the relevant section are mapped to the framework knowledge layer. Per-section metrics must be read alongside the full-book closure audit at the end of this file.
 
 
 ## Part Three — Creating Change—in Systems and in Our Philosophy
-Scope: Chapter Six, *Leverage Points—Places to Intervene in a System* (printed pp. 145–165), and Chapter Seven, *Living in a World of Systems* (printed pp. 166–186). The substantive denominator for this audit is the 12 leverage points in Chapter Six plus the 15 practice guidelines in Chapter Seven: 27 units. Appendix material is intentionally excluded and will be reviewed in a separate pass.
+Scope: Chapter Six, *Leverage Points—Places to Intervene in a System* (printed pp. 145–165), and Chapter Seven, *Living in a World of Systems* (printed pp. 166–186). The substantive denominator for this audit is the 12 leverage points in Chapter Six plus the 15 practice guidelines in Chapter Seven: 27 units. Appendix material is excluded from this chapter-level denominator to avoid double-counting; it is audited separately below.
 
 ### Chapter Six — leverage points
 | # | Substantive unit | PDF source locator | Repository mapping after audit | Result |
@@ -109,9 +119,9 @@ Scope: Chapter Six, *Leverage Points—Places to Intervene in a System* (printed
 - Repository structural coverage before this pass: 17/27 units had meaningful related concepts, but the 12-point hierarchy and 15 guidelines were not all mapped one by one. Three leverage points (numbers, buffers and transcending paradigms) and several practice guidelines had no explicit treatment.
 - Direct source-verification coverage before this pass: 0/27 units in this Part Three audit.
 - After this pass: 27/27 units mapped and directly checked against the PDF chapter structure/headings, with the paired Markdown used as a cross-check.
-- This is a Part Three structural/content mapping audit, not a full-book line-by-line semantic audit.
-- The Appendix's “Places to Intervene in a System” and “Guidelines for Living in a World of Systems” are deliberately not counted here, even though they summarize or repeat Chapter Six and Seven content. They remain pending the user's requested next review.
-- Notes, bibliography, editor acknowledgments, author bio and index are also outside the Part Three denominator and remain pending.
+- The original Part Three pass verified the 27 defined chapter-level units. The full-book recheck includes the Appendix, Notes, bibliography and remaining paratext in separate denominators below; it is not a line-by-line reproduction of the book.
+- The Appendix's “Places to Intervene in a System” and “Guidelines for Living in a World of Systems” are not counted here because they summarize or repeat Chapter Six and Seven content; both are now mapped in the separate Appendix section below.
+- Notes and bibliography are mapped below. Editor acknowledgments, author bio and index are registered as paratext/retrieval apparatus in the full-book closure audit.
 
 
 ## Appendix — traceability
@@ -235,3 +245,44 @@ Canonical source: supplied PDF, printed pp. 208–210. This is a discovery bibli
 - Explicit entry-level/category mapping before this pass: 0/17 entries registered in this traceability file.
 - Mapping after this pass: 17/17 resource entries represented across all five printed categories.
 - This verifies coverage against the supplied PDF's bibliography structure, not whether every external website is still active or each publication is independently available.
+
+## Full-book closure audit
+
+### Whole-book coverage ledger
+
+| Source area | Audit denominator | Result after full audit | Interpretation |
+|---|---:|---:|---|
+| Introduction — The Systems Lens | 1 substantive unit | 1/1 mapped | Mapped to existing framework concepts |
+| Part One — Chapters One and Two | 8 defined substantive units | 8/8 mapped | Section-level content coverage |
+| Part Two — Chapters Three to Five | 17 defined substantive units | 17/17 mapped | Internal sections and system-trap archetypes |
+| Part Three — Chapters Six and Seven | 27 defined substantive units | 27/27 mapped | 12 leverage points + 15 practice guidelines |
+| Appendix | 71 reference units | 71/71 mapped | Glossary, principles, traps, leverage points, guidelines and nine model headings |
+| Notes | 67 numbered notes in 8 sections | 67/67 accounted for | Section structure and note numbering checked; references not independently bibliographically validated |
+| Bibliography of Systems Resources | 17 entries in 5 categories | 17/17 represented | Bibliography entries mapped by author/organization and category |
+
+The 53 substantive units (Introduction + Parts One–Three) are the defined chapter-level denominator used by this audit. Appendix summaries that repeat chapter content are counted as reference units, not new chapter-level ideas. Notes and bibliography use their own denominators; these counts must not be added together as if every row were a unique concept.
+
+### Front matter and remaining back matter
+
+| Source area | PDF locator | Disposition |
+|---|---|---|
+| A Note from the Author | TOC p. ix | Present; front matter, not distilled as a separate framework concept |
+| A Note from the Editor | TOC p. xi | Present; editorial context, not distilled as a separate framework concept |
+| Editor's Acknowledgments | printed pp. 211–212 | Present; paratext, no framework knowledge extraction required |
+| About the Author | printed pp. 213–214 | Present; biographical material, no framework knowledge extraction required |
+| Index | printed pp. 215–235 | Present; retrieval apparatus, not a separate knowledge layer |
+
+### Full-audit findings and fixes
+
+- Removed a duplicated copy of the Appendix glossary and summary block from concepts.md; the first canonical copy remains.
+- Refined SYS-MM-43 so it focuses on system-level evolutionary capacity rather than repeating SYS-MM-19's general self-organization guidance.
+- Replaced stale “pending review” statements left over from the staged Part Three audit with the current Appendix, Notes, bibliography and paratext disposition.
+- Rechecked the model-equation catalog against the PDF's nine model headings. The catalog is intentionally a concise index of model purpose, stocks, flows and selected setup parameters; it does not claim to reproduce every converter, scenario or run the original simulations.
+- The PDF remains canonical. Markdown is an extraction aid with formatting/heading artifacts; it is used only as a cross-check. No full source-book text is copied into the public repository.
+
+### Acceptance status and limitations
+
+- **Structural/source-unit coverage:** complete for the defined audit units above.
+- **Knowledge-layer review:** concepts, mental models, applications and lessons reviewed for source alignment, duplication and scope; the distilled layer remains intentionally shorter than the book.
+- **Not claimed:** a line-by-line paraphrase of all 235 PDF pages, independent validation of every citation in Notes/Bibliography, or numerical re-execution of every model equation.
+- **Book 06 audit status:** FULL BOOK-LEVEL AUDIT COMPLETE within the defined structural, content-mapping, duplication and repository-consistency scope. CI on the final commit must pass before treating the repository mutation as validated.
