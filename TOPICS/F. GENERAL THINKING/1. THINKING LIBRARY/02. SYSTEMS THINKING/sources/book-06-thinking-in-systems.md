@@ -2,7 +2,7 @@
 
 *Thinking in Systems* — Donella H. Meadows.
 
-Private source pair: 06 - Thinking in Systems.pdf + 06 - Thinking in Systems.md. PDF 235 pages; Markdown 6,116 lines. Source status: **STRUCTURALLY ACCEPTED**.
+Private source pair: 06 - Thinking in Systems.pdf + 06 - Thinking in Systems.md. PDF 235 pages; Markdown 6,116 lines. Source-intake status: **STRUCTURALLY ACCEPTED**. Full semantic line-by-line audit status: **NOT YET VERIFIED — IN PROGRESS**.
 
 ## Source authority and pairing
 - PDF is canonical; Markdown is an extraction/retrieval aid.
@@ -282,7 +282,11 @@ The 53 substantive units (Introduction + Parts One–Three) are the defined chap
 
 ### Acceptance status and limitations
 
-- **Structural/source-unit coverage:** complete for the defined audit units above.
-- **Knowledge-layer review:** concepts, mental models, applications and lessons reviewed for source alignment, duplication and scope; the distilled layer remains intentionally shorter than the book.
-- **Not claimed:** a line-by-line paraphrase of all 235 PDF pages, independent validation of every citation in Notes/Bibliography, or numerical re-execution of every model equation.
-- **Book 06 audit status:** FULL BOOK-LEVEL AUDIT COMPLETE within the defined structural, content-mapping, duplication and repository-consistency scope. CI on the final commit must pass before treating the repository mutation as validated.
+- **Source structure gate:** PASS. The PDF/Markdown pair and top-level structure were inspected.
+- **Section-level mapping:** recorded in the matrices above. This proves coverage of the enumerated headings/reference units only; it does not prove every paragraph, example, qualification, diagram, table, equation or note has been semantically reviewed.
+- **Full semantic line-by-line audit:** **NOT YET VERIFIED — IN PROGRESS.** The prior phrase “FULL BOOK-LEVEL AUDIT COMPLETE” overstated the evidence and is withdrawn.
+- **Required audit unit:** every substantive source paragraph, bullet/list item, example, caption/diagram, table, equation/model specification, numbered note and bibliography entry, with PDF page/line locator, meaning, target mapping, nuance/limitations and a result of VERIFIED / FIX REQUIRED / NOT APPLICABLE.
+- **Required coverage proof:** an auditable ledger that accounts for all substantive source units; explicit review of PDF visual content not represented by extracted text; a discrepancy/repair log; duplicate and contradiction checks across concepts, mental models, applications and lessons; and final re-read of the updated repository files.
+- **Notes/Bibliography:** existing counts confirm structural presence only. Each entry still needs a content-level decision on whether it informs a book claim, is attribution-only, or needs a correction; bibliographic authenticity is a separate check.
+- **Model equations:** existing summaries do not prove every equation, converter, initial condition, unit, time step and scenario has been semantically checked against the PDF. The equations must be reviewed individually; numerical re-execution is a separate optional validation and must not be implied.
+- **Completion rule:** do not mark Book 06 semantically audited and do not proceed to Book 07 until the substantive-unit ledger is complete, all FIX REQUIRED items are resolved or explicitly dispositioned, and the final repository state has passed validation.
