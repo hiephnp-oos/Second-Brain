@@ -15,7 +15,7 @@ Private source pair: 06 - Thinking in Systems.pdf + 06 - Thinking in Systems.md.
 
 | Substantive unit | PDF evidence / source section | Repository mapping | Result |
 |---|---|---|---|
-| The Systems Lens | Introduction, printed pp. 1–10 | Core structure; event → behavior → structure; observe system patterns before intervention | VERIFIED — mapped to existing framework concepts without creating a duplicate introduction summary |
+| The Systems Lens | Introduction, printed pp. 1–7; includes the elephant interlude | System-generated behavior; external triggers versus internal structure; elements are insufficient without interconnections; archetypes; systems thinking complements reductionist analysis; diagrams help represent simultaneous relationships | PARTIALLY VERIFIED — complementary-lens nuance added to concepts and lessons; remaining introduction blocks still require unit-level audit |
 
 ### Introduction coverage and limitations
 - Introduction mapping after full-book recheck: 1/1 substantive unit.
