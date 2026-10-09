@@ -23,3 +23,12 @@ Resilience and adaptability can be more valuable than maximizing performance und
 
 ## SYS-L-08
 The highest-leverage intervention is not always the most feasible; leverage must be evaluated against constraints and side effects.
+
+## SYS-L-09
+A steady stock level does not mean nothing is happening; inflows and outflows may be balancing continuously.
+
+## SYS-L-10
+Do not extrapolate early reinforcing growth indefinitely. Identify which balancing loops, delays or resource limits may change the dominant behavior.
+
+## SYS-L-11
+When two stocks are coupled, an intervention that improves one stock can worsen the other or destabilize the whole system. Evaluate the joint trajectory.

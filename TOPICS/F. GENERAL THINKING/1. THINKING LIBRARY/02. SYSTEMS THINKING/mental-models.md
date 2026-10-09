@@ -35,3 +35,18 @@ A snapshot can hide accumulation, oscillation, delay or adaptation.
 
 ## SYS-MM-12 — Local optimization can damage the whole
 Improving one component may worsen system-level performance when components are coupled.
+
+## SYS-MM-13 — Separate stock state from flow rate
+A high or low stock reflects accumulated history; changing today's flow does not instantly reset the stock. Track both levels and rates.
+
+## SYS-MM-14 — Compare competing balancing loops
+When several loops regulate one stock toward different goals, identify each goal, response strength and delay before predicting the equilibrium or trajectory.
+
+## SYS-MM-15 — Model coupled stocks together
+When stocks affect one another through flows or feedback, draw the coupled structure before optimizing either stock independently.
+
+## SYS-MM-16 — Look for shifting loop dominance
+A reinforcing loop may dominate early growth while balancing feedback or limits dominate later. Explain the trajectory across phases rather than extrapolating one phase indefinitely.
+
+## SYS-MM-17 — Test for overshoot before intervening harder
+If feedback is delayed, stronger correction can arrive after the system has already crossed its target. Check response time and accumulated momentum before increasing control.
