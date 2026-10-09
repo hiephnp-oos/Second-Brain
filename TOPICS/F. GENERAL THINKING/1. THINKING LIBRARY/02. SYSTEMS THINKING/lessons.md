@@ -75,3 +75,6 @@ If a measure becomes the goal, the system may optimize the proxy rather than the
 
 ## SYS-L-25
 Responsibility should be analyzed structurally: align decision authority, relevant information and accountability for consequences.
+
+## SYS-L-26
+Systems thinking is a complementary lens, not a replacement for reductionist analysis. Use the lens that reveals the relationships relevant to the question, and avoid assuming any single representation captures the whole system.
