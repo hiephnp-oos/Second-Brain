@@ -183,3 +183,8 @@ Include indirect stakeholders, ecosystems and future generations when defining s
 
 ## SYS-MM-61 — Protect the underlying value
 Check whether the system is producing a measurable proxy instead of the real welfare or purpose it was designed to support.
+## SYS-MM-62 — Estimate exponential doubling time
+For a stock growing exponentially at a roughly constant percentage rate, estimate doubling time as about 70 divided by the growth rate expressed as a percentage. Treat this as a quick approximation, not a substitute for modeling changing rates or constraints.
+
+## SYS-MM-63 — Treat model examples as selective representations
+A simple model isolates a mechanism so it can be understood, but it is not a complete representation of the surrounding system. Before applying its result, restore relevant interactions, boundaries and environmental conditions.
