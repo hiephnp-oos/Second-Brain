@@ -3,7 +3,7 @@
 Source: Book 06 *Thinking in Systems* — Donella H. Meadows.
 
 ## Core structure
-A system is a set of elements, interconnections and a purpose whose structure generates characteristic behavior. Events are outputs of deeper structure, not always isolated causes. The same elements can behave differently when their relationships, rules or purpose change.
+A system is a set of elements, interconnections and a purpose whose structure generates characteristic behavior. Events are outputs of deeper structure, not always isolated causes; an external event may trigger behavior, but the system's structure shapes its response. The same elements can behave differently when their relationships, rules or purpose change. Systems thinking complements rather than replaces reductionist analysis: different lenses reveal different aspects of a complex reality.
 
 ## Stocks and flows
 Stocks accumulate or deplete over time. Flows change stocks. The state of a stock depends on the history of inflows and outflows, creating inertia and delays between intervention and visible effect. A flow can change quickly while the stock it affects changes gradually.
