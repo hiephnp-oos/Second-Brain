@@ -32,3 +32,24 @@ Do not extrapolate early reinforcing growth indefinitely. Identify which balanci
 
 ## SYS-L-11
 When two stocks are coupled, an intervention that improves one stock can worsen the other or destabilize the whole system. Evaluate the joint trajectory.
+
+## SYS-L-12
+A system can look stable while losing resilience. Preserve alternative feedback paths and recovery capacity, not just constant output.
+
+## SYS-L-13
+A hierarchy helps manage complexity only when subsystem goals and information flows remain aligned with the larger system's purpose.
+
+## SYS-L-14
+Events are poor explanations for recurring outcomes. Look for behavior patterns and the structure that reproduces them.
+
+## SYS-L-15
+A narrow model boundary can hide causes and make a local improvement externalize costs elsewhere.
+
+## SYS-L-16
+When users share a resource but do not experience the full cost of their use, exhortation alone may not restore the missing feedback.
+
+## SYS-L-17
+A symptom-relieving intervention can become a trap if it weakens the system's own problem-solving capacity.
+
+## SYS-L-18
+Rules and indicators shape behavior. Rule gaming or goal misspecification is feedback about the design, not merely evidence that people need more pressure.

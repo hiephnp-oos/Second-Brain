@@ -17,3 +17,18 @@ Model backlog as a stock and completion as a flow. Identify accumulation and con
 
 ## SYS-APP-06 — Supplier/process escalation
 Map defects, complaints, corrective actions, capacity and incentives over time. Fix the loop that reproduces the issue, not only the latest symptom.
+
+## SYS-APP-07 — Shared resource governance
+For a shared capacity, common facility or finite resource, map who receives the benefit, who bears the cost and whether users see the resource's deteriorating condition. Design access rules or feedback that make long-term consequences visible.
+
+## SYS-APP-08 — KPI drift and rule gaming
+Compare the stated goal, the measured indicator and the rewards attached to it. Look for falling standards, output substituted for outcome, or compliance that technically meets a rule while defeating its purpose.
+
+## SYS-APP-09 — Escalating competition or conflict
+Map how each party's response becomes the trigger for the other party's next move. Test an interruption, unilateral de-escalation or negotiated balancing constraint rather than matching every increase.
+
+## SYS-APP-10 — Intervention dependence
+Check whether repeated rescue, rework or symptom suppression is reducing the system's ability to solve the underlying problem. Pair immediate relief with a plan to rebuild internal capability and reduce dependence.
+
+## SYS-APP-11 — Resilience and organizational design
+Review whether short-term utilization or standardization has removed spare capacity, diverse approaches, local adaptation or recovery paths. Evaluate performance under disturbance, not only under normal operating conditions.
