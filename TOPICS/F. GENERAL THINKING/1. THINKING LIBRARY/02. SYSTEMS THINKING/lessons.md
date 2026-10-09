@@ -78,3 +78,6 @@ Responsibility should be analyzed structurally: align decision authority, releva
 
 ## SYS-L-26
 Systems thinking is a complementary lens, not a replacement for reductionist analysis. Use the lens that reveals the relationships relevant to the question, and avoid assuming any single representation captures the whole system.
+
+## SYS-L-27
+Simple models reveal mechanisms by isolating them, but their results should not be transferred to a real system without checking omitted interactions, boundaries and environmental conditions.
