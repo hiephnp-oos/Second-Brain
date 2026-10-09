@@ -112,3 +112,126 @@ Scope: Chapter Six, *Leverage Points—Places to Intervene in a System* (printed
 - This is a Part Three structural/content mapping audit, not a full-book line-by-line semantic audit.
 - The Appendix's “Places to Intervene in a System” and “Guidelines for Living in a World of Systems” are deliberately not counted here, even though they summarize or repeat Chapter Six and Seven content. They remain pending the user's requested next review.
 - Notes, bibliography, editor acknowledgments, author bio and index are also outside the Part Three denominator and remain pending.
+
+
+## Appendix — traceability
+
+Canonical source: supplied PDF, Appendix printed pp. 187–203. The paired Markdown is used only as an extraction cross-check. This matrix maps the Appendix as supporting reference material; its repeated leverage-point and guideline lists are not counted as new chapter content.
+
+| Appendix area | Source unit | Verified source-derived mapping |
+|---|---|---|
+| Glossary | Archetypes | Common structures producing characteristic behavior |
+| Glossary | Balancing feedback loop | Stabilizing/goal-seeking loop that opposes change |
+| Glossary | Bounded rationality | Locally reasonable decisions that may harm the wider system |
+| Glossary | Dynamic equilibrium | Stock remains steady when total inflows equal total outflows |
+| Glossary | Dynamics | Behavior of a system or component over time |
+| Glossary | Feedback loop | Closed causal chain linking a stock, decisions/actions and flows back to the stock |
+| Glossary | Flow | Material or information entering/leaving a stock over time |
+| Glossary | Hierarchy | Subsystems organized within larger systems |
+| Glossary | Limiting factor | Necessary input currently constraining system activity |
+| Glossary | Linear relationship | Cause-effect proportion remains constant |
+| Glossary | Nonlinear relationship | Cause-effect response is not proportional |
+| Glossary | Reinforcing feedback loop | Amplifying loop that reinforces change |
+| Glossary | Resilience | Capacity to recover/repair after perturbation |
+| Glossary | Self-organization | Capacity to create or change structure, learn or diversify |
+| Glossary | Shifting dominance | Relative strength of competing feedback loops changes over time |
+| Glossary | Stock | Accumulation built up over time |
+| Glossary | Suboptimization | Subsystem goals dominate at the expense of whole-system goals |
+| Glossary | System | Organized, interconnected elements producing characteristic behavior/function/purpose |
+| Principles | Systems | System wholeness, information interconnections, purpose and structure-to-behavior |
+| Principles | Stocks, flows and dynamic equilibrium | Stocks encode flow history; net inflow changes stock; equal inflow/outflow holds stock steady; outflow reduction can raise stock; stocks buffer and decouple flows |
+| Principles | Feedback loops | Balancing loops stabilize/resist change; reinforcing loops amplify; feedback arrives too late to change the past; goals must account for other flows |
+| Principles | Shifting dominance, delays and oscillations | Changing loop dominance and delays can alter system behavior or induce oscillation |
+| Principles | Scenarios and testing models | Models ask what-if questions; usefulness depends on realistic behavior patterns, not certainty about scenarios |
+| Principles | Constraints on systems | Finite environments constrain growth; nonrenewables are stock-limited and renewables flow-limited |
+| Principles | Resilience, self-organization and hierarchy | Manage resilience as well as productivity/stability; self-organization creates variety; higher levels should serve lower-level purposes |
+| Principles | Source of system surprises | Nonlinearity, boundary choices, limiting factors, nested limits, growth limits, exponential growth and delays create surprises; bounded rationality can conflict with whole-system welfare |
+| Principles | Mindsets and models | Knowledge is model-based; models can correspond to reality but never represent it fully |
+| System traps | Policy resistance | Conflicting actor goals produce resistance; bring actors together to find compatible or shared higher-level goals |
+| System traps | Tragedy of the commons | Shared benefits and dispersed costs weaken feedback and encourage overuse; restore feedback or govern access |
+| System traps | Drift to low performance | Standards can drift downward when judged against biased perceptions of past performance |
+| System traps | Escalation | Competitive responses create a reinforcing spiral; decline to compete or introduce balancing agreements |
+| System traps | Success to the successful | Rewards for current winners reinforce future advantage; diversify or constrain unequal advantage |
+| System traps | Shifting the burden to the intervenor | Symptom relief erodes endogenous capability and creates dependence; restore system capacity |
+| System traps | Rule beating | Rules invite behavior that appears compliant while distorting purpose; redesign rules around intended outcomes |
+| System traps | Seeking the wrong goal | Incomplete indicators cause systems to optimize the wrong outcome; define goals around actual welfare/results |
+| Places to intervene | 12 Numbers: constants and parameters | Appendix summary of Chapter Six; listed in increasing order of effectiveness |
+| Places to intervene | 11 Buffers: stabilizing stock sizes relative to flows | Appendix summary of Chapter Six; listed in increasing order of effectiveness |
+| Places to intervene | 10 Stock-and-flow structures | Appendix summary of Chapter Six; listed in increasing order of effectiveness |
+| Places to intervene | 9 Delays relative to system-change rates | Appendix summary of Chapter Six; listed in increasing order of effectiveness |
+| Places to intervene | 8 Balancing feedback-loop strength | Appendix summary of Chapter Six; listed in increasing order of effectiveness |
+| Places to intervene | 7 Reinforcing feedback-loop gain | Appendix summary of Chapter Six; listed in increasing order of effectiveness |
+| Places to intervene | 6 Information-flow access and structure | Appendix summary of Chapter Six; listed in increasing order of effectiveness |
+| Places to intervene | 5 Rules, incentives, punishments and constraints | Appendix summary of Chapter Six; listed in increasing order of effectiveness |
+| Places to intervene | 4 Self-organization: ability to change system structure | Appendix summary of Chapter Six; listed in increasing order of effectiveness |
+| Places to intervene | 3 Goals: system purpose | Appendix summary of Chapter Six; listed in increasing order of effectiveness |
+| Places to intervene | 2 Paradigms: mindset from which goals and structure arise | Appendix summary of Chapter Six; listed in increasing order of effectiveness |
+| Places to intervene | 1 Transcending paradigms | Appendix summary of Chapter Six; listed in increasing order of effectiveness |
+| Living in systems | 1. Get the beat of the system | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 2. Expose mental models | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 3. Honor, respect and distribute information | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 4. Use language carefully and enrich it with systems concepts | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 5. Attend to what matters, not only what is quantifiable | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 6. Make feedback policies for feedback systems | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 7. Go for the good of the whole | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 8. Listen to system wisdom | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 9. Locate responsibility within the system | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 10. Stay humble and keep learning | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 11. Celebrate complexity | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 12. Expand time horizons | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 13. Defy the disciplines | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 14. Expand the boundary of caring | Appendix summary of Chapter Seven practice guidelines |
+| Living in systems | 15. Do not erode the goal of goodness | Appendix summary of Chapter Seven practice guidelines |
+| Model equations | Chapter One — Bathtub | Stock accumulation from inflow minus outflow; initial water stock 50 gal; minute time step; 10-minute run |
+| Model equations | Chapter One — Coffee cooling | Temperature stock decreases by cooling × dt; compare initial temperatures; room temperature 18°C |
+| Model equations | Chapter One — Coffee warming | Temperature stock increases by heating × dt; heating responds to room-temperature discrepancy |
+| Model equations | Chapter One — Bank account | Money stock changes by interest added; initial $100; annual time step; 12-year run |
+| Model equations | Chapter Two — Room temperature | Room-temperature stock changes with furnace heat and heat loss; thermostat setting 18°C |
+| Model equations | Chapter Two — Population | Population stock changes by births minus deaths; initial 6.6 billion; annual time step; 100-year run |
+| Model equations | Chapter Two — Capital | Capital stock changes by investment minus depreciation; initial capital 100; 50-year run |
+| Model equations | Chapter Two — Business inventory | Car inventory stock responds to inventory inflow and customer demand; initial 200 cars; daily time step; 100-day run |
+| Model equations | Chapter Two — Resource-constrained growth | Paired capital/resource stocks model extraction from a nonrenewable resource and harvest from a renewable resource; 100-year runs |
+
+### Appendix coverage and limitations
+- Appendix-specific explicit traceability before this pass: 0/71 units.
+- Appendix-specific explicit traceability after this pass: 71/71 units mapped across the glossary (18), principle groups (9), system traps (8), leverage points (12), living-in-systems guidelines (15), and model examples (9).
+- The 12 leverage points and 15 guidelines repeat/summarize Part Three content; they are tracked as Appendix references, not counted as additional unique chapter-level principles.
+- The nine model entries are mapped at model/setup level. This is not an independent numerical recalculation or software execution of every equation.
+
+## Notes — source register
+
+Canonical source: supplied PDF, printed pp. 204–207. The Notes section was checked against its eight printed section headings and numbered entries; citations are retained as source apparatus rather than duplicated in the knowledge layer.
+
+| Notes section | Numbered notes in source | Verification scope |
+|---|---:|---|
+| Introduction | 2 | Entry presence and section mapping checked |
+| Chapter One | 5 | Entry presence and section mapping checked |
+| Chapter Two | 5 | Entry presence and section mapping checked |
+| Chapter Three | 5 | Entry presence and section mapping checked |
+| Chapter Four | 13 | Entry presence and section mapping checked |
+| Chapter Five | 17 | Entry presence and section mapping checked |
+| Chapter Six | 8 | Entry presence and section mapping checked |
+| Chapter Seven | 12 | Entry presence and section mapping checked |
+
+### Notes coverage and limitations
+- Section-level mapping before this pass: 0/8 sections explicitly registered in this traceability file.
+- Section-level mapping after this pass: 8/8 sections; 67 numbered notes accounted for by the source's section ranges.
+- Verification confirms source structure and note counts, not independent validation of every cited work, URL, quotation, or publication detail.
+
+## Bibliography of Systems Resources — source register
+
+Canonical source: supplied PDF, printed pp. 208–210. This is a discovery bibliography, separate from works cited in Notes; entries are registered by source category without copying the book's full annotations.
+
+| Source category | Entries | Source-derived coverage |
+|---|---:|---|
+| Systems Thinking and Modeling — books | 6 | Bossel (2 works), Forrester, Laszlo, Richardson, Sweeney & Meadows |
+| Organizations, websites, periodicals and software | 5 | Creative Learning Exchange; isee systems; Pegasus Communications; System Dynamics Society; Ventana Systems |
+| Systems Thinking and Business | 3 | Senge; Sherwood; Sterman |
+| Systems Thinking and Environment | 1 | Ford |
+| Systems Thinking, Society, and Social Change | 2 | Macy; Meadows |
+| **Total** | **17** | All listed resource entries represented by category/author or organization |
+
+### Bibliography coverage and limitations
+- Explicit entry-level/category mapping before this pass: 0/17 entries registered in this traceability file.
+- Mapping after this pass: 17/17 resource entries represented across all five printed categories.
+- This verifies coverage against the supplied PDF's bibliography structure, not whether every external website is still active or each publication is independently available.
