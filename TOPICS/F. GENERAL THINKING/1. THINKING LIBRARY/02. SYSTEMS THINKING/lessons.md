@@ -53,3 +53,25 @@ A symptom-relieving intervention can become a trap if it weakens the system's ow
 
 ## SYS-L-18
 Rules and indicators shape behavior. Rule gaming or goal misspecification is feedback about the design, not merely evidence that people need more pressure.
+
+
+## SYS-L-19
+A leverage-point ranking is a guide for diagnosis, not a guarantee that the highest-ranked intervention is feasible or best in every context.
+
+## SYS-L-20
+Parameter changes may be easy to implement but often leave the structure generating the behavior unchanged; diagnose feedback, rules and goals as well.
+
+## SYS-L-21
+The information people receive, the rules they face and the goal they pursue can be more consequential than changing a physical component.
+
+## SYS-L-22
+A system cannot be fully predicted or controlled. Effective action requires observation, feedback, humility and repeated learning.
+
+## SYS-L-23
+A technically correct model does not guarantee successful implementation; human needs, values, incentives and resistance shape how interventions work.
+
+## SYS-L-24
+If a measure becomes the goal, the system may optimize the proxy rather than the underlying value. Keep the intended welfare explicit.
+
+## SYS-L-25
+Responsibility should be analyzed structurally: align decision authority, relevant information and accountability for consequences.

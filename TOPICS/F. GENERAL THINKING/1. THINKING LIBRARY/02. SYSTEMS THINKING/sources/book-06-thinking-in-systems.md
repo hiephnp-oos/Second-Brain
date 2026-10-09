@@ -65,3 +65,50 @@ Scope: Chapter Three, Chapter Four and Chapter Five. The embedded PDF contents p
 - Repository structural coverage: how many of the 17 Part Two units were represented by a meaningful mapping before the audit and how many are mapped after it.
 - Source-verification coverage: how many units were directly checked against the supplied PDF during this Part Two audit, with Markdown used only as a cross-check.
 - Substantive source coverage: how many actual Part Two units are mapped to the framework knowledge layer. These metrics are Part Two-specific and do not mean the whole book is complete.
+
+
+## Part Three — Creating Change—in Systems and in Our Philosophy
+Scope: Chapter Six, *Leverage Points—Places to Intervene in a System* (printed pp. 145–165), and Chapter Seven, *Living in a World of Systems* (printed pp. 166–186). The substantive denominator for this audit is the 12 leverage points in Chapter Six plus the 15 practice guidelines in Chapter Seven: 27 units. Appendix material is intentionally excluded and will be reviewed in a separate pass.
+
+### Chapter Six — leverage points
+| # | Substantive unit | PDF source locator | Repository mapping after audit | Result |
+|---:|---|---|---|---|
+| 1 | Numbers—constants and parameters | Ch. 6, printed pp. 145–165; leverage point 12 | Parameters and threshold-aware changes | VERIFIED — explicit mapping added |
+| 2 | Buffers | Ch. 6, leverage point 11 | Buffer size relative to flow and disturbance | VERIFIED — explicit mapping added |
+| 3 | Stock-and-Flow Structures | Ch. 6, leverage point 10 | Physical stock/flow structure and rebuild tradeoffs | VERIFIED — expanded |
+| 4 | Delays | Ch. 6, leverage point 9 | Delay relative to system rate of change | VERIFIED — expanded |
+| 5 | Balancing Feedback Loops | Ch. 6, leverage point 8 | Corrective feedback strength and signal quality | VERIFIED — expanded |
+| 6 | Reinforcing Feedback Loops | Ch. 6, leverage point 7 | Amplification/gain of growth, decline and escalation | VERIFIED — expanded |
+| 7 | Information Flows | Ch. 6, leverage point 6 | Who has access to decision-relevant information | VERIFIED — expanded |
+| 8 | Rules | Ch. 6, leverage point 5 | Incentives, constraints, permissions and penalties | VERIFIED — expanded |
+| 9 | Self-Organization | Ch. 6, leverage point 4 | Adaptive capacity, diversity and experimentation | VERIFIED — expanded |
+| 10 | Goals | Ch. 6, leverage point 3 | Operative purpose and goal alignment | VERIFIED — expanded |
+| 11 | Paradigms | Ch. 6, leverage point 2 | Shared assumptions shaping goals and structure | VERIFIED — expanded |
+| 12 | Transcending Paradigms | Ch. 6, leverage point 1 | Treating paradigms as models rather than absolutes | VERIFIED — explicit mapping added |
+
+### Chapter Seven — practice guidelines
+| # | Substantive unit | PDF source locator | Repository mapping after audit | Result |
+|---:|---|---|---|---|
+| 13 | Get the Beat of the System | Ch. 7, printed pp. 166–186; guideline heading | Observe history and behavior before intervention | VERIFIED — expanded |
+| 14 | Expose Your Mental Models to the Light of Day | Ch. 7; guideline heading | Externalize and test assumptions | VERIFIED — expanded |
+| 15 | Honor, Respect, and Distribute Information | Ch. 7; guideline heading | Make decision-relevant information accessible | VERIFIED — expanded |
+| 16 | Use Language with Care and Enrich It with Systems Concepts | Ch. 7; guideline heading | Accurate system framing and terminology | VERIFIED — explicit mapping added |
+| 17 | Pay Attention to What Is Important, Not Just What Is Quantifiable | Ch. 7; guideline heading | Distinguish real outcomes from proxies | VERIFIED — expanded |
+| 18 | Make Feedback Policies for Feedback Systems | Ch. 7; guideline heading | Adaptive policy based on observed consequences | VERIFIED — explicit mapping added |
+| 19 | Go for the Good of the Whole | Ch. 7; guideline heading | Whole-system outcomes over local optimization | VERIFIED — expanded |
+| 20 | Listen to the Wisdom of the System | Ch. 7; guideline heading | Work with system dynamics and constraints | VERIFIED — explicit mapping added |
+| 21 | Locate Responsibility within the System | Ch. 7; guideline heading | Align authority, information and consequences | VERIFIED — explicit mapping added |
+| 22 | Stay Humble—Stay a Learner | Ch. 7; guideline heading | Uncertainty, humility and continuous learning | VERIFIED — explicit mapping added |
+| 23 | Celebrate Complexity | Ch. 7; guideline heading | Simplify without deleting critical relationships | VERIFIED — explicit mapping added |
+| 24 | Expand Time Horizons | Ch. 7; guideline heading | Delayed and long-term effects | VERIFIED — expanded |
+| 25 | Defy the Disciplines | Ch. 7; guideline heading | Cross-disciplinary causal analysis | VERIFIED — explicit mapping added |
+| 26 | Expand the Boundary of Caring | Ch. 7; guideline heading | Indirect stakeholders, ecosystems and future effects | VERIFIED — expanded |
+| 27 | Don’t Erode the Goal of Goodness | Ch. 7; guideline heading | Preserve underlying welfare over convenient proxies | VERIFIED — expanded |
+
+### Part Three coverage and limitations
+- Repository structural coverage before this pass: 17/27 units had meaningful related concepts, but the 12-point hierarchy and 15 guidelines were not all mapped one by one. Three leverage points (numbers, buffers and transcending paradigms) and several practice guidelines had no explicit treatment.
+- Direct source-verification coverage before this pass: 0/27 units in this Part Three audit.
+- After this pass: 27/27 units mapped and directly checked against the PDF chapter structure/headings, with the paired Markdown used as a cross-check.
+- This is a Part Three structural/content mapping audit, not a full-book line-by-line semantic audit.
+- The Appendix's “Places to Intervene in a System” and “Guidelines for Living in a World of Systems” are deliberately not counted here, even though they summarize or repeat Chapter Six and Seven content. They remain pending the user's requested next review.
+- Notes, bibliography, editor acknowledgments, author bio and index are also outside the Part Three denominator and remain pending.

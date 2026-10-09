@@ -32,3 +32,13 @@ Check whether repeated rescue, rework or symptom suppression is reducing the sys
 
 ## SYS-APP-11 — Resilience and organizational design
 Review whether short-term utilization or standardization has removed spare capacity, diverse approaches, local adaptation or recovery paths. Evaluate performance under disturbance, not only under normal operating conditions.
+
+
+## SYS-APP-12 — Select and test a leverage point
+Describe the recurring behavior, map stocks, flows and feedback, then generate candidate interventions across parameters, buffers, physical structure, delays, feedback strength, information, rules, self-organization, goals and assumptions. Compare feasibility, response time, resistance and side effects before selecting a test.
+
+## SYS-APP-13 — Review a KPI or management policy
+Trace how a metric changes incentives, information and decisions. Ask whether it strengthens the intended feedback or encourages proxy optimization, rule gaming or goal drift. Define outcome checks and a revision cycle.
+
+## SYS-APP-14 — Run a whole-system decision review
+Before implementation, identify affected subsystems and indirect stakeholders, assign responsibility to actors with relevant information and authority, include delayed effects, and define what evidence would trigger a policy adjustment.
