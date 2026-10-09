@@ -248,9 +248,9 @@ Canonical source: supplied PDF, printed pp. 208–210. This is a discovery bibli
 
 ## Full-book closure audit
 
-### Whole-book coverage ledger
+### Prior structural coverage ledger — not semantic audit
 
-| Source area | Audit denominator | Result after full audit | Interpretation |
+| Source area | Prior structural denominator | Prior structural result | What it actually proves |
 |---|---:|---:|---|
 | Introduction — The Systems Lens | 1 substantive unit | 1/1 mapped | Mapped to existing framework concepts |
 | Part One — Chapters One and Two | 8 defined substantive units | 8/8 mapped | Section-level content coverage |
@@ -260,7 +260,7 @@ Canonical source: supplied PDF, printed pp. 208–210. This is a discovery bibli
 | Notes | 67 numbered notes in 8 sections | 67/67 accounted for | Section structure and note numbering checked; references not independently bibliographically validated |
 | Bibliography of Systems Resources | 17 entries in 5 categories | 17/17 represented | Bibliography entries mapped by author/organization and category |
 
-The 53 substantive units (Introduction + Parts One–Three) are the defined chapter-level denominator used by this audit. Appendix summaries that repeat chapter content are counted as reference units, not new chapter-level ideas. Notes and bibliography use their own denominators; these counts must not be added together as if every row were a unique concept.
+The 53 units (Introduction + Parts One–Three) are heading/section-level units from the earlier structural pass, not a count of all substantive paragraphs or lines. These figures must not be used as evidence of semantic line-by-line completion. Appendix summaries that repeat chapter content are reference units, not new chapter-level ideas. Notes and bibliography counts record presence/structure only.
 
 ### Front matter and remaining back matter
 
@@ -280,10 +280,37 @@ The 53 substantive units (Introduction + Parts One–Three) are the defined chap
 - Rechecked the model-equation catalog against the PDF's nine model headings. The catalog is intentionally a concise index of model purpose, stocks, flows and selected setup parameters; it does not claim to reproduce every converter, scenario or run the original simulations.
 - The PDF remains canonical. Markdown is an extraction aid with formatting/heading artifacts; it is used only as a cross-check. No full source-book text is copied into the public repository.
 
+## Semantic audit progress log
+
+**Status: IN PROGRESS. No claim of line-by-line semantic completion is authorized.** The PDF text extraction contains 9,947 text lines across 235 pages; line breaks include layout artifacts and are not themselves semantic units. A first segmentation pass found approximately 883 candidate substantive text blocks after excluding obvious running headers/page-number artifacts. This count is provisional and must be reconciled with figures, tables, diagrams, equations and page layout in the PDF.
+
+| Source area | Current semantic-audit status | Finding / next required action |
+|---|---|---|
+| Front matter and Introduction | IN PROGRESS — partial review | Introduction's complementary relationship with reductionist analysis was not explicit in the prior knowledge layer. Added to `concepts.md` and `lessons.md`; remaining Introduction paragraphs, quotations and elephant interlude still need unit-level disposition. |
+| Chapter One — The Basics | IN PROGRESS — initial scan only | The source's Rule of 70 doubling-time heuristic was absent from the prior models. Added as `SYS-MM-62`; source-to-target traceability and all remaining paragraphs, figures and examples still need audit. |
+| Chapter Two — Systems Zoo | NOT STARTED — semantic pass | Opening caveat that the zoo models isolate systems from their normal environment is now captured as `SYS-MM-63` and `SYS-L-27`; all nine model setups, diagrams, graphs, assumptions and equations still need unit-level checks. |
+| Chapter Three — Why Systems Work So Well | NOT STARTED — semantic pass | Audit resilience, self-organization and hierarchy paragraphs, examples, diagrams and qualifications against concepts/models/lessons. |
+| Chapter Four — Why Systems Surprise Us | NOT STARTED — semantic pass | Audit each surprise mechanism and its examples/qualifications; verify that nonlinearities, boundaries, limits, delays and bounded rationality are not collapsed into generic summaries. |
+| Chapter Five — System Traps and Opportunities | NOT STARTED — semantic pass | Audit each trap's causal structure, examples and “way out”; verify distinctions and conditions, not only trap names. |
+| Chapter Six — Leverage Points | NOT STARTED — semantic pass | Audit each of the 12 leverage points, ordering, definitions, examples, caveats and interactions. |
+| Chapter Seven — Living in a World of Systems | NOT STARTED — semantic pass | Audit all 15 guidelines, supporting arguments, examples and limitations. |
+| Appendix — glossary, principles, traps, leverage points, guidelines, model equations | NOT STARTED — semantic pass | Existing 71-row mapping is a reference index, not semantic verification. Check each definition/list item and all equation parameters, units, initial conditions, time steps and scenarios against the PDF. |
+| Notes | NOT STARTED — content-level pass | Existing 67/67 means numbering/count only. Read each note and decide whether it supports a book claim, is attribution-only, or reveals a citation/interpretation issue. |
+| Bibliography of Systems Resources | NOT STARTED — content-level pass | Existing 17/17 means entry presence/category mapping only. Verify each entry as printed in the PDF and its relationship to the book's claims; external availability checking is separate. |
+| Editor's acknowledgments, author bio and index | NOT STARTED — disposition pass | Confirm the contents and explicitly classify each item as paratext/retrieval apparatus, with no separate knowledge promotion where appropriate. |
+
+### Findings from the initial semantic scan
+
+| Source locator | Finding | Repository action | Status |
+|---|---|---|---|
+| Introduction, printed pp. 1–7 | Systems thinking is described as complementary to reductionist analysis, not a superior replacement; system behavior depends on internal structure even when triggered externally. | Made complementarity and trigger-versus-structure explicit in `concepts.md` and added `SYS-L-26`. | FIX APPLIED; full Introduction review remains open |
+| Chapter One, printed p. 33 | The book gives the Rule of 70 as an approximate exponential doubling-time heuristic. | Added `SYS-MM-62`, explicitly marked as an approximation for roughly constant percentage growth. | FIX APPLIED; remaining Chapter One review remains open |
+| Chapter Two, opening / printed p. 35 | The “systems zoo” is intentionally simplified and separates models from their normal environment; examples must not be mistaken for exhaustive or independent real systems. | Added `SYS-MM-63` and `SYS-L-27`. | FIX APPLIED; model-by-model and figure-by-figure review remains open |
+
 ### Acceptance status and limitations
 
 - **Source structure gate:** PASS. The PDF/Markdown pair and top-level structure were inspected.
-- **Section-level mapping:** recorded in the matrices above. This proves coverage of the enumerated headings/reference units only; it does not prove every paragraph, example, qualification, diagram, table, equation or note has been semantically reviewed.
+- **Section-level mapping:** recorded in the prior matrices above. This proves coverage of the enumerated headings/reference units only; it does not prove every paragraph, example, qualification, diagram, table, equation or note has been semantically reviewed.
 - **Full semantic line-by-line audit:** **NOT YET VERIFIED — IN PROGRESS.** The prior phrase “FULL BOOK-LEVEL AUDIT COMPLETE” overstated the evidence and is withdrawn.
 - **Required audit unit:** every substantive source paragraph, bullet/list item, example, caption/diagram, table, equation/model specification, numbered note and bibliography entry, with PDF page/line locator, meaning, target mapping, nuance/limitations and a result of VERIFIED / FIX REQUIRED / NOT APPLICABLE.
 - **Required coverage proof:** an auditable ledger that accounts for all substantive source units; explicit review of PDF visual content not represented by extracted text; a discrepancy/repair log; duplicate and contradiction checks across concepts, mental models, applications and lessons; and final re-read of the updated repository files.
