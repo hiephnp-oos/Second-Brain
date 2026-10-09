@@ -22,3 +22,7 @@
 |16|The Checklist Manifesto|Decision / Execution / Reliability|REVIEWED — NORMALIZATION REQUIRED|
 
 Book 09 is limited to the supplied summary source. Book 16 remains pending and is outside the current 01–15 completion scope.
+
+## Status interpretation
+
+The table's Status column records the PDF-first source-intake/structural gate; it does not by itself certify that every book's distilled knowledge layer has passed a full semantic and duplication audit. Book 06's full book-level audit is recorded in `1. THINKING LIBRARY/02. SYSTEMS THINKING/sources/book-06-thinking-in-systems.md` on PR #142. It is complete within the defined structural, content-mapping, duplication and repository-consistency scope; the PR remains open for user review and is not merged.
