@@ -9,7 +9,7 @@
 |03|A Course in Game Theory|Game Theory|STRUCTURALLY ACCEPTED|
 |04|The Strategy of Conflict|Game Theory|STRUCTURALLY ACCEPTED|
 |05|The Evolution of Cooperation|Game Theory|STRUCTURALLY ACCEPTED|
-|06|Thinking in Systems|Systems Thinking|STRUCTURALLY ACCEPTED|
+|06|Thinking in Systems|Systems Thinking|STRUCTURALLY ACCEPTED — SEMANTIC AUDIT IN PROGRESS|
 |07|Statistical Rethinking|Bayesian Thinking|STRUCTURALLY ACCEPTED|
 |08|Superforecasting|Bayesian Thinking|STRUCTURALLY ACCEPTED|
 |09|The Scout Mindset|Critical Thinking|STRUCTURALLY ACCEPTED — SUMMARY SOURCE|
@@ -25,4 +25,4 @@ Book 09 is limited to the supplied summary source. Book 16 remains pending and i
 
 ## Status interpretation
 
-The table's Status column records the PDF-first source-intake/structural gate; it does not by itself certify that every book's distilled knowledge layer has passed a full semantic and duplication audit. Book 06's full book-level audit is recorded in `1. THINKING LIBRARY/02. SYSTEMS THINKING/sources/book-06-thinking-in-systems.md` on PR #142. It is complete within the defined structural, content-mapping, duplication and repository-consistency scope; the PR remains open for user review and is not merged.
+The table's Status column records the PDF-first source-intake/structural gate; it does not by itself certify that every book's distilled knowledge layer has passed a full semantic and duplication audit. Book 06's source-structure gate is accepted, but the full semantic line-by-line audit is not yet verified. The earlier completion claim was withdrawn because section-level mapping and note/bibliography counts do not prove every substantive source unit was reviewed. See `1. THINKING LIBRARY/02. SYSTEMS THINKING/sources/book-06-thinking-in-systems.md`; do not advance to Book 07 until its explicit semantic-audit acceptance criteria are met.
