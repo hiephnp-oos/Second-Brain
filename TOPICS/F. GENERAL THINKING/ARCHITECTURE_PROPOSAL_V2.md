@@ -43,6 +43,21 @@ Do not create additional root knowledge layers without a demonstrated boundary p
 - Reflection does not rewrite a framework because one application produced an unexpected result.
 - Personal principles require experience evidence; book advice alone is insufficient.
 
+## Per-book semantic audit gate
+
+Source-structure acceptance and semantic content audit are separate states. A successful PDF↔Markdown structural gate does not authorize a claim that the book was audited semantically line by line.
+
+A full semantic audit must account for every substantive source unit in the canonical PDF: paragraphs, bullets, examples, figures/diagrams, tables, equations/model specifications, notes and bibliography entries. Each unit must have a stable source locator, a concise statement of its meaning, a mapping or explicit disposition (e.g. illustration/paratext with no separate knowledge promotion), a fidelity/nuance check, and a result of VERIFIED / FIX REQUIRED / NOT APPLICABLE. Visual content not represented faithfully in extracted text must be inspected in the PDF itself.
+
+Report separate denominators for:
+- source-structure gate;
+- substantive semantic units reviewed;
+- source-to-framework mappings verified;
+- unresolved findings;
+- notes/bibliography checked for presence versus content.
+
+Do not infer semantic completeness from heading coverage, item counts, file presence, or passing CI. The exact phrase “semantic line-by-line audit complete” is allowed only when the source-unit ledger is complete, every substantive unit has a disposition, all material fixes are resolved, repository mappings have been re-read, and validation passes. If any condition is unmet, status must remain NOT VERIFIED / IN PROGRESS and downstream book progression is blocked.
+
 ## Promotion gate
 Intake → structural review → normalization → PDF↔Markdown validation → STRUCTURALLY ACCEPTED → distillation → framework promotion → synthesis/experience promotion as justified.
 
