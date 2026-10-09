@@ -46,16 +46,16 @@ Before implementation, identify affected subsystems and indirect stakeholders, a
 
 ## Appendix model-equation catalog — nine model setups
 
-The book's Appendix provides model equations for the dynamic examples in Chapters One and Two. This catalog records their scope without claiming to have re-run or numerically validated the original simulations.
+The book's Appendix provides equations for the nine dynamic model headings used in Chapters One and Two. This catalog records their scope without claiming to have re-run or numerically validated the original simulations.
 
-1. **Bathtub:** one water stock updated by inflow minus outflow; initial stock 50 gallons; minutes; 10-minute run.
-2. **Coffee cooling:** coffee-temperature stock falls according to cooling driven by the difference from room temperature; initial runs at 100°C, 80°C and 60°C; room temperature 18°C.
-3. **Coffee warming:** coffee-temperature stock rises according to heating driven by the difference between room and coffee temperature; initial runs at 0°C, 5°C and 10°C.
-4. **Bank account:** money stock increases through interest; initial balance $100; annual time step; 12-year run.
-5. **Room temperature:** room-temperature stock changes through furnace heat and heat loss; thermostat setting 18°C; scenarios run for 8 and 24 hours.
-6. **Population:** population stock changes by births minus deaths; initial population 6.6 billion; annual time step; 100-year run.
-7. **Capital:** capital stock changes by investment minus depreciation; initial capital stock 100; 50-year run.
-8. **Business inventory:** car inventory stock changes with inventory supply and customer demand; initial inventory 200 cars; daily time step; 100-day run.
-9. **Resource-constrained growth:** paired capital/resource stocks compare a nonrenewable-resource constraint with a renewable-resource constraint; initial capital stock 5 and resource stock 1,000 in the described runs; 100-year run.
+1. **Bathtub:** one water stock updated by inflow minus outflow; initial stock 50 gallons; minute time step; 10-minute run.
+2. **Coffee Cup Cooling or Warming:** one model heading with cooling and warming variants. Cooling runs start at 100°C, 80°C and 60°C; warming runs at 0°C, 5°C and 10°C; room temperature is 18°C; each run lasts 8 minutes.
+3. **Bank account:** money stock increases through interest; initial balance $100; annual time step; 12-year run.
+4. **Thermostat:** room-temperature stock changes through furnace heat and heat loss; initial room temperature 10°C or 18°C; thermostat setting 18°C; scenarios run for 8 and 24 hours.
+5. **Population:** population stock changes by births minus deaths; initial population 6.6 billion; annual time step; 100-year run.
+6. **Capital:** capital stock changes by investment minus depreciation; initial capital stock 100; 50-year run.
+7. **Business inventory:** car inventory stock changes with inventory supply and customer demand; initial inventory 200 cars; daily time step; 100-day run.
+8. **Renewable stock constrained by a nonrenewable resource:** resource stock is depleted by extraction while capital stock changes through investment and depreciation; 100-year run.
+9. **Renewable stock constrained by a renewable resource:** resource stock changes by regeneration minus harvest while capital stock changes through investment and depreciation; 100-year run.
 
 General stock update pattern used across these examples: current stock = prior stock + (inflows − outflows) × time step. The sign and units of the flows must match the modeled stock; this pattern is a conceptual index, not a substitute for each source equation's specific converters and assumptions.
