@@ -127,8 +127,8 @@ Map who has information, who needs it, when it arrives and what decision it can 
 ## SYS-MM-42 — Inspect rules before blaming actors
 When behavior is systematic, inspect incentives, constraints and permissions that make it rational or rewarding within the system.
 
-## SYS-MM-43 — Preserve self-organization
-Allow diversity, experimentation and local adaptation when they improve the system's capacity to learn and respond.
+## SYS-MM-43 — Design for evolutionary capacity
+When a system must adapt to changing conditions, preserve mechanisms that let it generate new structures, rules and capabilities. Treat adaptability as a property of the system's design, not merely as permission for local experimentation.
 
 ## SYS-MM-44 — Test the operative goal
 Compare the stated purpose, rewarded indicators and actual system behavior. A goal change may have more effect than optimizing existing processes.
