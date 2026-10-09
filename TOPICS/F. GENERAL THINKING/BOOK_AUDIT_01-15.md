@@ -6,7 +6,7 @@ Books 01–15 pass the PDF-first structural gate and have a durable framework ow
 
 ## Audit boundary
 
-This register records source-structure acceptance and framework ownership for Books 01–15; it is not a per-book, paragraph-by-paragraph semantic audit of every distilled concept. Detailed knowledge-layer audits and their coverage denominators belong in each framework's source traceability file. Book 06's full book-level audit is documented in `1. THINKING LIBRARY/02. SYSTEMS THINKING/sources/book-06-thinking-in-systems.md` on PR #142; its defined source units are mapped, duplication and stale-status issues were fixed, and the latest PR validation is the final machine-checkable gate.
+This register records source-structure acceptance and framework ownership for Books 01–15; it is not a per-book, paragraph-by-paragraph semantic audit of every distilled concept. Detailed knowledge-layer audits and their coverage denominators belong in each framework's source traceability file. Book 06's source-structure gate passed, but its semantic line-by-line audit remains NOT VERIFIED / IN PROGRESS. Its source traceability file records the required acceptance gate; Book 07 is blocked until the substantive-unit ledger is complete, all material findings are dispositioned, and validation passes.
 
 | Book | Gate | Owner |
 |---|---|---|
