@@ -48,7 +48,7 @@ System traps are recurring structures that generate undesirable behavior. Identi
 - Drift to low performance: standards are adjusted downward to match deteriorating results, reinforcing the decline. Keep standards anchored to an explicit reference and use demonstrated better performance to improve them.
 - Escalation: each actor responds by surpassing the other, creating a reinforcing race toward extremes. Avoid entering the loop; if caught in it, interrupt competition or negotiate balancing constraints.
 - Success to the successful: early winners gain more resources or opportunities to win again, concentrating outcomes and excluding alternatives. Consider diversification, limits on concentration or rewards that do not automatically bias the next round.
-- Shifting the burden to the intervenor: symptom relief substitutes for solving the underlying problem and can erode the system's own capacity, increasing dependence on the intervention. Restore internal capability and focus on structural causes.
+- Shifting the burden to the intervenor (addiction): symptom relief substitutes for solving the underlying problem and can erode the system's own capacity, increasing dependence on the intervention. Restore internal capability and focus on structural causes.
 - Rule beating: actors appear to comply with a rule while gaming it in ways that distort the system. Treat this behavior as feedback about the rule's design, incentives or purpose and redesign accordingly.
 - Seeking the wrong goal: a system efficiently pursues indicators that incompletely represent its real purpose. Define goals and measures around actual system welfare and outcomes, not proxies such as effort or easily counted output.
 
@@ -130,7 +130,8 @@ These concise definitions preserve the Appendix's terminology; use the chapter s
 
 - **Systems:** wholes behave beyond the sum of parts; interconnections, information and purpose matter; structure generates behavior.
 - **Stocks and flows:** the net balance of inflows and outflows changes stocks; stocks buffer and decouple flows.
-- **Feedback and delays:** balancing loops stabilize, reinforcing loops amplify; delayed feedback can cause overshoot or oscillation.
+- **Feedback loops:** balancing loops stabilize or resist change, while reinforcing loops amplify growth or collapse; feedback affects future behavior rather than changing the past.
+- **Shifting dominance, delays and oscillations:** relative loop strength can change over time, and delays in balancing feedback can produce oscillation or major trajectory changes.
 - **Scenarios and models:** use models to ask “what if?” and assess whether behavior patterns are plausible, not to claim certainty about a future.
 - **Constraints:** finite environments constrain growth; nonrenewable resources are stock-limited and renewable resources flow-limited.
 - **Resilience, self-organization and hierarchy:** resilience is not unlimited; system design must protect adaptive capacity; higher levels should serve lower-level purposes.
