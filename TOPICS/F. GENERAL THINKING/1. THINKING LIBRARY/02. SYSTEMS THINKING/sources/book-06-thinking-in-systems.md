@@ -183,14 +183,14 @@ Canonical source: supplied PDF, Appendix printed pp. 187–203. The paired Markd
 | Living in systems | 14. Expand the boundary of caring | Appendix summary of Chapter Seven practice guidelines |
 | Living in systems | 15. Do not erode the goal of goodness | Appendix summary of Chapter Seven practice guidelines |
 | Model equations | Chapter One — Bathtub | Stock accumulation from inflow minus outflow; initial water stock 50 gal; minute time step; 10-minute run |
-| Model equations | Chapter One — Coffee cooling | Temperature stock decreases by cooling × dt; compare initial temperatures; room temperature 18°C |
-| Model equations | Chapter One — Coffee warming | Temperature stock increases by heating × dt; heating responds to room-temperature discrepancy |
+| Model equations | Chapter One — Coffee Cup Cooling or Warming | One model heading with cooling and warming variants; cooling runs start at 100°C, 80°C and 60°C; warming runs at 0°C, 5°C and 10°C; room temperature 18°C; 8-minute runs |
 | Model equations | Chapter One — Bank account | Money stock changes by interest added; initial $100; annual time step; 12-year run |
-| Model equations | Chapter Two — Room temperature | Room-temperature stock changes with furnace heat and heat loss; thermostat setting 18°C |
+| Model equations | Chapter Two — Thermostat | Room-temperature stock changes with furnace heat and heat loss; initial room temperature 10°C or 18°C; thermostat setting 18°C; 8- and 24-hour runs |
 | Model equations | Chapter Two — Population | Population stock changes by births minus deaths; initial 6.6 billion; annual time step; 100-year run |
 | Model equations | Chapter Two — Capital | Capital stock changes by investment minus depreciation; initial capital 100; 50-year run |
 | Model equations | Chapter Two — Business inventory | Car inventory stock responds to inventory inflow and customer demand; initial 200 cars; daily time step; 100-day run |
-| Model equations | Chapter Two — Resource-constrained growth | Paired capital/resource stocks model extraction from a nonrenewable resource and harvest from a renewable resource; 100-year runs |
+| Model equations | Chapter Two — Renewable stock constrained by a nonrenewable resource | Resource stock is depleted by extraction while capital stock changes through investment and depreciation; 100-year run |
+| Model equations | Chapter Two — Renewable stock constrained by a renewable resource | Resource stock changes by regeneration minus harvest while capital stock changes through investment and depreciation; 100-year run |
 
 ### Appendix coverage and limitations
 - Appendix-specific explicit traceability before this pass: 0/71 units.
