@@ -101,3 +101,40 @@ These guidelines translate systems thinking into a way of observing and acting. 
 15. **Do not erode the goal of goodness.** Do not let the measurable, convenient or politically expedient goal displace the underlying values and real welfare the system is meant to serve.
 
 Taken together, these practices favor attentive observation, transparent assumptions, useful information, whole-system responsibility, humility and continuous learning over the illusion of total control.
+
+
+## Appendix glossary — canonical quick definitions
+
+These concise definitions preserve the Appendix's terminology; use the chapter sections above for deeper explanation and examples.
+
+- **Archetypes:** recurring system structures that produce characteristic behavior patterns.
+- **Balancing feedback loop:** a stabilizing or goal-seeking loop that opposes a change.
+- **Bounded rationality:** decisions that appear reasonable within one actor's limited view but may not serve the wider system.
+- **Dynamic equilibrium:** a stock stays constant when total inflows equal total outflows.
+- **Dynamics:** the behavior of a system or component over time.
+- **Feedback loop:** a closed causal chain in which a stock affects decisions/actions and flows that feed back to change the stock.
+- **Flow:** material or information entering or leaving a stock over time.
+- **Hierarchy:** nested subsystems organized within a larger system.
+- **Limiting factor:** the necessary input that currently constrains system activity.
+- **Linear relationship:** cause and effect change in a constant proportion.
+- **Nonlinear relationship:** cause and effect are not proportional.
+- **Reinforcing feedback loop:** an amplifying loop that strengthens the direction of change.
+- **Resilience:** ability to recover, repair or bounce back after perturbation.
+- **Self-organization:** ability to create or change structure, learn or diversify.
+- **Shifting dominance:** relative strengths of competing feedback loops change over time.
+- **Stock:** an accumulation built up over time.
+- **Suboptimization:** a subsystem's goals take priority over the goals of the whole system.
+- **System:** organized and interconnected elements whose structure produces characteristic behavior or purpose.
+
+## Appendix summary — retrieval index
+
+- **Systems:** wholes behave beyond the sum of parts; interconnections, information and purpose matter; structure generates behavior.
+- **Stocks and flows:** the net balance of inflows and outflows changes stocks; stocks buffer and decouple flows.
+- **Feedback and delays:** balancing loops stabilize, reinforcing loops amplify; delayed feedback can cause overshoot or oscillation.
+- **Scenarios and models:** use models to ask “what if?” and assess whether behavior patterns are plausible, not to claim certainty about a future.
+- **Constraints:** finite environments constrain growth; nonrenewable resources are stock-limited and renewable resources flow-limited.
+- **Resilience, self-organization and hierarchy:** resilience is not unlimited; system design must protect adaptive capacity; higher levels should serve lower-level purposes.
+- **Sources of surprise:** nonlinearity, chosen boundaries, limiting factors, nested limits, exponential growth, delays and bounded rationality.
+- **Mindsets and models:** every representation is selective; models can be useful without being complete representations of reality.
+
+Appendix “Springing the System Traps,” “Places to Intervene,” and “Guidelines for Living” are concise reference summaries of concepts already developed in the main chapters. They are mapped in the source traceability register rather than duplicated as separate knowledge frameworks.
