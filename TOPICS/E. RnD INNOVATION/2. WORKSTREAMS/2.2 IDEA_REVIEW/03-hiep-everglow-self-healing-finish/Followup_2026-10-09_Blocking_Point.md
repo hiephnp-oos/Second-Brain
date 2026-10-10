@@ -10,7 +10,7 @@
 
 **Kết quả: điểm nghẽn mới chỉ được giải quyết một phần.**
 
-1. **Chưa tìm thấy bằng chứng công khai, trực tiếp cho thấy một lớp phủ trong suốt có khả năng tự phục hồi vết xước đã được thương mại hóa và đánh giá đạt yêu cầu trên lớp hoàn thiện trang trí của vòi nước, tay sen, đầu sen hoặc thiết bị phòng tắm.** Đây là kết quả trong phạm vi tìm kiếm đã xác định, không phải bằng chứng rằng sản phẩm như vậy không tồn tại.
+1. **Đã tìm thấy một tiền lệ thương mại được nhà cung cấp quảng bá trực tiếp cho vòi nước: Revivify nói lớp phủ self-healing của họ có thể sử dụng trên “sinks, and faucets”.** Tuy nhiên, chưa tìm thấy bằng chứng công khai cho thấy lớp phủ này đã được OEM vòi nước đánh giá/qualification trên lớp hoàn thiện trang trí Ni-Cr/PVD theo yêu cầu ngành. Đây là tiền lệ sản phẩm aftermarket/đa bề mặt và tuyên bố của nhà cung cấp, không phải bằng chứng về qualification cho sản xuất vòi nước.
 2. **Chưa có bằng chứng cho thấy tiêu chuẩn thiết bị cấp nước cấm tuyệt đối lớp phủ self-healing.** Khung ASME A112.18.1/CSA B125.1 (2024) có các yêu cầu áp dụng cho lớp phủ, như độ bám dính, ăn mòn, suy giảm do nước, tác động của xà phòng/chất tẩy rửa và mài mòn. Về nguyên tắc, lớp phủ hữu cơ có thể được đánh giá theo các yêu cầu phù hợp; nhãn “self-healing” tự nó không phải lý do miễn trừ hay loại bỏ.
 3. **Độ ẩm và độ bền dài hạn là các rủi ro kỹ thuật có cơ sở, nhưng chưa được xác minh là nguyên nhân lịch sử khiến ứng dụng trên thiết bị phòng tắm chưa phổ biến.** Tài liệu về lớp phủ polymer ghi nhận các cơ chế hư hỏng phụ thuộc công thức và bề mặt tiếp xúc, gồm hấp thụ nước, trương nở, hóa dẻo, thủy phân, suy giảm độ bám dính, phồng rộp và bong tách. Điều này cho thấy cần đánh giá độ bền trong môi trường phòng tắm, nhưng không chứng minh một công thức self-healing cụ thể sẽ thất bại.
 4. **Bằng chứng về sản phẩm hiện có cho thấy self-healing có thể duy trì hiệu quả trong một số hệ lớp phủ thương mại, nhưng giới hạn và độ bền khác nhau theo sản phẩm.** Nissan công bố Scratch Shield có thể phục hồi các vết xước nhỏ, song hiệu quả giảm dần sau khoảng ba năm sử dụng. BASF công bố clearcoat iGloss phục hồi khoảng 90% biến dạng vết xước trong cơ chế “instant reflow”; lớp phủ giữ phần lớn độ bóng sau thử nghiệm lão hóa tăng tốc 4.500 giờ và được đưa vào sản xuất hàng loạt từ năm 2011. 3M và XPEL cũng thương mại hóa màng bảo vệ sơn có chức năng self-healing và công bố bảo hành 10 năm cho các dòng sản phẩm liên quan. Tuy nhiên, bảo hành 10 năm áp dụng cho các khuyết tật được quy định trong điều kiện bảo hành; không có nghĩa khả năng tự phục hồi đã được chứng minh duy trì nguyên vẹn trong suốt 10 năm. Các ví dụ này chứng minh công nghệ có thể được thương mại hóa và có dữ liệu độ bền ở những ứng dụng nhất định, nhưng không xác nhận tính phù hợp với lớp hoàn thiện sen vòi.
@@ -24,7 +24,7 @@
 | Câu hỏi | Kết quả | Trạng thái bằng chứng | Điều được / không được chứng minh |
 |---|---|---|---|
 | Lớp phủ self-healing đã được thương mại hóa ngoài ngành phòng tắm chưa? | Có: clearcoat ô tô, màng bảo vệ sơn và một số ứng dụng điện tử tiêu dùng đã được ghi nhận trong các đánh giá trước và nguồn nhà sản xuất. | EVIDENCED | Chứng minh công nghệ tồn tại, không chứng minh phù hợp với lớp hoàn thiện vòi nước. |
-| Có lớp hoàn thiện trang trí self-healing đã xác minh công khai trên vòi nước/tay sen/đầu sen không? | Chưa tìm thấy trong phạm vi tìm kiếm này. | NOT FOUND trong phạm vi tìm kiếm; không phải bằng chứng không tồn tại | Chưa có tiền lệ trực tiếp đủ tin cậy để trích dẫn. |
+| Có lớp phủ self-healing được quảng bá trực tiếp cho vòi nước không? | Có: Revivify quảng bá lớp phủ bảo vệ self-healing cho các bề mặt cứng, gồm bồn rửa và vòi nước. | EVIDENCED về tuyên bố thương mại của nhà cung cấp; chưa xác minh độc lập | Đây là tiền lệ thương mại liên quan trực tiếp, nhưng không chứng minh OEM qualification, thử nghiệm theo ASME/CSA hoặc phù hợp với mọi cấu trúc Ni-Cr/PVD. |
 | Có sản phẩm self-healing liên quan đến vòi nước không? | US20230366183A1 mô tả tấm chắn vòi có lỗ tự ôm sát theo hình dạng vòi. | EVIDENCED, nhưng không tương đương | Lỗ silicone tự khép/ôm quanh vòi; không phục hồi vết xước trên lớp hoàn thiện của vòi. |
 | Độ ẩm có thể làm hỏng lớp phủ polymer không? | Có, tùy hóa học polymer, cấu trúc mạng, bề mặt tiếp xúc và điều kiện phơi nhiễm. | EVIDENCED, khoa học lớp phủ nói chung | Xác nhận độ ẩm là rủi ro cần đánh giá, không chứng minh đây là nguyên nhân khiến self-healing chưa xuất hiện trong ngành phòng tắm. |
 | ASME A112.18.1/CSA B125.1 có cấm lớp phủ self-healing không? | Không tìm thấy điều khoản cấm như vậy trong phần yêu cầu lớp phủ được rà soát công khai. | EVIDENCED trong phạm vi trích đoạn tiêu chuẩn đã xem; không phải kết luận tuân thủ pháp quy | Lớp phủ vẫn phải đáp ứng các phép thử áp dụng. Cần xác nhận với tổ chức chứng nhận và bản tiêu chuẩn được kiểm soát hiện hành. |
@@ -153,9 +153,18 @@ Vì vậy, tiêu chuẩn là một **rào cản đánh giá/qualification có c�
 
 ### 5.1 Tiền lệ thương mại trực tiếp cho lớp hoàn thiện
 
-**Kết quả: chưa xác minh được tiền lệ trực tiếp trong phạm vi tìm kiếm.**
+**Kết quả: đã tìm thấy một sản phẩm được quảng bá cho vòi nước, nhưng chưa xác minh được qualification ở cấp OEM.**
 
-Các trang công khai của nhà sản xuất lớp hoàn thiện phòng tắm được tìm thấy chủ yếu đề cập đến các giải pháp đã phổ biến như PVD, sơn mài/lớp phủ hữu cơ trong suốt, chống ăn mòn/xỉn màu, chống mài mòn và dễ vệ sinh/chống đọng vết nước. Ví dụ, Symmons mô tả các loại lớp hoàn thiện mạ điện, PVD và lớp phủ hữu cơ, đồng thời đề cập đến thử nghiệm độ bám dính, phun sương muối, ngâm nước, mài mòn và hóa chất vệ sinh:
+Revivify công khai cho biết lớp phủ self-healing của họ có thể sử dụng trên nhiều bề mặt cứng, trong đó nêu rõ “sinks, and faucets”. Nhà cung cấp mô tả cơ chế phục hồi được kích hoạt bằng nhiệt, gồm nước nóng/khí nóng, và công bố các tuyên bố về độ bám dính, kháng hóa chất, UV và độ bền. Đây là bằng chứng về tuyên bố thương mại trực tiếp cho ứng dụng vòi nước; các tuyên bố hiệu năng vẫn cần được xem là thông tin do nhà cung cấp công bố.
+
+Nguồn:
+- Revivify USA — phạm vi ứng dụng gồm bồn rửa và vòi nước, cơ chế phục hồi bằng nhiệt và các tuyên bố về độ bền: https://www.teamrevivifyusa.com/
+- Revivify Global — công nghệ self-healing và thông tin sản phẩm: https://www.revivifyglobal.net/
+- Revivify Global — thông tin sản phẩm và tuyên bố phục hồi đến 98% trạng thái ban đầu: https://www.revivifyglobal.net/product/revive/
+
+**Giới hạn quan trọng:** chưa tìm thấy báo cáo thử công khai cho biết Revivify đã được áp dụng và qualification trên lớp hoàn thiện trang trí của vòi nước sản xuất hàng loạt, trên cấu trúc Ni-Cr/PVD cụ thể, hoặc đã đáp ứng ASME A112.18.1/CSA B125.1. Cũng chưa có dữ liệu công khai đủ để xác nhận chiều dày màng, thay đổi màu/độ bóng, độ bám dính sau lão hóa nước nóng/chất tẩy rửa và khả năng tự phục hồi sau các chu kỳ mài mòn trong môi trường phòng tắm.
+
+Các trang công khai khác của nhà sản xuất lớp hoàn thiện phòng tắm được tìm thấy chủ yếu đề cập đến các giải pháp đã phổ biến như PVD, sơn mài/lớp phủ hữu cơ trong suốt, chống ăn mòn/xỉn màu, chống mài mòn và dễ vệ sinh/chống đọng vết nước. Ví dụ, Symmons mô tả các loại lớp hoàn thiện mạ điện, PVD và lớp phủ hữu cơ, đồng thời đề cập đến thử nghiệm độ bám dính, phun sương muối, ngâm nước, mài mòn và hóa chất vệ sinh:
 
 https://discover.symmons.com/finishes/
 
@@ -196,7 +205,7 @@ Các điểm dưới đây là **suy luận kỹ thuật**, không phải tuyên
 | Chi phí và quy trình | Sản lượng ô tô lớn hoặc màng điện thoại thay được có thể hỗ trợ công thức chuyên biệt | Nhà máy vòi nước có thể cần thêm công đoạn phủ/đóng rắn/QC và đánh giá nhiều biến thể lớp hoàn thiện |
 | Giá trị sản phẩm | Vết xước là vấn đề đã được ghi nhận trên một số bề mặt sơn/màng/vỏ thiết bị | Cần xác minh giá trị bổ sung cho người dùng so với PVD bền, clearcoat thông thường và lớp hoàn thiện dễ vệ sinh |
 
-Khoảng trống tiền lệ công khai có thể liên quan đến một hoặc nhiều yếu tố trên. Bằng chứng đã rà soát chưa xác định yếu tố nào, nếu có, là nguyên nhân quyết định đối với một nhà sản xuất cụ thể.
+Việc có một sản phẩm aftermarket được quảng bá cho vòi nước làm thay đổi kết luận “không có tiền lệ trực tiếp”: hiện đã có tiền lệ thương mại liên quan ở cấp tuyên bố của nhà cung cấp. Tuy nhiên, khoảng trống về bằng chứng qualification OEM và độ bền trên cấu trúc lớp hoàn thiện vòi nước vẫn còn. Bằng chứng đã rà soát chưa xác định yếu tố nào, nếu có, là nguyên nhân quyết định khiến các nhà sản xuất vòi nước chưa công bố tích hợp công nghệ này.
 
 ## 7. Cần bằng chứng nào để giải quyết điểm nghẽn?
 
@@ -245,16 +254,16 @@ Dừng hoặc chuyển hướng ứng viên nếu:
 
 ## 8. Đánh giá cuối cùng cho việc trình bày EverGlow
 
-**Trạng thái câu hỏi nghẽn: PARTIALLY RESOLVED — chưa xác minh được tiền lệ công khai trực tiếp trên lớp hoàn thiện phòng tắm; nguyên nhân của khoảng trống này vẫn chưa được chứng minh.**
+**Trạng thái câu hỏi nghẽn: PARTIALLY RESOLVED — đã tìm thấy tiền lệ thương mại aftermarket được quảng bá trực tiếp cho vòi nước (Revivify), nhưng chưa xác minh được qualification OEM hoặc dữ liệu độ bền trên lớp hoàn thiện Ni-Cr/PVD trong môi trường phòng tắm; nguyên nhân của khoảng trống OEM vẫn chưa được chứng minh.**
 
-- **EVIDENCED:** Lớp phủ self-healing tồn tại; một số sản phẩm thương mại có dữ liệu về phục hồi vết xước và độ bền; lớp phủ polymer có thể suy giảm do độ ẩm; tiêu chuẩn lớp hoàn thiện thiết bị cấp nước có các phép thử độ bền liên quan; một bằng sáng chế liên quan đến vòi nước dùng “self-healing” cho chức năng khác.
+- **EVIDENCED:** Lớp phủ self-healing tồn tại; một số sản phẩm thương mại có dữ liệu về phục hồi vết xước và độ bền; Revivify quảng bá sản phẩm self-healing cho bồn rửa và vòi nước; lớp phủ polymer có thể suy giảm do độ ẩm; tiêu chuẩn lớp hoàn thiện thiết bị cấp nước có các phép thử độ bền liên quan; một bằng sáng chế liên quan đến vòi nước dùng “self-healing” cho chức năng khác.
 - **INFERRED:** Chuyển giao hóa học self-healing thành topcoat mỏng, trong suốt và bền cho Ni-Cr/PVD có thể khó hơn ứng dụng trên clearcoat ô tô hoặc vỏ/màng điện thoại, do khác biệt về giao diện, ngoại quan, hóa chất vệ sinh và yêu cầu qualification.
-- **UNKNOWN:** Liệu đã có công thức phù hợp được phát triển riêng hoặc thương mại hóa kín cho thiết bị phòng tắm hay chưa; rào cản chính là độ bền, ngoại quan, động học phục hồi, chi phí, tích hợp quy trình, định hướng nhà cung cấp hay yếu tố khác.
+- **UNKNOWN:** Liệu Revivify đã được qualification trên lớp hoàn thiện trang trí vòi nước theo yêu cầu OEM/ASME/CSA hay chưa; liệu đã có công thức khác phù hợp được phát triển riêng hoặc thương mại hóa kín cho thiết bị phòng tắm hay chưa; rào cản chính là độ bền, ngoại quan, động học phục hồi, chi phí, tích hợp quy trình, định hướng nhà cung cấp hay yếu tố khác.
 - **NOT ESTABLISHED:** Lớp phủ self-healing vốn dĩ thất bại trong môi trường ẩm; tiêu chuẩn cấm công nghệ này; chưa từng có nhà sản xuất phòng tắm nào sử dụng; hoặc EverGlow có tính mới.
 
 ### Khuyến nghị
 
-**KEEP — chỉ trình bày như ý tưởng chuyển giao công nghệ nếu hồ sơ nêu rõ qualification lớp hoàn thiện phòng tắm là rủi ro kỹ thuật chưa giải quyết.** Bằng chứng đủ để giải thích vì sao đây là cơ hội R&D có cơ sở, nhưng chưa đủ để khẳng định công nghệ đã sẵn sàng hoặc độ ẩm là nguyên nhân đã được xác nhận khiến nó chưa xuất hiện trên thị trường.
+**KEEP — chỉ trình bày như ý tưởng chuyển giao công nghệ nếu hồ sơ nêu rõ qualification lớp hoàn thiện phòng tắm là rủi ro kỹ thuật chưa giải quyết.** Bằng chứng về Revivify cho thấy đã có một lớp phủ self-healing được quảng bá cho vòi nước ở cấp ứng dụng aftermarket, vì vậy không nên mô tả thị trường là hoàn toàn không có tiền lệ. Tuy nhiên, chưa đủ bằng chứng để khẳng định công nghệ này đã được qualification cho sản xuất vòi nước hoặc EverGlow đã sẵn sàng; độ ẩm cũng chưa phải nguyên nhân đã được xác nhận cho khoảng trống OEM.
 
 Hành động có giá trị cao nhất là gửi yêu cầu dữ liệu có ghi nhận cho NEI (và nếu cần, một nhà cung cấp lớp phủ khác), tập trung vào tiền lệ ứng dụng lớp hoàn thiện phòng tắm và các câu hỏi độ bền nêu trên. Việc này giúp phân biệt giới hạn kỹ thuật thực sự với khoảng trống về ứng dụng/qualification.
 
@@ -280,5 +289,8 @@ Hành động có giá trị cao nhất là gửi yêu cầu dữ liệu có ghi
 18. XPEL, “ULTIMATE PLUS”: https://www.xpel.com/products/ultimate-plus
 19. XPEL, “ULTIMATE PLUS Technical Data Sheet”: https://www.xpel.com/web-assets/downloads/XPEL-ULTIMATE-PLUS-TDS-82019-V1-1.pdf
 20. XPEL, “Warranty Information”: https://xpel.co.uk/help/warranty-information/
+21. Revivify USA — công bố ứng dụng self-healing coating trên bồn rửa và vòi nước: https://www.teamrevivifyusa.com/
+22. Revivify Global — công nghệ self-healing và phạm vi sản phẩm: https://www.revivifyglobal.net/
+23. Revivify Global — thông tin sản phẩm Revive+: https://www.revivifyglobal.net/product/revive/
 
 **Độ tin cậy:** Trung bình. Cao đối với cơ chế suy giảm lớp phủ nói chung và sự tồn tại của các yêu cầu độ bền cho lớp hoàn thiện; Trung bình đối với kết luận tìm kiếm có giới hạn rằng chưa xác minh được tiền lệ công khai trực tiếp trong ngành phòng tắm; Thấp đối với mọi khẳng định về nguyên nhân lịch sử thực sự khiến nhà sản xuất chưa áp dụng công nghệ.
