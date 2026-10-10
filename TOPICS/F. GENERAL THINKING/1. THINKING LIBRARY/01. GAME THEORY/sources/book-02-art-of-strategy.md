@@ -60,6 +60,46 @@ Validation evidence:
 - The Markdown contains extraction artifacts such as escaped headings and formatting fragments. These are not treated as canonical source text.
 - The PDF remains authoritative whenever PDF and Markdown representations differ.
 
+## Part I traceability — controlled review map
+
+Part I was reviewed as an incremental extension of GT-01, not as a second copy of the same material.
+
+| Chapter | Durable reasoning retained | Incremental GT-02 contribution | Status |
+|---|---|---|---|
+| Ch. 1 — Ten Tales of Strategy | strategic interaction, anticipation, commitment, unpredictability, cooperation/conflict | infer objectives from the structure of the game; strategic sacrifice; explicit attention to human motives and meta-game reasoning | COVERED |
+| Ch. 2 — Games Solvable by Backward Reasoning | sequential moves, game trees, backward induction | solvability boundary conditions; behavioral limits of backward reasoning; distinction between normative strategy and observed behavior; complex-tree limits | COVERED |
+| Ch. 3 — Prisoners' Dilemmas and How to Resolve Them | dominant incentives, defection/cooperation, repeated interaction, enforcement | broader cross-domain framing of the dilemma; explicit resolution conditions and monitoring/enforcement logic | COVERED |
+| Ch. 4 — A Beautiful Equilibrium | Nash equilibrium, best responses, coordination | multiple equilibria, focal-point selection, Battle of the Sexes, Chicken, and the distinction between equilibrium existence and equilibrium selection | COVERED |
+
+Acceptance rule for Part I: every chapter must leave at least one durable reasoning mechanism, one operational model or application, and source traceability. Narrative examples are not duplicated as separate models when the underlying mechanism is already represented.
+
+
+## Part II traceability — controlled review map
+
+| Chapter | Durable reasoning retained | Incremental GT-02 contribution | Status |
+|---|---|---|---|
+| Ch. 5 — Choice and Chance | mixed strategies and unpredictability | payoff-derived mixing, indifference condition, individual-action unpredictability, skill-change effects, deliberate chance | COVERED |
+| Ch. 6 — Strategic Moves | unconditional moves, threats, promises, warnings, assurances | preemptive response rules, deterrent vs compellent distinction, timing transformation, move vs credibility separation | COVERED |
+| Ch. 7 — Making Strategies Credible | commitment, credibility, reputation, contracts, delegation | eightfold path, three underlying mechanisms, chance as commitment, incremental commitment, mandated agents | COVERED |
+| Epilogue to Part II | historical development and further-reading context | retained as context, not promoted as reusable mental models | COVERED AS CONTEXT |
+
+Acceptance rule for Part II: every substantive chapter must leave a durable reasoning mechanism, an operational model or application, and source traceability. Historical/further-reading material is retained only as context.
+
+
+## Part III traceability — controlled review map
+
+| Chapter | Durable reasoning retained | Incremental GT-02 contribution | Status |
+|---|---|---|---|
+| Ch. 8 — Interpreting and Manipulating Information | information asymmetry, signaling, screening | signal cost/separation, screening by self-selection, signal jamming, strategic inference, adverse selection | COVERED |
+| Ch. 9 — Cooperation and Coordination | cooperation, coordination, externalities | externality pricing, network/bandwagon effects, path dependence, threshold coordination, institutional enforcement | COVERED |
+| Ch. 10 — Auctions, Bidding, and Contests | auction mechanism and winner's curse | private vs common value, Vickrey mechanism, revenue equivalence boundary conditions, strategic adaptation, linked games | COVERED |
+| Ch. 11 — Bargaining | bargaining power, outside options, patience, multi-issue trade | BATNA-based pie measurement, procedure as strategic variable, influencing relative BATNAs | COVERED |
+| Ch. 12 — Voting | strategic voting, agenda control, pivotality | voting cycles, procedural choice, sequential voting, contextual voting power | COVERED |
+| Ch. 13 — Incentives | hidden effort, risk, hold-up | relative performance, intrinsic motivation, multiple principals, stronger contract design | COVERED |
+| Ch. 14 — Case Studies | applications of preceding mechanisms | cases retained by mechanism family rather than duplicated into separate models | COVERED AS APPLICATION LAYER |
+
+Acceptance rule for Part III: every substantive chapter must leave at least one durable reasoning mechanism, one operational model or application, and source traceability. Chapter 14 is accepted as an application layer and is not expected to create fourteen additional mental models.
+
 ## Acceptance decision
 
 Status: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction.

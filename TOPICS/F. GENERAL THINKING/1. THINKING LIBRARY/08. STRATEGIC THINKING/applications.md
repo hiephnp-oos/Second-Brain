@@ -1,7 +1,19 @@
 # Strategic Thinking — Applications
 
-- STR-APP-01: stalled project → diagnose the critical obstacle before adding activities.
-- STR-APP-02: competing initiatives → concentrate on actions that change the diagnosed obstacle.
-- STR-APP-03: competitive position → map asymmetries in capability, cost, timing, information and access.
-- STR-APP-04: organizational inertia → identify routines preserving an obsolete position.
-- STR-APP-05: strategy review → require diagnosis, guiding policy and coherent actions rather than a KPI list.
+## STR-APP-01 — R&D portfolio
+Diagnose whether the real constraint is technology, market fit, capability, timing, cost or execution. Concentrate resources accordingly.
+
+## STR-APP-02 — Quality improvement
+Avoid treating every defect as an independent initiative. Diagnose the constraint and coordinate actions around it.
+
+## STR-APP-03 — Career strategy
+Separate desired role from strategy. Diagnose the capability/credibility gap, choose a policy and select mutually reinforcing actions.
+
+## STR-APP-04 — Technology competition
+Identify asymmetries in technology, cost, capability, channel, speed or installed base.
+
+## STR-APP-05 — Organizational change
+Identify inertia and the policy that can overcome it. Sequence actions so early changes make later changes easier.
+
+## STR-APP-06 — Project recovery
+Diagnose the proximate obstacle instead of adding activity. Concentrate resources on the constraint driving the trajectory.

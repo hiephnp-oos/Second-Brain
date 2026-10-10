@@ -872,7 +872,7 @@ def validate_target_structure(errors: list[str]) -> None:
             fail(f"Missing System Core artifact: {rel}", errors)
 
 def validate_general_thinking_contract(errors: list[str]) -> None:
-    """Validate the General Thinking architecture, source gate, and physical libraries."""
+    """Validate the complete General Thinking architecture and its layer boundaries."""
     root = ROOT / "TOPICS/F. GENERAL THINKING"
     required = [
         root / "README.md",
@@ -883,6 +883,16 @@ def validate_general_thinking_contract(errors: list[str]) -> None:
         root / "ARCHITECTURE_PROPOSAL_V2.md",
         root / "BOOK_AUDIT_01-15.md",
         root / "1. THINKING LIBRARY/README.md",
+        root / "2. SYNTHESIS/README.md",
+        root / "2. SYNTHESIS/CROSS-FRAMEWORK.md",
+        root / "2. SYNTHESIS/DECISION_PATTERNS.md",
+        root / "2. SYNTHESIS/STRATEGIC_PATTERNS.md",
+        root / "2. SYNTHESIS/META-MODELS.md",
+        root / "3. REFLECTION/README.md",
+        root / "3. REFLECTION/REVIEWS/README.md",
+        root / "3. REFLECTION/LESSONS/README.md",
+        root / "4. PERSONAL PRINCIPLES/README.md",
+        root / "4. PERSONAL PRINCIPLES/PRINCIPLES.md",
     ]
     for path in required:
         if not path.exists():
@@ -933,12 +943,42 @@ def validate_general_thinking_contract(errors: list[str]) -> None:
             if not (path / filename).exists():
                 fail(f"General Thinking library artifact missing: {path.relative_to(ROOT)}/{filename}", errors)
 
+    architecture = root / "ARCHITECTURE_PROPOSAL_V2.md"
+    if architecture.exists():
+        text = read_text(architecture)
+        for phrase in [
+            "1. THINKING LIBRARY",
+            "2. SYNTHESIS",
+            "3. REFLECTION",
+            "4. PERSONAL PRINCIPLES",
+            "framework-owned knowledge",
+            "cross-framework knowledge",
+            "experience-derived knowledge",
+            "durable personal rules",
+        ]:
+            if phrase not in text:
+                fail(f"General Thinking architecture missing '{phrase}'", errors)
+
     topic_readme = root / "README.md"
     if topic_readme.exists():
         text = read_text(topic_readme)
-        for phrase in ["Physical framework libraries", "Book PDF", "BOOK_AUDIT_01-15.md"]:
+        for phrase in [
+            "Physical framework libraries",
+            "Book PDF",
+            "BOOK_AUDIT_01-15.md",
+            "2. SYNTHESIS",
+            "3. REFLECTION",
+            "4. PERSONAL PRINCIPLES",
+        ]:
             if phrase not in text:
                 fail(f"General Thinking README missing '{phrase}'", errors)
+
+    # Prevent the retired book-level layer from silently returning.
+    books = root / "BOOKS"
+    if books.exists():
+        for number in range(1, 16):
+            if (books / f"{number:02d}").exists():
+                fail(f"Retired duplicate General Thinking book layer exists: {books.relative_to(ROOT)}/{number:02d}", errors)
 
 def main() -> int:
     errors: list[str] = []

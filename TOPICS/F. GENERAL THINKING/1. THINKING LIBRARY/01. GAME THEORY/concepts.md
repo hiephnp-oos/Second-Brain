@@ -273,34 +273,330 @@ A commitment can deliberately leave part of the final outcome to chance. The res
 
 In mutual-deterrence situations, each side's fear of being surprised can create incentives to act preemptively. Strategic stability therefore depends not only on offensive capability but also on expectations about the other's incentives and the timing of possible moves.
 
-## 44. Iterated Prisoner's Dilemma
+## GT-04 Part I — Incremental foundations from *The Strategy of Conflict*
 
-The iterated Prisoner's Dilemma repeats a cooperation problem so that current choices affect the future interaction. This creates room for reciprocity, punishment, forgiveness, and reputation to influence present behavior.
+Part I adds a strategic layer centered on bargaining power as self-binding, negotiation structure, focal/tacit coordination, communication, limited war, and prior arrangements.
 
-## 45. TIT FOR TAT
+### 44. Bargaining power through self-binding
 
-TIT FOR TAT begins by cooperating and then responds by doing what the other player did on the previous move. The book studies it as a simple reciprocal strategy that can perform well across repeated interactions and can support cooperation under suitable conditions.
+Bargaining power can come from the ability to bind oneself to a course of action. A constraint can alter the opponent's expectations and therefore the feasible bargaining outcome.
 
-## 46. Shadow of the future
+### 45. Negotiation structure is part of the bargaining problem
 
-The value of future interaction affects whether present defection is attractive. A sufficiently important future can make reciprocal cooperation sustainable because a short-term gain from defection carries future consequences.
+Institutional and structural features of a negotiation—who moves, what options exist, what commitments are possible, and what information can be exchanged—can change bargaining power independently of the stated preferences.
 
-## 47. Collective stability
+### 46. Threats and promises are strategic instruments
 
-A strategy is collectively stable when, once established in a population, it cannot be profitably invaded by alternative strategies under the relevant conditions. Stability answers what can persist after establishment, not necessarily what will become established.
+A threat changes behavior by making an unfavorable response conditional on the other's action; a promise does so by making a favorable response conditional on cooperation. Their strategic force depends on credibility and the structure that supports it.
 
-## 48. Evolutionary and ecological selection
+### 47. Limited conflict can carry bargaining information
 
-Strategies can spread because successful strategies are reproduced, imitated, or otherwise become more common. Tournament, ecological, and territorial analyses study different parts of this selection process.
+When explicit agreement is unavailable, controlled actions or limited conflict can communicate resolve, test expectations, or alter the bargaining situation. The action must therefore be analyzed as both behavior and communication.
 
-## 49. Local clusters of cooperation
+### 48. Tacit coordination depends on mutual recognition
 
-Cooperation can gain a foothold when reciprocating strategies form clusters that interact sufficiently with one another to protect their cooperative behavior from exploitation.
+Coordination without explicit communication requires more than choosing a reasonable action. Each side must expect the other side to recognize the same salient solution.
 
-## 50. Reciprocity under noise
+### 49. Tacit bargaining is coordination under divergent interests
 
-When players can misperceive the other's previous move, a reciprocal strategy must be robust enough to avoid turning isolated errors into persistent retaliation. The book tests this robustness directly in noisy tournament conditions.
+When interests are not identical, a focal outcome can serve as an implicit bargaining point because both sides benefit from converging on a mutually recognizable arrangement rather than failing to coordinate.
 
-## 51. Social structure and reputation
+### 50. Prior arrangements can substitute for real-time negotiation
 
-The structure of interactions affects whether reciprocity can work. Recognition, repeated contact, reputation, and the ability to respond to prior behavior can support cooperation even without central authority.
+An arrangement established before conflict or uncertainty can constrain later choices and reduce the need for explicit bargaining at the critical moment.
+
+### 51. Communication changes the game itself
+
+Communication is not merely information transfer. The ability to communicate, withhold communication, or destroy communication can alter expectations, commitments, and the set of strategically available outcomes.
+
+## GT-04 Part II — Incremental foundations from *The Strategy of Conflict*
+
+Part II reorients the framework from pure-conflict analysis toward interdependent decision, mixed-motive/coordination games, strategic moves, communication and enforcement, and empirical testing of strategic behavior.
+
+### 52. Interdependent decision as the core strategic problem
+
+In mixed-motive situations, an actor's best action depends on expectations about what another actor will do and what that actor expects in return. Strategic analysis therefore includes reciprocal expectations, not only unilateral optimization.
+
+### 53. Reclassifying games by conflict and common interest
+
+Zero-sum conflict and pure coordination are limiting cases. Mixed-motive games combine conflict over some outcomes with mutual dependence over others, making bargaining and coordination central to the analysis.
+
+### 54. Coordination is a distinct strategic structure
+
+A coordination game can be difficult even when the players' interests are aligned because the players must converge on the same expectation or action. The central problem is coordination, not unilateral incentive optimization.
+
+### 55. Suggestion and mutual perception can focus expectations
+
+Labels, context, conventions, symmetry, salient features, and other perceptual cues can influence which outcome players expect one another to select. These cues matter when they help expectations converge.
+
+### 56. Strategic moves change the structure of the interaction
+
+A strategic move is an action taken to alter another player's expectations or available responses rather than merely to improve the actor's immediate payoff.
+
+### 57. Enforcement makes conditional behavior consequential
+
+Threats and promises affect the game only when the relevant response can be carried out or otherwise enforced. Enforcement therefore belongs inside the strategic model.
+
+### 58. Relinquishing initiative can be strategically useful
+
+Having fewer choices or giving the other side initiative can sometimes improve a player's position by making commitments more credible or transferring responsibility for a costly decision.
+
+### 59. Identification can constrain future choices
+
+Identifying oneself with a particular action, position, role, or commitment can reduce later flexibility and thereby alter the opponent's expectations.
+
+### 60. Delegation changes the decision-maker's incentives
+
+Delegating a decision can alter credibility, information, and the set of responses available to the principal. The strategic effect depends on how the delegate's incentives differ from the principal's.
+
+### 61. Mediation inserts a strategic third party
+
+A mediator can change communication, interpretation, enforcement, or coordination. Mediation should therefore be modeled as a change in the game rather than as neutral assistance.
+
+### 62. Communication can be created, restricted, or destroyed
+
+The ability to communicate is itself a strategic resource. A player can gain or lose leverage by changing who can communicate, what can be communicated, or whether communication remains possible.
+
+### 63. Strategic moves can be represented inside the game
+
+A strategic move can be incorporated into the formal game by expanding the action space, sequence, information structure, or payoff consequences. This makes the move analyzable as part of the game rather than as an external commentary.
+
+### 64. Strategic advantage can be paradoxical
+
+An apparent advantage—such as initiative, information, or freedom of action—can reduce bargaining power when the other side can exploit that flexibility or when the advantage makes a commitment less credible.
+
+### 65. Experimental research is part of strategic theory
+
+Some strategic phenomena, especially perception, norms, communication through actions, and focal coordination, cannot be fully derived from formal structure alone. Experimental evidence can test how participants actually interpret and coordinate within a game.
+
+### 66. Game labels and context can become causal variables
+
+When a non-zero-sum game depends on mutual interpretation, the description, symbols, background story, or framing of the game can influence the expectations that guide play. Such contextual effects are part of the empirical strategic problem rather than automatically irrelevant noise.
+
+
+## GT-04 Part III — Incremental foundations from *The Strategy of Conflict*
+
+Part III extends GT-04 from deliberate commitment into strategic uncertainty: randomization can scale threats and promises, reduce the cost of failure or inadvertent fulfillment, and create commitments whose uncertainty is not fully controlled by the threatener.
+
+### 67. Randomization can scale a threat or promise
+
+A probabilistic commitment can create an intermediate level of strategic force when a certain threat or promise is too costly, too strong, or otherwise unsuitable. The probability becomes part of the commitment structure rather than merely noise.
+
+### 68. Risk of failure changes optimal threat size
+
+When a threat may fail for reasons outside the actor's control, an excessively severe threat can make failure too costly. A randomized or moderated threat can preserve deterrent effect while reducing the downside of failure.
+
+### 69. Risk of inadvertent fulfillment is a separate cost
+
+A threat can impose costs on its creator even when the opponent complies, if the threatened consequence can occur accidentally or prematurely. Threat design must therefore account for both failure to deter and accidental fulfillment.
+
+### 70. Randomized commitment requires commitment to the lottery
+
+The strategic value of randomization depends on fixing the probability before the opponent acts. If the actor retains full discretion to choose the realized outcome after observing the opponent, the apparent randomization may not be credible.
+
+### 71. Strategic uncertainty can come from outside the actor's control
+
+A threat that leaves something to chance becomes more credible when the uncertainty arises from accident, delegated authority, imperfect machinery, third-party influence, or another process that the threatener cannot completely control.
+
+### 72. Inadvertent war can become a strategic risk
+
+The possibility of accidental escalation, false alarms, misinterpretation, or uncontrolled reactions can influence an opponent even when neither side intends the final destructive outcome.
+
+### 73. Limited war can generate escalation risk
+
+A limited conflict can carry a nonzero risk of escalation beyond the intended scope. That risk can affect the opponent's choices and therefore becomes part of the strategic meaning of the limited action.
+
+### 74. Risky behavior can communicate resolve
+
+Deliberately accepting some risk can make a threat more credible when certainty would be implausible or excessively costly. The relevant strategic variable is the opponent's perception of the risk and its consequences.
+
+### 75. Brinkmanship is a strategic move based on shared risk
+
+Brinkmanship deliberately creates a recognizable risk of an undesirable outcome that neither side fully controls. The purpose is to make the risk sufficiently intolerable that the opponent accommodates or pulls back.
+
+### 76. Imperfect decision processes can generate strategic uncertainty
+
+Crisis decisions are made through imperfect systems involving multiple decision-makers, delegation, incomplete information, procedural friction, and possible error. These imperfections can become part of the strategic environment rather than being treated as irrelevant noise.
+
+
+## GT-04 Part IV — Incremental foundations from The Strategy of Conflict
+
+### 77. Reciprocal fear can generate endogenous attack probability
+When each side fears that the other may attack first, attack probability is not simply an external parameter. Each side's defensive response can change the other's estimate and behavior.
+
+### 78. Misapprehension can become a strategic cause
+An event can have strategic consequences because it is interpreted as an attack even when it was not intended as one.
+
+### 79. Imperfect warning systems convert technical error into strategic behavior
+False alarms, missed signals, and uncertain detection can alter estimated attack probability and rational behavior.
+
+### 80. Reciprocal misapprehension can be self-reinforcing
+Each side can interpret the other's defensive preparation as evidence of offensive intent, causing further preparation and increasing escalation risk.
+
+### 81. Multi-player surprise-attack problems are not simple bilateral games
+Adding actors changes incentives, information, and expectations because each decision depends on a wider network of possible actions and interpretations.
+
+### 82. Disarmament changes the strategic problem, not just the weapons count
+Reducing weapons or defensive capacity changes vulnerability, incentives, warning requirements, and expectations.
+
+### 83. Surveillance can stabilize or destabilize
+Longer-term surveillance can reduce uncertainty, but persistent monitoring and defensive overbuilding can also alter the opponent's expectations and create new strategic pressures.
+
+
+## GT-04 Part IV — Incremental foundations
+
+### 77. Reciprocal fear can generate endogenous attack probability
+Each side's defensive response can change the other's estimate and behavior, so attack probability is part of the interaction rather than a fixed input.
+
+### 78. Misapprehension can become a strategic cause
+An event can have strategic consequences because it is interpreted as an attack even when it was not intended as one.
+
+### 79. Imperfect warning systems convert technical error into strategic behavior
+False alarms, missed signals, and uncertain detection can alter estimated attack probability and rational behavior.
+
+### 80. Reciprocal misapprehension can be self-reinforcing
+Each side can interpret the other's defensive preparation as evidence of offensive intent, causing further preparation and increasing escalation risk.
+
+### 81. Multi-player surprise-attack problems are not simple bilateral games
+Adding actors changes incentives, information, and expectations.
+
+### 82. Disarmament changes the strategic problem, not just the weapons count
+Reducing weapons or defensive capacity changes vulnerability, incentives, warning requirements, and expectations.
+
+### 83. Surveillance can stabilize or destabilize
+Monitoring can reduce uncertainty while persistent surveillance or defensive overbuilding can also alter expectations and create strategic pressure.
+\n\n## GT-05 Part I — Incremental foundations from *The Evolution of Cooperation*\n\n### 84. Cooperation can emerge without central authority\nCooperation does not require altruistic motives or an external enforcer when the interaction structure creates incentives for mutually beneficial behavior.\n\n### 85. The Prisoner's Dilemma isolates the cooperation problem\nThe core cooperation problem occurs when individual defection is attractive regardless of the other player's action, while mutual cooperation is better for both than mutual defection.\n\n### 86. Self-interest does not eliminate cooperation\nAssuming self-interested actors does not imply universal defection; repeated interaction can make cooperative behavior individually rational.\n\n### 87. Future interaction creates a shadow over current action\nThe possibility of meeting again makes today's behavior affect future responses, changing the effective payoff of cooperation and defection.\n\n### 88. Cooperation depends on interaction continuity\nThe emergence of reciprocity requires a sufficiently meaningful chance of future interaction; when relationships are too short-lived or uncertain, current incentives dominate.\n
+
+## GT-05 Part II — The Emergence of Cooperation
+
+### 89. Strategy performance is environment-dependent
+A strategy cannot be evaluated in isolation; its performance depends on the strategies it encounters and the distribution of those strategies.
+
+### 90. History is an input to repeated-game choice
+Effective reciprocal strategies use the history of interaction to condition current action.
+
+### 91. TIT FOR TAT combines cooperation and reciprocity
+Starting cooperatively and then matching the opponent's previous move creates a simple rule that can sustain mutual cooperation while responding to defection.
+
+### 92. Robustness matters beyond one tournament population
+A strategy's success is more meaningful when it persists across materially different distributions of competing strategies.
+
+### 93. Selection can amplify successful strategies
+When successful strategies become more common and unsuccessful ones less common, repeated selection changes the environment in which strategies compete.
+
+### 94. Collective stability is resistance to invasion
+A strategy can remain established when no alternative strategy can obtain a higher payoff against it than incumbents obtain among themselves.
+
+### 95. Cooperation requires both viability and stability
+A cooperative strategy must first obtain a foothold and then survive competition from alternative strategies.
+
+### 96. Initial footholds can arise through small clusters
+Cooperation may emerge from a small connected group even when isolated cooperative individuals cannot protect themselves.
+
+### 97. Nice strategies can be protected by reciprocity
+Strategies that do not defect first can support one another when they are sufficiently responsive to exploitation.
+
+### 98. Provocability and forgiveness are distinct design dimensions
+A cooperative strategy needs a credible response to exploitation, but excessive retaliation can destroy the cooperation it is meant to protect.
+
+
+## GT-05 Part III — Cooperation Without Friendship or Foresight
+
+### 99. Cooperation can emerge under hostility
+Repeated interaction can generate restraint even when participants strongly dislike or oppose one another.
+
+### 100. Local interaction can differ from system-level incentives
+Actors at a local interaction boundary may benefit from cooperation even when the larger organization or system has conflicting incentives.
+
+### 101. Stable repetition can transform a one-shot dilemma
+Persistent pairing or recurring encounters can turn individually tempting defection into a setting where reciprocal restraint is viable.
+
+### 102. Cooperation can be initiated by coordination cues
+Shared routines, timing, signals, environmental conditions, or observable restraint can provide a low-cost starting point for reciprocal behavior.
+
+### 103. Recognition supports reciprocal cooperation
+Cooperation is easier to stabilize when actors can identify who they interacted with and condition future behavior accordingly.
+
+### 104. Fixed association can substitute for sophisticated recognition
+Stable locations or persistent pairings can make reciprocal cooperation possible even when individual recognition is limited.
+
+### 105. Territorial structure changes the probability of future interaction
+Territoriality creates high-probability repeated interaction with neighbors and lower-probability interaction with strangers.
+
+### 106. Future-interaction value is a stability parameter
+Reciprocal cooperation becomes less attractive when the expected value of continued interaction falls below the stability threshold.
+
+### 107. Biological cooperation can arise without conscious foresight
+Selection can favor reciprocal interaction patterns even when individual organisms do not consciously plan for future encounters.
+
+### 108. Reciprocity can operate across biological levels
+The same strategic logic can describe cooperation or exploitation among organisms, symbionts, or other interacting biological entities when repeated interaction affects payoffs.
+
+
+## GT-05 Part IV — Advice for Participants and Reformers
+
+### 109. Envy can undermine mutually beneficial cooperation
+Comparing one's payoff with the partner's rather than the absolute payoff can create unnecessary defection even when both are gaining.
+
+### 110. Initial cooperation can be strategically valuable
+Defecting first can trigger retaliation and destroy the cooperative environment before reciprocal trust is established.
+
+### 111. Reciprocity should respond to both cooperation and defection
+A stable reciprocal strategy needs to reward cooperation and impose a response to exploitation.
+
+### 112. Strategic simplicity can improve performance
+In repeated interaction, a rule that is clear and predictable can outperform more sophisticated rules because opponents can understand and respond to it.
+
+### 113. Cooperation is easier when the future matters more
+Increasing the expected duration or frequency of future interaction strengthens the incentive to protect current cooperation.
+
+### 114. Decomposing large interactions strengthens reciprocity
+Breaking a large transaction into repeated smaller stages increases opportunities for reciprocal response and reduces the relative gain from one-shot defection.
+
+### 115. Payoff redesign can convert incentives
+Changing rewards, penalties, laws, or institutional constraints can transform a Prisoner's Dilemma so that cooperation becomes individually attractive.
+
+### 116. Altruistic preferences can support cooperation
+When another player's welfare enters an actor's utility function, cooperative behavior can become easier to sustain.
+
+### 117. Teaching reciprocity changes the strategic population
+If more participants adopt effective reciprocal rules, the environment becomes less hospitable to exploitative strategies.
+
+### 118. Recognition is an enabling condition for reciprocity
+The ability to identify counterparties and remember relevant history allows cooperation to be targeted rather than indiscriminate.
+
+### 119. Reform can operate on the game rather than the player
+Cooperation can be promoted by changing interaction frequency, payoffs, preferences, strategy norms, or recognition infrastructure rather than merely persuading individuals.
+
+
+## GT-05 Part V — Social Structure and Robust Reciprocity
+
+### 120. Social structure can enable cooperation
+Cooperation that cannot emerge under random interaction can become viable when interaction patterns create clusters, persistent relationships, or other structure that lets reciprocal actors meet often enough.
+
+### 121. Labels change strategic expectations before interaction
+An observable label can act as prior information about a counterpart's likely behavior, even when the label itself does not causally determine that behavior.
+
+### 122. Self-confirming stereotypes can become strategically stable
+If expectations based on labels change behavior, the resulting behavior can reinforce the original expectation and make an inefficient pattern persist.
+
+### 123. Reputation extends a player's strategy beyond the current interaction
+When third parties observe behavior, a current action can affect future opportunities by changing what others expect the player to do.
+
+### 124. Regulation is a repeated strategic relationship
+Effective regulation depends not only on punishment capacity but also on sustained expectations of compliance, enforcement, and future interaction between the regulator and the regulated.
+
+### 125. Territorial structure changes invasion dynamics
+When players interact mainly with nearby counterparts, strategies can survive or spread through local clusters even when they would fail under random matching.
+
+### 126. Collective stability does not fully determine establishment
+A strategy can be resistant to invasion once common without being the strategy most likely to arise from the initial population or learning process.
+
+### 127. Reciprocity is robust across different mechanisms of social learning
+Cooperation can persist through natural selection, imitation, deliberate strategy design, or other processes when successful reciprocal patterns are preferentially retained.
+
+### 128. Provocability protects cooperation against exploitation
+A cooperative strategy must make defection unattractive by responding sufficiently quickly and credibly to exploitation.
+
+### 129. Limited retaliation can prevent reciprocal escalation
+A response to defection must be strong enough to deter exploitation but bounded enough to avoid turning one violation into an indefinite sequence of mutual defection.

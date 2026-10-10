@@ -133,17 +133,274 @@ An agent or mediator can change the strategic game by altering incentives, infor
 ## GT-MM-35 — Deliberate uncertainty can strengthen a commitment
 A commitment can become more credible when the actor gives up some control over whether the costly consequence occurs.
 
-## GT-MM-36 — Ask whether the future is valuable enough to discipline the present
-Before relying on reciprocity, test the frequency of future interaction and the effective value assigned to future outcomes.
+## GT-04 Part I — Mental models
 
-## GT-MM-37 — Separate establishment from stability
-A strategy that cannot be invaded once established is not necessarily a strategy that will become established. Analyze entry and persistence separately.
+## GT-MM-36 — Self-binding can create bargaining power
+Reducing your own future freedom can make your position more credible and change the other side's bargaining calculation.
 
-## GT-MM-38 — Evaluate cooperation at the level of the interaction network
-When interactions are local or clustered, a cooperative strategy may perform differently from the same strategy in a fully mixed population.
+## GT-MM-37 — Negotiation structure is a strategic variable
+Before evaluating a deal, inspect who moves, what alternatives exist, what commitments are possible, and how information flows.
 
-## GT-MM-39 — Design reciprocity to tolerate mistakes
-If observations can be wrong, distinguish accidental misperception from deliberate defection so that one error does not automatically create a long retaliation cycle.
+## GT-MM-38 — A threat and a promise are conditional moves
+Analyze both as response rules: what happens if the other side chooses one action versus another, and whether the prescribed response remains credible.
 
-## GT-MM-40 — Cooperation does not require altruistic motives
-A reciprocal pattern can sustain mutually beneficial behavior even when each participant is primarily pursuing individual advantage, provided the interaction structure supports reciprocity.
+## GT-MM-39 — Limited conflict can function as communication
+An action taken during conflict may change the bargaining game by revealing resolve, testing reactions, or altering expectations.
+
+## GT-MM-40 — Tacit coordination requires mutual recognition
+A salient solution helps only when each side expects the other side to recognize it as salient too.
+
+## GT-MM-41 — Tacit bargaining is not the same as agreement
+A mutually recognized outcome can coordinate divergent interests without an explicit bargain, but its stability depends on the cost of failing to coordinate.
+
+## GT-MM-42 — Prior arrangements move bargaining earlier in time
+If critical choices can be constrained before uncertainty or conflict arises, some bargaining can be completed before the strategic pressure peaks.
+
+## GT-MM-43 — Communication rights are part of bargaining power
+Control over sending, receiving, withholding, or destroying communication can change what commitments and coordination outcomes are feasible.
+
+## GT-04 Part II — Mental models
+
+## GT-MM-44 — Model reciprocal expectations, not just reciprocal actions
+Ask what each player expects the other to do and what each expects the other to expect.
+
+## GT-MM-45 — Locate the game between pure conflict and pure coordination
+Before choosing an analytical tool, identify where the interaction lies on the conflict–common-interest spectrum.
+
+## GT-MM-46 — Coordination failure can occur without conflicting interests
+If players want compatible outcomes but cannot identify the same action, the problem is expectation alignment rather than motivation.
+
+## GT-MM-47 — Search for expectation-focusing cues
+When several outcomes are possible, inspect salience, symmetry, labels, conventions, physical structure, and shared context for cues that could make one outcome mutually recognizable.
+
+## GT-MM-48 — A strategic move changes the opponent's decision problem
+Do not evaluate a move only by its direct payoff. Ask how it changes the other player's expectations, options, incentives, or information.
+
+## GT-MM-49 — Enforcement is part of the threat/promise mechanism
+A conditional response has strategic force only if the surrounding structure makes implementation possible or credible.
+
+## GT-MM-50 — Giving up initiative can improve leverage
+Ask whether controlling the next move is actually useful, or whether transferring the decision can make your position more credible.
+
+## GT-MM-51 — Identification is a form of commitment
+Publicly tying yourself to a position can change the opponent's expectations by reducing your apparent ability to reverse course.
+
+## GT-MM-52 — Delegation is useful when the decision-maker changes the game
+Analyze whether changing the decision-maker changes incentives, information, or constraints.
+
+## GT-MM-53 — A mediator is a game-changing mechanism
+Evaluate what the mediator changes: information, communication, enforcement, interpretation, or incentives.
+
+## GT-MM-54 — Communication channels are strategic infrastructure
+Map who can communicate with whom, what can be withheld, and what happens when communication is blocked or destroyed.
+
+## GT-MM-55 — Formalize the strategic move before judging it
+Add the move to the action sequence, information structure, or payoffs and then re-evaluate equilibrium and credibility.
+
+## GT-MM-56 — More strategic freedom is not always an advantage
+A player may prefer fewer options when flexibility weakens commitment or makes the opponent less willing to trust a stated position.
+
+## GT-MM-57 — Test perception-dependent theory empirically
+When outcomes depend on salience, framing, norms, or mutual recognition, distinguish what follows from formal incentives from what requires behavioral evidence.
+
+
+## GT-04 Part III — Mental models
+
+### GT-MM-58 — Calibrate the probability, not only the severity
+When a threat is too severe to be credible, ask whether a controlled probability of the severe outcome can create the required incentive at lower expected cost.
+
+### GT-MM-59 — Price both failure and accidental fulfillment
+Evaluate a threat against two downside modes: it fails to deter, or it succeeds/occurs unintentionally when the opponent would otherwise comply.
+
+### GT-MM-60 — Commit to the random mechanism before the response
+A randomized commitment is credible only when the opponent cannot assume the actor will simply choose the favorable realization after observing the response.
+
+### GT-MM-61 — Look for an external source of uncertainty
+Ask what process determines whether the threatened outcome occurs and whether that process remains outside the threatener's complete control.
+
+### GT-MM-62 — Treat escalation risk as part of the game
+A limited action can change behavior because of the probability that it escalates beyond the actor's intended endpoint.
+
+### GT-MM-63 — Separate intentional action from uncontrolled consequence
+Model what the actor chooses deliberately and what can happen through accident, error, delegation, or interaction effects.
+
+### GT-MM-64 — Risk can substitute for an implausible certainty
+When a certain extreme response would not be believed, a smaller but credible risk may produce stronger strategic influence.
+
+### GT-MM-65 — Brinkmanship is shared exposure to an undesirable outcome
+The mechanism is not simply unpredictability. It is deliberately increasing a risk that both parties dislike until the opponent has an incentive to reduce it by accommodating.
+
+### GT-MM-66 — Find the brink's slope, not only the endpoint
+In escalation problems, identify incremental moves that progressively increase risk rather than modeling only a safe state and catastrophic state.
+
+### GT-MM-67 — Model the decision system itself
+When outcomes depend on imperfect institutional or human decision processes, include delegation, procedural delays, multiple decision-makers, false alarms, and error as strategic variables.
+
+
+## GT-04 Part IV — Mental models
+
+### GT-MM-68 — Make probabilities endogenous
+If one side's behavior changes the other's fear, model attack probability as an output of the interaction rather than a fixed input.
+
+### GT-MM-69 — Solve reciprocal fear as a feedback loop
+Map fear -> defensive action -> observed signal -> revised fear -> further action.
+
+### GT-MM-70 — Timing can change preemption incentives
+Compare simultaneous and sequential structures before assuming the same equilibrium applies.
+
+### GT-MM-71 — Re-test the model after changing an assumption
+When a strategic paradox appears, identify which information, timing, probability, or behavior assumption produces it.
+
+### GT-MM-72 — Treat warning-system errors as strategic variables
+False alarms and missed detection can alter rational behavior when the stakes of surprise attack are high.
+
+### GT-MM-73 — Model parameter adjustment over time
+When beliefs or system characteristics change, analyze how behavior adjusts rather than treating the initial equilibrium as permanent.
+
+### GT-MM-74 — Tacit structure can emerge without agreement
+A stable reciprocal pattern can exist even when players never explicitly coordinate.
+
+### GT-MM-75 — Search for bargaining inside catastrophic conflict
+Even adversarial interactions can contain a shared interest in avoiding a mutually destructive outcome.
+
+### GT-MM-76 — Add players before generalizing a bilateral result
+A two-player result may change materially when a third actor alters information, incentives, or timing.
+
+### GT-MM-77 — Evaluate disarmament as a game transformation
+Compare vulnerability, incentives, verification, warning, and reciprocal expectations, not weapon counts alone.
+
+### GT-MM-78 — Separate event from interpretation
+Model both what happened and what each player believes happened.
+
+### GT-MM-79 — Audit ambiguity during limited conflict
+Ask which actions can plausibly be interpreted as attack, preparation, accident, or defense.
+
+### GT-MM-80 — Look for reciprocal misinterpretation
+If each side can interpret the other's defensive move as offensive, escalation can become self-reinforcing.
+
+### GT-MM-81 — Surveillance has second-order strategic effects
+Information collection may reduce uncertainty while simultaneously changing the behavior being observed.
+\n\n## GT-05 Part I — Mental models\n\n### GT-MM-82 — Diagnose the cooperation problem before prescribing cooperation\nAsk whether individually rational behavior creates a collectively inferior outcome, and identify the mechanism producing the conflict.\n\n### GT-MM-83 — Use the Prisoner's Dilemma as a structural test\nCheck whether unilateral defection dominates cooperation while mutual cooperation beats mutual defection. If so, the interaction has the core cooperation dilemma.\n\n### GT-MM-84 — Treat the future as part of today's incentive structure\nEstimate how the value and probability of future interaction alter the attractiveness of current cooperation.\n\n### GT-MM-85 — Cooperation needs a sufficiently long shadow of the future\nIf players have little reason to expect future interaction, reciprocal cooperation has less leverage over present behavior.\n\n### GT-MM-86 — Separate motives from interaction structure\nDo not infer that cooperation requires friendship or altruism; first test whether the repeated interaction itself creates cooperative incentives.\n
+
+## GT-05 Part II — Mental models
+
+### GT-MM-87 — Evaluate a strategy against its environment
+Never rank a repeated-game strategy without specifying what other strategies and frequencies it encounters.
+
+### GT-MM-88 — Treat interaction history as state
+For repeated interactions, current action should be analyzed as a function of the accumulated interaction history.
+
+### GT-MM-89 — Separate simple rule from simple outcome
+A simple strategy can generate complex population-level outcomes when interacting repeatedly with heterogeneous opponents.
+
+### GT-MM-90 — Test robustness by changing the environment
+Re-run a strategy comparison under materially different opponent distributions before treating a result as general.
+
+### GT-MM-91 — Model selection as a changing environment
+Successful strategies alter the future population composition, which in turn changes the strategic environment.
+
+### GT-MM-92 — Use invasion resistance as a stability test
+Ask whether a small introduction of an alternative strategy can outperform the incumbent strategy in its own environment.
+
+### GT-MM-93 — Separate emergence from maintenance
+The mechanism that lets cooperation get started may differ from the mechanism that keeps cooperation stable.
+
+### GT-MM-94 — Look for clusters when isolated cooperation fails
+If cooperative behavior cannot survive as isolated individuals, test whether local interaction among cooperators changes the payoff structure.
+
+### GT-MM-95 — Balance niceness with provocability
+Cooperation benefits from not defecting first, but sustainability requires an ability to respond to exploitation.
+
+
+## GT-05 Part III — Mental models
+
+### GT-MM-96 — Separate local game from system-level game
+Model the incentives of the actors actually interacting before importing incentives from the larger organization.
+
+### GT-MM-97 — Look for repetition hidden inside stable structure
+When the same actors or locations repeatedly meet, test whether a one-shot dilemma has become an iterated game.
+
+### GT-MM-98 — Search for low-cost coordination signals
+Identify routines, timing, environmental cues, or reciprocal restraint that can initiate cooperation without a formal agreement.
+
+### GT-MM-99 — Audit recognition requirements
+Ask whether actors can identify counterpart behavior well enough to condition future responses.
+
+### GT-MM-100 — Use structure as a substitute for cognition
+When recognition is difficult, test whether fixed pairing, location, or territorial boundaries provide the needed continuity.
+
+### GT-MM-101 — Treat future-interaction value as dynamic
+Do not assume the shadow of the future is constant; changes in health, age, mobility, or relationship continuity can alter cooperation incentives.
+
+### GT-MM-102 — Distinguish foresight from selection
+A cooperative pattern can persist because selection favors it even when individual participants do not consciously anticipate future benefits.
+
+### GT-MM-103 — Extend the repeated-game lens across biological systems
+When organisms or symbionts repeatedly interact, test whether reciprocity and exploitation can be represented with the same strategic structure.
+
+
+## GT-05 Part IV — Mental models
+
+### GT-MM-104 — Audit relative-payoff sensitivity
+Check whether actors care about doing well absolutely or about outperforming the counterpart; relative-payoff concerns can destabilize otherwise beneficial cooperation.
+
+### GT-MM-105 — Protect the opening move
+Test the consequences of initiating cooperation versus initiating defection before assuming that defensive behavior is safer.
+
+### GT-MM-106 — Require two-sided reciprocity
+A reciprocal mechanism should distinguish cooperative behavior from exploitation and respond appropriately to both.
+
+### GT-MM-107 — Prefer interpretable strategies when interaction is strategic
+A strategy is more useful when the counterpart can understand what behavior will produce cooperation or retaliation.
+
+### GT-MM-108 — Increase the shadow of the future
+When cooperation is valuable, look for ways to increase duration, frequency, or continuity of interaction.
+
+### GT-MM-109 — Decompose high-stakes interactions
+Break large commitments into smaller stages when repeated feedback can make reciprocity more effective.
+
+### GT-MM-110 — Change incentives before demanding better behavior
+If defection remains materially dominant, redesign payoffs or enforcement rather than relying on exhortation.
+
+### GT-MM-111 — Distinguish motive from institutional mechanism
+Altruism can help cooperation, but laws, incentives, norms, and reciprocal strategies can also change behavior without changing preferences.
+
+### GT-MM-112 — Treat strategy diffusion as system design
+Teaching or spreading reciprocal strategies changes the population of interacting strategies and therefore the equilibrium environment.
+
+### GT-MM-113 — Build recognition infrastructure
+Cooperation requires enough identity and history information for actors to condition future behavior on past interaction.
+
+
+
+## GT-05 Part V — Mental models
+
+### GT-MM-114 — Model the interaction network
+Before evaluating a cooperation strategy, check who repeatedly interacts with whom; clustering and persistent relationships can change strategic stability.
+
+### GT-MM-115 — Separate labels from behavior
+Treat labels as information that shapes expectations, not as proof that a player actually follows the behavior associated with the label.
+
+### GT-MM-116 — Test for self-fulfilling expectations
+When a belief about a group changes how people treat that group, check whether the resulting behavior is reinforcing the original belief.
+
+### GT-MM-117 — Price reputation effects into current actions
+When others observe behavior, include the effect on future expectations and future interactions in the payoff analysis.
+
+### GT-MM-118 — Analyze regulation as a repeated game
+Evaluate the regulator's enforcement credibility, the regulated party's incentives, and the durability of their relationship rather than treating compliance as a one-time choice.
+
+### GT-MM-119 — Distinguish random matching from local matching
+A strategy that fails in a randomly mixed population may succeed when reciprocal actors interact disproportionately with one another.
+
+### GT-MM-120 — Separate stability from emergence
+Ask two different questions: can a strategy resist invasion once established, and what process would cause it to become established?
+
+### GT-MM-121 — Model the source of strategic variation
+When studying evolution or learning, specify where new strategies come from and how successful strategies become more prevalent.
+
+### GT-MM-122 — Calibrate provocability
+Respond to exploitation early enough to preserve deterrence, but limit the response enough to avoid an uncontrolled retaliation loop.
+
+### GT-MM-123 — Use foresight to accelerate slow adaptation
+If trial-and-error learning is costly or too slow, use known conditions for reciprocity to redesign the interaction before waiting for blind selection to discover them.
