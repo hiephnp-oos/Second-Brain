@@ -21,7 +21,7 @@
   "manifestNotice": "never",
   "addonName": "SDR",
   "addonLogo": "https://cdn.xperience-app.com/avatars/hbo-max/stilgar.webp",
-  "addonDescription": "TorBox-first. SDR-only compatibility profile with the same curated sources, ranking, and fallback configuration as HDR.\n\nCredit: HiepHoang",
+  "addonDescription": "SDR compatibility profile. TorBox-first; no subtitle providers or direct P2P/HTTP fallback. Shares the same resolution-first ranking and release-quality scoring as HDR.\n\nCredit: HiepHoang",
   "excludedResolutions": [
     "720p",
     "576p",
@@ -73,10 +73,7 @@
   "excludedSubtitles": [],
   "includedSubtitles": [],
   "requiredSubtitles": [],
-  "preferredSubtitles": [
-    "Vietnamese",
-    "English"
-  ],
+  "preferredSubtitles": [],
   "excludedVisualTags": [
     "3D",
     "H-OU",
@@ -108,13 +105,14 @@
   "includedAudioChannels": [],
   "requiredAudioChannels": [],
   "preferredAudioChannels": [],
-  "excludedStreamTypes": [],
+  "excludedStreamTypes": [
+    "p2p",
+    "http"
+  ],
   "includedStreamTypes": [],
   "requiredStreamTypes": [],
   "preferredStreamTypes": [
-    "debrid",
-    "p2p",
-    "http"
+    "debrid"
   ],
   "excludedEncodes": [],
   "includedEncodes": [],
@@ -516,14 +514,6 @@
           "8b6"
         ],
         "condition": "count(totalStreams) < 8 or count(resolution(totalStreams, '2160p')) == 0"
-      },
-      {
-        "addons": [
-          "645",
-          "29a",
-          "73a"
-        ],
-        "condition": "count(totalStreams) < 5"
       }
     ],
     "behaviour": "sequential",
@@ -532,11 +522,7 @@
   "sortCriteria": {
     "global": [
       {
-        "key": "cached",
-        "direction": "desc"
-      },
-      {
-        "key": "seadex",
+        "key": "resolution",
         "direction": "desc"
       },
       {
@@ -544,7 +530,11 @@
         "direction": "desc"
       },
       {
-        "key": "resolution",
+        "key": "seadex",
+        "direction": "desc"
+      },
+      {
+        "key": "cached",
         "direction": "desc"
       },
       {
@@ -977,62 +967,6 @@
       "category": "P2P"
     },
     {
-      "type": "webstreamr",
-      "instanceId": "645",
-      "enabled": true,
-      "options": {
-        "name": "WebStreamr",
-        "timeout": 5000,
-        "resources": [
-          "stream"
-        ],
-        "mediaTypes": [],
-        "providers": [
-          "multi",
-          "en"
-        ],
-        "url": "https://87d6a6ef6b58-webstreamrmbg.baby-beamup.club",
-        "includeExternalUrls": false,
-        "showErrors": false
-      },
-      "category": "HTTP"
-    },
-    {
-      "type": "hdhub",
-      "instanceId": "29a",
-      "enabled": true,
-      "options": {
-        "name": "HdHub",
-        "timeout": 5000,
-        "resources": [
-          "stream"
-        ],
-        "mediaTypes": [],
-        "tb_only": false
-      },
-      "category": "HTTP"
-    },
-    {
-      "type": "opensubtitles-v3-plus",
-      "instanceId": "262",
-      "enabled": true,
-      "options": {
-        "name": "OpenSubtitles V3+",
-        "timeout": 10000,
-        "resources": [
-          "subtitles"
-        ],
-        "language": [
-          "vi",
-          "en"
-        ],
-        "sources": "all",
-        "includeAiTranslated": false,
-        "movieHashPlusAutoAdjustment": true
-      },
-      "category": "Subs"
-    },
-    {
       "type": "torrentio",
       "instanceId": "add",
       "enabled": true,
@@ -1047,64 +981,6 @@
         "providers": []
       },
       "category": "P2P"
-    },
-    {
-      "type": "subdl",
-      "instanceId": "subdl",
-      "enabled": true,
-      "options": {
-        "name": "SubDL",
-        "timeout": 5000,
-        "resources": [
-          "subtitles"
-        ],
-        "language": [
-          "vi",
-          "en",
-          "VI"
-        ],
-        "hearingImpairment": "hiInclude"
-      },
-      "category": "Subs"
-    },
-    {
-      "type": "opensubtitles",
-      "instanceId": "b2b",
-      "enabled": true,
-      "options": {
-        "name": "OpenSubtitles",
-        "timeout": 8000,
-        "resources": [
-          "subtitles"
-        ]
-      },
-      "category": "Subs"
-    },
-    {
-      "type": "yastream",
-      "instanceId": "73a",
-      "enabled": true,
-      "options": {
-        "name": "yastream",
-        "timeout": 8000,
-        "resources": [
-          "stream",
-          "catalog",
-          "meta",
-          "subtitles"
-        ],
-        "kisskhCatalogs": [],
-        "onetouchtvCatalogs": [],
-        "kisskhStream": true,
-        "onetouchtvStream": true,
-        "idramaStream": false,
-        "kkphimStream": true,
-        "ophimStream": true,
-        "nsfw": false,
-        "info": false,
-        "poster": "rpdb"
-      },
-      "category": "HTTP"
     },
     {
       "type": "knaben",
