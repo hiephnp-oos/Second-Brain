@@ -1,8 +1,27 @@
 {
+  "variants": [
+    {
+      "id": "debrid-only",
+      "name": "Debrid Only",
+      "script": "# Debrid Only Variant. Disables all usenet/p2p/http related services and addons from your base config.\n\nset addonName = \"AIOStreams (Debrid Only)\"\nset excludedStreamTypes = [\"usenet\",\"stremio-usenet\",\"p2p\",\"http\",\"live\"]\nremove presets[*].options.services\ndisable services[id=aiostreams]\ndisable services[id=nzbdav]\ndisable services[id=altmount]\ndisable services[id=easynews]\ndisable services[id=stremio_nntp]\ndisable services[id=stremthru_newz]\ndisable presets[type=newznab]\ndisable presets[type=easynews-search]\ndisable presets[type=easynews]\ndisable presets[type=easynewsPlus]\ndisable presets[type=easynewsPlusPlus]\ndisable presets[type=nzbhydra]\ndisable presets[type=usenet-streamer]\ndisable presets[type=streamnzb]\ndisable presets[type=davex]\nremove presets[*].options.httpProviders\ndisable presets[type=yastream]\ndisable presets[type=hdhub]\ndisable presets[type=webstreamr]"
+    },
+    {
+      "id": "usenet-only",
+      "name": "Usenet Only",
+      "script": "# Usenet Only Variant. Disables all debrid/p2p/http related services and addons from your base config.\n\nset addonName = \"AIOStreams (Usenet Only)\"\nset excludedStreamTypes = [\"debrid\", \"p2p\", \"live\", \"http\"]\ndisable services[id=realdebrid]\ndisable services[id=alldebrid]\ndisable services[id=premiumize]\ndisable services[id=debridlink]\ndisable services[id=offcloud]\ndisable services[id=putio]\ndisable services[id=easydebrid]\ndisable services[id=debrider]\ndisable services[id=pikpak]\ndisable services[id=seedr]\ndisable services[id=torrin]\ndisable presets[type=neko-bt]\ndisable presets[type=anime-tosho-new]\ndisable presets[type=animetosho]\ndisable presets[type=torznab]\ndisable presets[type=knaben]\ndisable presets[type=zilean]\ndisable presets[type=seadex]\ndisable presets[type=knaben]\ndisable presets[type=debridio]\ndisable presets[type=sootio]\ndisable presets[type=stremthruStore]\ndisable presets[type=torrentio]\ndisable presets[type=meteor]\ndisable presets[type=comet]\ndisable presets[type=stremthruTorz]\ndisable presets[type=mediafusion]\ndisable presets[type=torrents-db]\ndisable presets[type=peerflix]\ndisable presets[type=sootio]\nremove presets[*].options.httpProviders\ndisable presets[type=yastream]\ndisable presets[type=hdhub]\ndisable presets[type=webstreamr]"
+    },
+    {
+      "id": "http-only",
+      "name": "HTTP Only",
+      "script": "# HTTP Only Variant. Disables all debrid/usenet/p2p related services and addons from your base config. Ensure you have HTTP addons in your base config, either by adding them from the Marketplace yourself, or by toggling \"Includes HTTP Addons\" inside SEL template's Preset Modification window.\n\nset addonName = \"AIOStreams (HTTP Only)\"\nset excludedStreamTypes = [\"usenet\",\"stremio-usenet\",\"debrid\",\"p2p\"]\ndisable excludedStreamExpressions[expression*=\"HTTP Backup\"]\nremove presets[*].options.services\ndisable services[id=aiostreams]\ndisable services[id=nzbdav]\ndisable services[id=altmount]\ndisable services[id=easynews]\ndisable services[id=stremio_nntp]\ndisable services[id=stremthru_newz]\ndisable presets[type=library]\ndisable presets[type=stremthruStore]\ndisable presets[type=newznab]\ndisable presets[type=easynews-search]\ndisable presets[type=easynews]\ndisable presets[type=easynewsPlus]\ndisable presets[type=easynewsPlusPlus]\ndisable presets[type=nzbhydra]\ndisable presets[type=usenet-streamer]\ndisable presets[type=streamnzb]\ndisable presets[type=davex]\ndisable presets[type=neko-bt]\ndisable presets[type=anime-tosho-new]\ndisable presets[type=animetosho]\ndisable presets[type=torznab]\ndisable presets[type=knaben]\ndisable presets[type=zilean]\ndisable presets[type=seadex]\ndisable presets[type=knaben]\ndisable presets[type=debridio]\ndisable presets[type=stremthruStore]\ndisable presets[type=torrentio]\ndisable presets[type=meteor]\ndisable presets[type=comet]\ndisable presets[type=stremthruTorz]\ndisable presets[type=mediafusion]\ndisable presets[type=torrents-db]\ndisable presets[type=peerflix]\ndisable presets[type=newznab]\ndisable presets[type=easynews-search]\ndisable presets[type=easynews]\ndisable presets[type=easynewsPlus]\ndisable presets[type=easynewsPlusPlus]\ndisable presets[type=nzbhydra]\ndisable presets[type=usenet-streamer]\ndisable presets[type=streamnzb]\ndisable presets[type=davex]"
+    }
+  ],
   "trusted": false,
-  "addonName": "Secondary",
+  "showChanges": true,
+  "manifestNotice": "never",
+  "addonName": "SDR",
   "addonLogo": "https://cdn.xperience-app.com/avatars/hbo-max/stilgar.webp",
-  "addonDescription": "TorBox-first. SDR-only fallback, curated streams, clean results. AIOStreams × TorBox for reliable playback.\n\nCredit: HiepHoang",
+  "addonDescription": "TorBox-first. SDR-only compatibility profile with the same curated sources, ranking, and fallback configuration as HDR.\n\nCredit: HiepHoang",
   "excludedResolutions": [
     "720p",
     "576p",
@@ -12,6 +31,8 @@
     "144p",
     "Unknown"
   ],
+  "includedResolutions": [],
+  "requiredResolutions": [],
   "preferredResolutions": [
     "2160p",
     "1440p",
@@ -29,6 +50,8 @@
     "HC HD-Rip",
     "HDRip"
   ],
+  "includedQualities": [],
+  "requiredQualities": [],
   "preferredQualities": [
     "BluRay REMUX",
     "BluRay",
@@ -48,26 +71,82 @@
     "Multi"
   ],
   "excludedSubtitles": [],
-  "preferredSubtitles": [],
-  "excludedVisualTags": [
-    "3D"
+  "includedSubtitles": [],
+  "requiredSubtitles": [],
+  "preferredSubtitles": [
+    "Vietnamese",
+    "English"
   ],
+  "excludedVisualTags": [
+    "3D",
+    "H-OU",
+    "H-SBS"
+  ],
+  "includedVisualTags": [],
+  "requiredVisualTags": [],
   "preferredVisualTags": [
     "SDR"
   ],
-  "preferredAudioTags": [],
+  "excludedAudioTags": [],
+  "includedAudioTags": [],
+  "requiredAudioTags": [],
+  "preferredAudioTags": [
+    "Atmos",
+    "DTS:X",
+    "TrueHD",
+    "DTS-HD MA",
+    "FLAC",
+    "DTS-HD",
+    "DTS-ES",
+    "DTS",
+    "DD+",
+    "DD",
+    "OPUS",
+    "AAC"
+  ],
+  "excludedAudioChannels": [],
+  "includedAudioChannels": [],
+  "requiredAudioChannels": [],
+  "preferredAudioChannels": [],
+  "excludedStreamTypes": [],
+  "includedStreamTypes": [],
+  "requiredStreamTypes": [],
   "preferredStreamTypes": [
     "debrid",
-    "p2p"
+    "p2p",
+    "http"
   ],
-  "preferredEncodes": [],
+  "excludedEncodes": [],
+  "includedEncodes": [],
+  "requiredEncodes": [],
+  "preferredEncodes": [
+    "AV1",
+    "HEVC",
+    "AVC",
+    "VC-1",
+    "Unknown",
+    "XviD",
+    "DivX"
+  ],
+  "excludedRegexPatterns": [],
+  "includedRegexPatterns": [],
+  "requiredRegexPatterns": [],
   "preferredRegexPatterns": [],
+  "syncedPreferredRegexUrls": [],
+  "syncedExcludedRegexUrls": [],
   "syncedRankedRegexUrls": [
     "https://raw.githubusercontent.com/Vidhin05/Releases-Regex/main/English/regexes.json"
   ],
+  "syncedPreferredStreamExpressionUrls": [],
+  "syncedExcludedStreamExpressionUrls": [],
+  "syncedIncludedStreamExpressionUrls": [],
   "syncedRankedStreamExpressionUrls": [
     "https://raw.githubusercontent.com/Vidhin05/Releases-Regex/main/English/expressions.json"
   ],
+  "requiredKeywords": [],
+  "includedKeywords": [],
+  "excludedKeywords": [],
+  "preferredKeywords": [],
   "ageRangeTypes": [],
   "digitalReleaseFilter": {
     "enabled": true,
@@ -83,24 +162,20 @@
   "excludeCachedFromAddons": [],
   "excludeCachedFromServices": [],
   "excludeCachedFromStreamTypes": [],
+  "excludeUncached": false,
   "excludeUncachedFromAddons": [],
   "excludeUncachedFromServices": [],
   "excludeUncachedFromStreamTypes": [],
+  "excludeUncachedMode": "or",
   "excludedStreamExpressions": [
     {
-      "expression": "isAnime and count(resolution(rseMatched(streams,'SeaDex Best','SeaDex Alt','Remux T1','Remux T2','Remux T3','BD T1','BD T2','BD T3','BD T4','BD T5','BD T6','BD T7','BD T8','Web T1','Web T2','Web T3','Web T4','Web T5','Web T6'),'2160p'))==0 ? resolution(streams,'2160p') : []",
-      "enabled": true
-    },
-    {
-      "expression": "visualTag(streams, 'DV Only')",
-      "enabled": true
-    },
-    {
-      "expression": "visualTag(streams, 'HDR+DV', 'HDR Only', 'HDR10+', 'HDR10', 'HDR', 'DV Only')",
+      "expression": "visualTag(streams, 'HDR+DV', 'HDR Only', 'HDR10+', 'HDR10', 'HDR', 'DV Only', 'HLG')",
       "enabled": true
     }
   ],
+  "requiredStreamExpressions": [],
   "preferredStreamExpressions": [],
+  "includedStreamExpressions": [],
   "rankedStreamExpressions": [
     {
       "expression": "<SYNCED: https://raw.githubusercontent.com/Vidhin05/Releases-Regex/main/English/expressions.json>",
@@ -410,6 +485,50 @@
   ],
   "rankedRegexPatterns": [],
   "regexOverrides": [],
+  "selOverrides": [],
+  "dynamicAddonFetching": {
+    "enabled": false,
+    "condition": ""
+  },
+  "groups": {
+    "enabled": true,
+    "groupings": [
+      {
+        "addons": [
+          "cd5",
+          "add",
+          "e35",
+          "bb9"
+        ],
+        "condition": "true"
+      },
+      {
+        "addons": [
+          "064",
+          "b0f",
+          "a15"
+        ],
+        "condition": "count(previousStreams) < 5 or count(resolution(previousStreams, '2160p')) == 0"
+      },
+      {
+        "addons": [
+          "276",
+          "8b6"
+        ],
+        "condition": "count(totalStreams) < 8 or count(resolution(totalStreams, '2160p')) == 0"
+      },
+      {
+        "addons": [
+          "645",
+          "29a",
+          "73a"
+        ],
+        "condition": "count(totalStreams) < 5"
+      }
+    ],
+    "behaviour": "sequential",
+    "onConditionFailure": "stop"
+  },
   "sortCriteria": {
     "global": [
       {
@@ -445,6 +564,10 @@
         "direction": "desc"
       },
       {
+        "key": "subtitle",
+        "direction": "desc"
+      },
+      {
         "key": "bitrate",
         "direction": "desc"
       }
@@ -457,11 +580,10 @@
     "cachedMovies": [],
     "uncachedMovies": [],
     "cachedSeries": [],
-    "uncachedSeries": [],
-    "cachedAnime": [],
-    "uncachedAnime": []
+    "uncachedSeries": []
   },
   "posterService": "rpdb",
+  "usePosterRedirectApi": true,
   "formatter": {
     "id": "custom",
     "definitions": {
@@ -470,6 +592,10 @@
         "description": "{?{stream.filename}?}\n{stream.subtitles::exists[\"{stream.subtitleEmojis::join(' ')}\"||\"\"]}"
       }
     }
+  },
+  "resultLimits": {
+    "resolution": 15,
+    "mode": "conjunctive"
   },
   "size": {
     "global": {
@@ -606,6 +732,9 @@
       "releaseGroup"
     ]
   },
+  "areYouStillThere": {
+    "enabled": false
+  },
   "precacheNextEpisode": true,
   "precacheSelector": "count(cached(streams)) == 0 ? uncached(streams) : []",
   "precacheSingleStream": true,
@@ -614,11 +743,6 @@
     "selector": "count(cached(streams)) == 0 ? uncached(streams) : []"
   },
   "services": [
-    {
-      "id": "torbox",
-      "enabled": true,
-      "credentials": {}
-    },
     {
       "id": "realdebrid",
       "enabled": false,
@@ -636,6 +760,31 @@
     },
     {
       "id": "debridlink",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "torbox",
+      "enabled": true,
+      "credentials": {}
+    },
+    {
+      "id": "stremio_nntp",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "nzbdav",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "aiostreams",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "altmount",
       "enabled": false,
       "credentials": {}
     },
@@ -675,27 +824,7 @@
       "credentials": {}
     },
     {
-      "id": "stremio_nntp",
-      "enabled": false,
-      "credentials": {}
-    },
-    {
-      "id": "nzbdav",
-      "enabled": false,
-      "credentials": {}
-    },
-    {
-      "id": "altmount",
-      "enabled": false,
-      "credentials": {}
-    },
-    {
       "id": "stremthru_newz",
-      "enabled": false,
-      "credentials": {}
-    },
-    {
-      "id": "aiostreams",
       "enabled": false,
       "credentials": {}
     },
@@ -848,6 +977,62 @@
       "category": "P2P"
     },
     {
+      "type": "webstreamr",
+      "instanceId": "645",
+      "enabled": true,
+      "options": {
+        "name": "WebStreamr",
+        "timeout": 5000,
+        "resources": [
+          "stream"
+        ],
+        "mediaTypes": [],
+        "providers": [
+          "multi",
+          "en"
+        ],
+        "url": "https://87d6a6ef6b58-webstreamrmbg.baby-beamup.club",
+        "includeExternalUrls": false,
+        "showErrors": false
+      },
+      "category": "HTTP"
+    },
+    {
+      "type": "hdhub",
+      "instanceId": "29a",
+      "enabled": true,
+      "options": {
+        "name": "HdHub",
+        "timeout": 5000,
+        "resources": [
+          "stream"
+        ],
+        "mediaTypes": [],
+        "tb_only": false
+      },
+      "category": "HTTP"
+    },
+    {
+      "type": "opensubtitles-v3-plus",
+      "instanceId": "262",
+      "enabled": true,
+      "options": {
+        "name": "OpenSubtitles V3+",
+        "timeout": 10000,
+        "resources": [
+          "subtitles"
+        ],
+        "language": [
+          "vi",
+          "en"
+        ],
+        "sources": "all",
+        "includeAiTranslated": false,
+        "movieHashPlusAutoAdjustment": true
+      },
+      "category": "Subs"
+    },
+    {
       "type": "torrentio",
       "instanceId": "add",
       "enabled": true,
@@ -862,6 +1047,64 @@
         "providers": []
       },
       "category": "P2P"
+    },
+    {
+      "type": "subdl",
+      "instanceId": "subdl",
+      "enabled": true,
+      "options": {
+        "name": "SubDL",
+        "timeout": 5000,
+        "resources": [
+          "subtitles"
+        ],
+        "language": [
+          "vi",
+          "en",
+          "VI"
+        ],
+        "hearingImpairment": "hiInclude"
+      },
+      "category": "Subs"
+    },
+    {
+      "type": "opensubtitles",
+      "instanceId": "b2b",
+      "enabled": true,
+      "options": {
+        "name": "OpenSubtitles",
+        "timeout": 8000,
+        "resources": [
+          "subtitles"
+        ]
+      },
+      "category": "Subs"
+    },
+    {
+      "type": "yastream",
+      "instanceId": "73a",
+      "enabled": true,
+      "options": {
+        "name": "yastream",
+        "timeout": 8000,
+        "resources": [
+          "stream",
+          "catalog",
+          "meta",
+          "subtitles"
+        ],
+        "kisskhCatalogs": [],
+        "onetouchtvCatalogs": [],
+        "kisskhStream": true,
+        "onetouchtvStream": true,
+        "idramaStream": false,
+        "kkphimStream": true,
+        "ophimStream": true,
+        "nsfw": false,
+        "info": false,
+        "poster": "rpdb"
+      },
+      "category": "HTTP"
     },
     {
       "type": "knaben",
@@ -880,52 +1123,25 @@
       "category": "P2P"
     }
   ],
+  "addonCategoryColors": {
+    "Mix": "indigo",
+    "Debrid": "emerald",
+    "Usenet": "lime",
+    "HTTP": "cyan",
+    "P2P": "orange",
+    "Subs": "purple"
+  },
   "catalogModifications": [],
+  "mergedCatalogs": [],
+  "externalDownloads": false,
   "cacheAndPlay": {
     "enabled": true,
     "streamTypes": [
       "usenet"
     ]
   },
+  "autoRemoveDownloads": false,
   "checkOwned": true,
-  "includedQualities": [],
-  "requiredQualities": [],
-  "includedSubtitles": [],
-  "groups": {
-    "enabled": true,
-    "groupings": [
-      {
-        "addons": [
-          "cd5",
-          "add",
-          "e35",
-          "bb9"
-        ],
-        "condition": "true"
-      },
-      {
-        "addons": [
-          "064",
-          "b0f",
-          "a15"
-        ],
-        "condition": "count(previousStreams) < 5 or count(resolution(previousStreams, '2160p')) == 0"
-      },
-      {
-        "addons": [
-          "276",
-          "8b6"
-        ],
-        "condition": "count(totalStreams) < 8 or count(resolution(totalStreams, '2160p')) == 0"
-      }
-    ],
-    "behaviour": "sequential",
-    "onConditionFailure": "stop"
-  },
-  "resultLimits": {
-    "resolution": 15,
-    "mode": "conjunctive"
-  },
   "failover": {
     "enabled": true,
     "contentTypes": [
@@ -939,6 +1155,10 @@
     "precacheFailover": false,
     "includeExternalFailover": true,
     "sameReleaseLimit": 2
+  },
+  "serviceWrap": {
+    "enabled": false,
+    "reconfigureService": false
   },
   "remuxDb": {
     "enabled": true
