@@ -52,10 +52,11 @@ Known areas of interest include stream filtering, display/format decisions, HDR/
 
 ## AIOStreams Configuration Backups
 
-The two JSON files in this folder are the actual configuration snapshots. Their role is confirmed by the `addonName` inside each file. HDR and SDR share the same active non-visual streaming configuration; only visual-tag preferences and the SDR-only HDR/DV exclusion rule differ. Both use TorBox and the same 61 ranked stream expressions. The obsolete `nuvio-instant` variant marked not for v5 has been removed from both.
+The two JSON files in this folder are the actual configuration snapshots. Their role is confirmed by the `addonName` inside each file. HDR is the primary profile: resolution-first ranking, shared release-quality scoring, subtitles, and P2P/HTTP fallback. SDR is a compatibility profile: same ranking and first three Sequential Groups, but no subtitle providers or direct P2P/HTTP fallback. SDR keeps P2P indexer sources available to discover TorBox-cached results; stream-type filtering excludes direct P2P/HTTP playback. The profiles differ in visual-tag preferences and SDR-only visual exclusion. Both use TorBox and the same 61 ranked stream expressions. The obsolete `nuvio-instant` variant marked not for v5 has been removed from both.
 
-- **HDR:** `aiostreams-config-2026-09-15.21-28-14.json` — SHA-256 `ec5244deeb77e939467126ef95c88bb93160bf32f98a849aeefd427224db13aa`
-- **SDR:** `aiostreams-config-2026-09-15.21-28-43.json` — SHA-256 `e6697f98479c9cb31cfc26da47ae0457b80387cca0b67781fe1ef8731fedb163`
+- **Global sort (both):** resolution → streamExpressionScore → SeaDex → cached → quality → visual tag → audio tag → language → subtitle → bitrate.
+- **HDR:** `aiostreams-config-2026-09-15.21-28-14.json` — SHA-256 `6fc45fbed0a21769f3d8976f3d4310028d397f3bc2bde3050745ba628a50cb6e`
+- **SDR:** `aiostreams-config-2026-09-15.21-28-43.json` — SHA-256 `0c1d798303aacdedeb668165b5240d8db004220e44ccee37bd2832099d5ad86f`
 
 Credentials are intentionally not stored in GitHub.
 
@@ -67,6 +68,8 @@ Credentials are intentionally not stored in GitHub.
 - Keep AIOStreams UUIDs and passwords outside GitHub; do not store credentials in the repository.
 - Use Git history as the version history for configuration artifacts; do not create manual archive copies unless a separate backup policy requires them.
 - Keep the AIOStreams backup inventory directly in this README to keep the Nuvio topic folder compact.
+- Rank by resolution first, then release-expression score and SeaDex; retain cached status as a later tie-breaker rather than the top-level priority.
+- Keep HDR as the primary profile for subtitle providers and HTTP/P2P playback fallback. SDR is a visual-compatibility profile and should not duplicate those fallback layers.
 
 ## Lessons
 
