@@ -55,8 +55,8 @@ Known areas of interest include stream filtering, display/format decisions, HDR/
 The two JSON files in this folder are the actual configuration snapshots. Their role is confirmed by the `addonName` inside each file. HDR is the primary profile: resolution-first ranking, shared release-quality scoring, subtitles, and P2P/HTTP fallback. SDR is a compatibility profile: same ranking and first three Sequential Groups, but no subtitle providers or direct P2P/HTTP fallback. SDR keeps P2P indexer sources available to discover TorBox-cached results; stream-type filtering excludes direct P2P/HTTP playback. The profiles differ in visual-tag preferences and SDR-only visual exclusion. Both use TorBox and the same 61 ranked stream expressions. The obsolete `nuvio-instant` variant marked not for v5 has been removed from both.
 
 - **Global sort (both):** resolution → streamExpressionScore → SeaDex → cached → quality → visual tag → audio tag → language → subtitle → bitrate.
-- **HDR:** `aiostreams-config-2026-09-15.21-28-14.json` — SHA-256 `6fc45fbed0a21769f3d8976f3d4310028d397f3bc2bde3050745ba628a50cb6e`
-- **SDR:** `aiostreams-config-2026-09-15.21-28-43.json` — SHA-256 `0c1d798303aacdedeb668165b5240d8db004220e44ccee37bd2832099d5ad86f`
+- **HDR:** `aiostreams-config-2026-09-15.21-28-14.json` — SHA-256 `83d152b307625b36e8c6f753f84c870473d154cbd61e0f29efc5c4ec23926f1c`
+- **SDR:** `aiostreams-config-2026-09-15.21-28-43.json` — SHA-256 `f9ab7454cd2a52537169a40a48b404f737c9ad8627b398814404655c7b7f66da`
 
 Credentials are intentionally not stored in GitHub.
 
