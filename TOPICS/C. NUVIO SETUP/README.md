@@ -52,11 +52,11 @@ Known areas of interest include stream filtering, display/format decisions, HDR/
 
 ## AIOStreams Configuration Backups
 
-The two JSON files in this folder are the actual configuration snapshots. Their role is confirmed by the `addonName` inside each file. HDR is the primary profile: resolution-first ranking, shared release-quality scoring, subtitles, and P2P/HTTP fallback. SDR is a compatibility profile: same ranking and first three Sequential Groups, but no subtitle providers or direct P2P/HTTP fallback. SDR keeps P2P indexer sources available to discover TorBox-cached results; stream-type filtering excludes direct P2P/HTTP playback. The profiles differ in visual-tag preferences and SDR-only visual exclusion. Both use TorBox and the same 61 ranked stream expressions. The obsolete `nuvio-instant` variant marked not for v5 has been removed from both.
+The two JSON files in this folder are the actual configuration snapshots. Their role is confirmed by the `addonName` inside each file. HDR is the primary profile: resolution-first ranking, shared release-quality scoring, subtitles, and P2P/HTTP fallback. SDR is a compatibility profile: same resolution-first ranking and first three Sequential Groups, no subtitle providers, P2P remains enabled, and HTTP stream type is excluded. The profiles differ in visual-tag preferences and SDR-only visual exclusion. Both use TorBox and the same 61 ranked stream expressions. The obsolete `nuvio-instant` variant marked not for v5 has been removed from both.
 
-- **Global sort (both):** resolution → streamExpressionScore → SeaDex → cached → quality → visual tag → audio tag → language → subtitle → bitrate.
-- **HDR:** `aiostreams-config-2026-09-15.21-28-14.json` — SHA-256 `83d152b307625b36e8c6f753f84c870473d154cbd61e0f29efc5c4ec23926f1c`
-- **SDR:** `aiostreams-config-2026-09-15.21-28-43.json` — SHA-256 `f9ab7454cd2a52537169a40a48b404f737c9ad8627b398814404655c7b7f66da`
+- **Global sort (both):** resolution → streamExpressionScore → SeaDex → quality → visual tag → audio tag → language → subtitle → bitrate.
+- **HDR:** `aiostreams-config-2026-09-15.21-28-14.json` — SHA-256 `13aeb3480884e7ed95b3abe650c656573aa1fed71809a49dbafb001d5e9a432b`
+- **SDR:** `aiostreams-config-2026-09-15.21-28-43.json` — SHA-256 `3f07408d74d5f71a8088eb7da2f15636dcb5a33d956b17de10232bb33a7f9dbf`
 
 Credentials are intentionally not stored in GitHub.
 
@@ -68,8 +68,8 @@ Credentials are intentionally not stored in GitHub.
 - Keep AIOStreams UUIDs and passwords outside GitHub; do not store credentials in the repository.
 - Use Git history as the version history for configuration artifacts; do not create manual archive copies unless a separate backup policy requires them.
 - Keep the AIOStreams backup inventory directly in this README to keep the Nuvio topic folder compact.
-- Rank by resolution first, then release-expression score and SeaDex; retain cached status as a later tie-breaker rather than the top-level priority.
-- Keep HDR as the primary profile for subtitle providers and HTTP/P2P playback fallback. SDR is a visual-compatibility profile and should not duplicate those fallback layers.
+- Rank by resolution first, then release-expression score and SeaDex; do not add a separate cached-status sort key.
+- Keep HDR as the primary profile for subtitle providers and HTTP/P2P fallback. SDR is a visual-compatibility profile with P2P enabled but no subtitle providers or HTTP stream type.
 
 ## Lessons
 
