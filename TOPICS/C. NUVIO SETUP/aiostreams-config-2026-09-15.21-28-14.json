@@ -513,14 +513,14 @@
           "b0f",
           "a15"
         ],
-        "condition": "count(previousStreams) < 5 or count(resolution(previousStreams, '2160p')) == 0"
+        "condition": "count(cached(resolution(quality(totalStreams, 'Bluray REMUX', 'Bluray', 'WEB-DL', 'WEBRip'), '2160p'))) < 2 or count(cached(resolution(quality(totalStreams, 'Bluray REMUX', 'Bluray', 'WEB-DL', 'WEBRip'), '2160p', '1440p', '1080p'))) < 5"
       },
       {
         "addons": [
           "276",
           "8b6"
         ],
-        "condition": "count(totalStreams) < 8 or count(resolution(totalStreams, '2160p')) == 0"
+        "condition": "count(cached(resolution(quality(totalStreams, 'Bluray REMUX', 'Bluray', 'WEB-DL', 'WEBRip'), '2160p'))) < 2 or count(cached(resolution(quality(totalStreams, 'Bluray REMUX', 'Bluray', 'WEB-DL', 'WEBRip'), '2160p', '1440p', '1080p'))) < 5"
       },
       {
         "addons": [
@@ -546,10 +546,6 @@
       },
       {
         "key": "seadex",
-        "direction": "desc"
-      },
-      {
-        "key": "cached",
         "direction": "desc"
       },
       {
