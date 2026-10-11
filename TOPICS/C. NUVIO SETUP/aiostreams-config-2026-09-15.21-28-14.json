@@ -24,9 +24,9 @@
   "trusted": false,
   "showChanges": true,
   "manifestNotice": "never",
-  "addonName": "Primary",
+  "addonName": "HDR",
   "addonLogo": "https://cdn.xperience-app.com/avatars/hbo-max/paul.webp",
-  "addonDescription": "TorBox-first. Curated streams, intelligent ranking, clean results. AIOStreams × TorBox, with P2P/HTTP fallback. Vietnamese subs included.\n\nCredit: HiepHoang",
+  "addonDescription": "TorBox-first. HDR-first, curated streams, intelligent ranking, clean results. AIOStreams × TorBox with P2P/HTTP fallback. Vietnamese subtitles included.\n\nCredit: HiepHoang",
   "excludedResolutions": [
     "720p",
     "576p",
