@@ -106,13 +106,13 @@
   "requiredAudioChannels": [],
   "preferredAudioChannels": [],
   "excludedStreamTypes": [
-    "p2p",
     "http"
   ],
   "includedStreamTypes": [],
   "requiredStreamTypes": [],
   "preferredStreamTypes": [
-    "debrid"
+    "debrid",
+    "p2p"
   ],
   "excludedEncodes": [],
   "includedEncodes": [],
@@ -531,10 +531,6 @@
       },
       {
         "key": "seadex",
-        "direction": "desc"
-      },
-      {
-        "key": "cached",
         "direction": "desc"
       },
       {
