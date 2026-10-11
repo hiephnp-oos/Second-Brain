@@ -44,17 +44,17 @@ Known areas of interest include stream filtering, display/format decisions, HDR/
 ## Active Projects / References
 
 - **AIOStreams configuration backups:** see the `AIOStreams Configuration Backups` section below for the HDR/SDR backup inventory and integrity hashes.
-- Primary AIOStreams instance: `https://aiostreamsfortheweebsstable.midnightignite.me/`
-- Secondary AIOStreams instance: `https://aio.atbphosting.com/stremio/`
+- HDR AIOStreams instance: `https://aiostreamsfortheweebsstable.midnightignite.me/`
+- SDR AIOStreams instance: `https://aio.atbphosting.com/stremio/`
 - Nuvio documentation: `https://nuvio.tv/docs`
 - AIOStreams setup documentation: `https://docs.aiostreams.viren070.me/configuration/setup/`
 - Project-local Nuvio documentation is available as a source file, but it is not currently a complete transcription of the rendered documentation; consult the authoritative site when current details matter.
 
 ## AIOStreams Configuration Backups
 
-The two JSON files in this folder are the actual configuration snapshots. Their role is confirmed by the `addonName` inside each file. HDR and SDR share the same non-visual configuration; only visual-tag preferences and the SDR-only HDR/DV exclusion rule differ. Both use TorBox and the same 61 ranked stream expressions.
+The two JSON files in this folder are the actual configuration snapshots. Their role is confirmed by the `addonName` inside each file. HDR and SDR share the same active non-visual streaming configuration; only visual-tag preferences and the SDR-only HDR/DV exclusion rule differ. Both use TorBox and the same 61 ranked stream expressions. The obsolete `nuvio-instant` variant marked not for v5 has been removed from both.
 
-- **HDR:** `aiostreams-config-2026-09-15.21-28-14.json` — SHA-256 `61d9355e1adbc1b349eda1bddc0d1f84b26ebd9f5a9b6a9be9b04049b6655a66`
+- **HDR:** `aiostreams-config-2026-09-15.21-28-14.json` — SHA-256 `ec5244deeb77e939467126ef95c88bb93160bf32f98a849aeefd427224db13aa`
 - **SDR:** `aiostreams-config-2026-09-15.21-28-43.json` — SHA-256 `e6697f98479c9cb31cfc26da47ae0457b80387cca0b67781fe1ef8731fedb163`
 
 Credentials are intentionally not stored in GitHub.
