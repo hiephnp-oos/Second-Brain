@@ -43,7 +43,7 @@ Known areas of interest include stream filtering, display/format decisions, HDR/
 
 ## Active Projects / References
 
-- **AIOStreams configuration backups:** see the `AIOStreams Configuration Backups` section below for the Primary/Secondary backup inventory and integrity hashes.
+- **AIOStreams configuration backups:** see the `AIOStreams Configuration Backups` section below for the HDR/SDR backup inventory and integrity hashes.
 - Primary AIOStreams instance: `https://aiostreamsfortheweebsstable.midnightignite.me/`
 - Secondary AIOStreams instance: `https://aio.atbphosting.com/stremio/`
 - Nuvio documentation: `https://nuvio.tv/docs`
@@ -52,10 +52,10 @@ Known areas of interest include stream filtering, display/format decisions, HDR/
 
 ## AIOStreams Configuration Backups
 
-The two JSON files in this folder are the actual configuration snapshots. Their role is confirmed by the `addonName` inside each file.
+The two JSON files in this folder are the actual configuration snapshots. Their role is confirmed by the `addonName` inside each file. HDR and SDR share the same non-visual configuration; only visual-tag preferences and the SDR-only HDR/DV exclusion rule differ. Both use TorBox and the same 61 ranked stream expressions.
 
-- **Primary:** `aiostreams-config-2026-09-15.21-28-14.json` — SHA-256 `89e7ca3fd03e12c5d4d802119e4073c7218562e985fe8fea6cd6f04b9ca905c5`
-- **Secondary:** `aiostreams-config-2026-09-15.21-28-43.json` — SHA-256 `3de4085eae22b55c46de0aed857d0228ec3e73b5144d804d14f2e2a3f4772f19`
+- **HDR:** `aiostreams-config-2026-09-15.21-28-14.json` — SHA-256 `61d9355e1adbc1b349eda1bddc0d1f84b26ebd9f5a9b6a9be9b04049b6655a66`
+- **SDR:** `aiostreams-config-2026-09-15.21-28-43.json` — SHA-256 `e6697f98479c9cb31cfc26da47ae0457b80387cca0b67781fe1ef8731fedb163`
 
 Credentials are intentionally not stored in GitHub.
 
@@ -70,7 +70,7 @@ Credentials are intentionally not stored in GitHub.
 
 ## Lessons
 
-- AIOStreams configuration backups should be identifiable by role (Primary/Secondary) and integrity hash so the correct snapshot can be recovered without duplicating configuration into memory.
+- AIOStreams configuration backups should be identifiable by role (HDR/SDR) and integrity hash so the correct HDR or SDR snapshot can be recovered without duplicating configuration into memory.
 - Backup metadata should live with the topic README when a separate index file adds no operational value.
 - Nuvio, AIOStreams, and TorBox should be diagnosed as separate layers; a playback issue is not automatically an AIOStreams ranking/filter issue.
 - Configuration backup metadata belongs in the Nuvio topic, while secrets remain outside the repository.
@@ -81,4 +81,4 @@ Use this topic for Nuvio-specific work. Keep Nuvio, AIOStreams, and TorBox respo
 
 ## Next
 
-Maintain the backup inventory when a new Primary/Secondary configuration snapshot becomes the known-good baseline. Record durable configuration decisions, validated troubleshooting findings, and stable stream-selection principles here as they are established through repeated project work.
+Maintain the backup inventory when a new HDR/SDR configuration snapshot becomes the known-good baseline. Record durable configuration decisions, validated troubleshooting findings, and stable stream-selection principles here as they are established through repeated project work.
