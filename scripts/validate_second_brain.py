@@ -745,6 +745,44 @@ def validate_scheduled_capability_contracts(errors: list[str]) -> None:
                 fail(f"Scheduled persistence contract missing '{phrase}': {rel}", errors)
 
 
+def validate_user_prompt_mutation_lifecycle(errors: list[str]) -> None:
+    """Keep user-side reinforcement prompts aligned with the mandatory repository contract."""
+    path = ROOT / "SYSTEM CORE" / "User_Prompts.md"
+    if not path.exists():
+        fail("User_Prompts.md missing for mutation lifecycle validation", errors)
+        return
+
+    text = read_text(path)
+    required_by_prompt = {
+        "SB-14": [
+            "mọi thay đổi nội dung repository",
+            "branch → pr",
+            "mức rủi ro quyết định độ sâu review",
+            "không ghi trực tiếp lên `main`",
+        ],
+        "SB-18": [
+            "mọi thay đổi nội dung repository",
+            "single-file low-risk",
+            "task branch và pr",
+            "không ghi trực tiếp lên `main`",
+            "không fallback direct-main",
+        ],
+    }
+    lines = text.splitlines()
+    for prompt_id, required_phrases in required_by_prompt.items():
+        matches = [line for line in lines if line.startswith(f"| **{prompt_id}** |")]
+        if len(matches) != 1:
+            fail(f"User_Prompts.md must contain exactly one {prompt_id} row", errors)
+            continue
+        row = matches[0].lower()
+        for phrase in required_phrases:
+            if phrase not in row:
+                fail(f"User_Prompts.md {prompt_id} conflicts with mandatory repository mutation lifecycle: missing '{phrase}'", errors)
+        if prompt_id == "SB-14" and "chỉ dùng branch/validation bổ sung khi" in row:
+            fail("User_Prompts.md SB-14 must not make branch/PR conditional on risk", errors)
+        if prompt_id == "SB-18" and "direct file update" in row:
+            fail("User_Prompts.md SB-18 must not permit direct-main updates for single-file changes", errors)
+
 def validate_prompt_duplicate_rules(errors: list[str]) -> None:
     prompt_files = [
         ROOT / "TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/Prompt.csv",
@@ -965,6 +1003,7 @@ def main() -> int:
     validate_scheduled_capability_contracts(errors)
     validate_rnd_knowledge_sheet(errors)
     validate_prompt_duplicate_rules(errors)
+    validate_user_prompt_mutation_lifecycle(errors)
     validate_removed_topic(errors)
     validate_platform_layers(errors)
     validate_control_reference_consistency(errors)
