@@ -615,32 +615,44 @@ def validate_career_scheduled_provenance(errors: list[str]) -> None:
 
 
 def validate_claw_watchdog_contract(errors: list[str]) -> None:
-    path = ROOT / Path(".github/workflows/claw-persistence-watchdog.yml")
-    if not path.exists():
+    workflow_path = ROOT / Path(".github/workflows/claw-persistence-watchdog.yml")
+    helper_path = ROOT / Path("scripts/claw_persistence.py")
+    if not workflow_path.exists():
         fail("Claw persistence watchdog workflow missing", errors)
         return
-    text = read_text(path)
-    required = [
+    if not helper_path.exists():
+        fail("Claw persistence classifier module missing", errors)
+        return
+
+    workflow = read_text(workflow_path)
+    helper = read_text(helper_path)
+    required_workflow = [
         'name: Claw Daily Persistence Watchdog',
         'cron: "0 1 * * *"',
         'TZ=Asia/Ho_Chi_Minh date +%F',
-        'provenance_state=NOT_VERIFIED',
+        'python scripts/claw_persistence.py classify',
+        'python scripts/claw_persistence.py recovered-issues',
+        'does not execute Claw research or recover missing content',
         'does not prove that the external 05:00 scheduled task executed',
     ]
-    for phrase in required:
-        if phrase not in text:
-            fail(f"Claw watchdog contract missing '{phrase}'", errors)
+    for phrase in required_workflow:
+        if phrase not in workflow:
+            fail(f"Claw watchdog workflow missing contract marker '{phrase}'", errors)
+
     for state in ["MISSING", "INCOMPLETE", "PRESENT_UNVERIFIED", "MANUAL_RECOVERY"]:
-        if not re.search(rf'["\\\']{state}["\\\']', text) and f"artifact_state={state}" not in text:
-            fail(f"Claw watchdog contract missing artifact state '{state}'", errors)
+        if state not in helper:
+            fail(f"Claw persistence classifier missing artifact state '{state}'", errors)
+    for phrase in ['"provenance_state": "NOT_VERIFIED"', 'recovered_issue_numbers']:
+        if phrase not in helper:
+            fail(f"Claw persistence classifier missing contract marker '{phrase}'", errors)
+
     forbidden = [
         'provenance_state=SCHEDULED_EXECUTION_VERIFIED',
         'artifact_state=SCHEDULED_EXECUTION_VERIFIED',
     ]
     for phrase in forbidden:
-        if phrase in text:
+        if phrase in workflow or phrase in helper:
             fail(f"Claw watchdog must not claim external scheduler provenance: '{phrase}'", errors)
-
 
 def validate_career_weekly_report_contract(errors: list[str]) -> None:
     reports = ROOT / Path("TOPICS/B. CAREER/2. REPORTS")
