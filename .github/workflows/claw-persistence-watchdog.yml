@@ -19,48 +19,25 @@ jobs:
         with:
           ref: main
 
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
       - name: Classify today's Claw artifact and provenance
         id: verify
         shell: bash
         run: |
+          set -euo pipefail
           RUN_DATE="$(TZ=Asia/Ho_Chi_Minh date +%F)"
           REPORT="TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/${RUN_DATE}.md"
           echo "run_date=${RUN_DATE}" >> "$GITHUB_OUTPUT"
           echo "report=${REPORT}" >> "$GITHUB_OUTPUT"
-
+          python scripts/claw_persistence.py classify --date "$RUN_DATE" --report "$REPORT" >> "$GITHUB_OUTPUT"
+          cat "$GITHUB_OUTPUT"
           if [ ! -f "$REPORT" ]; then
-            echo "artifact_state=MISSING" >> "$GITHUB_OUTPUT"
-            echo "provenance_state=NOT_VERIFIED" >> "$GITHUB_OUTPUT"
-            echo "state=MISSING" >> "$GITHUB_OUTPUT"
             echo "Missing report: $REPORT"
-            exit 0
           fi
-
-          python - "$REPORT" "$RUN_DATE" <<'PY'
-          import os, pathlib, re, sys
-          path, run_date = pathlib.Path(sys.argv[1]), sys.argv[2]
-          text = path.read_text(encoding="utf-8")
-          required = {
-              "RUN_DATE": re.compile(rf"^\\s*[-*]?\\s*\\*\\*RUN_DATE:\\*\\*\\s+\\*?\\*?{re.escape(run_date)}\\*?\\*?\\s*$", re.MULTILINE),
-              "RUN_SLOT": re.compile(r"^\\s*[-*]?\\s*\\*\\*RUN_SLOT:\\*\\*\\s+\\*?\\*?01\\*?\\*?\\s*$", re.MULTILINE),
-              "RS-10": re.compile(r"RS-10"),
-              "RS-11": re.compile(r"RS-11"),
-              "RS-12": re.compile(r"RS-12"),
-          }
-          missing = [name for name, pattern in required.items() if not pattern.search(text)]
-          manual = bool(re.search(r"MANUAL\s+RECOVERY", text, re.IGNORECASE))
-          # Artifact text cannot prove its own scheduler provenance. This watchdog
-          # observes main only; it does not have a verified link to the external task.
-          artifact_state = "INCOMPLETE" if missing else ("MANUAL_RECOVERY" if manual else "PRESENT_UNVERIFIED")
-          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
-              out.write(f"artifact_state={artifact_state}\n")
-              out.write("provenance_state=NOT_VERIFIED\n")
-              out.write(f"state={artifact_state}\n")
-          if missing:
-              print("Incomplete report; missing markers:", ", ".join(missing))
-          else:
-              print(f"Artifact state: {artifact_state}; scheduled provenance: NOT_VERIFIED.")
-          PY
 
       - name: Open or reuse a GitHub issue when artifact is missing/incomplete
         if: steps.verify.outputs.state == 'MISSING' || steps.verify.outputs.state == 'INCOMPLETE'
@@ -71,6 +48,7 @@ jobs:
           STATE: ${{ steps.verify.outputs.state }}
         shell: bash
         run: |
+          set -euo pipefail
           TITLE="Claw daily report ${STATE}: ${RUN_DATE}"
           EXISTING="$(gh issue list --state open --search "\"$TITLE\"" --json number --jq '.[0].number // empty')"
           if [ -n "$EXISTING" ]; then
@@ -79,4 +57,21 @@ jobs:
           fi
           gh issue create \
             --title "$TITLE" \
-            --body "The independent Claw persistence watchdog found **${STATE}** for ${RUN_DATE} (Asia/Ho_Chi_Minh).\n\nExpected artifact: \`${REPORT}\`\n\nThis check classifies repository artifact presence/completeness only. It does not prove that the external 05:00 scheduled task executed; scheduler provenance remains **NOT_VERIFIED** unless independently verified from the scheduler's own execution record. Recover missing/incomplete output without overwriting human review.\n\nWatchdog run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            --body "The independent Claw persistence watchdog found **${STATE}** for ${RUN_DATE} (Asia/Ho_Chi_Minh).\n\nExpected artifact: `${REPORT}`\n\nThis workflow is **monitoring and alerting only**; it does not execute Claw research or recover missing content. It does not prove that the external 05:00 scheduled task executed; scheduler provenance remains **NOT_VERIFIED** unless independently verified from the scheduler's own execution record. Recover missing/incomplete output through the repository's normal review and persistence workflow without overwriting human-reviewed content.\n\nWatchdog run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+
+      - name: Close stale watchdog issues after artifact recovery
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          REPORT_DIR="TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH"
+          RECOVERED="$(gh issue list --state open --search "Claw daily report" --limit 100 --json number,title | python scripts/claw_persistence.py recovered-issues --report-dir "$REPORT_DIR")"
+          if [ -z "$RECOVERED" ]; then
+            echo "No recovered Claw watchdog incidents to close."
+            exit 0
+          fi
+          while IFS= read -r ISSUE_NUMBER; do
+            [ -n "$ISSUE_NUMBER" ] || continue
+            gh issue close "$ISSUE_NUMBER" --reason completed --comment "Closed by the persistence watchdog because the date-specific report now exists and passes the required content checks. This confirms artifact recovery only; external scheduler provenance remains **NOT_VERIFIED**."
+          done <<< "$RECOVERED"
