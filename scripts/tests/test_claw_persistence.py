@@ -1,10 +1,18 @@
 from __future__ import annotations
 
+import importlib.util
 import tempfile
 import unittest
 from pathlib import Path
 
-from claw_persistence import classify_report_path, classify_report_text, recovered_issue_numbers
+SCRIPT = Path(__file__).resolve().parents[1] / "claw_persistence.py"
+SPEC = importlib.util.spec_from_file_location("claw_persistence", SCRIPT)
+assert SPEC is not None and SPEC.loader is not None
+claw_persistence = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(claw_persistence)
+classify_report_path = claw_persistence.classify_report_path
+classify_report_text = claw_persistence.classify_report_text
+recovered_issue_numbers = claw_persistence.recovered_issue_numbers
 
 
 def complete_report(run_date: str = "2026-10-12", manual: bool = False) -> str:
