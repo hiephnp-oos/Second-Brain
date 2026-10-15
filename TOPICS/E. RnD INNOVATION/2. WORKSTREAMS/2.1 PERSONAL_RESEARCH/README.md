@@ -52,6 +52,16 @@ The run must build a temporary comparison ledger (Candidate ID/title, problem/ou
 
 Historical DROP/WATCH/BASELINE records are not interchangeable: preserve the original disposition and extract reusable lessons without treating a prior rejection as proof that a new candidate is invalid.
 
+## Scheduled Persistence Failure Recovery
+
+When the scheduled executor has completed research and a daily artifact is present on its branch but the PR/merge stage is incomplete, resume from the recorded GitHub state instead of rerunning RS-10 → RS-12. Use the supported GitHub connector to inspect the existing branch, commit, matching PRs and target path, then complete only the missing stages.
+
+- Require explicit confirmations for each stage: file written, exact branch file read-back, one-file diff, PR opened, required checks passed, expected head SHA unchanged, merge result, and exact `main` read-back.
+- If PR creation or another mutation is rejected, record the exact connector error and stop retrying after one same-operation retry. Do not infer that all writes are prohibited from one blocked call.
+- Return the full artifact through an available downloadable Markdown fallback or inline Markdown when persistence cannot proceed. Mark it `NOT_PERSISTED`; never fabricate a path/PR/commit or label a fallback as merged.
+- Do not disable this scheduler or the watchdog because a run cannot persist. Report `INCOMPLETE`, keep the schedule enabled, and let the user decide whether to pause it.
+- Never overwrite a complete daily artifact or replace it with a partial recovery. Preserve scheduler provenance independently from artifact validity.
+
 ## Scheduled Output PR — Conditional Auto-Merge
 
 The daily scheduler may auto-merge only its own date-specific discovery-output PR, and only when every condition below is verified:
