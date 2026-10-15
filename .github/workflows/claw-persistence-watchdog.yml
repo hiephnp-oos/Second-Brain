@@ -75,3 +75,8 @@ jobs:
             [ -n "$ISSUE_NUMBER" ] || continue
             gh issue close "$ISSUE_NUMBER" --reason completed --comment "Closed by the persistence watchdog because the date-specific report now exists and passes the required content checks. This confirms artifact recovery only; external scheduler provenance remains **NOT_VERIFIED**."
           done <<< "$RECOVERED"
+
+
+# Execution Boundary Contract
+
+This workflow is monitoring/alerting only. It classifies the date-specific artifact, opens/reuses incident issues for missing/incomplete reports, and closes incidents only after a complete artifact passes content checks. It does not execute RS-10/RS-11/RS-12, create/recover a daily report, or verify the external ChatGPT scheduled task's execution provenance. Keep the ChatGPT scheduler enabled after a persistence failure; this GitHub Actions watchdog is independent and must continue monitoring.
