@@ -189,3 +189,19 @@ Use separate states:
 - External scheduler provenance: `NOT_VERIFIED` unless independently matched to the scheduler's own execution record.
 
 Never label artifact presence as scheduled success. A complete manual-recovery artifact remains `MANUAL_RECOVERY`; validate its content separately and preserve provenance as `NOT_VERIFIED`. Only an independently verified scheduler record linked to the exact date/output may upgrade provenance. The current Claw watchdog is monitoring/alerting only: it creates/reuses an issue for missing or incomplete artifacts and closes stale watchdog issues only when the exact date-matched artifact passes content checks. It does not execute research or recover content. Present-but-unverified provenance is not itself an incident and must not be reported as proof of scheduler success or failure.
+
+
+## Scheduled Mutation Stage Integrity
+
+For scheduled tasks that publish durable GitHub artifacts, repository state must be reported by stage, not as a single success/failure label. The minimum states are: `RESEARCHED`, `BRANCH_CREATED`, `FILE_WRITTEN`, `READ_BACK_VERIFIED`, `PR_OPENED`, `CHECKS_PASS`, `MERGED`, and `MAIN_READ_BACK_VERIFIED`. Use `NOT_REACHED`, `BLOCKED`, or `FAILED` for unfinished stages and attach observable evidence (path, branch, commit SHA, PR URL, check run, merge SHA, or exact tool error) when available.
+
+Root-cause classification must distinguish at least:
+- `CAPABILITY_UNAVAILABLE`: the current invocation has no usable action for the required operation;
+- `MUTATION_BLOCKED`: the action exists but its call is rejected (record the exact returned error; do not generalize one blocked call to all connector writes);
+- `EXECUTION_STOPPED_EARLY`: upstream work/branch/commit exists but a later required stage was not attempted;
+- `VALIDATION_PENDING_OR_FAILED`: the PR's required workflow is not a confirmed pass;
+- `STATE_CONFLICT_OR_DUPLICATE`: the target path/branch/PR already exists or changed, requiring re-read and reconciliation.
+
+A scheduled executor must not disable itself or an independent watchdog after a single persistence failure. Failures are reported and retried/resumed from the last observed stage; schedules remain enabled unless the user explicitly asks to pause them or execution creates an established safety risk. A fallback Markdown output marked `NOT_PERSISTED` is acceptable only as a recovery handoff; it never satisfies the canonical GitHub persistence invariant.
+
+The watchdog must maintain its documented execution boundary. A monitoring-only watchdog may classify artifacts and open/reuse/close issues; it must not be described as running Claw research or recovering reports unless the workflow contains a tested, bounded implementation that does so.
