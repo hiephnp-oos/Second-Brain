@@ -104,7 +104,8 @@ Human review is required before final KEEP/DROP or equivalent workstream disposi
 If scope, evidence access, or required target conditions are unavailable, return a bounded failure/inconclusive result and state the missing input. If no material outcome or meaningful delta is established, do not force a candidate; record the reason. Do not fabricate candidates to meet a count. Stop when the scope is answered or remaining uncertainty requires a specific test, source, or authority.
 
 ## 14. Persistence boundary
-Execution output belongs to the invoking Workstream. For scheduled Claw, the canonical output location is `TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/`. Exactly one scheduled execution runs per local date and creates or recovers `RUN_SLOT 01` in the date-specific daily record directly under PERSONAL_RESEARCH; the Workstream owns that record. There are no active RUN_SLOT 02/03 executions. If a matching slot already exists, verify it rather than duplicating it. No staging or batch workflow is used. This capability owns no Knowledge Sheet rows. Reusable findings enter KNOWLEDGE_PROMOTION through the Workstream and required human gate.
+
+Execution output belongs to the invoking Workstream. For scheduled Claw, PERSONAL_RESEARCH owns the returned date-specific Markdown report, named `YYYY-MM-DD.md` using the current Asia/Ho_Chi_Minh invocation date and containing `RUN_SLOT 01`. The schedule is report-only: it returns the complete report inline and does not create or update GitHub files, branches, commits, PRs, or merges. The user may later save and batch multiple reports into a manual PR; only artifacts actually present on `main` are persisted repository records. There are no active RUN_SLOT 02/03 executions. No staging or batch workflow is used by the schedule. This capability owns no Knowledge Sheet rows. Reusable findings enter KNOWLEDGE_PROMOTION through the Workstream and required human gate.
 
 ## 15. Examples and tests
 - **Technology-only signal:** classify as a signal/enabler; do not elevate to standalone idea without outcome and delta.
@@ -115,8 +116,10 @@ Execution output belongs to the invoking Workstream. For scheduled Claw, the can
 
 ## Scheduler and cadence
 
-### Scheduled persistence verification
-For each scheduled Claw execution, the required durable daily record is part of the execution contract. After writing or recovering the date-specific record, re-read the exact output path, verify the expected date and scheduled run state, and verify final repository state before reporting completion. A missing or unverified record is an incomplete execution even when discovery/search succeeds; tool success or generated candidates are not completion evidence.
+### Scheduled report-only completion
+
+For each scheduled Claw execution, completion means returning the complete date-specific Markdown report after discovery, semantic-invariant, and Vietnamese readability gates pass. The schedule must not write to GitHub or initiate branch/PR/merge operations. A generated report is not proof of repository persistence; the user manually batches reports into a separate PR when desired. The weekly watchdog independently counts only date-specific Markdown artifacts actually present on `main`.
+
 
 The scheduler is a trigger/orchestration layer only; it does not redefine discovery methods, own outputs, or authorize Knowledge promotion. Scheduled artifact/provenance state follows the canonical repository contract in `SYSTEM CORE/REPOSITORY_CONTRACT.md`; this capability does not define a separate scheduler-state vocabulary. Scheduled Claw execution follows the cadence and run-date semantics defined by the active PERSONAL_RESEARCH scheduler contract. This capability does not establish a second cadence or override that source. The execution date recorded in an output is the calendar date of the current invocation in Asia/Ho_Chi_Minh, resolved from the active invocation/runtime date-time context. Do not require a separate timestamp field that the scheduled environment may not expose. If only a current date is available, that is sufficient; time-of-day is not needed to name the daily artifact. Never use a previous last-run timestamp, previous report date, or prior UTC date. If no usable current date is available, report `RUN_DATE_UNAVAILABLE`; if timezone conversion near midnight is materially ambiguous, stop and state the ambiguity.
 
