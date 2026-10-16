@@ -42,13 +42,13 @@ Use `Prompt.csv` for Personal Research tasks. The prompt is the input; a separat
 
 The execution date is the calendar date of the current scheduled invocation in Asia/Ho_Chi_Minh, resolved from the active invocation/runtime date-time context. The scheduler is not required to expose a separate execution-timestamp field. If only the current date is available, use that local date; clock time is not needed for the filename. Never derive the date from a prior last-run timestamp, previous report, UTC date, or assumed date. If no usable current invocation date is available, report `RUN_DATE_UNAVAILABLE` and do not create or persist a date-specific artifact.
 
-When an idea is selected to proceed, transfer it to `../2.2 IDEA_REVIEW/<IDEA_ID>/`. Do not turn every discovered idea into a review folder.
+Discovery is intended to surface differentiated concepts worth considering for TDS submission, not certify production readiness. Require a credible shower/fitting outcome and integration pathway, but do not treat unverified manufacturability, cost, durability, or target-environment transfer as automatic rejection; record these as technical maturity/unknowns unless evidence shows a material blocker.\n\nWhen an idea is selected to proceed, transfer it to `../2.2 IDEA_REVIEW/<IDEA_ID>/`. Do not turn every discovered idea into a review folder.
 
 Research findings remain in the discovery artifact unless they qualify for a Knowledge Candidate. Do not automatically copy results into the Knowledge Sheet.
 
 ## Review Memory — Human-reviewed outcomes
 
-Before RS-12, read [REVIEW_MEMORY.md](REVIEW_MEMORY.md). It is the durable record of user-reviewed candidate decisions and rejected mechanisms; it supplements, but does not replace, daily records, previous Claw records, IDEA_REVIEW artifacts, or regression cases. Preserve each decision's scope: a DROP rejects the reviewed candidate/delta, not automatically the entire problem domain. A later candidate may proceed only when its material DELTA is explicit and checked against the recorded reason. New user review decisions must be appended through the repository PR workflow; never overwrite historical decisions.
+Before RS-10, RS-11, and RS-12, read [REVIEW_MEMORY.md](REVIEW_MEMORY.md). It is the durable record of user-reviewed candidate decisions and rejected mechanisms; it supplements, but does not replace, daily records, previous Claw records, IDEA_REVIEW artifacts, or regression cases. Preserve each decision's scope: a DROP rejects the reviewed candidate/delta, not automatically the entire problem domain. A later candidate may proceed only when its material DELTA is explicit and checked against the recorded reason. New user review decisions must be appended through the repository PR workflow; never overwrite historical decisions.
 
 ## Historical Learning and Duplicate Control
 

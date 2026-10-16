@@ -32,7 +32,7 @@ If scope or target boundary is unavailable, do not generate unbounded candidates
 5. For each candidate, state target outcome, proposed capability, mechanism hypothesis, system boundary, and meaningful difference from baseline/existing solutions.
 6. Check commercial precedent, prior art where relevant, Knowledge Sheet, prior daily records, and reviewed candidate records; record search scope and unresolved coverage. Compare candidates semantically by problem/outcome, mechanism, and target application; record matched IDs and whether each is a duplicate, related variant, or no match.
 7. Assess evidence and transferability to the target conditions. Keep cross-industry concepts as transfer candidates until target evidence supports applicability.
-8. Apply quality gates: material user/product outcome, meaningful delta, strategic fit, evidence traceability, complexity justified by benefit, and no duplicate/saturated candidate.
+8. Apply discovery-stage quality gates: material user/product outcome, meaningful delta, strategic fit, credible target-product application pathway, evidence traceability, complexity justified by benefit, and no duplicate/saturated candidate. Distinguish a plausible but unverified transfer from demonstrated target-environment feasibility; do not demand production-ready proof at discovery stage.
 9. Classify candidate and claim states; preserve unknowns and conflicts. Do not turn a technology or mechanism alone into a standalone product idea.
 10. Return structured candidates and evidence gaps to the invoking Workstream; route specific unresolved claims or broad conflicts only when warranted.
 
@@ -43,7 +43,7 @@ If scope or target boundary is unavailable, do not generate unbounded candidates
 - Expand to adjacent industries only when the transfer mechanism and target relevance can be stated.
 - Use deeper research for broad, fragmented, conflicting, or decision-critical gaps; use VERIFICATION for narrow claims.
 - For scheduled Personal Research discovery, use the Iterative Discovery rule in RS-12: a DROP/DUPLICATE does not end the search. First test whether a materially different outcome, physical capability, or architecture can be defined; if not, return to RS-10/RS-11 to explore a genuinely different candidate space.
-- Stop only when the requested discovery has produced one or more candidates at least at WATCH, or a documented hard blocker prevents responsible continuation. Do not fabricate candidates, weaken gates, or relabel a rejected candidate to satisfy the stop condition.
+- Stop when the scoped search has sufficient coverage, remaining search value is low, or a documented hard blocker prevents responsible continuation. Do not require at least one WATCH candidate and do not fabricate candidates, weaken gates, or relabel a rejected candidate to satisfy a stop condition. Zero qualified candidates is a valid output.
 - A WATCH result is a discovery stopping threshold, not technical validation, feasibility approval, or automatic promotion to IDEA_REVIEW.
 
 ## 7. Tool boundary

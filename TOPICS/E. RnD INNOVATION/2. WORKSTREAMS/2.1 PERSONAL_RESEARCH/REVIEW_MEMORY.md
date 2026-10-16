@@ -1,13 +1,13 @@
 # Human Review Memory — Personal Research / ADTD Claw
 
-**Purpose:** Durable, AI-readable record of user-reviewed discovery decisions. Read before RS-12 convergence and semantic duplicate checks. This file records human decisions; it does not replace daily reports, IDEA_REVIEW, historical records, or the Knowledge Sheet.
+**Purpose:** Durable, AI-readable record of user-reviewed discovery decisions. Read before RS-10 Market Pull, RS-11 Tech Push, and RS-12 convergence/semantic duplicate checks. This file records human decisions; it does not replace daily reports, IDEA_REVIEW, historical records, or the Knowledge Sheet.
 
 ## Decision rules
 
 - Preserve the scope of each decision. A DROP rejects the reviewed candidate/delta; it does not automatically reject the entire problem domain or mechanism family.
 - Before revisiting a DROP, state the exact material DELTA in user/product outcome, physical capability, or architecture, then check it against the recorded reason and relevant precedents. A cosmetic, naming, location, material, sensor, or geometry change alone is not a DELTA.
 - A human-selected candidate may proceed even when its discovery disposition remains WATCH. Record the user's decision separately; do not silently rewrite WATCH as KEEP or as technical validation.
-- After DROP/DUPLICATE, continue discovery by testing a genuine DELTA or searching a different direction until at least WATCH, unless a specific hard blocker and bounded search coverage are documented.
+- After DROP/DUPLICATE, record the matched baseline/rejection reason and select a next action: search the same outcome family for a defensible gap, change outcome family, research a decision-critical unknown, or close the scoped direction when coverage is sufficient. Do not force a new candidate or change mechanism merely to continue iteration. Zero qualified candidates is valid. Preserve the human-reviewed decision scope; do not treat missing evidence as a negative finding.
 - Append new decisions with dates and source references through the normal Branch → PR → validation → merge workflow. Never silently overwrite prior decisions.
 
 ## Reviewed decisions
