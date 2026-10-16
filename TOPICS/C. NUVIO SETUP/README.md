@@ -21,16 +21,14 @@ For this project, use the following role boundaries:
 
 Nuvio stream configuration should therefore be evaluated primarily from the playback and stream-selection perspective, while keeping AIOStreams filtering/ranking and TorBox delivery as separate layers.
 
-The user iteratively builds Nuvio stream configuration rather than treating the default configuration as final. Configuration changes should be evaluated against actual playback experience, stream availability, compatibility, and interaction with AIOStreams/TorBox.
-
 Known areas of interest include stream filtering, display/format decisions, HDR/SDR playback behavior, subtitle handling, and practical client-side troubleshooting.
 
 ## Status
 
 - State: Frozen
-- Summary: A known-good Nuvio/AIOStreams/TorBox setup and backup baseline has been established.
+- Summary: HDR and SDR AIOStreams profile snapshots dated 2026-10-16 have been received; repository publication is in progress.
 - Direction: Do not tune the setup proactively; update only when a new requirement, regression, compatibility issue, or new known-good baseline appears.
-- Last reviewed: 2026-09-27
+- Last reviewed: 2026-10-16
 
 ## Working Principles
 
@@ -43,37 +41,51 @@ Known areas of interest include stream filtering, display/format decisions, HDR/
 
 ## Active Projects / References
 
-- **AIOStreams configuration backups:** see the `AIOStreams Configuration Backups` section below for the Primary/Secondary backup inventory and integrity hashes.
-- Primary AIOStreams instance: `https://aiostreamsfortheweebsstable.midnightignite.me/`
-- Secondary AIOStreams instance: `https://aio.atbphosting.com/stremio/`
+- **AIOStreams configuration backups:** see the `AIOStreams Configuration Backups` section below for HDR/SDR snapshots and integrity hashes.
+- HDR AIOStreams instance: `https://aiostreamsfortheweebsstable.midnightignite.me/`
+- SDR AIOStreams instance: `https://aio.atbphosting.com/stremio/`
 - Nuvio documentation: `https://nuvio.tv/docs`
 - AIOStreams setup documentation: `https://docs.aiostreams.viren070.me/configuration/setup/`
-- Project-local Nuvio documentation is available as a source file, but it is not currently a complete transcription of the rendered documentation; consult the authoritative site when current details matter.
+- Project-local Nuvio documentation is not a complete transcription of the rendered documentation; consult the authoritative site when current details matter.
 
 ## AIOStreams Configuration Backups
 
-The two JSON files in this folder are the actual configuration snapshots. Their role is confirmed by the `addonName` inside each file.
+The intended new artifacts are `HDR_aiostreams-config-2026-10-16.09-51-07.json` and `SDR_aiostreams-config-2026-10-16.09-51-39.json`, uploaded for the 2026-10-16 baseline. **Do not use the files in this branch as restore backups until their full JSON payloads are verified**; the GitHub write connector did not preserve the full uploaded bytes during this attempt.
 
-- **Primary:** `aiostreams-config-2026-09-15.21-28-14.json` — SHA-256 `89e7ca3fd03e12c5d4d802119e4073c7218562e985fe8fea6cd6f04b9ca905c5`
-- **Secondary:** `aiostreams-config-2026-09-15.21-28-43.json` — SHA-256 `3de4085eae22b55c46de0aed857d0228ec3e73b5144d804d14f2e2a3f4772f19`
+- **HDR profile (uploaded source SHA-256):** `b1f99973157ae16e25172f5a0df7873e2860e2ac02943ea46b14c7864baa0a3c`
+- **SDR profile (uploaded source SHA-256):** `325b966126f87e13db9daa709974dc05188ae442bd66abbd3c1cf2c9d071eea6`
+
+Profile inspection of the uploaded source files:
+
+| Setting | HDR | SDR |
+|---|---|---|
+| Active service | TorBox | TorBox |
+| Preferred visual tags | HDR, HDR10, HDR10+, HLG, DV, HDR+DV, 10bit, IMAX, SDR, Upscaled, AI | SDR |
+| Preferred subtitles | Vietnamese, English | None |
+| Preferred stream types | debrid, p2p, http | debrid, p2p |
+| Sequential Groups | 4 | 3 |
+| Ranked stream expressions | 61 | 61 |
+| Enabled presets | 15 | 9 |
+| Global sort | resolution → streamExpressionScore → SeaDex → quality → visualTag → audioTag → language → subtitle → bitrate | resolution → streamExpressionScore → SeaDex → quality → visualTag → audioTag → language → bitrate |
+
+The HDR uploaded snapshot contains a legacy `nuvio-instant` variant marked not for v5; the uploaded SDR snapshot has no `variants` list. These are observations of the uploaded source files, not assertions that the repository backups have been successfully published.
 
 Credentials are intentionally not stored in GitHub.
 
 ## Decisions
 
 - Treat Nuvio as the playback/client layer in the project's overall architecture.
-- Keep Nuvio stream configuration as a separate durable topic because it requires recurring tuning and troubleshooting independent of catalog organization.
-- Keep detailed AIOStreams configuration snapshots as artifacts/backups rather than copying their contents into the topic README.
+- Keep detailed AIOStreams snapshots as artifacts/backups rather than copying full configuration payloads into the topic README.
 - Keep AIOStreams UUIDs and passwords outside GitHub; do not store credentials in the repository.
 - Use Git history as the version history for configuration artifacts; do not create manual archive copies unless a separate backup policy requires them.
-- Keep the AIOStreams backup inventory directly in this README to keep the Nuvio topic folder compact.
+- Keep the backup inventory directly in this README to keep the Nuvio topic folder compact.
+- Diagnose Nuvio, AIOStreams, and TorBox as separate layers.
 
 ## Lessons
 
-- AIOStreams configuration backups should be identifiable by role (Primary/Secondary) and integrity hash so the correct snapshot can be recovered without duplicating configuration into memory.
+- AIOStreams backups must be identifiable by role, timestamp, and integrity hash; verify the exact committed bytes before treating them as restore points.
 - Backup metadata should live with the topic README when a separate index file adds no operational value.
-- Nuvio, AIOStreams, and TorBox should be diagnosed as separate layers; a playback issue is not automatically an AIOStreams ranking/filter issue.
-- Configuration backup metadata belongs in the Nuvio topic, while secrets remain outside the repository.
+- A playback issue is not automatically an AIOStreams ranking/filter issue.
 
 ## Routing
 
@@ -81,4 +93,4 @@ Use this topic for Nuvio-specific work. Keep Nuvio, AIOStreams, and TorBox respo
 
 ## Next
 
-Maintain the backup inventory when a new Primary/Secondary configuration snapshot becomes the known-good baseline. Record durable configuration decisions, validated troubleshooting findings, and stable stream-selection principles here as they are established through repeated project work.
+Before promoting the 2026-10-16 files to the known-good baseline, publish complete JSON bytes and verify that the repository file hashes match the uploaded source hashes. Keep this topic Frozen unless a new requirement, regression, compatibility issue, or verified baseline requires change.
