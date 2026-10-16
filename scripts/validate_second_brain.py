@@ -735,7 +735,7 @@ def validate_scheduled_capability_contracts(errors: list[str]) -> None:
             if phrase not in text:
                 fail(f"Scheduled capability contract missing '{phrase}': {rel}", errors)
 
-    # Durable scheduled outputs must expose persistence verification explicitly.
+    # Scheduled outputs must state the correct completion boundary.
     persistence_contracts = [
         (
             Path("TOPICS/B. CAREER/CAREER_EXECUTION_CONTRACT.md"),
@@ -743,7 +743,7 @@ def validate_scheduled_capability_contracts(errors: list[str]) -> None:
         ),
         (
             Path("TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/README.md"),
-            ["date-specific daily record", "re-read", "final repository state", "not completion"],
+            ["report-only completion", "returns the complete date-specific markdown report", "does not write to github", "user manually batches reports"],
         ),
     ]
     for rel, phrases in persistence_contracts:
