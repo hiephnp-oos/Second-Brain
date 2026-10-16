@@ -5,7 +5,6 @@ Weekly reports record current-cycle findings. `CAREER_SUMMARY.md` is the histori
 
 ## Canonical Artifacts
 - `CAREER_SUMMARY.md` — canonical historical decision memory.
-- — master historical decision memory.
 - `YYYY-W##.md` — one current-cycle review artifact per ISO week.
 
 ## Weekly Lifecycle
