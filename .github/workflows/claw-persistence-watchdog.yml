@@ -1,9 +1,9 @@
-name: Claw Daily Persistence Watchdog
+name: Claw Weekly Persistence Watchdog
 
 on:
   schedule:
-    # 08:00 Asia/Ho_Chi_Minh; independent artifact check after the 05:00 run.
-    - cron: "0 1 * * *"
+    # 08:00 Asia/Ho_Chi_Minh every Monday; summarize the previous Monday-Sunday.
+    - cron: "0 1 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
   issues: write
 
 jobs:
-  verify-daily-artifact:
+  weekly-summary:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout main
@@ -19,64 +19,117 @@ jobs:
         with:
           ref: main
 
-      - name: Classify today's Claw artifact and provenance
-        id: verify
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
+      - name: Count previous week's daily Claw reports
+        id: summary
         shell: bash
         run: |
-          RUN_DATE="$(TZ=Asia/Ho_Chi_Minh date +%F)"
-          REPORT="TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/${RUN_DATE}.md"
-          echo "run_date=${RUN_DATE}" >> "$GITHUB_OUTPUT"
-          echo "report=${REPORT}" >> "$GITHUB_OUTPUT"
+          set -euo pipefail
+          python - <<'PY'
+          from datetime import datetime, timedelta
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+          import os
+          import sys
 
-          if [ ! -f "$REPORT" ]; then
-            echo "artifact_state=MISSING" >> "$GITHUB_OUTPUT"
-            echo "provenance_state=NOT_VERIFIED" >> "$GITHUB_OUTPUT"
-            echo "state=MISSING" >> "$GITHUB_OUTPUT"
-            echo "Missing report: $REPORT"
-            exit 0
-          fi
+          sys.path.insert(0, str(Path.cwd() / "scripts"))
+          from claw_persistence import classify_report_path, REPORT_RELATIVE_PATH
 
-          python - "$REPORT" "$RUN_DATE" <<'PY'
-          import os, pathlib, re, sys
-          path, run_date = pathlib.Path(sys.argv[1]), sys.argv[2]
-          text = path.read_text(encoding="utf-8")
-          required = {
-              "RUN_DATE": re.compile(rf"^\\s*[-*]?\\s*\\*\\*RUN_DATE:\\*\\*\\s+\\*?\\*?{re.escape(run_date)}\\*?\\*?\\s*$", re.MULTILINE),
-              "RUN_SLOT": re.compile(r"^\\s*[-*]?\\s*\\*\\*RUN_SLOT:\\*\\*\\s+\\*?\\*?01\\*?\\*?\\s*$", re.MULTILINE),
-              "RS-10": re.compile(r"RS-10"),
-              "RS-11": re.compile(r"RS-11"),
-              "RS-12": re.compile(r"RS-12"),
-          }
-          missing = [name for name, pattern in required.items() if not pattern.search(text)]
-          manual = bool(re.search(r"MANUAL\s+RECOVERY", text, re.IGNORECASE))
-          # Artifact text cannot prove its own scheduler provenance. This watchdog
-          # observes main only; it does not have a verified link to the external task.
-          artifact_state = "INCOMPLETE" if missing else ("MANUAL_RECOVERY" if manual else "PRESENT_UNVERIFIED")
-          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
-              out.write(f"artifact_state={artifact_state}\n")
-              out.write("provenance_state=NOT_VERIFIED\n")
-              out.write(f"state={artifact_state}\n")
-          if missing:
-              print("Incomplete report; missing markers:", ", ".join(missing))
-          else:
-              print(f"Artifact state: {artifact_state}; scheduled provenance: NOT_VERIFIED.")
+          today = datetime.now(ZoneInfo("Asia/Ho_Chi_Minh")).date()
+          this_monday = today - timedelta(days=today.weekday())
+          week_start = this_monday - timedelta(days=7)
+          week_end = this_monday - timedelta(days=1)
+          report_dir = Path(str(REPORT_RELATIVE_PATH))
+          rows = []
+          complete = 0
+          incomplete = 0
+          missing = 0
+          manual = 0
+
+          day = week_start
+          while day <= week_end:
+              date_text = day.isoformat()
+              path = report_dir / f"{date_text}.md"
+              result = classify_report_path(path, date_text)
+              state = str(result["artifact_state"])
+              if state == "PRESENT_UNVERIFIED":
+                  complete += 1
+              elif state == "MANUAL_RECOVERY":
+                  complete += 1
+                  manual += 1
+              elif state == "INCOMPLETE":
+                  incomplete += 1
+              else:
+                  missing += 1
+              rows.append(f"| {date_text} | {state} | [Report]({path.as_posix()}) |")
+              day += timedelta(days=1)
+
+          title = f"Claw weekly persistence summary: {week_start.isoformat()} to {week_end.isoformat()}"
+          body = [
+              "# ADTD Claw weekly persistence summary",
+              "",
+              f"**Reporting period:** {week_start.isoformat()} to {week_end.isoformat()} (Asia/Ho_Chi_Minh)",
+              "",
+              f"- **Complete daily reports on main:** {complete}/7",
+              f"- **Incomplete daily reports on main:** {incomplete}",
+              f"- **Missing daily reports:** {missing}",
+              f"- **Manual-recovery reports included in complete count:** {manual}",
+              "",
+              "Counts are based on the date-specific Markdown artifacts currently present on main. This confirms repository artifact state, not when an external scheduled task ran. Scheduler provenance remains NOT_VERIFIED unless independently confirmed from the scheduler's execution record.",
+              "",
+              "| Daily report date | Artifact state | Path |",
+              "|---|---|---|",
+              *rows,
+              "",
+              f"Watchdog run: https://github.com/{os.environ.get('GITHUB_REPOSITORY', '')}/actions/runs/{os.environ.get('GITHUB_RUN_ID', '')}",
+          ]
+          body_text = "\n".join(body)
+          Path(os.environ["GITHUB_STEP_SUMMARY"]).write_text(body_text + "\n", encoding="utf-8")
+          Path(os.environ["GITHUB_OUTPUT"]).write_text(
+              f"week_start={week_start.isoformat()}\n"
+              f"week_end={week_end.isoformat()}\n"
+              f"complete={complete}\n"
+              f"incomplete={incomplete}\n"
+              f"missing={missing}\n"
+              f"title={title}\n"
+              "body<<WEEKLY_BODY\n"
+              + body_text + "\nWEEKLY_BODY\n",
+              encoding="utf-8",
+          )
           PY
 
-      - name: Open or reuse a GitHub issue when artifact is missing/incomplete
-        if: steps.verify.outputs.state == 'MISSING' || steps.verify.outputs.state == 'INCOMPLETE'
+      - name: Open or reuse the weekly summary issue
         env:
           GH_TOKEN: ${{ github.token }}
-          RUN_DATE: ${{ steps.verify.outputs.run_date }}
-          REPORT: ${{ steps.verify.outputs.report }}
-          STATE: ${{ steps.verify.outputs.state }}
+          TITLE: ${{ steps.summary.outputs.title }}
+          BODY: ${{ steps.summary.outputs.body }}
         shell: bash
         run: |
-          TITLE="Claw daily report ${STATE}: ${RUN_DATE}"
-          EXISTING="$(gh issue list --state open --search "\"$TITLE\"" --json number --jq '.[0].number // empty')"
+          set -euo pipefail
+          EXISTING="$(gh issue list --state all --search "$TITLE" --json number,title --jq ".[] | select(.title == \"$TITLE\") | .number" | head -n 1)"
           if [ -n "$EXISTING" ]; then
-            echo "Existing watchdog issue #$EXISTING; no duplicate created."
+            echo "Weekly summary issue #$EXISTING already exists; no duplicate created."
             exit 0
           fi
-          gh issue create \
-            --title "$TITLE" \
-            --body "The independent Claw persistence watchdog found **${STATE}** for ${RUN_DATE} (Asia/Ho_Chi_Minh).\n\nExpected artifact: \`${REPORT}\`\n\nThis check classifies repository artifact presence/completeness only. It does not prove that the external 05:00 scheduled task executed; scheduler provenance remains **NOT_VERIFIED** unless independently verified from the scheduler's own execution record. Recover missing/incomplete output without overwriting human review.\n\nWatchdog run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          gh issue create --title "$TITLE" --body "$BODY"
+
+      - name: Close stale daily incidents after artifact recovery
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          REPORT_DIR="TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH"
+          RECOVERED="$(gh issue list --state open --search "Claw daily report" --limit 100 --json number,title | python scripts/claw_persistence.py recovered-issues --report-dir "$REPORT_DIR")"
+          if [ -z "$RECOVERED" ]; then
+            echo "No recovered Claw watchdog incidents to close."
+            exit 0
+          fi
+          while IFS= read -r ISSUE_NUMBER; do
+            [ -n "$ISSUE_NUMBER" ] || continue
+            gh issue close "$ISSUE_NUMBER" --reason completed --comment "Closed by the weekly persistence watchdog because the date-specific report now exists and passes the required content checks. This confirms artifact recovery only; external scheduler provenance remains NOT_VERIFIED."
+          done <<< "$RECOVERED"

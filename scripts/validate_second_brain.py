@@ -615,32 +615,44 @@ def validate_career_scheduled_provenance(errors: list[str]) -> None:
 
 
 def validate_claw_watchdog_contract(errors: list[str]) -> None:
-    path = ROOT / Path(".github/workflows/claw-persistence-watchdog.yml")
-    if not path.exists():
+    workflow_path = ROOT / Path(".github/workflows/claw-persistence-watchdog.yml")
+    helper_path = ROOT / Path("scripts/claw_persistence.py")
+    if not workflow_path.exists():
         fail("Claw persistence watchdog workflow missing", errors)
         return
-    text = read_text(path)
-    required = [
-        'name: Claw Daily Persistence Watchdog',
-        'cron: "0 1 * * *"',
-        'TZ=Asia/Ho_Chi_Minh date +%F',
-        'provenance_state=NOT_VERIFIED',
-        'does not prove that the external 05:00 scheduled task executed',
+    if not helper_path.exists():
+        fail("Claw persistence classifier module missing", errors)
+        return
+
+    workflow = read_text(workflow_path)
+    helper = read_text(helper_path)
+    required_workflow = [
+        'name: Claw Weekly Persistence Watchdog',
+        'cron: "0 1 * * 1"',
+        "previous week's daily Claw reports",
+        'classify_report_path',
+        'Complete daily reports on main',
+        'Scheduler provenance remains NOT_VERIFIED',
+        'python scripts/claw_persistence.py recovered-issues',
     ]
-    for phrase in required:
-        if phrase not in text:
-            fail(f"Claw watchdog contract missing '{phrase}'", errors)
+    for phrase in required_workflow:
+        if phrase not in workflow:
+            fail(f"Claw watchdog workflow missing contract marker '{phrase}'", errors)
+
     for state in ["MISSING", "INCOMPLETE", "PRESENT_UNVERIFIED", "MANUAL_RECOVERY"]:
-        if not re.search(rf'["\\\']{state}["\\\']', text) and f"artifact_state={state}" not in text:
-            fail(f"Claw watchdog contract missing artifact state '{state}'", errors)
+        if state not in helper:
+            fail(f"Claw persistence classifier missing artifact state '{state}'", errors)
+    for phrase in ['"provenance_state": "NOT_VERIFIED"', 'recovered_issue_numbers']:
+        if phrase not in helper:
+            fail(f"Claw persistence classifier missing contract marker '{phrase}'", errors)
+
     forbidden = [
         'provenance_state=SCHEDULED_EXECUTION_VERIFIED',
         'artifact_state=SCHEDULED_EXECUTION_VERIFIED',
     ]
     for phrase in forbidden:
-        if phrase in text:
+        if phrase in workflow or phrase in helper:
             fail(f"Claw watchdog must not claim external scheduler provenance: '{phrase}'", errors)
-
 
 def validate_career_weekly_report_contract(errors: list[str]) -> None:
     reports = ROOT / Path("TOPICS/B. CAREER/2. REPORTS")
@@ -744,6 +756,44 @@ def validate_scheduled_capability_contracts(errors: list[str]) -> None:
             if phrase not in text:
                 fail(f"Scheduled persistence contract missing '{phrase}': {rel}", errors)
 
+
+def validate_user_prompt_mutation_lifecycle(errors: list[str]) -> None:
+    """Keep user-side reinforcement prompts aligned with the mandatory repository contract."""
+    path = ROOT / "SYSTEM CORE" / "User_Prompts.md"
+    if not path.exists():
+        fail("User_Prompts.md missing for mutation lifecycle validation", errors)
+        return
+
+    text = read_text(path)
+    required_by_prompt = {
+        "SB-14": [
+            "mọi thay đổi nội dung repository",
+            "branch → pr",
+            "mức rủi ro quyết định độ sâu review",
+            "không ghi trực tiếp lên `main`",
+        ],
+        "SB-18": [
+            "mọi thay đổi nội dung repository",
+            "single-file low-risk",
+            "task branch và pr",
+            "không ghi trực tiếp lên `main`",
+            "không fallback direct-main",
+        ],
+    }
+    lines = text.splitlines()
+    for prompt_id, required_phrases in required_by_prompt.items():
+        matches = [line for line in lines if line.startswith(f"| **{prompt_id}** |")]
+        if len(matches) != 1:
+            fail(f"User_Prompts.md must contain exactly one {prompt_id} row", errors)
+            continue
+        row = matches[0].lower()
+        for phrase in required_phrases:
+            if phrase not in row:
+                fail(f"User_Prompts.md {prompt_id} conflicts with mandatory repository mutation lifecycle: missing '{phrase}'", errors)
+        if prompt_id == "SB-14" and "chỉ dùng branch/validation bổ sung khi" in row:
+            fail("User_Prompts.md SB-14 must not make branch/PR conditional on risk", errors)
+        if prompt_id == "SB-18" and "direct file update" in row:
+            fail("User_Prompts.md SB-18 must not permit direct-main updates for single-file changes", errors)
 
 def validate_prompt_duplicate_rules(errors: list[str]) -> None:
     prompt_files = [
@@ -965,6 +1015,7 @@ def main() -> int:
     validate_scheduled_capability_contracts(errors)
     validate_rnd_knowledge_sheet(errors)
     validate_prompt_duplicate_rules(errors)
+    validate_user_prompt_mutation_lifecycle(errors)
     validate_removed_topic(errors)
     validate_platform_layers(errors)
     validate_control_reference_consistency(errors)

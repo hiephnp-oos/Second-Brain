@@ -101,7 +101,7 @@ A scheduled Capability must document trigger, cadence, timezone/date semantics w
 
 Scheduled-output reliability is a contract, not a best-effort behavior: when a required durable artifact is missing, the execution is incomplete even if discovery, search, synthesis, or another upstream step succeeded. Capability contracts for scheduled outputs must therefore make persistence and final-state verification explicit enough for deterministic contract checks to protect against regression.
 
-For a high-value external scheduled Capability where a missed run materially breaks the workflow, use an independent fallback watchdog when practical. The watchdog must observe the durable output, not self-reported scheduler state; if the expected artifact is missing or incomplete after the primary run window, it may execute the same current repository-defined Capability as bounded recovery. It must never overwrite a complete artifact, alter baseline rules, or treat recovery as proof that the primary scheduler executed.
+For a high-value external scheduled Capability where a missed run materially breaks the workflow, use an independent watchdog when practical. The watchdog must observe the durable output, not self-reported scheduler state. Its behavior must be explicit: a monitoring-only watchdog classifies the artifact, opens/reuses an incident for missing or incomplete output, and reconciles the incident only after a complete date-matched artifact is persisted; it does not recover content. A recovery-capable watchdog must have a real, testable execution mechanism and bounded permissions before documentation may claim that it executes the Capability. Never overwrite a complete artifact, alter baseline rules, or treat recovery as proof that the primary scheduler executed.
 
 ## GitHub platform layers
 
@@ -509,3 +509,20 @@ Rules:
 - A scheduler must never report completion based only on a successful tool call or generated content.
 - R&D Claw must verify the date-specific daily record and all scheduled run slots; no batch state is used.
 - Career must verify the Monday weekly run record.
+
+
+### Scheduled execution failure recovery — mandatory
+
+A scheduled run that produces durable content but stops before PR/merge is an incomplete persistence lifecycle, not a research failure and not evidence that GitHub write access is universally unavailable.
+
+For scheduled GitHub output, execute these stages explicitly and report each actual state: `RESEARCHED → BRANCH_CREATED → FILE_WRITTEN → READ_BACK_VERIFIED → PR_OPENED → REQUIRED_CHECKS_PASS → MERGED → MAIN_READ_BACK_VERIFIED`. A stage is complete only when a fresh connector response or GitHub record confirms it. Never collapse branch/commit existence into PR creation, PR creation into validation, or validation into merge.
+
+If any GitHub mutation fails or is blocked:
+1. Record the exact action, returned error, branch/ref, and last confirmed state.
+2. Re-fetch repository/branch/PR state before retrying; reuse an existing branch or PR when safe and avoid duplicate commits/files.
+3. Retry the same authorized GitHub operation through the supported connector once when the failure may be transient. Do not attempt to evade safety controls or switch to an unapproved write path.
+4. If the operation remains blocked, preserve the complete generated artifact as a recoverable user-visible fallback when the runtime supports file output; otherwise return the complete Markdown inline. Clearly mark it `NOT_PERSISTED`, with the exact target path and last confirmed commit/branch. Never claim GitHub persistence.
+5. On the next manual run, resume from the last verified stage rather than rerunning research or regenerating content blindly. Confirm target-path absence/presence and compare existing content first.
+6. The fallback is not a second source of truth; after user-side or connector persistence succeeds, verify the single canonical artifact on `main` and report the fallback as superseded by GitHub.
+
+The scheduled executor should use the same explicit stage discipline as a successful manual run. Do not disable a schedule automatically after a persistence error. Keep the schedule enabled and report the failure unless the user explicitly requests pausing it or continuing would cause harmful/unbounded mutations.

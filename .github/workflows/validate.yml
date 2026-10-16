@@ -24,7 +24,31 @@ jobs:
           python-version: '3.x'
 
       - name: Validator self-tests
+        id: validator_self_tests
         run: python -m unittest discover -s scripts/tests -p 'test_*.py' -v
 
       - name: Validate repository contracts
+        id: repository_contracts
         run: python scripts/validate_second_brain.py
+
+      # Publish the required legacy commit-status context as well as the native Actions check.
+      # Some repository protection rules require the exact status context "validate".
+      - name: Publish required validate commit status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SELF_TESTS_OUTCOME: ${{ steps.validator_self_tests.outcome }}
+          CONTRACTS_OUTCOME: ${{ steps.repository_contracts.outcome }}
+          TARGET_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          if [ "$SELF_TESTS_OUTCOME" = "success" ] && [ "$CONTRACTS_OUTCOME" = "success" ]; then
+            STATE="success"
+            DESCRIPTION="Repository validation passed"
+          else
+            STATE="failure"
+            DESCRIPTION="Repository validation failed"
+          fi
+          gh api --method POST "repos/$GITHUB_REPOSITORY/statuses/$TARGET_SHA" \
+            -f state="$STATE" \
+            -f context="validate" \
+            -f description="$DESCRIPTION"

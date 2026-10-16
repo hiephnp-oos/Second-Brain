@@ -133,14 +133,51 @@ class ValidatorCriticalContracts(unittest.TestCase):
             finally:
                 module.ROOT = old
 
+    def test_user_prompt_mutation_lifecycle_rejects_contradictions(self):
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            core = root / "SYSTEM CORE"
+            core.mkdir()
+            (core / "User_Prompts.md").write_text(
+                "| **SB-14** | Với thay đổi rủi ro cao, chỉ dùng branch/validation bổ sung khi thực sự cần. | Thay đổi nhiều file |\n"
+                "| **SB-18** | Single-file low-risk change có thể dùng direct file update. | Mọi thay đổi |\n",
+                encoding="utf-8",
+            )
+            old = module.ROOT
+            try:
+                module.ROOT = root
+                errors = []
+                module.validate_user_prompt_mutation_lifecycle(errors)
+                self.assertTrue(any("SB-14" in error for error in errors), errors)
+                self.assertTrue(any("SB-18" in error for error in errors), errors)
+            finally:
+                module.ROOT = old
+
+    def test_user_prompt_mutation_lifecycle_accepts_aligned_prompts(self):
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            core = root / "SYSTEM CORE"
+            core.mkdir()
+            (core / "User_Prompts.md").write_text(
+                "| **SB-14** | Mọi thay đổi nội dung repository đi qua branch → PR. Mức rủi ro quyết định độ sâu review. Không ghi trực tiếp lên `main`. | x |\n"
+                "| **SB-18** | Mọi thay đổi nội dung repository, kể cả single-file low-risk, dùng task branch và PR; không ghi trực tiếp lên `main`; không fallback direct-main. | x |\n",
+                encoding="utf-8",
+            )
+            old = module.ROOT
+            try:
+                module.ROOT = root
+                errors = []
+                module.validate_user_prompt_mutation_lifecycle(errors)
+                self.assertEqual(errors, [])
+            finally:
+                module.ROOT = old
+
     def test_valid_full_repository_passes(self):
         import subprocess
         result = subprocess.run(["python", "scripts/validate_second_brain.py"], cwd=ROOT, text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("Second-Brain validation: PASS", result.stdout)
-    def test_validator_module_imports_cleanly(self):
-        module = load_validator()
-        self.assertTrue(hasattr(module, "main"))
-        self.assertTrue(callable(module.main))
 if __name__ == "__main__":
     unittest.main()
