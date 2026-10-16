@@ -627,13 +627,13 @@ def validate_claw_watchdog_contract(errors: list[str]) -> None:
     workflow = read_text(workflow_path)
     helper = read_text(helper_path)
     required_workflow = [
-        'name: Claw Daily Persistence Watchdog',
-        'cron: "0 1 * * *"',
-        'TZ=Asia/Ho_Chi_Minh date +%F',
-        'python scripts/claw_persistence.py classify',
+        'name: Claw Weekly Persistence Watchdog',
+        'cron: "0 1 * * 1"',
+        "previous week's daily Claw reports",
+        'classify_report_path',
+        'Complete daily reports on main',
+        'Scheduler provenance remains NOT_VERIFIED',
         'python scripts/claw_persistence.py recovered-issues',
-        'does not execute Claw research or recover missing content',
-        'does not prove that the external 05:00 scheduled task executed',
     ]
     for phrase in required_workflow:
         if phrase not in workflow:
