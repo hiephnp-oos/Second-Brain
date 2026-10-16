@@ -53,11 +53,69 @@ Validation basis:
 
 Known extraction artifacts remain in the Markdown, including malformed heading levels, OCR/formatting artifacts, and flattened tables/diagrams. These are not used as the repository's source of truth. Knowledge entries were distilled against the PDF with the Markdown used as a retrieval aid.
 
+## Part I knowledge coverage
+
+Part I is treated as **covered only when its durable reasoning content is represented in the knowledge layer**, not when every story detail is copied.
+
+### Chapter 1 — Ten Tales of Strategy
+
+| Source tale | Durable strategic content retained |
+|---|---|
+| 1. The Hot Hand | Actions trigger reactions; individual performance must be evaluated together with opponent adaptation and teammate effects. |
+| 2. To Lead or Not to Lead | First-mover advantage depends on the payoff structure; leaders may imitate followers, while followers can exploit revealed strategy. |
+| 3. Go Directly to Jail | Individual incentives can defeat jointly preferred outcomes; conflict and common interest can coexist. |
+| 4. Here I Stand | Intransigence can create bargaining power by removing counteroffers, but rigidity has long-run and failure costs. |
+| 5. Belling the Cat | Collective action fails when each person bears the cost of moving first; coordination and enforcement solve the first-mover problem. |
+| 6. The Thin End of the Wedge | Case-by-case decisions can accumulate into an undesirable aggregate outcome; evaluate the full sequence. |
+| 7. Look Before You Leap | Entering a relationship, technology or commitment can create switching costs and weaken future bargaining power; negotiate before lock-in. |
+| 8. Mix Your Plays | Predictable behavior can be exploited; appropriate mixing/randomization prevents systematic counterstrategy. |
+| 9. Never Give a Sucker an Even Bet | A counterparty's willingness to trade can reveal private information; observed actions are strategic evidence. |
+| 10. Game Theory Can Be Dangerous to Your Health | Bargaining outcomes depend on timing, alternatives and human irrationality; do not assume purely mechanical rationality. |
+| 11. The Shape of Things to Come | Synthesizes reaction, intransigence, coordination, cumulative decisions, leader/follower dynamics and unpredictability into a transition toward systematic strategic analysis. |\n| Case Study #1: Red I Win, Black You Lose | The later move can dominate when it observes the first move; copying a forced bet can guarantee the lead, showing why second-mover position can be strategically stronger. |
+
+### Chapter 2 — Anticipating Your Rival's Response
+
+The knowledge layer now explicitly retains:
+- distinguish sequential from simultaneous interaction;
+- forecast the rival's strategically determined response rather than treating it as weather-like uncertainty;
+- **look ahead and reason backward**;
+- solve later decisions first and propagate their consequences backward;
+- compare alternative current actions through their eventual endpoints;
+- recognize that move order can make a second mover stronger;
+- use case-specific strategic judgment rather than universal recipes.
+
+### Chapter 3 — Seeing through Your Rival's Strategy
+
+The knowledge layer now explicitly retains:
+- simultaneous moves require reasoning about mutually dependent choices;
+- distinguish **seeing through** a strategy from simply putting yourself in the opponent's shoes;
+- recognize recursive reasoning of the form “I think that he thinks that I think...”;
+- use dominant strategies where one action is best regardless of the opponent's action;
+- use best responses and equilibrium to solve mutual expectations;
+- distinguish equilibrium/stability from desirability;
+- recognize that some games require mixed strategies because deterministic play is exploitable.
+
+### Epilogue to Part I — durable synthesis
+
+The Part I synthesis retained in the knowledge layer is:
+1. Every strategic action can induce a reaction.
+2. Strategy is not decision-making in a vacuum.
+3. Move order matters and first move is not inherently superior.
+4. Commitment/inflexibility can create leverage but also create risk.
+5. Coordination problems require solving the cost of acting first.
+6. Local decisions must be evaluated for aggregate path effects.
+7. Lock-in should be anticipated before commitment.
+8. Unpredictability can protect against exploitation.
+9. Other players' actions reveal information.
+10. Sequential games require backward reasoning; simultaneous games require mutual-best-response reasoning.
+
 ## Acceptance decision
 
-Status: STRUCTURALLY ACCEPTED FOR KNOWLEDGE EXTRACTION
+Status: **PART I COVERED FOR KNOWLEDGE EXTRACTION**
 
-This acceptance means the pair is sufficiently traceable for controlled knowledge distillation. It does not mean the raw Markdown extraction is a clean canonical transcription.
+This means the durable strategic reasoning of Chapters 1–3 and the Part I synthesis is represented in `concepts.md`, `mental-models.md`, `applications.md`, and `lessons.md`, with this file providing the source-to-knowledge coverage map.
+
+It does not mean every example, historical detail, citation, case-study fact, diagram or wording from Part I is reproduced.
 
 ## Distillation boundary
 
@@ -85,3 +143,183 @@ Supporting lens: Decision Frameworks
 ## Coverage note
 
 The knowledge layer intentionally compresses the source into reusable reasoning structures. It is not intended to preserve every example, historical detail, citation, or case-study fact from the book.
+
+## Part II knowledge coverage
+
+Part II is treated as covered when its durable mechanisms—not every historical example or case-study detail—are represented in the knowledge layer.
+
+### Chapter 4 — Resolving the Prisoners' Dilemma
+
+| Source section | Durable strategic content retained |
+|---|---|
+| How to Achieve Cooperation | Cooperation requires changing the incentive to cheat; detection and punishment are central. |
+| Detection of Cheating | Enforcement depends on observability and attribution; imperfect signals create false positives and can shift competition toward less observable dimensions. |
+| Punishment of Cheaters | Punishment can be external or arise from loss of future cooperation in repeated interaction. |
+| The Punishment Is Guaranteed | Rules that appear pro-competitive can mechanically punish deviations and thereby stabilize collusion. |
+| A Choice of Punishment | Effective punishment should be simple, clear, credible/certain, sufficiently strong and designed to limit the cost of mistakes. |
+| TIT-FOR-TAT | Conditional cooperation: cooperate first, reciprocate defection, and retain a route back to cooperation. |
+| An Alternative to TIT-FOR-TAT | Cooperation can be sustained through alternative reciprocal/enforcement structures; the mechanism matters more than the label. |
+| Case Study #4 | Congress–Federal Reserve is a prisoners' dilemma: each institution has a dominant strategy that produces an outcome both would prefer to avoid; lack of credible promises blocks the jointly preferred outcome, while institutional independence changes the commitment structure. |
+
+Additional Part II mechanisms retained: known finite horizons can unravel cooperation by backward induction; uncertain or indefinite continuation preserves the value of future cooperation; discounting and the relative timing of gains/losses affect sustainability.
+
+### Chapter 5 — Strategic Moves
+
+| Source section | Durable strategic content retained |
+|---|---|
+| Unconditional Moves | Moving first and fixing an action can change the opponent's response; strategic advantage depends on credibility. |
+| Threats and Promises | A threat punishes a specified response; a promise rewards one. Both are precommitted response rules. |
+| Warnings and Assurances | These primarily communicate information about an unchanged response rather than strategically changing incentives. |
+| Nuclear Deterrence | Threats work by changing the opponent's expected payoff before action; observability is necessary. |
+| Strategies of the Times | A strategic move can alter the response structure of a sequential interaction and exploit commitment to a response rule. |
+| More Strategic Moves | Strategic structure can deliberately give the other side initiative, wait for a threat, or use intermediate moves. |
+| A Sledgehammer to Crack a Nut? | Strategic moves can solve one problem while creating another; proportionality and side effects matter. |
+| Case Study #5 | Airbus entry shows that a protectionist commitment can make entry viable; the U.S. can respond with its own commitment to protection, illustrating strategic commitment, retaliation and the value of moving before the rival enters. |
+
+### Chapter 6 — Credible Commitments
+
+The source presents an eightfold path to credibility. The eight named devices are:
+1. establish and use a reputation;
+2. write contracts;
+3. cut off communication;
+4. burn bridges behind you;
+5. leave the outcome to chance / beyond your control;
+6. move in small steps;
+7. develop credibility through teamwork;
+8. employ mandated negotiating agents.
+
+The source also gives three underlying principles: change the payoffs so following through is in your interest; limit the ability to back out by changing the game; and use others to help maintain commitment. Observability matters: a commitment that cannot be observed or inferred cannot shape expectations. The source also warns that excessively large threats can be incredible, costly, counterproductive and reputation-damaging; the objective is the smallest appropriate threat that does the job.
+
+### Chapter 7 — Unpredictability
+
+| Source section | Durable strategic content retained |
+|---|---|
+| How to Even the Odds | Some simultaneous games have no useful pure-strategy solution; equilibrium may require mixing. |
+| Anyone for Tennis? | The correct mix depends on relative payoffs/skills, not necessarily equal probabilities. |
+| Why You Should Choose the Right Mix | Use the equilibrium mixture so the opponent cannot gain by exploiting a systematic deviation. |
+| Why Not Rely on the Other Player's Randomization? | Both sides need their own best mix; otherwise the opponent has an incentive to change. |
+| How Your Best Mix Changes as Your Skills Change | Changing skills/payoffs changes the equilibrium mixture and expected performance. |
+| How to Act Randomly | Correct proportions are insufficient if the sequence is predictable; individual actions must remain unpredictable. |
+| Unique Situations | Not every decision benefits from randomization; distinguish repeated strategic games from genuinely one-off situations. |
+| Bodyguard of Lies | Strategic deception can exploit an opponent's inference process; it is distinct from merely mixing actions. |
+| Surprise | Unpredictability can create tactical surprise when the opponent benefits from correctly anticipating your action. |
+| Catch as Catch Can | Strategic uncertainty must be analyzed through the actual information and response structure. |
+| Case Study #7 | Operation Overlord illustrates a zero-sum location game with no useful pure-strategy equilibrium; the source calculates mixed strategies from the payoff table and compares them with the historical Normandy/Calais outcome. |
+
+### Part II synthesis
+
+1. Cooperation requires an enforcement mechanism, not just an agreement.
+2. Detection, attribution and punishment are distinct design problems.
+3. Repetition creates a future value that can support cooperation.
+4. A known endpoint can unravel cooperation through backward induction.
+5. Strategic moves shape the opponent's response before it occurs.
+6. Threats/promises differ from warnings/assurances because they alter response rules.
+7. Credibility requires solving the future reversal problem.
+8. Commitment can be created by changing payoffs, restricting options, delegation, contracts, reputation or control.
+9. Unpredictability must be calibrated to the payoff structure and must be unpredictable at the action level.
+10. Randomization and brinkmanship are different strategic mechanisms.
+
+## Part II acceptance decision
+
+Status: **PART II COVERED FOR KNOWLEDGE EXTRACTION**
+
+The durable reasoning of Chapters 4–7 is represented in concepts.md, mental-models.md, applications.md, and lessons.md, with this source file providing the coverage map. The repository intentionally does not reproduce the full source, all examples, historical details, tables, diagrams or case-study narratives.
+
+
+## Part III knowledge coverage
+
+Part III is treated as covered when the durable strategic mechanisms of Chapters 8–13 are represented in the knowledge layer. The goal is not to reproduce the book's examples or 23 case-study narratives.
+
+### Chapter 8 — Brinkmanship
+
+| Source section | Durable strategic content retained |
+|---|---|
+| Why Uncertainty? | A drastic certain threat can be incredible; controlled uncertainty can make deterrence more believable. |
+| The Mechanism of Risk | Brinkmanship uses a slippery, partly uncontrolled risk rather than a privately controlled random draw; the opponent must believe the risk can escalate. |
+| The Control of Risk | Effective brinkmanship requires enough control over the risk to keep it within an effective range. |
+| Getting Off the Brink | Compliance must give the threatened side a credible route to reduce the risk, ideally to zero. |
+| Falling Off the Brink | The mechanism can fail catastrophically; deterrence benefit must be weighed against escalation risk. |
+| Nuclear Brinkmanship | Nuclear deterrence illustrates the trade-off between deterrence value and accepting some risk of mutual destruction; incremental aggression can test the credibility of a response threshold. |
+| Case Study #8 | The Atlantic case demonstrates that increasing escalation risk can alter incentives but does not automatically improve outcomes; evaluate the resulting probabilities, not the policy label. |
+
+### Chapter 9 — Cooperation and Coordination
+
+| Source section | Durable strategic content retained |
+|---|---|
+| For Whom the Bell Curve Tolls | Relative-performance competition can waste resources when individuals improve effort only to preserve rank. |
+| The Route Less Traveled | Congestion creates a gap between individual route choice and the socially efficient allocation. |
+| Catch-22? | Positive feedback and path dependence can lock in an inferior technology or convention. |
+| Faster Than a Speeding Ticket | Multiple equilibria can persist when people reinforce one another's behavior; enforcement or social convention can select among them. |
+| Why Did They Leave? | Locally tolerant preferences can still produce segregated equilibria through self-reinforcing responses. |
+| It Can Be Lonely at the Top | Individual improvement of a threshold can create collective outcomes that differ from the group's initial intention. |
+| Politicians and Apple Cider | Sequential competition can pull political positions toward the median. |
+| The Stock Market and Beauty Contests | Higher-order expectations can dominate intrinsic valuation when players predict what others will predict. |
+| Recapitulation | Coordination failures include overcompetition, wrong proportions, multiple equilibria, path dependence, excessive homogeneity and unstable outcomes. |
+| Case Study #9 | Dentist allocation applies congestion/externality reasoning to the location of professionals and asks whether decentralized choices produce the socially desirable allocation. |
+
+### Chapter 10 — The Strategy of Voting
+
+| Source section | Durable strategic content retained |
+|---|---|
+| The Tie of Power | A rarely used tie-breaking vote can still matter when it changes pivotal outcomes. |
+| The Median Voter | In one-dimensional majority competition, the median position can become the strategic center of competition. |
+| Naive Voting | Majority rule can cycle, so there may be no stable social choice without an agenda. |
+| Order in the Court | Changing the order of decisions can change the outcome even when the alternatives and preferences are unchanged. |
+| The Sophisticates | Strategic voters can reason backward through a sequential agenda, yet collective foresight can produce surprising outcomes. |
+| All-Time Greats | Ballot constraints can make voters care about electability rather than only merit; alternative voting rules change incentives. |
+| “Love a Loath’d Enemy” | A first mover can strategically distort apparent preferences to influence the later allocation. |
+| Case Study #10 | The line-item-veto case asks whether changing the voting/approval procedure can improve collective choice by separating acceptable bundles from individually unattractive items. |
+
+### Chapter 11 — Bargaining
+
+| Source section | Durable strategic content retained |
+|---|---|
+| The Handicap System in Negotiations | Each side's cost of waiting and outside opportunity affect its bargaining share. |
+| “This Will Hurt You More Than It Hurts Me” | Relative outside options matter; a threat that harms both sides can improve one's position if it damages the rival more. |
+| Brinkmanship and Strikes | Bargaining can fail before the deadline because of misperception, impatience, mistrust and uncertainty; waiting itself has strategic cost. |
+| Simultaneous Bargaining over Many Issues | Different relative valuations create gains from package trades across issues. |
+| Case Study #11 | Changing who can make offers changes the bargaining outcome and illustrates the strategic importance of procedure and backward induction. |
+| Appendix: Patience Is Its Own Reward | In ongoing bargaining, impatience/discounting affects the division; the more patient side has greater leverage. |
+
+### Chapter 12 — Incentives
+
+| Source section | Durable strategic content retained |
+|---|---|
+| How to Reward Work Effort | When effort is hidden, incentives must rely on observable outcomes/signals; outcome risk creates a trade-off between motivation and risk-bearing. |
+| How to Organize a Joint Venture | Sunk investments create hold-up incentives; initial enforceable agreements can prevent later exploitation. |
+| The Strategy of Auctions | Auction rules shape strategic bidding; the optimal bid depends on costs, information and the mechanism rather than simple truthful reporting. |
+| Case Study #12 | Vickrey-style payment uncertainty introduces risk into bidding; mechanism design must consider how risk changes participation and bids. |
+
+### Chapter 13 — Case Studies
+
+Chapter 13 contains 23 cases that apply the preceding mechanisms rather than introducing a separate new theory. Coverage is therefore assessed by mechanism family:
+
+| Case family represented in the 23 cases | Durable mechanism retained |
+|---|---|
+| Information and valuation | Other players' choices reveal information; winning can signal over-optimism in common-value settings. |
+| Timing and sequencing | Last-mover/first-mover effects and backward reasoning change outcomes. |
+| Unpredictability and strategic response | Multi-player and sequential conflict can require mixed or contingent strategies. |
+| Commitment and deterrence | Credibility can be created through sunk costs, teamwork, rules, or constrained future options. |
+| Repeated cooperation / collective action | Cartel, public-goods and multi-person dilemmas require incentive-compatible enforcement. |
+| Externalities and coordination | Commons, congestion and group incentives can make individually rational choices collectively inefficient. |
+| Bargaining and patience | Relative outside options, delay costs, procedure and discounting determine division and timing. |
+| Incentive and mechanism design | Rules should change private incentives rather than rely on voluntary compliance. |
+
+Representative cases include the Alcoa capacity commitment, parental punishment credibility, gun-control commitment, public-goods fundraising, tragedy-of-the-commons, and strategic market-entry/deterrence problems. These are retained as mechanism illustrations rather than copied as narratives.
+
+### Part III synthesis
+
+1. Brinkmanship converts uncertainty about escalation into strategic leverage, but requires recognizable risk and an escape path.
+2. Coordination problems often arise from externalities, congestion, multiple equilibria, path dependence and higher-order expectations.
+3. Voting and bargaining procedures are strategic variables, not neutral containers for preferences.
+4. Bargaining power depends on relative outside options, patience, delay costs and control of procedure.
+5. Incentive design must account for observability, risk allocation, hold-up and the strategic response induced by the mechanism.
+6. Chapter 13 is an application layer over the mechanisms above; its 23 cases do not require 23 new permanent mental models.
+
+## Part III acceptance decision
+
+Status: **PART III COVERED FOR KNOWLEDGE EXTRACTION**
+
+The durable reasoning of Chapters 8–13 is represented in `concepts.md`, `mental-models.md`, `applications.md`, and `lessons.md`, with this source file providing the chapter/section/case-family coverage map.
+
+This acceptance does not mean every example, numerical table, historical detail, case narrative or citation is reproduced. It means the reusable strategic mechanisms needed for retrieval and application are represented.

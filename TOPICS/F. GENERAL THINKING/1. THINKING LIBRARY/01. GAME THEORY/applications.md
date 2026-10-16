@@ -163,25 +163,258 @@ Use controlled uncertainty as part of a commitment when complete control over th
 ### 31. Mutual deterrence and surprise attack
 Model how each side's fear of being attacked first can create pressure for preemption, even when both sides would prefer a stable outcome.
 
-## GT-05 incremental applications from *The Evolution of Cooperation*
+### 32. Bargaining through self-commitment
+Identify which side can credibly restrict its own future choices and whether that restriction changes the opponent's expectations or willingness to concede.
 
-### 32. Iterated Prisoner's Dilemma
-Model the history of interaction, not only the current round. A current cooperative move can be valuable because it affects future responses.
+### 33. Negotiation-structure audit
+Before comparing offers, map move order, alternatives, decision rights, commitment opportunities, information channels, and institutional constraints.
 
-### 33. TIT FOR TAT as reciprocal response
-Start cooperatively and then respond to the other's previous move. The source uses this as a simple baseline for studying how reciprocity can emerge and persist.
+### 34. Threat/promise credibility audit
+For every threat or promise, identify the conditional response, then test whether the actor would actually prefer to carry it out after the triggering event.
 
-### 34. Shadow-of-the-future test
-Before expecting cooperation, assess whether the same parties are likely to interact again and whether future consequences are large enough to matter.
+### 35. Limited-conflict bargaining
+Treat a limited action not only as an attempt to gain a material advantage but also as a possible signal of resolve, a test, or a bargaining move.
 
-### 35. Strategy selection versus strategy stability
-Use tournament/ecological analysis to ask which strategies perform well in a mixed environment, then use collective-stability analysis to ask which strategies resist invasion after establishment.
+### 36. Tacit coordination without communication
+Identify candidate focal outcomes and test whether each side has reason to recognize the same outcome without an explicit message.
 
-### 36. Clustered cooperation
-When interactions are local, cooperative strategies can benefit from repeated interaction with nearby reciprocators. Evaluate the network structure before assuming that population-wide averages describe local dynamics.
+### 37. Tacit bargaining under divergent interests
+Separate the parties' conflicting preferences from their common need to coordinate. Test whether a focal arrangement is mutually preferable to failed coordination.
 
-### 37. Reciprocity under imperfect observation
-Introduce the possibility of mistaken observations and test whether a reciprocal rule remains cooperative rather than escalating into repeated retaliation.
+### 38. Prior-arrangement design
+Move important commitments or coordination rules earlier in time when doing so can reduce later uncertainty or strategic pressure.
 
-### 38. Reputation and repeated relationships
-When actors recognize prior partners and remember previous behavior, reputation can become an enforcement mechanism even without centralized authority.
+### 39. Communication-control audit
+Map who can send, receive, block, delay, or destroy information and how those rights change bargaining leverage or coordination.
+
+### 40. Conflict–coordination classification
+Classify whether the situation is pure conflict, pure coordination, or mixed motive. Identify where interests align and where they diverge.
+
+### 41. Mutual-expectation mapping
+For a coordination problem, map what each side expects the other to choose and whether those expectations reinforce one another.
+
+### 42. Focal-cue audit
+List salient features—symmetry, conventions, labels, physical landmarks, prior patterns, or shared context—and test whether they provide a common basis for selecting one outcome.
+
+### 43. Strategic-move audit
+For a proposed threat, promise, commitment, delegation, or communication change, identify exactly which part of the opponent's decision problem is being changed.
+
+### 44. Enforcement audit
+Check whether a conditional response can actually be implemented, whether it remains credible after the trigger, and what mechanism supports it.
+
+### 45. Initiative-transfer audit
+Test whether giving the other side the next move can improve the outcome by shifting responsibility or making your own position more credible.
+
+### 46. Delegation/mediation design
+Compare the game with and without the added decision-maker or mediator. Identify changes in incentives, information, communication, and credible responses.
+
+### 47. Communication-channel resilience
+Map the channels required for coordination or bargaining and identify how blocking, destroying, delaying, or selectively controlling them changes the game.
+
+### 48. Strategic-move formalization
+Translate an informal strategic move into an explicit action, information change, timing rule, or payoff consequence before evaluating it.
+
+### 49. Perception-versus-incentive test
+Separate behavior predicted directly by the formal game from behavior that depends on labels, framing, norms, or shared interpretation; use experimental evidence where the latter is decisive.
+
+
+## GT-04 Part III — Incremental applications
+
+### 50. Threat calibration under failure risk
+For a threat that may fail, compare certainty, severity, and probability. Identify the minimum probabilistic force that changes the opponent's choice while keeping failure exposure acceptable.
+
+### 51. Inadvertent-fulfillment audit
+For any threat or automated commitment, identify whether the consequence can occur before compliance, after compliance, or through an accidental trigger. Add those pathways to the risk assessment.
+
+### 52. Randomized-commitment audit
+Verify that the probability is fixed before the opponent responds and that the actor cannot cheaply override the random mechanism after observing the opponent's choice.
+
+### 53. External-risk-source mapping
+Map which part of the threatened outcome is controlled by the actor and which part depends on chance, third parties, delegated authority, technical systems, or institutional processes.
+
+### 54. Escalation-risk audit for limited actions
+For a limited conflict or coercive action, map the intended endpoint, possible escalation paths, probability drivers, and consequences if the interaction leaves the intended scope.
+
+### 55. Resolve-through-risk test
+When a threat seems non-credible because the certain consequence is too extreme, test whether a smaller but credible probability of that consequence changes the opponent's expected payoff.
+
+### 56. Brinkmanship applicability test
+Use brinkmanship analysis only when both parties recognize a mutually undesirable risk, the risk can increase through observable steps, and the opponent can reduce it by changing behavior.
+
+### 57. Slippery-slope mapping
+Map each escalation step, the new risk introduced by that step, the actor's control over the next step, and the point at which either side is likely to pull back.
+
+### 58. Decision-system fragility audit
+Identify multiple decision-makers, delegated authority, communication delays, false alarms, procedural ambiguity, and other imperfections that can alter the probability of unintended escalation.
+
+### 59. Risk-boundary decision rule
+Before using a risk-based strategic move, compare the opponent's tolerance for the risk with your own. Do not assume the other side will retreat first.
+
+
+## GT-04 Part IV — Incremental applications
+
+### 60. Reciprocal-fear feedback audit
+Map each side's fear estimate, defensive response, observed signal, revised estimate, and next action.
+
+### 61. Endogenous-probability model
+When attack probability depends on behavior, represent it as a function of strategic responses rather than a fixed assumption.
+
+### 62. Sequential-preemption audit
+Compare simultaneous movement with a structure in which one side can move first and the other responds.
+
+### 63. Assumption-sensitivity audit
+Change warning quality, timing, information, or response rules and check whether the strategic conclusion changes.
+
+### 64. Warning-system error audit
+List false positives, false negatives, detection delays, and ambiguous signals and assess their strategic effects.
+
+### 65. Dynamic-adjustment model
+Track how observed risk, system parameters, or beliefs change behavior over repeated decision points.
+
+### 66. Tacit-game mapping
+Identify stable reciprocal behavior that does not depend on explicit agreement and determine which expectations sustain it.
+
+### 67. Catastrophe-avoidance bargaining
+Identify whether adversaries have a shared interest in avoiding the worst outcome and whether that common interest supports bargaining.
+
+### 68. Multi-player extension
+Add third-party actions, information, alliances, and incentives before generalizing a bilateral model.
+
+### 69. Disarmament game audit
+Compare weapon reduction with changes in vulnerability, warning, verification, retaliation capability, and incentives for preemption.
+
+### 70. Misapprehension/escalation audit
+For each ambiguous event, map intended action, observed signal, interpreted meaning, response, and escalation feedback.
+
+### 71. Limited-war ambiguity audit
+Identify actions that can be misread during limited conflict and what response each interpretation triggers.
+
+### 72. Reciprocal-misapprehension loop
+Test whether A can rationally interpret B's defense as offense while B makes the same inference about A.
+
+### 73. Surveillance/overbuilding audit
+Evaluate whether additional monitoring or defensive capacity reduces uncertainty more than it increases perceived threat or instability.
+\n\n## GT-05 Part I — Incremental applications\n\n### 74. Cooperation-problem diagnosis\nMap whether individually attractive actions produce a collectively worse outcome, then identify the incentive conflict before proposing a cooperation mechanism.\n\n### 75. Prisoner's Dilemma structure test\nCheck the payoff ordering and whether unilateral defection dominates cooperation. Use the result to distinguish a genuine cooperation dilemma from a generic conflict.\n\n### 76. Future-interaction audit\nEstimate the probability, duration, and value of future interaction and determine how strongly they should affect current behavior.\n\n### 77. Reciprocity viability test\nBefore relying on reciprocal behavior, verify that participants can recognize each other's actions, expect meaningful future interaction, and have enough continuity for responses to matter.\n\n### 78. Motive-versus-mechanism audit\nSeparate explanations based on altruism, friendship, or authority from explanations based on repeated interaction and reciprocal incentives.\n
+
+## GT-05 Part II — Incremental applications
+
+### 79. Strategy-environment audit
+Evaluate a strategy against the actual or hypothesized distribution of counterpart strategies instead of using an environment-free ranking.
+
+### 80. Interaction-history design audit
+Identify what history a repeated-interaction strategy observes and how that history changes the next action.
+
+### 81. Reciprocal-strategy test
+Test whether a simple cooperate-first/match-last behavior can sustain cooperation while responding to exploitation.
+
+### 82. Robustness stress test
+Repeat a strategic comparison across substantially different opponent populations and check whether the ranking survives.
+
+### 83. Selection-dynamics audit
+Model how success changes strategy frequencies and then re-evaluate strategy performance under the new population mix.
+
+### 84. Invasion-resistance test
+Introduce a small alternative strategy into an incumbent population and compare its payoff with the incumbent's resident payoff.
+
+### 85. Emergence-versus-stability audit
+Analyze separately whether cooperation can obtain an initial foothold and whether it can resist later invasion.
+
+### 86. Cluster-threshold test
+Check whether a minimum level of local interaction among cooperators is sufficient to overcome exploitation by defectors.
+
+### 87. Reciprocity design audit
+Test whether a strategy is simultaneously cooperative enough to attract cooperation and responsive enough to deter persistent exploitation.
+
+
+## GT-05 Part III — Incremental applications
+
+### 88. Local-versus-system incentive audit
+Compare the incentives of directly interacting actors with the incentives of the wider organization to detect cooperation that the system-level objective would not predict.
+
+### 89. Hidden-repetition test
+Identify persistent counterparties, locations, or routines that convert an apparently one-shot conflict into repeated interaction.
+
+### 90. Cooperation-start mechanism audit
+List the observable cues or environmental events that could initiate reciprocal restraint without requiring a formal agreement.
+
+### 91. Recognition feasibility test
+Check whether participants can identify counterpart actions accurately enough for conditional reciprocity to work.
+
+### 92. Structural-recognition substitute test
+Where individual recognition is weak, test whether fixed locations, stable pairings, or territorial boundaries provide equivalent continuity.
+
+### 93. Future-value threshold audit
+Estimate whether the expected value of future interaction remains above the threshold needed for reciprocal cooperation.
+
+### 94. Biological reciprocity mapping
+Map organisms, symbionts, or competing biological agents into repeated-game roles and identify the conditions supporting mutualism versus exploitation.
+
+### 95. Cooperation-without-foresight test
+Check whether the observed cooperative pattern can be explained by selection and repeated interaction without assuming conscious planning or altruistic intent.
+
+
+## GT-05 Part IV — Incremental applications
+
+### 96. Relative-payoff audit
+Check whether perceived unfairness comes from absolute losses or from the partner earning more; use the distinction to diagnose unnecessary competitive behavior.
+
+### 97. First-move risk audit
+Compare the expected long-run consequences of cooperating first versus defecting first in a repeated relationship.
+
+### 98. Reciprocity rule audit
+Test whether a cooperation mechanism both rewards cooperation and reliably responds to defection.
+
+### 99. Strategy-complexity audit
+Assess whether participants can understand, execute, and predict a proposed strategy well enough for it to function in repeated interaction.
+
+### 100. Future-shadow intervention
+Identify practical ways to increase relationship duration, encounter frequency, or continuity when cooperation is strategically valuable.
+
+### 101. Interaction-decomposition design
+Convert a large transaction or commitment into smaller sequential stages where performance can be observed and reciprocal response remains possible.
+
+### 102. Incentive-redesign audit
+Identify whether laws, contracts, rewards, penalties, or institutional rules can change the payoff structure enough to make cooperation sustainable.
+
+### 103. Preference-design audit
+Assess whether education, norms, or socialization can increase concern for others' welfare and thereby support cooperative behavior.
+
+### 104. Reciprocity-diffusion intervention
+Test whether teaching or spreading effective reciprocal strategies improves both individual outcomes and the surrounding strategic population.
+
+### 105. Recognition-system audit
+Check whether participants can reliably identify counterparties, retain relevant history, and distinguish repeated partners from strangers.
+
+
+
+## GT-05 Part V — Incremental applications
+
+### 106. Interaction-network audit
+Map repeated counterpart relationships, clustering, and local interaction density before deciding whether a cooperation mechanism is viable.
+
+### 107. Label-risk audit
+Identify observable categories that may be used as strategic shortcuts and test whether they create cooperation, discrimination, or self-confirming stereotypes.
+
+### 108. Reputation-impact assessment
+For a consequential action, evaluate both the immediate payoff and the effect on how future counterparties will predict your behavior.
+
+### 109. Regulation-loop design
+Model a regulator and regulated party as a repeated interaction and calibrate standards, enforcement, and compliance incentives together.
+
+### 110. Territorial-cooperation design
+When interactions are geographically or structurally local, test whether reciprocal clusters can support cooperation that would not survive random matching.
+
+### 111. Stability-versus-emergence check
+Do not treat evolutionary stability as evidence that a strategy will arise naturally; analyze establishment, mutation, imitation, or learning separately.
+
+### 112. Strategy-population audit
+Track how successful strategies change the composition of the population and reassess performance against the new environment.
+
+### 113. Provocability calibration
+Set detection and response timing so that exploitation is discouraged before it becomes entrenched while avoiding unnecessary escalation.
+
+### 114. Limited-retaliation design
+Define a bounded response to violations so that deterrence is credible without creating an uncontrolled escalation loop.
+
+### 115. Foresight-based cooperation intervention
+Where trial-and-error would be too slow or costly, use known reciprocity conditions to redesign relationships, incentives, and response rules proactively.
