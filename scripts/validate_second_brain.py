@@ -743,7 +743,7 @@ def validate_scheduled_capability_contracts(errors: list[str]) -> None:
         ),
         (
             Path("TOPICS/E. RnD INNOVATION/1. CAPABILITIES/1.1 CLAW_DISCOVERY/README.md"),
-            ["report-only completion", "returns the complete date-specific markdown report", "does not write to github", "user manually batches reports"],
+            ["report-only completion", "returning the complete date-specific markdown report", "does not write to github", "user manually batches reports"],
         ),
     ]
     for rel, phrases in persistence_contracts:
