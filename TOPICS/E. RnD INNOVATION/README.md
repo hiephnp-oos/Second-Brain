@@ -74,8 +74,8 @@ CLAW_DISCOVERY is a reusable capability. Its scheduled execution currently belon
 Execution outputs are owned by:
 TOPICS/E. RnD INNOVATION/2. WORKSTREAMS/2.1 PERSONAL_RESEARCH/
 
-- One date-specific daily Markdown discovery record is persisted directly under PERSONAL_RESEARCH/ on `main` and reviewed by the user.
-- One scheduled execution runs per local date at 05:00 Asia/Ho_Chi_Minh and writes `RUN_SLOT 01` to that daily record.
+- The schedule returns one date-specific Markdown discovery report for user review; it does not write to GitHub. The user may later batch multiple reports into a manual PR.
+- One scheduled execution runs per local date at 05:00 Asia/Ho_Chi_Minh and returns `RUN_SLOT 01` in the Markdown report.
 - No staging or batch workflow is used. Existing staging/ and batches/ folders are legacy historical records only; do not write new outputs there.
 
 Daily records are workstream outputs, not capability definition artifacts or authoritative Knowledge Sheet records.
