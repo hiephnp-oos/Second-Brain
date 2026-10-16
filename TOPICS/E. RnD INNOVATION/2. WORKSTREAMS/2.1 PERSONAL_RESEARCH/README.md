@@ -38,7 +38,7 @@ Use `Prompt.csv` for Personal Research tasks. The prompt is the input; a separat
 - Every Monday at 08:00 Asia/Ho_Chi_Minh, the GitHub Actions watchdog summarizes the previous Monday-Sunday period.
 - It counts date-specific daily reports actually present on `main`: complete, incomplete, and missing out of 7; manual-recovery reports are identified separately. A complete report returned without successful persistence is not a repository artifact and counts as missing.
 - The weekly summary is recorded in a GitHub Issue and the Actions run summary. It checks repository artifacts only; it does not run Claw research or prove external scheduler execution.
-- The external schedule is responsible for research and daily artifact persistence. The watchdog does not execute research or recover missing content.
+- The external schedule is responsible only for research and returning Markdown reports. The user manually persists selected/batched reports through a separate PR. The watchdog does not execute research or recover missing content.
 
 The execution date is the calendar date of the current scheduled invocation in Asia/Ho_Chi_Minh, resolved from the active invocation/runtime date-time context. The scheduler is not required to expose a separate execution-timestamp field. If only the current date is available, use that local date; clock time is not needed for the filename. Never derive the date from a prior last-run timestamp, previous report, UTC date, or assumed date. If no usable current invocation date is available, report `RUN_DATE_UNAVAILABLE` and do not create or persist a date-specific artifact.
 
