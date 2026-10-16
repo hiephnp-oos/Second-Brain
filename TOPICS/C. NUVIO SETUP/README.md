@@ -50,7 +50,7 @@ Known areas of interest include stream filtering, display/format decisions, HDR/
 
 ## AIOStreams Configuration Backups
 
-The intended new artifacts are `HDR_aiostreams-config-2026-10-16.09-51-07.json` and `SDR_aiostreams-config-2026-10-16.09-51-39.json`, uploaded for the 2026-10-16 baseline. **Do not use the files in this branch as restore backups until their full JSON payloads are verified**; the GitHub write connector did not preserve the full uploaded bytes during this attempt.
+The intended new artifacts are `HDR_aiostreams-config-2026-10-16.09-51-07.json` and `SDR_aiostreams-config-2026-10-16.09-51-39.json`, uploaded for the 2026-10-16 baseline. **These files are not yet safe restore backups**: the current GitHub branch has incomplete JSON payloads, and the complete uploaded bytes have not been committed.
 
 - **HDR profile (uploaded source SHA-256):** `b1f99973157ae16e25172f5a0df7873e2860e2ac02943ea46b14c7864baa0a3c`
 - **SDR profile (uploaded source SHA-256):** `325b966126f87e13db9daa709974dc05188ae442bd66abbd3c1cf2c9d071eea6`
@@ -93,4 +93,4 @@ Use this topic for Nuvio-specific work. Keep Nuvio, AIOStreams, and TorBox respo
 
 ## Next
 
-Before promoting the 2026-10-16 files to the known-good baseline, publish complete JSON bytes and verify that the repository file hashes match the uploaded source hashes. Keep this topic Frozen unless a new requirement, regression, compatibility issue, or verified baseline requires change.
+Next action: replace the incomplete JSON files with the exact uploaded bytes, verify parseability and SHA-256 against the source values above, then update this inventory. Keep this topic Frozen unless a new requirement, regression, compatibility issue, or verified baseline requires change.
