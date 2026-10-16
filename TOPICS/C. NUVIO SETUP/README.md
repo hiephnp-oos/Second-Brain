@@ -50,7 +50,7 @@ Known areas of interest include stream filtering, display/format decisions, HDR/
 
 ## AIOStreams Configuration Backups
 
-The intended new artifacts are `HDR_aiostreams-config-2026-10-16.09-51-07.json` and `SDR_aiostreams-config-2026-10-16.09-51-39.json`, uploaded for the 2026-10-16 baseline. **These files are not yet safe restore backups**: the current GitHub branch has incomplete JSON payloads, and the complete uploaded bytes have not been committed.
+The files `HDR_aiostreams-config-2026-10-16.09-51-07.json` and `SDR_aiostreams-config-2026-10-16.09-51-39.json` identify the two requested 2026-10-16 uploads. **The repository files currently contain safe placeholders, not the original configurations**, because the GitHub connector truncated the upload during writing. Do not import them into AIOStreams or use them as restore backups. The original uploaded files are intact in the current conversation.
 
 - **HDR profile (uploaded source SHA-256):** `b1f99973157ae16e25172f5a0df7873e2860e2ac02943ea46b14c7864baa0a3c`
 - **SDR profile (uploaded source SHA-256):** `325b966126f87e13db9daa709974dc05188ae442bd66abbd3c1cf2c9d071eea6`
@@ -68,7 +68,7 @@ Profile inspection of the uploaded source files:
 | Enabled presets | 15 | 9 |
 | Global sort | resolution → streamExpressionScore → SeaDex → quality → visualTag → audioTag → language → subtitle → bitrate | resolution → streamExpressionScore → SeaDex → quality → visualTag → audioTag → language → bitrate |
 
-The HDR uploaded snapshot contains a legacy `nuvio-instant` variant marked not for v5; the uploaded SDR snapshot has no `variants` list. These are observations of the uploaded source files, not assertions that the repository backups have been successfully published.
+The original HDR upload contains a legacy `nuvio-instant` variant marked not for v5; the original SDR upload has no `variants` list. These observations describe the uploaded source files only; the repository placeholders are not valid AIOStreams configurations.
 
 Credentials are intentionally not stored in GitHub.
 
@@ -93,4 +93,4 @@ Use this topic for Nuvio-specific work. Keep Nuvio, AIOStreams, and TorBox respo
 
 ## Next
 
-Next action: replace the incomplete JSON files with the exact uploaded bytes, verify parseability and SHA-256 against the source values above, then update this inventory. Keep this topic Frozen unless a new requirement, regression, compatibility issue, or verified baseline requires change.
+Next action: publish the exact original HDR/SDR bytes using a transfer path that preserves full files, then verify JSON parsing and SHA-256 against the source values above before marking them as restorable. Keep this topic Frozen unless a new requirement, regression, compatibility issue, or verified baseline requires change.
