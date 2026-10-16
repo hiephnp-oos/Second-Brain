@@ -31,6 +31,13 @@ Use `Prompt.csv` for Personal Research tasks. The prompt is the input; a separat
 - The user reviews the daily record directly. It is not an approved Knowledge Sheet record. No staging state, three-day consolidation, or batch output is used for new runs.
 - Previous Claw records are retained directly in this workstream root as historical reference. Do not use them as active workflow state or recreate `staging/` and `batches/`.
 
+## Weekly Persistence Watchdog
+
+- Every Monday at 08:00 Asia/Ho_Chi_Minh, the GitHub Actions watchdog summarizes the previous Monday-Sunday period.
+- It counts date-specific daily reports currently present on `main`: complete, incomplete, and missing out of 7; manual-recovery reports are identified separately.
+- The weekly summary is recorded in a GitHub Issue and the Actions run summary. It checks repository artifacts only; it does not run Claw research or prove external scheduler execution.
+- The daily executor remains responsible for daily research and persistence. The watchdog does not create or recover reports.
+
 The execution date is the calendar date of the current scheduled invocation in Asia/Ho_Chi_Minh, resolved from the active invocation/runtime date-time context. The scheduler is not required to expose a separate execution-timestamp field. If only the current date is available, use that local date; clock time is not needed for the filename. Never derive the date from a prior last-run timestamp, previous report, UTC date, or assumed date. If no usable current invocation date is available, report `RUN_DATE_UNAVAILABLE` and do not write.
 
 When an idea is selected to proceed, transfer it to `../2.2 IDEA_REVIEW/<IDEA_ID>/`. Do not turn every discovered idea into a review folder.
