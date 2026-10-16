@@ -23,11 +23,13 @@ The sole output goal of this workstream is idea discovery. Ideas selected to pro
 
 Use `Prompt.csv` for Personal Research tasks. The prompt is the input; a separate INPUT folder is not required. Reusable methods are governed by [1. CAPABILITIES](../../1. CAPABILITIES/README.md).
 
-## Daily Output — Report-only schedule
+## Daily Output — Persisted Markdown artifact
 
-- The external schedule runs once per local date at 05:00 Asia/Ho_Chi_Minh and returns a complete Markdown report containing `RUN_SLOT 01`.
-- The schedule does not create branches, files, commits, pull requests, or merges on GitHub. A report returned in the scheduled response is the expected completion state; no GitHub artifact is implied.
-- The proposed repository filename is `YYYY-MM-DD.md` directly in this workstream. The user may collect reports and persist them separately through an explicitly requested workflow.
+- The external schedule runs once per local date at 05:00 Asia/Ho_Chi_Minh and produces exactly one date-specific Markdown report containing `RUN_DATE` and `RUN_SLOT 01`.
+- The expected canonical artifact is `YYYY-MM-DD.md` directly in this workstream, present on `main` after the scheduled PR is validated and merged.
+- Required flow: read current main sources → run RS-10/11/12 → Vietnamese Rewrite and semantic/readability gates → create/update the date-specific file on a dedicated branch → open/reuse the matching PR → validate the exact one-file diff and required checks → merge only after all checks pass → read back the exact path from `main`.
+- Never write directly to `main`. If any write/PR/check/merge/read-back step is blocked, return the complete Markdown report inline as recovery output, mark it `NOT_PERSISTED`, report the exact failed operation and URL/error, and do not claim a GitHub file exists. Retry the same blocked operation once only after re-reading current GitHub state; do not bypass safety controls.
+- If a complete artifact for the date already exists, verify it and do not overwrite or duplicate it. Manual recovery must remain labelled `MANUAL RECOVERY`; scheduled provenance is independently verified or `NOT_VERIFIED`.
 - There are no RUN_SLOT 02/03 executions in the active schedule. Any legacy three-slot records remain historical only.
 - The report is for direct user review and is not an approved Knowledge Sheet record. No staging state, three-day consolidation, or batch output is used by the schedule.
 - Previous Claw records are retained directly in this workstream root as historical reference. Do not use them as active workflow state or recreate `staging/` and `batches/`.
@@ -35,11 +37,11 @@ Use `Prompt.csv` for Personal Research tasks. The prompt is the input; a separat
 ## Weekly Persistence Watchdog
 
 - Every Monday at 08:00 Asia/Ho_Chi_Minh, the GitHub Actions watchdog summarizes the previous Monday-Sunday period.
-- It counts date-specific daily reports actually present on `main`: complete, incomplete, and missing out of 7; manual-recovery reports are identified separately. A report-only schedule response is not a repository artifact and therefore counts as missing until separately persisted.
+- It counts date-specific daily reports actually present on `main`: complete, incomplete, and missing out of 7; manual-recovery reports are identified separately. A complete report returned without successful persistence is not a repository artifact and counts as missing.
 - The weekly summary is recorded in a GitHub Issue and the Actions run summary. It checks repository artifacts only; it does not run Claw research or prove external scheduler execution.
-- The external schedule is responsible for research and returning Markdown only. The watchdog does not execute research, create reports, or recover missing content.
+- The external schedule is responsible for research and daily artifact persistence. The watchdog does not execute research or recover missing content.
 
-The execution date is the calendar date of the current scheduled invocation in Asia/Ho_Chi_Minh, resolved from the active invocation/runtime date-time context. The scheduler is not required to expose a separate execution-timestamp field. If only the current date is available, use that local date; clock time is not needed for the filename. Never derive the date from a prior last-run timestamp, previous report, UTC date, or assumed date. If no usable current invocation date is available, report `RUN_DATE_UNAVAILABLE` and do not write.
+The execution date is the calendar date of the current scheduled invocation in Asia/Ho_Chi_Minh, resolved from the active invocation/runtime date-time context. The scheduler is not required to expose a separate execution-timestamp field. If only the current date is available, use that local date; clock time is not needed for the filename. Never derive the date from a prior last-run timestamp, previous report, UTC date, or assumed date. If no usable current invocation date is available, report `RUN_DATE_UNAVAILABLE` and do not create or persist a date-specific artifact.
 
 When an idea is selected to proceed, transfer it to `../2.2 IDEA_REVIEW/<IDEA_ID>/`. Do not turn every discovered idea into a review folder.
 
