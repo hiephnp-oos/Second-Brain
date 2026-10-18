@@ -54,7 +54,7 @@ Before RS-10, RS-11, and RS-12, read [REVIEW_MEMORY.md](REVIEW_MEMORY.md). It is
 
 Before RS-12, every daily run must retrieve and compare against:
 - Previous daily Claw Markdown records retained directly in this workstream root (read-only historical records). Legacy three-day CSV batch files have been removed; do not recreate or depend on them.
-- Prior daily discovery records: at minimum the previous 7 calendar days, plus any older record explicitly referenced by a reviewed lesson or matching candidate.
+- Prior daily discovery records: inspect the previous 7 calendar dates and the previous 7 available daily records (the sets may overlap), plus any older record explicitly referenced by a relevant reviewed lesson or matching candidate. Record missing calendar dates separately from files that exist but are unavailable or unreadable.
 - Relevant reviewed IDEA_REVIEW outcomes and Project Improvement regression cases.
 
 The run must build a temporary comparison ledger (Candidate ID/title, problem/outcome, mechanism, fitting application, prior class/disposition, source path). For every new candidate, record `NO_MATCH`, `RELATED_VARIANT`, or `DUPLICATE`, matched prior IDs, and the material difference when retained. Similarity is semantic; title/keyword matching alone is insufficient. If a historical source cannot be read, disclose the exact gap and do not claim a complete duplicate check.
