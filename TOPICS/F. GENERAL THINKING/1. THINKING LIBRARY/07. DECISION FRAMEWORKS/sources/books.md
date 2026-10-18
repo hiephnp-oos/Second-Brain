@@ -1,19 +1,35 @@
 # Source Traceability — Book 14
 
-*Thinking in Bets* — Annie Duke. Canonical source: `14 - Thinking in Bets.pdf`; paired `14 - Thinking in Bets.md` is retrieval aid only. PDF metadata identifies 247 physical pages. SHA-256 observed during this audit: `bbf361977cc2c3e15ecd8009e4f9af11ab5c91edcee1b0e022dc7901c6a9e264`. **PARTIALLY AUDITED — substantive chapter coverage and locator checks recorded; complete semantic-unit reconciliation remains open.**
+*Thinking in Bets* — Annie Duke. Canonical source: `14 - Thinking in Bets.pdf`; paired `14 - Thinking in Bets.md` is a retrieval aid only. PDF metadata identifies 247 physical pages. SHA-256 observed during this audit: `bbf361977cc2c3e15ecd8009e4f9af11ab5c91edcee1b0e022dc7901c6a9e264`.
 
-## Structure and coverage observed
-The PDF contents and outline identify the Introduction, six chapters, acknowledgments, notes, selected bibliography/further reading and index. Physical PDF chapter starts are: Introduction p.9; Ch.1 p.12; Ch.2 p.38; Ch.3 p.66; Ch.4 p.98; Ch.5 p.123; Ch.6 p.141. Back matter begins at acknowledgments p.183, notes p.189, selected bibliography/further reading p.197 and index p.207. These are **physical PDF pages**, not printed-page numbers.
+**PARTIALLY AUDITED — do not treat this source trace as complete.** The six chapters have been reviewed at a thematic and representative-example level, and broad physical PDF chapter boundaries have been checked. A complete page-by-page inventory of substantive claims, examples, figures, tables, callouts, notes and references has not been completed.
 
-The audit reviewed the existing Decision Frameworks concepts, mental models, lessons and applications against substantive chapter sections and representative examples. Covered themes include resulting and hindsight bias; probability, confidence and opportunity cost; motivated reasoning and belief formation; outcome feedback, luck, skill and self-serving attribution; truth-seeking groups, accountability and viewpoint diversity; CUDOS norms; tilt and past/future selves; limits of precommitment; expected value; scenario planning, backcasting and premortems; and preserving alternative future branches before outcome review.
+## Physical PDF structure observed
 
-Examples checked in extracted PDF text include the Pete Carroll interception/resulting case, Johnny World’s Des Moines bet and opportunity costs, Nick the Greek ignoring learning feedback, examples about group accountability and viewpoint drift, CUDOS, future-self and tilt techniques, and grant expected-value comparisons. The grant example around physical PDF pp.168–170 compares probability-weighted opportunities; treat EV as a long-run comparison based on assumptions, not a single-outcome prediction.
+- Introduction: p.9
+- Chapter 1: p.12
+- Chapter 2: p.38
+- Chapter 3: p.66
+- Chapter 4: p.98
+- Chapter 5: p.123
+- Chapter 6: p.141
+- Acknowledgments: p.183
+- Notes: p.189
+- Selected bibliography / further reading: p.197
+- Index: p.207
 
-## Locator and evidence limits
-- PDF pages 1–3 have no extractable text; rendered review was attempted but the image-view tool failed, so do not classify their visual content as verified. They remain front matter / visually unverified.
-- The table of contents and outline destinations were checked against physical page extraction. A printed page number could not be reliably established for every unit from text extraction alone. Use physical PDF page as the primary locator and add a printed locator only when it is visible and directly verified.
-- Notes occupy physical pp.189–196 and are source/provenance material. Selected bibliography/further reading starts on physical p.197; index starts on physical p.207. Notes/reference entries were not individually reconciled to every substantive claim, and not every cited item was assessed for promotion into another library.
-- No exhaustive page-by-page visual verification of every figure, table, note and reference was completed. The extraction showed a labeled Müller-Lyer illusion on physical p.19, but its visual details were not verified. Do not represent the audit as full coverage.
+These are **physical PDF page numbers**, not printed-page numbers. The index says its entries refer to the printed edition; those printed locators have not been independently reconciled throughout the book.
 
-## Disposition
-This book remains an accepted primary source for Decision Frameworks, but the status of this audit is **PARTIAL**, not full semantic acceptance. The updated library captures the main reusable decision practices found in reviewed sections. Remaining work is a bounded, page-level reconciliation of every substantive claim/example/visual/note/reference with verified physical and printed locators, recorded separately in the shared PR #142 ledger by its designated ledger owner.
+## Themes represented in Decision Frameworks
+
+The current library distills resulting and outcome noise; decisions as bets and opportunity costs; explicit probability estimates and calibration; motivated reasoning and belief formation; skill, luck and feedback attribution; truth-seeking groups and viewpoint diversity; CUDOS norms; tilt and time-separated selves; precommitment and its limits; scenario planning, expected value, backcasting, premortems and preserving future branches. Representative examples include the Pete Carroll interception discussion, the Müller-Lyer illusion (text extraction identifies p.19; visual inspection remains unverified), Nick the Greek, and the Chapter 6 expected-value comparison around physical pp.168–170.
+
+## Known audit limitations
+
+- Physical PDF pages 1–3 yielded no extractable text in the current extraction; their visual contents remain unverified.
+- No successful visual inspection was completed for the PDF pages. Figures, tables, boxed material and page-level notes have not been exhaustively inventoried.
+- The expected-value example's arithmetic was checked against extracted figures recorded during the audit, but its visual layout and formula presentation were not inspected.
+- Notes on physical pp.189–196 and bibliography on pp.197–206 have not been exhaustively mapped to each substantive claim/example.
+- Within-chapter physical locators remain broad for several semantic units. Printed-page locators are intentionally left unverified where they have not been checked against the edition.
+
+A separate proposed semantic-unit CSV is provided for review; the shared `BOOK_REVIEW_LEDGER_PR142.csv` was not edited. Coverage should remain partial until the outstanding visual, locator, notes and reference checks are resolved.
