@@ -80,7 +80,7 @@ Do not invent a universal score or disposition. Use the active Workstream's requ
 - [ ] Candidate is more than a technology name or mechanism.
 - [ ] User/product outcome is material and observable/testable.
 - [ ] Meaningful delta and existing-solution/duplicate checks are documented, including the daily/reviewed candidate sources actually checked and matched IDs.
-- [ ] If a candidate is DROP/DUPLICATE, the search continues through a DELTA test or a genuinely new candidate until WATCH or a documented hard blocker; no artificial quota or fabricated candidate is used.
+- [ ] After DROP/DUPLICATE, test for material DELTA and continue while a decision-relevant search direction remains and expected search value justifies it. Close the scoped direction when coverage is sufficient, remaining value is low, or a documented hard blocker prevents responsible continuation. WATCH is not mandatory; zero candidates is acceptable only with documented bounded coverage and a justified stop rationale. Never fabricate/repackage candidates, weaken gates, or invent a hard blocker.
 - [ ] Candidate class is not conflated with evidence state or disposition.
 - [ ] Cross-industry transfer limits remain explicit.
 - [ ] Added complexity is tied to a justified benefit.
