@@ -1,6 +1,6 @@
 # Game Theory — Concepts
 
-Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02)
+Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02); *A Course in Game Theory* — Osborne & Rubinstein (GT-03); *The Strategy of Conflict* — Schelling (GT-04); *The Evolution of Cooperation* — Axelrod (GT-05)
 
 ## 1. Strategic behavior
 
