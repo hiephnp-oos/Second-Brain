@@ -77,7 +77,7 @@ GT-05 is treated as an extension of the repeated-game and cooperation foundation
 - Operational links: GT-05 #84–88; GT-MM-82–86; GT-APP-74–78; GT-L-74–78.
 
 ### Part I acceptance result
-**1/1 substantive chapter unit = 100% source-verified.**
+**1/1 chapter-level unit mapped within this stated denominator; not exhaustive semantic coverage.**
 
 The chapter's formal payoff matrix and mathematical discounting details remain source-level material. The repository retains the reusable strategic distinctions rather than duplicating the chapter.
 
@@ -101,7 +101,7 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
 - Coverage: **1/1 chapter unit = 100%**.
 
 ### Part II acceptance result
-**2/2 substantive chapter units = 100% source-verified.**
+**2/2 chapter-level units mapped within this stated denominator; not exhaustive semantic coverage.**
 
 ### BOOK.zip evidence boundary
 - Source package checked: `BOOK.zip` containing `05 - The Evolution of Cooperation.pdf` and `05 - The Evolution of Cooperation.md`.
@@ -129,7 +129,7 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
 - Coverage: **1/1 chapter unit = 100%**.
 
 ### Part III acceptance result
-**2/2 substantive chapter units = 100% source-verified.**
+**2/2 chapter-level units mapped within this stated denominator; not exhaustive semantic coverage.**
 
 ### BOOK.zip evidence — Part III
 - BOOK.zip was directly opened and inspected.
@@ -168,7 +168,7 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
 - Coverage: **5/5 substantive reform units = 100%**.
 
 ### Part IV acceptance result
-**9/9 substantive internal units = 100% source-verified.**
+**9/9 declared internal units mapped within this stated denominator; not exhaustive semantic coverage.**
 
 ### BOOK.zip evidence — Part IV
 - BOOK.zip directly inspected; exact Book 5 PDF confirmed.
@@ -202,7 +202,7 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
 - Coverage: **1/1 substantive chapter unit = 100%**.
 
 ### Part V acceptance result
-**5/5 substantive source units = 100% source-verified.**
+**5/5 declared source units mapped within this stated denominator; not exhaustive semantic coverage.**
 
 ### BOOK.zip evidence — Part V
 - BOOK.zip was directly opened and inspected; exact source pair confirmed: `05 - The Evolution of Cooperation.pdf` + `05 - The Evolution of Cooperation.md`.
@@ -250,7 +250,7 @@ Appendices A–B remain outside the current substantive Part I–V acceptance sc
 - User TOC pages: **218–224**.
 - All chapter note sections were verified as present for Chapters 1–9, followed by notes for Appendix A and Appendix B.
 - Notes are treated as **source annotation and evidence**, not independent knowledge units.
-- Decision: **verified for completeness; not promoted into concepts/mental-models/applications/lessons**.
+- Decision: **registered as supporting apparatus; not promoted into concepts/mental-models/applications/lessons. This is a disposition decision, not proof of exhaustive note-level semantic review.**
 - Reason: promoting notes independently would duplicate chapter-level content and citation context rather than improve retrieval.
 - Coverage: **11/11 note sections = verified as supporting apparatus**.
 
