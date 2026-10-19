@@ -17,7 +17,7 @@ Execution companion to the review plan agreed for PR #142. This file and the led
 ## Stage status
 | Stage | Scope | Gate | Current status |
 |---|---|---|---|
-| 0 | Inventory, identity, PDF/MD pairing, TOC/source maps, Statistical Rethinking aggregate/split reconciliation | All 18 PDF hashes verified against inventory; aggregate/split Statistical Rethinking text matches 617/617 pages and non-text page images match 15/15; bookmark exports for Books 01–08 reconciled; source map for Books 09–16 and printed-to-physical locator mapping still open | IN PROGRESS / BLOCKED |
+| 0 | Inventory, identity, PDF/MD pairing, TOC/source maps, Statistical Rethinking aggregate/split reconciliation | All 18 PDF and 17 Markdown hashes match inventory; 489 bookmark locators checked; physical starts mapped for Books 10–16; Book 09 summary scope recorded; aggregate/split text 617/617 and non-text page images 15/15 match; source map read back | PASS — structural/source-map gate only |
 | 1 | Books 01–05 | Each batch closed with unit dispositions, evidence and read-back | NOT VERIFIED — waits for Stage 0 closure |
 | 2 | Book 06 — Thinking in Systems | Full source-unit ledger; diagrams and equations checked; all issues dispositioned; all four framework target files read back; links/references validated | BLOCKED / IN PROGRESS |
 | 3 | Books 07–10 | Starts only after Book 06 PASS; Statistical Rethinking alignment gate first | BLOCKED — Book 06 semantic gate and Book 07 aggregate/split gate unresolved |
@@ -27,7 +27,7 @@ Execution companion to the review plan agreed for PR #142. This file and the led
 | 7 | Cross-layer / full-topic review | Traceability, ownership, duplicates, links, README, validator and PR status reconciled | NOT STARTED |
 
 ## Stage 0 — source inventory baseline
-The supplied `BOOK_FULL.zip` contains Books 01–16, with PDF/Markdown pairs for Books 01–08 and 10–16; Book 09 is a summary source. Statistical Rethinking is supplied as one aggregate PDF plus two split PDFs and matching split Markdown extracts. The aggregate SHA-256 matches the prior inventory. Normalized extracted text matched at all 617 corresponding page positions; 15 page positions on each side have no extractable text and still need visual/page-fingerprint checks. The local inventory/recheck artifacts are working evidence only; reconcile the remaining source map and chapter locators before Stage 0 is called PASS.
+The supplied `BOOK_FULL.zip` contains Books 01–16, with PDF/Markdown pairs for Books 01–08 and 10–16; Book 09 is a summary source. Statistical Rethinking is supplied as one aggregate PDF plus two split PDFs and matching split Markdown extracts. The aggregate SHA-256 matches the prior inventory. Normalized extracted text matched at all 617 corresponding page positions; rendered page-image SHA-256 fingerprints match for all 15 corresponding positions with no extractable text. The stable source page map is recorded in `PR142_SOURCE_PAGE_MAP.md`.
 
 Verified source facts for the **current supplied BOOK.zip** are maintained in `SOURCE_INTAKE_MANIFEST.md` with PDF SHA-256, physical page counts, paired Markdown line counts/hashes, and visually checked TOC/content-list physical pages.
 
@@ -66,7 +66,7 @@ The target framework files currently contain a number of useful distilled items 
 ## Batch closure log
 | Batch | Source coverage denominator | VERIFIED | ADD | UPDATE | REMOVE | NO_CHANGE | NOT_APPLICABLE | Open fixes | Result / evidence |
 |---|---:|---:|---:|---:|---:|---:|---:|---|---|
-| Stage 0 | 18 PDFs + 17 Markdown parts; 16 book identities | inventory/hash/page-count checked; Statistical Rethinking text matched 617/617 page positions and non-text page images matched 15/15 | 0 | 0 | 0 | 0 | 0 | Chapter/subsection start-page reconciliation against TOC locators and PDF↔MD semantic/visual reconciliation remain open | IN PROGRESS / BLOCKED |
+| Stage 0 | 18 PDFs + 17 Markdown parts + 9 bookmark exports; 16 book identities | 18 PDF hashes, 17 Markdown hashes, page counts, TOC pages, 489 bookmark locators, Books 10–16 physical starts, and Statistical Rethinking text/image alignment verified | 0 | 0 | 0 | 0 | 0 | Semantic PDF↔Markdown review and visual/equation unit reconciliation belong to later book stages, not Stage 0 | PASS — see `PR142_SOURCE_PAGE_MAP.md` |
 | B01-A–B01-E | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
 | B02-A–B02-E | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
 | B03-A–B03-G | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
@@ -104,9 +104,8 @@ Reviewed all eight PR commits whose author/committer date is 2026-10-18:
 ### Execution decision
 
 - Current eligible stage: **Stage 0 only**.
-- Completed in this pass: actual BOOK.zip inventory/hash/page-count verification and visual location of all present TOC/content-list pages; source evidence is recorded in `SOURCE_INTAKE_MANIFEST.md`.
-- Remaining Stage 0 blockers: finish chapter/subsection page-start reconciliation against TOC locators and finalize source-map inputs.
-- Do not start or mark Stage 1–5 batches complete until the required preceding gates are met.
+- Completed: `BOOK_FULL.zip` inventory/hash/page-count verification; aggregate/split Statistical Rethinking text and image alignment; bookmark locator checks; physical start-page mapping for Books 10–16; source map created and read back. Stage 0 is PASS.
+- Next eligible stage: Stage 1 (Books 01–05), following the plan's source-unit ledger and read-back requirements. Stage 2 remains gated on Stage 1 completion; no downstream batch is marked complete.
 - PR #142 remains OPEN + DRAFT. **No merge, auto-merge, or ready-for-review transition performed.**
 
 
@@ -117,11 +116,11 @@ Reviewed all eight PR commits whose author/committer date is 2026-10-18:
 - Result: **PASS** — `Validator self-tests` and `Validate repository contracts` both succeeded.
 - Root cause of earlier failures: unquoted commas in two `BOOK_REVIEW_LEDGER_PR142.csv` evidence fields caused line 36/37 to parse as 25 columns instead of the required 23. Corrected those fields without changing the evidence meaning.
 - Read-back confirmed the ledger has 36 data rows and every row has exactly 23 columns.
-- This validation result does not close Stage 0: the follow-up source package now includes the 617-page aggregate and extracted text matches across all page positions, and rendered page-image fingerprints match for all 15 non-text positions; chapter/subsection locator reconciliation remains incomplete.
+- This earlier validation run predates the final Stage 0 source-map closure. The current Stage 0 evidence and source map are recorded in `SOURCE_INTAKE_MANIFEST.md` and `PR142_SOURCE_PAGE_MAP.md`; a new CI run on the final Stage 0 commits is required before reporting validation status.
 - PR #142 remains **OPEN + DRAFT**. No merge or auto-merge was performed.
 ### Follow-up archive validation — `BOOK_FULL.zip`
 
 - Archive SHA-256: `b1c5cff93eb3c2cd97a06522ff0917283c059a1c079ad8b5e4060b7800b4cd79`.
 - Inventory: 18 PDFs, 17 Markdown files, 9 bookmark exports, and a folder-structure note for 16 book identities. All 18 PDF hashes match the recorded inventory.
 - The 9 bookmark exports cover Books 01–08 (07a/07b). All 489 locators are in physical-page range; text/adjacent-page checks resolved all entries, including chapter title pages where the heading starts on the next page.
-- TOC/content-list pages were visually inspected where present. This is not sufficient to close Stage 0: a stable physical-page source map for Books 09–16 and printed-locator-to-physical-page reconciliation where applicable still need to be recorded and read back.
+- TOC/content-list pages were visually inspected where present. The stable physical-page source map for Books 09–16 and printed-locator-to-physical-page reconciliation where applicable are now recorded in `PR142_SOURCE_PAGE_MAP.md`.
