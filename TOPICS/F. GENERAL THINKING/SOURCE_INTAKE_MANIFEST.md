@@ -31,3 +31,38 @@ Validate pairing, title/author, chapter hierarchy, reading order, paragraph/list
 Cross-book findings: escaped headings, pipe-heavy regions, equations, code, figures and game trees require PDF-aware interpretation. Word-volume agreement is only a coverage signal.
 
 Books 01–15 passed the PDF-first structural gate. Book 16 remains blocked.
+## Direct archive recheck — 2026-10-19
+
+Directly inspected the current user-supplied `BOOK.zip`. It contains **17 PDFs + 17 Markdown files** for 16 book identities. Page counts, PDF SHA-256, Markdown line counts and Markdown SHA-256 below were recomputed from the supplied archive. TOC/content-list pages were rendered and visually inspected; all locators here are **physical 1-based PDF pages**, not printed locators.
+
+| ID | PDF | Pages | PDF SHA-256 | Paired MD | MD lines | MD SHA-256 | Visually checked TOC/list page |
+|---|---|---:|---|---|---:|---|---|
+| 01 | `01 - Thinking Strategically.pdf` | 396 | `160f0f98d2227be072355397c776045ccb9cbd9314a4fbc3e1a1f8c9d6dfa872` | `01 - Thinking Strategically.md` | 5790 | `d62ccd56c3359d23d80c472cd9b1d76bdf723bc69332b62a188d56497206d27d` | p.8 |
+| 02 | `02 - The Art of Strategy.pdf` | 550 | `2feef26987bf4f1a62ad7b76bc0661050176fe66342af0c92e1768cbe4e4422f` | `02 - The Art of Strategy.md` | 5848 | `99d62d4306cf2f30141267888e5181f33752ef5a5e4c0ccdd2259c656f2fffee` | p.8 |
+| 03 | `03 - A Course in Game Theory.pdf` | 368 | `70733e532ffbcd7a010f5c9fc041ddb07eab56f9caacd860e2ad4578fccd22c8` | `03 - A Course in Game Theory.md` | 9322 | `a5ea281b64ebf222a51cb2251095aa33c4aca52d4d84b37b5ebc360fc2894722` | pp.5–9 |
+| 04 | `04 - The Strategy of Conflict.pdf` | 394 | `185b477cfe4b1c4de67d413adcec84fcae9b0b519b583a4706cece9cf8c4373e` | `04 - The Strategy of Conflict.md` | 5616 | `3f024fd4cb834a107ff8065f82c308ede488e3d25430265a7f2c43415d7e852c` | p.4 |
+| 05 | `05 - The Evolution of Cooperation.pdf` | 243 | `e816ca61aebd84159747d248fedd6d5ff318c471c36bcc31b1ac6bf9aebcd3c1` | `05 - The Evolution of Cooperation.md` | 4028 | `0140e0a4eeb1c469d94bdea1e3918acda0cffc988e61cb69a359f1501a4d99f1` | pp.5–6 |
+| 06 | `06 - Thinking in Systems.pdf` | 235 | `7c36a258dfa10af3069a9b877b276914581788147f038c1509386783e1a99e4d` | `06 - Thinking in Systems.md` | 6116 | `e879047ec3eecf37d5afa9751dfae48dd48029e87339de858a7928b03428e74d` | p.8 |
+| 07a | `07 - Statistical Rethinking_01.pdf` | 346 | `69ff648ee126b1d06326c44c1cd4f610bcebb5115b8e2a1b45962c750a21701f` | `07 - Statistical Rethinking_01.md` | 16654 | `b0f4eb9ac21a375788e22ef4f77285c682b9e0520aa9fd4f598e2161d46e3dfc` | pp.3–5 |
+| 07b | `07 - Statistical Rethinking_02.pdf` | 271 | `5f9b4a1caeea248605789a002736a094fce4c1efc8fb41fbea12143534cf101a` | `07 - Statistical Rethinking_02.md` | 7123 | `af7806464d86c7d2208a708c5a8c81ab1e9b02c133e9b5ad3fdcbaaf2be70155` | none; continuation split |
+| 08 | `08 - Superforecasting.pdf` | 224 | `ca472105ea7137e56be706677d4bfbfb37ac035531c67f0bef68fcb37d38febb` | `08 - Superforecasting.md` | 2486 | `073bb292d5c2d385ce735a8a065bae0cd2201b130e3be6bb02cd13322bce98c0` | p.7 |
+| 09 | `09 - The Scout Mindset.pdf` | 64 | `0b239d84bfcb06f9682c52df4fba5665980daac40e79ea9b4b98145ef4236c0d` | `09 - The Scout Mindset.md` | 1006 | `29bedc235c6e4c44379c5cdbbfc8a483daadcd6481657a27bd21e42ac0ba7443` | p.6; summary content list only |
+| 10 | `10 - Thinking, Fast and Slow.pdf` | 533 | `2ebd90d54b93c2ac2f55187976f513bffc59e41c72a7ea710a7ba27b05ce5aa5` | `10 - Thinking, Fast and Slow.md` | 7064 | `af3099a5679b0a0a0e55c400895d673b40567e17d4eff43a2d3959b1adfe5267` | p.4 |
+| 11 | `11 - Influence.pdf` | 279 | `b71d64837c821dd1673a02ef4444d26c7af302fd8ca2125a57124d358f5d31b0` | `11 - Influence.md` | 3158 | `b44553ba35aa0874c613bf8d025619b378f8bde8683d8b25b197d5a10c46da20` | p.5 |
+| 12 | `12 - Getting to Yes.pdf` | 90 | `234a934b4e617a411ff21eaf79aa59c0d8546153bb138a79d18cb571ba7778e1` | `12 - Getting to Yes.md` | 1928 | `037d2f3e0f14668fbca050a768b385d2cfff8e2c9dd51bebccf7c9418961f29c` | p.3 |
+| 13 | `13 - Never Split the Difference.pdf` | 375 | `195d8af289e9d60fa233c94c12a5038a0d4b016d94875c0e4c87b8d456f6b841` | `13 - Never Split the Difference.md` | 3630 | `38bf0055814ee37413569554e2dbbb8145a5100b53f1e881951046a1ffb88179` | p.5 |
+| 14 | `14 - Thinking in Bets.pdf` | 247 | `bbf361977cc2c3e15ecd8009e4f9af11ab5c91edcee1b0e022dc7901c6a9e264` | `14 - Thinking in Bets.md` | 1962 | `78f67ca17dc5ed129c05f04fc07f932804744af153d834d779fe52b59d770e80` | pp.6–8 |
+| 15 | `15 - Good Strategy, Bad Strategy.pdf` | 246 | `b57d5b01849e7443ec31fced8fa7db03920ffa71f74b924496dc15d31d36660d` | `15 - Good Strategy, Bad Strategy.md` | 3436 | `f09c6c86a698c57256e1450136358f0de4af8feb796bd49c6f77ce23a5273e12` | p.7 |
+| 16 | `16 - The Checklist Manifesto.pdf` | 223 | `9ed30d0915c5599f1cbc574d886b21768750dea20aacdd3abf5e58df9293be91` | `16 - The Checklist Manifesto.md` | 1712 | `15bf539e8aaf4477c28cc0ceed20fc1d238bfb422c78d0fcb16d11322b3d1b56` | pp.9–10 |
+
+### Statistical Rethinking aggregate discrepancy
+
+The previous review-plan inventory listed a **617-page aggregate PDF** (`07 - Statistical Rethinking.pdf`, prior-inventory SHA-256 `a1557fc384f68731d1360f2d6272910c080d18901a934c427193dae787b6ebc7`). That aggregate file is **not present in the current `BOOK.zip`**. The archive contains only the split PDFs (346 + 271 = 617 pages) and their Markdown pairs. Equal total page counts do not prove page identity or chapter-boundary alignment. Since the execution plan explicitly requires the aggregate as pagination anchor, this sub-gate remains **BLOCKED** until the aggregate is located/provided or the user explicitly approves a revised canonical-source rule.
+
+### Stage 0 evidence boundary
+
+- **Verified:** current archive filenames, all 17 PDF page counts and PDF hashes, all 17 Markdown line counts and hashes, and visual presence/structure of the TOC/content-list pages listed above.
+- Book 09 has a summary content list, not a canonical full-book TOC; summary-source limitation remains.
+- Book 07 split 02 is a continuation file beginning inside Chapter 11; it is not expected to contain a full TOC.
+- **Still open:** chapter/subsection start-page reconciliation against every TOC locator, systematic PDF↔Markdown semantic/visual unit reconciliation, and Statistical Rethinking aggregate-versus-split page identity.
+- Stage 0 remains **IN PROGRESS / BLOCKED**, not PASS. Visible TOC structure is not semantic/source-unit completion.
