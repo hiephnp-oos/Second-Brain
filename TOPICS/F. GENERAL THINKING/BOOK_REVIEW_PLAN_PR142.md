@@ -18,7 +18,7 @@ Execution companion to the review plan agreed for PR #142. This file and the led
 | Stage | Scope | Gate | Current status |
 |---|---|---|---|
 | 0 | Inventory, identity, PDF/MD pairing, TOC/source maps, Statistical Rethinking aggregate/split reconciliation | All 18 PDF and 17 Markdown hashes match inventory; 489 bookmark locators checked; physical starts mapped for Books 10–16; Book 09 summary scope recorded; aggregate/split text 617/617 and non-text page images 15/15 match; source map read back | PASS — structural/source-map gate only |
-| 1 | Books 01–05 | Each batch closed with unit dispositions, evidence and read-back | NOT VERIFIED — waits for Stage 0 closure |
+| 1 | Books 01–05 | Every substantive source unit dispositioned; structural rows explicitly excluded from semantic denominator; evidence/read-back complete; no stale findings or conflicting coverage claims | IN PROGRESS — remediation underway; Stage 1 is not closed |
 | 2 | Book 06 — Thinking in Systems | Full source-unit ledger; diagrams and equations checked; all issues dispositioned; all four framework target files read back; links/references validated | BLOCKED / IN PROGRESS |
 | 3 | Books 07–10 | Starts only after Book 06 PASS; Statistical Rethinking alignment gate first | BLOCKED — Book 06 semantic gate and Book 07 aggregate/split gate unresolved |
 | 4 | Books 11–13 | Chapter and back-matter disposition plus PDF TOC verification | NOT STARTED |
@@ -67,11 +67,11 @@ The target framework files currently contain a number of useful distilled items 
 | Batch | Source coverage denominator | VERIFIED | ADD | UPDATE | REMOVE | NO_CHANGE | NOT_APPLICABLE | Open fixes | Result / evidence |
 |---|---:|---:|---:|---:|---:|---:|---:|---|---|
 | Stage 0 | 18 PDFs + 17 Markdown parts + 9 bookmark exports; 16 book identities | 18 PDF hashes, 17 Markdown hashes, page counts, TOC pages, 489 bookmark locators, Books 10–16 physical starts, and Statistical Rethinking text/image alignment verified | 0 | 0 | 0 | 0 | 0 | Semantic PDF↔Markdown review and visual/equation unit reconciliation belong to later book stages, not Stage 0 | PASS — see `PR142_SOURCE_PAGE_MAP.md` |
-| B01-A–B01-E | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
-| B02-A–B02-E | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
-| B03-A–B03-G | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
-| B04-A–B04-G | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
-| B05-A–B05-F | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
+| B01-A–B01-E | 149 ledger rows (131 VERIFIED, 18 IN_PROGRESS; includes navigation/context rows) | 131 | TBD | TBD | TBD | TBD | TBD | Reconcile remaining 18 rows and confirm dispositions/counts; resolve Book 01 case locator contradiction in source traceability | IN PROGRESS — specific Case 14/20 locator finding corrected; full batch closure not yet evidenced |
+| B02-A–B02-E | 126 ledger rows (105 VERIFIED, 21 IN_PROGRESS; includes navigation/context rows) | 105 | TBD | TBD | TBD | TBD | TBD | Reconcile remaining 21 navigation/context rows; verify which are structural-only versus semantic work; disposition and read back | IN PROGRESS |
+| B03-A–B03-G | 98 ledger rows (79 VERIFIED, 19 IN_PROGRESS; 79 declared numbered sections) | 79 | TBD | TBD | TBD | TBD | TBD | Keep 79/79 claim bounded to named section mapping; reconcile 19 navigation/context rows and confirm gate treatment | IN PROGRESS — section mapping alone does not close the batch |
+| B04-A–B04-G | 67 ledger rows (53 VERIFIED, 14 IN_PROGRESS; 53 named level-3 TOC subsections) | 53 | TBD | TBD | TBD | TBD | TBD | Keep 53/53 claim bounded to subsection mapping; reconcile 14 navigation/context rows; appendix proof/equation checks remain outside claimed coverage | IN PROGRESS — subsection mapping alone does not close the batch |
+| B05-A–B05-F | 52 ledger rows (15 navigation/context rows + 37 thematic/section units; all 52 IN_PROGRESS) | 0 | TBD | TBD | TBD | TBD | TBD | Apply explicit dispositions and evidence to all 52 rows; reconcile the thematic denominator and stale broad coverage claims; read back all four knowledge targets | IN PROGRESS — no Book 05 row is yet VERIFIED |
 | B06-A–B06-K | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Full semantic-unit and visual/equation review is open | BLOCKED / IN PROGRESS |
 
 ## Execution record
@@ -128,7 +128,7 @@ Reviewed all eight PR commits whose author/committer date is 2026-10-18:
 
 ## Stage 1 execution record — 2026-10-19
 
-Stage 1 remains IN PROGRESS; no book/batch is closed.
+Stage 1 remains IN PROGRESS; no overall Stage 1 closure is claimed. Earlier per-book PASS statements are provisional mapping-gate claims and must not be read as satisfying the full Stage 1 semantic-unit gate.
 
 - Canonical PDFs and paired Markdown retrieval extracts for Books 01–05 were inspected. Physical page counts: Book 01 396; Book 02 550; Book 03 368; Book 04 394; Book 05 243.
 - Ledger now includes 18 navigation/source-unit rows for Book 01 and 69 navigation/source-unit rows for Books 02–05. These are source locators and explicit review placeholders, not evidence of semantic coverage.
