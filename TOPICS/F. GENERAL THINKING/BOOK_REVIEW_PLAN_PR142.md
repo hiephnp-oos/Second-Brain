@@ -17,7 +17,7 @@ Execution companion to the review plan agreed for PR #142. This file and the led
 ## Stage status
 | Stage | Scope | Gate | Current status |
 |---|---|---|---|
-| 0 | Inventory, identity, PDF/MD pairing, TOC/source maps, Statistical Rethinking aggregate/split reconciliation | Current archive files hashed/page-counted; TOC/content-list pages visually checked; chapter-start locator cross-check incomplete; aggregate PDF missing from current ZIP | IN PROGRESS / BLOCKED |
+| 0 | Inventory, identity, PDF/MD pairing, TOC/source maps, Statistical Rethinking aggregate/split reconciliation | Current archive files hashed/page-counted; aggregate/split Statistical Rethinking text matches 617/617 pages; 15 non-text page positions still need visual/fingerprint check; chapter-start locator cross-check incomplete | IN PROGRESS / BLOCKED |
 | 1 | Books 01–05 | Each batch closed with unit dispositions, evidence and read-back | NOT VERIFIED — waits for Stage 0 closure |
 | 2 | Book 06 — Thinking in Systems | Full source-unit ledger; diagrams and equations checked; all issues dispositioned; all four framework target files read back; links/references validated | BLOCKED / IN PROGRESS |
 | 3 | Books 07–10 | Starts only after Book 06 PASS; Statistical Rethinking alignment gate first | BLOCKED — Book 06 semantic gate and Book 07 aggregate/split gate unresolved |
@@ -27,13 +27,13 @@ Execution companion to the review plan agreed for PR #142. This file and the led
 | 7 | Cross-layer / full-topic review | Traceability, ownership, duplicates, links, README, validator and PR status reconciled | NOT STARTED |
 
 ## Stage 0 — source inventory baseline
-The local supplied archive contains Books 01–16, with PDF/Markdown pairs for Books 01–08 and 10–16; Book 09 is a summary source. Statistical Rethinking is supplied as one aggregate PDF plus two split PDFs and matching Markdown extracts. The local inventory/recheck artifacts are working evidence only; they must be reconciled into a stable repository ledger/source map before Stage 0 is called PASS.
+The supplied `BOOK_FULL.zip` contains Books 01–16, with PDF/Markdown pairs for Books 01–08 and 10–16; Book 09 is a summary source. Statistical Rethinking is supplied as one aggregate PDF plus two split PDFs and matching split Markdown extracts. The aggregate SHA-256 matches the prior inventory. Normalized extracted text matched at all 617 corresponding page positions; 15 page positions on each side have no extractable text and still need visual/page-fingerprint checks. The local inventory/recheck artifacts are working evidence only; reconcile the remaining source map and chapter locators before Stage 0 is called PASS.
 
 Verified source facts for the **current supplied BOOK.zip** are maintained in `SOURCE_INTAKE_MANIFEST.md` with PDF SHA-256, physical page counts, paired Markdown line counts/hashes, and visually checked TOC/content-list physical pages.
 
-The current archive contains 17 PDFs + 17 Markdown files for 16 book identities. All current archive PDFs and Markdown files were hashed; all PDF page counts and Markdown line counts were recomputed. The contents/TOC pages were rendered and visually checked where present. This is an inventory/TOC-presence check, not semantic-unit completion.
+The initial `BOOK.zip` contained 17 PDFs + 17 Markdown files; follow-up `BOOK_FULL.zip` contains 18 PDFs + 17 Markdown files for 16 book identities, adding the aggregate Statistical Rethinking PDF. All PDFs and Markdown files in the follow-up archive were hashed; PDF page counts and Markdown line counts were recomputed. The contents/TOC pages were rendered and visually checked where present. This is an inventory/TOC-presence check, not semantic-unit completion.
 
-**Important correction to the prior inventory:** the earlier local-inventory table listed a 617-page aggregate `07 - Statistical Rethinking.pdf` with SHA-256 `a1557fc384f68731d1360f2d6272910c080d18901a934c427193dae787b6ebc7`. That aggregate file is not in the current supplied `BOOK.zip`; the current package contains only `07 - Statistical Rethinking_01.pdf` (346 pages) and `07 - Statistical Rethinking_02.pdf` (271 pages), plus their Markdown extracts. Do not claim aggregate/split page identity from matching page-count totals.
+**Follow-up source update:** `BOOK_FULL.zip` contains the aggregate `07 - Statistical Rethinking.pdf` (617 pages; SHA-256 `a1557fc384f68731d1360f2d6272910c080d18901a934c427193dae787b6ebc7`), matching the historical inventory hash, as well as split PDFs of 346 and 271 pages. Normalized extracted text matches on all 617 page positions between the aggregate and concatenated split PDFs. Fifteen corresponding page positions yield no extractable text on either side, so visual/page-fingerprint reconciliation is still required for those positions. Do not call the full visual alignment gate closed yet.
 
 Current physical TOC/content-list pages:
 - Book 01: p.8; Book 02: p.8; Book 03: pp.5–9; Book 04: p.4; Book 05: pp.5–6; Book 06: p.8.
@@ -45,7 +45,7 @@ TOC pages were visually inspected. Cross-checking every chapter/subsection's phy
 
 
 ## Statistical Rethinking split-PDF gate
-Aggregate source is the pagination anchor. The split files have 346 + 271 = 617 physical pages, matching the aggregate count, but that alone does not prove page identity or absence of duplicate/missing pages. Compare normalized per-page text and, where text comparison is insufficient, visual/page fingerprints across aggregate and split PDFs. Map all chapter boundaries separately against aggregate and split page numbers; do not apply one constant offset. Close this gate only with documented boundary and mismatch results.
+Aggregate source is the pagination anchor. The aggregate hash matches the historical inventory. A normalized per-page extracted-text comparison matched all 617/617 page positions, with zero text mismatches. Fifteen corresponding page positions contain no extractable text on either side; compare these visually or by rendered page-image fingerprints. Map all chapter boundaries separately against aggregate and split page numbers; do not apply one constant offset. Close this gate only with documented visual/boundary results.
 
 ## Book 06 mandatory semantic gate
 Current repository source-traceability explicitly states the full semantic audit is NOT YET VERIFIED. Existing section-level tables, approximately 883 candidate text blocks, nine model headings and counts such as 67 notes or 17 bibliography entries are not sufficient denominators. Required batches:
@@ -66,7 +66,7 @@ The target framework files currently contain a number of useful distilled items 
 ## Batch closure log
 | Batch | Source coverage denominator | VERIFIED | ADD | UPDATE | REMOVE | NO_CHANGE | NOT_APPLICABLE | Open fixes | Result / evidence |
 |---|---:|---:|---:|---:|---:|---:|---:|---|---|
-| Stage 0 | 17 PDF/MD pairs + 1 missing aggregate artifact | 17 pairs inventory/hash checked; semantic dispositions not applicable here | 0 | 0 | 0 | 0 | 0 | Per-chapter start-page cross-check, PDF↔MD semantic/visual reconciliation, and absent Statistical Rethinking aggregate prevent closure | IN PROGRESS / BLOCKED |
+| Stage 0 | 18 PDFs + 17 Markdown parts; 16 book identities | inventory/hash/page-count checked; Statistical Rethinking text matched 617/617 page positions; 15 non-text positions require visual check | 0 | 0 | 0 | 0 | 0 | Per-chapter start-page cross-check, PDF↔MD semantic/visual reconciliation, and visual checks for 15 non-text aggregate/split page positions prevent closure | IN PROGRESS / BLOCKED |
 | B01-A–B01-E | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
 | B02-A–B02-E | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
 | B03-A–B03-G | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
@@ -105,7 +105,7 @@ Reviewed all eight PR commits whose author/committer date is 2026-10-18:
 
 - Current eligible stage: **Stage 0 only**.
 - Completed in this pass: actual BOOK.zip inventory/hash/page-count verification and visual location of all present TOC/content-list pages; source evidence is recorded in `SOURCE_INTAKE_MANIFEST.md`.
-- Remaining Stage 0 blockers: locate/provide the aggregate Statistical Rethinking PDF (or obtain explicit approval to revise its anchor rule), and finish chapter/subsection page-start reconciliation and source-map inputs.
+- Remaining Stage 0 blockers: visually reconcile the 15 non-text Statistical Rethinking page positions (or use reliable page-image fingerprints), finish chapter/subsection page-start reconciliation against TOC locators, and finalize source-map inputs.
 - Do not start or mark Stage 1–5 batches complete until the required preceding gates are met.
 - PR #142 remains OPEN + DRAFT. **No merge, auto-merge, or ready-for-review transition performed.**
 
@@ -117,5 +117,5 @@ Reviewed all eight PR commits whose author/committer date is 2026-10-18:
 - Result: **PASS** — `Validator self-tests` and `Validate repository contracts` both succeeded.
 - Root cause of earlier failures: unquoted commas in two `BOOK_REVIEW_LEDGER_PR142.csv` evidence fields caused line 36/37 to parse as 25 columns instead of the required 23. Corrected those fields without changing the evidence meaning.
 - Read-back confirmed the ledger has 36 data rows and every row has exactly 23 columns.
-- This validation result does not close Stage 0: the current source package still lacks the previously specified 617-page Statistical Rethinking aggregate PDF, and chapter/subsection locator reconciliation remains incomplete.
+- This validation result does not close Stage 0: the follow-up source package now includes the 617-page aggregate and extracted text matches across all page positions, but visual checks for 15 non-text positions and chapter/subsection locator reconciliation remain incomplete.
 - PR #142 remains **OPEN + DRAFT**. No merge or auto-merge was performed.
