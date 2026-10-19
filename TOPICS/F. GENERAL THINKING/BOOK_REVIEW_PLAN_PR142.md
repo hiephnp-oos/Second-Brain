@@ -124,3 +124,15 @@ Reviewed all eight PR commits whose author/committer date is 2026-10-18:
 - Inventory: 18 PDFs, 17 Markdown files, 9 bookmark exports, and a folder-structure note for 16 book identities. All 18 PDF hashes match the recorded inventory.
 - The 9 bookmark exports cover Books 01–08 (07a/07b). All 489 locators are in physical-page range; text/adjacent-page checks resolved all entries, including chapter title pages where the heading starts on the next page.
 - TOC/content-list pages were visually inspected where present. The stable physical-page source map for Books 09–16 and printed-locator-to-physical-page reconciliation where applicable are now recorded in `PR142_SOURCE_PAGE_MAP.md`.
+
+
+## Stage 1 execution record — 2026-10-19
+
+Stage 1 remains IN PROGRESS; no book/batch is closed.
+
+- Canonical PDFs and paired Markdown retrieval extracts for Books 01–05 were inspected. Physical page counts: Book 01 396; Book 02 550; Book 03 368; Book 04 394; Book 05 243.
+- Ledger now includes 18 navigation/source-unit rows for Book 01 and 69 navigation/source-unit rows for Books 02–05. These are source locators and explicit review placeholders, not evidence of semantic coverage.
+- PDF outlines were inspected for physical-page start locators. Existing source-traceability summaries are useful candidate mappings, but chapter-level coverage does not meet the semantic-unit acceptance gate.
+- CI run [39198688095](https://github.com/hiephnp-oos/Second-Brain/actions/runs/39198688095) on commit `d2304206e3aca92b5d7af27849ae92724cb9ccba` passed repository validation. It does not prove semantic review completion.
+
+Remaining before Stage 1 can close: decompose each book's chapters into substantive claims/examples/figures/tables/equations/qualifications/relevant notes; record dispositions and evidence; reconcile all units to the four Game Theory knowledge files; read back every changed artifact; resolve findings; run final validation on the final Stage 1 commit. Stage 2 remains blocked until Books 01–05 all pass these gates. PR #142 stays OPEN + DRAFT and must not be merged.
