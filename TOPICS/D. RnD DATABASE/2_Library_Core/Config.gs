@@ -132,7 +132,7 @@ STATUS_MAPPING: {
     "dangthanh.nguyen@lixil.com",
     "thuan.le@lixil.com"
   ],
-    MAINTENANCE_WEBHOOK: "https://chat.googleapis.com/v1/spaces/AAQAXGfjkKk/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=ZruuMJxaXsesZDL7ZIPA-2mfYlzcCbdnLCm2dQPnSTs", 
+    MAINTENANCE_WEBHOOK: "", 
 
   SCANNER_BACKEND: {
     FILE_ID: '1MExatrxC7A8CgSio0iOV6mTB0KNH3eazLzA_xiDXOTE', 
