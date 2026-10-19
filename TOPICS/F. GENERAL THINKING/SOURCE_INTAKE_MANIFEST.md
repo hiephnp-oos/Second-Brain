@@ -67,8 +67,8 @@ A per-page text-extraction comparison was run between the aggregate and the conc
 - **Verified:** current archive filenames, all 17 PDF page counts and PDF hashes, all 17 Markdown line counts and hashes, and visual presence/structure of the TOC/content-list pages listed above.
 - Book 09 has a summary content list, not a canonical full-book TOC; summary-source limitation remains.
 - Book 07 split 02 is a continuation file beginning inside Chapter 11; it is not expected to contain a full TOC.
-- **Still open:** chapter/subsection start-page reconciliation against every TOC locator, systematic PDF↔Markdown semantic/visual unit reconciliation, and Statistical Rethinking aggregate-versus-split page-image identity on non-text pages.
-- Stage 0 remains **IN PROGRESS / BLOCKED**, not PASS. Visible TOC structure is not semantic/source-unit completion.
+- **Stage 0 closed:** source page map is recorded in `PR142_SOURCE_PAGE_MAP.md`; all 489 supplied bookmark locators are in range and were reconciled against physical PDF text/adjacent title pages; physical chapter/section starts are mapped for Books 10–16 where bookmarks were not supplied; Book 09 is explicitly mapped as summary-only; Statistical Rethinking aggregate/split text and image identity checks passed.
+- **Not part of Stage 0 closure:** systematic semantic-unit and PDF↔Markdown visual/equation reconciliation. Those remain required in the relevant book-review stages. TOC/source-map completion must not be mistaken for semantic book review.
 ### Follow-up archive validation — `BOOK_FULL.zip`
 
 - Archive SHA-256: `b1c5cff93eb3c2cd97a06522ff0917283c059a1c079ad8b5e4060b7800b4cd79`.
@@ -76,4 +76,5 @@ A per-page text-extraction comparison was run between the aggregate and the conc
 - Recomputed SHA-256 matched the recorded value for all 18 PDFs, including the 617-page Statistical Rethinking aggregate. No PDF hash mismatches.
 - The supplied bookmark exports cover Books 01–08 (Statistical Rethinking split into 07a/07b). Their page locators were checked against physical PDF pages: 489 bookmark entries are in range; 464 titles/locators match text on the target page, 25 require adjacent-page/title-page interpretation, and no remaining entries are unresolved after inspecting the lone Book 02 combined chapter/epilogue locator at physical page 185 (chapter title page follows at physical page 186).
 - TOC/content-list pages for Books 01–16 were located and visually inspected where present. Book 09 remains summary-only; Book 07 split 02 is a continuation without a repeated full TOC.
-- **Still open for Stage 0:** build and read back a stable page-level source map for the books without bookmark exports (Books 09–16), reconcile printed TOC locators to physical 1-based PDF pages where locators exist, and record the mapping artifact in the repository. TOC presence alone does not close this gate.
+- Source map recorded and read back: `PR142_SOURCE_PAGE_MAP.md`. It captures bookmark coverage for Books 01–08, physical starts for Books 10–16, and the Book 09 summary limitation. Printed locators were reconciled to physical page positions where provided; TOCs without printed locators are mapped by physical chapter-heading starts.
+- **Stage 0: PASS** for inventory, source identity, TOC/source-map inputs, and Statistical Rethinking aggregate/split alignment. This does not assert semantic PDF↔Markdown equivalence or close any book-review batch.
