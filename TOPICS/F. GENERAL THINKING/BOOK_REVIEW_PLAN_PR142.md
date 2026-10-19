@@ -18,7 +18,7 @@ Execution companion to the review plan agreed for PR #142. This file and the led
 | Stage | Scope | Gate | Current status |
 |---|---|---|---|
 | 0 | Inventory, identity, PDF/MD pairing, TOC/source maps, Statistical Rethinking aggregate/split reconciliation | All 18 PDF and 17 Markdown hashes match inventory; 489 bookmark locators checked; physical starts mapped for Books 10–16; Book 09 summary scope recorded; aggregate/split text 617/617 and non-text page images 15/15 match; source map read back | PASS — structural/source-map gate only |
-| 1 | Books 01–05 | Each batch closed with unit dispositions, evidence and read-back | NOT VERIFIED — waits for Stage 0 closure |
+| 1 | Books 01–05 | Each batch closed with unit dispositions, evidence and read-back | IN PROGRESS — source-pair and existing knowledge-layer intake started; semantic-unit ledger not yet reconciled |
 | 2 | Book 06 — Thinking in Systems | Full source-unit ledger; diagrams and equations checked; all issues dispositioned; all four framework target files read back; links/references validated | BLOCKED / IN PROGRESS |
 | 3 | Books 07–10 | Starts only after Book 06 PASS; Statistical Rethinking alignment gate first | BLOCKED — Book 06 semantic gate and Book 07 aggregate/split gate unresolved |
 | 4 | Books 11–13 | Chapter and back-matter disposition plus PDF TOC verification | NOT STARTED |
@@ -62,6 +62,23 @@ Current repository source-traceability explicitly states the full semantic audit
 - B06-K: cross-chapter deduplication, issue disposition, links/references and full read-back of concepts.md, mental-models.md, applications.md, lessons.md and book-06 traceability.
 
 The target framework files currently contain a number of useful distilled items (including SYS-MM-62/63 and SYS-L-26/27) but they are not evidence of a completed semantic audit. Review source by source and preserve meaningful distinctions. In particular, model equation catalog entries are indexes, not equation verification; no numerical simulation validation should be implied unless performed.
+
+## Stage 1 execution record — 2026-10-19
+
+Stage 1 has started. The canonical PDFs and paired Markdown extracts for Books 01–05 were opened from the supplied `BOOK_FULL.zip`; the current Game Theory library and its five source-traceability files were inspected on the PR branch.
+
+### Intake facts confirmed (structural only)
+- Book 01 — *Thinking Strategically*: 396 PDF pages; 13 chapters across three parts, plus Preface, Introduction, two part epilogues, and Notes.
+- Book 02 — *The Art of Strategy*: 550 PDF pages; 14 chapters across three parts, plus Preface, Introduction, two epilogues, Further Reading, Workouts, and Notes.
+- Book 03 — *A Course in Game Theory*: 368 PDF pages; 15 chapters across four parts, with numbered subsections and formal tables/equations/game trees.
+- Book 04 — *The Strategy of Conflict*: 394 PDF pages; 10 chapters across four parts, three appendices, and publisher paratext.
+- Book 05 — *The Evolution of Cooperation*: 231 PDF pages; nine chapters across five parts, two appendices, Notes, Bibliography, and Index.
+
+### Initial review finding
+Existing source-traceability files contain useful chapter-level coverage summaries, but chapter/title presence and a `COVERED` label are not sufficient evidence for the Stage 1 semantic gate. The current shared ledger has no Books 01–05 unit rows. Therefore no Book 01–05 batch is closed yet. Formal/equation/table/figure checks, examples, qualifications, back matter, dispositions, and target-file read-back still need individually traceable evidence. This is a status clarification, not a finding that the existing distilled content is wrong.
+
+### Next action
+Build the Book 01 source-unit denominator from the canonical PDF first, then reconcile every unit to the existing Game Theory knowledge layer before advancing to Book 02. Keep all Stage 1 batches open until evidence and read-back are recorded.
 
 ## Batch closure log
 | Batch | Source coverage denominator | VERIFIED | ADD | UPDATE | REMOVE | NO_CHANGE | NOT_APPLICABLE | Open fixes | Result / evidence |
