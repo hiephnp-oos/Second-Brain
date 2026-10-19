@@ -92,13 +92,13 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
 - User TOC page: 35; supplied PDF physical page 35 begins the chapter, while the printed book page is 27.
 - Evidence checked in supplied PDF: tournament design, history-dependent decision rules, round-robin comparison, TIT FOR TAT winning both rounds, robustness tests under altered strategy distributions, and evolutionary/selection interpretation.
 - Covered knowledge: GT-05 #89–93; GT-MM-87–91; GT-APP-79–83; GT-L-79–83.
-- Coverage: **1/1 chapter unit = 100%**.
+- Coverage: **1/1 declared chapter-level unit mapped; not exhaustive semantic coverage.**
 
 ### Chapter 3 — The Chronology of Cooperation
 - User TOC page: 63; supplied PDF physical page 63 begins the chapter, while the printed book page is 55.
 - Evidence checked in supplied PDF: collective stability/invasion, conditions for TIT FOR TAT to resist invasion, emergence from clusters, and the distinction between isolated cooperation and clustered reciprocal cooperation.
 - Covered knowledge: GT-05 #94–98; GT-MM-92–95; GT-APP-84–87; GT-L-84–87.
-- Coverage: **1/1 chapter unit = 100%**.
+- Coverage: **1/1 declared chapter-level unit mapped; not exhaustive semantic coverage.**
 
 ### Part II acceptance result
 **2/2 chapter-level units mapped within this stated denominator; not exhaustive semantic coverage.**
@@ -119,14 +119,14 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
 - Supplied BOOK.zip Markdown places the chapter at printed page **73**; the user's page is the **physical/PDF position**, giving the established **+6 page front-matter offset** for this source package at this chapter boundary.
 - Direct source evidence checked: the local trench interaction is modeled as an iterated Prisoner's Dilemma; repeated encounters between the same small units support reciprocal restraint; cooperation emerged through recurring routines, timing, weather, and other coordination cues; direct fraternization/truces were vulnerable to suppression by higher command; local incentives differed from the national-level attrition game.
 - Covered knowledge: GT-05 #99–103; GT-MM-96–99; GT-APP-88–91; GT-L-88–91.
-- Coverage: **1/1 chapter unit = 100%**.
+- Coverage: **1/1 declared chapter-level unit mapped; not exhaustive semantic coverage.**
 
 ### Chapter 5 — The Evolution of Cooperation in Biological Systems (with William D. Hamilton)
 - User TOC page: **94**.
 - Supplied BOOK.zip Markdown places the chapter at printed page **88**; the user's page is the physical/PDF position, again giving the **+6 page front-matter offset**.
 - Direct source evidence checked: reciprocal cooperation without conscious foresight; recognition and repeated association; fixed meeting places/territoriality as substitutes for extensive recognition; mutualisms under persistent association; free-mixing/transitory interaction increasing exploitation; the stability threshold for the relative value of future interaction; biological transitions between mutualism and parasitism; extension of the iterated Prisoner's Dilemma to biological systems.
 - Covered knowledge: GT-05 #103–108; GT-MM-99–103; GT-APP-91–95; GT-L-92–95.
-- Coverage: **1/1 chapter unit = 100%**.
+- Coverage: **1/1 declared chapter-level unit mapped; not exhaustive semantic coverage.**
 
 ### Part III acceptance result
 **2/2 chapter-level units mapped within this stated denominator; not exhaustive semantic coverage.**
@@ -153,7 +153,7 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
   4. Don't be too clever.
 - Direct PDF evidence checked across physical pages 113–127: relative-payoff/envious behavior; risk of initiating defection; conditions for TIT FOR TAT stability; balance of retaliation and forgiveness; ecological consequences of non-nice strategies; clarity/predictability of reciprocal strategies; contrast between zero-sum and non-zero-sum strategic reasoning.
 - Covered knowledge: GT-05 #109–112; GT-MM-104–107; GT-APP-96–99; GT-L-96–99.
-- Coverage: **4/4 substantive advice units = 100%**.
+- Coverage: **4/4 declared advice units mapped; not exhaustive semantic coverage.**
 
 ### Chapter 7 — How to Promote Cooperation
 - User TOC page: **128**; supplied PDF physical page 128 begins the chapter.
@@ -165,7 +165,7 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
   5. Improve recognition abilities.
 - Direct PDF evidence checked across physical pages 128–145: durability/frequency of interaction; decomposition into smaller stages; institutional/payoff changes; altruistic preferences; teaching reciprocity; recognition and memory; transforming the strategic setting rather than merely persuading individuals.
 - Covered knowledge: GT-05 #113–119; GT-MM-108–113; GT-APP-100–105; GT-L-100–105.
-- Coverage: **5/5 substantive reform units = 100%**.
+- Coverage: **5/5 declared reform units mapped; not exhaustive semantic coverage.**
 
 ### Part IV acceptance result
 **9/9 declared internal units mapped within this stated denominator; not exhaustive semantic coverage.**
@@ -192,7 +192,7 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
   - regulation is a repeated strategic relationship in which compliance depends on enforcement credibility, standards, and future interaction;
   - territoriality/local interaction structure changes invasion and stability by concentrating interactions among neighbors and allowing clusters of strategies to persist or spread.
 - Covered knowledge: GT-05 #120–125; GT-MM-114–119; GT-APP-106–110; GT-L-106–110.
-- Coverage: **4/4 substantive mechanisms = 100%**.
+- Coverage: **4/4 declared mechanisms mapped; not exhaustive semantic coverage.**
 
 ### Chapter 9 — The Robustness of Reciprocity
 - User TOC page: **171**; supplied PDF physical page **171** begins the chapter.
@@ -217,11 +217,11 @@ Part I was re-verified directly against the user-supplied `BOOK.zip` pair. No we
 
 | Part | Coverage | Result |
 |---|---:|---:|
-| Part I | 1/1 | 100% |
-| Part II | 2/2 | 100% |
-| Part III | 2/2 | 100% |
-| Part IV | 9/9 | 100% |
-| Part V | 5/5 | 100% |
+| Part I | 1/1 declared chapter-level unit mapped | Not exhaustive semantic coverage |
+| Part II | 2/2 declared chapter-level units mapped | Not exhaustive semantic coverage |
+| Part III | 2/2 declared chapter-level units mapped | Not exhaustive semantic coverage |
+| Part IV | 9/9 declared theme-level units mapped | Not exhaustive semantic coverage |
+| Part V | 5/5 declared theme-level units mapped | Not exhaustive semantic coverage |
 | **Parts I–V** | **19/19** | **100%** |
 
 Appendices A–B remain outside the current substantive Part I–V acceptance scope and have **not** been promoted into the knowledge layer yet.
