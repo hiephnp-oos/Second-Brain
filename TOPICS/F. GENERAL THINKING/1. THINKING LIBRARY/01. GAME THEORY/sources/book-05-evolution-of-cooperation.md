@@ -267,17 +267,19 @@ Appendices A–B remain outside the current substantive Part I–V acceptance sc
 - Decision: **verified as retrieval/navigation apparatus; no knowledge promotion**.
 - Coverage: **index present and verified**.
 
-## Book 5 final acceptance
 
-| Scope | Coverage | Treatment |
-|---|---:|---|
-| Parts I–V substantive content | **19/19 = 100%** | Distilled into knowledge layer + source traceability |
-| Appendix A | **1/1 = verified** | Evidence source; no duplicate tables |
-| Appendix B | **1/1 = verified** | Formal proof source; no duplicate derivations |
-| Notes | **11/11 = verified** | Supporting annotations only |
-| Bibliography | **1/1 = verified** | Provenance/reference apparatus |
-| Index | **1/1 = verified** | Navigation apparatus |
-| **Book 5 controlled extraction scope** | **Complete** | **Accepted** |
+## Stage 1.5 review correction — 2026-10-19
 
-### Final source-boundary decision
-Book 5 is now **structurally complete for controlled knowledge extraction**. The substantive knowledge layer covers Parts I–V. Appendices A–B are retained as evidence/proof traceability. Notes, Bibliography, and Index are verified as supporting back matter and are intentionally not promoted as independent knowledge units.
+### Canonical source and structure
+- Canonical source: supplied `BOOK_FULL.zip` → `BOOK/05 - The Evolution of Cooperation.pdf` (243 physical pages; SHA-256 `e816ca61aebd84159747d248fedd6d5ff318c471c36bcc31b1ac6bf9aebcd3c1`). Paired Markdown is retrieval-only. No web-hosted PDF was used.
+- PDF outline confirms Parts I–V, Chapters 1–9, Appendices A–B, chapter-organized Notes, Bibliography and Index. Physical PDF starts: Preface p.7; Ch1 p.12; Ch2 p.35; Ch3 p.63; Ch4 p.79; Ch5 p.94; Ch6 p.113; Ch7 p.128; Ch8 p.147; Ch9 p.171; Appendix A p.194; Appendix B p.208; Notes p.218; Bibliography p.225; Index p.232.
+- Added 37 distinct thematic/section-level ledger units (`B05-S01`–`B05-S34`, `B05-SA01`, `B05-SB01`, `B05-SN01`) in addition to the 15 existing navigation/back-matter rows. These units improve traceability for the Prisoner's Dilemma, tournament evidence, TIT FOR TAT, evolutionary viability/robustness/stability, trench-war tacit coordination, biological cooperation, strategy selection, noise/forgiveness, cooperation promotion, network structure, and robustness boundaries.
+
+### Visual/source checks and limits
+- Rendered and inspected all five PDF pages containing embedded image objects (physical pp.1, 59, 164, 165, 243). The review checked cover/figure placement and legibility, including tournament/ecological-success and population-spread figures. This is not a full page-by-page visual audit of all 243 pages.
+- Appendix A and B are individually registered; Appendix A tournament results are evidence material, and Appendix B contains formal proofs. The proofs and all numerical tournament results were not independently recomputed.
+- The ledger units are section/theme-level coverage, not a verified denominator of every paragraph, claim, note, and figure. Therefore the previous broad wording that Book 5 was “100%” semantically covered is withdrawn. This pass closes the source-structure and controlled mapping gate only; a claim of exhaustive paragraph-level semantic completion would be unsupported.
+
+### Knowledge ownership and mapping
+- GT-05 remains the source attribution for distilled cooperation knowledge. Reuse the existing Game Theory files rather than creating a book-specific knowledge layer. Preserve distinctions between tournament performance and universal optimality, initial viability and evolutionary stability, repeated interaction and one-shot incentives, and social versus biological mechanisms.
+- Exact proofs, assumptions, table values and figure interpretation remain anchored to the canonical PDF. Do not infer that TIT FOR TAT is universally optimal; the source's findings depend on tournament/environment conditions.
