@@ -32,6 +32,6 @@ The migrated files under `TOPICS/D. RnD DATABASE/` are the current detailed sour
 For subsequent source refreshes:
 1. Compare the uploaded package inventory against the existing three-layer tree.
 2. Confirm all expected source files are represented and unintended deletions are understood.
-3. Scan source-like files for credentials and webhook URLs.
+3. Check source-like files for sensitive configuration and compare any existing values against explicitly documented, user-approved archive exceptions; do not add new secrets.
 4. Update this manifest and the topic README in the same PR.
 5. Remove temporary upload/checklist artifacts before merge.
