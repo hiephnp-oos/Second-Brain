@@ -156,6 +156,8 @@ Avoid storing:
 - confidential information that should not be shared across AI systems;
 - large copies of source code or documents already stored elsewhere.
 
+**Narrow archival exception:** `TOPICS/D. RnD DATABASE/` is a user-designated backup of the production DNF R&D Database V4. By explicit user decision on 2026-10-19, preserve the existing maintenance-webhook configuration value in this archived source; do not remove or rewrite it during routine cleanup. This exception applies only to that existing value in this designated archive and does not change the general rule for other topics or newly introduced values. The repository is intended to be private; changing visibility does not undo exposure that occurred while it was public.
+
 For exact update lifecycle, routing rules, consistency checklist, and Handoff model, use `SYSTEM CORE/WORKFLOW.md`. For repository invariants and source-of-truth priority, use `SYSTEM CORE/REPOSITORY_CONTRACT.md`.
 
 ## 11. PERIODIC REVIEW
