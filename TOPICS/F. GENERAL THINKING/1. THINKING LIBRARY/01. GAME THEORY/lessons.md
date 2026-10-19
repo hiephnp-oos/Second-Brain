@@ -1,6 +1,6 @@
 # Game Theory — Reusable Lessons
 
-Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02)
+Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02); *The Strategy of Conflict* — Schelling (GT-04)
 
 ## GT-L-01 — The opponent is part of the problem definition
 Define the other actor and their likely response before optimizing your own move.

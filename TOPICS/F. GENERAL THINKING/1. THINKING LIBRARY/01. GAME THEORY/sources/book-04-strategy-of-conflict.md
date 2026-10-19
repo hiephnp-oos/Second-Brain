@@ -39,7 +39,7 @@ Validated:
 
 ## Acceptance decision
 
-Status: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction.
+Status: `SUBSECTION MAPPING VERIFIED` for controlled knowledge extraction; line-by-line proof and equation verification remains out of scope.
 
 Acceptance means the pair is sufficiently traceable for controlled distillation. It does not mean the raw Markdown is a clean canonical transcription.
 
@@ -186,3 +186,10 @@ Part IV has 14 substantive TOC units: 9 in Chapter 9 and 5 in Chapter 10. Chapte
 - 14/14 substantive TOC units are explicitly traceable.
 - The source-specific contribution is reciprocal fear, endogenous attack probability, imperfect warning, dynamic adjustment, tacit/bargaining responses, multi-player extension, disarmament, misapprehension, surveillance, and overbuilding.
 - Existing GT-04 concepts about surprise attack were not counted as sufficient by themselves; Part IV adds the source-specific reasoning layer.
+
+
+## Stage 1.4 — subsection-level reconciliation (2026-10-19)
+
+The canonical PDF outline contains 53 level-3 subsection headings in addition to 10 chapter headings and three appendix headings. The shared ledger now records each of the 53 subsections as a separate unit with a physical PDF locator and a mapping to the existing GT-04 knowledge layer. All 49 PDF pages containing embedded image objects were visually reviewed in a contact sheet. This visual pass checks the presence, placement and legibility of game matrices, diagrams and formula-bearing pages; it does not claim independent mathematical recalculation. Appendix C's five listed subsection headings are included in the 53-unit denominator. Appendices A and B remain represented by their appendix-level structural rows, with detailed internal proof/argument review not claimed complete.
+
+Acceptance boundary: 53/53 named level-3 TOC subsections mapped (100% of this denominator). This is a source-to-knowledge mapping gate, not a complete proof audit or a claim that every paragraph/footnote was independently distilled.

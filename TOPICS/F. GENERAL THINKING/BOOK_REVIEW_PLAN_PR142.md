@@ -179,3 +179,15 @@ Remaining before Stage 1 can close: decompose each book's chapters into substant
 - Formal-content boundary: this is not a claim that every theorem proof, equation derivation, payoff calculation or vector game tree was independently recomputed. Those remain source-level material; the repository promotes assumptions, reasoning distinctions and operational mappings rather than duplicating proofs. Ledger fields explicitly preserve this limitation.
 - Target read-back: all four Game Theory knowledge files and Book 03 traceability were read before reconciliation; source attribution now includes GT-03. This batch closes section-level source-to-knowledge mapping only, not the mathematical correctness of every formal derivation.
 - Status: **PASS — Stage 1.3 section-level mapping gate**. Stage 1 overall remains open until Books 04–05 pass equivalent gates. PR #142 remains OPEN + DRAFT; no merge or ready-for-review transition.
+
+
+## Stage 1.4 — Book 04: The Strategy of Conflict (2026-10-19)
+
+- Canonical source: supplied `BOOK_FULL.zip` → `BOOK/04 - The Strategy of Conflict.pdf` (394 physical pages); paired Markdown is retrieval-only. No online PDF substituted.
+- TOC/section mapping: reconciled the PDF outline with all 53 level-3 substantive subsection headings across Chapters 2–5, 7–10 and Appendix C. Added explicit ledger units `B04-S01`–`B04-S53`; the existing 10 chapter rows and 3 appendix rows remain structural locators, not substitutes for subsection coverage.
+- Knowledge mapping: each subsection is mapped to the existing GT-04 concepts, mental models, applications and lessons ranges/source-traceability entries. Book 04's distinct contribution remains bargaining and commitment, focal/tacit coordination, communication and delegation, randomization/brinkmanship, and reciprocal fear/surprise attack; no duplicate book-level knowledge layer or source transcription was added.
+- Visual review: all 49 PDF pages containing embedded image objects were reviewed in a contact sheet. This checks diagram/table placement and legibility; it is not a claim of independent recalculation of every game matrix or formula.
+- Formal-content boundary: payoff derivations and formal arguments were not independently recomputed line-by-line. Ledger records that limitation and directs exact derivations to the canonical PDF.
+- Back matter: Appendix C's five named subsection headings are separately represented; Appendices A and B remain separately identified structural units and their internal argument/proof verification is not claimed complete by the 53-section denominator.
+- Read-back/validation: final ledger must parse at exactly 23 columns per row, contain 53 unique Book 04 subsection IDs, and pass repository CI on the final commit.
+- Status: **PASS — Stage 1.4 subsection mapping gate**, conditional on final read-back and CI success. Stage 1 remains open until Book 05 passes equivalent gates. PR #142 remains OPEN + DRAFT; no merge or ready-for-review transition.
