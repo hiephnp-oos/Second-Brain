@@ -1,3 +1,9 @@
 function onOpen() {
-  SpreadsheetApp.getUi().createMenu('Update').addItem('Drawing - Scan File','runFullScan').addItem('Rename - Setup UI','setupRenameSheetUI').addItem('Rename - Scan','scanRenameableCodes').addItem('Rename - Sync','runBatchRenameSync').addItem('Schedule Daily Scan','createDailyBackendTrigger').addToUi();
+  const ui = SpreadsheetApp.getUi();
+  ui.createMenu('Menu') // Hoặc tên 'Menu' tùy bạn đặt
+    .addItem('Get Drawing', 'runFullScan')
+    .addSeparator()
+    .addItem('1. Scan', 'scanRenameableCodes')
+    .addItem('2. Rename', 'runBatchRenameSync')
+    .addToUi();
 }

@@ -6,16 +6,17 @@
  * - Trung tâm xử lý thông báo gửi về Google Chat thông qua Webhook.
  * - Được thiết kế theo dạng Universal Function (Fire-and-Forget) để các module khác
  * (Import, Scanner, Health Check) có thể gọi chung.
+ * - [V2.0] Hoạt động dưới dạng Standalone Library Script thay vì Bound Script.
  * * DEPENDENCIES:
  * - Config.gs (Đọc biến CONFIG.MAINTENANCE_WEBHOOK).
+ * * TRIGGERS / USAGE:
+ * - Được gọi thông qua Public API của Library từ các module khác trong hệ thống.
  * * AUTHOR: SheetScript Architect / Hoàng Nguyên Phước Hiệp
- * LAST UPDATED: 16/06/2026 | VERSION: V1.0
+ * LAST UPDATED: 07/09/2026 | VERSION: V2.0
+ * * CHANGELOG:
+ * - V2.0 - 07/09/26: [ARCHITECTURE] Chuyển đổi kiến trúc từ Bound Script sang Library Script để phục vụ gọi chéo (cross-script).
+ * - V1.0 - 16/06/26: Khởi tạo module.
  * ======================================================================================
- */
-
-/**
- * Hàm dùng chung (Universal) để bắn thông báo Google Chat từ mọi nơi trong hệ thống
- * @param {string} messageText Nội dung tin nhắn (Hỗ trợ định dạng Markdown của Google Chat)
  */
 function sendSystemAlertToChat(messageText) {
   const webhookUrl = (typeof CONFIG !== 'undefined' && CONFIG.MAINTENANCE_WEBHOOK) 

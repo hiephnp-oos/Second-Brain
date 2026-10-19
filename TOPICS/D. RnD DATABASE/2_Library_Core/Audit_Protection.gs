@@ -5,13 +5,15 @@
  * * DESCRIPTION:
  * - Công cụ kiểm toán bảo mật: Quét toàn bộ khóa (Sheet/Range Protections) xuất ra tab "Maintenance".
  * - Tích hợp tính năng "Auto-Healing": Tự động phát hiện và ép quyền Admin đồng loạt ngay trong lúc quét.
+ * - [V3.0] Hoạt động dưới dạng Standalone Library Script thay vì Bound Script.
  * * DEPENDENCIES:
  * - Config.gs (Đọc biến CONFIG.ADMINS).
  * * TRIGGERS / USAGE:
- * - Kích hoạt thủ công từ Apps Script Editor (Dành cho System Admin).
+ * - Được gọi thông qua Public API của Library từ Bound Script (Kích hoạt thủ công bởi System Admin).
  * * AUTHOR: SheetScript Architect / Hoàng Nguyên Phước Hiệp
- * LAST UPDATED: 28/05/2026 | VERSION: V2.5
+ * LAST UPDATED: 07/09/2026 | VERSION: V3.0
  * * CHANGELOG:
+ * - V3.0 - 07/09/26: [ARCHITECTURE] Chuyển đổi kiến trúc từ Bound Script sang Library Script để phục vụ gọi chéo (cross-script).
  * - V2.5 - 28/05/26: [CLEANUP] Remove emojis from alerts/toasts, convert success alert to toast, standardize messages per GAS anti AI slope rules.
  * - V2.4 - 24/04/26: [PERFORMANCE] Tối ưu hóa vòng lặp (Hoisting) và tái sử dụng biến để tăng tốc 30-40%.
  * - V2.3 - 09/04/26: [AUTO-HEALING] Gom tính năng Sync vào Audit. Tự động phát hiện sai lệch và ép quyền ngay lúc quét (1-Click Security).
@@ -99,7 +101,7 @@ function auditAllProtections() {
 
   const maxRow = Math.max(reportSheet.getLastRow(), 4);
   // [MỚI] Định dạng text ép cho cột 29, 30 (AC, AD) do Zone Security đã dời về cuối
-  reportSheet.getRange(4, 29, maxRow, 2).setNumberFormat("@");
+  reportSheet.getRange(4, 34, maxRow, 2).setNumberFormat("@");
 
   if (outputData.length > 0) {
     const currentDataRows = maxRow - 3;
@@ -113,10 +115,10 @@ function auditAllProtections() {
     }
 
     // [MỚI] Ghi kết quả bắt đầu từ cột 28 (AB)
-    reportSheet.getRange(4, 28, outputData.length, 3).setValues(outputData)
+    reportSheet.getRange(4, 33, outputData.length, 3).setValues(outputData)
                .setWrapStrategy(SpreadsheetApp.WrapStrategy.WRAP);
   } else if (maxRow >= 4) {
-    reportSheet.getRange(4, 28, maxRow - 3, 3).clearContent();
+    reportSheet.getRange(4, 33, maxRow - 3, 3).clearContent();
   }
 
   SpreadsheetApp.flush();

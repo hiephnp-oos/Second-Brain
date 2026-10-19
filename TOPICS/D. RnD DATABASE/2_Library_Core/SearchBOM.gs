@@ -6,15 +6,18 @@
  * - Xây dựng thuật toán đệ quy (Recursive) để tìm kiếm và xuất cấu trúc BOM đa tầng.
  * - Map linh kiện con, tính toán hệ số số lượng (Qty) thực tế.
  * - Gán công thức XLOOKUP/REGEX để lấy tự động Supplier, Hình ảnh, và Cost.
+ * - [V5.0] Hoạt động dưới dạng Standalone Library Script thay vì Bound Script.
  * * DEPENDENCIES:
  * - Config.gs (Đọc tên sheet hệ thống, cấu hình BOM_SEARCH_LAYOUT).
  * - SystemUtils.gs (Xử lý Cache và báo lỗi). YÊU CẦU BẮT BUỘC.
  * - Yêu cầu: Bật "Google Sheets API" trong phần Services để tối ưu hiệu năng.
  * * TRIGGERS / USAGE:
- * - Kích hoạt tự động khi người dùng nhập/sửa mã tại ô F5 của sheet Search BOM (Trigger: onEdit).
+ * - Được gọi thông qua Router systemOnEdit từ Bound Script.
  * * AUTHOR: SheetScript Architect / Hoàng Nguyên Phước Hiệp
- * LAST UPDATED: 17/06/2026 | VERSION: V3.1.2
+ * LAST UPDATED: 07/09/2026 | VERSION: V5.0
  * * CHANGELOG:
+ * - V5.0 - 07/09/26: [ARCHITECTURE] Chuyển đổi kiến trúc từ Bound Script sang Library Script để phục vụ gọi chéo (cross-script).Xóa bỏ hàm onEdit(e) thừa do đã chuyển luồng trigger sang hệ thống Router tập trung
+ * - V3.2.0 - 05/09/26: [REFACTOR] Xóa bỏ hàm onEdit(e) thừa do đã chuyển luồng trigger sang hệ thống Router tập trung (Library_Entry.gs).
  * - V3.1.2 - 17/06/26: Đưa trở lại onEdit (Simple Trigger) để đạt tốc độ phản hồi tức thì, cấu hình nuốt lỗi API để fallback ngầm về Native UI.
  * - V3.1.1 - 17/06/26: Xóa bỏ typeof guard cho các hàm cache, ép SystemUtils.gs thành hard dependency.
  * - V3.0.0 - 17/06/26: Xóa bỏ magic numbers, đọc cấu hình từ CONFIG. Chia nhỏ hàm generateMultiLevelBOM.
@@ -296,21 +299,6 @@ function getGaps_(rows) {
   }
   groups.push([start, count]);
   return groups;
-}
-
-/**
- * Sự kiện trigger tự động khi sửa ô F5
- * TRẢ VỀ SIMPLE TRIGGER ĐỂ ĐẠT TỐC ĐỘ PHẢN HỒI TỨC THÌ
- */
-function onEdit(e) {
-  if (!e || !e.range) return;
-  const range = e.range;
-  const sheet = range.getSheet(); 
-  
-  if (sheet.getName() === CONFIG.SHEETS.SEARCH_RESULT && range.getRow() === 5 && range.getColumn() === 6) {
-    const value = range.getValue().toString().trim();
-    if (value) generateMultiLevelBOM();
-  }
 }
 
 /**

@@ -6,14 +6,15 @@
  * - Kết nối xuyên biên giới với Document Scanner Backend để lấy danh sách bản vẽ mới nhất.
  * - Xử lý ghi đè tốc độ cao bằng Sheets API, gán Hyperlink động.
  * - Tự động thiết lập khóa Admin an toàn (không ghi đè Owner) và tự động Reset Filter từ dòng 3.
+ * - [V6.0] Hoạt động dưới dạng Standalone Library Script thay vì Bound Script.
  * * DEPENDENCIES:
  * - Config.gs (Lấy ID Backend, hàm applyStandardProtection).
  * * TRIGGERS / USAGE:
- * - Kích hoạt thủ công (Menu: Import -> Sync Drawing).
- * - Chạy ngầm tự động (Time-driven: 06:30 AM & 12:30 PM mỗi ngày).
+ * - Được gọi thông qua Public API của Library từ Bound Script (Kích hoạt thủ công qua Menu: Import -> Sync Drawing).
  * * AUTHOR: SheetScript Architect / Hoàng Nguyên Phước Hiệp
- * LAST UPDATED: 28/05/2026 | VERSION: V5.5
+ * LAST UPDATED: 07/09/2026 | VERSION: V6.0
  * * CHANGELOG:
+ * - V6.0 - 07/09/26: [ARCHITECTURE] Chuyển đổi kiến trúc từ Bound Script sang Library Script để phục vụ gọi chéo (cross-script). Loại bỏ Time-driven trigger nội bộ.
  * - V5.5 - 28/05/26: [CLEANUP] Standardize file header, remove emojis from UI/cells, fix infinite error toast per GAS rules.
  * - V5.4 - 08/04/26: [TỐI ƯU] Xóa từ dòng 4 trở đi, giữ nguyên tên/format Header. Bỏ Log trùng lặp.
  * - V5.3 - 08/04/26: Bổ sung Auto Filter từ dòng 3. Fix lỗi Shadow Permission do đập khóa cũ.
@@ -189,14 +190,5 @@ function listMainFolderPDFFiles() {
  }
 }
 
-function createDualDailyTriggers() {
- const triggers = ScriptApp.getProjectTriggers();
- for (const trigger of triggers) {
-  if (trigger.getHandlerFunction() === 'listMainFolderPDFFiles') ScriptApp.deleteTrigger(trigger);
- }
- ScriptApp.newTrigger('listMainFolderPDFFiles').timeBased().atHour(6).nearMinute(30).everyDays(1).create();
- ScriptApp.newTrigger('listMainFolderPDFFiles').timeBased().atHour(12).nearMinute(30).everyDays(1).create();
- if (typeof logAction === 'function') logAction("TRIGGER", "Thiết lập lịch kéo dữ liệu (6h & 12h)");
-}
 
 //design by Hiep

@@ -6,13 +6,15 @@
  * - So sánh cấu trúc (Component, Qty, Desc) của 2 mã BOM bất kỳ.
  * - Phân loại và Highlight trạng thái khác biệt (Added, Removed, Changed, Same).
  * - Tối ưu tốc độ xuất báo cáo bằng Batch Update API, bảo tồn định dạng Hyperlink cột Drawing.
+ * - [V5.0] Hoạt động dưới dạng Standalone Library Script thay vì Bound Script.
  * * DEPENDENCIES:
  * - Config.gs (Đọc biến hệ thống).
  * * TRIGGERS / USAGE:
- * - Kích hoạt thủ công (Gắn vào Nút bấm/Macro trên sheet BOM Comparison).
+ * - Được gọi thông qua Public API của Library từ Bound Script (Kích hoạt thủ công qua Nút bấm/Macro trên sheet BOM Comparison).
  * * AUTHOR: SheetScript Architect / Hoàng Nguyên Phước Hiệp
- * LAST UPDATED: 17/06/2026 | VERSION: V4.3.0
+ * LAST UPDATED: 07/09/2026 | VERSION: V5.0
  * * CHANGELOG:
+ * - V5.0 - 07/09/26: [ARCHITECTURE] Chuyển đổi kiến trúc từ Bound Script sang Library Script để phục vụ gọi chéo (cross-script).
  * - V4.3.0 - 17/06/26: Áp dụng Decomposition tách logic ra hàm buildComparisonResult_. Cập nhật xử lý lỗi tập trung qua ErrorUtils.
  * - V4.2 - 11/06/26: [FEATURE] Thêm cột Unit cho cả 2 vế. Cập nhật ARRAYFORMULA nhân STD Cost với Qty thực tế.
  * - V4.1 - 28/05/26: [CLEANUP] Remove emojis from alerts/comments, rename Map variables and private helpers per GAS anti AI slope rules.

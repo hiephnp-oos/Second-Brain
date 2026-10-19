@@ -7,14 +7,16 @@
  * - Roll-up gộp cụm linh kiện, xử lý logic số nhiều (Pluralization: 1 pc -> 2 pcs).
  * - Ghost Copy Dual: Bốc hình ảnh trực tiếp từ B.Material (OLD) và ZMAT (NEW) sang file Report.
  * - Đọc dữ liệu Input từ Sheet "Maintenance" (A:OLD, B:NEW) từ dòng 4.
+ * - [V7.0] Hoạt động dưới dạng Standalone Library Script thay vì Bound Script.
  * * DEPENDENCIES:
  * - File Target ID (Lấy từ Script Properties).
  * - Yêu cầu phân quyền Editor trên thư mục xuất file.
  * * TRIGGERS / USAGE:
- * - Kích hoạt thủ công (Gắn nút bấm trên tab Input_SKU).
+ * - Được gọi thông qua Public API của Library từ Bound Script (Kích hoạt thủ công qua Nút bấm trên tab Input_SKU).
  * * AUTHOR: SheetScript Architect / Hoàng Nguyên Phước Hiệp
- * LAST UPDATED: 17/06/2026 | VERSION: V6.6.0
+ * LAST UPDATED: 07/09/2026 | VERSION: V7.0
  * * CHANGELOG:
+ * - V7.0 - 07/09/26: [ARCHITECTURE] Chuyển đổi kiến trúc từ Bound Script sang Library Script để phục vụ gọi chéo (cross-script).
  * - V6.6.0 - 17/06/26: Xóa bỏ hardcode TARGET_FILE_ID, chuyển sang đọc từ Script Properties. Áp dụng ErrorUtils.
  * - V6.5.0 - 28/05/26: [CLEANUP] Standardize alerts, toasts, remove emojis from HTML dialog string, and rename Maps per GAS anti AI slope rules.
  * - V6.4.0 - 08/04/26: Fix nguồn ảnh luồng NEW trỏ về ZMAT Sparepart, tối ưu API Batch Update.

@@ -39,6 +39,8 @@ function simpleExportCode() {
 
     const timeZone = Session.getScriptTimeZone();
     const dateStr = Utilities.formatDate(new Date(), timeZone, "yyyyMMdd_HHmm");
+    
+    // Cố gắng lấy tên bảng tính, nếu chạy ở Standalone Library thì lấy tên Project
     let projectName = "AppsScript_Project";
     try {
       const ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -48,14 +50,19 @@ function simpleExportCode() {
     }
 
     const fileName = `${projectName}_${dateStr}.txt`;
+
+    // Tạo file mới trên My Drive
     const backupFile = DriveApp.createFile(fileName, fullCode, MimeType.PLAIN_TEXT);
 
+    // Thông báo thành công
     try {
       const ss = SpreadsheetApp.getActiveSpreadsheet();
       ss.toast(`Đã lưu file: ${fileName}`, "Backup Thành công", 8);
     } catch(e) {
+      // Dành cho trường hợp chạy độc lập không có giao diện Sheet
       console.log(`Đã lưu file: ${backupFile.getUrl()}`);
     }
+
   } catch (error) {
     try {
       SpreadsheetApp.getUi().alert("Lỗi khi backup: " + error.message);

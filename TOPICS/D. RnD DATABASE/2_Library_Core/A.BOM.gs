@@ -7,13 +7,15 @@
  * - Sàng lọc (Transform) loại bỏ các Parent SAP lỗi, map mã Old Code, làm sạch @.
  * - Đổ dữ liệu (Load) ra sheet "A.BOM" phục vụ Finder và công cụ Compare.
  * - Hỗ trợ Auto Reset Filter và thiết lập khóa Admin tự động.
+ * - [V5.0] Hoạt động dưới dạng Standalone Library Script thay vì Bound Script.
  * * DEPENDENCIES:
  * - Config.gs (Sử dụng CONFIG, applyStandardProtection).
  * * TRIGGERS / USAGE:
- * - Chạy ngầm tự động (Auto-trigger) ngay sau khi Import BOM/MAT hoàn tất.
+ * - Được gọi thông qua Public API của Library từ Bound Script ngay sau khi Import BOM/MAT hoàn tất.
  * * AUTHOR: SheetScript Architect / Hoàng Nguyên Phước Hiệp
- * LAST UPDATED: 28/05/2026 | VERSION: V4.3
+ * LAST UPDATED: 07/09/2026 | VERSION: V5.0
  * * CHANGELOG:
+ * - V5.0 - 07/09/26: [ARCHITECTURE] Chuyển đổi kiến trúc từ Bound Script sang Library Script để phục vụ gọi chéo (cross-script).
  * - V4.3 - 28/05/26: [CLEANUP] Remove emojis from alerts/toasts, rename Map/Set variables per GAS anti AI slope rules.
  * - V4.2 - 13/04/26: [CRITICAL BUGFIX] Fix lỗi blank sheet do `setValues` crash vì dính `undefined`. Chuẩn hóa chuỗi Range Name bọc nháy đơn `'A.BOM'!A1` cho API. Gỡ Filter cũ trước khi clearContent để tránh kẹt lưới Grid.
  * - V4.1 - 13/04/26: [AUTO-REVISION] Thêm lệnh `rebuildSearchIndex()` ở cuối luồng để tự động nhảy Version.

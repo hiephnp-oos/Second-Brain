@@ -50,9 +50,10 @@ function setupMaintenanceLayout() {
     ss.moveActiveSheet(1);
   }
 
+  // Tổng số cột bây giờ là 36 (Zone 1 tăng thêm 1 cột)
   const currentCols = sheet.getMaxColumns();
-  if (currentCols > 31) sheet.deleteColumns(32, currentCols - 31);
-  else if (currentCols < 31) sheet.insertColumnsAfter(currentCols, 31 - currentCols);
+  if (currentCols > 36) sheet.deleteColumns(37, currentCols - 36);
+  else if (currentCols < 36) sheet.insertColumnsAfter(currentCols, 36 - currentCols);
   
   const currentRows = sheet.getMaxRows();
   if (currentRows > 100) sheet.deleteRows(101, currentRows - 100);
@@ -73,21 +74,22 @@ function setupMaintenanceLayout() {
 
   requests.push({
     repeatCell: {
-      range: { sheetId: sheetId, startRowIndex: 0, endRowIndex: sheet.getMaxRows(), startColumnIndex: 0, endColumnIndex: 31 },
+      range: { sheetId: sheetId, startRowIndex: 0, endRowIndex: sheet.getMaxRows(), startColumnIndex: 0, endColumnIndex: 36 },
       cell: { userEnteredFormat: { textFormat: { fontFamily: "Arial", fontSize: 10 }, verticalAlignment: "MIDDLE", wrapStrategy: "CLIP" } },
       fields: "userEnteredFormat(textFormat,verticalAlignment,wrapStrategy)"
     }
   });
 
-  // THỨ TỰ ZONES ĐÃ ĐƯỢC QUY HOẠCH LẠI LOGIC HƠN
+  // TẤT CẢ ZONES ĐÃ OFFSET SANG PHẢI +1 SO VỚI BẢN TRƯỚC
   const zones = [
-    { startCol: 1, numCols: 3, title: "B.MATERIAL: Unused items", color: "#f4c7c3", sub: ["Old Code (B.Mat)", "Description", "Status"] },
-    { startCol: 5, numCols: 3, title: "B.MATERIAL: Missing information", color: "#fff2cc", sub: ["Old Code", "Description", "Drawing"] },
-    { startCol: 9, numCols: 3, title: "B.MATERIAL: Incomplete information", color: "#fce5cd", sub: ["Component", "Missing Fields", "Drawing"] },
-    { startCol: 13, numCols: 3, title: "A.BOM: Ghost components", color: "#d9d2e9", sub: ["Parent in BOM", "Ghost Component", "Ghost Error Reason"] },
-    { startCol: 17, numCols: 6, title: "A.BOM: Blocked status & Cost date", color: "#d0e0e3", sub: ["Material", "Status Mat", "Mat Cost Date", "Component", "Status Comp", "Comp Cost Date"] },
-    { startCol: 24, numCols: 3, title: "EXPORT: Input SKU here", color: "#d9ead3", sub: ["OLD", "NEW", "KIT"] },
-    { startCol: 28, numCols: 3, title: "SYSTEM: Security audit", color: "#cfe2f3", sub: ["Sheet Name", "Protection Type", "Editors"] }
+    { startCol: 1, numCols: 4, title: "TOTAL DRAWING: Audit", color: "#e6b8af", sub: ["Folder path", "Drawing Code", "Issue Type", "Action Required"] },
+    { startCol: 6, numCols: 3, title: "B.MATERIAL: Unused items", color: "#f4c7c3", sub: ["Old Code (B.Mat)", "Description", "Status"] },
+    { startCol: 10, numCols: 3, title: "B.MATERIAL: Missing information", color: "#fff2cc", sub: ["Old Code", "Description", "Drawing"] },
+    { startCol: 14, numCols: 3, title: "B.MATERIAL: Incomplete information", color: "#fce5cd", sub: ["Component", "Missing Fields", "Drawing"] },
+    { startCol: 18, numCols: 3, title: "A.BOM: Ghost components", color: "#d9d2e9", sub: ["Parent in BOM", "Ghost Component", "Ghost Error Reason"] },
+    { startCol: 22, numCols: 6, title: "A.BOM: Blocked status & Cost date", color: "#d0e0e3", sub: ["Material", "Status Mat", "Mat Cost Date", "Component", "Status Comp", "Comp Cost Date"] },
+    { startCol: 29, numCols: 3, title: "EXPORT: Input SKU here", color: "#d9ead3", sub: ["OLD", "NEW", "KIT"] },
+    { startCol: 33, numCols: 3, title: "SYSTEM: Security audit", color: "#cfe2f3", sub: ["Sheet Name", "Protection Type", "Editors"] }
   ];
 
   const colorRed = hexToRgb_("#d32f2f");
@@ -142,7 +144,7 @@ function setupMaintenanceLayout() {
   });
 
   // Spacers cập nhật mốc toạ độ do đổi chỗ Zone
-  const spacers = [4, 8, 12, 16, 23, 27]; 
+  const spacers = [5, 9, 13, 17, 21, 28, 32]; 
   spacers.forEach(col => {
     const sc = col - 1;
     requests.push({
@@ -156,7 +158,7 @@ function setupMaintenanceLayout() {
 
   requests.push({
     repeatCell: {
-      range: { sheetId: sheetId, startRowIndex: 0, endRowIndex: sheet.getMaxRows(), startColumnIndex: 30, endColumnIndex: 31 },
+      range: { sheetId: sheetId, startRowIndex: 0, endRowIndex: sheet.getMaxRows(), startColumnIndex: 35, endColumnIndex: 36 },
       cell: { userEnteredFormat: { backgroundColor: hexToRgb_("#999999") } }, // Dark Gray 1
       fields: "userEnteredFormat.backgroundColor"
     }
@@ -164,23 +166,24 @@ function setupMaintenanceLayout() {
 
   // Tinh chỉnh lại mảng width bám sát thứ tự mới
   const widths = { 
-    1:130, 2:250, 3:130, 4:20,   // Unused
-    5:120, 6:220, 7:100, 8:20,   // Missing
-    9:140, 10:200, 11:100, 12:20,  // Incomplete
-    13:130, 14:130, 15:150, 16:20, // Ghost
-    17:120, 18:100, 19:120, 20:120, 21:100, 22:120, 23:20, // Blocked
-    24:130, 25:130, 26:130, 27:20, // Export
-    28:120, 29:120, 30:180, 31:20  // Security
+    1:120, 2:150, 3:150, 4:150, 5:20, // Zone 1: Drawing Audit (4 cột)
+    6:130, 7:250, 8:130, 9:20,   // Zone 2: Unused B.Mat
+    10:120, 11:220, 12:100, 13:20, // Zone 3: Missing
+    14:140, 15:200, 16:100, 17:20, // Zone 4: Incomplete
+    18:130, 19:130, 20:150, 21:20, // Zone 5: Ghost
+    22:120, 23:100, 24:120, 25:120, 26:100, 27:120, 28:20, // Zone 6: Blocked
+    29:130, 30:130, 31:130, 32:20, // Zone 7: Export
+    33:120, 34:120, 35:180, 36:20  // Zone 8: Security
   };
   
   Object.keys(widths).forEach(col => {
     requests.push({ updateDimensionProperties: { range: { sheetId: sheetId, dimension: "COLUMNS", startIndex: Number(col)-1, endIndex: Number(col) }, properties: { pixelSize: widths[col] }, fields: "pixelSize" } });
   });
 
-  // Định dạng Text (@) ép riêng cho Cột X, Y, Z (Index 23 -> 26)
+  // Định dạng Text (@) ép riêng cho cột SKU luồng Export (cột 29 đến 31 -> Index 28-30)
   requests.push({
     repeatCell: {
-      range: { sheetId: sheetId, startRowIndex: 3, endRowIndex: sheet.getMaxRows(), startColumnIndex: 23, endColumnIndex: 26 },
+      range: { sheetId: sheetId, startRowIndex: 3, endRowIndex: sheet.getMaxRows(), startColumnIndex: 28, endColumnIndex: 31 },
       cell: { userEnteredFormat: { numberFormat: { type: "TEXT" } } },
       fields: "userEnteredFormat.numberFormat"
     }
@@ -226,6 +229,173 @@ function ensureRowsSafe_(sheet, requiredRows) {
   if (requiredRows > currentMaxRows) {
     sheet.insertRowsAfter(currentMaxRows, requiredRows - currentMaxRows + 5); 
   }
+}
+
+// =======================================================================
+// MODULE 0: ZONE 1 - DRAWING AUDIT (UNUSED & MISNAMED)
+// =======================================================================
+function checkZone1_DrawingAudit() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName("Maintenance");
+
+  if (!sheet) {
+    ss.toast("Vui long khoi tao layout truoc.", "Missing Layout", 5);
+    return;
+  }
+
+  ss.toast("Dang quet du lieu Total Drawing...", "Zone 1 Scan", -1);
+
+  const matData = ss.getSheetByName(CONFIG.SHEETS.SYS_MAT).getDataRange().getValues();
+  const bomData = ss.getSheetByName(CONFIG.SHEETS.SYS_BOM).getDataRange().getValues();
+  const aBomData = ss.getSheetByName(CONFIG.SHEETS.BOM).getDataRange().getValues();
+
+  // Tập hợp mã hợp lệ (Used/Active)
+  const activeCompSet = new Set();
+  
+  // [PATCH] Helper chuẩn hóa mã dự phòng (cắt hậu tố @) để đối chiếu với bản vẽ
+  const cleanBaseCode = (c) => c.replace(/\u00A0/g, " ").trim().replace(/@.*/, "").replace(/\.$/, "");
+
+  // Bước 1: Tìm Status Column trong ZVNMMMAT
+  let statusColIdx = -1;
+  const matHeaders = matData[0];
+  for (let i = 0; i < matHeaders.length; i++) {
+    if (String(matHeaders[i]).trim().toLowerCase() === "status") {
+      statusColIdx = i;
+      break;
+    }
+  }
+  if (statusColIdx === -1) statusColIdx = matHeaders.length - 1;
+
+  // Bước 2: Thêm các mã Standalone Active từ ZVNMMMAT vào Whitelist
+  for (let i = 1; i < matData.length; i++) {
+    const sap = String(matData[i][0]).trim();
+    const old = String(matData[i][3]).trim();
+    const rawStatus = String(matData[i][statusColIdx]).trim();
+
+    let isActive = false;
+    if (typeof CONFIG !== 'undefined' && CONFIG.STATUS_MAPPING) {
+      if (CONFIG.STATUS_MAPPING.ACTIVE.includes(rawStatus) || CONFIG.STATUS_MAPPING.ACTIVE_SAP_ONLY.includes(rawStatus)) {
+        isActive = true;
+      }
+    } else {
+       if (rawStatus === "Active" || rawStatus === "2" || rawStatus === "") isActive = true;
+    }
+
+    if (isActive) {
+      // [PATCH] Nạp cả mã gốc và mã đã cắt @ vào RAM
+      if (sap) {
+        activeCompSet.add(sap);
+        activeCompSet.add(cleanBaseCode(sap));
+      }
+      if (old) {
+        activeCompSet.add(old);
+        activeCompSet.add(cleanBaseCode(old));
+      }
+    }
+  }
+
+  // Bước 3: Tìm ZFIN từ SYS_BOM và lọc con từ A.BOM
+  const zfinSapSet = new Set();
+  for (let i = 1; i < bomData.length; i++) {
+    if (String(bomData[i][4]).trim().toUpperCase() === "ZFIN") {
+      zfinSapSet.add(String(bomData[i][0]).trim());
+    }
+  }
+
+  const zfinOldCodeSet = new Set();
+  for (let i = 1; i < matData.length; i++) {
+    const sap = String(matData[i][0]).trim();
+    const old = String(matData[i][3]).trim();
+    if (sap && zfinSapSet.has(sap) && old) {
+      zfinOldCodeSet.add(old);
+    }
+  }
+
+  for (let i = 1; i < aBomData.length; i++) {
+    const parentOld = String(aBomData[i][9]).trim(); 
+    const compOld = String(aBomData[i][10]).trim();  
+    if (zfinOldCodeSet.has(parentOld)) {
+      // [PATCH] Nạp cả mã gốc và mã đã cắt @ vào RAM
+      if (compOld) {
+        activeCompSet.add(compOld);     
+        activeCompSet.add(cleanBaseCode(compOld));     
+      }
+      if (parentOld) {
+        activeCompSet.add(parentOld); 
+        activeCompSet.add(cleanBaseCode(parentOld)); 
+      }
+    }
+  }
+
+  // Bước 4: Quét Total Drawing
+  const drawingSheet = ss.getSheetByName(CONFIG.SHEETS.DRAWING);
+  if (!drawingSheet || drawingSheet.getLastRow() < 4) {
+    ss.toast("Khong co du lieu trong Total Drawing.", "Scan Error", 5);
+    return;
+  }
+
+  const drawData = drawingSheet.getRange(4, 1, drawingSheet.getLastRow() - 3, 9).getValues();
+  
+  const misnamedTracker = new Map();
+  const rawResults = [];
+
+  for (let i = 0; i < drawData.length; i++) {
+    const fileType = String(drawData[i][0]).trim(); 
+    const code = String(drawData[i][3]).trim();     
+    if (!code) continue;
+
+    if (!misnamedTracker.has(code)) {
+      misnamedTracker.set(code, { count: 1, fType: fileType });
+    } else {
+      misnamedTracker.get(code).count++;
+    }
+
+    // Lúc này code bản vẽ sẽ tự động tìm thấy bản tương ứng không có @ trong RAM
+    if (!activeCompSet.has(code)) {
+      rawResults.push({ 
+        fType: fileType,
+        code: code, 
+        type: "Unused in BOM", 
+        action: "Move to Old Folder" 
+      });
+    }
+  }
+
+  for (const [code, info] of misnamedTracker.entries()) {
+    if (info.count > 1) {
+      rawResults.push({ 
+        fType: info.fType,
+        code: code, 
+        type: "Wrong name format", 
+        action: "Rename on Drive" 
+      });
+    }
+  }
+
+  const uniqueResultsMap = new Map();
+  rawResults.forEach(item => {
+    const key = `${item.fType}_${item.code}_${item.type}`;
+    uniqueResultsMap.set(key, [item.fType, item.code, item.type, item.action]);
+  });
+
+  const finalData = Array.from(uniqueResultsMap.values());
+
+  // Sắp xếp: Unused lên trước Wrong name, sau đó xếp 11.1 trước 11.2
+  finalData.sort((a, b) => {
+    if (a[2] !== b[2]) return a[2].localeCompare(b[2]); // Issue Type (U trước W)
+    if (a[0] !== b[0]) return a[0].localeCompare(b[0]); // Folder (11.1 trước 11.2)
+    return String(a[1]).localeCompare(String(b[1]));    // Code
+  });
+
+  ensureRowsSafe_(sheet, finalData.length + 3);
+  sheet.getRange(4, 1, Math.max(sheet.getMaxRows() - 3, 1), 4).clearContent().setNumberFormat("@");
+
+  if (finalData.length > 0) {
+    sheet.getRange(4, 1, finalData.length, 4).setValues(finalData);
+  }
+  
+  sheet.getRange("A1").setNote(`Last Scan: ${Utilities.formatDate(new Date(), "GMT+7", "HH:mm:ss dd/MM")}`);
+  ss.toast(`Quet xong Zone 1! Phat hien ${finalData.length} issues.`, "Scan Complete", 5);
 }
 
 // =======================================================================
@@ -286,12 +456,11 @@ function checkZone2_MissingBMat() {
 
   const missingData = Array.from(missingCompToInfoMap.values());
   
-  // Sắp xếp danh sách theo thứ tự alphabet của mã linh kiện (Cột 0)
   missingData.sort((a, b) => String(a[0]).localeCompare(String(b[0])));
   
   ensureRowsSafe_(sheet, missingData.length + 3);
   
-  sheet.getRange(4, 5, Math.max(sheet.getMaxRows() - 3, 1), 3).clearContent().setNumberFormat("@");
+  sheet.getRange(4, 10, Math.max(sheet.getMaxRows() - 3, 1), 3).clearContent().setNumberFormat("@");
   
   if (missingData.length > 0) {
     const drawSheet = ss.getSheetByName('Total Drawing');
@@ -320,10 +489,10 @@ function checkZone2_MissingBMat() {
       return [row[0], row[1], foundLink]; 
     });
 
-    sheet.getRange(4, 5, finalData.length, 3).setValues(finalData);
+    sheet.getRange(4, 10, finalData.length, 3).setValues(finalData);
   }
   
-  sheet.getRange("E1").setNote(`Last Scan: ${Utilities.formatDate(new Date(), "GMT+7", "HH:mm:ss dd/MM")}`);
+  sheet.getRange("J1").setNote(`Last Scan: ${Utilities.formatDate(new Date(), "GMT+7", "HH:mm:ss dd/MM")}`);
   ss.toast("Da cap nhat cac ma thieu: Tim thay " + missingData.length + " ma.", "Scan Complete", 5);
 }
 
@@ -393,7 +562,7 @@ function checkZone3_IncompleteBMat() {
 
   ensureRowsSafe_(sheet, incompleteData.length + 3);
   
-  sheet.getRange(4, 9, Math.max(sheet.getMaxRows() - 3, 1), 3).clearContent().setNumberFormat("@");
+  sheet.getRange(4, 14, Math.max(sheet.getMaxRows() - 3, 1), 3).clearContent().setNumberFormat("@");
 
   if (incompleteData.length > 0) {
     const drawSheet = ss.getSheetByName('Total Drawing');
@@ -422,10 +591,10 @@ function checkZone3_IncompleteBMat() {
       return [row[0], row[1], foundLink]; 
     });
 
-    sheet.getRange(4, 9, finalData.length, 3).setValues(finalData);
+    sheet.getRange(4, 14, finalData.length, 3).setValues(finalData);
   }
   
-  sheet.getRange("I1").setNote(`Last Scan: ${Utilities.formatDate(new Date(), "GMT+7", "HH:mm:ss dd/MM")}`);
+  sheet.getRange("N1").setNote(`Last Scan: ${Utilities.formatDate(new Date(), "GMT+7", "HH:mm:ss dd/MM")}`);
   ss.toast("Da cap nhat: Tim thay " + incompleteData.length + " ma.", "Scan Complete", 5);
 }
 
@@ -477,13 +646,13 @@ function checkZone4_GhostBOM() {
 
   ensureRowsSafe_(sheet, ghostData.length + 3);
   
-  sheet.getRange(4, 13, Math.max(sheet.getMaxRows() - 3, 1), 3).clearContent().setNumberFormat("@");
+  sheet.getRange(4, 18, Math.max(sheet.getMaxRows() - 3, 1), 3).clearContent().setNumberFormat("@");
 
   if (ghostData.length > 0) {
-    sheet.getRange(4, 13, ghostData.length, 3).setValues(ghostData);
+    sheet.getRange(4, 18, ghostData.length, 3).setValues(ghostData);
   }
   
-  sheet.getRange("M1").setNote(`Last Scan: ${Utilities.formatDate(new Date(), "GMT+7", "HH:mm:ss dd/MM")}`);
+  sheet.getRange("R1").setNote(`Last Scan: ${Utilities.formatDate(new Date(), "GMT+7", "HH:mm:ss dd/MM")}`);
   ss.toast("Da cap nhat: Tim thay " + ghostData.length + " loi.", "Scan Complete", 5);
 }
 
@@ -518,6 +687,9 @@ function checkZone6_UnusedBMat() {
   const aBomData = ss.getSheetByName(CONFIG.SHEETS.BOM).getDataRange().getValues();
   const bMatData = ss.getSheetByName(CONFIG.SHEETS.MATERIAL).getDataRange().getValues();
 
+  // [PATCH] Helper chuẩn hóa mã dự phòng (cắt hậu tố @)
+  const cleanBaseCode = (c) => c.replace(/\u00A0/g, " ").trim().replace(/@.*/, "").replace(/\.$/, "");
+
   const zfinSapSet = new Set();
   for (let i = 1; i < bomData.length; i++) {
     if (String(bomData[i][4]).trim().toUpperCase() === "ZFIN") {
@@ -544,8 +716,15 @@ function checkZone6_UnusedBMat() {
     const compOld = String(aBomData[i][10]).trim();  
     
     if (zfinOldCodeSet.has(parentOld)) {
-      if (compOld) activeCompSet.add(compOld);     
-      if (parentOld) activeCompSet.add(parentOld); 
+      // [PATCH] Nạp cả mã gốc VÀ mã đã cắt đuôi @ vào bộ nhớ "Active"
+      if (compOld) {
+        activeCompSet.add(compOld);
+        activeCompSet.add(cleanBaseCode(compOld)); 
+      }
+      if (parentOld) {
+        activeCompSet.add(parentOld);
+        activeCompSet.add(cleanBaseCode(parentOld));
+      }
     }
   }
 
@@ -561,10 +740,10 @@ function checkZone6_UnusedBMat() {
   }
 
   ensureRowsSafe_(sheet, unusedList.length + 3);
-  sheet.getRange(4, 1, Math.max(sheet.getMaxRows() - 3, 1), 3).clearContent().setNumberFormat("@");
+  sheet.getRange(4, 6, Math.max(sheet.getMaxRows() - 3, 1), 3).clearContent().setNumberFormat("@");
 
   if (unusedList.length > 0) {
-    sheet.getRange(4, 1, unusedList.length, 3).setValues(unusedList);
+    sheet.getRange(4, 6, unusedList.length, 3).setValues(unusedList);
   }
   
   sheet.getRange("A1").setNote(`Last Scan: ${Utilities.formatDate(new Date(), "GMT+7", "HH:mm:ss dd/MM")}`);
@@ -702,19 +881,20 @@ function checkZone7_BlockedBOM() {
   });
 
   ensureRowsSafe_(sheet, results.length + 3);
-  sheet.getRange(4, 17, Math.max(sheet.getMaxRows() - 3, 1), 6).clearContent().setNumberFormat("@");
+  sheet.getRange(4, 22, Math.max(sheet.getMaxRows() - 3, 1), 6).clearContent().setNumberFormat("@");
 
   if (results.length > 0) {
-    sheet.getRange(4, 17, results.length, 6).setValues(results);
+    sheet.getRange(4, 22, results.length, 6).setValues(results);
   }
 
-  sheet.getRange("Q1").setNote(`Last Scan: ${Utilities.formatDate(new Date(), "GMT+7", "HH:mm:ss dd/MM")}`);
+  sheet.getRange("V1").setNote(`Last Scan: ${Utilities.formatDate(new Date(), "GMT+7", "HH:mm:ss dd/MM")}`);
   ss.toast("Quet xong Zone 7! Tim thay " + results.length + " cap BOM loi.", "Scan Complete", 5);
 }
 
 function runAllHealthChecksBackground() {
   console.log("Bat dau chay ngam System Health Check...");
   try {
+    checkZone1_DrawingAudit();
     checkZone6_UnusedBMat();
     checkZone2_MissingBMat();
     checkZone3_IncompleteBMat();
@@ -752,25 +932,53 @@ function sendHealthCheckSummaryChat() {
   };
 
   const stats = {
-    unused: getCount(1),
-    missing: getCount(5),
-    incomplete: getCount(9),
-    ghost: getCount(13),
-    blocked: getCount(17),
-    security: getCount(28)
+    unused: getCount(6),
+    missing: getCount(10),
+    incomplete: getCount(14),
+    ghost: getCount(18),
+    blocked: getCount(22),
+    security: getCount(33)
   };
 
-  const totalIssues = stats.unused + stats.missing + stats.incomplete + stats.ghost + stats.blocked + stats.security;
-  const nowStr = Utilities.formatDate(new Date(), "GMT+7", "dd/MM/yyyy HH:mm");
+  // --- BÓC TÁCH SỐ LIỆU ĐỘC LẬP CHO ZONE 1 (DRAWING - 4 CỘT) ---
+  let drawWrong = 0, drawOld = 0;
+  let accWrong = 0, accOld = 0;
   
+  const maxRow = Math.max(sheet.getLastRow(), 4);
+  const zone1Data = sheet.getRange(4, 1, maxRow - 3, 4).getValues();
+  
+  zone1Data.forEach(row => {
+    const fileType = String(row[0]).trim();
+    const issueType = String(row[2]).trim();
+    
+    if (!issueType) return; // Bỏ qua dòng trống
+    
+    const isDrawing = fileType.includes("11.1_Drawing");
+    const isAccessory = fileType.includes("11.2_Accessory");
+    
+    if (issueType === "Unused in BOM") {
+      if (isDrawing) drawOld++;
+      if (isAccessory) accOld++;
+    } else if (issueType === "Wrong name format") {
+      if (isDrawing) drawWrong++;
+      if (isAccessory) accWrong++;
+    }
+  });
+
+  const totalDrawingIssues = drawWrong + drawOld + accWrong + accOld;
+  const totalIssues = totalDrawingIssues + stats.unused + stats.missing + stats.incomplete + stats.ghost + stats.blocked + stats.security;
+  
+  const nowStr = Utilities.formatDate(new Date(), "GMT+7", "dd/MM/yyyy HH:mm");
   const icon = totalIssues > 0 ? "🚨" : "✅";
   const statusText = totalIssues > 0 ? "Phát hiện dữ liệu cần xử lý" : "Hệ thống hoạt động ổn định";
 
-  // Format tin nhắn chuyên nghiệp, loại bỏ từ ngữ dư thừa
+  // Format tin nhắn chuyên nghiệp, phân rã Zone 1
   const messageText = `${icon} *BÁO CÁO HỆ THỐNG (SYSTEM HEALTH)*\n` +
                       `Thời gian hoàn tất: *${nowStr}*\n` +
                       `Trạng thái: *${statusText}*\n\n` +
                       `*TỔNG HỢP KẾT QUẢ:*\n` +
+                      `• 11.1_Drawing: *${drawWrong}* sai tên | *${drawOld}* mã rác/cũ\n` +
+                      `• 11.2_Accessory: *${accWrong}* sai tên | *${accOld}* mã rác/cũ\n` +
                       `• B.Material - Mã không sử dụng: *${stats.unused}* (Cần xóa)\n` +
                       `• B.Material - Mã mới cần thêm: *${stats.missing}* (Cần bổ sung)\n` +
                       `• B.Material - Mã Thiếu thông tin (hình ảnh, phân loại): *${stats.incomplete}* (Cần cập nhật)\n` +
@@ -784,30 +992,125 @@ function sendHealthCheckSummaryChat() {
   }
 }
 
-/**
- * Hàm cài đặt Trigger (Chỉ cần chạy thủ công 1 lần duy nhất để thiết lập)
- */
-function createBiDailyHealthCheckTrigger() {
+function removeUnusedBMat() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const handlerName = 'runAllHealthChecksBackground';
+  const ui = SpreadsheetApp.getUi();
 
-  const triggers = ScriptApp.getProjectTriggers();
-  for (let i = 0; i < triggers.length; i++) {
-    if (triggers[i].getHandlerFunction() === handlerName) {
-      ScriptApp.deleteTrigger(triggers[i]);
+  // 1. Chốt chặn an toàn: Yêu cầu xác nhận từ con người
+  const response = ui.alert(
+    "⚠️ XÁC NHẬN XÓA DỮ LIỆU",
+    "Hệ thống sẽ XÓA VĨNH VIỄN các mã linh kiện rác (tại Zone 6) khỏi sheet B.Material.\nHành động này KHÔNG THỂ hoàn tác.\n\nBạn có chắc chắn muốn tiếp tục?",
+    ui.ButtonSet.YES_NO
+  );
+  
+  if (response !== ui.Button.YES) {
+    ss.toast("Đã hủy thao tác xóa dữ liệu.", "Đã hủy", 3);
+    return;
+  }
+
+  const maintenanceSheet = ss.getSheetByName("Maintenance");
+  if (!maintenanceSheet) {
+    ui.alert("Lỗi: Không tìm thấy sheet Maintenance.");
+    return;
+  }
+
+  // 2. Thu thập danh sách mã rác từ Zone 6 (Cột A)
+  const lastRowMaint = maintenanceSheet.getLastRow();
+  if (lastRowMaint < 4) {
+    ss.toast("Không có dữ liệu Unused B.Mat để xóa.", "Thông báo", 3);
+    return;
+  }
+
+  const unusedData = maintenanceSheet.getRange(4, 1, lastRowMaint - 3, 1).getValues();
+  const unusedSet = new Set();
+  
+  unusedData.forEach(row => {
+    const code = String(row[0]).trim();
+    if (code) unusedSet.add(code);
+  });
+
+  if (unusedSet.size === 0) {
+    ss.toast("Không có mã rác nào cần xóa.", "Thông báo", 3);
+    return;
+  }
+
+  // 3. Quét tìm vị trí các dòng cần xóa bên B.Material
+  const bMatSheet = ss.getSheetByName(CONFIG.SHEETS.MATERIAL);
+  if (!bMatSheet) {
+    ui.alert(`Lỗi: Không tìm thấy sheet ${CONFIG.SHEETS.MATERIAL}`);
+    return;
+  }
+
+  const bMatData = bMatSheet.getDataRange().getValues();
+  const rowsToDelete = [];
+
+  for (let i = 0; i < bMatData.length; i++) {
+    const compInBMat = String(bMatData[i][0]).trim();
+    if (compInBMat && unusedSet.has(compInBMat)) {
+      rowsToDelete.push(i + 1); // Lưu lại index hệ thống (bắt đầu từ 1)
     }
   }
 
-  ScriptApp.newTrigger(handlerName)
-    .timeBased()
-    .everyDays(7)
-    .atHour(5)
-    .create();
-
-  if (ss) ss.toast("Da thiet lap chay ngam Health Check (5h sang, 2 ngay/lan).", "Trigger Setup", 8);
-  
-  if (typeof logAction === 'function') {
-    logAction("TRIGGER", "Thiết lập lịch chạy ngầm System Health (5AM, 2 days/lần)");
+  if (rowsToDelete.length === 0) {
+    ss.toast("Không tìm thấy mã tương ứng trong B.Material để xóa.", "Thông báo", 3);
+    return;
   }
+
+  ss.toast(`Đang tiến hành xóa ${rowsToDelete.length} dòng khỏi B.Material...`, "Cleaning", -1);
+
+  // 4. Thuật toán gom nhóm dòng (Chunking) để xóa qua API
+  rowsToDelete.sort((a, b) => a - b);
+  const groups = [];
+  let startRow = rowsToDelete[0];
+  let countRows = 1;
+
+  for (let i = 1; i < rowsToDelete.length; i++) {
+    if (rowsToDelete[i] === rowsToDelete[i - 1] + 1) {
+      countRows++;
+    } else {
+      groups.push({ start: startRow, count: countRows });
+      startRow = rowsToDelete[i];
+      countRows = 1;
+    }
+  }
+  groups.push({ start: startRow, count: countRows });
+
+  // BẮT BUỘC ĐẢO NGƯỢC (Xóa từ dưới lên) để tránh lệch tọa độ các block bên dưới
+  groups.reverse();
+  const requests = [];
+  const sheetId = bMatSheet.getSheetId();
+
+  groups.forEach(group => {
+    requests.push({
+      deleteDimension: {
+        range: {
+          sheetId: sheetId,
+          dimension: "ROWS",
+          startIndex: group.start - 1, // API dùng index bắt đầu từ 0
+          endIndex: group.start - 1 + group.count
+        }
+      }
+    });
+  });
+
+  // 5. Thực thi xóa
+  try {
+    Sheets.Spreadsheets.batchUpdate({ requests: requests }, ss.getId());
+  } catch (e) {
+    console.warn("API batchUpdate failed for delete rows. Fallback to native. " + e.message);
+    // Fallback: Xóa bằng hàm Native từ dưới lên trên
+    for (let i = rowsToDelete.length - 1; i >= 0; i--) {
+      bMatSheet.deleteRow(rowsToDelete[i]);
+    }
+  }
+
+  // 6. Xóa dữ liệu cũ trên Zone 6 để báo hiệu đã dọn dẹp xong
+  maintenanceSheet.getRange(4, 1, lastRowMaint - 3, 3).clearContent();
+
+  // Ghi log hệ thống
+  if (typeof logAction === 'function') {
+    logAction("CLEANUP", `Đã xóa vĩnh viễn ${rowsToDelete.length} mã rác khỏi B.Material`);
+  }
+
+  ss.toast(`Hoàn tất! Đã xóa sạch ${rowsToDelete.length} mã rác.`, "Clean Complete", 8);
 }
-//design by Hiep

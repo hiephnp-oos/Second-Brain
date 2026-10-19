@@ -6,14 +6,16 @@
  * - Module Core phụ trách kéo dữ liệu thô từ các file nguồn (ZMAT, ZBOM, ZCOST) qua ID.
  * - Tối ưu hóa tốc độ ghi cực đại bằng Google Sheets API (Batch Update).
  * - Tích hợp Auto Shrink/Expand (gọt dòng cột thừa) và thiết lập UI (Filter, Hide Cols).
+ * - [V5.0] Hoạt động dưới dạng Standalone Library Script thay vì Bound Script.
  * * DEPENDENCIES:
  * - Config.gs (Sử dụng hàm applyStandardProtection, biến CONFIG).
  * - GlobalSearch.gs (Gọi hàm rebuildSearchIndex để clear cache).
  * * TRIGGERS / USAGE:
  * - Kích hoạt thủ công qua Menu (Menu: Sync ZMat / Sync ZBom / Sync ZCost).
  * * AUTHOR: SheetScript Architect / Hoàng Nguyên Phước Hiệp
- * LAST UPDATED: 28/05/2026 | VERSION: V4.9
+ * LAST UPDATED: 07/09/2026 | VERSION: V5.0
  * * CHANGELOG:
+ * - V5.0 - 07/09/26: [ARCHITECTURE] Chuyển đổi kiến trúc từ Bound Script sang Library Script để phục vụ gọi chéo (cross-script).
  * - V4.9 - 28/05/26: [CLEANUP] Remove emojis from alerts/throws, standardize toast messages, add try/catch for cross-project permissions (openById), enforce trailing underscore for private helpers.
  * - V4.8 - 13/04/26: [AUDIT] Chuẩn hóa định dạng log (Unified Logging Format), loại bỏ text rườm rà, chuyển về chuẩn "Sync [Target] - Success".
  * - V4.7 - 13/04/26: [PERFORMANCE] Đồng bộ kiến trúc ẩn cột trong import_COST_core sang dùng Advanced API (batchHideColumns) để tránh giật lag UI.

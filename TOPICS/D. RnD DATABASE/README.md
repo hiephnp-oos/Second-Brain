@@ -17,7 +17,7 @@ The current architecture is V4 and is intentionally separated into three deploym
 - State: Maintenance
 - Summary: The V4 DNF R&D Database has been migrated into Second-Brain with the three-layer architecture established.
 - Direction: Maintain the migrated source and architecture; make implementation changes when concrete database requirements or defects require them.
-- Last reviewed: 2026-09-27
+- Last reviewed: 2026-10-19
 
 ## Working Principles
 
@@ -158,6 +158,8 @@ Maintain this README when the project's architecture, deployment model, durable 
 ## Version
 
 - Database architecture: V4
-- Migration source: `DNF_R&D_Database_V4_Hiep_FULL_16Sep26_0738.zip`
-- Migration date: 16/09/2026
+- Migration source: `DNF_R&D_Database_V4_Hiep_FULL_17Oct26_1529.zip`
+- Migration date: 17/10/2026
+- Repository sync date: 19/10/2026
+- Additional backend module: `3_Backend_Scanner/MoveOld.gs`
 - Architecture: `Bound Script → LibDNF → Backend Scanner`
