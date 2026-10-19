@@ -60,12 +60,12 @@ Directly inspected the user-supplied `BOOK.zip`, then the follow-up `BOOK_FULL.z
 
 The follow-up `BOOK_FULL.zip` contains the 617-page aggregate `07 - Statistical Rethinking.pdf`, SHA-256 `a1557fc384f68731d1360f2d6272910c080d18901a934c427193dae787b6ebc7`, matching the exact hash in the prior inventory. The split PDFs are 346 and 271 pages (617 total); their hashes remain listed above.
 
-A per-page text-extraction comparison was run between the aggregate and the concatenated split PDFs: **617/617 page positions matched after whitespace normalization; 0 extracted-text mismatches**. Fifteen page positions on each side yielded no extractable text, so text comparison alone does not establish visual identity for those pages. Aggregate availability and text-level pagination alignment are now verified; inspect the non-text page positions visually or by page-image fingerprint and reconcile chapter/subsection starts against TOC locators before closing the full Stage 0 source-integrity gate.
+A per-page text-extraction comparison was run between the aggregate and the concatenated split PDFs: **617/617 page positions matched after whitespace normalization; 0 extracted-text mismatches**. Fifteen page positions on each side yielded no extractable text. Rendered page-image SHA-256 fingerprints were compared for all 15 positions and **all 15 matched** between aggregate and the corresponding split page. Aggregate availability, extracted-text alignment (617/617), and non-text page-image alignment (15/15) are verified. Chapter/subsection starts still need reconciliation against TOC locators before closing Stage 0.
 
 ### Stage 0 evidence boundary
 
 - **Verified:** current archive filenames, all 17 PDF page counts and PDF hashes, all 17 Markdown line counts and hashes, and visual presence/structure of the TOC/content-list pages listed above.
 - Book 09 has a summary content list, not a canonical full-book TOC; summary-source limitation remains.
 - Book 07 split 02 is a continuation file beginning inside Chapter 11; it is not expected to contain a full TOC.
-- **Still open:** chapter/subsection start-page reconciliation against every TOC locator, systematic PDF↔Markdown semantic/visual unit reconciliation, and Statistical Rethinking aggregate-versus-split visual identity on non-text pages.
+- **Still open:** chapter/subsection start-page reconciliation against every TOC locator, systematic PDF↔Markdown semantic/visual unit reconciliation, and Statistical Rethinking aggregate-versus-split page-image identity on non-text pages.
 - Stage 0 remains **IN PROGRESS / BLOCKED**, not PASS. Visible TOC structure is not semantic/source-unit completion.
