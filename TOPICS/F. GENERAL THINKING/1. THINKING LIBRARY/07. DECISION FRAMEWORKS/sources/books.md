@@ -27,9 +27,9 @@ The current library distills resulting and outcome noise; decisions as bets and 
 ## Known audit limitations
 
 - Physical PDF pages 1–3 yielded no extractable text in the current extraction; their visual contents remain unverified.
-- No successful visual inspection was completed for the PDF pages. Figures, tables, boxed material and page-level notes have not been exhaustively inventoried.
+- No exhaustive visual inspection was completed for the substantive PDF pages. The TOC pages at physical PDF pages 6–8 were rendered and visually inspected during the 2026-10-19 archive recheck; figures, tables, boxed material and page-level notes have not been exhaustively inventoried.
 - The expected-value example's arithmetic was checked against extracted figures recorded during the audit, but its visual layout and formula presentation were not inspected.
 - Notes on physical pp.189–196 and bibliography on pp.197–206 have not been exhaustively mapped to each substantive claim/example.
 - Within-chapter physical locators remain broad for several semantic units. Printed-page locators are intentionally left unverified where they have not been checked against the edition.
 
-A separate proposed semantic-unit CSV is provided for review; the shared `BOOK_REVIEW_LEDGER_PR142.csv` was not edited. Coverage should remain partial until the outstanding visual, locator, notes and reference checks are resolved.
+No separate proposed semantic-unit CSV is present in the PR tree. The shared `BOOK_REVIEW_LEDGER_PR142.csv` currently has 36 data rows: 35 rows for Book 06 batches and one Statistical Rethinking split-alignment gate; it has no Book 14 semantic-unit rows. Book 14 edits were made before the execution plan reached Stage 5 and remain out-of-order, unaccepted draft changes. Coverage remains partial until the Book 14 stage is reached and the outstanding visual, locator, notes, reference and unit-level disposition checks are resolved.
