@@ -2,7 +2,7 @@
 
 **Authority:** Book PDF is canonical. Markdown is a retrieval/extraction aid. If they differ, PDF wins. Full copyrighted source text remains outside public GitHub.
 
-Inventory: 17 PDFs + 17 Markdown parts represent 16 book identities; Statistical Rethinking is split into two parts.
+Inventory: 18 PDFs + 17 Markdown parts represent 16 book identities; Statistical Rethinking has one aggregate PDF plus two split PDFs, with two split Markdown parts.
 
 | ID | PDF | MD | Status |
 |---|---:|---:|---|
@@ -33,7 +33,7 @@ Cross-book findings: escaped headings, pipe-heavy regions, equations, code, figu
 Books 01–15 passed the PDF-first structural gate. Book 16 remains blocked.
 ## Direct archive recheck — 2026-10-19
 
-Directly inspected the current user-supplied `BOOK.zip`. It contains **17 PDFs + 17 Markdown files** for 16 book identities. Page counts, PDF SHA-256, Markdown line counts and Markdown SHA-256 below were recomputed from the supplied archive. TOC/content-list pages were rendered and visually inspected; all locators here are **physical 1-based PDF pages**, not printed locators.
+Directly inspected the user-supplied `BOOK.zip`, then the follow-up `BOOK_FULL.zip`. The first archive contains **17 PDFs + 17 Markdown files**; `BOOK_FULL.zip` contains **18 PDFs + 17 Markdown files** for 16 book identities, adding the aggregate Statistical Rethinking PDF. Page counts, PDF SHA-256, Markdown line counts and Markdown SHA-256 below were recomputed from the supplied archive. TOC/content-list pages were rendered and visually inspected; all locators here are **physical 1-based PDF pages**, not printed locators.
 
 | ID | PDF | Pages | PDF SHA-256 | Paired MD | MD lines | MD SHA-256 | Visually checked TOC/list page |
 |---|---|---:|---|---|---:|---|---|
@@ -43,6 +43,7 @@ Directly inspected the current user-supplied `BOOK.zip`. It contains **17 PDFs +
 | 04 | `04 - The Strategy of Conflict.pdf` | 394 | `185b477cfe4b1c4de67d413adcec84fcae9b0b519b583a4706cece9cf8c4373e` | `04 - The Strategy of Conflict.md` | 5616 | `3f024fd4cb834a107ff8065f82c308ede488e3d25430265a7f2c43415d7e852c` | p.4 |
 | 05 | `05 - The Evolution of Cooperation.pdf` | 243 | `e816ca61aebd84159747d248fedd6d5ff318c471c36bcc31b1ac6bf9aebcd3c1` | `05 - The Evolution of Cooperation.md` | 4028 | `0140e0a4eeb1c469d94bdea1e3918acda0cffc988e61cb69a359f1501a4d99f1` | pp.5–6 |
 | 06 | `06 - Thinking in Systems.pdf` | 235 | `7c36a258dfa10af3069a9b877b276914581788147f038c1509386783e1a99e4d` | `06 - Thinking in Systems.md` | 6116 | `e879047ec3eecf37d5afa9751dfae48dd48029e87339de858a7928b03428e74d` | p.8 |
+| 07 | `07 - Statistical Rethinking.pdf` (aggregate) | 617 | `a1557fc384f68731d1360f2d6272910c080d18901a934c427193dae787b6ebc7` | — (aggregate anchor; no separate MD) | — | — | — |
 | 07a | `07 - Statistical Rethinking_01.pdf` | 346 | `69ff648ee126b1d06326c44c1cd4f610bcebb5115b8e2a1b45962c750a21701f` | `07 - Statistical Rethinking_01.md` | 16654 | `b0f4eb9ac21a375788e22ef4f77285c682b9e0520aa9fd4f598e2161d46e3dfc` | pp.3–5 |
 | 07b | `07 - Statistical Rethinking_02.pdf` | 271 | `5f9b4a1caeea248605789a002736a094fce4c1efc8fb41fbea12143534cf101a` | `07 - Statistical Rethinking_02.md` | 7123 | `af7806464d86c7d2208a708c5a8c81ab1e9b02c133e9b5ad3fdcbaaf2be70155` | none; continuation split |
 | 08 | `08 - Superforecasting.pdf` | 224 | `ca472105ea7137e56be706677d4bfbfb37ac035531c67f0bef68fcb37d38febb` | `08 - Superforecasting.md` | 2486 | `073bb292d5c2d385ce735a8a065bae0cd2201b130e3be6bb02cd13322bce98c0` | p.7 |
@@ -55,14 +56,16 @@ Directly inspected the current user-supplied `BOOK.zip`. It contains **17 PDFs +
 | 15 | `15 - Good Strategy, Bad Strategy.pdf` | 246 | `b57d5b01849e7443ec31fced8fa7db03920ffa71f74b924496dc15d31d36660d` | `15 - Good Strategy, Bad Strategy.md` | 3436 | `f09c6c86a698c57256e1450136358f0de4af8feb796bd49c6f77ce23a5273e12` | p.7 |
 | 16 | `16 - The Checklist Manifesto.pdf` | 223 | `9ed30d0915c5599f1cbc574d886b21768750dea20aacdd3abf5e58df9293be91` | `16 - The Checklist Manifesto.md` | 1712 | `15bf539e8aaf4477c28cc0ceed20fc1d238bfb422c78d0fcb16d11322b3d1b56` | pp.9–10 |
 
-### Statistical Rethinking aggregate discrepancy
+### Statistical Rethinking aggregate/split reconciliation
 
-The previous review-plan inventory listed a **617-page aggregate PDF** (`07 - Statistical Rethinking.pdf`, prior-inventory SHA-256 `a1557fc384f68731d1360f2d6272910c080d18901a934c427193dae787b6ebc7`). That aggregate file is **not present in the current `BOOK.zip`**. The archive contains only the split PDFs (346 + 271 = 617 pages) and their Markdown pairs. Equal total page counts do not prove page identity or chapter-boundary alignment. Since the execution plan explicitly requires the aggregate as pagination anchor, this sub-gate remains **BLOCKED** until the aggregate is located/provided or the user explicitly approves a revised canonical-source rule.
+The follow-up `BOOK_FULL.zip` contains the 617-page aggregate `07 - Statistical Rethinking.pdf`, SHA-256 `a1557fc384f68731d1360f2d6272910c080d18901a934c427193dae787b6ebc7`, matching the exact hash in the prior inventory. The split PDFs are 346 and 271 pages (617 total); their hashes remain listed above.
+
+A per-page text-extraction comparison was run between the aggregate and the concatenated split PDFs: **617/617 page positions matched after whitespace normalization; 0 extracted-text mismatches**. Fifteen page positions on each side yielded no extractable text, so text comparison alone does not establish visual identity for those pages. Aggregate availability and text-level pagination alignment are now verified; inspect the non-text page positions visually or by page-image fingerprint and reconcile chapter/subsection starts against TOC locators before closing the full Stage 0 source-integrity gate.
 
 ### Stage 0 evidence boundary
 
 - **Verified:** current archive filenames, all 17 PDF page counts and PDF hashes, all 17 Markdown line counts and hashes, and visual presence/structure of the TOC/content-list pages listed above.
 - Book 09 has a summary content list, not a canonical full-book TOC; summary-source limitation remains.
 - Book 07 split 02 is a continuation file beginning inside Chapter 11; it is not expected to contain a full TOC.
-- **Still open:** chapter/subsection start-page reconciliation against every TOC locator, systematic PDF↔Markdown semantic/visual unit reconciliation, and Statistical Rethinking aggregate-versus-split page identity.
+- **Still open:** chapter/subsection start-page reconciliation against every TOC locator, systematic PDF↔Markdown semantic/visual unit reconciliation, and Statistical Rethinking aggregate-versus-split visual identity on non-text pages.
 - Stage 0 remains **IN PROGRESS / BLOCKED**, not PASS. Visible TOC structure is not semantic/source-unit completion.
