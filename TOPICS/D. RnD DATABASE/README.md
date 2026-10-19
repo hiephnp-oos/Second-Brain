@@ -113,7 +113,7 @@ Google Sheets / Drive
 
 Frontend khai báo `LibDNF` trong `1_Frontend_UI/appsscript.json`. Library có project riêng và được phát hành/phiên bản hóa độc lập. Backend Scanner có project và cấu hình riêng.
 
-Các ID Spreadsheet/Folder có thể nằm trong Config; credential nhạy cảm phải được cấp tại runtime hoặc qua cơ chế quản lý secret phù hợp.
+Các ID Spreadsheet/Folder có thể nằm trong Config. Ngoại lệ lưu trữ đã được user phê duyệt cho giá trị `MAINTENANCE_WEBHOOK` hiện có được ghi rõ trong Working Principles; không suy rộng ngoại lệ này sang credential mới.
 
 ### Source of Truth
 
