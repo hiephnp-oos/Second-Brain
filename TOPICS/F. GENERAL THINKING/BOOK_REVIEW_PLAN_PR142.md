@@ -17,7 +17,7 @@ Execution companion to the review plan agreed for PR #142. This file and the led
 ## Stage status
 | Stage | Scope | Gate | Current status |
 |---|---|---|---|
-| 0 | Inventory, identity, PDF/MD pairing, TOC/source maps, Statistical Rethinking aggregate/split reconciliation | Current archive files hashed/page-counted; aggregate/split Statistical Rethinking text matches 617/617 pages; 15 non-text page-image fingerprints now match; chapter-start locator cross-check incomplete | IN PROGRESS / BLOCKED |
+| 0 | Inventory, identity, PDF/MD pairing, TOC/source maps, Statistical Rethinking aggregate/split reconciliation | All 18 PDF hashes verified against inventory; aggregate/split Statistical Rethinking text matches 617/617 pages and non-text page images match 15/15; bookmark exports for Books 01–08 reconciled; source map for Books 09–16 and printed-to-physical locator mapping still open | IN PROGRESS / BLOCKED |
 | 1 | Books 01–05 | Each batch closed with unit dispositions, evidence and read-back | NOT VERIFIED — waits for Stage 0 closure |
 | 2 | Book 06 — Thinking in Systems | Full source-unit ledger; diagrams and equations checked; all issues dispositioned; all four framework target files read back; links/references validated | BLOCKED / IN PROGRESS |
 | 3 | Books 07–10 | Starts only after Book 06 PASS; Statistical Rethinking alignment gate first | BLOCKED — Book 06 semantic gate and Book 07 aggregate/split gate unresolved |
@@ -119,3 +119,9 @@ Reviewed all eight PR commits whose author/committer date is 2026-10-18:
 - Read-back confirmed the ledger has 36 data rows and every row has exactly 23 columns.
 - This validation result does not close Stage 0: the follow-up source package now includes the 617-page aggregate and extracted text matches across all page positions, and rendered page-image fingerprints match for all 15 non-text positions; chapter/subsection locator reconciliation remains incomplete.
 - PR #142 remains **OPEN + DRAFT**. No merge or auto-merge was performed.
+### Follow-up archive validation — `BOOK_FULL.zip`
+
+- Archive SHA-256: `b1c5cff93eb3c2cd97a06522ff0917283c059a1c079ad8b5e4060b7800b4cd79`.
+- Inventory: 18 PDFs, 17 Markdown files, 9 bookmark exports, and a folder-structure note for 16 book identities. All 18 PDF hashes match the recorded inventory.
+- The 9 bookmark exports cover Books 01–08 (07a/07b). All 489 locators are in physical-page range; text/adjacent-page checks resolved all entries, including chapter title pages where the heading starts on the next page.
+- TOC/content-list pages were visually inspected where present. This is not sufficient to close Stage 0: a stable physical-page source map for Books 09–16 and printed-locator-to-physical-page reconciliation where applicable still need to be recorded and read back.
