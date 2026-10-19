@@ -156,3 +156,5 @@ Remaining before Stage 1 can close: decompose each book's chapters into substant
 - Four knowledge targets were read back: `concepts.md`, `mental-models.md`, `applications.md`, and `lessons.md`; the source traceability file was also read back after updating its acceptance wording.
 - Visual check: 65 pages with embedded images inspected in four contact sheets. Payoff/table rows note visual consistency checks; no independent mathematical simulation is claimed.
 - Stage 1.1 PASS applies only to Book 01. Stage 1 overall remains open until Books 02–05 pass equivalent gates. PR #142 remains OPEN + DRAFT and unmerged.
+
+- Read-back defect fixed during final verification: the Book 01 traceability table had two rows concatenated on one physical line; the row boundary is now restored and re-read.
