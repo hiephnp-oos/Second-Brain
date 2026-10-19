@@ -4,6 +4,10 @@
 
 Books 01–15 pass the PDF-first structural gate and have a durable framework owner. Book 09 is explicitly accepted only as the supplied summary source.
 
+## Audit boundary
+
+This register records source-structure acceptance and framework ownership for Books 01–15; it is not a per-book, paragraph-by-paragraph semantic audit of every distilled concept. Detailed knowledge-layer audits and their coverage denominators belong in each framework's source traceability file. Book 06's source-structure gate passed, but its semantic line-by-line audit remains NOT VERIFIED / IN PROGRESS. Its source traceability file records the required acceptance gate; Book 07 is blocked until the substantive-unit ledger is complete, all material findings are dispositioned, and validation passes.
+
 | Book | Gate | Owner |
 |---|---|---|
 |01|PASS|Game Theory|
