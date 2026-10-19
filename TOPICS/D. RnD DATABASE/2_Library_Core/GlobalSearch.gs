@@ -8,29 +8,23 @@
  * "In-Memory Array Processing" (Tìm kiếm trên bộ nhớ RAM) kết hợp Turbo Cache, 
  * đạt tốc độ phản hồi gần như thời gian thực (Zero-lag).
  * - Quản lý Cache Invalidation (hủy cache cũ) bằng hệ thống Versioning.
+ * - [V4.4] Hoạt động dưới dạng Standalone Library Script thay vì Bound Script.
  * * DEPENDENCIES:
  * - Config.gs (Đọc thời gian Cache và tên Sheet).
  * * TRIGGERS / USAGE:
  * - Kích hoạt UI qua Menu (Menu: Menu -> Finder).
  * - Các hàm tìm kiếm được gọi ngầm (google.script.run) từ Sidebar.html.
  * * AUTHOR: SheetScript Architect / Hoàng Nguyên Phước Hiệp
- * LAST UPDATED: 28/05/2026 | VERSION: V4.2
+ * LAST UPDATED: 07/09/2026 | VERSION: V5.0
  * * CHANGELOG:
+ * - V5.0 - 07/09/26: [ARCHITECTURE] Chuyển đổi kiến trúc từ Bound Script sang Library Script để phục vụ gọi chéo (cross-script).
+ * - V4.3 - 05/09/26: [REFACTOR] Xóa hàm showGlobalSearchSidebar() do đã chuyển sang Bound Script (Wrappers.gs).
  * - V4.2 - 28/05/26: [CLEANUP] Remove emojis from comments, rename Set variables per GAS anti AI slope rules.
  * - V4.1 - 13/04/26: [AUDIT] Nuke log chạy ngầm (rebuildSearchIndex) để tránh spam hệ thống log tập trung, chuyển về lưu console nội bộ.
- * - V4.0 - 08/04/26: [AUDIT FIX] Thay thế TextFinder bằng In-Memory Array Search. Tối ưu cực đại.
+// ... existing code ...
  * - V3.1 - 08/04/26: Sửa Issue 5 - Tối ưu hiệu năng tìm kiếm bằng cách giới hạn Range theo getLastRow().
  * ======================================================================================
  */
-
-/**
- * Hiển thị Sidebar Tìm kiếm
- */
-function showGlobalSearchSidebar() {
-  const html = HtmlService.createHtmlOutputFromFile('Sidebar')
-      .setTitle('Fuzzy Search'); 
-  SpreadsheetApp.getUi().showSidebar(html);
-}
 
 // ==========================================
 // TURBO CACHE CORE (QUẢN LÝ PHIÊN BẢN)
