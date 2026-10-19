@@ -136,3 +136,14 @@ Stage 1 remains IN PROGRESS; no book/batch is closed.
 - CI run [39198688095](https://github.com/hiephnp-oos/Second-Brain/actions/runs/39198688095) on commit `d2304206e3aca92b5d7af27849ae92724cb9ccba` passed repository validation. It does not prove semantic review completion.
 
 Remaining before Stage 1 can close: decompose each book's chapters into substantive claims/examples/figures/tables/equations/qualifications/relevant notes; record dispositions and evidence; reconcile all units to the four Game Theory knowledge files; read back every changed artifact; resolve findings; run final validation on the final Stage 1 commit. Stage 2 remains blocked until Books 01–05 all pass these gates. PR #142 stays OPEN + DRAFT and must not be merged.
+
+
+## Stage 1.1 — Book 01: Thinking Strategically (2026-10-19)
+
+- Scope: canonical PDF pp. 1–396; paired Markdown is retrieval-only. No external PDF substituted.
+- Unitization: the ledger adds explicit source units for preface/introduction, all opening tales and case study, chapter sections, payoff matrices/game trees, chapter case studies, Chapter 13 cases, and notes. Physical PDF page numbers are separate from printed locators.
+- Visual pass: 65 PDF pages with embedded images were rendered into four contact sheets and visually inspected for placement/legibility and relation to nearby text. This is not a claim that every payoff calculation was independently recomputed.
+- Knowledge mapping: each new source unit has a disposition and maps to the existing Game Theory knowledge layer or traceability-only handling. No full-text book content was copied into repository knowledge.
+- Finding: the Chapter 13 case inventory around pp. 279–290 has a title/page mapping ambiguity that must be resolved against the PDF before Stage 1.1 can close. A candidate case title was repeated in the first pass; it is explicitly left OPEN rather than silently accepted.
+- Status: **IN PROGRESS — not PASS** until the Chapter 13 title/page issue is reconciled, every ledger row is read back, and CI passes on the final commit.
+- PR #142 remains OPEN + DRAFT; no merge or ready-for-review transition.

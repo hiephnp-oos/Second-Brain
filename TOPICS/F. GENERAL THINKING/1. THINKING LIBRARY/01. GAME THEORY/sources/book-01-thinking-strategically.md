@@ -71,7 +71,7 @@ Part I is treated as **covered only when its durable reasoning content is repres
 | 8. Mix Your Plays | Predictable behavior can be exploited; appropriate mixing/randomization prevents systematic counterstrategy. |
 | 9. Never Give a Sucker an Even Bet | A counterparty's willingness to trade can reveal private information; observed actions are strategic evidence. |
 | 10. Game Theory Can Be Dangerous to Your Health | Bargaining outcomes depend on timing, alternatives and human irrationality; do not assume purely mechanical rationality. |
-| 11. The Shape of Things to Come | Synthesizes reaction, intransigence, coordination, cumulative decisions, leader/follower dynamics and unpredictability into a transition toward systematic strategic analysis. |\n| Case Study #1: Red I Win, Black You Lose | The later move can dominate when it observes the first move; copying a forced bet can guarantee the lead, showing why second-mover position can be strategically stronger. |
+| 11. The Shape of Things to Come | Synthesizes reaction, intransigence, coordination, cumulative decisions, leader/follower dynamics and unpredictability into a transition toward systematic strategic analysis. | Case Study #1: Red I Win, Black You Lose | The later move can dominate when it observes the first move; copying a forced bet can guarantee the lead, showing why second-mover position can be strategically stronger. |
 
 ### Chapter 2 — Anticipating Your Rival's Response
 
@@ -111,7 +111,7 @@ The Part I synthesis retained in the knowledge layer is:
 
 ## Acceptance decision
 
-Status: **PART I COVERED FOR KNOWLEDGE EXTRACTION**
+Status: **PART I KNOWLEDGE MAPPING REVIEWED; source-unit and visual evidence is recorded in `BOOK_REVIEW_LEDGER_PR142.csv`**
 
 This means the durable strategic reasoning of Chapters 1–3 and the Part I synthesis is represented in `concepts.md`, `mental-models.md`, `applications.md`, and `lessons.md`, with this file providing the source-to-knowledge coverage map.
 
@@ -221,7 +221,7 @@ The source also gives three underlying principles: change the payoffs so followi
 
 ## Part II acceptance decision
 
-Status: **PART II COVERED FOR KNOWLEDGE EXTRACTION**
+Status: **PART II KNOWLEDGE MAPPING REVIEWED; source-unit and visual evidence is recorded in `BOOK_REVIEW_LEDGER_PR142.csv`**
 
 The durable reasoning of Chapters 4–7 is represented in concepts.md, mental-models.md, applications.md, and lessons.md, with this source file providing the coverage map. The repository intentionally does not reproduce the full source, all examples, historical details, tables, diagrams or case-study narratives.
 
@@ -318,8 +318,14 @@ Representative cases include the Alcoa capacity commitment, parental punishment 
 
 ## Part III acceptance decision
 
-Status: **PART III COVERED FOR KNOWLEDGE EXTRACTION**
+Status: **PART III KNOWLEDGE MAPPING REVIEWED; source-unit and visual evidence is recorded in `BOOK_REVIEW_LEDGER_PR142.csv`**
 
 The durable reasoning of Chapters 8–13 is represented in `concepts.md`, `mental-models.md`, `applications.md`, and `lessons.md`, with this source file providing the chapter/section/case-family coverage map.
 
 This acceptance does not mean every example, numerical table, historical detail, case narrative or citation is reproduced. It means the reusable strategic mechanisms needed for retrieval and application are represented.
+
+## Stage 1.1 audit note — 2026-10-19
+
+Book 01 was reviewed against the canonical 396-page PDF in `BOOK_FULL.zip`, with paired Markdown used only for retrieval. The audit ledger now splits the preface/introduction, all ten opening tales plus synthesis, chapter sections and case studies, chapter-level payoff/game-tree structures, and notes into explicit source units with dispositions and physical-page locators. All 65 PDF pages containing embedded images were reviewed in four contact sheets; the visual review confirms that the diagrams/matrices belong to the adjacent strategic arguments. This is visual/layout verification, not an independent re-derivation of every numerical payoff. The knowledge layer remains distilled rather than transcribed.
+
+A numbering/title discrepancy was found during the Chapter 13 case inventory: the source's case sequence around pp. 279–290 needs exact title-to-page reconciliation before the chapter's case-study subledger can be treated as fully closed. See the corresponding open ledger finding; Stage 1.1 is not marked PASS until this mismatch is resolved and the ledger is re-read.
