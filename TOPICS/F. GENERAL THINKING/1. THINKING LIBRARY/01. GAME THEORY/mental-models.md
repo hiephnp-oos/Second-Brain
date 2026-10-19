@@ -1,6 +1,6 @@
 # Game Theory — Mental Models
 
-Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02)
+Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02); *The Evolution of Cooperation* — Axelrod (GT-05)
 
 These are operational reasoning models distilled from the sources. They are not universal laws; they are prompts for analysis.
 
