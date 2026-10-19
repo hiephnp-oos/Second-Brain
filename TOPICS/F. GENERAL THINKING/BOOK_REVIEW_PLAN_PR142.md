@@ -66,7 +66,7 @@ The target framework files currently contain a number of useful distilled items 
 ## Batch closure log
 | Batch | Source coverage denominator | VERIFIED | ADD | UPDATE | REMOVE | NO_CHANGE | NOT_APPLICABLE | Open fixes | Result / evidence |
 |---|---:|---:|---:|---:|---:|---:|---:|---|---|
-| Stage 0 | 18 PDFs + 17 Markdown parts; 16 book identities | inventory/hash/page-count checked; Statistical Rethinking text matched 617/617 page positions and non-text page images matched 15/15 | 0 | 0 | 0 | 0 | 0 | Per-chapter start-page cross-check, PDF↔MD semantic/visual reconciliation, and chapter/subsection TOC-locator reconciliation and PDF↔MD semantic/visual checks prevent closure | IN PROGRESS / BLOCKED |
+| Stage 0 | 18 PDFs + 17 Markdown parts; 16 book identities | inventory/hash/page-count checked; Statistical Rethinking text matched 617/617 page positions and non-text page images matched 15/15 | 0 | 0 | 0 | 0 | 0 | Chapter/subsection start-page reconciliation against TOC locators and PDF↔MD semantic/visual reconciliation remain open | IN PROGRESS / BLOCKED |
 | B01-A–B01-E | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
 | B02-A–B02-E | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
 | B03-A–B03-G | TBD | 0 | 0 | 0 | 0 | 0 | 0 | Create source-unit ledger from PDF, reconcile to existing files | NOT VERIFIED |
