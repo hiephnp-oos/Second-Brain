@@ -1,6 +1,6 @@
 # Game Theory — Source Applications
 
-Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02)
+Sources: *Thinking Strategically* — Dixit & Nalebuff (GT-01); *The Art of Strategy* — Dixit & Nalebuff (GT-02); *The Evolution of Cooperation* — Axelrod (GT-05)
 
 These are source-derived application patterns, not claims about the user's own experience.
 
