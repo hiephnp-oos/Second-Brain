@@ -144,6 +144,15 @@ Remaining before Stage 1 can close: decompose each book's chapters into substant
 - Unitization: the ledger adds explicit source units for preface/introduction, all opening tales and case study, chapter sections, payoff matrices/game trees, chapter case studies, Chapter 13 cases, and notes. Physical PDF page numbers are separate from printed locators.
 - Visual pass: 65 PDF pages with embedded images were rendered into four contact sheets and visually inspected for placement/legibility and relation to nearby text. This is not a claim that every payoff calculation was independently recomputed.
 - Knowledge mapping: each new source unit has a disposition and maps to the existing Game Theory knowledge layer or traceability-only handling. No full-text book content was copied into repository knowledge.
-- Finding: the Chapter 13 case inventory around pp. 279–290 has a title/page mapping ambiguity that must be resolved against the PDF before Stage 1.1 can close. A candidate case title was repeated in the first pass; it is explicitly left OPEN rather than silently accepted.
-- Status: **IN PROGRESS — not PASS** until the Chapter 13 title/page issue is reconciled, every ledger row is read back, and CI passes on the final commit.
+- Finding resolved: Chapter 13 Case 14 is **United States v. Alcoa** (PDF p.280); Case 20 is **Arms Across the Ocean** (PDF p.289). The ledger row was corrected against the canonical PDF and paired Markdown, then read back.
+- Status: **PASS** for Stage 1.1 — Book 01 only. This closes the Book 01 source-unit mapping and knowledge-layer reconciliation gate; it does not close Stage 1 for Books 02–05 or authorize merge.
 - PR #142 remains OPEN + DRAFT; no merge or ready-for-review transition.
+
+
+### Stage 1.1 closure evidence — Book 01
+
+- Ledger read-back: all rows parse to exactly 23 columns; Book 01 has 149 source-unit rows including the original navigation locators and the added semantic units.
+- Chapter 13 title/page correction verified from canonical PDF p.280 and paired Markdown: Case 14 = United States v. Alcoa; Case 20 = Arms Across the Ocean.
+- Four knowledge targets were read back: `concepts.md`, `mental-models.md`, `applications.md`, and `lessons.md`; the source traceability file was also read back after updating its acceptance wording.
+- Visual check: 65 pages with embedded images inspected in four contact sheets. Payoff/table rows note visual consistency checks; no independent mathematical simulation is claimed.
+- Stage 1.1 PASS applies only to Book 01. Stage 1 overall remains open until Books 02–05 pass equivalent gates. PR #142 remains OPEN + DRAFT and unmerged.
