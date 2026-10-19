@@ -158,3 +158,13 @@ Remaining before Stage 1 can close: decompose each book's chapters into substant
 - Stage 1.1 PASS applies only to Book 01. Stage 1 overall remains open until Books 02–05 pass equivalent gates. PR #142 remains OPEN + DRAFT and unmerged.
 
 - Read-back defect fixed during final verification: the Book 01 traceability table had two rows concatenated on one physical line; the row boundary is now restored and re-read.
+
+
+## Stage 1.2 — Book 02: The Art of Strategy (2026-10-19)
+
+- Source authority: `BOOK_FULL.zip` → `BOOK/02 - The Art of Strategy.pdf` (550 pages); paired Markdown is a retrieval aid. PDF outline locators confirm Preface p.10, Introduction p.14, Chapters 1–14 at pp.18, 43, 70, 100, 133, 161, 185, 212, 242, 268, 295, 316, 338 and 358; Further Reading p.387, Workouts p.390, Notes p.400.
+- Unitization and disposition: added 105 source-unit rows covering preface/introduction, all 14 chapters, major examples, cases, payoff/game-tree concepts, auction mechanisms, bargaining appendix, voting/incentive mechanisms and back matter. Existing chapter-level rows remain as navigation rows, not counted as semantic evidence on their own.
+- Incremental knowledge boundary: Book 02 extends Book 01 with common knowledge/iterated reasoning, richer backward induction, information asymmetry and signaling/screening, auction design/winner's curse, positive-sum coordination, expanded bargaining/voting/incentive mechanisms. Existing concepts/mental-models/applications/lessons remain the target; no duplicate framework folder or book transcription was created.
+- Visual/equation caution: 73 PDF pages contain embedded images (84 image objects). Payoff matrices, trees and auction/bargaining mechanisms are represented in the ledger, but the automated repository contract validator does not independently prove the arithmetic of every numerical example. No claim of independently recomputing all formulas is made.
+- Read-back: the source traceability file and all four Game Theory knowledge files were fetched before reconciliation; the final ledger and plan must be read back and schema-checked after commit.
+- Status: **PASS** for Stage 1.2 — Book 02 source-unit and knowledge-mapping gate. This does not close Stage 1 for Books 03–05 and does not authorize merge. PR #142 remains OPEN + DRAFT.

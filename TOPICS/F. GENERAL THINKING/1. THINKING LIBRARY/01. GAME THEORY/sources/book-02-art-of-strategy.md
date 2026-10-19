@@ -142,3 +142,8 @@ The main incremental knowledge promoted from GT-02 is:
 - broader mechanism/incentive design;
 - information as a strategic variable;
 - expanded applications of bargaining, voting, and risk sequencing.
+
+
+## Stage 1.2 review record — 2026-10-19
+
+Book 02 was checked against the canonical 550-page PDF in `BOOK_FULL.zip`; the paired Markdown was used for retrieval only. The ledger now distinguishes the chapter navigation layer from source-unit rows covering key sections, examples, cases, diagrams/payoff structures, auction formats, the Rubinstein bargaining appendix, incentive design, exercises, further reading and notes. Book 02's incremental contribution is mapped into the existing Game Theory knowledge layer rather than duplicated as a separate framework. The repository-level CI validates structure/contracts, not the independent correctness of every numerical payoff or theorem derivation.
