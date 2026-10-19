@@ -600,3 +600,5 @@ A cooperative strategy must make defection unattractive by responding sufficient
 
 ### 129. Limited retaliation can prevent reciprocal escalation
 A response to defection must be strong enough to deter exploitation but bounded enough to avoid turning one violation into an indefinite sequence of mutual defection.
+
+Additional source: *A Course in Game Theory* — Osborne & Rubinstein (GT-03). Formal definitions and solution concepts are distilled with assumptions preserved; proofs and detailed derivations remain in the canonical source.

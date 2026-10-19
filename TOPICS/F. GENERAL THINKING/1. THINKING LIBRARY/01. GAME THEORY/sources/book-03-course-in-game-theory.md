@@ -51,7 +51,7 @@ Validated:
 
 ## Acceptance decision
 
-Status: `STRUCTURALLY ACCEPTED` for controlled knowledge extraction.
+Status: `SECTION-LEVEL MAPPING VERIFIED` for controlled knowledge extraction; formal proof/equation verification remains explicitly out of scope.
 
 Acceptance means the source pair is sufficiently traceable for controlled distillation. It does not mean the raw Markdown is a clean transcription.
 
@@ -288,3 +288,8 @@ The supplied PDF was also checked for the representative formal structures alrea
 **Book 3 total: 79/79 = 100%**
 
 The previous structural acceptance remains valid, but this entry supersedes its source-validation status: Book 3 is now explicitly re-verified against the user-supplied `BOOK.zip` source pair.
+
+
+## Stage 1.3 ledger reconciliation — 2026-10-19
+
+The shared review ledger contains 79 explicit section-level units (B03-S01–B03-S79), each with a physical PDF page locator, UPDATE disposition, and chapter-specific mapping to the four Game Theory knowledge files. The denominator is the 79 numbered substantive sections, not every paragraph, proof step, or displayed equation. Formal proof and calculation reproduction is not claimed; consult the canonical PDF for derivations. The source map's full-book section mapping is therefore accepted as a controlled distillation layer, not a proof audit.

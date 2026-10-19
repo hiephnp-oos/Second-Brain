@@ -168,3 +168,14 @@ Remaining before Stage 1 can close: decompose each book's chapters into substant
 - Visual review: all 73 PDF pages containing embedded images (84 image objects) were reviewed in four contact sheets. The review checked placement, legibility, and whether payoff matrices, game trees, auction diagrams, bargaining tables and voting/incentive figures align with the surrounding argument. This does not claim independent recalculation of every numerical example or proof.
 - Read-back: source traceability file and all four Game Theory knowledge files were fetched before reconciliation; after commit, the final ledger was re-read and all 360 lines parsed to exactly 23 columns, with no duplicate Book 02 unit IDs.
 - Status: **PASS** for Stage 1.2 — Book 02 source-unit and knowledge-mapping gate. This does not close Stage 1 for Books 03–05 and does not authorize merge. PR #142 remains OPEN + DRAFT.
+
+
+## Stage 1.3 — Book 03: A Course in Game Theory (2026-10-19)
+
+- Source authority: supplied `BOOK_FULL.zip` → `BOOK/03 - A Course in Game Theory.pdf` (368 physical pages); paired Markdown is retrieval-only. No online PDF substituted.
+- Source structure: reconciled PDF outline with 79 numbered substantive sections across Chapters 1–15. Added 79 explicit section-level dispositions (`B03-S01`–`B03-S79`) to the shared ledger; existing chapter/paratext rows remain navigation/source context and are not counted as semantic sections.
+- Mapping: reconciled each section to the existing Game Theory concepts, mental models, applications and lessons layer and the Book 03 traceability matrix. Book 03 is an incremental formal expansion of Books 01–02; no duplicate book-level knowledge folder or full-text transcription was added.
+- Source coverage: section-level denominator 79/79 = 100% for numbered sections, with physical PDF page locators and explicit UPDATE dispositions. Preface, notes, List of Results, references and index remain supporting/paratext units, not part of the 79-section denominator.
+- Formal-content boundary: this is not a claim that every theorem proof, equation derivation, payoff calculation or vector game tree was independently recomputed. Those remain source-level material; the repository promotes assumptions, reasoning distinctions and operational mappings rather than duplicating proofs. Ledger fields explicitly preserve this limitation.
+- Target read-back: all four Game Theory knowledge files and Book 03 traceability were read before reconciliation; source attribution now includes GT-03. This batch closes section-level source-to-knowledge mapping only, not the mathematical correctness of every formal derivation.
+- Status: **PASS — Stage 1.3 section-level mapping gate**. Stage 1 overall remains open until Books 04–05 pass equivalent gates. PR #142 remains OPEN + DRAFT; no merge or ready-for-review transition.

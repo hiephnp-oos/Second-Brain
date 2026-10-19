@@ -404,3 +404,5 @@ Respond to exploitation early enough to preserve deterrence, but limit the respo
 
 ### GT-MM-123 — Use foresight to accelerate slow adaptation
 If trial-and-error learning is costly or too slow, use known conditions for reciprocity to redesign the interaction before waiting for blind selection to discover them.
+
+Additional source: *A Course in Game Theory* — Osborne & Rubinstein (GT-03). Formal definitions and solution concepts are distilled with assumptions preserved; proofs and detailed derivations remain in the canonical source.
