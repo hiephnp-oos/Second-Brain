@@ -108,3 +108,14 @@ Reviewed all eight PR commits whose author/committer date is 2026-10-18:
 - Remaining Stage 0 blockers: locate/provide the aggregate Statistical Rethinking PDF (or obtain explicit approval to revise its anchor rule), and finish chapter/subsection page-start reconciliation and source-map inputs.
 - Do not start or mark Stage 1–5 batches complete until the required preceding gates are met.
 - PR #142 remains OPEN + DRAFT. **No merge, auto-merge, or ready-for-review transition performed.**
+
+
+## Validation record — 2026-10-19
+
+- Validation run: [Validate Second-Brain #39195976771](https://github.com/hiephnp-oos/Second-Brain/actions/runs/39195976771).
+- Tested PR #142 head: `a47462976fb734f750e204fe9c61a82ea7c96619`.
+- Result: **PASS** — `Validator self-tests` and `Validate repository contracts` both succeeded.
+- Root cause of earlier failures: unquoted commas in two `BOOK_REVIEW_LEDGER_PR142.csv` evidence fields caused line 36/37 to parse as 25 columns instead of the required 23. Corrected those fields without changing the evidence meaning.
+- Read-back confirmed the ledger has 36 data rows and every row has exactly 23 columns.
+- This validation result does not close Stage 0: the current source package still lacks the previously specified 617-page Statistical Rethinking aggregate PDF, and chapter/subsection locator reconciliation remains incomplete.
+- PR #142 remains **OPEN + DRAFT**. No merge or auto-merge was performed.
