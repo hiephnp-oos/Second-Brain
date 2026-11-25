@@ -57,9 +57,19 @@ Before RS-12, every daily run must retrieve and compare against:
 - Prior daily discovery records: inspect the previous 7 calendar dates and the previous 7 available daily records (the sets may overlap), plus any older record explicitly referenced by a relevant reviewed lesson or matching candidate. Record missing calendar dates separately from files that exist but are unavailable or unreadable.
 - Relevant reviewed IDEA_REVIEW outcomes and Project Improvement regression cases.
 
-The run must build a temporary comparison ledger (Candidate ID/title, problem/outcome, mechanism, fitting application, prior class/disposition, source path). For every new candidate, record `NO_MATCH`, `RELATED_VARIANT`, or `DUPLICATE`, matched prior IDs, and the material difference when retained. Similarity is semantic; title/keyword matching alone is insufficient. If a historical source cannot be read, disclose the exact gap and do not claim a complete duplicate check.
+The run must build a temporary comparison ledger (Candidate ID/title, problem/outcome, mechanism, fitting application, prior class/disposition, source path). For every new candidate, record `NO_MATCH`, `RELATED_VARIANT`, `DUPLICATE`, or `UNKNOWN_COVERAGE` (when any required historical record is missing or unreadable; never `NO_MATCH` in that case), matched prior IDs, and the material difference when retained. Similarity is semantic; title/keyword matching alone is insufficient. If a historical source cannot be read, disclose the exact gap and do not claim a complete duplicate check.
 
 Historical DROP/WATCH/BASELINE records are not interchangeable: preserve the original disposition and extract reusable lessons without treating a prior rejection as proof that a new candidate is invalid.
+
+## Discovery Depth and Evidence Rules
+
+- Territory: each daily run declares a specific Strategic Territory (user behavior, failure mode or usage context) that differs from the previous 7 daily records, and records a Next focus. Restating the common pain points (water saving, temperature stability, nozzle cleaning, hose twisting, circularity) is not a new territory.
+- Market Pull chain: observed behavior/failure mode → consequence → required physical function → engineering contradiction. Need evidence grade: `QUANTIFIED` / `RECURRING` (at least 3 independent sources) / `SINGLE_SOURCE` / `INFERRED`. `INFERRED` and `SINGLE_SOURCE` needs may be WATCH, never KEEP. Internal complaint/service data is an optional input and is never fabricated.
+- Tech Push: start from a function/contradiction or a Tech Radar TRANSFER SIGNAL. Candidates above SIGNAL need a Capability Delta card (current measurable limit, new physical capability, testable threshold, why existing products cannot, affected component).
+- Evidence depth: label decisive sources `FULL_TEXT` / `CLAIMS_OR_SPEC_READ` / `ABSTRACT_ONLY` / `TITLE_OR_SNIPPET` / `VENDOR_CLAIM` / `MEASURED`. Do not close a candidate (DROP, DUPLICATE, BASELINE) on a decisive source below `CLAIMS_OR_SPEC_READ`; keep WATCH with closure basis `UNRESOLVED_EVIDENCE` and name the source to read. Read up to 3 decision-critical sources deeply per boundary candidate instead of scanning every signal deeply.
+- Precedent class `DIRECT` / `ALTERNATIVE` / `ADJACENT`; DUPLICATE requires a confirmed DIRECT precedent.
+- Search outcomes: `NO_MATCH_IN_SCOPE` (with scope and depth), `UNKNOWN`, `BASELINE`. Not finding an opportunity is not proof that none exists; only BASELINE with decisive evidence closes a direction. Every DROP/DUPLICATE/WATCH records a disconfirming check, the decision-critical gap, and a reopen condition.
+- These are experimental rules (introduced 2026-11-25), subject to human review and regression cases RND-REG-042–045.
 
 ## Language and Readability Contract
 
