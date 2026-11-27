@@ -56,6 +56,9 @@ Use canonical states: `EVIDENCED`, `INFERRED`, `ASSUMPTION`, `UNKNOWN`, `PROPOSE
 - A technology signal or mechanism is not by itself a product idea.
 - Cross-industry precedent does not establish transferability to the target.
 - Absence of found evidence is not evidence of absence or proof of novelty.
+- Not finding an opportunity is not proof that no opportunity exists. Record search outcomes as `NO_MATCH_IN_SCOPE` (state scope and depth), `UNKNOWN` (scope/depth insufficient or source unreadable) or `BASELINE` (equivalent solution identified and read to sufficient depth). Only `BASELINE` with decisive evidence closes a direction.
+- Evidence depth: label each decisive source `FULL_TEXT`, `CLAIMS_OR_SPEC_READ`, `ABSTRACT_ONLY`, `TITLE_OR_SNIPPET`, `VENDOR_CLAIM` or `MEASURED`. Patent title/abstract is screening only; high-relevance patents require the independent claim and a figure or description passage. A closure (DROP/DUPLICATE/BASELINE) that rests on a source below `CLAIMS_OR_SPEC_READ` stays WATCH with closure basis `UNRESOLVED_EVIDENCE`.
+- Precedent class: `DIRECT` (same outcome and architecture), `ALTERNATIVE` (same outcome, different architecture), `ADJACENT` (transferable mechanism). A duplicate disposition requires a confirmed DIRECT precedent.
 - Candidate class/disposition fields used by a Workstream do not replace claim-level evidence states.
 - Keep unresolved source conflicts and target-condition gaps explicit.
 
@@ -82,6 +85,10 @@ Do not invent a universal score or disposition. Use the active Workstream's requ
 - [ ] Meaningful delta and existing-solution/duplicate checks are documented, including the daily/reviewed candidate sources actually checked and matched IDs.
 - [ ] After DROP/DUPLICATE, test for material DELTA and continue while a decision-relevant search direction remains and expected search value justifies it. Close the scoped direction when coverage is sufficient, remaining value is low, or a documented hard blocker prevents responsible continuation. WATCH is not mandatory; zero candidates is acceptable only with documented bounded coverage and a justified stop rationale. Never fabricate/repackage candidates, weaken gates, or invent a hard blocker.
 - [ ] Candidate class is not conflated with evidence state or disposition.
+- [ ] Decisive sources carry an evidence-depth label; no closure rests on `ABSTRACT_ONLY` or lower. Each DROP/DUPLICATE/WATCH has a disconfirming check, the decision-critical gap, and a reopen condition.
+- [ ] Market Pull candidates carry a need chain (behavior/failure mode → consequence → required function → contradiction), a need evidence grade, and a run territory that differs from the previous 7 daily records. `INFERRED`/`SINGLE_SOURCE` needs are not KEEP.
+- [ ] Tech Push candidates above SIGNAL carry a Capability Delta card (current limit, new capability, test threshold, why existing products cannot, component). Search starts from a function/contradiction.
+- [ ] Duplicate check uses `UNKNOWN_COVERAGE`, not `NO_MATCH`, when required history was unreadable or missing.
 - [ ] Cross-industry transfer limits remain explicit.
 - [ ] Added complexity is tied to a justified benefit.
 - [ ] Strategic-scope fit is considered.
