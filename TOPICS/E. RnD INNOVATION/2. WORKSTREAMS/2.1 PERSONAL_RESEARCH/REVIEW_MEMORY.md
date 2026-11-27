@@ -141,6 +141,7 @@
 - 2026-10-06: Added user-confirmed DROP decisions for C-35-01, C-35-02, C-36-01 and C-36-02 with evidence-calibrated rationales. C-35-01/C-36-01 are closed because direct self-cleaning/remediation has clearer user value than added monitoring while consumer transfer/value remain unresolved; C-35-02 is closed as disproportionate QA/service complexity without a fitting-level consumer outcome; C-36-02 is closed specifically for insufficient DELTA, without claiming the serviceability landscape is fully saturated.
 - 2026-10-06: Reclassified **C-30-01** as **DUPLICATE** of **2026-09-25 C-04 — Filter-Life Indicator** after user review. C-30-01 remains useful as supporting evidence for the broader filter-life/maintenance direction, but is no longer treated as a separate candidate.
 - 2026-10-06: Clarified retained **KEEP** status for two candidates already advanced into IDEA_REVIEW: **2026-09-24 C-02 — Self-Healing Shower Trim Surface** (represented by C-24-02 / EverGlow) and **2026-09-25 C-04 — Filter-Life Indicator**. C-30-01 remains DUPLICATE of C-04.
+- 2026-11-25: Added user-confirmed **DROP** for **C-20261015-02** (passive priority-flow manifold). Recorded that the original DUPLICATE label was not supported at claims level for the two patents read, so the DROP rests on the user's decision, not on a duplicate finding.
 
 
 ### 2026-10-06 — Batch review: ADTD Claw candidates 2026-09-20 to 2026-09-28
@@ -269,6 +270,18 @@ The table below records the user's decision together with the evidence basis fou
 - **Sources:** [SSRN — Decoupling Hygiene from Water Consumption](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7387985); PERSONAL_RESEARCH/2026-10-15.md, C-20261015-08; đối chiếu TR-009/TR-065 theo review ngày 2026-10-16.
 
 
+### C-20261015-02 — Manifold ưu tiên lưu lượng thụ động
+
+- **Review date:** 2026-11-25 (user-confirmed).
+- **User decision:** **DROP** — không giữ như product idea độc lập trong framing hiện tại.
+- **Discovery disposition:** `DROP / DUPLICATE` trong báo cáo khám phá 2026-10-15 (nhãn do AI gán, không phải quyết định human review trước đó). Quyết định hiện tại là DROP theo người dùng; giữ nguyên lịch sử báo cáo gốc.
+- **Core concept:** manifold hoặc bộ chia dòng bù áp giữ lưu lượng cho nhánh ưu tiên khi nhiều đầu ra sen cùng hoạt động (`TR-055`, `SRC-288`–`SRC-291`).
+- **Reason for DROP:** quyết định của người dùng, không dựa trên kết luận trùng lặp. Khi kiểm tra lại ngày 2026-11-25, yêu cầu bảo hộ độc lập 1 của `US12163319B2` (điều khiển chủ động bằng valve số) và `US20210039118A1` (giới hạn tổng lưu lượng) chỉ là tiền lệ `ALTERNATIVE`, chưa có tiền lệ `DIRECT` được xác nhận. Nhãn `DUPLICATE` với N75 không kiểm chứng được vì báo cáo gốc N75 không đọc được.
+- **Scope boundary:** DROP áp dụng cho ứng viên product idea hiện tại. Không kết luận phân bổ ưu tiên thụ động là không khả thi hay đã có sản phẩm tương đương. `TR-055` giữ nguyên trạng thái `WATCH` / `TRANSFER SIGNAL`. Không loại trừ cả nhóm outcome nhiều cửa ra đồng thời.
+- **Re-entry condition:** chỉ xem xét lại khi có DELTA rõ ở outcome, năng lực vật lý hoặc kiến trúc: ví dụ bằng chứng thử cho thấy bộ chia thụ động giữ tỷ lệ lưu lượng trong dung sai ở dải áp và lưu lượng của sen với độ giảm áp chấp nhận được, và tài liệu hiện hành của valve số nhiều cửa ra cùng bộ hạn chế bù áp từng cửa cho thấy nhu cầu chưa được đáp ứng.
+- **Related:** `C-20261125-R2-01` (bản chạy lại 2026-11-25, `WATCH` / `UNRESOLVED_EVIDENCE`, chưa merge) là ứng viên liên quan cùng nhóm outcome; quyết định DROP này nên được dùng khi đối chiếu ứng viên đó.
+- **Sources:** PERSONAL_RESEARCH/2026-10-15.md, C-20261015-02; [US12163319B2](https://patents.google.com/patent/US12163319B2/en); [US20210039118A1](https://patents.google.com/patent/US20210039118A1/en); `TR-055`, `SRC-288`–`SRC-291` (RELEASED).
+
 ### C-20261127-02 — Bảo vệ ren tay đỡ sen khỏi mô-men quá tải
 
 - **Review date:** 2026-11-27 (user-confirmed).
@@ -297,8 +310,9 @@ The table below records the user's decision together with the evidence basis fou
 - **User decision:** **DROP**.
 - **Discovery origin:** PR #197 (DRAFT), `C-20261125-R2-01` — Passive Multi-outlet Flow Prioritization.
 - **Discovery disposition:** WATCH / UNRESOLVED_EVIDENCE; candidate class TECHNICAL ENABLER. Preserve the original experimental-run status; the human decision is DROP.
-- **Related prior decision:** `C-20261015-02` — Passive Multi-outlet Flow Prioritization was already user-DROPPED. PR #198 records that this decision was based on the user's product-idea framing decision, not on a confirmed DIRECT patent duplicate. `TR-055` remains WATCH / TRANSFER SIGNAL unless separately reviewed.
+- **Core concept:** A passive manifold or flow splitter prioritizes one outlet when multiple shower outlets operate simultaneously.
 - **Reason for DROP:** The user explicitly rejected the new draft candidate as well. The passive priority-flow concept does not proceed as a standalone product idea in the current framing. The proposed passive splitter remains a technical transfer signal, not a validated fitting-level product capability.
+- **Related prior decision:** `C-20261015-02` — Passive Multi-outlet Flow Prioritization was already user-DROPPED. PR #198 records that this decision was based on the user's product-idea framing decision, not on a confirmed DIRECT patent duplicate. `TR-055` remains WATCH / TRANSFER SIGNAL unless separately reviewed.
 - **Scope boundary:** DROP applies to `C-20261125-R2-01` as a product idea and preserves the earlier DROP of `C-20261015-02`. It does not establish technical impossibility, prove a DIRECT duplicate, or change the status of `TR-055`. Re-entry requires an explicitly different, measurable fitting-level outcome and comparison against the user's prior DROP scope.
 - **Source:** PR #197 (DRAFT); PR #198; user decision dated 2026-11-27.
 
