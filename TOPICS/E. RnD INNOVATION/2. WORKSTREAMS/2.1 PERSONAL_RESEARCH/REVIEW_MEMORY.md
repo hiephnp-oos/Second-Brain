@@ -281,3 +281,40 @@ The table below records the user's decision together with the evidence basis fou
 - **Re-entry condition:** chỉ xem xét lại khi có DELTA rõ ở outcome, năng lực vật lý hoặc kiến trúc: ví dụ bằng chứng thử cho thấy bộ chia thụ động giữ tỷ lệ lưu lượng trong dung sai ở dải áp và lưu lượng của sen với độ giảm áp chấp nhận được, và tài liệu hiện hành của valve số nhiều cửa ra cùng bộ hạn chế bù áp từng cửa cho thấy nhu cầu chưa được đáp ứng.
 - **Related:** `C-20261125-R2-01` (bản chạy lại 2026-11-25, `WATCH` / `UNRESOLVED_EVIDENCE`, chưa merge) là ứng viên liên quan cùng nhóm outcome; quyết định DROP này nên được dùng khi đối chiếu ứng viên đó.
 - **Sources:** PERSONAL_RESEARCH/2026-10-15.md, C-20261015-02; [US12163319B2](https://patents.google.com/patent/US12163319B2/en); [US20210039118A1](https://patents.google.com/patent/US20210039118A1/en); `TR-055`, `SRC-288`–`SRC-291` (RELEASED).
+
+### C-20261127-02 — Bảo vệ ren tay đỡ sen khỏi mô-men quá tải
+
+- **Review date:** 2026-11-27 (user-confirmed).
+- **User decision:** **DROP**.
+- **Discovery origin:** PR #201, `C-20261127-02` — Shower arm overload protection.
+- **Discovery disposition:** WATCH / UNRESOLVED_EVIDENCE in the original report; preserve this as the discovery result. The human decision is DROP.
+- **Core concept:** Add a breakaway coupling or torque-limiting clutch to a shower arm so an external overload slips/releases before damaging the concealed wall connection.
+- **Reason for DROP:** The user rejected this candidate after review of the three newly surfaced candidates. The evidence in PR #201 showed the failure mode mainly through anecdotes; the claimed pull-induced failure mechanism was only SINGLE_SOURCE. Failure torque, normal-use loads, and whether existing swivel/friction joints already provide protective slip were UNKNOWN. The proposed capability delta was not established, and overload release could introduce a dropped showerhead or uncontrolled water discharge risk.
+- **Scope boundary:** DROP applies to `C-20261127-02` in its current product framing. It does not establish that shower-arm overload protection is physically impossible or that all connection-protection mechanisms are invalid. Re-entry requires recurring evidence of the specific overload failure mode, measured failure/use torque windows, and a demonstrated fitting-level benefit beyond existing joints.
+- **Source:** PERSONAL_RESEARCH/2026-11-27.md; PR #201; user decision dated 2026-11-27.
+
+### C-20261125-R3-01 — Điều khiển sen trong tầm với cho người tắm ngồi
+
+- **Review date:** 2026-11-27 (user-confirmed).
+- **User decision:** **DROP**.
+- **Discovery origin:** PR #199 (DRAFT), `C-20261125-R3-01` — Seated Shower Remote Control.
+- **Discovery disposition:** WATCH / UNRESOLVED_EVIDENCE; candidate class TECHNICAL ENABLER. Preserve the original experimental-run status; the human decision is DROP.
+- **Core concept:** Provide a low-force remote control near the shower seat so a seated user can switch water on/off and adjust temperature without reaching the main valve or leaning.
+- **Reason for DROP:** The user rejected this candidate after review of the three newly surfaced candidates. The exact need “cannot reach the main control” was supported by only one directly matching case (SINGLE_SOURCE); the related n=12 study supported accessibility needs but did not measure this specific failure mode. Existing wireless/digital controls (including Mira Platinum Dual) already provide remote temperature/control functions. No material DELTA in retrofit cost, low-force operation, misactivation prevention, or independence from a digital valve was established.
+- **Scope boundary:** DROP applies to this candidate framing, not to accessibility or seated-showering needs as a whole. Re-entry requires recurring evidence of a distinct unmet need and a measurable outcome/architecture DELTA over existing remote controls and compliant control placement.
+- **Source:** PR #199 (DRAFT); user decision dated 2026-11-27.
+
+### C-20261125-R2-01 — Ưu tiên lưu lượng thụ động giữa nhiều cửa ra
+
+- **Review date:** 2026-11-27 (user-confirmed).
+- **User decision:** **DROP**.
+- **Discovery origin:** PR #197 (DRAFT), `C-20261125-R2-01` — Passive Multi-outlet Flow Prioritization.
+- **Discovery disposition:** WATCH / UNRESOLVED_EVIDENCE; candidate class TECHNICAL ENABLER. Preserve the original experimental-run status; the human decision is DROP.
+- **Core concept:** manifold hoặc bộ chia dòng bù áp giữ lưu lượng cho nhánh ưu tiên khi nhiều đầu ra sen cùng hoạt động.
+- **Reason for DROP:** The user explicitly rejected the new draft candidate as well. The passive priority-flow concept does not proceed as a standalone product idea in the current framing. The proposed passive splitter remains a technical transfer signal, not a validated fitting-level product capability.
+- **Related prior decision:** `C-20261015-02` — Passive Multi-outlet Flow Prioritization was already user-DROPPED. PR #198 records that this decision was based on the user's product-idea framing decision, not on a confirmed DIRECT patent duplicate. `TR-055` remains WATCH / TRANSFER SIGNAL unless separately reviewed.
+- **Scope boundary:** DROP applies to `C-20261125-R2-01` as a product idea and preserves the earlier DROP of `C-20261015-02`. It does not establish technical impossibility, prove a DIRECT duplicate, or change the status of `TR-055`. Re-entry requires an explicitly different, measurable fitting-level outcome and comparison against the user's prior DROP scope.
+- **Source:** PR #197 (DRAFT); PR #198; user decision dated 2026-11-27.
+
+## Update log
+- 2026-11-27: Added user-confirmed DROP decisions for `C-20261127-02`, `C-20261125-R3-01`, and `C-20261125-R2-01`. Preserved the original discovery WATCH states and DRAFT provenance; did not reinterpret WATCH as KEEP or patent similarity as confirmed DUPLICATE.
