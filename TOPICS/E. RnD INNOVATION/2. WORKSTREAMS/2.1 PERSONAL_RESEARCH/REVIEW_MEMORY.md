@@ -310,7 +310,7 @@ The table below records the user's decision together with the evidence basis fou
 - **User decision:** **DROP**.
 - **Discovery origin:** PR #197 (DRAFT), `C-20261125-R2-01` — Passive Multi-outlet Flow Prioritization.
 - **Discovery disposition:** WATCH / UNRESOLVED_EVIDENCE; candidate class TECHNICAL ENABLER. Preserve the original experimental-run status; the human decision is DROP.
-- **Core concept:** A passive manifold or flow splitter prioritizes one outlet when multiple shower outlets operate simultaneously.
+- **Core concept:** manifold hoặc bộ chia dòng bù áp giữ lưu lượng cho nhánh ưu tiên khi nhiều đầu ra sen cùng hoạt động.
 - **Reason for DROP:** The user explicitly rejected the new draft candidate as well. The passive priority-flow concept does not proceed as a standalone product idea in the current framing. The proposed passive splitter remains a technical transfer signal, not a validated fitting-level product capability.
 - **Related prior decision:** `C-20261015-02` — Passive Multi-outlet Flow Prioritization was already user-DROPPED. PR #198 records that this decision was based on the user's product-idea framing decision, not on a confirmed DIRECT patent duplicate. `TR-055` remains WATCH / TRANSFER SIGNAL unless separately reviewed.
 - **Scope boundary:** DROP applies to `C-20261125-R2-01` as a product idea and preserves the earlier DROP of `C-20261015-02`. It does not establish technical impossibility, prove a DIRECT duplicate, or change the status of `TR-055`. Re-entry requires an explicitly different, measurable fitting-level outcome and comparison against the user's prior DROP scope.
